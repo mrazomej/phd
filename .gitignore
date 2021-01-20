@@ -20,3 +20,8 @@ src/data/*
 # Compiled assets
 # ---------------
 .sass-cache
+
+# -----------
+# Local files
+# -----------
+src/chapter_*/*tex
