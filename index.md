@@ -2,8 +2,8 @@
 # Page settings
 layout: homepage
 keywords:
-title: The Molecular Biophysics of Evolutionary and Physiological Adaptation
-description: Griffin Chure | Ph.D. Thesis
+title: Physical Biology of Cellular Information Processing
+description: Manuel Razo-Mejia | Ph.D. Thesis
 # buttons:
 #     - content: Download PDF (DRAFT)
 #       url: "https://gchure.github.io/phd//doks-theme/assets/GriffinChure_Thesis_2020-05-08.pdf"
@@ -40,47 +40,47 @@ grid_navigation:
       url: 'chapter_01'
     - title: >
          Chapter II: Molecular Adaptation
-      excerpt: Signal processing within allosteric molecules
+      excerpt: A Predictive Theory of Allosteric Induction
       cta: read
       url: 'chapter_02'
-    - title: >
-         Chapter III: Evolutionary Adaptation 
-      excerpt: Using the simple repression state variable to predict mutant phenotypes
-      cta: read
-      url: 'chapter_03'
-    - title: >
-         Chapter IV: Physiological Adaptation 
-      excerpt: On the physiological adaptability of a simple genetic circuit 
-      cta: read
-      url: 'chapter_04'
-    - title: >
-         Chapter V: Survival
-      excerpt: >
-        Adaptation where it counts: surviving environmental insults.
-      cta: read
-      url: 'chapter_05'
-    - title: >
-         Chapter VI: Supplement to Chapter II
-      excerpt: >
-        Supplemental information and extended methods for Chapter II
-      cta: read
-      url: 'chapter_06'
-    - title: >
-         Chapter VII: Supplement to Chapter III
-      excerpt: >
-        Supplemental information and extended methods for Chapter III
-      cta: read
-      url: 'chapter_07'
-    - title: >
-         Chapter VIII: Supplement to Chapter IV
-      excerpt: >
-        Supplemental information and extended methods for Chapter IV
-      cta: read
-      url: 'chapter_08'
-    - title: >
-         Chapter IX: Supplement to Chapter V
-      excerpt: >
-        Supplemental information and extended methods for Chapter V
-      cta: read
-      url: 'chapter_09'
+    # - title: >
+    #      Chapter III: Evolutionary Adaptation 
+    #   excerpt: Using the simple repression state variable to predict mutant phenotypes
+    #   cta: read
+    #   url: 'chapter_03'
+    # - title: >
+    #      Chapter IV: Physiological Adaptation 
+    #   excerpt: On the physiological adaptability of a simple genetic circuit 
+    #   cta: read
+    #   url: 'chapter_04'
+    # - title: >
+    #      Chapter V: Survival
+    #   excerpt: >
+    #     Adaptation where it counts: surviving environmental insults.
+    #   cta: read
+    #   url: 'chapter_05'
+    # - title: >
+    #      Chapter VI: Supplement to Chapter II
+    #   excerpt: >
+    #     Supplemental information and extended methods for Chapter II
+    #   cta: read
+    #   url: 'chapter_06'
+    # - title: >
+    #      Chapter VII: Supplement to Chapter III
+    #   excerpt: >
+    #     Supplemental information and extended methods for Chapter III
+    #   cta: read
+    #   url: 'chapter_07'
+    # - title: >
+    #      Chapter VIII: Supplement to Chapter IV
+    #   excerpt: >
+    #     Supplemental information and extended methods for Chapter IV
+    #   cta: read
+    #   url: 'chapter_08'
+    # - title: >
+    #      Chapter IX: Supplement to Chapter V
+    #   excerpt: >
+    #     Supplemental information and extended methods for Chapter V
+    #   cta: read
+    #   url: 'chapter_09'
 ---
