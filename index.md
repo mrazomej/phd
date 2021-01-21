@@ -33,13 +33,13 @@ grid_navigation:
       excerpt: The scope of adaptation in transcriptional regulation
       cta: read
       url: 'abstract'
+    # - title: >
+    #      Chapter I: Introduction
+    #   excerpt: The ubiquity of adaptive behavior in biological matter.
+    #   cta: read
+    #   url: 'chapter_01'
     - title: >
-         Chapter I: Introduction
-      excerpt: The ubiquity of adaptive behavior in biological matter.
-      cta: read
-      url: 'chapter_01'
-    - title: >
-         Chapter II: Molecular Adaptation
+         Chapter II: Allosteric Gene Regulation
       excerpt: A Predictive Theory of Allosteric Induction
       cta: read
       url: 'chapter_02'
