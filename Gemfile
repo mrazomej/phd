@@ -4,3 +4,6 @@ gem 'jekyll-numbered-headings'
 gem 'jekyll'
 gem "json"
 gem "hash-joiner"
+gem "jekyll-pandoc"
+gem "jekyll-scholar"
+gem "bibtex-ruby"

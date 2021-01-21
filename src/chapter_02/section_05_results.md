@@ -97,7 +97,7 @@ and for a strain without repressor (bottom, green histograms), which
 shows no response to IPTG as expected. Fold-change is computed by
 dividing the mean fluorescence in the presence of repressor by the mean
 fluorescence in the absence of
-repressor.](main_figs/fig3.pdf){#fig_experimental_flowchart}
+repressor.](ch2_fig03){#fig_experimental_flowchart}
 
 Determination of the *in vivo* MWC Parameters {#determination-of-the-in-vivo-mwc-parameters .unnumbered}
 ---------------------------------------------
@@ -176,7 +176,7 @@ Additionally, our model allows us to investigate key phenotypic
 properties of the induction profiles (see ). Specifically, we show
 predictions for the leakiness, saturation, dynamic range, $[EC_{50}]$,
 and effective Hill coefficient of the induction
-profiles.](main_figs/fig4.pdf){#fig_O2_R260_fit}
+profiles.](ch2_fig04){#fig_O2_R260_fit}
 
 Comparison of Experimental Measurements with Theoretical Predictions {#comparison-of-experimental-measurements-with-theoretical-predictions .unnumbered}
 --------------------------------------------------------------------
@@ -237,7 +237,7 @@ would have been predicted regardless of which strain was chosen. The
 points show the mode, and the error bars denote the $95\%$ credible
 region of the parameter value distribution. Error bars not visible are
 smaller than the size of the
-marker.](main_figs/fig5.pdf){#fig_O2_R260_pred_data}
+marker.](ch2_fig05){#fig_O2_R260_pred_data}
 
 Predicting the Phenotypic Traits of the Induction Response {#predicting-the-phenotypic-traits-of-the-induction-response .unnumbered}
 ----------------------------------------------------------
@@ -263,7 +263,7 @@ fold-change observed in the absence of ligand, given by
 
 $$\begin{aligned}
  \label{eqLeakiness}
-\text{leakiness} &= \foldchange(c=0) \nonumber\\
+\text{leakiness} &= \text{fold-change}(c=0) \nonumber\\
 &= \left(
     1+\frac{1}{1+e^{-\beta \Delta \varepsilon_{AI} }}\frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}} \right)^{-1},\end{aligned}$$
 
@@ -272,7 +272,7 @@ presence of saturating ligand,
 
 $$\begin{aligned}
  \label{eqSaturation}
-\text{saturation} &= \foldchange(c \to \infty) \nonumber\\
+\text{saturation} &= \text{fold-change}(c \to \infty) \nonumber\\
 &= \left(
     1+\frac{1}{1+e^{-\beta \Delta \varepsilon_{AI} } \left(\frac{K_A}{K_I}\right)^n }\frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}} \right)^{-1}.\end{aligned}$$
 
@@ -300,7 +300,7 @@ separately to in order to smoothly interpolate between the data points.
 Error bars for - represent the standard error of the mean for eight or
 more replicates; error bars for - represent the 95% credible region for
 the parameter found by propagating the credible region of our estimates
-of $K_A$ and $K_I$ into .](main_figs/fig6.pdf){#fig_properties_data}
+of $K_A$ and $K_I$ into .](ch2_fig06){#fig_properties_data}
 
 Two additional properties of induction profiles are the $[EC_{50}]$ and
 effective Hill coefficient, which determine the range of inducer
@@ -308,11 +308,11 @@ concentration in which the system's output goes from its minimum to
 maximum value. The $[EC_{50}]$ denotes the inducer concentration
 required to generate a system response halfway between its minimum and
 maximum value, $$\label{ec50}
-\foldchange(c = [EC_{50}]) = \frac{\text{leakiness} + \text{saturation}}{2}.$$
+\text{fold-change}(c = [EC_{50}]) = \frac{\text{leakiness} + \text{saturation}}{2}.$$
 The effective Hill coefficient $h$, which quantifies the steepness of
 the curve at the $[EC_{50}]$ [@Marzen2013], is given by
 $$\label{effectiveHill}
-h = \left( 2 \frac{d}{d \log c} \left[ \log \left( \frac{ \foldchange(c) - \text{leakiness}}{\text{dynamic range}} \right) \right] \right)_{c = [EC_{50}]}.$$
+h = \left( 2 \frac{d}{d \log c} \left[ \log \left( \frac{ \text{fold-change}(c) - \text{leakiness}}{\text{dynamic range}} \right) \right] \right)_{c = [EC_{50}]}.$$
 - shows how the $[EC_{50}]$ and effective Hill coefficient depend on the
 repressor copy number. In , Section "", we discuss the analytic forms of
 these two properties as well as their dependence on the repressor-DNA
@@ -355,7 +355,7 @@ specific responses in a synthetic biology context. To address these
 questions, we follow the data collapse strategy used in a number of
 previous studies [@Sourjik2002; @Keymer2006; @Swem2008], and rewrite as
 a Fermi function,
-$$\label{eq_free_energy_definition} \foldchange= \frac{1}{1+e^{-
+$$\label{eq_free_energy_definition} \text{fold-change}= \frac{1}{1+e^{-
 F(c)}},$$ where $F(c)$ is the free energy of the repressor binding to
 the operator of interest relative to the unbound operator state in
 $k_B T$ units [@Keymer2006; @Swem2008; @Phillips2015a], which is given
@@ -401,4 +401,4 @@ $K_A=139 \times 10^{-6} \, \text{M}$,
 $K_I=0.53 \times 10^{-6}\, \text{M}$, and the strain-specific $R$ and
 $\Delta\varepsilon_{RA}$. All data points represent the mean, and error
 bars are the standard error of the mean for eight or more
-replicates.](main_figs/fig7.pdf){#fig_datacollapse}
+replicates.](ch2_fig07){#fig_datacollapse}

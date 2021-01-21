@@ -3,7 +3,18 @@ GEM
   specs:
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    bibtex-ruby (4.4.7)
+      latex-decode (~> 0.0)
+    citeproc (1.0.10)
+      namae (~> 1.0)
+    citeproc-ruby (1.1.13)
+      citeproc (~> 1.0, >= 1.0.9)
+      csl (~> 1.5)
     colorator (1.1.0)
+    csl (1.5.2)
+      namae (~> 1.0)
+    csl-styles (1.0.1.10)
+      csl (~> 1.0)
     ffi (1.11.1)
     forwardable-extended (2.6.0)
     hash-joiner (0.0.7)
@@ -20,22 +31,33 @@ GEM
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
     jekyll-numbered-headings (0.1.1)
+    jekyll-pandoc (2.0.1)
+      jekyll (>= 3.0)
+      pandoc-ruby (~> 2.0, >= 2.0.0)
     jekyll-pandoc-multiple-formats (0.2.9.1)
       jekyll (~> 3.3.0)
       pdf_info (~> 0.5.0)
       rtex (~> 2.1.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
+    jekyll-scholar (5.16.0)
+      bibtex-ruby (~> 4.0, >= 4.0.13)
+      citeproc-ruby (~> 1.0)
+      csl-styles (~> 1.0)
+      jekyll (~> 3.0)
     jekyll-watch (1.5.1)
       listen (~> 3.0)
     json (2.3.0)
     kramdown (1.17.0)
+    latex-decode (0.3.2)
     liquid (3.0.6)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
     mercenary (0.3.6)
+    namae (1.0.2)
+    pandoc-ruby (2.1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     pdf_info (0.5.3)
@@ -57,11 +79,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bibtex-ruby
   hash-joiner
   jekyll
   jekyll-numbered-headings
+  jekyll-pandoc
   jekyll-pandoc-multiple-formats
+  jekyll-scholar
   json
 
 BUNDLED WITH
-   2.1.2
+   2.2.4

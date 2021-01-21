@@ -29,6 +29,11 @@ contents:
     - section_01_header
     - section_02_abstract
     - section_03_introduction
+    - section_04_model
+    - section_05_results
+    - section_06_discussion
+    - section_07_methods
+    - section_08_acknowledgements
 ---
 
 {% if page.contents %}
