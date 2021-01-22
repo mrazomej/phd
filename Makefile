@@ -14,7 +14,7 @@ pdf:
 	--filter pandoc-crossref \
 	--citeproc \
 	--bibliography=references.bib \
-	--csl=styles/cell.csl \
+	--csl=styles/prl.csl \
 	--lua-filter=frontmatter/short-captions.lua \
 	--top-level-division chapter \
 	--resource-path='.:chapter_01/figs:chapter_02/figs:chapter_03/figs:chapter_04/figs:chapter_05/figs:chapter_06/figs:chapter_07/figs:chapter_08/figs:chapter_09/figs:' \

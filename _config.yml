@@ -59,7 +59,7 @@ pandoc:
       --filter pandoc-crossref
       --citeproc
       --bibliography=src/references.bib
-      --csl=src/styles/cell.csl
+      --csl=src/styles/prl.csl
       --metadata link-citations
 
 # scholar:
