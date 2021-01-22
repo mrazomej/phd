@@ -24,8 +24,8 @@ for allosteric transcriptional regulation has made it impossible to predict the
 behavior of even a simple genetic circuit across a range of regulatory
 parameters.
 
-The ability to predict circuit behavior robustly--- that is, across both broad
-ranges of parameters and regulatory architectures ---is important for multiple
+The ability to predict circuit behavior robustly--that is, across both broad
+ranges of parameters and regulatory architectures--is important for multiple
 reasons. First, in the context of a specific gene, accurate prediction
 demonstrates that all components relevant to the gene's behavior have been
 identified and characterized to sufficient quantitative precision. Second, in
