@@ -86,7 +86,8 @@ plt.xlim([1e3, 1e5])
 plt.ylim([1e3, 3e5])
 
 # Save the figure.
-plt.savefig("../figs/flow_cloud.pdf", bbox_inches="tight")
+plt.savefig("../figs/ch2_fig03_flow_cloud.pdf", bbox_inches="tight")
+plt.close()
 
 #%%
 fig, ax = plt.subplots(2, 1, figsize=(6, 4), sharex=True)
@@ -171,8 +172,8 @@ ax[1].xaxis.get_major_formatter().set_powerlimits((0, -1))
 fig.text(0, 0.5, "frequency", fontsize=18, rotation="vertical")
 ax[1].set_xlabel("total cell intensity (a.u.)", fontsize=18)
 
-plt.savefig("../../figures/main_figs/flow_distributions.pdf")
-
+plt.savefig("../figs/ch2_fig03_flow_distributions.pdf")
+plt.close()
 #%%
 
 # Now plot a full titration from this set.
@@ -216,6 +217,8 @@ plt.xlabel("[IPTG] (M)", fontsize=8)
 plt.xlim([1e-8, 1e-2])
 plt.ylim([-0.01, 1.1])
 plt.tick_params(labelsize=8)
-plt.savefig("../figs/titration.pdf")
+plt.tight_layout()
+plt.savefig("../figs/ch2_fig03_titration.pdf")
+plt.close()
 
 # %%
