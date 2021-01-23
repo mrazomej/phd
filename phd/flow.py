@@ -5,6 +5,17 @@ import fcsparser
 from ._fit_bivariate_normal_AstroML import fit_bivariate_normal
 import scipy.stats
 
+"""
+Title:
+    flow.py
+Last update:
+    2021-01-22
+Author(s):
+    Manuel Razo-Mejia
+Purpose:
+    This module contains functions needed for the processing of flow-cytometry
+    data. 
+"""
 
 # #######################
 # Automated Gating
