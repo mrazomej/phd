@@ -22,7 +22,7 @@ pdf:
 
 html:	
 	JEKYLL_ENV=production bundle exec jekyll build --destination docs;\
-	# sh copyfigs.sh ;\
+	bash copyfigs.sh ;\
 
 
 	
