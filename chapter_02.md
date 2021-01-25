@@ -3,7 +3,7 @@
 layout: default
 keywords:
 comments: true
-image: migration.jpg
+image: paihia.jpg
 # Hero section
 title:  Chapter II
 subtitle: >  
@@ -33,7 +33,6 @@ contents:
     - section_05_results
     - section_06_discussion
     - section_07_methods
-    - section_08_acknowledgements
 ---
 
 {% if page.contents %}

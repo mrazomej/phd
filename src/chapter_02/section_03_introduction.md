@@ -1,4 +1,4 @@
-# Introduction 
+## Introduction 
 
 Understanding how organisms sense and respond to changes in their environment
 has long been a central theme of biological inquiry. At the cellular level, this
@@ -52,13 +52,13 @@ across a wide array of experimental conditions, and only then do we set out to
 experimentally confirm these results. Building upon previous work [@Garcia2011;
 @Brewster2014; @Weinert2014] and the work of Monod, Wyman, and Changeux
 [@MONOD1965], we present a statistical mechanical rendering of allostery in the
-context of induction and corepression (shown schematically in and henceforth
-referred to as the MWC model) and use it as the basis of parameter-free
-predictions which we then test experimentally. More specifically, we study the
-simple repression motif -- a widespread bacterial genetic regulatory
-architecture in which binding of a transcription factor occludes binding of an
-RNA polymerase, thereby inhibiting transcription initiation. The MWC model
-stipulates that an allosteric protein fluctuates between two distinct
+context of induction and corepression (shown schematically in [@Fig:ch2_fig01]
+and henceforth referred to as the MWC model) and use it as the basis of
+parameter-free predictions which we then test experimentally. More specifically,
+we study the simple repression motif -- a widespread bacterial genetic
+regulatory architecture in which binding of a transcription factor occludes
+binding of an RNA polymerase, thereby inhibiting transcription initiation. The
+MWC model stipulates that an allosteric protein fluctuates between two distinct
 conformations -- an active and inactive state -- in thermodynamic equilibrium
 [@MONOD1965]. During induction, for example, effector binding increases the
 probability that a repressor will be in the inactive state, weakening its
@@ -110,5 +110,5 @@ we used flow cytometry to determine the inducer-repressor dissociation constants
 and demonstrate that with these parameters we can predict *a priori* the
 behavior of the system for any repressor copy number, DNA binding energy, gene
 copy number, and inducer
-concentration.](ch2_fig01){#fig:inducible_types short-caption="Transcriptional
+concentration.](ch2_fig01){#fig:ch2_fig01 short-caption="Transcriptional
 regulatory architectures involving an allosteric repressor."}

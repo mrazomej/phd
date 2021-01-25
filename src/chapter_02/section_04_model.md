@@ -1,11 +1,6 @@
-Results {#results .unnumbered}
-=======
+## Results 
 
-Characterizing Transcription Factor Induction using the Monod-Wyman-Changeux
-(MWC) Model
-{#characterizing-transcription-factor-induction-using-the-monod-wyman-changeux-mwc-model
-.unnumbered}
-----------------------------------------------------------------------------------------
+### Characterizing Transcription Factor Induction using the Monod-Wyman-Changeux (MWC) Model
 
 We begin by considering a simple repression genetic architecture in which the
 binding of an allosteric repressor occludes the binding of RNA polymerase (RNAP)
@@ -23,13 +18,13 @@ derive below [@Phillips2015a]). We extend these models to consider allostery by
 accounting for the equilibrium state of the repressor through the MWC model.
 
 Thermodynamic models of gene expression begin by enumerating all possible states
-of the promoter and their corresponding statistical weights. As shown in , the
-promoter can either be empty, occupied by RNAP, or occupied by either an active
-or inactive repressor. The probability of binding to the promoter will be
-affected by the protein copy number, which we denote as $P$ for RNAP, $R_{A}$
-for active repressor, and $R_{I}$ for inactive repressor. We note that
-repressors fluctuate between the active and inactive conformation in
-thermodynamic equilibrium, such that $R_{A}$ and $R_{I}$ will remain constant
+of the promoter and their corresponding statistical weights. As shown in
+[@Fig:ch2_fig02](A) , the promoter can either be empty, occupied by RNAP, or
+occupied by either an active or inactive repressor. The probability of binding
+to the promoter will be affected by the protein copy number, which we denote as
+$P$ for RNAP, $R_{A}$ for active repressor, and $R_{I}$ for inactive repressor.
+We note that repressors fluctuate between the active and inactive conformation
+in thermodynamic equilibrium, such that $R_{A}$ and $R_{I}$ will remain constant
 for a given inducer concentration [@MONOD1965]. We assign the repressor a
 different DNA binding affinity in the active and inactive state. In addition to
 the specific binding sites at the promoter, we assume that there are $N_{NS}$
@@ -57,21 +52,20 @@ two states given by $\Delta \varepsilon_{AI}$. The inducer (blue circle) at
 concentration $c$ is capable of binding to the repressor with dissociation
 constants $K_A$ in the active state and $K_I$ in the inactive state. The eight
 states for a dimer with $n=2$ inducer binding sites are shown along with the
-sums of the active and inactive
-states.](ch2_fig02){#fig_polymerase_repressor_states}
+sums of the active and inactive states.](ch2_fig02){#fig:ch2_fig02
+short-caption="States and weights for the simple repression motif."}
 
 Thermodynamic models of transcription [@Ackers1982; @Buchler2003; @Vilar2003;
 @Bintu2005; @Bintu2005a; @Kuhlman2007; @Daber2011a; @Garcia2011; @Brewster2014;
 @Weinert2014] posit that gene expression is proportional to the probability that
 the RNAP is bound to the promoter $p_{\text{bound}}$, which is given by
 $$
-\label{eq_p_bound_definition} 
 p_\text{bound} = 
 \frac{\frac{P}{N_{NS}}e^{-\beta \Delta\varepsilon_{P}}}{1+\frac{R_A}{N_{NS}}
 e^{-\beta \Delta\varepsilon_{RA}} + 
 \frac{R_I}{N_{NS}}e^{-\beta \Delta\varepsilon_{RI}} + 
 \frac{P}{N_{NS}}e^{-\beta\Delta\varepsilon_{P}}},
-$$ 
+$${#eq:p_bound_definition}
 with $\beta = \frac{1}{k_BT}$ where $k_B$ is the Boltzmann constant and $T$ is
 the temperature of the system. As $k_BT$ is the natural unit of energy at the
 molecular length scale, we treat the products $\beta \Delta\varepsilon_{j}$ as
@@ -81,9 +75,12 @@ between expression and $p_{\text{bound}}$ is not straightforward. Instead, we
 measure the fold-change in gene expression due to the presence of the repressor.
 We define fold-change as the ratio of gene expression in the presence of
 repressor relative to expression in the absence of repressor (i.e. constitutive
-expression), namely, $$\label{eq_fold_change_definition} \text{fold-change}
-\equiv \frac{p_\text{bound}(R > 0)}{p_\text{bound}(R = 0)}.$$ We can simplify
-this expression using two well-justified approximations: (1)
+expression), namely,
+$$
+\text{fold-change}
+\equiv \frac{p_\text{bound}(R > 0)}{p_\text{bound}(R = 0)}.
+$${#eq:fold_change_definition} 
+We can simplify this expression using two well-justified approximations: (1)
 $\frac{P}{N_{NS}}e^{-\beta\Delta\varepsilon_{P}}\ll 1$ implying that the RNAP
 binds weakly to the promoter ($N_{NS} = 4.6 \times 10^6$, $P \approx 10^3$
 [@Klumpp2008], $\Delta\varepsilon_{P} \approx -2 \,\, \text{to} \, -5~k_B T$
@@ -93,12 +90,11 @@ binds weakly to the promoter ($N_{NS} = 4.6 \times 10^6$, $P \approx 10^3$
 assumption that the inactive repressor binds weakly to the promoter of interest.
 Using these approximations, the fold-change reduces to the form
 $$
-\label{eq_fold_change_approx} 
 \text{fold-change} \approx
 \left(1+\frac{R_A}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}}\right)^{-1} \equiv
 \left( 1+p_A(c) \frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}}
 \right)^{-1},
-$$ 
+$${#eq:fold_change_approx} 
 where in the last step we have introduced the fraction $p_A(c)$ of repressors in
 the active state given a concentration $c$ of inducer, such that $R_A(c)=p_A(c)
 R$. Since inducer binding shifts the repressors from the active to the inactive
@@ -108,17 +104,16 @@ We use the MWC model to compute the probability $p_A(c)$ that a
 repressor with $n$ inducer binding sites will be active. The value of
 $p_A(c)$ is given by the sum of the weights of the active repressor
 states divided by the sum of the weights of all possible repressor
-states (see ), namely, 
+states (see [@Fig:ch2_fig02](B)), namely, 
 $$
-\label{eq_p_active}
 p_A(c) = \frac{\left(1+\frac{c}{K_A}\right)^n}{\left(1+\frac{c}{K_A}\right)^n +
 e^{-\beta \Delta \varepsilon_{AI} }\left(1+\frac{c}{K_I}\right)^n},
-$$
+$${#eq:p_active}
 where $K_A$ and $K_I$ represent the dissociation constant between the inducer
 and repressor in the active and inactive states, respectively, and $\Delta
 \varepsilon_{AI} = \varepsilon_{I} - \varepsilon_{A}$ is the free energy
 difference between a repressor in the inactive and active state (the quantity
-$e^{-\Delta \varepsilon_{AI}}$ is sometimes denoted by $L$ [@MONOD1965;
+$e^{-\Delta \beta \varepsilon_{AI}}$ is sometimes denoted by $L$ [@MONOD1965;
 @Marzen2013] or $K_{\text{RR}*}$ [@Daber2011a]). In this equation,
 $\frac{c}{K_A}$ and $\frac{c}{K_I}$ represent the change in free energy when an
 inducer binds to a repressor in the active or inactive state, respectively,
@@ -127,47 +122,47 @@ when the repressor changes from the active to inactive state in the absence of
 inducer. Thus, a repressor which favors the active state in the absence of
 inducer ($\Delta \varepsilon_{AI} > 0$) will be driven towards the inactive
 state upon inducer binding when $K_I < K_A$. The specific case of a repressor
-dimer with $n=2$ inducer binding sites is shown in .
+dimer with $n=2$ inducer binding sites is shown in [@Fig:ch2_fig02](B).
 
-Substituting $p_A(c)$ from into yields the general formula for induction
-of a simple repression regulatory architecture [@Phillips2015a], namely,
+Substituting $p_A(c)$ from [@Eq:p_active] into [@Eq:fold_change_approx] yields
+the general formula for induction of a simple repression regulatory architecture
+[@Phillips2015a], namely,
 $$
-\label{eq_fold_change_full}
 \text{fold-change} = 
 \left( 1+\frac{\left(1+\frac{c}{K_A}\right)^n}{\left(1+\frac{c}{K_A}\right)^n +
 e^{-\beta \Delta \varepsilon_{AI} }\left(1+\frac{c}{K_I}\right)^n}
 \frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}} \right)^{-1}.
-$$
+$${#eq:fold_change_full}
 While we have used the specific case of simple repression with induction to
 craft this model, the same mathematics describe the case of corepression in
 which binding of an allosteric effector stabilizes the active state of the
-repressor and decreases gene expression (see ). Interestingly, we shift from
-induction (governed by $K_I < K_A$) to corepression ($K_I > K_A$) as the ligand
-transitions from preferentially binding to the inactive repressor state to
-stabilizing the active state. Furthermore, this general approach can be used to
-describe a variety of other motifs such as activation, multiple repressor
-binding sites, and combinations of activator and repressor binding sites
-[@Bintu2005; @Brewster2014; @Weinert2014].
+repressor and decreases gene expression (see [@Fig:ch2_fig01](B)).
+Interestingly, we shift from induction (governed by $K_I < K_A$) to corepression
+($K_I > K_A$) as the ligand transitions from preferentially binding to the
+inactive repressor state to stabilizing the active state. Furthermore, this
+general approach can be used to describe a variety of other motifs such as
+activation, multiple repressor binding sites, and combinations of activator and
+repressor binding sites [@Bintu2005; @Brewster2014; @Weinert2014].
 
-The formula presented in enables us to make precise quantitative statements
-about induction profiles. Motivated by the broad range of predictions implied by
-, we designed a series of experiments using the *lac* system in *E. coli* to
-tune the control parameters for a simple repression genetic circuit. As
-discussed in , previous studies from our lab have provided well-characterized
-values for many of the parameters in our experimental system, leaving only the
-values of the the MWC parameters ($K_A$, $K_I$, and $\Delta \varepsilon_{AI}$)
-to be determined. We note that while previous studies have obtained values for
-$K_A$, $K_I$, and $L=e^{-\beta \Delta \varepsilon_{AI}}$ [@OGorman1980;
-@Daber2011a], they were either based upon biochemical experiments or *in vivo*
-conditions involving poorly characterized transcription factor copy numbers and
-gene copy numbers. These differences relative to our experimental conditions and
-fitting techniques led us to believe that it was important to perform our own
-analysis of these parameters. After inferring these three MWC parameters (see ,
-Section "" for details regarding the inference of $\Delta \varepsilon_{AI}$,
-which was fitted separately from $K_A$ and $K_I$), we were able to predict the
-input/output response of the system under a broad range of experimental
-conditions. For example, this framework can predict the response of the system
-at different repressor copy numbers $R$, repressor-operator affinities
+The formula presented in [@Eq:fold_change_full] enables us to make precise
+quantitative statements about induction profiles. Motivated by the broad range
+of predictions implied by [@Eq:fold_change_full], we designed a series of
+experiments using the *lac* system in *E. coli* to tune the control parameters
+for a simple repression genetic circuit. As discussed in [@Fig:ch2_fig01](C),
+previous studies from our lab have provided well-characterized values for many
+of the parameters in our experimental system, leaving only the values of the the
+MWC parameters ($K_A$, $K_I$, and $\Delta \varepsilon_{AI}$) to be determined.
+We note that while previous studies have obtained values for $K_A$, $K_I$, and
+$L=e^{-\beta \Delta \varepsilon_{AI}}$ [@OGorman1980; @Daber2011a], they were
+either based upon biochemical experiments or *in vivo* conditions involving
+poorly characterized transcription factor copy numbers and gene copy numbers.
+These differences relative to our experimental conditions and fitting techniques
+led us to believe that it was important to perform our own analysis of these
+parameters. After inferring these three MWC parameters (see , Section "" for
+details regarding the inference of $\Delta \varepsilon_{AI}$, which was fitted
+separately from $K_A$ and $K_I$), we were able to predict the input/output
+response of the system under a broad range of experimental conditions. For
+example, this framework can predict the response of the system at different
+repressor copy numbers $R$, repressor-operator affinities
 $\Delta\varepsilon_{RA}$, inducer concentrations $c$, and gene copy numbers (see
-Appendix [\[AppendixFugacity\]](#AppendixFugacity){reference-type="ref"
-reference="AppendixFugacity"}).
+Appendix XXX.
