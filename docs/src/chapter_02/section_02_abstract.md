@@ -1,4 +1,4 @@
-# Abstract
+## Abstract
 
 Allosteric regulation is found across all domains of life, yet we still lack
 simple, predictive theories that directly link the experimentally tunable
