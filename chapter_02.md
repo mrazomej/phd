@@ -35,6 +35,8 @@ contents:
     - section_07_methods
 ---
 
+**Published as ...**
+<hr/>
 {% if page.contents %}
 {% for val in page.contents %}
 {% if jekyll.environment == production %}

@@ -32,7 +32,7 @@ connect quantitative models to experiments. Here, we generate a predictive model
 of allosteric transcriptional regulation and then test the model against a
 thorough set of experiments using well-characterized regulatory components.
 Specifically, we used the MWC model to build upon a well-established
-thermodynamic model of transcriptional regulation [@Bintu2005; @Garcia2011],
+thermodynamic model of transcriptional regulation [@Bintu2005; @Garcia2011c],
 allowing us to compose the model from a minimal set of biologically meaningful
 parameters. This model combines both theoretical and experimental insights; for
 example, rather than considering gene expression directly we analyze the
@@ -81,7 +81,7 @@ $[EC_{50}]$. We further tried including additional states (such as allowing the
 inactive repressor to bind to the operator), relaxing the weak promoter
 approximation, accounting for changes in gene and repressor copy number
 throughout the cell cycle [@Jones2014a], and refitting the original binding
-energies from @Garcia2011B, but we were still unable to account for the O3 data.
+energies from @Garcia2011b, but we were still unable to account for the O3 data.
 It remains an open question as to how the discrepancy between the theory and
 measurements for O3 can be reconciled.
 

@@ -49,7 +49,7 @@ behavior in other conditions [@Setty2003; @Poelwijk2011; @Vilar2013;
 This work explores what happens when theory takes center stage, namely, we first
 write down the equations governing a system and describe its expected behavior
 across a wide array of experimental conditions, and only then do we set out to
-experimentally confirm these results. Building upon previous work [@Garcia2011;
+experimentally confirm these results. Building upon previous work [@Garcia2011c;
 @Brewster2014; @Weinert2014] and the work of Monod, Wyman, and Changeux
 [@MONOD1965], we present a statistical mechanical rendering of allostery in the
 context of induction and corepression (shown schematically in [@Fig:ch2_fig01]
@@ -74,7 +74,7 @@ regulatory situations including simple repression on the chromosome, cases in
 which decoy binding sites for repressor are put on plasmids, cases in which
 multiple genes compete for the same regulatory machinery, cases involving
 multiple binding sites for repressor leading to DNA looping, and induction by
-signaling [@Garcia2011; @Garcia2011B; @Brewster2012; @Boedicker2013a;
+signaling [@Garcia2011c; @Garcia2011b; @Brewster2012; @Boedicker2013a;
 @Boedicker2013b; @Brewster2014]. Thus, rather than viewing the behavior of each
 circuit as giving rise to its own unique input-output response, the MWC model
 provides a means to characterize these seemingly diverse behaviors using a
@@ -101,7 +101,7 @@ the log-log slope at the midpoint of the response (effective Hill coefficient).
 (C) Over time we have refined our understanding of simple repression
 architectures. A first round of experiments used colorimetric assays and
 quantitative Western blots to investigate how single-site repression is modified
-by the repressor copy number and repressor-DNA binding energy [@Garcia2011]. A
+by the repressor copy number and repressor-DNA binding energy [@Garcia2011c]. A
 second round of experiments used video microscopy to probe how the copy number
 of the promoter and presence of competing repressor binding sites affect gene
 expression, and we use this data set to determine the free energy difference

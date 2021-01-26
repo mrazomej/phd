@@ -11,7 +11,7 @@ foundation of previous work as depicted in [@Fig:ch2_fig01](C). This includes
 work from our laboratory that used *E. coli* constructs based on components of
 the *lac* system to demonstrate how the Lac repressor (LacI) copy number $R$ and
 operator binding energy $\Delta\varepsilon_{RA}$ affect gene expression in the
-absence of inducer [@Garcia2011]. @Rydenfelt2014B extended the theory used in
+absence of inducer [@Garcia2011c]. @Rydenfelt2014B extended the theory used in
 that work to the case of multiple promoters competing for a given transcription
 factor, which was validated experimentally by @Brewster2014, who modified this
 system to consider expression from multiple-copy plasmids as well as the
@@ -20,7 +20,7 @@ presence of competing repressor binding sites.
 The present study extends this body of work by introducing three additional
 biophysical parameters--$\Delta\varepsilon_{AI}$, $K_A$, and $K_I$--which
 capture the allosteric nature of the transcription factor and complement the
-results shown by @Garcia2011 and @Brewster2014. Although the current work
+results shown by @Garcia2011c and @Brewster2014. Although the current work
 focuses on systems with a single site of repression, in [Materials \&
 Methods](#ch2_methods), we utilize data from @Brewster2014, in which multiple
 sites of repression are explored, to characterize the allosteric free energy
@@ -39,12 +39,12 @@ profile using Bayesian inferential methods [@Sivia2006]. We then use
 inducer, repressor copy number, and DNA binding energy and compare these
 predictions against experimental measurements. To obtain induction profiles for
 a set of strains with varying repressor copy numbers, we used modified *lacI*
-ribosomal binding sites from @Garcia2011 to generate strains with mean repressor
+ribosomal binding sites from @Garcia2011c to generate strains with mean repressor
 copy number per cell of $R = 22 \pm 4$, $60 \pm 20$, $124 \pm 30$, $260 \pm 40$,
 $1220 \pm 160$, and $1740 \pm 340$, where the error denotes standard deviation
-of at least three replicates as measured by @Garcia2011. We note that $R$ refers
+of at least three replicates as measured by @Garcia2011c. We note that $R$ refers
 to the number of repressor dimers in the cell, which is twice the number of
-repressor tetramers reported by @Garcia2011; since both heads of the repressor
+repressor tetramers reported by @Garcia2011c; since both heads of the repressor
 are assumed to always be either specifically or non-specifically bound to the
 genome, the two repressor dimers in each LacI tetramer can be considered
 independently. Gene expression was measured using a Yellow Fluorescent Protein
@@ -55,7 +55,7 @@ strains. The repressor-operator binding energies (O1 $\Delta\varepsilon_{RA} =
 -15.3 \pm 0.2~k_BT$, O2 $\Delta\varepsilon_{RA} = -13.9~k_BT \pm 0.2$, and O3
 $\Delta\varepsilon_{RA} = -9.7 \pm 0.1~k_BT$) were previously inferred by
 measuring the fold-change of the *lac* system at different repressor copy
-numbers, where the error arises from model fitting [@Garcia2011]. Additionally,
+numbers, where the error arises from model fitting [@Garcia2011c]. Additionally,
 we were able to obtain the value $\Delta \varepsilon_{AI} = 4.5\; k_BT$ by
 fitting to previous data as discussed in [Materials \& Methods](#ch2_methods),
 Section XXX. We measure fold-change over a range of known IPTG concentrations
@@ -97,7 +97,7 @@ previous LacI fold-change data [@Brewster2014] to infer that
 $\Delta\varepsilon_{AI} = 4.5~k_BT$ (see XXX). Rather than fitting $K_A$ and
 $K_I$ to our entire data set of eighteen unique constructs, we performed
 Bayesian parameter estimation on data from a single strain with $R=260$ and an
-O2 operator ($\Delta\varepsilon_{RA}=-13.9~k_BT$ [@Garcia2011]) shown in
+O2 operator ($\Delta\varepsilon_{RA}=-13.9~k_BT$ [@Garcia2011c]) shown in
 [@Fig:ch2_fig04](D) (white circles). Using Markov Chain Monte Carlo, we
 determine the most likely parameter values to be $K_A=139^{+29}_{-22} \times
 10^{-6} \, \text{M}$ and $K_I=0.53^{+0.04}_{-0.04} \times 10^{-6}\, \text{M}$,
@@ -162,7 +162,7 @@ profiles for different biological control parameters"}
 
 We tested the predictions shown in [@Fig:ch2_fig04] by measuring fold-change
 induction profiles in strains with a broad range of repressor copy numbers and
-repressor binding energies as characterized in @Garcia2011. With a few notable
+repressor binding energies as characterized in @Garcia2011c. With a few notable
 exceptions, the results shown in [@Fig:ch2_fig05] demonstrate agreement between
 theory and experiment. We note that there was an apparently systematic shift in
 the O3 $\Delta\varepsilon_{RA} = -9.7\ k_BT$ strains ([@Fig:ch2_fig05](C)) and
@@ -178,7 +178,7 @@ relaxing the weak promoter approximation, and accounting for variations in gene
 and repressor copy number throughout the cell cycle, but none explained the
 observed discrepancies. As an additional test of our model, we considered
 strains using the synthetic Oid operator which exhibits an especially strong
-binding energy of $\Delta\varepsilon_{RA}=-17~k_B T$ [@Garcia2011]. The global
+binding energy of $\Delta\varepsilon_{RA}=-17~k_B T$ [@Garcia2011c]. The global
 fit agrees well with the Oid microscopy data, though it asserts a stronger Oid
 binding energy of $\Delta\varepsilon_{RA}=-17.7~k_B T$ (see Appendix XXX).
 
