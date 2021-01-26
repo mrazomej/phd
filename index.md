@@ -40,14 +40,14 @@ grid_navigation:
     #   url: 'chapter_01'
     - title: >
          Chapter II: Allosteric Gene Regulation
-      excerpt: A Predictive Theory of Allosteric Induction
+      excerpt: Understanding the physics of allosteric gene regulation
       cta: read
       url: 'chapter_02'
-    # - title: >
-    #      Chapter III: Evolutionary Adaptation 
-    #   excerpt: Using the simple repression state variable to predict mutant phenotypes
-    #   cta: read
-    #   url: 'chapter_03'
+    - title: >
+         Chapter III: Information Processing
+      excerpt: Predicting how many bits of information cells can process
+      cta: read
+      url: 'chapter_03'
     # - title: >
     #      Chapter IV: Physiological Adaptation 
     #   excerpt: On the physiological adaptability of a simple genetic circuit 

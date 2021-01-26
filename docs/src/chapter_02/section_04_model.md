@@ -12,7 +12,7 @@ the operator, which increases gene expression. Simple repression motifs in the
 absence of inducer have been previously characterized by an equilibrium model
 where the probability of each state of repressor and RNAP promoter occupancy is
 dictated by the Boltzmann distribution [@Ackers1982; @Buchler2003; @Vilar2003;
-@Bintu2005a; @Garcia2011; @Brewster2014] (we note that non-equilibrium models of
+@Bintu2005a; @Garcia2011c; @Brewster2014] (we note that non-equilibrium models of
 simple repression have been shown to have the same functional form that we
 derive below [@Phillips2015a]). We extend these models to consider allostery by
 accounting for the equilibrium state of the repressor through the MWC model.
@@ -56,7 +56,7 @@ sums of the active and inactive states.](ch2_fig02){#fig:ch2_fig02
 short-caption="States and weights for the simple repression motif."}
 
 Thermodynamic models of transcription [@Ackers1982; @Buchler2003; @Vilar2003;
-@Bintu2005; @Bintu2005a; @Kuhlman2007; @Daber2011a; @Garcia2011; @Brewster2014;
+@Bintu2005; @Bintu2005a; @Kuhlman2007; @Daber2011a; @Garcia2011c; @Brewster2014;
 @Weinert2014] posit that gene expression is proportional to the probability that
 the RNAP is bound to the promoter $p_{\text{bound}}$, which is given by
 $$

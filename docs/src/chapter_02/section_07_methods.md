@@ -4,7 +4,7 @@
 
 All strains used in these experiments were derived from *E. coli* K12 MG1655
 with the *lac* operon removed, adapted from those created and described in
-@Garcia2011 [@Garcia2011B]. Briefly, the operator variants and YFP reporter gene
+@Garcia2011c [@Garcia2011b]. Briefly, the operator variants and YFP reporter gene
 were cloned into a pZS25 background which contains a *lacUV5* promoter that
 drives expression as is shown schematically in . These constructs carried a
 kanamycin resistance gene and were integrated into the *galK* locus of the
@@ -12,7 +12,7 @@ chromosome using $\lambda$ Red recombineering [@Sharan2009]. The *lacI* gene was
 constitutively expressed via a P$_\mathrm{LtetO\hbox{-}1}$ promoter [@Lutz1997],
 with ribosomal binding site mutations made to vary the LacI copy number as
 described in @Salis2009 using site-directed mutagenesis (Quickchange II;
-Stratagene), with further details in @Garcia2011. These *lacI* constructs
+Stratagene), with further details in @Garcia2011c. These *lacI* constructs
 carried a chloramphenicol resistance gene and were integrated into the *ybcN*
 locus of the chromosome. Final strain construction was achieved by performing
 repeated P1 transduction [@Thomason2007] of the different operator and *lacI*
@@ -32,7 +32,7 @@ suggested by previous work [@FernandezCastane2012].
 To make this theory applicable to transcription factors with any number of DNA
 binding domains, we used a different definition for repressor copy number than
 has been used previously. We define the LacI copy number as the average number
-of repressor dimers per cell whereas in @Garcia2011, the copy number is defined
+of repressor dimers per cell whereas in @Garcia2011c, the copy number is defined
 as the average number of repressor tetramers in each cell. To motivate this
 decision, we consider the fact that the LacI repressor molecule exists as a
 tetramer in *E. coli* [@Lewis1996] in which a single DNA binding domain is
@@ -41,7 +41,7 @@ described as dimer of dimers. Since each dimer is allosterically independent
 (i.e. either dimer can be allosterically active or inactive, independent of the
 configuration of the other dimer) [@Daber2009], a single LacI tetramer can be
 treated as two functional repressors. Therefore, we have simply multiplied the
-number of repressors reported in @Garcia2011 by a factor of two. This factor is
+number of repressors reported in @Garcia2011c by a factor of two. This factor is
 included as a keyword argument in the numerous Python functions used to perform
 this analysis, as discussed in the code documentation.
 
