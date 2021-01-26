@@ -1,0 +1,75 @@
+## Materials and Methods
+
+### *E. coli* strains
+
+All strains used in this study were originally made for [@Razo-Mejia2018]. We
+chose a subset of three repressor copy numbers that span two orders of
+magnitude. We refer the reader to [@Razo-Mejia2018] for details on the
+construction of these strains. Briefly, the strains have a construct consisting
+of the *lacUV5* promoter and one of three possible binding sites for the *lac*
+repressor (O1, O2, and O3) controlling the expression of a YFP reporter gene.
+This construct is integrated into the genome at the *galK* locus. The number of
+repressors per cell is varied by changing the ribosomal binding site controlling
+the translation of the *lac* repressor gene. The repressor constructs were
+integrated in the *ybcN* locus. Finally, all strains used in this work
+constitutively express an mCherry reporter from a low copy number plasmid. This
+serves as a volume marker that facilitates the segmentation of cells when
+processing microscopy images.
+
+### Growth conditions
+
+For all experiments, cultures were initiated from a 50% glycerol frozen stock at
+-80$^\circ$C. Three strains - autofluorescence ($auto$), $\Delta lacI$
+($\Delta$), and a strain with a known binding site and repressor copy number
+($R$) - were inoculated into individual tubes with 2 mL of Lysogeny Broth (LB
+Miller Powder, BD Medical) with 20 $\mu$g/mL of chloramphenicol and 30 $\mu$g/mL
+of kanamycin. These cultures were grown overnight at 37$^\circ$C with rapid
+agitation to reach saturation. The saturated cultures were diluted 1:1000 into
+500 $\mu$L of M9 minimal media (M9 5X Salts, Sigma-Aldrich M6030; 2 mM magnesium
+sulfate, Mallinckrodt Chemicals 6066-04; 100 mM calcium chloride, Fisher
+Chemicals C79-500) supplemented with 0.5% (w/v) glucose on a 2 mL 96-deep-well
+plate. The $R$ strain was diluted into 12 different wells with minimal media,
+each with a different IPTG concentration (0 $\mu$M, 0.1 $\mu$M, 5 $\mu$M, 10
+$\mu$M, 25 $\mu$M, 50 $\mu$M, 75 $\mu$M, 100 $\mu$M, 250 $\mu$M, 500 $\mu M$,
+1000 $\mu$M, 5000 $\mu$M) while the $auto$ and $\Delta$ strains were diluted
+into two wells (0 $\mu$M, 5000 $\mu$M). Each of the IPTG concentrations came
+from a single preparation stock kept in 100-fold concentrated aliquots. The 96
+well plate was then incubated at 37$^\circ$C with rapid agitation for 8 hours
+before imaging.
+
+### Microscopy imaging procedure
+
+The microscopy pipeline used for this work exactly followed the steps from
+[@Razo-Mejia2018]. Briefly, twelve 2% agarose (Life Technologies UltraPure
+Agarose, Cat.No. 16500100) gels were made out of M9 media (or PBS buffer) with
+the corresponding IPTG concentration (see growth conditions) and placed between
+two glass coverslips for them to solidify after microwaving. After the 8 hour
+incubation in minimal media, 1 $\mu$L of a 1:10 dilution of the cultures into
+fresh media or PBS buffer was placed into small squares (roughly 10 mm $\times$
+10 mm) of the different agarose gels. A total of 16 agarose squares - 12
+concentrations of IPTG for the $R$ strain, 2 concentrations for the $\Delta$ and
+2 for the $auto$ strain - were mounted into a single glass-bottom dish (Ted
+Pella Wilco Dish, Cat. No. 14027-20) that was sealed with parafilm.
+
+All imaging was done on an inverted fluorescent microscope (Nikon Ti-Eclipse)
+with custom-built laser illumination system. The YFP fluorescence (quantitative
+reporter) was imaged with a CrystaLaser 514 nm excitation laser coupled with a
+laser-optimized (Semrock Cat. No. LF514-C-000) emission filter. All strains,
+including the $auto$ strain, included a constitutively expressed mCherry protein
+to aid the segmentation. Therefore, for each image three channels (YFP, On
+average 30 images with roughly 20 cells per condition were taken. 25 images of a
+fluorescent slide and 25 images of the camera background noise were taken every
+imaging session in order to flatten the illumination. The image processing
+pipeline for this work is exactly the same as in [@Razo-Mejia2018].
+
+### Data and Code Availability
+
+All data and custom scripts were collected and stored using Git version control.
+Code for raw data processing, theoretical analysis, and figure generation is
+available on the GitHub repository
+(<https://github.com/RPGroup-PBoC/chann_cap>). The code can also be accessed via
+the paper website (<https://www.rpgroup.caltech.edu/chann_cap/>). Raw microscopy
+data are stored on the CaltechDATA data repository and can be accessed via DOI
+<https://doi.org/10.22002/d1.1184>. Bootstrap estimates of experimental channel
+capacity are also available on the CaltechDATA data repository via
+<https://doi.org/10.22002/D1.1185>.
