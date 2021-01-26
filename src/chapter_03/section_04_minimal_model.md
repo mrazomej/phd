@@ -105,7 +105,7 @@ degradation terms, respectively, the system of ODEs can then be written as (See
 for full definition of these matrices)
 $$
 \begin{split}
-    \frac{\mathbf{P}(m, p)}{dt} &= 
+    \frac{d \mathbf{P}(m, p)}{dt} &= 
     \left( \mathbf{K} - \mathbf{R}_m -m\mathbf{\Gamma} _m 
     -m \mathbf{R}_p -p\mathbf{\Gamma}_p \right) \mathbf{P}(m, p)\\
     &+ \mathbf{R}_m \mathbf{P}(m-1, p)
