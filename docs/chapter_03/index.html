@@ -100,7 +100,8 @@
 												Summary
 												<i class="icon icon--chevron-down"></i>
 										</p><!-- /.hero-subheader__author-title -->
-										<p>TBD.
+										<p>Living organisms are constantly sensing intra and extracellular cues and responding accordingly. The quality and precision of such responses can mean the difference between surviving or not certain challenges; therefore, there is a constant selection pressure for cells to gather enough information from any stimulus in order to build an adequate response. In this context, the information that cells can obtain has a precise mathematical definition measured-—just as in computers—-in bits.
+In this chapter our goal is to predict how many bits of information can a cell harboring a simple genetic circuit process. To do so, I write down a theoretical model to predict the full distribution of gene expression based on the physics of this molecular process. I calibrate our model with previous information in order to perform parameter-free predictions. To test the model, I compare the predictions with experimental single-cell gene expression data finding great agreement.
 </p>
 									</div><!-- /.hero-subheader__author -->
 								</div><!-- /.align-inner -->
@@ -216,7 +217,7 @@ with experimental inferences of the channel capacity. -->
 \qquad(4)$$</span></span> As we will discuss later, the protein degradation term <span class="math inline"><em>γ</em><sub><em>p</em></sub></span> is set to zero since active protein degradation is slow compared to the cell cycle of exponentially growing bacteria, but rather we explicitly implement binomial partitioning of the proteins into daughter cells upon division <span class="citation" data-cites="Maurizi1992"> [<a href="#ref-Maurizi1992" role="doc-biblioref">44</a>]</span>.</p>
 <p>It is convenient to rewrite these equations in a compact matrix notation <span class="citation" data-cites="Sanchez2013"> [<a href="#ref-Sanchez2013" role="doc-biblioref">38</a>]</span>. For this we define the vector <span class="math inline"><strong>P</strong>(<em>m</em>, <em>p</em>)</span> as <span id="eq:ch3_eq05"><span class="math display"><strong>P</strong>(<em>m</em>, <em>p</em>) = (<em>P</em><sub><em>A</em></sub>(<em>m</em>, <em>p</em>), <em>P</em><sub><em>I</em></sub>(<em>m</em>, <em>p</em>), <em>P</em><sub><em>R</em></sub>(<em>m</em>, <em>p</em>))<sup><em>T</em></sup>,   (5)</span></span> where <span class="math inline"><sup><em>T</em></sup></span> is the transpose. By defining the matrices <span class="math inline"><strong>K</strong></span> to contain the promoter state transitions, <span class="math inline"><strong>R</strong><sub><em>m</em></sub></span> and <span class="math inline"><strong>Γ</strong><sub><em>m</em></sub></span> to contain the mRNA production and degradation terms, respectively, and <span class="math inline"><strong>R</strong><sub><em>p</em></sub></span> and <span class="math inline"><strong>Γ</strong><sub><em>p</em></sub></span> to contain the protein production and degradation terms, respectively, the system of ODEs can then be written as (See for full definition of these matrices) <span id="eq:ch3_eq06"><span class="math display">$$
 \begin{split}
-    \frac{\mathbf{P}(m, p)}{dt} &amp;= 
+    \frac{d \mathbf{P}(m, p)}{dt} &amp;= 
     \left( \mathbf{K} - \mathbf{R}_m -m\mathbf{\Gamma} _m 
     -m \mathbf{R}_p -p\mathbf{\Gamma}_p \right) \mathbf{P}(m, p)\\
     &amp;+ \mathbf{R}_m \mathbf{P}(m-1, p)
