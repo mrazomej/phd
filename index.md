@@ -15,14 +15,14 @@ author:
     title: Summary
     title_url: '#'
     description: >
-        A distinctive feature of what we call "Life" has to do with the ability
-        of organisms to gather information from the environment, generate an 
-        internal representation of such information, and respond accordingly to
-        maximize the chances of surviving. This website presents the text of my
-        Ph.D. dissertation in which I explore the ability of cells to process
-        information at the molecular level. All research, unless otherwise 
-        stated, was performed at the California Institute of Technology under 
-        the guidance of <a href="http://rpgroup.caltech.edu/">Rob Phillips</a>.
+      A distinctive feature of what we call "Life" has to do with the ability
+      of organisms to gather information from the environment, generate an 
+      internal representation of such information, and respond accordingly to
+      maximize the chances of surviving. This website presents the text of my
+      Ph.D. dissertation in which I explore the ability of cells to process
+      information at the molecular level. All research, unless otherwise 
+      stated, was performed at the California Institute of Technology under 
+      the guidance of <a href="http://rpgroup.caltech.edu/">Rob Phillips</a>.
 
 # Grid navigation
 grid_navigation:
