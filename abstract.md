@@ -3,7 +3,7 @@
 layout: default
 keywords:
 comments: true
-image: islands.png
+image: chiapas.jpg
 permalink: abstract
 
 # Hero section
