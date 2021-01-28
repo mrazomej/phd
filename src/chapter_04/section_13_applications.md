@@ -23,9 +23,9 @@ allosteric states of the repressor. We note that these states and weights
 exactly match and yield the same fold-change equation as XXX, 
 $$
 \text{fold-change} \approx 
-\left(1 + {\left(1 + {c \over K_A}\right)^n \over 
-\left(1 + {c \over K_A}\right)^n + e^{\beta\Delta\varepsilon_{AI}}
-\left(1 + {c \over K_I}\right)^n} {R \over N_{NS}}
+\left(1 + \frac{\left(1 + \frac{c}{K_A}\right)^n}{
+\left(1 + \frac{c}{K_A}\right)^n + e^{\beta\Delta\varepsilon_{AI}}
+\left(1 + \frac{c}{K_I}\right)^n} \frac{R}{N_{NS}}
 e^{-\beta\Delta\varepsilon_{RA}}\right)^{-1},
 $${#eq:ch4_corepression}
 where $c$ now represents the concentration of the corepressor molecule.
@@ -58,13 +58,13 @@ approximation that the promoter is weak generates a fold-change equation
 of the form 
 $$
 \text{fold-change} = 
-{1 + {\left(1 + {c \over K_A}\right)^n \over 
-\left( 1 + {c \over K_A}\right)^n + e^{\beta\Delta\varepsilon_{AI}}
-\left(1 + {c \over K_I}\right)^n}{A \over N_{NS}}
-e^{-\beta\Delta\varepsilon_{AA}}e^{-\beta\varepsilon_{AP}} \over 
-1 + {\left(1 + {c \over K_A}\right)^n \over 
-\left(1 + {c \over K_A}\right)^n + e^{\beta\Delta\varepsilon_{AI}}
-\left(1 + {c \over K_I}\right)^n}{A \over N_{NS}}
+\frac{1 + \frac{\left(1 + \frac{c}{K_A}\right)^n}{
+\left( 1 + \frac{c}{K_A}\right)^n + e^{\beta\Delta\varepsilon_{AI}}
+\left(1 + \frac{c}{K_I}\right)^n}\frac{A}{N_{NS}}
+e^{-\beta\Delta\varepsilon_{AA}}e^{-\beta\varepsilon_{AP}}}{
+1 + \frac{\left(1 + \frac{c}{K_A}\right)^n}{
+\left(1 + \frac{c}{K_A}\right)^n + e^{\beta\Delta\varepsilon_{AI}}
+\left(1 + \frac{c}{K_I}\right)^n}\frac{A}{N_{NS}}
 e^{-\beta\Delta\varepsilon_{AA}}},
 $${#eq:ch4_activation}
 where $A$ is the total number of activators per cell, $c$ is the concentration

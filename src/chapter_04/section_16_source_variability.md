@@ -58,32 +58,33 @@ $$
 From a kinetic model of this transcriptional regulation we know that the mean
 expression level for a single unregulated promoter is given by [@Jones2014a]
 $$
-\left\langle m \right\rangle_1(R = 0) = {r \over \gamma},
+\left\langle m \right\rangle_1(R = 0) = \frac{r}{\gamma},
 $$
 where $r$ is the mRNA production rate and $\gamma$ is the mRNA degradation rate.
 For a single regulated promoter then the mean mRNA copy number is given by
 $$
-\begin{aligned}
-\left\langle m \right\rangle_1 (R > 0) &= {r \over \gamma} \times 
+\begin{split}
+\left\langle m \right\rangle_1 (R > 0) &= \frac{r}{\gamma} \times 
 \text{fold-change},\\
-& = {r \over \gamma} \times {1 \over
-1 + {R p_{\text{act}}\over N_{NS}} e^{-\beta \Delta \varepsilon_{RA}}}.\end{aligned}
+& = \frac{r}{\gamma} \times \frac{1}{
+1 + \frac{R p_{\text{act}}}{N_{NS}} e^{-\beta \Delta \varepsilon_{RA}}}.
+\end{split}
 $$
 
 This means that when we compute the fold-change for the case of
 independent promoters we have
 $$
 \begin{split}
-\text{fold-change} &= {\left\langle m \right\rangle(R > 0) \over 
+\text{fold-change} &= \frac{\left\langle m \right\rangle(R > 0)}{
 \left\langle m \right\rangle(R = 0)}, \\
-&= {(1 + f) \left\langle m \right\rangle_1 (R > 0) \over
+&= \frac{(1 + f) \left\langle m \right\rangle_1 (R > 0)}{
 (1 + f) \left\langle m \right\rangle_1 (R = 0)}.
 \end{split}
 $$
 Since the $(1 + f)$ factor cancels, the expression for fold-change is not
 altered obtaining
 $$
-\text{fold-change} = {1 \over 1 + {R p_{\text{act}}\over N_{NS}}
+\text{fold-change} = \frac{1}{1 + \frac{R p_{\text{act}}}{N_{NS}}
 e^{-\beta \Delta\varepsilon_{RA}}}.
 $$
 
@@ -93,7 +94,7 @@ When we relax the promoters independence assumption we can use the grand
 canonical ensemble formulation as described in [@Weinert2014]. In this
 description the fold-change equation is given by
 $$
-\text{fold-change} = {1 \over 1 + \lambda_r e^{-\beta\Delta\varepsilon_{RA}}},
+\text{fold-change} = \frac{1}{1 + \lambda_r e^{-\beta\Delta\varepsilon_{RA}}},
 $$
 where $\lambda_r$ is the fugacity of the repressor. The value of this fugacity
 is obtained by taking into account all of the repressor reservoirs considered in
@@ -102,7 +103,8 @@ specific binding sites $\left\langle R_S \right\rangle$ and repressors bound to
 non-specific binding sites $\left\langle R_{NS} \right\rangle$. These two
 reservoirs are connected through the constraint
 $$
-\left\langle R_{\text{tot}} \right\rangle= \left\langle R_S \right\rangle+ \left\langle R_{NS} \right\rangle,
+\left\langle R_{\text{tot}} \right\rangle = 
+\left\langle R_S \right\rangle+ \left\langle R_{NS} \right\rangle,
 $${#eq:ch4_Rtot} 
 where $\left\langle R_{\text{tot}} \right\rangle$ is the repressor copy number
 as determined by an independent method -- quantitative westerns as in
@@ -110,11 +112,11 @@ as determined by an independent method -- quantitative westerns as in
 [@Weinert2014] the repressor reservoir expressions are given by
 $$
 \left\langle R_S \right\rangle= N_{S}
-{\lambda_r e{-\beta\Delta\varepsilon_{RA}} \over
+\frac{\lambda_r e{-\beta\Delta\varepsilon_{RA}}}{
 1 + \lambda_r e^{-\beta\Delta\varepsilon_{RA}}},
 $${#eq:ch4_Rs}
 and
-$$\left\langle R_{NS} \right\rangle= N_{NS}{\lambda_r \over 1 + \lambda_r},
+$$\left\langle R_{NS} \right\rangle= N_{NS}\frac{\lambda_r}{1 + \lambda_r},
 $${#eq:ch4_Rns}
 where $N_{S}$ is the number of specific binding sites for the repressor, i.e.
 the number of promoters, and $N_{NS}$ is the number of non-specific binding
@@ -125,9 +127,9 @@ methods we can constrain the value of $\lambda_r$ using in combination with and
 XX. This is
 $$
 \left\langle R_{\text{tot}} \right\rangle = 
-N_{S}{\lambda_r e{-\beta\Delta\varepsilon_{RA}} \over 1 + 
+N_{S}\frac{\lambda_r e{-\beta\Delta\varepsilon_{RA}}}{1 + 
 \lambda_r e^{-\beta\Delta\varepsilon_{RA}}} +
-N_{NS}{\lambda_r \over 1 + \lambda_r}.
+N_{NS}\frac{\lambda_r}{1 + \lambda_r}.
 $$ 
 Distributing terms gives a second order polynomial on $\lambda_r$ of the form
 $$
@@ -172,9 +174,9 @@ $$
 If we again assume that having two copies of the promoter produces twice as much
 as one promoter this is given by
 $$
-\left\langle m \right\rangle= (1 - f) {r \over \gamma} \times
+\left\langle m \right\rangle= (1 - f) \frac{r}{\gamma} \times
 \text{fold-change}(N_{S}= 1) +
-f {(2r) \over \gamma} \times \text{fold-change}(N_{S}= 2),
+f \frac{(2r)}{\gamma} \times \text{fold-change}(N_{S}= 2),
 $$ 
 where we explicitly state that the fold-change function depends on the number of
 specific binding sites.
@@ -182,17 +184,17 @@ specific binding sites.
 For the fold-change equation of the total mean number of mRNA we then have 
 $$
 \text{fold-change} =
-{ {r \over \gamma} \left[ (1 - f) \times \text{fold-change}(Ns = 1) +
+\frac{ \frac{r}{\gamma} \left[ (1 - f) \times \text{fold-change}(Ns = 1) +
 2 f \times \text{fold-change}(N_{S}=2) \right]
-\over
-{r \over \gamma} \left[ (1 - f) + 2 f \right]. }
+}{
+\frac{r}{\gamma} \left[ (1 - f) + 2 f \right]. }
 $$ 
 When substituting the definition of fold-change we obtain our
 final expression 
 $$
-\text{fold-change} = {1 \over (1 + f)} \left[
-(1 - f) {1 \over 1 + {R \over N_{NS}} e^{-\beta\Delta\varepsilon_{RA}}} +
-2 f {1 \over 1 + \lambda_r e^{-\beta\Delta\varepsilon_{RA}}} \right].
+\text{fold-change} = \frac{1}{(1 + f)} \left[
+(1 - f) \frac{1}{1 + \frac{R}{N_{NS}} e^{-\beta\Delta\varepsilon_{RA}}} +
+2 f \frac{1}{1 + \lambda_r e^{-\beta\Delta\varepsilon_{RA}}} \right].
 $${$eq:ch4_foldchange_double}
 
 Using we can evaluate the effect of having two promoters for a fraction of the

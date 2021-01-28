@@ -26,18 +26,18 @@ variable. Under the weak promoter approximation the fold-change equation is
 equivalent to a two-state Fermi function of having the promoter being occupied
 by a repressor or having an empty promoter. This is
 $$
-\text{fold-change} \rightarrow p^r_{bound} = {1 \over 1 +
-{R \over N_{NS}} e^{-\beta\Delta\varepsilon_{RA}}}.
+\text{fold-change} \rightarrow p^r_{bound} = \frac{1}{ 1 +
+\frac{R}{N_{NS}} e^{-\beta\Delta\varepsilon_{RA}}}.
 $$ 
 This expression can be rewritten as
 $$
-p^r_{bound} = {1 \over 1 + e^{-\beta\Delta E}},
+p^r_{bound} = \frac{1}{ 1 + e^{-\beta\Delta E}},
 $$
 where $\Delta E$ is the free energy difference between the empty and occupied
 promoter. This definition implies that
 $$
 \Delta E\equiv \overbrace{\Delta\varepsilon_{RA}}^{\text{enthalpic term}}
-  - \overbrace{k_BT \ln \left( {R \over N_{NS}} \right)}^{\text{entropic term}}.
+  - \overbrace{k_BT \ln \left( \frac{R}{N_{NS}} \right)}^{\text{entropic term}}.
 $$
 
 Given that the parameter $\Delta\varepsilon_{RA}$ is inferred rather than
@@ -48,7 +48,7 @@ rather than its individual components. For example, if for a given operator and
 a given repressor copy number we choose a different value of $N_{NS}$, it still
 should hold true that
 $$
-\Delta E= \Delta\varepsilon_{RA}' - k_BT \ln \left( {R \over N_{NS}'} \right),
+\Delta E= \Delta\varepsilon_{RA}' - k_BT \ln \left( \frac{R}{N_{NS}'} \right),
 $$
 where $N_{NS}'$ is the changed value of the non-specific background and
 $\Delta\varepsilon_{RA}'$ is a different value for the repressor binding energy
@@ -58,14 +58,14 @@ Let $N_{NS}' \equiv \alpha N_{NS}$, since the value of $\Delta E$ has to be
 preserved it should be true that
 $$
 \Delta E= \Delta\varepsilon_{RA}' - 
-k_BT \ln \left( {R \over \alpha N_{NS}} \right)
-= \Delta\varepsilon_{RA} - k_BT \ln \left( {R \over N_{NS}} \right).
+k_BT \ln \left( \frac{R}{\alpha N_{NS}} \right)
+= \Delta\varepsilon_{RA} - k_BT \ln \left( \frac{R}{N_{NS}} \right).
 $${#eq:new_Nns}
 Solving for $\Delta\varepsilon_{RA}'$ gives 
 $$
 \begin{split}
 \Delta\varepsilon_{RA}' &= \Delta\varepsilon_{RA} + 
-k_BT \ln \left( {N_{NS} \over \alpha N_{NS}} \right)\\
+k_BT \ln \left( \frac{N_{NS}}{\alpha N_{NS}} \right)\\
 &= \Delta\varepsilon_{RA} - k_BT \ln \alpha.
 \end{split}
 $${#eq:ch4_eRA_redef}
@@ -77,7 +77,7 @@ promoters. The same cannot be said about the $\Delta\varepsilon_{AI}$ parameter.
 The parameter $\Delta\varepsilon_{AI}$ by itself sets the fraction of inactive
 repressors in the absence of inducer via
 $$
-p_{act} = {1 \over 1 + e^{-\beta\Delta\varepsilon_{AI}}},
+p_{act} = \frac{1}{1 + e^{-\beta\Delta\varepsilon_{AI}}},
 $${#eq:ch4_pactive}
 where we have again a Fermi function for a two-state system in which the
 repressor can be in an active or inactive state.
@@ -93,16 +93,16 @@ One could argue that for the case of a single promoter the fold-change equation
 does allow this parameter to be redefined in an arbitrary way since the full
 equation in the absence of inducer can be written as
 $$
-\text{fold-change} = {1 \over
-1 + \left( {1 \over 1 + e^{-\beta\Delta\varepsilon_{AI}}} \right)
-{R \over N_{NS}} e^{-\beta\Delta\varepsilon_{RA}}}.
+\text{fold-change} = \frac{1}{
+1 + \left( \frac{1}{1 + e^{-\beta\Delta\varepsilon_{AI}}} \right)
+\frac{R}{N_{NS}} e^{-\beta\Delta\varepsilon_{RA}}}.
 $$ 
 So when we define the free energy $\Delta E$ we would include an extra term of
 the form
 $$
 \Delta E= \Delta\varepsilon_{RA} - 
-k_BT \left[ \ln \left( {R \over N_{NS}} \right) +
-\ln \left( {1 \over 1 + e^{-\beta\Delta\varepsilon_{AI}}} \right) \right].
+k_BT \left[ \ln \left( \frac{R}{N_{NS}} \right) +
+\ln \left( \frac{1}{1 + e^{-\beta\Delta\varepsilon_{AI}}} \right) \right].
 $${#eq;free_energy_eAI}
 If we were only to use the statement brought up by the anonymous reviewer would
 be true since changes in $\Delta\varepsilon_{AI}$ could be compensated by
@@ -116,24 +116,24 @@ or using the Grand Canonical ensemble as detailed in [@Weinert2014]. Our point
 is more clearly seen in the case of the Canonical ensemble. Under this formalism
 the fold-change equation is given by [@Brewster2014]
 $$
-\text{fold-change} = {
-\sum_{m=0}^{\min (N,R)} {R! \over (N_{NS})^m (R - m)!}
+\text{fold-change} = \frac{
+\sum_{m=0}^{\min (N,R)} \frac{R!}{(N_{NS})^m (R - m)!}
 {N \choose m} e^{-\beta m \Delta\varepsilon_{RA}}(N - m)
-\over
-N \sum_{m=0}^{\min (N,R)} {R! \over (N_{NS})^m (R - m)!}
+}{
+N \sum_{m=0}^{\min (N,R)} \frac{R!}{(N_{NS})^m (R - m)!}
 {N \choose m} e^{-\beta m \Delta\varepsilon_{RA}}
 },
 $$ 
 where $N$ is the number of promoters. Notice that we can group the terms
 including $N_{NS}$ and $\Delta\varepsilon_{RA}$ as 
 $$
-\text{fold-change} = {
-\sum_{m=0}^{\min (N,R)} {R! \over (R - m)!}
-{N \choose m} \left({e^{-\beta \Delta\varepsilon_{RA}} \over N_{NS}}\right)^m (N - m)
-\over
-N \sum_{m=0}^{\min (N,R)} {R! \over (R - m)!}
-{N \choose m} \left({e^{-\beta \Delta\varepsilon_{RA}} \over N_{NS}}\right)^m
-},
+\text{fold-change} = \frac{
+\sum_{m=0}^{\min (N,R)} \frac{R!}{(R - m)!}
+{N \choose m} \left(
+\frac{e^{-\beta \Delta\varepsilon_{RA}}}{N_{NS}}\right)^m (N - m)
+}{
+N \sum_{m=0}^{\min (N,R)} \frac{R!}{(R - m)!}
+{N \choose m} \left(\frac{e^{-\beta \Delta\varepsilon_{RA}}}{N_{NS}}\right)^m},
 $${$eq:ch4_fold_change_multiple_canonical}
 to highlight that it is a combination of these two parameters that matters,
 rather than their individual values. For the case of the
