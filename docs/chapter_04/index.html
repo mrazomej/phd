@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+<title>Chapter IV</title>
+
+
+<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+    "HTML-CSS" : {
+        availableFonts : ["STIX"],
+        preferredFont : "Gyre Pagella",
+        webFont : "STIX-Web",
+        imageFont : null
+    },
+	  TeX: {
+		equationNumbers: {
+		  autoNumber: "AMS"
+		}
+	  },
+	  tex2jax: {
+		inlineMath: [['$','$']], 
+		displayMath: [['$$','$$']],
+		processEscapes: true,
+	  }
+	});
+  </script>
+  <style>
+	.eqnos { display: inline-block; position: relative; width: 100%; }
+	.eqnos br { display: none; }
+	.eqnos-number { position: absolute; right: 0em; top: 50%; line-height: 0; }
+  </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+<link rel="icon" href="https://mrazomej.github.io/phd//favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Alegreya|Lora&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://mrazomej.github.io/phd//doks-theme/assets/css/style.css">
+
+	</head>
+	<body class="grey" data-spy="scroll" data-target=".js-scrollspy">
+		
+
+
+	<header class="site-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+						<a href="https://mrazomej.github.io/phd//" class="site-header__logo"><i class="icon icon--chevron-left"></i> Home</a>
+					
+					
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</header><!-- /.site-header -->
+
+
+		<div class="hero-subheader" style="background-image: url(https://mrazomej.github.io/phd//doks-theme/assets/images/alaska.jpg); background-position: center; object-fit: cover; width:100%;">
+
+			<div class="container" style="background-color: rgba(0,0,0, 0.75); border:0.75px solid white;">
+				<div class="row">
+					<div class="col-md-7">
+						<div class="align-container" data-mh>
+							<div class="align-inner">
+								
+									<h2 class="hero-subheader__title">Chapter IV</h2>
+								
+								
+									<h1 class="hero-subheader__title">Supporting Information for Tuning Transcriptional Regulation through Signaling: A Predictive Theory of Allosteric Induction
+</h1>
+								
+								
+								<!-- 
+									
+										<a href="https://mrazomej.github.io/phd/chapter_03" class="btn btn--dark btn--rounded btn--w-icon btn--w-icon-left">
+											<i class="icon icon--arrow-left"></i>	
+										</a>
+									
+									
+										<a href="https://mrazomej.github.io/phd/chapter_05" class="btn btn--dark btn--rounded btn--w-icon">
+											<i class="icon icon--arrow-right"></i>
+										</a>
+									
+								 -->
+							</div><!-- /.align-inner -->
+						</div><!-- /.align-container -->
+					</div><!-- /.col -->
+					
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.hero-subheader -->
+		
+				<nav class="page-nav">
+					<div class="container" >
+						<div class="row" >
+							<div class="col-xs-12">
+								
+									<a href="https://mrazomej.github.io/phd/chapter_03" class="page-nav__item page-nav__item--prev">
+										<i class="icon icon--arrow-left"></i>
+										Chapter 3
+									</a><!-- /.page-nav__item -->
+								
+								
+									<a href="https://mrazomej.github.io/phd/chapter_05" class="page-nav__item page-nav__item--next">
+										Chapter 5
+										<i class="icon icon--arrow-right"></i>
+									</a><!-- /.page-nav__item -->
+								
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.container -->
+				</nav><!-- /.page-nav -->
+			
+
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+						<div class="content">
+							<hr/>
+<p>A version of this chapter originally appeared as Razo-Mejia, M.†, Barnes, S.L.†, Belliveau, N.M.†, Chure, G.†, Einav, T.†, Lewis, M., and Phillips, R. (2018). Tuning transcriptional regulation through signaling: A predictive theory of allosteric induction. Cell Systems 6, 456-469.e10. DOI:https://doi.org/10.1016/j.cels.2018.02.004. † M.R.M, S.L.B, N.M.B, G.C., and T.E. contributed equally to this work from the theoretical underpinnings to the experimental design and execution. M.R.M, S.L.B, N.M.B, G.C, T.E., and R.P. wrote the paper. M.L. provided guidance and advice.</p>
+<h2 id="abstract">Abstract</h2>
+<p>Allosteric regulation is found across all domains of life, yet we still lack simple, predictive theories that directly link the experimentally tunable parameters of a system to its input-output response. To that end, we present a general theory of allosteric transcriptional regulation using the Monod-Wyman-Changeux model. We rigorously test this model using the ubiquitous simple repression motif in bacteria by first predicting the behavior of strains that span a large range of repressor copy numbers and DNA binding strengths and then constructing and measuring their response. Our model not only accurately captures the induction profiles of these strains but also enables us to derive analytic expressions for key properties such as the dynamic range and <span class="math inline">[<em>E</em><em>C</em><sub>50</sub>]</span>. Finally, we derive an expression for the free energy of allosteric repressors which enables us to collapse our experimental data onto a single master curve that captures the diverse phenomenology of the induction profiles.</p>
+<h2 id="inferring-allosteric-parameters-from-previous-data">Inferring Allosteric Parameters from Previous Data</h2>
+<p>The fold-change profile described by features three unknown parameters <span class="math inline"><em>K</em><sub><em>A</em></sub></span>, <span class="math inline"><em>K</em><sub><em>I</em></sub></span>, and <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span>. In this section, we explore different conceptual approaches to determining these parameters. We first discuss how the induction titration profile of the simple repression constructs used in this paper are not sufficient to determine all three MWC parameters simultaneously, since multiple degenerate sets of parameters can produce the same fold-change response. We then utilize an additional data set from <span class="citation" data-cites="Brewster2014"> [<a href="#ref-Brewster2014" role="doc-biblioref">22</a>]</span> to determine the parameter <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub> = 4.5 <em>k</em><sub><em>B</em></sub><em>T</em></span>, after which the remaining parameters <span class="math inline"><em>K</em><sub><em>A</em></sub></span> and <span class="math inline"><em>K</em><sub><em>I</em></sub></span> can be extracted from any induction profile with no further degeneracy.</p>
+<h3 id="degenerate-parameter-values">Degenerate Parameter Values</h3>
+<p>In this section, we discuss how multiple sets of parameters may yield identical fold-change profiles. More precisely, we shall show that if we try to fit the data in to the fold-change and extract the three unknown parameters (<span class="math inline"><em>K</em><sub><em>A</em></sub></span>, <span class="math inline"><em>K</em><sub><em>I</em></sub></span>, and <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span>), then multiple degenerate parameter sets would yield equally good fits. In other words, this data set alone is insufficient to uniquely determine the actual physical parameter values of the system. This problem persists even when fitting multiple data sets simultaneously as in Section "".</p>
+<p>In , we fit the <span class="math inline"><em>R</em> = 260</span> data by fixing <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span> to the value shown on the <span class="math inline"><em>x</em></span>-axis and determine the parameters <span class="math inline"><em>K</em><sub><em>A</em></sub></span> and <span class="math inline"><em>K</em><sub><em>I</em></sub></span> given this constraint. We use the fold-change function but with <span class="math inline"><em>β</em><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub></span> modified to the form <span class="math inline"><em>β</em><em>Δ</em><em>ε̃</em><sub><em>R</em><em>A</em></sub></span> in to account for the underlying assumptions used when fitting previous data (see Section "" for a full explanation of why this modification is needed).</p>
+<p>The best-fit curves for several different values of <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span> are shown in . Note that these fold-change curves are nearly overlapping, demonstrating that different sets of parameters can yield nearly equivalent responses. Without more data, the relationships between the parameter values shown in represent the maximum information about the parameter values that can be extracted from the data. Additional experiments which independently measure any of these unknown parameters could resolve this degeneracy. For example, NMR measurements could be used to directly measure the fraction <span class="math inline">(1 + <em>e</em><sup> − <em>β</em><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></sup>)<sup> − 1</sup></span> of active repressors in the absence of IPTG <span class="citation" data-cites="Gardino2003 Boulton2016"> [<a href="#ref-Gardino2003" role="doc-biblioref">16</a>,<a href="#ref-Boulton2016" role="doc-biblioref">17</a>]</span>.</p>
+<figure>
+<img src="ch4_fig01.png" id="fig:ch4_fig01" data-short-caption="Multiple sets of parameters yield identical fold-change responses" alt="Figure 1: Multiple sets of parameters yield identical fold-change responses. (A) The data for the O2 strain (\Delta\varepsilon_{RA} = -13.9~k_BT) with R=260 in XXX was fit using XXX with n=2. \Delta\varepsilon_{AI} is forced to take on the value shown on the x-axis, while the K_A and K_I parameters are fit freely. (B) The resulting best-fit functions for several value of \Delta\varepsilon_{AI} all yield nearly identical fold-change responses." /><figcaption aria-hidden="true">Figure 1: <strong>Multiple sets of parameters yield identical fold-change responses</strong>. (A) The data for the O2 strain (<span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 13.9 <em>k</em><sub><em>B</em></sub><em>T</em></span>) with <span class="math inline"><em>R</em> = 260</span> in XXX was fit using XXX with <span class="math inline"><em>n</em> = 2</span>. <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span> is forced to take on the value shown on the <span class="math inline"><em>x</em></span>-axis, while the <span class="math inline"><em>K</em><sub><em>A</em></sub></span> and <span class="math inline"><em>K</em><sub><em>I</em></sub></span> parameters are fit freely. (B) The resulting best-fit functions for several value of <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span> all yield nearly identical fold-change responses.</figcaption>
+</figure>
+<h3 id="computing-boldsymboldeltavarepsilon_ai">Computing <span class="math inline"><strong>Δ</strong><strong>ε</strong><sub><strong>A</strong><strong>I</strong></sub></span></h3>
+<p>As shown in the previous section, the fold-change response of a single strain is not sufficient to determine the three MWC parameters (<span class="math inline"><em>K</em><sub><em>A</em></sub></span>, <span class="math inline"><em>K</em><sub><em>I</em></sub></span>, and <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span>), since degenerate sets of parameters yield nearly identical fold-change responses. To circumvent this degeneracy, we now turn to some previous data from the <em>lac</em> system in order to determine the value of <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span> in for the induction of the Lac repressor. Specifically, we consider two previous sets of work from: (1) <span class="citation" data-cites="Garcia2011c"> [<a href="#ref-Garcia2011c" role="doc-biblioref">21</a>]</span> and (2) <span class="citation" data-cites="Brewster2014"> [<a href="#ref-Brewster2014" role="doc-biblioref">22</a>]</span>, both of which measured fold-change with the same simple repression system in the absence of inducer (<span class="math inline"><em>c</em> = 0</span>) but at various repressor copy numbers <span class="math inline"><em>R</em></span>. The original analysis for both data sets assumed that in the absence of inducer all of the Lac repressors were in the active state. As a result, the effective binding energies they extracted were a convolution of the DNA binding energy <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub></span> and the allosteric energy difference <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span> between the Lac repressor’s active and inactive states. We refer to this convoluted energy value as <span class="math inline"><em>Δ</em><em>ε̃</em><sub><em>R</em><em>A</em></sub></span>. We first disentangle the relationship between these parameters in Garcia and Phillips and then use this relationship to extract the value of <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span> from the Brewster et al. dataset.</p>
+<p>Garcia and Phillips determined the total repressor copy numbers <span class="math inline"><em>R</em></span> of different strains using quantitative Western blots. Then they measured the fold-change at these repressor copy numbers for simple repression constructs carrying the O1, O2, O3, and Oid <em>lac</em> operators integrated into the chromosome. These data were then fit to the following thermodynamic model to determine the repressor-DNA binding energies <span class="math inline"><em>Δ</em><em>ε̃</em><sub><em>R</em><em>A</em></sub></span> for each operator, <span id="eq:ch4_eq01"><span class="math display">$$
+\text{fold-change}(c=0) = \left(
+1+\frac{R}{N_{NS}}e^{-\beta \Delta\tilde{\varepsilon}_{RA}} \right)^{-1}.
+\qquad(1)$$</span></span> Note that this functional form does not exactly match our fold-change in the limit <span class="math inline"><em>c</em> = 0</span>, <span id="eq:ch4_eq02"><span class="math display">$$
+\text{fold-change}(c=0) = \left(
+1+\frac{1}{1+e^{-\beta \Delta \varepsilon_{AI}}}
+\frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}} \right)^{-1},
+\qquad(2)$$</span></span> since it is missing the factor <span class="math inline">$\frac{1}{1+e^{-\beta \Delta\varepsilon_{AI}}}$</span> which specifies what fraction of repressors are in the active state in the absence of inducer, <span id="eq:ch4_eq03"><span class="math display">$$
+\frac{1}{1+e^{-\beta \Delta\varepsilon_{AI}}} = p_A(0).
+\qquad(3)$$</span></span> In other words, Garcia and Phillips assumed that in the absence of inducer, all repressors were active. In terms of our notation, the convoluted energy values <span class="math inline"><em>Δ</em><em>ε̃</em><sub><em>R</em><em>A</em></sub></span> extracted by Garcia and Phillips (namely, <span class="math inline"><em>Δ</em><em>ε̃</em><sub><em>R</em><em>A</em></sub> =  − 15.3 <em>k</em><sub><em>B</em></sub><em>T</em></span> for O1 and <span class="math inline"><em>Δ</em><em>ε̃</em><sub><em>R</em><em>A</em></sub> =  − 17.0 <em>k</em><sub><em>B</em></sub><em>T</em></span> for Oid) represent <span id="eq:ch4_eq04"><span class="math display">$$
+\beta \Delta\tilde{\varepsilon}_{RA} = 
+\beta \Delta\varepsilon_{RA} - 
+\log \left( \frac{1}{1 + e^{-\beta \Delta \varepsilon_{AI}}} \right).
+\qquad(4)$$</span></span> Note that if <span class="math inline"><em>e</em><sup> − <em>β</em><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></sup> ≪ 1</span>, then nearly all of the repressors are active in the absence of inducer so that <span class="math inline"><em>Δ</em><em>ε̃</em><sub><em>R</em><em>A</em></sub> ≈ <em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub></span>. In simple repression systems where we definitively know the value of <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub></span> and <span class="math inline"><em>R</em></span>, we can use to determine the value of <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span> by comparing with experimentally determined fold-change values. However, the binding energy values that we use from <span class="citation" data-cites="Garcia2011c"> [<a href="#ref-Garcia2011c" role="doc-biblioref">21</a>]</span> are effective parameters <span class="math inline"><em>Δ</em><em>ε̃</em><sub><em>R</em><em>A</em></sub></span>. In this case, we are faced with an undetermined system in which we have more variables than equations, and we are thus unable to determine the value of <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span>. In order to obtain this parameter, we must turn to a more complex regulatory scenario which provides additional constraints that allow us to fit for <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span>.</p>
+<p>A variation on simple repression in which multiple copies of the promoter are available for repressor binding (for instance, when the simple repression construct is on plasmid) can be used to circumvent the problems that arise when using <span class="math inline"><em>Δ</em><em>ε̃</em><sub><em>R</em><em>A</em></sub></span>. This is because the behavior of the system is distinctly different when the number of active repressors <span class="math inline"><em>p</em><sub><em>A</em></sub>(0)<em>R</em></span> is less than or greater than the number of available promoters <span class="math inline"><em>N</em></span>. Repression data for plasmids with known copy number <span class="math inline"><em>N</em></span> allows us to perform a fit for the value of <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span>.</p>
+<p>To obtain an expression for a system with multiple promoters <span class="math inline"><em>N</em></span>, we follow <span class="citation" data-cites="Weinert2014"> [<a href="#ref-Weinert2014" role="doc-biblioref">13</a>]</span>, writing the fold-change in terms of the the grand canonical ensemble as <span id="eq:ch4_eq05"><span class="math display">$$
+\text{fold-change} = \frac{1}{1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}},
+\qquad(5)$$</span></span> where <span class="math inline"><em>λ</em><sub><em>r</em></sub> = <em>e</em><sup><em>β</em><em>μ</em></sup></span> is the fugacity and <span class="math inline"><em>μ</em></span> is the chemical potential of the repressor. The fugacity will enable us to easily enumerate the possible states available to the repressor.</p>
+<p>To determine the value of <span class="math inline"><em>λ</em><sub><em>r</em></sub></span>, we first consider that the total number of repressors in the system, <span class="math inline"><em>R</em><sub>tot</sub></span>, is fixed and given by <span id="eq:ch4_eq06"><span class="math display"><em>R</em><sub>tot</sub> = <em>R</em><sub><em>S</em></sub> + <em>R</em><sub><em>N</em><em>S</em></sub>,   (6)</span></span> where <span class="math inline"><em>R</em><sub><em>S</em></sub></span> represents the number of repressors specifically bound to the promoter and <span class="math inline"><em>R</em><sub><em>N</em><em>S</em></sub></span> represents the number of repressors nonspecifically bound throughout the genome. The value of <span class="math inline"><em>R</em><sub><em>S</em></sub></span> is given by <span id="eq:ch4_eq07"><span class="math display">$$
+R_S = N \frac{\lambda_r 
+e^{-\beta \Delta \varepsilon_{RA}}}
+{1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}},
+\qquad(7)$$</span></span> where <span class="math inline"><em>N</em></span> is the number of available promoters in the cell. Note that in counting <span class="math inline"><em>N</em></span>, we do not distinguish between promoters that are on plasmid or chromosomally integrated provided that they both have the same repressor-operator binding energy <span class="citation" data-cites="Weinert2014"> [<a href="#ref-Weinert2014" role="doc-biblioref">13</a>]</span>. The value of <span class="math inline"><em>R</em><sub><em>N</em><em>S</em></sub></span> is similarly give by <span id="eq:ch4_eq08"><span class="math display">$$
+R_{NS} = N_{NS} \frac{\lambda_r}{1 + \lambda_r},
+\qquad(8)$$</span></span> where <span class="math inline"><em>N</em><sub><em>N</em><em>S</em></sub></span> is the number of non-specific sites in the cell (recall that we use <span class="math inline"><em>N</em><sub><em>N</em><em>S</em></sub> = 4.6 × 10<sup>6</sup></span> for <em>E. coli</em>).</p>
+<p>Substituting in into the modified yields the form <span id="eq:ch4_eq09"><span class="math display">$$
+p_A(0) R_{\text{tot}} = 
+\frac{1}{1 + e^{-\beta \Delta \varepsilon_{AI}}}
+\left( N \frac{\lambda_r e^{-\beta \Delta \varepsilon_{RA}}}
+{1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}} + N_{NS} 
+\frac{\lambda_r}{1 + \lambda_r} \right),
+\qquad(9)$$</span></span> where we recall from that <span class="math inline">$\beta \Delta \varepsilon_{RA} = \beta \Delta \tilde\varepsilon_{RA} + \log{\left(\frac{1}{1 + e^{-\beta \Delta \varepsilon_{AI}}}\right)}.$</span> Numerically solving for <span class="math inline"><em>λ</em><sub><em>r</em></sub></span> and plugging the value back into yields a fold-change function in which the only unknown parameter is <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span>.</p>
+<p>With these calculations in hand, we can now determine the value of the <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span> parameter. shows how different values of <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span> lead to significantly different fold-change response curves. Thus, analyzing the specific fold-change response of any strain with a known plasmid copy number <span class="math inline"><em>N</em></span> will fix <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span>. Interestingly, the inflection point of occurs near <span class="math inline"><em>p</em><sub><em>A</em></sub>(0)<em>R</em><sub>tot</sub> = <em>N</em></span> (as shown by the triangles in ), so that merely knowing where the fold-change response transitions from concave down to concave up is sufficient to obtain a rough value for <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span>. We note, however, that for <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub> ≥ 5 <em>k</em><sub><em>B</em></sub><em>T</em></span>, increasing <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span> further does not affect the fold-change because essentially every repressors will be in the active state in this regime. Thus, if the <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span> is in this regime, we can only bound it from below.</p>
+<figure>
+<img src="ch4_fig02.png" id="fig:ch4_fig02" data-short-caption="Fold-change of multiple identical genes." alt="Figure 2: Fold-change of multiple identical genes.. (A) In the presence of N=10 identical promoters, the fold-change XXX depends strongly on the allosteric energy difference \Delta\varepsilon_{AI} between the Lac repressor’s active and inactive states. The vertical dotted lines represent the number of repressors at which R_A = N for each value of \Delta \varepsilon_{AI}. (B) Using fold-change measurements from  [22] for the operators and gene copy numbers shown, we can determine the most likely value \Delta\varepsilon_{AI} = 4.5~k_BT for LacI." /><figcaption aria-hidden="true">Figure 2: <strong>Fold-change of multiple identical genes.</strong>. (A) In the presence of <span class="math inline"><em>N</em> = 10</span> identical promoters, the fold-change XXX depends strongly on the allosteric energy difference <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span> between the Lac repressor’s active and inactive states. The vertical dotted lines represent the number of repressors at which <span class="math inline"><em>R</em><sub><em>A</em></sub> = <em>N</em></span> for each value of <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span>. (B) Using fold-change measurements from <span class="citation" data-cites="Brewster2014"> [<a href="#ref-Brewster2014" role="doc-biblioref">22</a>]</span> for the operators and gene copy numbers shown, we can determine the most likely value <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub> = 4.5 <em>k</em><sub><em>B</em></sub><em>T</em></span> for LacI.</figcaption>
+</figure>
+<p>We now analyze experimental induction data for different strains with known plasmid copy numbers to determine <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub></span>. shows experimental measurements of fold-change for two O1 promoters with <span class="math inline"><em>N</em> = 64</span> and <span class="math inline"><em>N</em> = 52</span> copy numbers and one Oid promoter with <span class="math inline"><em>N</em> = 10</span> from <span class="citation" data-cites="Brewster2014"> [<a href="#ref-Brewster2014" role="doc-biblioref">22</a>]</span>. By fitting these data to , we extracted the parameter value <span class="math inline"><em>Δ</em><em>ε</em><sub><em>A</em><em>I</em></sub> = 4.5 <em>k</em><sub><em>B</em></sub><em>T</em></span>. Substituting this value into shows that 99% of the repressors are in the active state in the absence of inducer and <span class="math inline"><em>Δ</em><em>ε̃</em><sub><em>R</em><em>A</em></sub> ≈ <em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub></span>, so that all of the previous energies and calculations made by <span class="citation" data-cites="Garcia2011c Brewster2014"> [<a href="#ref-Garcia2011c" role="doc-biblioref">21</a>,<a href="#ref-Brewster2014" role="doc-biblioref">22</a>]</span> were accurate.</p>
+<h2 id="induction-of-simple-repression-with-multiple-promoters-or-competitor-sites">Induction of Simple Repression with Multiple Promoters or Competitor Sites</h2>
+<p>We made the choice to perform all of our experiments using strains in which a single copy of our simple repression construct had been integrated into the chromosome. This stands in contrast to the methods used by a number of other studies <span class="citation" data-cites="Oehler1994 Setty2003 Oehler2006a Daber2009 Daber2011a Vilar2013 Shis2014 Sochor2014"> [<a href="#ref-Shis2014" role="doc-biblioref">2</a>–<a href="#ref-Setty2003" role="doc-biblioref">4</a>,<a href="#ref-Daber2009" role="doc-biblioref">12</a>,<a href="#ref-Oehler1994" role="doc-biblioref">14</a>,<a href="#ref-Daber2011a" role="doc-biblioref">15</a>,<a href="#ref-Oehler2006a" role="doc-biblioref">18</a>,<a href="#ref-Vilar2013" role="doc-biblioref">20</a>]</span>, in which reporter constructs are placed on plasmid, meaning that the number of constructs in the cell is not precisely known. It is also common to express repressor on plasmid to boost its copy number, which results in an uncertain value for repressor copy number. Here we show that our treatment of the MWC model has broad predictive power beyond the single-promoter scenario we explore experimentally, and indeed can account for systems in which multiple promoters compete for the repressor of interest. Additionally, we demonstrate the importance of having precise control over these parameters, as they can have a significant effect on the induction profile.</p>
+<h3 id="chemical-potential-formulation-to-calculate-fold-change">Chemical Potential Formulation to Calculate Fold-Change</h3>
+<p>In this section, we discuss a simple repression construct which we generalize in two ways from the scenario discussed in the text. First, we will allow the repressor to bind to <span class="math inline"><em>N</em><sub><em>S</em></sub></span> identical specific promoters whose fold-change we are interested in measuring, with each promoter containing a single repressor binding site (<span class="math inline"><em>N</em><sub><em>S</em></sub> = 1</span> in the main text). Second, we consider <span class="math inline"><em>N</em><sub><em>C</em></sub></span> identical competitor sites which do not regulate the promoter of interest, but whose binding energies are substantially stronger than non-specific binding (<span class="math inline"><em>N</em><sub><em>C</em></sub> = 0</span> in the main text). As in the main text, we assume that the rest of the genome contains <span class="math inline"><em>N</em><sub><em>N</em><em>S</em></sub></span> non-specific binding sites for the repressor. As in Appendix XXX, we can write the fold-change in the grand canonical ensemble as <span id="eq:ch4_eq10"><span class="math display">$$
+\text{fold-change} = \frac{1}{1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}},
+\qquad(10)$$</span></span> where <span class="math inline"><em>λ</em><sub><em>r</em></sub></span> is the fugacity of the repressor and <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub></span> represents the energy difference between the repressor’s binding affinity to the specific operator of interest relative to the repressor’s non-specific binding affinity to the rest of the genome.</p>
+<p>We now expand our definition of the total number of repressors in the system, <span class="math inline"><em>R</em><sub>tot</sub></span>, so that it is given by <span id="eq:ch4_eq11"><span class="math display"><em>R</em><sub>tot</sub> = <em>R</em><sub><em>S</em></sub> + <em>R</em><sub><em>N</em><em>S</em></sub> + <em>R</em><sub><em>C</em></sub>,   (11)</span></span> where <span class="math inline"><em>R</em><sub><em>S</em></sub></span>, <span class="math inline"><em>R</em><sub><em>N</em><em>S</em></sub></span>, and <span class="math inline"><em>R</em><sub><em>C</em></sub></span> represent the number of repressors bound to the specific promoter, a non-specific binding site, or to a competitor binding site, respectively. The value of <span class="math inline"><em>R</em><sub><em>S</em></sub></span> is given by <span id="eq:ch4_eq12"><span class="math display">$$
+R_S = N_S \frac{\lambda_r e^{-\beta \Delta \varepsilon_{RA}}}
+{1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}},
+\qquad(12)$$</span></span> where <span class="math inline"><em>N</em><sub><em>S</em></sub></span> is the number of specific binding sites in the cell. The value of <span class="math inline"><em>R</em><sub><em>N</em><em>S</em></sub></span> is similarly give by <span id="eq:ch4_eq13"><span class="math display">$$
+R_{NS} = N_{NS} \frac{\lambda_r}{1 + \lambda_r},
+\qquad(13)$$</span></span> where <span class="math inline"><em>N</em><sub><em>N</em><em>S</em></sub></span> is the number of non-specific sites in the cell (recall that we use <span class="math inline"><em>N</em><sub><em>N</em><em>S</em></sub> = 4.6 × 10<sup>6</sup></span> for <em>E. coli</em>), and <span class="math inline"><em>R</em><sub><em>C</em></sub></span> is given by <span id="eq:ch4_eq14"><span class="math display">$$
+R_C = N_C \frac{\lambda_r e^{-\beta \Delta \varepsilon_C}}
+{1 + \lambda_r e^{-\beta \Delta \varepsilon_C}},
+\qquad(14)$$</span></span> where <span class="math inline"><em>N</em><sub><em>C</em></sub></span> is the number of competitor sites in the cell and <span class="math inline"><em>Δ</em><em>ε</em><sub><em>C</em></sub></span> is the binding energy of the repressor to the competitor site relative to its non-specific binding energy to the rest of the genome.</p>
+<p>To account for the induction of the repressor, we replace the total number of repressors <span class="math inline"><em>R</em><sub>tot</sub></span> in by the number of active repressors in the cell, <span class="math inline"><em>p</em><sub><em>A</em></sub>(<em>c</em>)<em>R</em><sub>tot</sub></span>. Here, <span class="math inline"><em>p</em><sub><em>A</em></sub></span> denotes the probability that the repressor is in the active state (), <span id="eq:ch4_eq15"><span class="math display">$$
+p_A(c) = 
+\frac{\left(1+\frac{c}{K_A}\right)^n}
+{\left(1+\frac{c}{K_A}\right)^n+e^{-\beta \Delta \varepsilon_{AI} }
+\left(1+\frac{c}{K_I}\right)^n}.
+\qquad(15)$$</span></span> Substituting in into the modified yields the form <span id="eq:ch4_eq16"><span class="math display">$$
+p_A(c) R_{\text{tot}} = 
+N_S \frac{\lambda_r e^{-\beta \Delta \varepsilon_{RA}}}
+{1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}} + 
+N_{NS} \frac{\lambda_r}{1 + \lambda_r} + 
+N_C \frac{\lambda_r e^{-\beta \Delta \varepsilon_C}}
+{1 + \lambda_r e^{-\beta \Delta \varepsilon_C}}.
+\qquad(16)$$</span></span> For systems where the number of binding sites <span class="math inline"><em>N</em><sub><em>S</em></sub></span>, <span class="math inline"><em>N</em><sub><em>N</em><em>S</em></sub></span>, and <span class="math inline"><em>N</em><sub><em>C</em></sub></span> are known, together with the binding affinities <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub></span> and <span class="math inline"><em>Δ</em><em>ε</em><sub><em>C</em></sub></span>, we can solve numerically for <span class="math inline"><em>λ</em><sub><em>r</em></sub></span> and then substitute it into to obtain a fold-change at any concentration of inducer <span class="math inline"><em>c</em></span>. In the following sections, we will theoretically explore the induction curves given by for a number of different combinations of simple repression binding sites, thereby predicting how the system would behave if additional specific or competitor binding sites were introduced.</p>
+<h3 id="variable-repressor-copy-number-boldsymbolr-with-multiple-specific-binding-sites-boldsymboln_s-1">Variable Repressor Copy Number (<span class="math inline"><strong>R</strong></span>) with Multiple Specific Binding Sites (<span class="math inline"><strong>N</strong><sub><strong>S</strong></sub> <strong>&gt;</strong> <strong>1</strong></span>)</h3>
+<p>In the the main text, we consider the induction profiles of strains with varying <span class="math inline"><em>R</em></span> but a single, specific binding site <span class="math inline"><em>N</em><sub><em>S</em></sub> = 1</span> (see ). Here we predict the induction profiles for similar strains in which <span class="math inline"><em>R</em></span> is varied, but <span class="math inline"><em>N</em><sub><em>S</em></sub> &gt; 1</span>, as shown in . The top row shows induction profiles in which <span class="math inline"><em>N</em><sub><em>S</em></sub> = 10</span> and the bottom row shows profiles in which <span class="math inline"><em>N</em><sub><em>S</em></sub> = 100</span>, assuming three different choices for the specific operator binding sites given by the O1, O2, and O3 operators. These values of <span class="math inline"><em>N</em><sub><em>S</em></sub></span> were chosen to mimic the common scenario in which a promoter construct is placed on either a low or high copy number plasmid. A few features stand out in these profiles. First, as the magnitude of <span class="math inline"><em>N</em><sub><em>S</em></sub></span> surpasses the number of repressors <span class="math inline"><em>R</em></span>, the leakiness begins to increase significantly, since there are no longer enough repressors to regulate all copies of the promoter of interest. Second, in the cases where <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 15.3 <em>k</em><sub><em>B</em></sub><em>T</em></span> for the O1 operator or <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 13.9 <em>k</em><sub><em>B</em></sub><em>T</em></span> for the O2 operator, the profiles where <span class="math inline"><em>N</em><sub><em>S</em></sub> = 100</span> are notably sharper than the profiles where <span class="math inline"><em>N</em><sub><em>S</em></sub> = 10</span>, and it is possible to achieve dynamic ranges approaching 1. Finally, it is interesting to note that the profiles for the O3 operator where <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 9.7 <em>k</em><sub><em>B</em></sub><em>T</em></span> are nearly indifferent to the value of <span class="math inline"><em>N</em><sub><em>S</em></sub></span>.</p>
+<figure>
+<img src="ch4_fig03.png" id="fig:ch4_fig03" data-short-caption="Induction with variable $\boldsymbol{R}$ and multiple specific binding sites" alt="Figure 3: Induction with variable \boldsymbol{R} and multiple specific binding sites. Induction profiles are shown for strains with variable R and \Delta \varepsilon_{RA} = -15.3, -13.9, or -9.7~k_B T. The number of specific sites, N_S, is held constant at 10 as R and \Delta \varepsilon_{RA} are varied. N_S is held constant at 100 as R and \Delta \varepsilon_{RA} are varied. These situations mimic the common scenario in which a promoter construct is placed on either a low or high copy number plasmid." /><figcaption aria-hidden="true">Figure 3: <strong>Induction with variable <span class="math inline"><strong>R</strong></span> and multiple specific binding sites.</strong> Induction profiles are shown for strains with variable R and <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 15.3</span>, <span class="math inline"> − 13.9</span>, or <span class="math inline"> − 9.7 <em>k</em><sub><em>B</em></sub><em>T</em></span>. The number of specific sites, <span class="math inline"><em>N</em><sub><em>S</em></sub></span>, is held constant at 10 as <span class="math inline"><em>R</em></span> and <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub></span> are varied. <span class="math inline"><em>N</em><sub><em>S</em></sub></span> is held constant at 100 as <span class="math inline"><em>R</em></span> and <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub></span> are varied. These situations mimic the common scenario in which a promoter construct is placed on either a low or high copy number plasmid.</figcaption>
+</figure>
+<h3 id="variable-number-of-specific-binding-sites-boldsymboln_s-with-fixed-repressor-copy-number-boldsymbolr">Variable Number of Specific Binding Sites <span class="math inline"><strong>N</strong><sub><strong>S</strong></sub></span> with Fixed Repressor Copy Number (<span class="math inline"><strong>R</strong></span>)</h3>
+<p>The second set of scenarios we consider is the case in which the repressor copy number <span class="math inline"><em>R</em> = 260</span> is held constant while the number of specific promoters <span class="math inline"><em>N</em><sub><em>S</em></sub></span> is varied (see ). Again we see that leakiness is increased significantly when <span class="math inline"><em>N</em><sub><em>S</em></sub> &gt; <em>R</em></span>, though all profiles for <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 9.7 <em>k</em><sub><em>B</em></sub><em>T</em></span> exhibit high leakiness, making the effect less dramatic for this operator. Additionally, we find again that adjusting the number of specific sites can produce induction profiles with maximal dynamic ranges. In particular, the O1 and O2 profiles with <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 15.3</span> and <span class="math inline"> − 13.9 <em>k</em><sub><em>B</em></sub><em>T</em></span>, respectively, have dynamic ranges approaching 1 for <span class="math inline"><em>N</em><sub><em>S</em></sub> = 50</span> and 100.</p>
+<figure>
+<img src="ch4_fig04.png" id="fig:ch4_fig04" data-short-caption="Induction with variable specific sites and fixed $\boldsymbol{R}$" alt="Figure 4: Induction with variable specific sites and fixed \boldsymbol{R}. Induction profiles are shown for strains with R=260 and \Delta \varepsilon_{RA} = -15.3~k_BT, \Delta \varepsilon_{RA} = -13.9~k_BT, or \Delta \varepsilon_{RA} = -9.7~k_BT. The number of specific sites N_S is varied from 1 to 500." /><figcaption aria-hidden="true">Figure 4: <strong>Induction with variable specific sites and fixed <span class="math inline"><strong>R</strong></span>.</strong> Induction profiles are shown for strains with <span class="math inline"><em>R</em> = 260</span> and <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 15.3 <em>k</em><sub><em>B</em></sub><em>T</em></span>, <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 13.9 <em>k</em><sub><em>B</em></sub><em>T</em></span>, or <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 9.7 <em>k</em><sub><em>B</em></sub><em>T</em></span>. The number of specific sites <span class="math inline"><em>N</em><sub><em>S</em></sub></span> is varied from 1 to 500.</figcaption>
+</figure>
+<h3 id="competitor-binding-sites">Competitor Binding Sites</h3>
+<p>An intriguing scenario is presented by the possibility of competitor sites elsewhere in the genome. This serves as a model for situations in which a promoter of interest is regulated by a transcription factor that has multiple targets. This is highly relevant, as the majority of transcription factors in <em>E. coli</em> have at least two known binding sites, with approximately 50 transcription factors having more than ten known binding sites <span class="citation" data-cites="Rydenfelt2014 Schmidt2015"> [<a href="#ref-Schmidt2015" role="doc-biblioref">1</a>,<a href="#ref-Rydenfelt2014" role="doc-biblioref">19</a>]</span>. If the number of competitor sites and their average binding energy is known, however, they can be accounted for in the model. Here, we predict the induction profiles for strains in which <span class="math inline"><em>R</em> = 260</span> and <span class="math inline"><em>N</em><sub><em>S</em></sub> = 1</span>, but there is a variable number of competitor sites <span class="math inline"><em>N</em><sub><em>C</em></sub></span> with a strong binding energy <span class="math inline"><em>Δ</em><em>ε</em><sub><em>C</em></sub> =  − 17.0 <em>k</em><sub><em>B</em></sub><em>T</em></span>. In the presence of such a strong competitor, when <span class="math inline"><em>N</em><sub><em>C</em></sub> &gt; <em>R</em></span> the leakiness is greatly increased, as many repressors are siphoned into the pool of competitor sites. This is most dramatic for the case where <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 9.7 <em>k</em><sub><em>B</em></sub><em>T</em></span>, in which it appears that no repression occurs at all when <span class="math inline"><em>N</em><sub><em>C</em></sub> = 500</span>. Interestingly, when <span class="math inline"><em>N</em><sub><em>C</em></sub> &lt; <em>R</em></span> the effects of the competitor are not especially notable.</p>
+<figure>
+<img src="ch4_fig05.png" id="fig:ch4_fig05" data-short-caption="Induction with variable competitor sites, a single specific site, and fixed $\boldsymbol{R}$" alt="Figure 5: Induction with variable competitor sites, a single specific site, and fixed \boldsymbol{R}. Induction profiles are shown for strains with R=260, N_s=1, and \Delta \varepsilon_{RA} = -15.3~k_B T for the O1 operator, \Delta \varepsilon_{RA} = -13.9~k_B T for the O2 operator, or \Delta \varepsilon_{RA} = -9.7~k_B T for the O3 operator. The number of specific sites, N_C, is varied from 1 to 500. This mimics the common scenario in which a transcription factor has multiple binding sites in the genome." /><figcaption aria-hidden="true">Figure 5: <strong>Induction with variable competitor sites, a single specific site, and fixed <span class="math inline"><strong>R</strong></span>.</strong> Induction profiles are shown for strains with <span class="math inline"><em>R</em> = 260</span>, <span class="math inline"><em>N</em><sub><em>s</em></sub> = 1</span>, and <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 15.3 <em>k</em><sub><em>B</em></sub><em>T</em></span> for the O1 operator, <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 13.9 <em>k</em><sub><em>B</em></sub><em>T</em></span> for the O2 operator, or <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 9.7 <em>k</em><sub><em>B</em></sub><em>T</em></span> for the O3 operator. The number of specific sites, <span class="math inline"><em>N</em><sub><em>C</em></sub></span>, is varied from 1 to 500. This mimics the common scenario in which a transcription factor has multiple binding sites in the genome.</figcaption>
+</figure>
+<h3 id="properties-of-the-induction-response">Properties of the Induction Response</h3>
+<p>As discussed in the main body of the paper, our treatment of the MWC model allows us to predict key properties of induction responses. Here, we consider the leakiness, saturation, and dynamic range (see ) by numerically solving in the absence of inducer, <span class="math inline"><em>c</em> = 0</span>, and in the presence of saturating inducer <span class="math inline"><em>c</em> → ∞</span>. Using , the former case is given by <span id="eq:ch4_eq17"><span class="math display">$$
+R_{\text{tot}} \frac{1}{1 + e^{-\beta \Delta \varepsilon_{AI}}} =
+N_S \frac{\lambda_r e^{-\beta \Delta \varepsilon_{RA}}}
+{1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}} + 
+N_{NS} \frac{\lambda_r}{1 + \lambda_r} +
+N_C \frac{\lambda_r e^{-\beta \Delta \varepsilon_C}}
+{1 + \lambda_r e^{-\beta \Delta \varepsilon_C}},
+\qquad(17)$$</span></span> whereupon substituting in the value of <span class="math inline"><em>λ</em><sub><em>r</em></sub></span> into will yield the leakiness. Similarly, the limit of saturating inducer is found by determining <span class="math inline"><em>λ</em><sub><em>r</em></sub></span> from the form <span id="eq:ch4_eq18"><span class="math display">$$
+R_{\text{tot}} 
+\frac{1}{1 + e^{-\beta \Delta \varepsilon_{AI}} \left(\frac{K_A}{K_I} \right)^2}
+= N_S \frac{\lambda_r e^{-\beta \Delta \varepsilon_{RA}}}
+{1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}} + N_{NS}
+\frac{\lambda_r}{1 + \lambda_r} +
+N_C \frac{\lambda_r e^{-\beta \Delta \varepsilon_C}}
+{1 + \lambda_r e^{-\beta \Delta \varepsilon_C}}.
+\qquad(18)$$</span></span></p>
+<p>In we show how the leakiness, saturation, and dynamic range vary with <span class="math inline"><em>R</em></span> and <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub></span> in systems with <span class="math inline"><em>N</em><sub><em>S</em></sub> = 10</span> or <span class="math inline"><em>N</em><sub><em>S</em></sub> = 100</span>. An inflection point occurs where <span class="math inline"><em>N</em><sub><em>S</em></sub> = <em>R</em></span>, with leakiness and dynamic range behaving differently when <span class="math inline"><em>R</em> &lt; <em>N</em><sub><em>S</em></sub></span> than when <span class="math inline"><em>R</em> &gt; <em>N</em><sub><em>S</em></sub></span>. This transition is more dramatic for <span class="math inline"><em>N</em><sub><em>S</em></sub> = 100</span> than for <span class="math inline"><em>N</em><sub><em>S</em></sub> = 10</span>. Interestingly, the saturation values consistently approach 1, indicating that full induction is easier to achieve when multiple specific sites are present. Moreover, dynamic range values for O1 and O2 strains with <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub> =  − 15.3</span> and <span class="math inline"> − 13.9 <em>k</em><sub><em>B</em></sub><em>T</em></span> approach 1 when <span class="math inline"><em>R</em> &gt; <em>N</em><sub><em>S</em></sub></span>, although when <span class="math inline"><em>N</em><sub><em>S</em></sub> = 10</span> there is a slight downward dip owing to saturation values of less than 1 at high repressor copy numbers.</p>
+<figure>
+<img src="ch4_fig06.png" id="fig:ch4_fig06" data-short-caption="Phenotypic properties of induction with multiple specific binding sites" alt="Figure 6: Phenotypic properties of induction with multiple specific binding sites. The leakiness , saturation , and dynamic range are shown for systems with number of specific binding sites N_S = 10 or N_S = 100 . The dashed vertical line indicates the point at which N_S = R." /><figcaption aria-hidden="true">Figure 6: <strong>Phenotypic properties of induction with multiple specific binding sites.</strong> The leakiness , saturation , and dynamic range are shown for systems with number of specific binding sites <span class="math inline"><em>N</em><sub><em>S</em></sub> = 10</span> or <span class="math inline"><em>N</em><sub><em>S</em></sub> = 100</span> . The dashed vertical line indicates the point at which <span class="math inline"><em>N</em><sub><em>S</em></sub> = <em>R</em></span>.</figcaption>
+</figure>
+<p>In we similarly show how the leakiness, saturation, and dynamic range vary with <span class="math inline"><em>R</em></span> and <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub></span> in systems with <span class="math inline"><em>N</em><sub><em>S</em></sub> = 1</span> and multiple competitor sites <span class="math inline"><em>N</em><sub><em>C</em></sub> = 10</span> or <span class="math inline"><em>N</em><sub><em>C</em></sub> = 100</span>. Each of the competitor sites has a binding energy of <span class="math inline"><em>Δ</em><em>ε</em><sub><em>C</em></sub> =  − 17.0 <em>k</em><sub><em>B</em></sub><em>T</em></span>. The phenotypic profiles are very similar to those for multiple specific sites shown in , with sharper transitions at <span class="math inline"><em>R</em> = <em>N</em><sub><em>C</em></sub></span> due to the greater binding strength of the competitor site. This indicates that introducing competitors has much the same effect on the induction phenotypes as introducing additional specific sites, as in either case the influence of the repressors is dampened when there are insufficient repressors to interact with all of the specific binding sites.</p>
+<figure>
+<img src="ch4_fig07.png" id="fig:ch4_fig07" data-short-caption="Phenotypic properties of induction with a single specific site and multiple competitor sites" alt="Figure 7: Phenotypic properties of induction with a single specific site and multiple competitor sites. The leakiness , saturation , and dynamic range are shown for systems with a single specific binding site N_S = 1 and a number of competitor sites N_C = 10 or N_C = 100 . All competitor sites have a binding energy of \Delta \varepsilon_C = -17.0~k_BT. The dashed vertical line indicates the point at which N_C = R." /><figcaption aria-hidden="true">Figure 7: <strong>Phenotypic properties of induction with a single specific site and multiple competitor sites.</strong> The leakiness , saturation , and dynamic range are shown for systems with a single specific binding site <span class="math inline"><em>N</em><sub><em>S</em></sub> = 1</span> and a number of competitor sites <span class="math inline"><em>N</em><sub><em>C</em></sub> = 10</span> or <span class="math inline"><em>N</em><sub><em>C</em></sub> = 100</span> . All competitor sites have a binding energy of <span class="math inline"><em>Δ</em><em>ε</em><sub><em>C</em></sub> =  − 17.0 <em>k</em><sub><em>B</em></sub><em>T</em></span>. The dashed vertical line indicates the point at which <span class="math inline"><em>N</em><sub><em>C</em></sub> = <em>R</em></span>.</figcaption>
+</figure>
+<p>This section of the appendix gives a quantitative analysis of the nuances imposed on induction response in the case of systems involving multiple gene copies as are found in the vast majority of studies on induction. In these cases, the intrinsic parameters of the MWC model get entangled with the parameters describing gene copy number.</p>
+<h2 id="flow-cytometry">Flow Cytometry</h2>
+<p>In this section, we provide information regarding the equipment used to make experimental measurements of the fold-change in gene expression in the interests of transparency and reproducibility. We also provide a summary of our unsupervised method of gating the flow cytometry measurements for consistency between experimental runs.</p>
+<h3 id="equipment">Equipment</h3>
+<p>Due to past experience using the Miltenyi Biotec MACSQuant flow cytometer during the Physiology summer course at the Marine Biological Laboratory, we used the same flow cytometer for the formal measurements in this work graciously provided by the Pamela Björkman lab at Caltech. All measurements were made using an excitation wavelength of <span class="math inline">488 nm</span> with an emission filter set of 525/<span class="math inline">50 nm</span>. This excitation wavelength provides approximately 40% of the maximum YFP absorbance <span class="citation" data-cites="SpectraViewer"> [<a href="#ref-SpectraViewer" role="doc-biblioref">6</a>]</span>, and this was found to be sufficient for the purposes of these experiments. A useful feature of modern flow cytometry is the high-sensitivity signal detection through the use of photomultiplier tubes (PMT) whose response can be tuned by adjusting the voltage. Thus, the voltage for the forward-scatter (FSC), side-scatter (SSC), and gene expression measurements were tuned manually to maximize the dynamic range between autofluorescence signal and maximal expression without losing the details of the population distribution. Once these voltages were determined, they were used for all subsequent measurements. Extremely low signal producing particles were discarded before data storage by setting a basal voltage threshold, thus removing the majority of spurious events. The various instrument settings for data collection are given in tbl. 1.</p>
+<div id="tbl:ch4_tab01">
+<table>
+<caption>Table 1: <strong>Instrument settings for data collection using the Miltenyi Biotec MACSQuant flow cytometer.</strong> All experimental measurements were collected using these values.</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">488 nm</span></td>
+<td>Forward-Scatter (FSC)</td>
+<td><span class="math inline">423 V</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">488 nm</span></td>
+<td>Side-Scatter (SSC)</td>
+<td><span class="math inline">537 V</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">488 nm</span></td>
+<td>Intensity (B1 Filter, 525/50nm)</td>
+<td><span class="math inline">790 V</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">488 nm</span></td>
+<td>Trigger (debris threshold)</td>
+<td><span class="math inline">24.5 V</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="experimental-measurement">Experimental Measurement</h3>
+<p>Prior to each day’s experiments, the analyzer was calibrated using MACSQuant Calibration Beads (Cat. No. 130-093-607) such that day-to-day experiments would be comparable. A single data set consisted of seven bacterial strains, all sharing the same operator, with varying repressor copy numbers (<span class="math inline"><em>R</em> = 0</span>, 22, 60, 124, 260, 1220, and 1740), in addition to an autofluorescent strain, under twelve IPTG concentrations. Data collection took place over two to three hours. During this time, the cultures were held at approximately 4<span class="math inline"><sup>∘</sup></span>C by placing the 96-well plate on a MACSQuant ice block. Because the ice block thawed over the course of the experiment, the samples measured last were approximately at room temperature. This means that samples may have grown slightly by the end of the experiment. To confirm that this continued growth did not alter the measured results, a subset of experiments were run in reverse meaning that the fully induced cultures were measured first and the uninduced samples last. The plate arrangements and corresponding fold-change measurements are shown in and , respectively. The measured fold-change values in the reverse ordered plate appear to be drawn from the same distribution as those measured in the forward order, meaning that any growth that might have taken place during the experiment did not significantly affect the results. Both the forward and reverse data sets were used in our analysis.</p>
+<figure>
+<img src="ch4_fig08.png" id="fig:ch4_fig08" data-short-caption="Plate arrangements for flow cytometry." alt="Figure 8: Plate arrangements for flow cytometry. (A) Samples were measured primarily in the forward arrangement with a subset of samples measured in reverse. The black arrow indicates the order in which samples were processed by the flow cytometer. (B) The experimentally measured fold-change values for the two sets of plate arrangements show that samples measured in the forward arrangement appear to be indistinguishable from those measured in reverse order." /><figcaption aria-hidden="true">Figure 8: <strong>Plate arrangements for flow cytometry.</strong> (A) Samples were measured primarily in the forward arrangement with a subset of samples measured in reverse. The black arrow indicates the order in which samples were processed by the flow cytometer. (B) The experimentally measured fold-change values for the two sets of plate arrangements show that samples measured in the forward arrangement appear to be indistinguishable from those measured in reverse order.</figcaption>
+</figure>
+<h3 id="unsupervised-gating">Unsupervised Gating</h3>
+<p>Flow cytometry data will frequently include a number of spurious events or other undesirable data points such as cell doublets and debris. The process of restricting the collected data set to those data determined to be “real” is commonly referred to as gating. These gates are typically drawn manually <span class="citation" data-cites="Maecker2005"> [<a href="#ref-Maecker2005" role="doc-biblioref">10</a>]</span> and restrict the data set to those points which display a high degree of linear correlation between their forward-scatter (FSC) and side-scatter (SSC). The development of unbiased and unsupervised methods of drawing these gates is an active area of research <span class="citation" data-cites="Lo2008 Aghaeepour2013"> [<a href="#ref-Lo2008" role="doc-biblioref">9</a>,<a href="#ref-Aghaeepour2013" role="doc-biblioref">11</a>]</span>.</p>
+<p>For this study, we used an automatic unsupervised gating procedure to filter the flow cytometry data based on the front and side-scattering values returned by the MACSQuant flow cytometer. We assume that the region with highest density of points in these two channels corresponds to single-cell measurements. Everything extending outside of this region was discarded in order to exclude sources of error such as cell clustering, particulates, or other spurious events.</p>
+<p>In order to define the gated region we fit a two-dimensional Gaussian function to the <span class="math inline">log<sub>10</sub></span> forward-scattering (FSC) and the <span class="math inline">log<sub>10</sub></span> side-scattering (SSC) data. We then kept a fraction <span class="math inline"><em>α</em> ∈ [0, 1]</span> of the data by defining an elliptical region given by <span id="eq:ch4_eq19"><span class="math display">(<strong>x</strong>−<strong>μ</strong>)<sup><em>T</em></sup><strong>Σ</strong><sup> − 1</sup>(<strong>x</strong>−<strong>μ</strong>) ≤ <em>χ</em><sub><em>α</em></sub><sup>2</sup>(<em>p</em>),   (19)</span></span> where <span class="math inline"><strong>x</strong></span> is the <span class="math inline">2 × 1</span> vector containing the <span class="math inline">log (FSC)</span> and <span class="math inline">log (SSC)</span>, <span class="math inline"><strong>μ</strong></span> is the <span class="math inline">2 × 1</span> vector representing the mean values of <span class="math inline">log (FSC)</span> and <span class="math inline">log (SSC)</span> as obtained from fitting a two-dimensional Gaussian to the data, and <span class="math inline"><strong>Σ</strong></span> is the <span class="math inline">2 × 2</span> covariance matrix also obtained from the Gaussian fit. <span class="math inline"><em>χ</em><sub><em>α</em></sub><sup>2</sup>(<em>p</em>)</span> is the quantile function for probability <span class="math inline"><em>p</em></span> of the chi-squared distribution with two degrees of freedom. shows an example of different gating contours that would arise from different values of <span class="math inline"><em>α</em></span> in . In this work, we chose <span class="math inline"><em>α</em> = 0.4</span> which we deemed was a sufficient constraint to minimize the noise in the data. As explained in Appendix XXX we compared our high throughput flow cytometry data with single cell microscopy, confirming that the automatic gating did not introduce systematic biases to the analysis pipeline. The specific code where this gating is implemented can be found in <a href="https://github.com/RPGroup-PBoC/mwc_induction/blob/master/code/analysis/unsupervised_gating.ipynb">GitHub repository</a>.</p>
+<figure>
+<img src="ch4_fig09.png" id="fig:ch4_fig09" data-short-caption="Representative unsupervised gating contours." alt="Figure 9: Representative unsupervised gating contours. Points indicate individual flow cytometry measurements of forward scatter and side scatter. Colored points indicate arbitrary gating contours ranging from 100% (\alpha = 1.0) to 5% (\alpha = 0.05). All measurements for this work were made computing the mean fluorescence from the 40^\text{th} percentile (\alpha = 0.4), shown as orange points." /><figcaption aria-hidden="true">Figure 9: <strong>Representative unsupervised gating contours.</strong> Points indicate individual flow cytometry measurements of forward scatter and side scatter. Colored points indicate arbitrary gating contours ranging from 100% (<span class="math inline"><em>α</em> = 1.0</span>) to 5% (<span class="math inline"><em>α</em> = 0.05</span>). All measurements for this work were made computing the mean fluorescence from the 40<span class="math inline"><sup>th</sup></span> percentile (<span class="math inline"><em>α</em> = 0.4</span>), shown as orange points.</figcaption>
+</figure>
+<h3 id="comparison-of-flow-cytometry-with-other-methods">Comparison of Flow Cytometry with Other Methods</h3>
+<p>Previous work from our lab experimentally determined fold-change for similar simple repression constructs using a variety of different measurement methods <span class="citation" data-cites="Garcia2011b Brewster2014"> [<a href="#ref-Garcia2011b" role="doc-biblioref">5</a>,<a href="#ref-Brewster2014" role="doc-biblioref">22</a>]</span>. Garcia and Phillips used the same background strains as the ones used in this work, but gene expression was measured with Miller assays based on colorimetric enzymatic reactions with the LacZ protein <span class="citation" data-cites="Garcia2011c"> [<a href="#ref-Garcia2011c" role="doc-biblioref">21</a>]</span>. <span class="citation" data-cites="Brewster2014"> [<a href="#ref-Brewster2014" role="doc-biblioref">22</a>]</span> used a LacI dimer with the tetramerization region replaced with an mCherry tag, where the fold-change was measured as the ratio of the gene expression rate rather than a single snapshot of the gene output.</p>
+<p>shows the comparison of these methods along with the flow cytometry method used in this work. The consistency of these three readouts validates the quantitative use of flow cytometry and unsupervised gating to determine the fold-change in gene expression. However, one important caveat revealed by this figure is that the sensitivity of flow cytometer measurements is not sufficient to accurately determine the fold-change for the high repressor copy number strains in O1 without induction. Instead, a method with a large dynamic range such as the Miller assay is needed to accurately resolve the fold-change at such low expression levels.</p>
+<figure>
+<img src="ch4_fig10.png" id="fig:ch4_fig10" data-short-caption="Comparison of experimental methods to determine the fold-change." alt="Figure 10: Comparison of experimental methods to determine the fold-change. The fold-change in gene expression for equivalent simple-repression constructs has been determined using three independent methods: flow cytometry (this work), colorimetric miller assays  [21], and video microscopy  [22]. All three methods give consistent results, although flow cytometry measurements lose accuracy for fold-change less than 10^{-2}. note that the repressor-dna binding energies \delta\varepsilon_{ra} used for the theoretical predictions were determined in  [21]." /><figcaption aria-hidden="true">Figure 10: <strong>Comparison of experimental methods to determine the fold-change.</strong> The fold-change in gene expression for equivalent simple-repression constructs has been determined using three independent methods: flow cytometry (this work), colorimetric miller assays <span class="citation" data-cites="Garcia2011c"> [<a href="#ref-Garcia2011c" role="doc-biblioref">21</a>]</span>, and video microscopy <span class="citation" data-cites="Brewster2014"> [<a href="#ref-Brewster2014" role="doc-biblioref">22</a>]</span>. All three methods give consistent results, although flow cytometry measurements lose accuracy for fold-change less than <span class="math inline">10<sup> − 2</sup></span>. note that the repressor-dna binding energies <span class="math inline"><em>δ</em><em>ε</em><sub><em>r</em><em>a</em></sub></span> used for the theoretical predictions were determined in <span class="citation" data-cites="Garcia2011c"> [<a href="#ref-Garcia2011c" role="doc-biblioref">21</a>]</span>.</figcaption>
+</figure>
+<h2 id="single-cell-microscopy">Single-Cell Microscopy</h2>
+<p>In this section, we detail the procedures and results from single-cell microscopy verification of our flow cytometry measurements. Our previous measurements of fold-change in gene expression have been measured using bulk-scale Miller assays <span class="citation" data-cites="Garcia2011c"> [<a href="#ref-Garcia2011c" role="doc-biblioref">21</a>]</span> or through single-cell microscopy <span class="citation" data-cites="Brewster2014"> [<a href="#ref-Brewster2014" role="doc-biblioref">22</a>]</span>. In this work, flow cytometry was an attractive method due to the ability to screen through many different strains at different concentrations of inducer in a short amount of time. To verify our results from flow cytometry, we examined two bacterial strains with different repressor-DNA binding energies (<span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub></span>) of <span class="math inline"> − 13.9 <em>k</em><sub><em>B</em></sub><em>T</em></span> and <span class="math inline"> − 15.3 <em>k</em><sub><em>B</em></sub><em>T</em></span> with <span class="math inline"><em>R</em> = 260</span> repressors per cell using fluorescence microscopy and estimated the values of the parameters <span class="math inline"><em>K</em><sub><em>A</em></sub></span> and <span class="math inline"><em>K</em><sub><em>I</em></sub></span> for direct comparison between the two methods. For a detailed explanation of the Python code implementation of the processing steps described below, please see this paper’s <a href="https://rpgroup-pboc.github.io/mwc_induction/code/notebooks/unsupervised_gating.html">GitHub repository</a>. An outline of our microscopy workflow can be seen in .</p>
+<h3 id="strains-and-growth-conditions">Strains and Growth Conditions</h3>
+<p>Cells were grown in an identical manner to those used for measurement via flow cytometry (see Methods). Briefly, cells were grown overnight (between 10 and 13 hours) to saturation in rich media broth (LB) with <span class="math inline">100 <em>μ</em>g ⋅ mL<sup> − 1</sup></span> spectinomycin in a deep-well 96 well plate at <span class="math inline">37<sup>∘</sup>C</span>. These cultures were then diluted 1000-fold into <span class="math inline">500 <em>μ</em>L</span> of M9 minimal medium supplemented with 0.5% glucose and the appropriate concentration of the inducer IPTG. Strains were allowed to grow at <span class="math inline">37<sup>∘</sup>C</span> with vigorous aeration for approximately 8 hours. Prior to mounting for microscopy, the cultures were diluted 10-fold into M9 glucose minimal medium in the absence of IPTG. Each construct was measured using the same range of inducer concentration values as was performed in the flow cytometry measurements (between <span class="math inline">100 nM</span> and <span class="math inline">5 mM</span> IPTG). Each condition was measured in triplicate in microscopy whereas approximately ten measurements were made using flow cytometry.</p>
+<h3 id="imaging-procedure">Imaging Procedure</h3>
+<figure>
+<img src="ch4_fig11.png" id="fig:ch4_fig11" data-short-caption="Experimental workflow for single-cell microscopy" alt="Figure 11: Experimental workflow for single-cell microscopy. For comparison with the flow cytometry results, the cells were grown in an identical manner to those described in the main text. Once cells had reached mid to late exponential growth, the cultures were diluted and placed on agarose substrates and imaged under 100\times magnification. Regions of interest representing cellular mass were segmented and average single-cell intensities were computed. The means of the distributions were used to compute the fold-change in gene expression." /><figcaption aria-hidden="true">Figure 11: <strong>Experimental workflow for single-cell microscopy</strong>. For comparison with the flow cytometry results, the cells were grown in an identical manner to those described in the main text. Once cells had reached mid to late exponential growth, the cultures were diluted and placed on agarose substrates and imaged under 100<span class="math inline">×</span> magnification. Regions of interest representing cellular mass were segmented and average single-cell intensities were computed. The means of the distributions were used to compute the fold-change in gene expression.</figcaption>
+</figure>
+<p>During the last hour of cell growth, an agarose mounting substrate was prepared containing the appropriate concentration of the IPTG inducer. This mounting substrate was composed of M9 minimal medium supplemented with 0.5% glucose and 2% agarose (Life Technologies UltraPure Agarose, Cat. No. 16500100). This solution was heated in a microwave until molten followed by addition of the IPTG to the appropriate final concentration. This solution was then thoroughly mixed and a <span class="math inline">500 <em>μ</em>L</span> aliquot was sandwiched between two glass coverslips and was allowed to solidify.</p>
+<p>Once solid, the agarose substrates were cut into approximately <span class="math inline">10 mm × 10 mm</span> squares. An aliquot of one to two microliters of the diluted cell suspension was then added to each pad. For each concentration of inducer, a sample of the autofluorescence control, the <span class="math inline"><em>Δ</em><em>l</em><em>a</em><em>c</em><em>I</em></span> constitutive expression control, and the experimental strain was prepared yielding a total of thirty-six agarose mounts per experiment. These samples were then mounted onto two glass-bottom dishes (Ted Pella Wilco Dish, Cat. No. 14027-20) and sealed with parafilm.</p>
+<p>All imaging was performed on a Nikon Ti-Eclipse inverted fluorescent microscope outfitted with a custom-built laser illumination system and operated by the open-source MicroManager control software <span class="citation" data-cites="Edelstein2014"> [<a href="#ref-Edelstein2014" role="doc-biblioref">8</a>]</span>. The YFP fluorescence was imaged using a CrystaLaser <span class="math inline">514 nm</span> excitation laser coupled with a laser-optimized (Semrock Cat. No. LF514-C-000) emission filter.</p>
+<p>For each sample, between fifteen and twenty positions were imaged allowing for measurement of several hundred cells. At each position, a phase contrast image, an mCherry image, and a YFP image were collected in that order with exposures on a time scale of ten to twenty milliseconds. For each channel, the same exposure time was used across all samples in a given experiment. All images were collected and stored in <code>ome.tiff</code> format. All microscopy images are available on the CaltechDATA online repository under DOI: 10.22002/D1.229.</p>
+<h3 id="image-processing">Image Processing</h3>
+<p><strong>Correcting Uneven Illumination</strong></p>
+<figure>
+<img src="ch4_fig12.png" id="fig:ch4_fig12" data-short-caption="Correction for uneven illumination." alt="Figure 12: Correction for uneven illumination. A representative image of the illumination profile of the 512\,\text{nm} excitation beam on a homogeneously fluorescent slide is shown in the left panel. This is corrected for using equation and is shown in the right panel." /><figcaption aria-hidden="true">Figure 12: <strong>Correction for uneven illumination.</strong> A representative image of the illumination profile of the <span class="math inline">512 nm</span> excitation beam on a homogeneously fluorescent slide is shown in the left panel. This is corrected for using equation and is shown in the right panel.</figcaption>
+</figure>
+<p>The excitation laser has a two-dimensional gaussian profile. To minimize non-uniform illumination of a single field of view, the excitation beam was expanded to illuminate an area larger than that of the camera sensor. While this allowed for an entire field of view to be illuminated, there was still approximately a 10% difference in illumination across both dimensions. This nonuniformity was corrected for in post-processing by capturing twenty images of a homogeneously fluorescent plastic slide (Autofluorescent Plastic Slides, Chroma Cat. No. 920001) and averaging to generate a map of illumination intensity at any pixel <span class="math inline"><em>I</em><sub>YFP</sub></span>. To correct for shot noise in the camera (Andor iXon+ 897 EMCCD), twenty images were captured in the absence of illumination using the exposure time used for the experimental data. Averaging over these images produced a map of background noise at any pixel <span class="math inline"><em>I</em><sub>dark</sub></span>. To perform the correction, each fluorescent image in the experimental acquisition was renormalized with respect to these average maps as <span id="eq:ch4_eq20"><span class="math display">$$
+I_\text{flat} = 
+\frac{I - I_\text{dark}}{I_\text{YFP} - 
+I_\text{dark}}\langle I_\text{YFP} - I_\text{dark} \rangle,
+\qquad(20)$$</span></span> where <span class="math inline"><em>I</em><sub>flat</sub></span> is the renormalized image and <span class="math inline"><em>I</em></span> is the original fluorescence image. An example of this correction can be seen in .</p>
+<p><strong>Cell Segmentation</strong></p>
+<p>Each bacterial strain constitutively expressed an mCherry fluorophore from a low copy-number plasmid. This served as a volume marker of cell mass allowing us to segment individual cells through edge detection in fluorescence. We used the Marr-Hildreth edge detector <span class="citation" data-cites="Marr1980"> [<a href="#ref-Marr1980" role="doc-biblioref">7</a>]</span> which identifies edges by taking the second derivative of a lightly Gaussian blurred image. Edges are identified as those regions which cross from highly negative to highly positive values or vice-versa within a specified neighborhood. Bacterial cells were defined as regions within an intact and closed identified edge. All segmented objects were then labeled and passed through a series of filtering steps.</p>
+<p>To ensure that primarily single cells were segmented, we imposed area and eccentricity bounds. We assumed that single cells projected into two dimensions are roughly <span class="math inline">2 <em>μ</em>m</span> long and <span class="math inline">1 <em>μ</em>m</span> wide, so that cells are likely to have an area between <span class="math inline">0.5 <em>μ</em>m<sup>2</sup></span> and <span class="math inline">6 <em>μ</em>m</span>. To determine the eccentricity bounds, we assumed that the a single cell can be approximated by an ellipse with semi-major (<span class="math inline"><em>a</em></span>) and semi-minor (<span class="math inline"><em>b</em></span>) axis lengths of <span class="math inline">0.5 <em>μ</em>m</span> and <span class="math inline">0.25 <em>μ</em>m</span>, respectively. The eccentricity of this hypothetical cell can be computed as <span id="eq:ch4_eq21"><span class="math display">$$
+\text{eccentricity} = \sqrt{1 - \left(\frac{b}{a}\right)^2},
+\qquad(21)$$</span></span> yielding a value of approximately 0.8. Any objects with an eccentricity below this value were not considered to be single cells. After imposing both an area () and eccentricity filter (), the remaining objects were considered cells of interest () and the mean fluorescence intensity of each cell was extracted.</p>
+<figure>
+<img src="ch4_fig13.png" id="fig:ch4_fig13" data-short-caption="Segmentation of single bacterial cells" alt="Figure 13: Segmentation of single bacterial cells. Objects were selected if they had an eccentricity greater than 0.8 and an area between 0.5\,\mu\text{m}^2 and 6\,\mu\text{m}^2. Highlighted in blue are the regions considered to be representative of single cells. The black lines correspond to the empirical cumulative distribution functions for the parameter of interest. A representative final segmentation mask is shown in which segmented cells are depicted in cyan over the phase contrast image." /><figcaption aria-hidden="true">Figure 13: <strong>Segmentation of single bacterial cells.</strong> Objects were selected if they had an eccentricity greater than 0.8 and an area between <span class="math inline">0.5 <em>μ</em>m<sup>2</sup></span> and <span class="math inline">6 <em>μ</em>m<sup>2</sup></span>. Highlighted in blue are the regions considered to be representative of single cells. The black lines correspond to the empirical cumulative distribution functions for the parameter of interest. A representative final segmentation mask is shown in which segmented cells are depicted in cyan over the phase contrast image.</figcaption>
+</figure>
+<p><strong>Calculation of Fold-Change</strong></p>
+<p>Cells exhibited background fluorescence even in the absence of an expressed fluorophore. We corrected for this autofluorescence contribution to the fold-change calculation by subtracting the mean YFP fluorescence of cells expressing only the mCherry volume marker from each experimental measurement. The fold-change in gene expression was therefore calculated as <span id="eq:ch4_eq22"><span class="math display">$$
+\text{fold-change} = 
+\frac{\langle I_{R &gt; 0} \rangle - \langle I_\text{auto} \rangle}
+{\langle I_{R = 0} \rangle - \langle I_\text{auto} \rangle},
+\qquad(22)$$</span></span> where <span class="math inline">⟨<em>I</em><sub><em>R</em> &gt; 0</sub>⟩</span> is the mean fluorescence intensity of cells expressing LacI repressors, <span class="math inline">⟨<em>I</em><sub>auto</sub>⟩</span> is the mean intensity of cells expressing only the mCherry volume marker, and <span class="math inline">⟨<em>I</em><sub><em>R</em> = 0</sub>⟩</span> is the mean fluorescence intensity of cells in the absence of LacI. These fold-change values were very similar to those obtained through flow cytometry and were well described using the thermodynamic parameters used in the main text. With these experimentally measured fold-change values, the best-fit parameter values of the model were inferred and compared to those obtained from flow cytometry.</p>
+<h3 id="parameter-estimation-and-comparison">Parameter Estimation and Comparison</h3>
+<figure>
+<img src="ch4_fig14.png" id="fig:ch4_fig14" data-short-caption="Comparison of measured fold-change between flow cytometry and single-cell microscopy" alt="Figure 14: Comparison of measured fold-change between flow cytometry and single-cell microscopy. Experimentally measured fold-change values obtained through single-cell microscopy and flow cytometry are shown as white filled and solid colored circles, respectively. Solid and dashed lines indicate the predicted behavior using the most likely parameter values of K_A and K_I inferred from flow cytometry data and microscopy data, respectively. The red and blue plotting elements correspond to the different operators O1 and O2 with binding energies \Delta\varepsilon_{RA} of -13.9~k_BT and -15.3~k_BT, respectively  [21]. The marginalized posterior distributions for K_A and K_I are shown in the top and bottom panel, respectively. The posterior distribution determined using the microscopy data is wider than that computed using the flow cytometry data due to a smaller fig collection of data sets (three for microscopy and ten for flow cytometry)." /><figcaption aria-hidden="true">Figure 14: <strong>Comparison of measured fold-change between flow cytometry and single-cell microscopy.</strong> Experimentally measured fold-change values obtained through single-cell microscopy and flow cytometry are shown as white filled and solid colored circles, respectively. Solid and dashed lines indicate the predicted behavior using the most likely parameter values of <span class="math inline"><em>K</em><sub><em>A</em></sub></span> and <span class="math inline"><em>K</em><sub><em>I</em></sub></span> inferred from flow cytometry data and microscopy data, respectively. The red and blue plotting elements correspond to the different operators O1 and O2 with binding energies <span class="math inline"><em>Δ</em><em>ε</em><sub><em>R</em><em>A</em></sub></span> of <span class="math inline"> − 13.9 <em>k</em><sub><em>B</em></sub><em>T</em></span> and <span class="math inline"> − 15.3 <em>k</em><sub><em>B</em></sub><em>T</em></span>, respectively <span class="citation" data-cites="Garcia2011c"> [<a href="#ref-Garcia2011c" role="doc-biblioref">21</a>]</span>. The marginalized posterior distributions for <span class="math inline"><em>K</em><sub><em>A</em></sub></span> and <span class="math inline"><em>K</em><sub><em>I</em></sub></span> are shown in the top and bottom panel, respectively. The posterior distribution determined using the microscopy data is wider than that computed using the flow cytometry data due to a smaller fig collection of data sets (three for microscopy and ten for flow cytometry).</figcaption>
+</figure>
+<p>To confirm quantitative consistency between flow cytometry and microscopy, the parameter values of <span class="math inline"><em>K</em><sub><em>A</em></sub></span> and <span class="math inline"><em>K</em><sub><em>I</em></sub></span> were also estimated from three biological replicates of IPTG titration curves obtained by microscopy for strains with <span class="math inline"><em>R</em> = 260</span> and operators O1 and O2. shows the data from these measurements (orange circles) and the ten biological replicates from our flow cytometry measurements (blue circles), along with the fold-change predictions from each inference. In comparison with the values obtained by flow cytometry, each parameter estimate overlapped with the 95% credible region of our flow cytometry estimates, as shown in . Specifically, these values were <span class="math inline"><em>K</em><sub><em>A</em></sub> = 142<sub> − 34</sub><sup> + 40</sup> <em>μ</em>M</span> and <span class="math inline"><em>K</em><sub><em>I</em></sub> = 0.6<sub> − 0.1</sub><sup> + 0.1</sup> <em>μ</em>M</span> from microscopy and <span class="math inline"><em>K</em><sub><em>A</em></sub> = 149<sub> − 12</sub><sup> + 14</sup> <em>μ</em>M</span> and <span class="math inline"><em>K</em><sub><em>I</em></sub> = 0.57<sub> − 0.02</sub><sup> + 0.03</sup> <em>μ</em>M</span> from the flow cytometry data. We note that the credible regions from the microscopy data shown in are much broader than those from flow cytometry due to the fewer number of replicates performed.</p>
+<h2 class="unnumbered" id="references">References</h2>
+<div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="ref-Schmidt2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A. Schmidt, K. Kochanowski, S. Vedelaar, E. Ahrné, B. Volkmer, L. Callipo, K. Knoops, M. Bauer, R. Aebersold, and M. Heinemann, <em><span class="nocase">The quantitative and condition-dependent <em>Escherichia coli</em> proteome</span></em>, Nature Biotechnology <strong>34</strong>, 104 (2015).</div>
+</div>
+<div id="ref-Shis2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">D. L. Shis, F. Hussain, S. Meinhardt, L. Swint-Kruse, and M. R. Bennett, <em><span class="nocase">Modular, Multi-Input Transcriptional Logic Gating with Orthogonal LacI/GalR Family Chimeras</span></em>, ACS Synthetic Biology <strong>3</strong>, 645 (2014).</div>
+</div>
+<div id="ref-Sochor2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">M. A. Sochor, <em><span class="nocase"><em>In vitro</em> transcription accurately predicts lac repressor phenotype <em>in vivo</em> in <em>Escherichia coli</em>.</span></em>, PeerJ <strong>2</strong>, e498 (2014).</div>
+</div>
+<div id="ref-Setty2003" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Y. Setty, A. E. Mayo, M. G. Surette, and U. Alon, <em><span class="nocase">Detailed map of a cis-regulatory input function.</span></em>, Proceedings of the National Academy of Sciences <strong>100</strong>, 7702 (2003).</div>
+</div>
+<div id="ref-Garcia2011b" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">H. G. Garcia, H. J. Lee, J. Q. Boedicker, and R. Phillips, <em><span class="nocase">Comparison and Calibration of Different Reporters for Quantitative Analysis of Gene Expression</span></em>, Biophysical Journal <strong>101</strong>, 535 (2011b).</div>
+</div>
+<div id="ref-SpectraViewer" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Chroma2ptTechnology2ptCorporation, <em>Chroma Spectra Viewer</em>, (2016).</div>
+</div>
+<div id="ref-Marr1980" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">D. Marr and E. Hildreth, <em><span class="nocase">Theory of edge detection</span></em>, Proceedings of the Royal Society B: Biological Sciences <strong>207</strong>, 187 (1980).</div>
+</div>
+<div id="ref-Edelstein2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">A. D. Edelstein, M. A. Tsuchida, N. Amodaj, H. Pinkard, R. D. Vale, and N. Stuurman, <em><span class="nocase">Advanced methods of microscope control using <span class="math inline"><em>μ</em></span>Manager software</span></em>, Journal of Biological Methods <strong>1</strong>, 10 (2014).</div>
+</div>
+<div id="ref-Lo2008" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">K. Lo, R. R. Brinkman, and R. Gottardo, <em><span class="nocase">Automated gating of flow cytometry data via robust model-based clustering</span></em>, Cytometry Part A <strong>73A</strong>, 321 (2008).</div>
+</div>
+<div id="ref-Maecker2005" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">H. T. Maecker, A. Rinfret, P. D’Souza, J. Darden, E. Roig, C. Landry, P. Hayes, J. Birungi, O. Anzala, M. Garcia, A. Harari, I. Frank, R. Baydo, M. Baker, J. Holbrook, J. Ottinger, L. Lamoreaux, C. L. Epling, E. Sinclair, M. A. Suni, K. Punt, S. Calarota, S. El-Bahi, G. Alter, H. Maila, E. Kuta, J. Cox, C. Gray, M. Altfeld, N. Nougarede, J. Boyer, L. Tussey, T. Tobery, B. Bredt, M. Roederer, R. Koup, V. C. Maino, K. Weinhold, G. Pantaleo, J. Gilmour, H. Horton, and R. P. Sekaly, <em><span class="nocase">Standardization of cytokine flow cytometry assays</span></em>, BMC Immunology <strong>6</strong>, 13 (2005).</div>
+</div>
+<div id="ref-Aghaeepour2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">N. Aghaeepour, G. Finak, The2ptFlowCAP2ptConsortium, The2ptDREAM2ptConsortium, H. Hoos, T. R. Mosmann, R. Brinkman, R. Gottardo, and R. H. Scheuermann, <em><span class="nocase">Critical assessment of automated flow cytometry data analysis techniques</span></em>, Nature Methods <strong>10</strong>, 228 (2013).</div>
+</div>
+<div id="ref-Daber2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">R. Daber, K. Sharp, and M. Lewis, <em><span>One Is Not Enough</span></em>, Journal of Molecular Biology <strong>392</strong>, 1133 (2009).</div>
+</div>
+<div id="ref-Weinert2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">F. M. Weinert, R. C. Brewster, M. Rydenfelt, R. Phillips, and W. K. Kegel, <em><span class="nocase">Scaling of Gene Expression with Transcription-Factor Fugacity</span></em>, Physical Review Letters <strong>113</strong>, 1 (2014).</div>
+</div>
+<div id="ref-Oehler1994" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">S. Oehler, M. Amouyal, P. Kolkhof, B. von Wilcken-Bergmann, and B. Müller-Hill, <em><span class="nocase">Quality and position of the three lac operators of <em>E. coli</em> define efficiency of repression.</span></em>, The EMBO Journal <strong>13</strong>, 3348 (1994).</div>
+</div>
+<div id="ref-Daber2011a" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">R. Daber, M. A. Sochor, and M. Lewis, <em><span class="nocase">Thermodynamic Analysis of Mutant Lac Repressors</span></em>, Journal of Molecular Biology <strong>409</strong>, 76 (2011).</div>
+</div>
+<div id="ref-Gardino2003" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">A. K. Gardino, B. F. Volkman, H. S. Cho, S.-Y. Lee, D. E. Wemmer, and D. Kern, <em><span class="nocase">The NMR Solution Structure of BeF3-Activated Spo0F Reveals the Conformational Switch in a Phosphorelay System</span></em>, Journal of Molecular Biology <strong>331</strong>, 245 (2003).</div>
+</div>
+<div id="ref-Boulton2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">S. Boulton and G. Melacini, <em><span class="nocase">Advances in NMR Methods To Map Allosteric Sites: From Models to Translation</span></em>, Chemical Reviews <strong>116</strong>, 6267 (2016).</div>
+</div>
+<div id="ref-Oehler2006a" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[18] </div><div class="csl-right-inline">S. Oehler, S. Alberti, and B. Müller-Hill, <em><span class="nocase">Induction of the <em>lac</em> promoter in the absence of DNA loops and the stoichiometry of induction</span></em>, Nucleic Acids Research <strong>34</strong>, 606 (2006).</div>
+</div>
+<div id="ref-Rydenfelt2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[19] </div><div class="csl-right-inline">M. Rydenfelt, H. G. Garcia, R. S. Cox, and R. Phillips, <em><span class="nocase">The Influence of Promoter Architectures and Regulatory Motifs on Gene Expression in <em>Escherichia coli</em></span></em>, PLoS ONE <strong>9</strong>, 1 (2014).</div>
+</div>
+<div id="ref-Vilar2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[20] </div><div class="csl-right-inline">J. M. G. Vilar and L. Saiz, <em><span class="nocase">Reliable Prediction of Complex Phenotypes from a Modular Design in Free Energy Space: An Extensive Exploration of the <em>lac</em> Operon</span></em>, ACS Synthetic Biology <strong>2</strong>, 576 (2013).</div>
+</div>
+<div id="ref-Garcia2011c" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[21] </div><div class="csl-right-inline">H. G. Garcia and R. Phillips, <em><span class="nocase">Quantitative dissection of the simple repression input-output function.</span></em>, Proceedings of the National Academy of Sciences <strong>108</strong>, 12173 (2011a).</div>
+</div>
+<div id="ref-Brewster2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[22] </div><div class="csl-right-inline">R. C. Brewster, F. M. Weinert, H. G. Garcia, D. Song, M. Rydenfelt, and R. Phillips, <em><span class="nocase">The Transcription Factor Titration Effect Dictates Level of Gene Expression</span></em>, Cell <strong>156</strong>, 1312 (2014).</div>
+</div>
+</div>
+						</div><!-- /.content -->
+					</div><!-- /.col -->
+					<div class="col-md-4 col-md-offset-1">
+						<div class="sections-list-wrapper">
+							<div class="sections-list js-sections js-affix js-scrollspy hidden-xs hidden-sm"><span style="font-size: 14pt">Table of Contents</span><hr></div><!-- /.sections-list -->
+						</div>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.section -->
+		
+			<div class="section section--grey">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-7">
+							<div id="disqus_thread"></div>
+<script>
+	/**
+	 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+	 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+	 */
+	 /*
+	var disqus_config = function () {
+	this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+		this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	};
+	*/
+	(function() {
+		var d = document, s = d.createElement('script');
+
+		s.src = 'https://mrazomej-phd.disqus.com/embed.js';
+
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</div><!-- /.section -->
+		
+		<div class="js-footer-area">
+			
+				<nav class="page-nav">	
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								
+									<a href="https://mrazomej.github.io/phd/chapter_03" class="page-nav__item page-nav__item--prev">
+										<i class="icon icon--arrow-left"></i>
+										Chapter 3
+									</a><!-- /.page-nav__item -->
+								
+								
+									<a href="https://mrazomej.github.io/phd/chapter_05" class="page-nav__item page-nav__item--next">
+										Chapter 5
+										<i class="icon icon--arrow-right"></i>
+									</a><!-- /.page-nav__item -->
+								
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.container -->
+				</nav><!-- /.page-nav -->
+			
+			
+			
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					
+						<a href="https://mrazomej.github.io/phd//" class="site-footer__logo">Manuel Razo-Mejia | PhD Thesis</a>
+					
+					
+						<hr>
+						<p class="site-footer__copyright">Copyright &copy; 2021. - Manuel Razo-Mejia <br>All rights reserved.</p>
+					
+				</div><!-- /.col -->
+				
+					<div class="col-sm-6 align-right">
+						<ul class="social-list">
+							
+								<li>
+									<a href="https://twitter.com/mrazomej" target="_blank" class="social-list__item social-list__item--twitter">
+										<i class="icon icon--twitter"></i>
+									</a>
+								</li>
+							
+						</ul><!-- /.social-list -->
+					</div><!-- /.col -->
+				
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</footer><!-- /.site-footer -->
+
+
+<script src="https://mrazomej.github.io/phd//doks-theme/assets/js/vendor/jquery.min.js"></script>
+<script type="text/javascript" src="https://mrazomej.github.io/phd//doks-theme/assets/js/vendor/bootstrap/affix.min.js"></script>
+<script type="text/javascript" src="https://mrazomej.github.io/phd//doks-theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
+<script type="text/javascript" src="https://mrazomej.github.io/phd//doks-theme/assets/js/vendor/matchHeight.min.js"></script>
+<script type="text/javascript" src="https://mrazomej.github.io/phd//doks-theme/assets/js/scripts.min.js"></script>
+
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-109526846-4', 'auto');
+	ga('send', 'pageview');
+</script>
+
+
+
+		</div><!-- /.js-footer-area -->
+	</body>
+</html>
