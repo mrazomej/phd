@@ -84,7 +84,8 @@ on the CaltechDATA online repository under DOI: 10.22002/D1.229.
 ![**Correction for uneven illumination.** A representative image of the
 illumination profile of the $512\,\text{nm}$ excitation beam on a homogeneously
 fluorescent slide is shown in the left panel. This is corrected for using
-equation and is shown in the right panel.](ch4_fig12){#fig:ch4_fig12 short-caption="Correction for uneven illumination."}
+equation and is shown in the right panel.](ch4_fig12){#fig:ch4_fig12
+short-caption="Correction for uneven illumination."}
 
 The excitation laser has a two-dimensional gaussian profile. To minimize
 non-uniform illumination of a single field of view, the excitation beam

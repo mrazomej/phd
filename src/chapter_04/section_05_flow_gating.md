@@ -25,15 +25,17 @@ population distribution. Once these voltages were determined, they were used for
 all subsequent measurements. Extremely low signal producing particles were
 discarded before data storage by setting a basal voltage threshold, thus
 removing the majority of spurious events. The various instrument settings for
-data collection are given in Table XXX.
+data collection are given in [@tbl:ch4_tab01].
 
-| \textbf{Laser}   | \textbf{Channel}                | \textbf{Sensor Voltage } \cr |
-| ---------------- | ------------------------------- | ---------------------------- |
-| $488\,\text{nm}$ | Forward-Scatter (FSC)           | $423\,\text{V}$              |
-| $488\,\text{nm}$ | Side-Scatter (SSC)              | $537\,\text{V}$              |
-| $488\,\text{nm}$ | Intensity (B1 Filter, 525/50nm) | $790\,\text{V}$              |
-| $488\,\text{nm}$ | Trigger (debris threshold)      | $24.5\,\text{V}$             |
-
+| \textbf{Laser}   | \textbf{Channel}                | \textbf{Sensor Voltage } |
+| ---------------- | ------------------------------- | ------------------------ |
+| $488\,\text{nm}$ | Forward-Scatter (FSC)           | $423\,\text{V}$          |
+| $488\,\text{nm}$ | Side-Scatter (SSC)              | $537\,\text{V}$          |
+| $488\,\text{nm}$ | Intensity (B1 Filter, 525/50nm) | $790\,\text{V}$          |
+| $488\,\text{nm}$ | Trigger (debris threshold)      | $24.5\,\text{V}$         |
+Table: **Instrument settings for data collection using the Miltenyi Biotec
+MACSQuant flow cytometer.** All experimental measurements were collected using
+these values. {#tbl:ch4_tab01}
 
 ### Experimental Measurement 
 
