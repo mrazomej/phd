@@ -8,5 +8,8 @@ eqnPrefix:
 secPrefix:
   - "Sec."
   - "Secs."
+tblPrefix:
+  - "Table"
+  - "Tables"
 chapDelim:
   - "."
