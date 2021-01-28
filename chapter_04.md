@@ -32,17 +32,17 @@ contents:
     - section_04_fugacity 
     - section_05_flow_gating 
     - section_06_microscopy 
-    # - section_07_sensitivity 
-    # - section_08_hill_fits 
-    # - section_09_global_fit 
-    # - section_10_oid 
-    # - section_11_comparison 
-    # - section_12_properties 
-    # - section_13_applications 
-    # - section_14_strainlist 
-    # - section_15_Nns_def 
-    # - section_16_source_variability 
-    # - section_17_steadystate
+    - section_07_sensitivity 
+    - section_08_hill_fits 
+    - section_09_global_fit 
+    - section_10_oid 
+    - section_11_comparison 
+    - section_12_properties 
+    - section_13_applications 
+    - section_14_strainlist 
+    - section_15_Nns_def 
+    - section_16_source_variability 
+    - section_17_steadystate
 ---
 
 <hr/>
