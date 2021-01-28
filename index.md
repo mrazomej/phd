@@ -49,11 +49,11 @@ grid_navigation:
       excerpt: Predicting how many bits of information cells can process
       cta: read
       url: 'chapter_03'
-    # - title: >
-    #      Chapter IV: Physiological Adaptation 
-    #   excerpt: On the physiological adaptability of a simple genetic circuit 
-    #   cta: read
-    #   url: 'chapter_04'
+    - title: >
+         Chapter IV: Supporting Information for Chapter II
+      excerpt: Supporting information and extended methods for chapter II
+      cta: read
+      url: 'chapter_04'
     # - title: >
     #      Chapter V: Survival
     #   excerpt: >
