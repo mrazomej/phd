@@ -41,8 +41,7 @@ contents:
     - section_13_applications 
     - section_14_strainlist 
     - section_15_Nns_def 
-    - section_16_source_variability 
-    - section_17_steadystate
+    - section_16_steadystate
 ---
 
 <hr/>
