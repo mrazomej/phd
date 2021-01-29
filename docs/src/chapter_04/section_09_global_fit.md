@@ -153,7 +153,7 @@ the O3 operator data, again, agreement between the predicted $[EC_{50}]$ and the
 effective Hill coefficient remain poor due the theory being unable to capture
 the steepness of the response curves.
 
-| \textbf{Parameter}                               | \multicolumn{1}{c}{\textbf{Description}}                                                                     |
+| **Parameter**                                    | **Description**                                                                                              |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | $c$                                              | Concentration of the inducer                                                                                 |
 | $K_A, K_I$                                       | Dissociation constant between an inducer and the repressor in the active/inactive state                      |
@@ -200,22 +200,22 @@ the error bars are smaller than the point itself.](ch4_fig20){#fig:ch4_fig20
 short-caption="Key properties of induction profiles as predicted with a global
 fit using all available data"}
 
-|                              | \textbf{Reported Values} [@Garcia2011c] | \textbf{Global Fit}                 |
-| ---------------------------- | --------------------------------------- | ----------------------------------- |
-| $\tilde{k}_A$                | $-$                                     | $-5.33^{+0.06}_{-0.05}$             |
-| $\tilde{k}_I$                | $-$                                     | $0.31^{+0.05}_{-0.06}$              |
-| $K_A$                        | $-$                                     | $205^{+11}_{-12}\,\mu\text{M}$      |
-| $K_I$                        | $-$                                     | $0.73^{+0.04}_{-0.04}\,\mu\text{M}$ |
-| $R_{22}$                     | $22 \pm 4$                              | $20^{+1}_{-1}$                      |
-| $R_{60}$                     | $60 \pm 20$                             | $74^{+4}_{-3}$                      |
-| $R_{124}$                    | $124 \pm 30$                            | $130^{+6}_{-6}$                     |
-| $R_{260}$                    | $260 \pm 40$                            | $257^{+9}_{-11}$                    |
-| $R_{1220}$                   | $1220 \pm 160$                          | $1191^{+32}_{-55}$                  |
-| $R_{1740}$                   | $1740 \pm 340$                          | $1599^{+75}_{-87}$                  |
-| O1 $\Delta\varepsilon_{RA}$  | $-15.3 \pm 0.2~k_BT$                    | $-15.2^{+0.1}_{-0.1}~k_BT$          |
-| O2 $\Delta\varepsilon_{RA}$  | $-13.9 \pm 0.2~k_BT$                    | $-13.6^{+0.1}_{-0.1}~k_BT$          |
-| O3 $\Delta\varepsilon_{RA}$  | $-9.7 \pm 0.1~k_BT$                     | $-9.4^{+0.1}_{-0.1}~k_BT$           |
-| Oid $\Delta\varepsilon_{RA}$ | $-17.0 \pm 0.2~k_BT$                    | $-17.7^{+0.2}_{-0.1}~k_BT$          |
+|                              | **Reported Values [@Garcia2011c]** | **Global Fit**                      |
+| ---------------------------- | ---------------------------------- | ----------------------------------- |
+| $\tilde{k}_A$                | $-$                                | $-5.33^{+0.06}_{-0.05}$             |
+| $\tilde{k}_I$                | $-$                                | $0.31^{+0.05}_{-0.06}$              |
+| $K_A$                        | $-$                                | $205^{+11}_{-12}\,\mu\text{M}$      |
+| $K_I$                        | $-$                                | $0.73^{+0.04}_{-0.04}\,\mu\text{M}$ |
+| $R_{22}$                     | $22 \pm 4$                         | $20^{+1}_{-1}$                      |
+| $R_{60}$                     | $60 \pm 20$                        | $74^{+4}_{-3}$                      |
+| $R_{124}$                    | $124 \pm 30$                       | $130^{+6}_{-6}$                     |
+| $R_{260}$                    | $260 \pm 40$                       | $257^{+9}_{-11}$                    |
+| $R_{1220}$                   | $1220 \pm 160$                     | $1191^{+32}_{-55}$                  |
+| $R_{1740}$                   | $1740 \pm 340$                     | $1599^{+75}_{-87}$                  |
+| O1 $\Delta\varepsilon_{RA}$  | $-15.3 \pm 0.2~k_BT$               | $-15.2^{+0.1}_{-0.1}~k_BT$          |
+| O2 $\Delta\varepsilon_{RA}$  | $-13.9 \pm 0.2~k_BT$               | $-13.6^{+0.1}_{-0.1}~k_BT$          |
+| O3 $\Delta\varepsilon_{RA}$  | $-9.7 \pm 0.1~k_BT$                | $-9.4^{+0.1}_{-0.1}~k_BT$           |
+| Oid $\Delta\varepsilon_{RA}$ | $-17.0 \pm 0.2~k_BT$               | $-17.7^{+0.2}_{-0.1}~k_BT$          |
 Table: **Global fit of all parameter values using the entire data set in XXX.**
 In addition to fitting the repressor inducer dissociation constants $K_A$ and
 $K_I$ as was done in the text, we also fit the repressor DNA binding energy
