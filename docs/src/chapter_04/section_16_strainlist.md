@@ -34,7 +34,7 @@ pZS4\*1-mCherry and provided constitutive expression of the mCherry fluorescent
 protein. This pZS plasmid is a low copy (SC101 origin of replication) where like
 with 3\*1x-lacI, mCherry is driven by a $P_{LtetO-1}$ promoter.
 
-| \textbf{Strain} | \textbf{Genotype}                                       |
+| **Strain**      | **Genotype**                                            |
 | --------------- | ------------------------------------------------------- |
 | O1, $R = 0$     | HG105::galK   <>25O1+11-yfp                             |
 | O1, $R = 22$    | HG104::galK   <>25O1+11-yfp                             |
