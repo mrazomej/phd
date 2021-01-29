@@ -27,7 +27,7 @@ $$
 \left(1 + \frac{c}{K_A}\right)^n + e^{\beta\Delta\varepsilon_{AI}}
 \left(1 + \frac{c}{K_I}\right)^n} \frac{R}{N_{NS}}
 e^{-\beta\Delta\varepsilon_{RA}}\right)^{-1},
-$${#eq:ch4_corepression}
+$${#eq:ch4_eq39}
 where $c$ now represents the concentration of the corepressor molecule.
 Mathematically, the difference between these two architectures can be seen in
 the relative sizes of the dissociation constants $K_A$ and $K_I$ between the
@@ -66,7 +66,7 @@ e^{-\beta\Delta\varepsilon_{AA}}e^{-\beta\varepsilon_{AP}}}{
 \left(1 + \frac{c}{K_A}\right)^n + e^{\beta\Delta\varepsilon_{AI}}
 \left(1 + \frac{c}{K_I}\right)^n}\frac{A}{N_{NS}}
 e^{-\beta\Delta\varepsilon_{AA}}},
-$${#eq:ch4_activation}
+$${#eq:ch4_eq40}
 where $A$ is the total number of activators per cell, $c$ is the concentration
 of a coactivator molecule, $\Delta\varepsilon_{AA}$ is the binding energy of the
 activator to the DNA in the active allosteric state, and $\varepsilon_{AP}$ is
