@@ -39,9 +39,9 @@ contents:
     - section_11_comparison 
     - section_12_properties 
     - section_13_applications 
-    - section_14_strainlist 
-    - section_15_Nns_def 
-    - section_16_steadystate
+    - section_14_Nns_def 
+    - section_15_steadystate
+    - section_16_strainlist 
 ---
 
 <hr/>
