@@ -29,40 +29,39 @@ As in , we assume that deviations of the experimental fold-change from the
 theoretical predictions are normally distributed with mean zero and standard
 deviation $\sigma$. We begin by writing Bayes' theorem,
 $$
-P(\tilde{k}_A, \tilde{k}_I, \mathbf{\textbf{\textit{R}}},
-\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{\textit{RA}}}}, \sigma \mid D) =
-\frac{P(D \mid \tilde{k}_A, \tilde{k}_I, \mathbf{\textbf{\textit{R}}},
-\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{\textit{RA}}}}, \sigma) P(\tilde{k}_A,
-\tilde{k}_I, \mathbf{\textbf{\textit{R}}},
-\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{\textit{RA}}}}, \sigma)}{P(D)},
+P(\tilde{k}_A, \tilde{k}_I, \mathbf{R},
+\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma \mid D) =
+\frac{P(D \mid \tilde{k}_A, \tilde{k}_I, \mathbf{R},
+\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma) P(\tilde{k}_A,
+\tilde{k}_I, \mathbf{R},
+\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma)}{P(D)},
 $${#eq:ch4_eq30}
-where $\textbf{\textit{R}}$ is an array containing the six different repressor
+where $\textbf{R}$ is an array containing the six different repressor
 copy numbers to be fit,
-$\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{\textit{RA}}}}$ is an array
+$\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}$ is an array
 containing the four binding energies to be fit, and $D$ is the experimental
 fold-change data. The term $P(\tilde{k}_A, \tilde{k}_I,
-\mathbf{\textbf{\textit{R}}},
-\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{\textit{RA}}}}, \sigma \mid D)$
+\mathbf{R},
+\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma \mid D)$
 gives the probability distributions of all of the parameters given the data. The
-term $P(D \mid \tilde{k}_A, \tilde{k}_I, \mathbf{\textbf{\textit{R}}},
-\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{\textit{RA}}}}, \sigma)$
+term $P(D \mid \tilde{k}_A, \tilde{k}_I, \mathbf{R},
+\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma)$
 represents the likelihood of having observed our experimental data given some
 value for each parameter. $P(\tilde{k}_A, \tilde{k}_I,
-\mathbf{\textbf{\textit{R}}},
-\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{\textit{RA}}}}, \sigma)$
+\mathbf{R},
+\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma)$
 contains all the prior information on the values of these parameters. Lastly,
 $P(D)$ serves as a normalization constant and hence can be
 ignored.
 
 Given $n$ independent measurements of the fold-change, the first term in
 can be written as 
-$$\begin{split}
-P(D \mid \tilde{k}_A, \tilde{k}_I, \mathbf{\textbf{\textit{R}}},
-\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{\textit{RA}}}}, \sigma) =
+$$
+P(D \mid \tilde{k}_A, \tilde{k}_I, \mathbf{R},
+\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma) =
 \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}\prod\limits_{i=1}^n \exp
 \left[-\frac{(\text{fc}^{(i)}_{\exp} - \text{fc}(\tilde{k}_A, \tilde{k}_I,
 R^{(i)}, \Delta\varepsilon_{RA}^{(i)}, c^{(i)}))^2}{2\sigma^2}\right],
-\end{split}
 $${#eq:ch4_eq31}
 where $\text{fc}^{(i)}_{\text{exp}}$ is the $i^{\text{th}}$ experimental
 fold-change and $\text{fc}(\cdot\cdot\cdot)$ is the theoretical prediction. Note
@@ -73,8 +72,8 @@ The second term in represents the prior information of the parameter
 values. We assume that all parameters are independent of each other, so
 that 
 $$
-P(\tilde{k}_A, \tilde{k}_I, \mathbf{\textbf{\textit{R}}},
-\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{\textit{RA}}}}, \sigma) =
+P(\tilde{k}_A, \tilde{k}_I, \mathbf{R},
+\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma) =
 P(\tilde{k}_A ) \cdot P(\tilde{k}_I ) \cdot \prod_i P(R^{(i)}) \cdot \prod_j
 P(\Delta\varepsilon_{RA}^{(j)}) \cdot P(\sigma),
 $${#eq:ch4_eq32}
@@ -124,8 +123,8 @@ exploring which values could give the best fit, the errors are taken to be wide
 enough to allow the parameter estimation to freely explore parameter space in
 the vicinity of the best estimates. Putting all these terms together, we use
 Markov chain Monte Carlo to sample the posterior distribution $P(\tilde{k}_A,
-\tilde{k}_I, \mathbf{\textbf{\textit{R}}}, \mathbf{\Delta
-\boldsymbol{\varepsilon}_{\textbf{\textit{RA}}}}, \sigma \mid D)$, enabling us
+\tilde{k}_I, \mathbf{R}, \mathbf{\Delta
+\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma \mid D)$, enabling us
 to determine both the most likely value for each physical parameter as well as
 its associated credible region (see the [GitHub
 repository](https://rpgroup-pboc.github.io/mwc_induction/code/notebooks/global_fits.html)
