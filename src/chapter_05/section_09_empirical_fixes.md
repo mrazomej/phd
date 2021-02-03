@@ -21,7 +21,7 @@ between our minimal model predictions and the data for noise in gene expression
 are of the from
 $$
 \text{noise}_{\text{exp}} = \alpha \cdot \text{noise}_{\text{theory}},
-$${#eq:ch5_eq154}
+$$
 where $\alpha$ is a dimensionless constant to be fit from the data. The data,
 especially in suggests that our predictions are within a factor of $\approx$ two
 from the experimental data. To further check that intuition we performed a
@@ -76,7 +76,7 @@ will now test the idea of an additive constant. What this means is that our
 minimal model underestimates the noise in gene expression as
 $$
 \text{noise}_{\text{exp}} = \beta + \text{noise}_{\text{theory}},
-$${#eq:ch5_eq155}
+$$
 where $\beta$ is an additive constant to be determined from the data. As with
 the multiplicative constant we performed a regression to determine this
 empirical additive constant comparing experimental and theoretical gene
@@ -142,13 +142,13 @@ work with $P(\left\langle p \right\rangle)$ rather than $P(c)$ since the
 deterministic relation allows us to write 
 $$
 P(c) dc = P(\left\langle p \right\rangle) d\left\langle p \right\rangle.
-$${#eq:ch5_eq156}
+$$ 
 Optimizing over all possible distributions $P(\left\langle p \right\rangle)$
 using calculus of variations results in a distribution of the form
 $$
 P^*(\left\langle p \right\rangle) = 
 {1 \over \mathcal{Z}} \frac{1}{\sigma_p(\left\langle p \right\rangle)},
-$${#eq:ch5_eq157}
+$$
 where $\sigma_p(\left\langle p \right\rangle)$ is the standard deviation of the
 protein distribution as a function of the mean protein expression, and
 $\mathcal{Z}$ is a normalization constant defined as
@@ -157,24 +157,24 @@ $$
 \int_{\left\langle{p(c=0)}\right\rangle}
 ^{\left\langle{p(c\rightarrow \infty)}\right\rangle}
 \frac{1}{\sigma_p(\left\langle p \right\rangle)} d\left\langle p \right\rangle.
-$${#eq:ch5_eq158}
+$$
 Under these assumptions the small noise approximation tells us that the channel
 capacity is of the form [@Tkacik2008a]
 $$
 I = \log_2 \left( \frac{\mathcal{Z}}{\sqrt{2 \pi e}} \right).
-$${#eq:ch5_eq159}
+$$
 
 From the theory-experiment comparison in we know that the standard deviation
 predicted by our model is systematically off by a factor of two compared to the
 experimental data, i.e.
 $$
 \sigma_p^{\exp} = 2 \sigma_p^{\text{theory}}.
-$${#eq:ch5_eq160}
+$$ 
 This then implies that the normalization constant $\mathcal{Z}$ between theory
 and experiment must follow a relationship of the form
 $$
 \mathcal{Z}^{\exp} = \frac{1}{2} \mathcal{Z}^{\text{theory}}.
-$${#eq:ch5_eq161}
+$$ 
 With this relationship the small noise approximation would predict that the
 difference between the experimental and theoretical channel capacity should be
 of the form
@@ -182,7 +182,7 @@ $$
 I^{\exp} = \log_2 \left( \frac{\mathcal{Z}^{\exp}}{\sqrt{2 \pi e}} \right)
 = \log_2 \left( \frac{\mathcal{Z}^{\text{theory}}}{\sqrt{2 \pi e}} \right)
 - \log_2(2).
-$${#eq:ch5_eq162}
+$$ 
 Therefore under the small noise approximation we would expect our predictions
 for the channel capacity to be off by a constant of 1 bit ($\log_2(2)$) of
 information. Again, the conditions for the small noise approximation do not

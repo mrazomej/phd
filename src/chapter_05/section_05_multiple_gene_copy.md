@@ -67,7 +67,7 @@ $P_{t_o}(m, p)$ must satisfy
 $$
 P_{t_o}(m, p) = \sum_{m'=m}^\infty \sum_{p'=p}^\infty 
 P(m, p \mid m', p') P_{t_d}(m', p'),
-$${#eq:ch5_eq77}
+$$ 
 where we are summing over all the possibilities of having $m'$ mRNA and $p'$
 proteins before cell division. Note that the sums start at $m$ and $p$; this is
 because for a cell to have these copy numbers before cell division it is a
@@ -80,13 +80,13 @@ i.e.
 $$
 P(m, p \mid m', p') = {m' \choose m} \left( {1 \over 2} \right)^{m'} \cdot
                       {p' \choose p} \left( {1 \over 2} \right)^{p'}.
-$${#eq:ch5_eq78}
+$$ 
 Because of these product of binomial probabilities are allowed to extend the sum
 from to start at $m'=0$ and $p'=0$ as 
 $$
 P_{t_o}(m, p) = \sum_{m'=0}^\infty \sum_{p'=0}^\infty 
                   P(m, p \mid m', p') P_{t_d}(m', p'),
-$${#eq:ch5_eq79}
+$$
 since the product of the binomial distributions in is zero for all $m' < m$
 and/or $p' < 0$. So from now on in this section we will assume that a sum of the
 form $\sum_x \equiv \sum_{x=0}^\infty$ to simplify notation.
@@ -96,35 +96,35 @@ $\left\langle{m^x p^y}\right\rangle_{t_o}$ as
 $$
 \left\langle m^x p^y \right\rangle_{t_o} = 
 \sum_m \sum_p m^x p^y P_{t_o}(m, p),
-$${#eq:ch5_eq80}
+$$ 
 for all $x, y \in \mathbb{N}$. Substituting results in
 $$
 \left\langle m^x p^y \right\rangle_{t_o} = \sum_m \sum_p m^x p^y
 \sum_{m'} \sum_{p'} P(m, p \mid m', p') P_{t_d}(m', p').
-$${#eq:ch5_eq81}
+$$ 
 We can rearrange the sums to be
 $$
 \left\langle m^x p^y \right\rangle_{t_o} = \sum_{m'} \sum_{p'} P_{t_d}(m', p')
                      \sum_m \sum_p m^x p^y P(m, p \mid m', p').
-$${#eq:ch5_eq82}
+$$
 The fact that is the product of two independent events allows us to rewrite the
 joint probability $P(m, p \mid m', p')$ as
 $$
 P(m, p \mid m', p') = P(m \mid m') \cdot P(p \mid p').
-$${#eq:ch5_eq83}
+$$ 
 With this we can then write the moment $\left\langle m^x p^y
 \right\rangle_{t_o}$ as
 $$
 \left\langle m^x p^y \right\rangle_{t_o} = \sum_{m'} \sum_{p'} P_{t_d}(m', p')
                      \sum_m  m^x  P(m \mid m')
                      \sum_p p^y P(p \mid p').
-$${#eq:ch5_eq84}
+$$ 
 Notice that both terms summing over $m$ and over $p$ are the conditional
 expected values, i.e.
 $$
 \sum_z  z^x  P(z \mid z') \equiv \left\langle{z^x \mid z'}\right\rangle, \; 
 {\text{ for } z\in \{m, p \}}.
-$${#eq:ch5_eq85}
+$$ 
 These conditional expected values are the expected values of a binomial random
 variable $z \sim \text{Bin}(z', 1/2)$, which can be easily computed as we will
 show later in this section. We then rewrite the expected values after the cell
@@ -134,7 +134,7 @@ $$
 \sum_{m'} \sum_{p'} 
 \left\langle{m^x \mid m'}\right\rangle \left\langle{p^y \mid p'}\right\rangle
 P_{t_d}(m', p').
-$${#eq:ch5_eq86}
+$$
 
 To see how this general formula for the moments after the cell division works
 let's compute the mean protein per cell after the cell division
@@ -145,42 +145,42 @@ $$
 \sum_{m'} \sum_{p'} 
 \left\langle{m^0 \mid m'}\right\rangle \left\langle{p \mid p'}\right\rangle
 P_{t_d}(m', p').
-$${#eq:ch5_eq87}
+$$ 
 The zeroth moment $\left\langle{m^0 \mid m'}\right\rangle$ by definition must be
 one since we have
 $$
 \left\langle{m^0 \mid m'}\right\rangle = 
 \sum_m m^0 P(m \mid m') = 
 \sum_m P(m \mid m') = 1,
-$${#eq:ch5_eq88}
+$$
 since the probability distribution must be normalized. This leaves us then with
 $$
 \left\langle{p}\right\rangle_{t_o} = 
 \sum_{m'} \sum_{p'} P_{t_d}(m', p') \left\langle p \mid p' \right\rangle.
-$${#eq:ch5_eq89}
+$$
 If we take the sum over $m'$ we simply compute the marginal probability
 distribution $\sum_{m'} P_{t_d}(m', p') = P_{t_d}(p')$, then we have
 $$
 \left\langle p \right\rangle_{t_o} = 
 \sum_{p'} \left\langle p \mid p' \right\rangle P_{t_d}(p').
-$${#eq:ch5_eq90}
+$$
 For the particular case of the first moment of the binomial distribution with
 parameters $p'$ and $1/2$ we know that
 $$
 \left\langle p \mid p' \right\rangle = {p' \over 2}.
-$${#eq:ch5_eq91}
+$$ 
 Therefore the moment after division is equal to 
 $$
 \left\langle p \right\rangle_{t_o} = 
 \sum_{p'} {p' \over 2} P_{t_d}(p')
 = {1 \over 2} \sum_{p'} p' P_{t_d}(p').
-$${#eq:ch5_eq92}
+$$ 
 Notice that this is just 1/2 of the expected value of $p'$ averaging over the
 distribution prior to cell division, i.e.
 $$
 \left\langle p \right\rangle_{t_o} = 
 {\left\langle{p'}\right\rangle_{t_d} \over 2},
-$${#eq:ch5_eq93}
+$$ 
 where $\left\langle{\cdot}\right\rangle_{t_d}$ highlights that is the moment of
 the distribution prior to the cell division. This result makes perfect sense.
 What this is saying is that the mean protein copy number right after the cell
@@ -201,29 +201,29 @@ so-called moment generating function (MGF). The MGF of a random variable $X$ is
 defined as 
 $$
 M_X(t) = \left\langle{e^{tX}}\right\rangle,
-$${#eq:ch5_eq94}
+$$
 where $t$ is a dummy variable. Once we know the MGF we can obtain any moment of
 the distribution by simply computing
 $$
 \left\langle{X^n}\right\rangle = 
 \left. {d^n \over dt^n} M_X(t) \right\vert_{t=0},
-$${#eq:ch5_eq95}
+$$ 
 i.e. taking the $n$-th derivative of the MGF returns the $n$-th moment of the
 distribution. For the particular case of the binomial distribution $X \sim
 \text{Bin}(N, q)$ it can be shown that the MGF is of the form
 $$
 M_X(t) = \left[ (1 - q) + qe^{t} \right]^N.
-$${#eq:ch5_eq96}
+$$ 
 As an example let's compute the first moment of this binomially distributed
 variable. For this, the first derivative of the MGF results in
 $$
 {d M_X(t) \over dt} = N [(1 - q) + qe^t]^{N - 1} q e^t.
-$${#eq:ch5_eq97}
+$$ 
 We just need
 to follow and set $t = 0$ to obtain the first moment
 $$
 \left. {d M_X(t) \over dt} \right\vert_{t=0} = N q,
-$${#eq:ch5_eq98}
+$$ 
 which is exactly the expected value of a binomially distributed random variable.
 
 So according to to compute any moment $\left\langle{m^x p^y}\right\rangle$ after
@@ -238,21 +238,21 @@ $$
 \sum_{m'} \sum{p'} 
 \left\langle{m \mid m'}\right\rangle \left\langle p \mid p' \right\rangle 
 P_{t_d}(m', p'),
-$${#eq:ch5_eq99}
+$$ 
 the product
 $\left\langle{m \mid m'}\right\rangle \left\langle p \mid p' \right\rangle$ is
 then
 $$
 \left\langle{m \mid m'}\right\rangle \left\langle p \mid p' \right\rangle =
 {m' \over 2} \cdot {p' \over 2},
-$${#eq:ch5_eq100}
+$$
 where we used the result in , substituting $m$ and $p$ for $X$, respectively,
 and $q$ for 1/2. Substituting this result into the moment gives
 $$
 \left\langle{mp}\right\rangle_{t_o} = 
 \sum_{m'} \sum_{p'} {m' p' \over 4} P_{t_d}(m', p') 
 = {\left\langle{m' p'}\right\rangle_{t_d} \over 4}.
-$${#eq:ch5_eq101}
+$$ 
 Therefore to compute the moment after cell division
 $\left\langle{mp}\right\rangle_{t_o}$ we simply have to divide by 4 the
 corresponding equivalent moment before the cell division.
@@ -264,7 +264,7 @@ $$
 \left\langle{p^3}\right\rangle_{t_o} = 
 {\left\langle{p^3}\right\rangle_{t_d} \over 8} + 
 {3 \left\langle{p^2}\right\rangle_{t_d} \over 8}.
-$${#eq:ch5_eq102}
+$$
 So for this particular case the third moment of the protein distribution depends
 on the third moment and the second moment before the cell division. In general
 all moments after cell division $\left\langle m^x p^y \right\rangle_{t_o}$
@@ -279,13 +279,13 @@ $$
 \left\langle{m^0 p^0}\right\rangle_{t_d}, \left\langle{m^1}\right\rangle_{t_d},
 \ldots , \left\langle m^x p^y \right\rangle_{t_d}
 \right).
-$${#eq:ch5_eq103}
+$$ 
 Then any moment after cell division $\left\langle{m^{x'}
 p^{y'}}\right\rangle_{t_o}$ for $x' \leq x$ and $y' \leq y$ can be computed as
 $$
 \left\langle{m^{x'} p^{y'}}\right\rangle_{t_o} = 
 \mathbf{z}_{x'y'} \cdot \mathbf{\left\langle m^x p^y \right\rangle}_{t_d},
-$${#eq:ch5_eq104}
+$$
 where we define the vector $\mathbf{z}_{x'y'}$ as the vector containing all the
 coefficients that we obtain with the product of the two binomial distributions.
 For example for the case of the third protein moment
@@ -302,7 +302,7 @@ $$
 \left\langle{m^0 p^0}\right\rangle_{t_o}, \left\langle{m^1}\right\rangle_{t_o}, 
 \ldots , \left\langle m^x p^y \right\rangle_{t_o}
 \right).
-$${#eq:ch5_eq105}
+$$ 
 Then we need to build a square matrix $\mathbf{Z}$ such that each row of the
 matrix contains the corresponding vector $\mathbf{z}_{x' y'}$ for each of the
 moments. Having this matrix we would simply compute the moments after the cell
@@ -310,7 +310,7 @@ division as
 $$
 \mathbf{\left\langle{m^x p^x}\right\rangle}_{t_o} = 
 \mathbf{Z} \cdot \mathbf{\left\langle{m^x p^x}\right\rangle}_{t_d}.
-$${#eq:ch5_eq106}
+$$ 
 In other words, matrix $\mathbf{Z}$ will contain all the coefficients that we
 need to multiply by the moments before the cell division in order to obtain the
 moments after cell division. Matrix $\mathbf{Z}$ was then generated
@@ -362,7 +362,7 @@ Specifically the probability of a cell being at any time point in the cell cycle
 is given by [@Powell1956]
 $$
 P(a) = (\ln 2) \cdot 2^{1 - a},
-$${#eq:ch5_eq107}
+$$ 
 where $a \in [0, 1]$ is the stage of the cell cycle, with $a = 0$ being the
 start of the cycle and $a = 1$ being the cell division. In we reproduce this
 derivation. It is a surprising result, but can be intuitively thought as
@@ -385,7 +385,7 @@ $$
 \langle m \rangle_c = 
 \int_{\text{beginning cell cycle}}^{\text{end cell cycle}}
                        \left\langle{m(t)}\right\rangle P(t) dt,
-$${#eq:ch5_eq108}
+$$ 
 where $\langle m \rangle_c$ is the mean mRNA copy number averaged over the
 entire cell cycle trajectory, and $P(t)$ is the probability of a cell being at a
 time $t$ of its cell cycle.
@@ -394,7 +394,7 @@ If we set the time in units of the cell cycle length we can use and compute
 instead 
 $$
 \langle m \rangle = \int_0^1 \left\langle{m(a)}\right\rangle P(a) da,
-$${#eq:ch5_eq109}
+$$ 
 where $P(a)$ is given by XXX.
 
 What implies is that in order to compute the first moment (or any moment of the
@@ -427,7 +427,7 @@ dynamical system of the form
 $$
 \frac{d \langle m \rangle}{dt} = 
 r_m \cdot p_{\text{bound}} - \gamma _m \langle m \rangle,
-$${#eq:ch5_eq110}
+$$ 
 where as before $r_m$ and $\gamma _m$ are the mRNA production and degradation
 rates respectively, and $p_{\text{bound}}$ is the probability of finding the
 RNAP bound to the promoter [@Bintu2005a]. This dynamical system is predicted to
@@ -436,7 +436,7 @@ When we solve for the mean mRNA copy number at steady state $\langle m
 \rangle_{ss}$ we find 
 $$
 \langle m \rangle_{ss} = \frac{r_m}{\gamma _m} p_{\text{bound}}.
-$${#eq:ch5_eq111}
+$$
 
 Since we assume that the only effect that the repressor has over the regulation
 of the promoter is exclusion of the RNAP from binding to the promoter, we assume
@@ -446,13 +446,13 @@ $$
 \text{fold-change} = \frac{\left\langle{m (R \neq 0)}\right\rangle_{ss}}{
 \left\langle{m (R = 0)}\right\rangle_{ss}}
 = \frac{p_{\text{bound}} (R \neq 0)}{p_{\text{bound}} (R = 0)}.
-$${#eq:ch5_eq112}
+$$ 
 As derived in [@Garcia2011c] this can be written in the language of equilibrium
 statistical mechanics as
 $$
 \text{fold-change} = 
 \left(1 + {R \over N_{NS}}e^{-\beta \Delta\varepsilon_r}  \right)^{-1},
-$${#eq:ch5_eq113}
+$$ 
 where $\beta \equiv (k_BT)^{-1}$, $\Delta\varepsilon_r$ is the repressor-DNA
 binding energy, and $N_{NS}$ is the number of non-specific binding sites where
 the repressor can bind.
@@ -567,19 +567,19 @@ $$
 \text{noise} \equiv \frac{\sqrt{\left\langle p^2 \right\rangle -
                         \left\langle p \right\rangle^2}}
                         {\left\langle p \right\rangle}.
-$${#eq:ch5_eq114}
+$$ 
 We assume that the intensity level of a cell $I$ is linearly proportional to the
 absolute protein count, i.e.
 $$
 I = \alpha p,
-$${#eq:ch5_eq115}
+$$ 
 where $\alpha$ is the proportionality constant between arbitrary units and
 protein absolute number $p$. Substituting this definition on gives
 $$
 \text{noise} = \frac{\sqrt{\left\langle{(\alpha I)^2}\right\rangle - 
 \left\langle{\alpha I}\right\rangle^2}}{
 \left\langle{\alpha I}\right\rangle}.
-$${#eq:ch5_eq116}
+$$
 
 Since $\alpha$ is a constant it can be taken out of the average operator
 $\left\langle{\cdot}\right\rangle$, obtaining
@@ -589,7 +589,7 @@ $$
 \alpha \left\langle{I}\right\rangle}
 = \frac{\sqrt{\left(\left\langle{I^2}\right\rangle - \left\langle{I}\right\rangle^2 \right)}}{
 \left\langle{I}\right\rangle}.
-$${#eq:ch5_eq117}
+$$
 
 Notice that in the linear proportionality between intensity and protein count
 has no intercept. This ignores the autofluorescence that cells without reporter
@@ -601,7 +601,7 @@ $$
 \left\langle{I - \left\langle{I_\text{auto}}\right\rangle}\right\rangle^2
 \right)}}{
 \left\langle{I - \left\langle{I_\text{auto}}\right\rangle}\right\rangle}.
-$${#eq:ch5_eq118}
+$$
 where $I$ is the intensity of the strain of interest and
 $\left\langle{I_\text{auto}}\right\rangle$ is the mean autofluorescence
 intensity, obtained from a strain that does not carry the fluorescent reporter

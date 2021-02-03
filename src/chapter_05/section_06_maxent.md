@@ -40,7 +40,7 @@ The $n^{\text{th}}$ moment of the distribution for a discrete set of possible
 values of $x$ is given by
 $$
 \left\langle{x^n}\right\rangle \equiv \sum_x x^n P_X(x).
-$${#eq:ch5_eq119}
+$$
 
 Now assume that we have knowledge of the first $m$ moments
 $\mathbf{\left\langle{x}\right\rangle}_m = (\left\langle{x}\right\rangle,
@@ -50,7 +50,7 @@ question is then how can we use this information to build an estimator $P_H(x
 $$
 \lim_{m \rightarrow \infty} 
 P_H(x \mid \mathbf{\left\langle{x}\right\rangle}_m) \rightarrow P_X(x),
-$${#eq:ch5_eq120}
+$$
 i.e. that the more moments we add to our approximation, the more the estimator
 distribution converges to the real distribution.
 
@@ -62,7 +62,7 @@ not posses. The Shannon entropy for an univariate discrete distribution is given
 by [@Shannon1948]
 $$
 H(x) \equiv - \sum_x P_X(x) \log P_X(x).
-$${#eq:ch5_eq121}
+$$
 
 For an optimization problem subject to constraints we make use of the method of
 the Lagrange multipliers. For this we define the constraint equation
@@ -71,7 +71,7 @@ $$
 \mathcal{L}(x) \equiv H(x) - \sum_{i=0}^m
 \left[ \lambda_i \left( \left\langle{x^i}\right\rangle -
 \sum_x x^i P_X(x) \right) \right],
-$${#eq:ch5_eq122}
+$$ 
 where $\lambda_i$ is the Lagrange multiplier associated with the $i^\text{th}$
 moment. The inclusion of the zeroth moment is an additional constraint to
 guarantee the normalization of the resulting distribution. Since $P_X(x)$ has a
@@ -82,7 +82,7 @@ With this in mind we take the derivative of the constraint equation obtaining
 $$
 \frac{d\mathcal{L}}{d P_X(x)} = -\log P_X(x) - 1 -
 \sum_{i=0}^m \lambda_i x^i.
-$${#eq:ch5_eq123}
+$$
 
 Equating this derivative to zero and solving for the distribution (that we now
 start calling $P_H(x)$, our MaxEnt estimator) gives
@@ -90,13 +90,13 @@ $$
 P_H(x) = \exp \left(- 1 - \sum_{i=0}^m \lambda_i x^i \right)
 ={1 \over \mathcal{Z}}
 \exp \left( - \sum_{i=1}^m \lambda_i x^i \right),
-$${#eq:ch5_eq124}
+$$ 
 where $\mathcal{Z}$ is the normalization constant that can be obtained by
 substituting this solution into the normalization constraint. This results in
 $$
 \mathcal{Z} \equiv \exp\left( 1 + \lambda_0 \right) =
 \sum_x \exp \left( - \sum_{i=1}^m \lambda_i x^i \right).
-$${#eq:ch5_eq125}
+$$
 
 XXX is the general form of the MaxEnt distribution for a univariate
 distribution. The computational challenge then consists in finding numerical
@@ -110,7 +110,7 @@ $$
 \sum_x {x^n \over \mathcal{Z}}
 \exp \left( - \sum_{i=1}^m \lambda_i x^i \right) = 
 \left\langle{x^n}\right\rangle.
-$${#eq:ch5_eq126}
+$$
 
 As an example of how to apply the MaxEnt principle let us use the classic
 problem of a six-face die. If we are only told that after a large number of die
@@ -120,7 +120,7 @@ distribution look like? The MaxEnt principle tells us that our best guess would
 be of the form
 $$
 P_H(x) = {1 \over \mathcal{Z}} \exp \left( \lambda x \right).
-$${#eq:ch5_eq127}
+$$ 
 Using any numerical minimization package we can easily find the value of the
 Lagrange multiplier $\lambda$ that satisfies our constraint. shows two two
 examples of distributions that satisfy the constraint. Panel (A) shows a
@@ -145,20 +145,20 @@ $P(m, p)$. The definition of a moment $\left\langle m^x p^y \right\rangle$ is a
 natural extension of of the form
 $$
 \left\langle m^x p^y \right\rangle = \sum_m \sum_p m^x p^y P(m, p).
-$${#eq:ch5_eq128}
+$$
 
 As a consequence the MaxEnt joint distribution $P_H(m, p)$ is of the form 
 $$
 P_H(m, p) = {1 \over \mathcal{Z}}
               \exp \left( - \sum_{(x,y)} \lambda_{(x,y)} m^x p^y \right),
-$${#eq:ch5_eq129}
+$$ 
 where $\lambda_{(x,y)}$ is the Lagrange multiplier associated with the moment
 $\left\langle m^x p^y \right\rangle$, and again $\mathcal{Z}$ is the
 normalization constant given by
 $$
 \mathcal{Z} = \sum_m \sum_p
               \exp \left( - \sum_{(x, y)} \lambda_{(x, y)} m^x p^y \right).
-$${#eq:ch5_eq130}
+$$
 Note that the sum in the exponent is taken over all available $(x, y)$ pairs
 that define the moment constraints for the distribution.
 
@@ -186,7 +186,7 @@ P_H(x) = {1 \over \mathcal{Z}}
   \exp \left(- \lambda_1 x - \lambda_2 x^2 \right) =
   {1 \over \mathcal{Z}}
   \exp \left(- \lambda_1 x \right) \exp \left( - \lambda_2 x^2 \right).
-$${#eq:ch5_eq131}
+$$
 We can always rescale the terms in any way and obtain the same result. Let's say
 that for some reason we want to rescale the quadratic terms by a factor $a$. We
 can define a new Lagrange multiplier $\lambda_2' \equiv {\lambda_2 \over a}$
@@ -194,7 +194,7 @@ that compensates for the rescaling of the terms, obtaining
 $$
 P_H(x) = {1 \over \mathcal{Z}}
   \exp \left(- \lambda_1 x \right) \exp \left( - \lambda_2' ax^2 \right).
-$${#eq:ch5_eq132}
+$$
 Computationally it might be more efficient to find the numerical value of
 $\lambda_2'$ rather than $\lambda_2$ maybe because it is of the same order of
 magnitude as $\lambda_1$. Then we can always multiply $\lambda_2'$ by $a$ to
@@ -215,12 +215,12 @@ Let the $M \times N$ matrix $\mathbf{A}$ contain all the factors used to compute
 the moments that serve as constraints, where each entry is of the form 
 $$
 A_{ij} = m_i^{x_j} \cdot p_i^{y_j}.
-$${#eq:ch5_eq133}
+$$ 
 In other words, recall that to obtain any moment $\left\langle m^x p^y
 \right\rangle$ we compute
 $$
 \left\langle m^x p^y \right\rangle = \sum_m \sum_p m^x p^y P(m, x).
-$${#eq:ch5_eq134}
+$$ 
 If we have $M$ possible $(m, p)$ pairs in our truncated sample space (because we
 can't include the sample space up to infinity) $\{(m, p)_1, (m, p)_2, \ldots (m,
 p)_N \}$, and we have $N$ exponent pairs $(x, y)$ corresponding to the $N$
@@ -230,13 +230,13 @@ $M$ by $N$ terms of the form described in . Let also $\mathbf{v}$ be a vector of
 length $N$ containing all the constraints with each entry of the form 
 $$
 v_j = \left\langle{m^{x_j} p^{y_j}}\right\rangle,
-$${#eq:ch5_eq135}
+$$ 
 i.e. the information that we have about the distribution. That means that the
 constraint equation $\mathcal{L}$ to be used for this problem takes the form
 $$
 \mathcal{L} = -\sum_i P_i \ln P_i + \lambda_0 \left( 1 - \sum_i P_i \right)
   + \sum_{j>0} \lambda_j \left( v_j - \sum_i A_{ij} P_i \right),
-$${#eq:ch5_eq136}
+$$ 
 where $\lambda_0$ is the Lagrange multiplier associated with the normalization
 constraint, and $\lambda_j$ is the Lagrange multiplier associated with the
 $j^\text{th}$ constraint. This constraint equation is equivalent to , but now
@@ -251,16 +251,16 @@ that the rescaled Lagrange multipliers are of the same order of magnitude. The
 rescaling takes the form 
 $$
 A_{ij}' = {A_{ij} \over G_j},
-$${#eq:ch5_eq137}
+$$ 
 where $G_j$ serves to rescale the moments, providing numerical stability to the
 inference problem. Bretthorst proposes an empirical rescaling that satisfies
 $$
 G_j^2 = \sum_i A_{ij}^2,
-$${#eq:ch5_eq138}
+$$ 
 or in terms of our particular problem
 $$
 G_j^2 = \sum_m \sum_p \left( m^{x_j} p^{y_j} \right)^2.
-$${#eq:ch5_eq139}
+$$ 
 What this indicates is that each pair $m_i^{x_j} p_i^{y_j}$ is normalized by the
 square root of the sum of the all pairs of the same form squared.
 
@@ -269,13 +269,13 @@ constraints must also be rescaled simply as
 $$
 v_j' = \left\langle{m^{x_j} p^{y_j}}\right\rangle' = 
 {\left\langle{m^{x_j} p^{y_j}}\right\rangle \over G_j}.
-$${#eq:ch5_eq140}
+$$ 
 The Lagrange multipliers must compensate this rescaling since at the end of the
 day the probability must add up to the same value. Therefore we rescale the
 $\lambda_j$ terms as 
 $$
 \lambda_j' = \lambda_j G_j,
-$${#eq:ch5_eq141}
+$$ 
 such that any $\lambda_j A_{ij} = \lambda_j' A_{ij}'$. If this empirical value
 for the rescaling factor makes the rescaled Lagrange multipliers $\lambda_j'$ be
 of the same order of magnitude, this by itself would already improve the
@@ -285,24 +285,24 @@ constraints that make Newton-Raphson and similar algorithms converge faster. The
 transformation is as follows 
 $$
 A_{ik}'' = \sum_j {e}_{jk} A_{ij}',
-$${#eq:ch5_eq142}
+$$ 
 for the entires of matrix $\mathbf{A}$, and 
 $$
 v_k'' = \sum_j {e}_{jk} u_j',
-$${#eq:ch5_eq143}
+$$
 for entires of the constraint vector $\mathbf{v}$, finally 
 $$
 \lambda_k'' = \sum_j {e}_{jk} \beta_j,
-$${#eq:ch5_eq144}
+$$ 
 for the Lagrange multipliers. Here ${e}_{jk}$ is the $j^\text{th}$ component of
 the $k^\text{th}$ eigenvector of the matrix $\mathbf{E}$ with entries 
 $$
 {E}_{kj} = \sum_i {A}_{ik}' {A}_{ij}'.
-$${#eq:ch5_eq145}
+$$ 
 This transformation guarantees that the matrix $\mathbf{A}''$ has the property
 $$
 \sum_i A_{ij}'' A_{jk}'' = \beta_j \delta_{jk},
-$${#eq:ch5_eq146}
+$$ 
 where $\beta_j$ is the $j^\text{th}$ eigenvalue of the matrix $\mathbf{E}$ and
 $\delta_{jk}$ is the Kronecker delta function. What this means is that, as
 desired, the constraints are orthogonal to each other, improving the algorithm
