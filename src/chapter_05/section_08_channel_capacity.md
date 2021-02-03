@@ -44,7 +44,7 @@ probability distribution of an output given a specific value of the input. In
 other words, the matrix $\mathbf{Q}$ recollects all of the individual output
 distribution arrays $\mathbf{p_{p \mid c}}$ into a single object. Then each
 entry of the matrix $\mathbf{Q}$ is of the form
-$$
+$${#eq:ch5_eq147}
 Q^{(i, j)} = P(p = p_i \mid c = c_j).
 $$
 
@@ -59,12 +59,12 @@ Figure 1 of [@Blahut1972].
 
 A difficulty when computing the channel capacity between inputs and outputs from
 experimental data is that ideally we would like to compute
-$$
+$${#eq:ch5_eq148}
 C(g; c) \equiv \sup_{P(c)} I(g; c),
 $$ 
 where $g$ is the gene expression level, and $c$ is the inducer concentration.
 But in reality we are computing 
-$$
+$${#eq:ch5_eq149}
 C(f(g); c) \equiv \sup_{P(c)} I(f(g); c),
 $$ 
 where $f(g)$ is a function of gene expression that has to do with our mapping
@@ -72,7 +72,7 @@ from the YFP copy number to some arbitrary fluorescent value as computed from
 the images taken with the microscope. The data processing inequality, as derived
 by Shannon himself, tells us that for a Markov chain of the form $c \rightarrow
 g \rightarrow f(g)$ it must be true that [@Shannon1948]
-$$
+$${#eq:ch5_eq150}
 I(g; c) \geq I(f(g); c),
 $$ 
 meaning that information can only be lost when mapping from the real
@@ -86,7 +86,7 @@ information is still an area of active research. For our purposes we will use
 the method described in [@Cheong2011a]. The basic idea of the method is to write
 the mutual information as a series expansion in terms of inverse powers of the
 sample size, i.e.
-$$
+$${#eq:ch5_eq151}
 I_{\text{biased}} = I_\infty + \frac{a_1}{N} + \frac{a_2}{N^2} + \cdots,
 $$
 where $I_{\text{biased}}$ is the biased estimate of the mutual information as
@@ -101,7 +101,7 @@ $I_\infty$.
 
 In principle for a good number of data points the terms of higher order become
 negligible. So we can write the mutual information as
-$$
+$${#eq:ch5_eq152}
 I_{\text{biased}} \approx I_\infty + \frac{a_1}{N} + \mathcal{O}(N^{-2}).
 $$ 
 This means that if this particular arbitrary choice of functional form is a good
@@ -251,7 +251,7 @@ distribution. To compare the effect that including more or less constraints on
 the maximum entropy inference we constructed maximum entropy distributions using
 an increasing number of moments from 2 to 6. We then computed the
 Kullback-Leibler divergence $D_{KL}$ of the form
-$$
+$${#eq:ch5_eq153}
 D_{KL}(P_6(p \mid c) || P_i(p \mid c)) =
     \sum_p P_6(p \mid c) \log_2 {P_6(p \mid c) \over P_i(p \mid c)},
 $$
