@@ -581,7 +581,7 @@ simply the mean expression level in the presence of the repressor relative to
 the mean expression level in the absence of regulation. In the language of
 statistical mechanics this quantity takes the form
 $$
-\text{fold-change} = \left( 1 + {R \over N_{NS}}
+\text{fold-change} = \left( 1 + \frac{R}{N_{NS}}
 e^{-\beta\Delta\varepsilon_r} \right)^{-1},
 $${#eq:ch5_eq32}
 where $\Delta\varepsilon_r$ is the repressor-DNA binding energy, and as before
@@ -654,14 +654,14 @@ volume and $N_A$ is Avogadro's number. The *E. coli* cell volume is 2.1 fL
 [@Radzikowski2016], and Avogadro's number is $6.022 \times 10^{23}$. If we
 further include the conversion factor to turn M into nM we find that
 $$ 
-[R] = {R \over 2.1 \times 10^{-15} L} \cdot {1 \over 6.022 \times 10^{23}}
-\cdot {10^9 \text{ nmol} \over 1 \text{ mol}} \approx 0.8 \times R.
+[R] = \frac{R}{2.1 \times 10^{-15} L} \cdot \frac{1}{6.022 \times 10^{23}}
+\cdot \frac{10^9 \text{ nmol}}{1 \text{ mol}} \approx 0.8 \times R.
 $${#eq:ch5_eq39}
 Using this we simplify as
 $$
 k^{(r)}_{\text{off}} \approx 0.8 \cdot k_o \cdot
 N_{NS} e^{\beta\Delta\varepsilon_r}
-\cdot {k^{(p)}_{\text{off}} \over k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}.
+\cdot \frac{k^{(p)}_{\text{off}}}{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}.
 $${#eq:ch5_eq40}
 What shows is the direct relationship that must be satisfied if the equilibrium
 model is set to be consistent with the non-equilibrium kinetic picture.

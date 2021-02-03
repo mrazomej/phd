@@ -147,7 +147,7 @@ Optimizing over all possible distributions $P(\left\langle p \right\rangle)$
 using calculus of variations results in a distribution of the form
 $$
 P^*(\left\langle p \right\rangle) = 
-{1 \over \mathcal{Z}} \frac{1}{\sigma_p(\left\langle p \right\rangle)},
+\frac{1}{\mathcal{Z}} \frac{1}{\sigma_p(\left\langle p \right\rangle)},
 $${#eq:ch5_eq158}
 where $\sigma_p(\left\langle p \right\rangle)$ is the standard deviation of the
 protein distribution as a function of the mean protein expression, and

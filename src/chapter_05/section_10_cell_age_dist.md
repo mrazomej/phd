@@ -66,7 +66,7 @@ a)da$ then represent a fraction of the total number of cells
 $$
 \frac{\text{\# survivors}}{\text{\# total cells}} =
 \frac{\left[ NP(a)da \right] F(a + t \mid a)}{Ne^{\mu t}} =
-  P(a)\frac{F(a + t)}{F(a)}da {1 \over e^{\mu t}},
+  P(a)\frac{F(a + t)}{F(a)}da \frac{1}{e^{\mu t}},
 $${#eq:ch5_eq172}
 and their ages lie in the range $[a+t, a+t+da]$. Since we assume that the
 culture is in steady state then it follows that the fraction of cells that
@@ -74,7 +74,7 @@ transitioned from age $a$ to age $a + t$ must be $P(a + t)da$. Therefore we have
 a difference equation - the discrete analogous of a differential equation - of
 the form
 $$
-P(a + t) da = P(a) {F(a + t) \over F(a)}e^{-\mu t} da.
+P(a + t) da = P(a) \frac{F(a + t)}{F(a)}e^{-\mu t} da.
 $${#eq:ch5_eq173}
 What this equation shows is a relationship that connects the probability of
 having a life time of $a + t$ with a probability of having a shorter life time
@@ -131,7 +131,7 @@ The growth rate of the population cell number (not the growth of cell mass) is
 defined as the number of cell doublings per unit time divided by the number of
 cells. This is more clear to see if we write as a finite difference
 $$
-{N(t + \Delta t) - N(t) \over \Delta t} = \mu N(t).
+\frac{N(t + \Delta t) - N(t)}{\Delta t} = \mu N(t).
 $${#eq:ch5_eq184}
 If the time $\Delta t$ is the time interval it takes to go from $N$ to $2N$
 cells we have 
@@ -142,7 +142,7 @@ Solving for $\mu$ gives
 $$
 \mu = \overbrace{\frac{2N - N}{\Delta t}}
 ^{\text{\# doubling events per unit time}}
-\overbrace{\frac{1}{N}}^{{1 \over \text{population size}}}.
+\overbrace{\frac{1}{N}}^{\frac{1}{\text{population size}}}.
 $${#eq:ch5_eq186}
 We defined $F(a)$ to be the probability of a cell reaching an age $a$ or
 greater. For a cell to reach an age $a + da$ we can then write
@@ -170,7 +170,7 @@ $${#eq:ch5_eq190}
 The growth rate then is just the sum (integral) of each age contribution
 to the total number of doublings. This is
 $$
-\mu = {1 \over N} \int_0^\infty NP(a) \frac{f(a)da}{F(a)}.
+\mu = \frac{1}{N} \int_0^\infty NP(a) \frac{f(a)da}{F(a)}.
 $${#eq:ch5_eq191}
 Substituting gives
 $$
@@ -193,7 +193,7 @@ of $F(a)$, the derivative with respect to $a$ is $-f(a)$ rather than
 $f(a)$. This is because if we write the derivative of $F(a)$ we have
 $$
 \frac{dF(a)}{da} \equiv \lim_{da \rightarrow 0}
-  {F(a + da) - F(a) \over da}.
+  \frac{F(a + da) - F(a)}{da}.
 $${#eq:ch5_eq195}
 Substituting the definition of $F(a)$ gives 
 $$
@@ -214,7 +214,7 @@ On the first term on the left hand side we have that as $a \rightarrow \infty$,
 both terms $e^{-\mu a}$ and $F(a)$ go to zero. We also have that $e^{\mu 0} = 1$
 and $F(0) = 1$. This results in
 $$
-{P(0) \over \mu} - P(0) \int_0^\infty \frac{e^{-\mu a}}{\mu} f(a) da = 1.
+\frac{P(0)}{\mu} - P(0) \int_0^\infty \frac{e^{-\mu a}}{\mu} f(a) da = 1.
 $${#eq:ch5_eq199}
 The second term on the left hand side is equal to since
 $$

@@ -51,7 +51,7 @@ as an annotated Jupyter notebook)
 
 We have already solved a general form for the dynamics of the moments of the
 distribution, i.e. we wrote differential equations for the moments
-${d\left\langle{m^x p^y}\right\rangle\over dt}$. Given that we know all
+$\frac{d\left\langle{m^x p^y}\right\rangle}{dt}$. Given that we know all
 parameters for our model we can simply integrate these equations numerically to
 compute how the moments of the distribution evolve as cells progress through
 their cell cycle. Once the cell reaches a time $t_d$ when is going to divide the
@@ -78,8 +78,8 @@ protein, the conditional probability $P(m, p \mid m', p')$ is simply given by a
 product of two binomial distributions, one for the mRNA and one for the protein,
 i.e.
 $$
-P(m, p \mid m', p') = {m' \choose m} \left( {1 \over 2} \right)^{m'} \cdot
-                      {p' \choose p} \left( {1 \over 2} \right)^{p'}.
+P(m, p \mid m', p') = {m' \choose m} \left( \frac{1}{2} \right)^{m'} \cdot
+                      {p' \choose p} \left( \frac{1}{2} \right)^{p'}.
 $${#eq:ch5_eq78}
 Because of these product of binomial probabilities are allowed to extend the sum
 from to start at $m'=0$ and $p'=0$ as 
@@ -167,19 +167,19 @@ $${#eq:ch5_eq90}
 For the particular case of the first moment of the binomial distribution with
 parameters $p'$ and $1/2$ we know that
 $$
-\left\langle p \mid p' \right\rangle = {p' \over 2}.
+\left\langle p \mid p' \right\rangle = \frac{p'}{2}.
 $${#eq:ch5_eq91}
 Therefore the moment after division is equal to 
 $$
 \left\langle p \right\rangle_{t_o} = 
-\sum_{p'} {p' \over 2} P_{t_d}(p')
-= {1 \over 2} \sum_{p'} p' P_{t_d}(p').
+\sum_{p'} \frac{p'}{2} P_{t_d}(p')
+= \frac{1}{2} \sum_{p'} p' P_{t_d}(p').
 $${#eq:ch5_eq92}
 Notice that this is just 1/2 of the expected value of $p'$ averaging over the
 distribution prior to cell division, i.e.
 $$
 \left\langle p \right\rangle_{t_o} = 
-{\left\langle{p'}\right\rangle_{t_d} \over 2},
+\frac{\left\langle{p'}\right\rangle_{t_d}}{2},
 $${#eq:ch5_eq93}
 where $\left\langle{\cdot}\right\rangle_{t_d}$ highlights that is the moment of
 the distribution prior to the cell division. This result makes perfect sense.
@@ -206,7 +206,7 @@ where $t$ is a dummy variable. Once we know the MGF we can obtain any moment of
 the distribution by simply computing
 $$
 \left\langle{X^n}\right\rangle = 
-\left. {d^n \over dt^n} M_X(t) \right\vert_{t=0},
+\left. \frac{d^n}{dt^n} M_X(t) \right\vert_{t=0},
 $${#eq:ch5_eq95}
 i.e. taking the $n$-th derivative of the MGF returns the $n$-th moment of the
 distribution. For the particular case of the binomial distribution $X \sim
@@ -217,12 +217,12 @@ $${#eq:ch5_eq96}
 As an example let's compute the first moment of this binomially distributed
 variable. For this, the first derivative of the MGF results in
 $$
-{d M_X(t) \over dt} = N [(1 - q) + qe^t]^{N - 1} q e^t.
+\frac{d M_X(t)}{dt} = N [(1 - q) + qe^t]^{N - 1} q e^t.
 $${#eq:ch5_eq97}
 We just need
 to follow and set $t = 0$ to obtain the first moment
 $$
-\left. {d M_X(t) \over dt} \right\vert_{t=0} = N q,
+\left. \frac{d M_X(t)}{dt} \right\vert_{t=0} = N q,
 $${#eq:ch5_eq98}
 which is exactly the expected value of a binomially distributed random variable.
 
@@ -244,14 +244,14 @@ $\left\langle{m \mid m'}\right\rangle \left\langle p \mid p' \right\rangle$ is
 then
 $$
 \left\langle{m \mid m'}\right\rangle \left\langle p \mid p' \right\rangle =
-{m' \over 2} \cdot {p' \over 2},
+\frac{m'}{2} \cdot \frac{p'}{2},
 $${#eq:ch5_eq100}
 where we used the result in , substituting $m$ and $p$ for $X$, respectively,
 and $q$ for 1/2. Substituting this result into the moment gives
 $$
 \left\langle{mp}\right\rangle_{t_o} = 
-\sum_{m'} \sum_{p'} {m' p' \over 4} P_{t_d}(m', p') 
-= {\left\langle{m' p'}\right\rangle_{t_d} \over 4}.
+\sum_{m'} \sum_{p'} \frac{m' p'}{4} P_{t_d}(m', p') 
+= \frac{\left\langle{m' p'}\right\rangle_{t_d}}{4}.
 $${#eq:ch5_eq101}
 Therefore to compute the moment after cell division
 $\left\langle{mp}\right\rangle_{t_o}$ we simply have to divide by 4 the
@@ -262,8 +262,8 @@ cell division. For example if we compute the third moment of the protein
 distribution $\left\langle{p^3}\right\rangle_{t_o}$, we find
 $$
 \left\langle{p^3}\right\rangle_{t_o} = 
-{\left\langle{p^3}\right\rangle_{t_d} \over 8} + 
-{3 \left\langle{p^2}\right\rangle_{t_d} \over 8}.
+\frac{\left\langle{p^3}\right\rangle_{t_d}}{8} + 
+\frac{3 \left\langle{p^2}\right\rangle_{t_d}}{8}.
 $${#eq:ch5_eq102}
 So for this particular case the third moment of the protein distribution depends
 on the third moment and the second moment before the cell division. In general
@@ -451,7 +451,7 @@ As derived in [@Garcia2011c] this can be written in the language of equilibrium
 statistical mechanics as
 $$
 \text{fold-change} = 
-\left(1 + {R \over N_{NS}}e^{-\beta \Delta\varepsilon_r}  \right)^{-1},
+\left(1 + \frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_r}  \right)^{-1},
 $${#eq:ch5_eq113}
 where $\beta \equiv (k_BT)^{-1}$, $\Delta\varepsilon_r$ is the repressor-DNA
 binding energy, and $N_{NS}$ is the number of non-specific binding sites where

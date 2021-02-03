@@ -256,7 +256,7 @@ an increasing number of moments from 2 to 6. We then computed the
 Kullback-Leibler divergence $D_{KL}$ of the form
 $$
 D_{KL}(P_6(p \mid c) || P_i(p \mid c)) =
-    \sum_p P_6(p \mid c) \log_2 {P_6(p \mid c) \over P_i(p \mid c)},
+    \sum_p P_6(p \mid c) \log_2 \frac{P_6(p \mid c)}{P_i(p \mid c)},
 $${#eq:ch5_eq154}
 where $P_i(p \mid c)$ is the maximum entropy distribution constructed with the
 first $i$ moments, $i \in \{2, 3, 4, 5, 6\}$. Since the Kullback-Leibler

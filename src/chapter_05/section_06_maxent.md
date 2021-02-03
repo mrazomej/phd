@@ -88,7 +88,7 @@ Equating this derivative to zero and solving for the distribution (that we now
 start calling $P_H(x)$, our MaxEnt estimator) gives
 $$
 P_H(x) = \exp \left(- 1 - \sum_{i=0}^m \lambda_i x^i \right)
-={1 \over \mathcal{Z}}
+= \frac{1}{\mathcal{Z}}
 \exp \left( - \sum_{i=1}^m \lambda_i x^i \right),
 $${#eq:ch5_eq124}
 where $\mathcal{Z}$ is the normalization constant that can be obtained by
@@ -107,7 +107,7 @@ moments we recover the value of our constraint. Mathematically what this means
 is that $P_H(x)$ must satisfy
 $$
 \sum_x x^n P_H(x) =
-\sum_x {x^n \over \mathcal{Z}}
+\sum_x \frac{x^n}{\mathcal{Z}}
 \exp \left( - \sum_{i=1}^m \lambda_i x^i \right) = 
 \left\langle{x^n}\right\rangle.
 $${#eq:ch5_eq126}
@@ -119,7 +119,7 @@ that a fair die has a mean of $3.5$), what would the least biased guess for the
 distribution look like? The MaxEnt principle tells us that our best guess would
 be of the form
 $$
-P_H(x) = {1 \over \mathcal{Z}} \exp \left( \lambda x \right).
+P_H(x) = \frac{1}{\mathcal{Z}} \exp \left( \lambda x \right).
 $${#eq:ch5_eq127}
 Using any numerical minimization package we can easily find the value of the
 Lagrange multiplier $\lambda$ that satisfies our constraint. shows two two
@@ -149,7 +149,7 @@ $${#eq:ch5_eq128}
 
 As a consequence the MaxEnt joint distribution $P_H(m, p)$ is of the form 
 $$
-P_H(m, p) = {1 \over \mathcal{Z}}
+P_H(m, p) = \frac{1}{\mathcal{Z}}
               \exp \left( - \sum_{(x,y)} \lambda_{(x,y)} m^x p^y \right),
 $${#eq:ch5_eq129}
 where $\lambda_{(x,y)}$ is the Lagrange multiplier associated with the moment
@@ -182,17 +182,17 @@ distribution $P_X(x)$ that we are trying to reconstruct given the first two
 moments $\left\langle{x}\right\rangle$, and $\left\langle{x^2}\right\rangle$.
 The MaxEnt distribution can be written as
 $$
-P_H(x) = {1 \over \mathcal{Z}}
+P_H(x) = \frac{1}{\mathcal{Z}}
   \exp \left(- \lambda_1 x - \lambda_2 x^2 \right) =
-  {1 \over \mathcal{Z}}
+  \frac{1}{\mathcal{Z}}
   \exp \left(- \lambda_1 x \right) \exp \left( - \lambda_2 x^2 \right).
 $${#eq:ch5_eq131}
 We can always rescale the terms in any way and obtain the same result. Let's say
 that for some reason we want to rescale the quadratic terms by a factor $a$. We
-can define a new Lagrange multiplier $\lambda_2' \equiv {\lambda_2 \over a}$
+can define a new Lagrange multiplier $\lambda_2' \equiv \frac{\lambda_2}{a}$
 that compensates for the rescaling of the terms, obtaining
 $$
-P_H(x) = {1 \over \mathcal{Z}}
+P_H(x) = \frac{1}{\mathcal{Z}}
   \exp \left(- \lambda_1 x \right) \exp \left( - \lambda_2' ax^2 \right).
 $${#eq:ch5_eq132}
 Computationally it might be more efficient to find the numerical value of
@@ -250,7 +250,7 @@ particular choice of rescaling factor used in the algorithm empirically promotes
 that the rescaled Lagrange multipliers are of the same order of magnitude. The
 rescaling takes the form 
 $$
-A_{ij}' = {A_{ij} \over G_j},
+A_{ij}' = \frac{A_{ij}}{G_j},
 $${#eq:ch5_eq137}
 where $G_j$ serves to rescale the moments, providing numerical stability to the
 inference problem. Bretthorst proposes an empirical rescaling that satisfies
@@ -268,7 +268,7 @@ Since we rescale the factors involved in computing the constraints, the
 constraints must also be rescaled simply as
 $$
 v_j' = \left\langle{m^{x_j} p^{y_j}}\right\rangle' = 
-{\left\langle{m^{x_j} p^{y_j}}\right\rangle \over G_j}.
+\frac{\left\langle{m^{x_j} p^{y_j}}\right\rangle}{G_j}.
 $${#eq:ch5_eq140}
 The Lagrange multipliers must compensate this rescaling since at the end of the
 day the probability must add up to the same value. Therefore we rescale the
