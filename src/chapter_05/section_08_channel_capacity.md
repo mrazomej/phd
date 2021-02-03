@@ -34,9 +34,12 @@ measurements.
 Following [@Blahut1972] we implemented the algorithm to compute the channel
 capacity. We define $\mathbf{p_c}$ to be an array containing the probability of
 each of the input inducer concentrations (twelve concentrations, See Methods).
-Each entry $j$ of the array is then of the form $$p_c^{(j)} = P(c = c_j),$$ with
-$j \in \{1, 2, \ldots, 12 \}$. The objective of the algorithm is to find the
-entries $p_c^{(j)}$ that maximize the mutual information between inputs and
+Each entry $j$ of the array is then of the form 
+$$
+p_c^{(j)} = P(c = c_j),
+$$ 
+with $j \in \{1, 2, \ldots, 12 \}$. The objective of the algorithm is to find
+the entries $p_c^{(j)}$ that maximize the mutual information between inputs and
 outputs. We also define $\mathbf{Q}$ to be a $\vert \mathbf{p_c} \vert$ by
 $\vert \mathbf{p_{p \mid c}} \vert$ matrix, where $\vert \cdot \vert$ specifies
 the length of the array, and $\mathbf{p_{p \mid c}}$ is an array containing the

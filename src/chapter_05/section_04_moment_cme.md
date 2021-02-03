@@ -78,7 +78,8 @@ involving $\mathbf{P}(m, p)$ we can again use to rewrite them in a more compact
 form. This means that we can rewrite the state transition term as 
 $$
 \mathbf{K} \sum_m \sum_p m^x p^y \mathbf{P}(m, p) = 
-\mathbf{K} \mathbf{\left\langle m^x p^y \right\rangle}.$$ 
+\mathbf{K} \mathbf{\left\langle m^x p^y \right\rangle}.
+$$ 
 The mRNA production term involving $\mathbf{P}(m, p)$ can be rewritten as
 $$
 \mathbf{R}_m \sum_m \sum_p m^x p^y \mathbf{P}(m, p) = 

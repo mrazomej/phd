@@ -104,7 +104,8 @@ $$
 $$
 For the protein we also define production $\mathbf{R}_p$ and degradation
 $\mathbf{\Gamma}_p$ matrices as 
-$$\mathbf{R}_p \equiv
+$$
+\mathbf{R}_p \equiv
 \begin{bmatrix}
     r_p   & 0   & 0\\
     0     & r_p & 0\\
@@ -467,7 +468,8 @@ the equilibrium and kinetic models gives
 $$
 (2 - \phi) \frac{k^{(p)}_{\text{on}}}{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}} =
 \frac{\frac{P}{N_{NS}} e^{-\beta\Delta\varepsilon_p}
-}{1 + \frac{P}{N_{NS}} e^{-\beta\Delta\varepsilon_p}}.$$
+}{1 + \frac{P}{N_{NS}} e^{-\beta\Delta\varepsilon_p}}.
+$$
 Solving for
 $\frac{k^{(p)}_{\text{on}}}{k^{(p)}_{\text{off}}}$ results in 
 $$
