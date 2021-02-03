@@ -61,6 +61,7 @@ pandoc:
       --bibliography=src/references.bib
       --csl=src/styles/prl.csl
       --metadata link-citations
+      --mathjax
 
 # scholar:
 #   style: apa

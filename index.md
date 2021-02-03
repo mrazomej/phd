@@ -54,12 +54,12 @@ grid_navigation:
       excerpt: Supporting information and extended methods for chapter II
       cta: read
       url: 'chapter_04'
-    # - title: >
-    #      Chapter V: Survival
-    #   excerpt: >
-    #     Adaptation where it counts: surviving environmental insults.
-    #   cta: read
-    #   url: 'chapter_05'
+    - title: >
+         Chapter V: Supporting Information for Chapter III
+      excerpt: >
+        Supporting information and extended methods for chapter III.
+      cta: read
+      url: 'chapter_05'
     # - title: >
     #      Chapter VI: Supplement to Chapter II
     #   excerpt: >
