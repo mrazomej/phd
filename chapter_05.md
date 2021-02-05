@@ -49,7 +49,8 @@ contents:
     - section_07_gillespie
     - section_08_channel_capacity
     - section_09_empirical_fixes
-    - section_10_cell_age_dist
+    - section_10_two_state_dist
+    - section_11_cell_age_dist
 ---
 
 <hr/>
