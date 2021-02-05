@@ -35,9 +35,9 @@ Following [@Blahut1972] we implemented the algorithm to compute the channel
 capacity. We define $\mathbf{p_c}$ to be an array containing the probability of
 each of the input inducer concentrations (twelve concentrations, See Methods).
 Each entry $j$ of the array is then of the form 
-$$
+\begin{equation}
 p_c^{(j)} = P(c = c_j),
-$${#eq:ch5_eq147}
+\end{equation}
 with $j \in \{1, 2, \ldots, 12 \}$. The objective of the algorithm is to find
 the entries $p_c^{(j)}$ that maximize the mutual information between inputs and
 outputs. We also define $\mathbf{Q}$ to be a $\vert \mathbf{p_c} \vert$ by
@@ -47,9 +47,9 @@ probability distribution of an output given a specific value of the input. In
 other words, the matrix $\mathbf{Q}$ recollects all of the individual output
 distribution arrays $\mathbf{p_{p \mid c}}$ into a single object. Then each
 entry of the matrix $\mathbf{Q}$ is of the form
-$$
+\begin{equation}
 Q^{(i, j)} = P(p = p_i \mid c = c_j).
-$${#eq:ch5_eq148}
+\end{equation}
 
 For the case of the theoretical predictions of the channel capacity (Solid lines
 in ) the entries of matrix $\mathbf{Q}$ are given by the inferred maximum
@@ -62,22 +62,22 @@ Figure 1 of [@Blahut1972].
 
 A difficulty when computing the channel capacity between inputs and outputs from
 experimental data is that ideally we would like to compute
-$$
+\begin{equation}
 C(g; c) \equiv \sup_{P(c)} I(g; c),
-$${#eq:ch5_eq149}
+\end{equation}
 where $g$ is the gene expression level, and $c$ is the inducer concentration.
 But in reality we are computing 
-$$
+\begin{equation}
 C(f(g); c) \equiv \sup_{P(c)} I(f(g); c),
-$${#eq:ch5_eq150}
+\end{equation}
 where $f(g)$ is a function of gene expression that has to do with our mapping
 from the YFP copy number to some arbitrary fluorescent value as computed from
 the images taken with the microscope. The data processing inequality, as derived
 by Shannon himself, tells us that for a Markov chain of the form $c \rightarrow
 g \rightarrow f(g)$ it must be true that [@Shannon1948]
-$$
+\begin{equation}
 I(g; c) \geq I(f(g); c),
-$${#eq:ch5_eq151}
+\end{equation}
 meaning that information can only be lost when mapping from the real
 relationship between gene expression and inducer concentration to a fluorescence
 value.
@@ -89,9 +89,9 @@ information is still an area of active research. For our purposes we will use
 the method described in [@Cheong2011a]. The basic idea of the method is to write
 the mutual information as a series expansion in terms of inverse powers of the
 sample size, i.e.
-$$
+\begin{equation}
 I_{\text{biased}} = I_\infty + \frac{a_1}{N} + \frac{a_2}{N^2} + \cdots,
-$${#eq:ch5_eq152}
+\end{equation}
 where $I_{\text{biased}}$ is the biased estimate of the mutual information as
 computed from experimental data, $I_\infty$ is the quantity we would like to
 estimate, being the unbiased mutual information when having access to infinity
@@ -104,9 +104,9 @@ $I_\infty$.
 
 In principle for a good number of data points the terms of higher order become
 negligible. So we can write the mutual information as
-$$
+\begin{equation}
 I_{\text{biased}} \approx I_\infty + \frac{a_1}{N} + \mathcal{O}(N^{-2}).
-$${#eq:ch5_eq153}
+\end{equation}
 This means that if this particular arbitrary choice of functional form is a good
 approximation, when computing the mutual information for varying number of
 samples - by taking subsamples of the experimental data - we expect to find a
@@ -254,10 +254,10 @@ distribution. To compare the effect that including more or less constraints on
 the maximum entropy inference we constructed maximum entropy distributions using
 an increasing number of moments from 2 to 6. We then computed the
 Kullback-Leibler divergence $D_{KL}$ of the form
-$$
+\begin{equation}
 D_{KL}(P_6(p \mid c) || P_i(p \mid c)) =
     \sum_p P_6(p \mid c) \log_2 \frac{P_6(p \mid c)}{P_i(p \mid c)},
-$${#eq:ch5_eq154}
+\end{equation}
 where $P_i(p \mid c)$ is the maximum entropy distribution constructed with the
 first $i$ moments, $i \in \{2, 3, 4, 5, 6\}$. Since the Kullback-Leibler
 divergence $D_{KL}(P || Q)$ can be interpreted as the amount of information lost
