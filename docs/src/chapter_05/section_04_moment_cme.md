@@ -13,7 +13,7 @@ be found in the [following
 link](https://www.rpgroup.caltech.edu//chann_cap/software/moment_dynamics_system.html)
 as an annotated Jupyter notebook)
 
-To compute any moment of our chemical master equation () let us define a
+To compute any moment of our chemical master equation let us define a
 vector
 \begin{equation}
 \left\langle \mathbf{m^x p^y} \right\rangle \equiv
@@ -26,8 +26,9 @@ we defined the vector $\mathbf{P}(m, p)$, here we define a vector to collect the
 expected value of each of the promoter states. By definition, these moments
 $\left\langle m^x p^y \right\rangle_S$ are computed as
 \begin{equation}
-\left\langle m^x p^y \right\rangle_S \equiv 
-\sum_{m=0}^\infty \sum_{p=0}^\infty m^x p^y P_S(m, p).
+    \left\langle m^x p^y \right\rangle_S \equiv 
+    \sum_{m=0}^\infty \sum_{p=0}^\infty m^x p^y P_S(m, p).
+    \label{eq:mom_def}
 \end{equation}
 To simplify the notation, let $\sum_x \equiv \sum_{x=0}^\infty$. Since we are
 working with a system of three ODEs, one for each state, let us define the
@@ -42,22 +43,23 @@ following operation:
   \end{bmatrix}.
 \end{equation}
 
-With this in hand we can then apply this sum over $m$ and $p$ to . For the
-left-hand side we have
+With this in hand we can then apply this sum over $m$ and $p$ to [@Eq:ch3_eq09].
+For the left-hand side we have
 \begin{equation}
-\sum_m \sum_p m^x p^y \frac{d \mathbf{P}(m, p)}{dt} = 
-\frac{d}{dt}\left[ \sum_m \sum_p m^x p^y \mathbf{P}(m, p) \right],
+    \sum_m \sum_p m^x p^y \frac{d \mathbf{P}(m, p)}{dt} = 
+    \frac{d}{dt}\left[ \sum_m \sum_p m^x p^y \mathbf{P}(m, p) \right],
+    \label{eq:sum_mom}
 \end{equation}
 where we made use of the linearity property of the derivative to switch the
-order between the sum and the derivative. Notice that the right-hand side of
-contains the definition of a moment from XXX. That means that we can rewrite it
-as
+order between the sum and the derivative. Notice that the right-hand side of Eq.
+$\ref{eq:sum_mom}$ contains the definition of a moment from Eq.
+$\ref{eq:mom_def}$. That means that we can rewrite it as
 \begin{equation}
 \frac{d}{dt}\left[ \sum_m \sum_p m^x p^y \mathbf{P}(m, p) \right] = 
 \frac{d \mathbf{\left\langle m^x p^y \right\rangle}}{dt}.
 \end{equation}
 
-Distributing the sum on the right-hand side of gives 
+Distributing the sum on the right-hand side of [@Eq:ch3_eq09] gives 
 \begin{equation}
 \begin{split}
     \frac{d \mathbf{\left\langle m^x p^y \right\rangle}}{dt} &=
@@ -71,11 +73,13 @@ Distributing the sum on the right-hand side of gives
     &- \mathbf{\Gamma}_p \sum_m \sum_p (p) m^x p^y \mathbf{P}(m, p) + 
     \mathbf{\Gamma}_p \sum_m \sum_p (p + 1) m^x p^y \mathbf{P}(m, p + 1).
   \end{split}
+  \label{eq:master_sum}
 \end{equation}
 
 Let's look at each term on the right-hand side individually. For the terms in
-involving $\mathbf{P}(m, p)$ we can again use to rewrite them in a more compact
-form. This means that we can rewrite the state transition term as 
+Eq. $\ref{eq:master_sum}$ involving $\mathbf{P}(m, p)$ we can again use Eq.
+$\ref{eq:mom_def}$ to rewrite them in a more compact form. This means that we
+can rewrite the state transition term as 
 \begin{equation}
 \mathbf{K} \sum_m \sum_p m^x p^y \mathbf{P}(m, p) = 
 \mathbf{K} \mathbf{\left\langle m^x p^y \right\rangle}.
@@ -103,10 +107,11 @@ and
 \end{equation}
 respectively.
 
-For the sums terms in involving $\mathbf{P}(m \pm 1, p)$ or $\mathbf{P}(m, p \pm
-1)$ we can reindex the sum to work around this mismatch. To be more specific
-let's again look at each term case by case. For the mRNA production term
-involving $\mathbf{P}(m-1, p)$ we define $m' \equiv m - 1$. Using this we write
+For the sums terms in Eq. $\ref{eq:master_sum}$ involving $\mathbf{P}(m \pm 1,
+p)$ or $\mathbf{P}(m, p \pm 1)$ we can reindex the sum to work around this
+mismatch. To be more specific let's again look at each term case by case. For
+the mRNA production term involving $\mathbf{P}(m-1, p)$ we define $m' \equiv m -
+1$. Using this we write
 \begin{equation}
 \mathbf{R}_m \sum_m \sum_p m^x p^y \mathbf{P}(m-1, p) =
 \mathbf{R}_m \sum_{m' = -1}^\infty \sum_p (m' + 1)^x p^y \mathbf{P}(m', p).
@@ -117,6 +122,7 @@ from 0 rather than from -1, obtaining
 \begin{equation}
 \mathbf{R}_m \sum_{m' = -1}^\infty \sum_p (m' + 1)^x p^y \mathbf{P}(m', p) =
 \mathbf{R}_m \sum_{m'=0}^\infty \sum_p (m' + 1)^x p^y \mathbf{P}(m', p).
+    \label{eq:reindex}
 \end{equation}
 Recall that our distribution $\mathbf{P}(m, p)$ takes $m$ and $p$ as numerical
 inputs and returns a probability associated with such a molecule count.
@@ -124,8 +130,8 @@ Nevertheless, $m$ and $p$ themselves are dimensionless quantities that serve as
 indices of how many molecules are in the cell. The distribution is the same
 whether the variable is called $m$ or $m'$; for a specific number, let's say $m
 = 5$, or $m' = 5$, $\mathbf{P}(5, p)$ will return the same result. This means
-that the variable name is arbitrary, and the right-hand side of can be written
-as
+that the variable name is arbitrary, and the right-hand side of Eq.
+$\ref{eq:reindex}$ can be written as
 \begin{equation}
 \mathbf{R}_m \sum_{m'=0}^\infty \sum_p (m' + 1)^x p^y \mathbf{P}(m', p) =
 \mathbf{R}_m \mathbf{\left\langle{(m+1)^x p^y}\right\rangle},
@@ -142,8 +148,8 @@ similar procedure in which we define $m' = m + 1$ to obtain
 In this case since the term on the right-hand side of the equation is multiplied
 by $m'$, starting the sum over $m'$ from 0 rather than from 1 will not affect
 the result since this factor will not contribute to the total sum. Nevertheless
-this is useful since our definition of a moment from requires the sum to start
-at zero. This means that we can rewrite this term as
+this is useful since our definition of a moment from Eq. $\ref{eq:mom_def}$
+requires the sum to start at zero. This means that we can rewrite this term as
 \begin{equation}
 \mathbf{\Gamma}_m \sum_{m' = 1}^\infty m' \sum_p 
 (m' - 1)^x p^y \mathbf{P}(m', p) =
@@ -206,23 +212,26 @@ the form
     \mathbf{\Gamma}_p \mathbf{\left\langle{m^x p (p - 1)^y}\right\rangle}
     \text{  (protein degradation)}.
   \end{split}
+  \label{eq:mom_ode}
 \end{equation}
 
 ### Moment closure of the simple-repression distribution
 
-A very interesting and useful feature of is that for a given value of $x$ and
-$y$ the moment $\mathbf{\left\langle m^x p^y \right\rangle}$ is only a function
-of lower moments. Specifically $\mathbf{\left\langle m^x p^y \right\rangle}$ is
-a function of moments $\mathbf{\left\langle{m^{x'} p^{y'}}\right\rangle}$ that
-satisfy two conditions: 
+A very interesting and useful feature of Eq. $\ref{eq:mom_ode}$ is that for a
+given value of $x$ and $y$ the moment $\mathbf{\left\langle m^x p^y
+\right\rangle}$ is only a function of lower moments. Specifically
+$\mathbf{\left\langle m^x p^y \right\rangle}$ is a function of moments
+$\mathbf{\left\langle{m^{x'} p^{y'}}\right\rangle}$ that satisfy two conditions:
+
 \begin{equation}
-\begin{split}
-    &1) y' \leq y,\\
-  &2) x' + y' \leq x + y.
-\end{split}
+    \begin{split}
+        &1) y' \leq y,\\
+    &2) x' + y' \leq x + y.
+    \end{split}
+    \label{eq:mom_conditions}
 \end{equation}
 
-To prove this we rewrite as 
+To prove this we rewrite Eq. $\ref{eq:mom_ode}$ as 
 \begin{equation}
 \begin{split}
     \frac{d\mathbf{\left\langle m^x p^y \right\rangle}}{dt} &=
@@ -236,13 +245,14 @@ To prove this we rewrite as
     \left[ (p + 1)^y - p^y \right]}\right\rangle}\\
     &+ \mathbf{\Gamma}_p 
     \mathbf{\left\langle{m^x p \left[ (p - 1)^y - p^y \right]}\right\rangle},
+    \label{eq:mom_ode_factorized}
 \end{split}
 \end{equation}
 where the factorization is valid given the linearity of expected values. Now the
 objective is to find the highest moment for each term once the relevant
 binomial, such as $(m-1)^x$, is expanded. Take, for example, a simple case in
 which we want to find the second moment of the mRNA distribution. We then set $x
-= 2$ and $y = 0$. then becomes 
+= 2$ and $y = 0$. Eq. $\ref{eq:mom_ode_factorized}$ then becomes 
 \begin{equation}
 \begin{split}
     \frac{\mathbf{\left\langle{m^2 p^0}\right\rangle}}{dt} &=
@@ -260,21 +270,24 @@ which we want to find the second moment of the mRNA distribution. We then set $x
 \end{equation}
 Simplifying this equation gives 
 \begin{equation}
-\frac{d \mathbf{\left\langle{m^2}\right\rangle}}{dt} =
-\mathbf{K} 
-\mathbf{\left\langle{m^2}\right\rangle}
-+ \mathbf{R}_m 
-\mathbf{\left\langle{\left[ 2m + 1 \right]}\right\rangle}
-+ \mathbf{\Gamma}_m 
-\mathbf{\left\langle{\left[- 2m^2 + m \right]}\right\rangle}.
+    \frac{d \mathbf{\left\langle{m^2}\right\rangle}}{dt} =
+    \mathbf{K} 
+    \mathbf{\left\langle{m^2}\right\rangle}
+    + \mathbf{R}_m 
+    \mathbf{\left\langle{\left[ 2m + 1 \right]}\right\rangle}
+    + \mathbf{\Gamma}_m 
+    \mathbf{\left\langle{\left[- 2m^2 + m \right]}\right\rangle}.
+    \label{eq:second_mom_mRNA}
 \end{equation}
 
-XXX satisfies both of our conditions. Since we set $y$ to be zero, none of the
-terms depend on any moment that involves the protein number, therefore $y' \leq
-y$ is satisfied. Also the highest moment in also satisfies $x' + y' \leq x + y$
-since the second moment of mRNA doesn't depend on any moment higher than
+Eq. $\ref{eq:second_mom_mRNA}$ satisfies both of our conditions. Since we set
+$y$ to be zero, none of the terms depend on any moment that involves the protein
+number, therefore $y' \leq y$ is satisfied. Also the highest moment in Eq.
+$\ref{eq:second_mom_mRNA}$ also satisfies $x' + y' \leq x + y$ since the second
+moment of mRNA doesn't depend on any moment higher than
 $\mathbf{\left\langle{m^2}\right\rangle}$. To demonstrate that this is true for
-any $x$ and $y$ we now rewrite , making use of the binomial expansion
+any $x$ and $y$ we now rewrite Eq. $\ref{eq:mom_ode_factorized}$, making use of
+the binomial expansion
 \begin{equation}
 (z \pm 1)^n = \sum_{k=0}^n {n \choose k} (\pm 1)^{k} z^{n-k}.
 \end{equation}
@@ -298,7 +311,7 @@ other $m^x$, so we can simplify to
 \end{equation}
 Once the sum is expanded we can see that the highest moment in this sum is given
 by $\mathbf{\left\langle{m^{(x-1)} p^y}\right\rangle}$ which satisfies both of
-the conditions on XXX.
+the conditions on Eq. $\ref{eq:mom_conditions}$.
 
 For the mRNA degradation term we similarly have
 \begin{equation}
@@ -317,8 +330,9 @@ m^x \right]}\right\rangle} =
 \mathbf{\left\langle{p^y 
 \left[ \sum_{k=1}^x {x \choose k}(-1)^k m^{x+1-k} \right]}\right\rangle}.
 \end{equation}
-The largest moment in this case is $\mathbf{\left\langle{m^x p^y
-}\right\rangle}$, which again satisfies the conditions on XXX.
+The largest moment in this case is $\mathbf{\left\langle{m^x
+p^y}\right\rangle}$, which again satisfies the conditions on Eq.
+$\ref{eq:mom_conditions}$.
 
 The protein production term gives
 \begin{equation}
@@ -351,10 +365,10 @@ p^{y-1}}\right\rangle}$. With this, we show that the four terms involved in our
 general moment equation depend only on lower moments that satisfy XXX.
 
 As a reminder, what we showed in this section is that the kinetic model
-introduced in (A) has no moment-closure problem. In other words, moments of the
-joint mRNA and protein distribution can be computed just from knowledge of lower
-moments. This allows us to cleanly integrate the moments of the distribution
-dynamics as cells progress through the cell cycle.
+introduced in [@Fig:ch3_fig02](A) has no moment-closure problem. In other words,
+moments of the joint mRNA and protein distribution can be computed just from
+knowledge of lower moments. This allows us to cleanly integrate the moments of
+the distribution dynamics as cells progress through the cell cycle.
 
 ### Computing single promoter steady-state moments
 
@@ -367,26 +381,27 @@ As discussed in XXX, one of the main factors contributing to cell-to-cell
 variability in gene expression is the change in gene copy number during the cell
 cycle as cells replicate their genome before cell division. Our minimal model
 accounts for this variability by considering the time trajectory of the
-distribution moments as given by . These predictions will be contrasted with the
-predictions from a kinetic model that doesn't account for changes in gene copy
-number during the cell cycle in XXX.
+distribution moments as given by Eq. $\ref{eq:mom_ode_factorized}$. These
+predictions will be contrasted with the predictions from a kinetic model that
+doesn't account for changes in gene copy number during the cell cycle in XXX.
 
 If we do not account for change in gene copy number during the cell cycle or for
 the partition of proteins during division, the dynamics of the moments of the
 distribution described in this section will reach a steady state. In order to
 compute the steady-state moments of the kinetic model with a single gene across
 the cell cycle, we use the moment closure property of our master equation. By
-equating to zero for a given $\mathbf{x}$ and $\mathbf{y}$, we can solve the
-resulting linear system and obtain a solution for $\mathbf{\left\langle m^x p^y
-\right\rangle}$ at steady state as a function of moments
-$\mathbf{\left\langle{m^{x'} p^{y'}}\right\rangle}$ that satisfy . Then, by
-solving for the zero$^\text{th}$ moment $\mathbf{\left\langle{m^0
-p^0}\right\rangle}$ subject to the constraint that the probability of the
-promoter being in any state should add up to one, we can substitute back all of
-the solutions in terms of moments $\mathbf{\left\langle{m^{x'}
-p^{y'}}\right\rangle}$ with solutions in terms of the rates shown in . In other
-words, through an iterative process, we can get at the value of any moment of
-the distribution. We start by solving for the zero$^\text{th}$ moment. Since all
-higher moments, depend on lower moments we can use the solution of the
-zero$^\text{th}$ moment to compute the first mRNA moment. This solution is then
-used for higher moments in a hierarchical iterative process.
+equating Eq. $\ref{eq:mom_ode_factorized}$ to zero for a given $\mathbf{x}$ and
+$\mathbf{y}$, we can solve the resulting linear system and obtain a solution for
+$\mathbf{\left\langle m^x p^y \right\rangle}$ at steady state as a function of
+moments $\mathbf{\left\langle{m^{x'} p^{y'}}\right\rangle}$ that satisfy Eq.
+$\ref{eq:mom_conditions}$. Then, by solving for the zero$^\text{th}$ moment
+$\mathbf{\left\langle{m^0 p^0}\right\rangle}$ subject to the constraint that the
+probability of the promoter being in any state should add up to one, we can
+substitute back all of the solutions in terms of moments
+$\mathbf{\left\langle{m^{x'} p^{y'}}\right\rangle}$ with solutions in terms of
+the rates shown in [@Fig:ch3_fig02]. In other words, through an iterative
+process, we can get at the value of any moment of the distribution. We start by
+solving for the zero$^\text{th}$ moment. Since all higher moments, depend on
+lower moments we can use the solution of the zero$^\text{th}$ moment to compute
+the first mRNA moment. This solution is then used for higher moments in a
+hierarchical iterative process.
