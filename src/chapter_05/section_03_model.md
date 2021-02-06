@@ -204,7 +204,7 @@ information from what we know from equilibrium-based models.
 
 In order to make progress at inferring the unregulated promoter state transition
 rates, we make use of the single-molecule mRNA FISH data from Jones et al.
-[@Jones2014a]. [@Fig:ch5_g01] shows the distribution of mRNA per cell for the
+[@Jones2014a]. [@Fig:ch5_fig01] shows the distribution of mRNA per cell for the
 *lacUV5* promoter used for our inference. This promoter, being very strong, has
 a mean copy number of $\langle m \rangle \approx 18$ mRNA/cell.
 
