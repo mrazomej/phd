@@ -245,8 +245,8 @@ $$
     \left[ (p + 1)^y - p^y \right]}\right\rangle}\\
     &+ \mathbf{\Gamma}_p 
     \mathbf{\left\langle{m^x p \left[ (p - 1)^y - p^y \right]}\right\rangle},
-    \label{eq:mom_ode_factorized}
 \end{split}
+    \label{eq:mom_ode_factorized}
 $$
 where the factorization is valid given the linearity of expected values. Now the
 objective is to find the highest moment for each term once the relevant
