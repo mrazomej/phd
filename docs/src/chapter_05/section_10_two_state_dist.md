@@ -30,13 +30,13 @@ rates.](ch5_fig35){#fig:ch5_fig35 short-caption="One-state Poisson promoter"}
 
 The dynamics of the probability distribution $P(m, t)$ are governed by the
 chemical master equation
-\begin{equation}
+$$
 \frac{d P(m, t)}{dt} = 
 \overbrace{r_m P(m-1, t)}^{m-1 \rightarrow m}
 - \overbrace{r_m P(m, t)}^{m \rightarrow m+1}
 + \overbrace{\gamma_m (m+1) P(m+1, t)}^{m+1 \rightarrow m}
 - \overbrace{\gamma_m m P(m, t)}^{m \rightarrow m-1}.
 \label{eq:eq_test}
-\end{equation}
+$$
 
 This is $\ref{eq:eq_test}$

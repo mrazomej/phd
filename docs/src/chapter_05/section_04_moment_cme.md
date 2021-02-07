@@ -15,25 +15,25 @@ as an annotated Jupyter notebook)
 
 To compute any moment of our chemical master equation let us define a
 vector
-\begin{equation}
+$$
 \left\langle \mathbf{m^x p^y} \right\rangle \equiv
 (\left\langle m^x p^y \right\rangle_A, 
 \left\langle m^x p^y \right\rangle_I, \left\langle m^x p^y \right\rangle_R)^T,
-\end{equation}
+$$
 where $\left\langle m^x p^y \right\rangle_S$ is the expected value of $m^x p^y$
 in state $S \in \{A, I, R\}$ with $x, y \in \mathbb{N}$. In other words, just as
 we defined the vector $\mathbf{P}(m, p)$, here we define a vector to collect the
 expected value of each of the promoter states. By definition, these moments
 $\left\langle m^x p^y \right\rangle_S$ are computed as
-\begin{equation}
+$$
     \left\langle m^x p^y \right\rangle_S \equiv 
     \sum_{m=0}^\infty \sum_{p=0}^\infty m^x p^y P_S(m, p).
     \label{eq:mom_def}
-\end{equation}
+$$
 To simplify the notation, let $\sum_x \equiv \sum_{x=0}^\infty$. Since we are
 working with a system of three ODEs, one for each state, let us define the
 following operation:
-\begin{equation}
+$$
 \left\langle \mathbf{m^x p^y} \right\rangle =
 \sum_m \sum_p m^x p^y \mathbf{P}(m, p) \equiv
   \begin{bmatrix}
@@ -41,26 +41,26 @@ following operation:
     \sum_m \sum_p m^x p^y P_I(m, p)\\
     \sum_m \sum_p m^x p^y P_R(m, p)\\
   \end{bmatrix}.
-\end{equation}
+$$
 
 With this in hand we can then apply this sum over $m$ and $p$ to [@Eq:ch3_eq09].
 For the left-hand side we have
-\begin{equation}
+$$
     \sum_m \sum_p m^x p^y \frac{d \mathbf{P}(m, p)}{dt} = 
     \frac{d}{dt}\left[ \sum_m \sum_p m^x p^y \mathbf{P}(m, p) \right],
     \label{eq:sum_mom}
-\end{equation}
+$$
 where we made use of the linearity property of the derivative to switch the
 order between the sum and the derivative. Notice that the right-hand side of Eq.
 $\ref{eq:sum_mom}$ contains the definition of a moment from Eq.
 $\ref{eq:mom_def}$. That means that we can rewrite it as
-\begin{equation}
+$$
 \frac{d}{dt}\left[ \sum_m \sum_p m^x p^y \mathbf{P}(m, p) \right] = 
 \frac{d \mathbf{\left\langle m^x p^y \right\rangle}}{dt}.
-\end{equation}
+$$
 
 Distributing the sum on the right-hand side of [@Eq:ch3_eq09] gives 
-\begin{equation}
+$$
 \begin{split}
     \frac{d \mathbf{\left\langle m^x p^y \right\rangle}}{dt} &=
     \mathbf{K} \sum_m \sum_p m^x p^y \mathbf{P}(m, p)\\
@@ -74,37 +74,37 @@ Distributing the sum on the right-hand side of [@Eq:ch3_eq09] gives
     \mathbf{\Gamma}_p \sum_m \sum_p (p + 1) m^x p^y \mathbf{P}(m, p + 1).
   \end{split}
   \label{eq:master_sum}
-\end{equation}
+$$
 
 Let's look at each term on the right-hand side individually. For the terms in
 Eq. $\ref{eq:master_sum}$ involving $\mathbf{P}(m, p)$ we can again use Eq.
 $\ref{eq:mom_def}$ to rewrite them in a more compact form. This means that we
 can rewrite the state transition term as 
-\begin{equation}
+$$
 \mathbf{K} \sum_m \sum_p m^x p^y \mathbf{P}(m, p) = 
 \mathbf{K} \mathbf{\left\langle m^x p^y \right\rangle}.
-\end{equation}
+$$
 The mRNA production term involving $\mathbf{P}(m, p)$ can be rewritten as
-\begin{equation}
+$$
 \mathbf{R}_m \sum_m \sum_p m^x p^y \mathbf{P}(m, p) = 
 \mathbf{R}_m \mathbf{\left\langle m^x p^y \right\rangle}.
-\end{equation}
+$$
 In the same way the mRNA degradation term gives
-\begin{equation}
+$$
 \mathbf{\Gamma}_m \sum_m \sum_p (m) m^x p^y \mathbf{P}(m, p) = 
 \mathbf{\Gamma}_m \mathbf{\left\langle{m^{(x + 1)} p^y}\right\rangle}.
-\end{equation}
+$$
 For the protein production and degradation terms involving $\mathbf{P}(m, p)$ we
 have 
-\begin{equation}
+$$
 \mathbf{R}_p \sum_m \sum_p (m) m^x p^y \mathbf{P}(m, p) = 
 \mathbf{R}_p \mathbf{\left\langle{m^{(x + 1)} p^y}\right\rangle},
-\end{equation}
+$$
 and 
-\begin{equation}
+$$
 \mathbf{\Gamma}_p \sum_m \sum_p (p) m^x p^y \mathbf{P}(m, p) = 
 \mathbf{\Gamma}_p \mathbf{\left\langle{m^x p^{(y + 1)}}\right\rangle},
-\end{equation}
+$$
 respectively.
 
 For the sums terms in Eq. $\ref{eq:master_sum}$ involving $\mathbf{P}(m \pm 1,
@@ -112,18 +112,18 @@ p)$ or $\mathbf{P}(m, p \pm 1)$ we can reindex the sum to work around this
 mismatch. To be more specific let's again look at each term case by case. For
 the mRNA production term involving $\mathbf{P}(m-1, p)$ we define $m' \equiv m -
 1$. Using this we write
-\begin{equation}
+$$
 \mathbf{R}_m \sum_m \sum_p m^x p^y \mathbf{P}(m-1, p) =
 \mathbf{R}_m \sum_{m' = -1}^\infty \sum_p (m' + 1)^x p^y \mathbf{P}(m', p).
-\end{equation}
+$$
 Since having negative numbers of mRNA or protein doesn't make physical sense we
 have that $\mathbf{P}(-1, p) = 0$. Therefore we can rewrite the sum starting
 from 0 rather than from -1, obtaining
-\begin{equation}
+$$
 \mathbf{R}_m \sum_{m' = -1}^\infty \sum_p (m' + 1)^x p^y \mathbf{P}(m', p) =
 \mathbf{R}_m \sum_{m'=0}^\infty \sum_p (m' + 1)^x p^y \mathbf{P}(m', p).
     \label{eq:reindex}
-\end{equation}
+$$
 Recall that our distribution $\mathbf{P}(m, p)$ takes $m$ and $p$ as numerical
 inputs and returns a probability associated with such a molecule count.
 Nevertheless, $m$ and $p$ themselves are dimensionless quantities that serve as
@@ -132,69 +132,69 @@ whether the variable is called $m$ or $m'$; for a specific number, let's say $m
 = 5$, or $m' = 5$, $\mathbf{P}(5, p)$ will return the same result. This means
 that the variable name is arbitrary, and the right-hand side of Eq.
 $\ref{eq:reindex}$ can be written as
-\begin{equation}
+$$
 \mathbf{R}_m \sum_{m'=0}^\infty \sum_p (m' + 1)^x p^y \mathbf{P}(m', p) =
 \mathbf{R}_m \mathbf{\left\langle{(m+1)^x p^y}\right\rangle},
-\end{equation}
+$$
 since the left-hand side corresponds to the definition of a moment.
 
 For the mRNA degradation term involving $\mathbf{P}(m + 1, p)$ we follow a
 similar procedure in which we define $m' = m + 1$ to obtain
-\begin{equation}
+$$
 \mathbf{\Gamma}_m \sum_m \sum_p (m + 1) m^x p^y \mathbf{P}(m + 1, p) =
 \mathbf{\Gamma}_m \sum_{m' = 1}^\infty \sum_p m' 
 (m' - 1)^x p^y \mathbf{P}(m', p).
-\end{equation}
+$$
 In this case since the term on the right-hand side of the equation is multiplied
 by $m'$, starting the sum over $m'$ from 0 rather than from 1 will not affect
 the result since this factor will not contribute to the total sum. Nevertheless
 this is useful since our definition of a moment from Eq. $\ref{eq:mom_def}$
 requires the sum to start at zero. This means that we can rewrite this term as
-\begin{equation}
+$$
 \mathbf{\Gamma}_m \sum_{m' = 1}^\infty m' \sum_p 
 (m' - 1)^x p^y \mathbf{P}(m', p) =
 \mathbf{\Gamma}_m \sum_{m' = 0}^\infty m' \sum_p 
 (m' - 1)^x p^y \mathbf{P}(m', p).
-\end{equation}
+$$
 Here again we can change the arbitrary label $m'$ back to $m$ obtaining
-\begin{equation}
+$$
 \mathbf{\Gamma}_m \sum_{m' = 0}^\infty m' \sum_p 
 (m' - 1)^x p^y \mathbf{P}(m', p) =
 \mathbf{\Gamma}_m \mathbf{\left\langle{m (m - 1)^x p^y}\right\rangle}.
-\end{equation}
+$$
 
 The protein production term involving $\mathbf{P}(m, p - 1)$ can be reindexed by
 defining $p' \equiv p - 1$. This gives
-\begin{equation}
+$$
 \mathbf{R}_p \sum_m \sum_p (m) m^x p^y \mathbf{P}(m, p - 1) =
 \mathbf{R}_p \sum_m \sum_{p'=-1}^\infty 
 m^{(x + 1)} (p + 1)^y \mathbf{P}(m, p').
-\end{equation}
+$$
 We again use the fact that negative molecule copy numbers are assigned with
 probability zero to begin the sum from 0 rather than -1 and the arbitrary nature
 of the label $p'$ to write
-\begin{equation}
+$$
 \mathbf{R}_p \sum_m \sum_{p'=0}^\infty m^{(x + 1)} (p + 1)^y \mathbf{P}(m, p') =
 \mathbf{R}_p \mathbf{\left\langle{m^{(x + 1)} (p + 1)^y}\right\rangle}.
-\end{equation}
+$$
 Finally, we take care of the protein degradation term involving $\mathbf{P}(m, p
 + 1)$. As before, we define $p' = p + 1$ and substitute this to obtain
-\begin{equation}
+$$
 \mathbf{\Gamma}_p \sum_m \sum_p (p + 1) m^x p^y \mathbf{P}(m, p + 1) =
 \mathbf{\Gamma}_p \sum_m \sum_{p'=1}^\infty 
 (p') m^x (p' - 1)^y \mathbf{P}(m, p').
-\end{equation}
+$$
 Just as with the mRNA degradation term, having a term $p'$ inside the sum allows
 us to start the sum over $p'$ from 0 rather than 1. We can therefore write
-\begin{equation}
+$$
 \mathbf{\Gamma}_p \sum_m \sum_{p'=0}^\infty 
 (p') m^x (p' - 1)^y \mathbf{P}(m, p') =
 \mathbf{\Gamma}_p \mathbf{\left\langle{m^x p (p - 1)^y}\right\rangle}.
-\end{equation}
+$$
 
 Putting all these terms together we can write the general moment ODE. This is of
 the form 
-\begin{equation}
+$$
 \begin{split}
     \frac{d\mathbf{\left\langle m^x p^y \right\rangle}}{dt} &=
     \mathbf{K} \mathbf{\left\langle m^x p^y \right\rangle}
@@ -213,7 +213,7 @@ the form
     \text{  (protein degradation)}.
   \end{split}
   \label{eq:mom_ode}
-\end{equation}
+$$
 
 ### Moment closure of the simple-repression distribution
 
@@ -223,16 +223,16 @@ given value of $x$ and $y$ the moment $\mathbf{\left\langle m^x p^y
 $\mathbf{\left\langle m^x p^y \right\rangle}$ is a function of moments
 $\mathbf{\left\langle{m^{x'} p^{y'}}\right\rangle}$ that satisfy two conditions:
 
-\begin{equation}
+$$
     \begin{split}
         &1) y' \leq y,\\
     &2) x' + y' \leq x + y.
     \end{split}
     \label{eq:mom_conditions}
-\end{equation}
+$$
 
 To prove this we rewrite Eq. $\ref{eq:mom_ode}$ as 
-\begin{equation}
+$$
 \begin{split}
     \frac{d\mathbf{\left\langle m^x p^y \right\rangle}}{dt} &=
     \mathbf{K} \mathbf{\left\langle m^x p^y \right\rangle}\\
@@ -245,15 +245,15 @@ To prove this we rewrite Eq. $\ref{eq:mom_ode}$ as
     \left[ (p + 1)^y - p^y \right]}\right\rangle}\\
     &+ \mathbf{\Gamma}_p 
     \mathbf{\left\langle{m^x p \left[ (p - 1)^y - p^y \right]}\right\rangle},
-    \label{eq:mom_ode_factorized}
 \end{split}
-\end{equation}
+    \label{eq:mom_ode_factorized}
+$$
 where the factorization is valid given the linearity of expected values. Now the
 objective is to find the highest moment for each term once the relevant
 binomial, such as $(m-1)^x$, is expanded. Take, for example, a simple case in
 which we want to find the second moment of the mRNA distribution. We then set $x
 = 2$ and $y = 0$. Eq. $\ref{eq:mom_ode_factorized}$ then becomes 
-\begin{equation}
+$$
 \begin{split}
     \frac{\mathbf{\left\langle{m^2 p^0}\right\rangle}}{dt} &=
     \mathbf{K} \mathbf{\left\langle{m^2 p^0}\right\rangle}\\
@@ -267,9 +267,9 @@ which we want to find the second moment of the mRNA distribution. We then set $x
     &+ \mathbf{\Gamma}_p 
     \mathbf{\left\langle{m^2 p \left[ (p - 1)^0 - p^0 \right]}\right\rangle}.
 \end{split}
-\end{equation}
+$$
 Simplifying this equation gives 
-\begin{equation}
+$$
     \frac{d \mathbf{\left\langle{m^2}\right\rangle}}{dt} =
     \mathbf{K} 
     \mathbf{\left\langle{m^2}\right\rangle}
@@ -278,7 +278,7 @@ Simplifying this equation gives
     + \mathbf{\Gamma}_m 
     \mathbf{\left\langle{\left[- 2m^2 + m \right]}\right\rangle}.
     \label{eq:second_mom_mRNA}
-\end{equation}
+$$
 
 Eq. $\ref{eq:second_mom_mRNA}$ satisfies both of our conditions. Since we set
 $y$ to be zero, none of the terms depend on any moment that involves the protein
@@ -288,78 +288,78 @@ moment of mRNA doesn't depend on any moment higher than
 $\mathbf{\left\langle{m^2}\right\rangle}$. To demonstrate that this is true for
 any $x$ and $y$ we now rewrite Eq. $\ref{eq:mom_ode_factorized}$, making use of
 the binomial expansion
-\begin{equation}
+$$
 (z \pm 1)^n = \sum_{k=0}^n {n \choose k} (\pm 1)^{k} z^{n-k}.
-\end{equation}
+$$
  Just as before let's look at each term individually. For the mRNA production
 term we have 
-\begin{equation}
+$$
 \mathbf{R}_m 
 \mathbf{\left\langle{p^y \left[ (m + 1)^x -m^x \right]}\right\rangle} =
 \mathbf{R}_m 
 \mathbf{\left\langle{p^y 
 \left[ \sum_{k=0}^x {x \choose k} m^{x-k} - m^x \right]}\right\rangle}.
-\end{equation}
+$$
 When $k = 0$, the term inside the sum on the right-hand side cancels with the
 other $m^x$, so we can simplify to
-\begin{equation}
+$$
 \mathbf{R}_m 
 \mathbf{\left\langle{p^y \left[ (m + 1)^x -m^x \right]}\right\rangle} =
 \mathbf{R}_m 
 \mathbf{\left\langle{p^y 
 \left[ \sum_{k=1}^x {x \choose k} m^{x-k} \right]}\right\rangle}.
-\end{equation}
+$$
 Once the sum is expanded we can see that the highest moment in this sum is given
 by $\mathbf{\left\langle{m^{(x-1)} p^y}\right\rangle}$ which satisfies both of
 the conditions on Eq. $\ref{eq:mom_conditions}$.
 
 For the mRNA degradation term we similarly have
-\begin{equation}
+$$
 \mathbf{\Gamma}_m 
 \mathbf{\left\langle{m p^y \left[ (m - 1)^x - m^x \right]}\right\rangle} =
 \mathbf{\Gamma}_m 
 \mathbf{\left\langle{m p^y 
 \left[ \sum_{k=0}^x {x \choose k}(-1)^k m^{x-k} - m^x \right]}\right\rangle}.
-\end{equation}
+$$
 Simplifying terms we obtain
-\begin{equation}
+$$
 \mathbf{\Gamma}_m 
 \mathbf{\left\langle{m p^y \left[ \sum_{k=0}^x {x \choose k}(-1)^k m^{x-k} -
 m^x \right]}\right\rangle} =
 \mathbf{\Gamma}_m 
 \mathbf{\left\langle{p^y 
 \left[ \sum_{k=1}^x {x \choose k}(-1)^k m^{x+1-k} \right]}\right\rangle}.
-\end{equation}
+$$
 The largest moment in this case is $\mathbf{\left\langle{m^x
 p^y}\right\rangle}$, which again satisfies the conditions on Eq.
 $\ref{eq:mom_conditions}$.
 
 The protein production term gives
-\begin{equation}
+$$
 \mathbf{R}_p 
 \mathbf{\left\langle{m^{(x + 1)} \left[ (p + 1)^y - p^y \right]}\right\rangle} =
 \mathbf{R}_p \mathbf{\left\langle{m^{(x + 1)}
 \left[ \sum_{k=0}^y {y \choose k} (-1)^k p^{y-k} - p^y \right]}\right\rangle}.
-\end{equation}
+$$
 Upon simplification we obtain
-\begin{equation}
+$$
 \mathbf{R}_p 
 \mathbf{\left\langle{m^{(x + 1)} 
 \left[ \sum_{k=0}^y {y \choose k} (-1)^k p^{y-k} - p^y \right]}\right\rangle} =
 \mathbf{R}_p 
 \mathbf{\left\langle{m^{(x + 1)} 
 \left[ \sum_{k=1}^y {y \choose k}(-1)^k p^{y-k} \right]}\right\rangle}.
-\end{equation}
+$$
 Here the largest moment is given by $\mathbf{\left\langle{m^{x+1}
 p^{y-1}}\right\rangle}$, that again satisfies both of our conditions. For the
 last term, for protein degradation we have
-\begin{equation}
+$$
 \mathbf{R}_p 
 \mathbf{\left\langle{m^{(x + 1)} \left[ (p + 1)^y - p^y \right]}\right\rangle} =
 \mathbf{R}_p 
 \mathbf{\left\langle{m^{(x + 1)} \left[ \sum_{k=1}^y {y \choose k} (-1^k) p^{y - k}
   \right]}\right\rangle}.
-\end{equation}
+$$
 The largest moment involved in this term is therefore $\mathbf{\left\langle{m^x
 p^{y-1}}\right\rangle}$. With this, we show that the four terms involved in our
 general moment equation depend only on lower moments that satisfy XXX.
