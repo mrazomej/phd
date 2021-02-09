@@ -31,8 +31,8 @@ eqnPrefix:
   - "Eq."
   - "Eqs."
 secPrefix:
-  - "Sec."
-  - "Secs."
+  - "Section"
+  - "Sections"
 tblPrefix:
   - "Table"
   - "Tables"
