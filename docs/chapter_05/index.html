@@ -944,7 +944,8 @@ r_m \cdot p_{\text{bound}} - \gamma _m \langle m \rangle,
 <h3 id="the-maxent-principle">The MaxEnt principle</h3>
 <p>The principle of maximum entropy (MaxEnt) first proposed by E. T. Jaynes in 1957 tackles the question of given limited information what is the least biased inference one can make about a particular probability distribution <span class="citation" data-cites="Jaynes1957"> [<a href="#ref-Jaynes1957" role="doc-biblioref">32</a>]</span>. In particular Jaynes used this principle to show the correspondence between statistical mechanics and information theory, demonstrating, for example, that the Boltzmann distribution is the probability distribution that maximizes Shannon’s entropy subject to a constraint that the average energy of the system is fixed.</p>
 <p>To illustrate the principle let us focus on a univariate distribution <span class="math inline">\(P_X(x)\)</span>. The <span class="math inline">\(n^{\text{th}}\)</span> moment of the distribution for a discrete set of possible values of <span class="math inline">\(x\)</span> is given by <span class="math display">\[
-\left\langle{x^n}\right\rangle \equiv \sum_x x^n P_X(x).
+    \left\langle{x^n}\right\rangle \equiv \sum_x x^n P_X(x).
+    \label{eq:mom_ref}
 \]</span></p>
 <p>Now assume that we have knowledge of the first <span class="math inline">\(m\)</span> moments <span class="math inline">\(\mathbf{\left\langle{x}\right\rangle}_m = (\left\langle{x}\right\rangle, \left\langle{x^2}\right\rangle, \ldots, \left\langle{x^m}\right\rangle )\)</span>. The question is then how can we use this information to build an estimator <span class="math inline">\(P_H(x \mid \mathbf{\left\langle{x}\right\rangle}_m)\)</span> of the distribution such that <span class="math display">\[
 \lim_{m \rightarrow \infty} 
@@ -954,9 +955,10 @@ P_H(x \mid \mathbf{\left\langle{x}\right\rangle}_m) \rightarrow P_X(x),
 H(x) \equiv - \sum_x P_X(x) \log P_X(x).
 \]</span></p>
 <p>For an optimization problem subject to constraints we make use of the method of the Lagrange multipliers. For this we define the constraint equation <span class="math inline">\(\mathcal{L}(x)\)</span> as <span class="math display">\[
-\mathcal{L}(x) \equiv H(x) - \sum_{i=0}^m
-\left[ \lambda_i \left( \left\langle{x^i}\right\rangle -
-\sum_x x^i P_X(x) \right) \right],
+    \mathcal{L}(x) \equiv H(x) - \sum_{i=0}^m
+    \left[ \lambda_i \left( \left\langle{x^i}\right\rangle -
+    \sum_x x^i P_X(x) \right) \right],
+    \label{eq:constraint_eq}
 \]</span> where <span class="math inline">\(\lambda_i\)</span> is the Lagrange multiplier associated with the <span class="math inline">\(i^\text{th}\)</span> moment. The inclusion of the zeroth moment is an additional constraint to guarantee the normalization of the resulting distribution. Since <span class="math inline">\(P_X(x)\)</span> has a finite set of discrete values, when taking the derivative of the constraint equation with respect to <span class="math inline">\(P_X(x)\)</span>, we chose a particular value of <span class="math inline">\(X = x\)</span>. Therefore from the sum over all possible <span class="math inline">\(x\)</span> values only a single term survives. With this in mind we take the derivative of the constraint equation obtaining <span class="math display">\[
 \frac{d\mathcal{L}}{d P_X(x)} = -\log P_X(x) - 1 -
 \sum_{i=0}^m \lambda_i x^i.
@@ -965,11 +967,12 @@ H(x) \equiv - \sum_x P_X(x) \log P_X(x).
 P_H(x) = \exp \left(- 1 - \sum_{i=0}^m \lambda_i x^i \right)
 = \frac{1}{\mathcal{Z}}
 \exp \left( - \sum_{i=1}^m \lambda_i x^i \right),
+\label{eq:maxEnt}
 \]</span> where <span class="math inline">\(\mathcal{Z}\)</span> is the normalization constant that can be obtained by substituting this solution into the normalization constraint. This results in <span class="math display">\[
 \mathcal{Z} \equiv \exp\left( 1 + \lambda_0 \right) =
 \sum_x \exp \left( - \sum_{i=1}^m \lambda_i x^i \right).
 \]</span></p>
-<p>XXX is the general form of the MaxEnt distribution for a univariate distribution. The computational challenge then consists in finding numerical values for the Lagrange multipliers <span class="math inline">\(\{ \lambda_i \}\)</span> such that <span class="math inline">\(P_H(x)\)</span> satisfies our constraints. In other words, the Lagrange multipliers weight the contribution of each term in the exponent such that when computing any of the moments we recover the value of our constraint. Mathematically what this means is that <span class="math inline">\(P_H(x)\)</span> must satisfy <span class="math display">\[
+<p>Eq. <span class="math inline">\(\ref{eq:maxEnt}\)</span> is the general form of the MaxEnt distribution for a univariate distribution. The computational challenge then consists in finding numerical values for the Lagrange multipliers <span class="math inline">\(\{ \lambda_i \}\)</span> such that <span class="math inline">\(P_H(x)\)</span> satisfies our constraints. In other words, the Lagrange multipliers weight the contribution of each term in the exponent such that when computing any of the moments we recover the value of our constraint. Mathematically what this means is that <span class="math inline">\(P_H(x)\)</span> must satisfy <span class="math display">\[
 \sum_x x^n P_H(x) =
 \sum_x \frac{x^n}{\mathcal{Z}}
 \exp \left( - \sum_{i=1}^m \lambda_i x^i \right) = 
@@ -977,17 +980,18 @@ P_H(x) = \exp \left(- 1 - \sum_{i=0}^m \lambda_i x^i \right)
 \]</span></p>
 <p>As an example of how to apply the MaxEnt principle let us use the classic problem of a six-face die. If we are only told that after a large number of die rolls the mean value of the face is <span class="math inline">\(\left\langle{x}\right\rangle = 4.5\)</span> (note that a fair die has a mean of <span class="math inline">\(3.5\)</span>), what would the least biased guess for the distribution look like? The MaxEnt principle tells us that our best guess would be of the form <span class="math display">\[
 P_H(x) = \frac{1}{\mathcal{Z}} \exp \left( \lambda x \right).
-\]</span> Using any numerical minimization package we can easily find the value of the Lagrange multiplier <span class="math inline">\(\lambda\)</span> that satisfies our constraint. shows two two examples of distributions that satisfy the constraint. Panel (A) shows a distribution consistent with the 4.5 average where both 4 and 5 are equally likely. Nevertheless in the information we got about the nature of the die it was never stated that some of the faces were forbidden. In that sense the distribution is committing to information about the process that we do not posses. Panel (B) by contrast shows the MaxEnt distribution that satisfies this constraint. Since this distribution maximizes Shannon’s entropy it is guaranteed to be the least biased distribution given the available information.</p>
+\]</span> Using any numerical minimization package we can easily find the value of the Lagrange multiplier <span class="math inline">\(\lambda\)</span> that satisfies our constraint. Fig. 15 shows two two examples of distributions that satisfy the constraint. Panel (A) shows a distribution consistent with the 4.5 average where both 4 and 5 are equally likely. Nevertheless in the information we got about the nature of the die it was never stated that some of the faces were forbidden. In that sense the distribution is committing to information about the process that we do not posses. Panel (B) by contrast shows the MaxEnt distribution that satisfies this constraint. Since this distribution maximizes Shannon’s entropy it is guaranteed to be the least biased distribution given the available information.</p>
 <figure>
 <img src="ch5_fig15.png" id="fig:ch5_fig15" data-short-caption="Maximum entropy distribution of six-face die" alt="Figure 15: Maximum entropy distribution of six-face die. (A)biased distribution consistent with the constraint \left\langle{x}\right\rangle = 4.5. (B) MaxEnt distribution also consistent with the constraint." /><figcaption aria-hidden="true">Figure 15: <strong>Maximum entropy distribution of six-face die.</strong> (A)biased distribution consistent with the constraint <span class="math inline">\(\left\langle{x}\right\rangle = 4.5\)</span>. (B) MaxEnt distribution also consistent with the constraint.</figcaption>
 </figure>
 <h4 id="the-mrna-and-protein-joint-distribution">The mRNA and protein joint distribution</h4>
-<p>The MaxEnt principle can easily be extended to multivariate distributions. For our particular case we are interested in the mRNA and protein joint distribution <span class="math inline">\(P(m, p)\)</span>. The definition of a moment <span class="math inline">\(\left\langle m^x p^y \right\rangle\)</span> is a natural extension of of the form <span class="math display">\[
+<p>The MaxEnt principle can easily be extended to multivariate distributions. For our particular case we are interested in the mRNA and protein joint distribution <span class="math inline">\(P(m, p)\)</span>. The definition of a moment <span class="math inline">\(\left\langle m^x p^y \right\rangle\)</span> is a natural extension of Eq. <span class="math inline">\(\ref{eq:mom_ref}\)</span> of the form <span class="math display">\[
 \left\langle m^x p^y \right\rangle = \sum_m \sum_p m^x p^y P(m, p).
 \]</span></p>
 <p>As a consequence the MaxEnt joint distribution <span class="math inline">\(P_H(m, p)\)</span> is of the form <span class="math display">\[
 P_H(m, p) = \frac{1}{\mathcal{Z}}
               \exp \left( - \sum_{(x,y)} \lambda_{(x,y)} m^x p^y \right),
+\label{eq:maxEnt_joint}
 \]</span> where <span class="math inline">\(\lambda_{(x,y)}\)</span> is the Lagrange multiplier associated with the moment <span class="math inline">\(\left\langle m^x p^y \right\rangle\)</span>, and again <span class="math inline">\(\mathcal{Z}\)</span> is the normalization constant given by <span class="math display">\[
 \mathcal{Z} = \sum_m \sum_p
               \exp \left( - \sum_{(x, y)} \lambda_{(x, y)} m^x p^y \right).
@@ -1007,14 +1011,15 @@ P_H(x) = \frac{1}{\mathcal{Z}}
 <h4 id="algorithm-implementation">Algorithm implementation</h4>
 <p>Let the <span class="math inline">\(M \times N\)</span> matrix <span class="math inline">\(\mathbf{A}\)</span> contain all the factors used to compute the moments that serve as constraints, where each entry is of the form <span class="math display">\[
 A_{ij} = m_i^{x_j} \cdot p_i^{y_j}.
+\label{eq:maxent_rules}
 \]</span> In other words, recall that to obtain any moment <span class="math inline">\(\left\langle m^x p^y \right\rangle\)</span> we compute <span class="math display">\[
 \left\langle m^x p^y \right\rangle = \sum_m \sum_p m^x p^y P(m, x).
-\]</span> If we have <span class="math inline">\(M\)</span> possible <span class="math inline">\((m, p)\)</span> pairs in our truncated sample space (because we can’t include the sample space up to infinity) <span class="math inline">\(\{(m, p)_1, (m, p)_2, \ldots (m, p)_N \}\)</span>, and we have <span class="math inline">\(N\)</span> exponent pairs <span class="math inline">\((x, y)\)</span> corresponding to the <span class="math inline">\(N\)</span> moments used to constraint the maximum entropy distribution <span class="math inline">\(\{(x, y)_1, (x, y)_2, \ldots, (x, y)_N \}\)</span>, then matrix <span class="math inline">\(\mathbf{A}\)</span> contains all the possible <span class="math inline">\(M\)</span> by <span class="math inline">\(N\)</span> terms of the form described in . Let also <span class="math inline">\(\mathbf{v}\)</span> be a vector of length <span class="math inline">\(N\)</span> containing all the constraints with each entry of the form <span class="math display">\[
+\]</span> If we have <span class="math inline">\(M\)</span> possible <span class="math inline">\((m, p)\)</span> pairs in our truncated sample space (because we can’t include the sample space up to infinity) <span class="math inline">\(\{(m, p)_1, (m, p)_2, \ldots (m, p)_N \}\)</span>, and we have <span class="math inline">\(N\)</span> exponent pairs <span class="math inline">\((x, y)\)</span> corresponding to the <span class="math inline">\(N\)</span> moments used to constraint the maximum entropy distribution <span class="math inline">\(\{(x, y)_1, (x, y)_2, \ldots, (x, y)_N \}\)</span>, then matrix <span class="math inline">\(\mathbf{A}\)</span> contains all the possible <span class="math inline">\(M\)</span> by <span class="math inline">\(N\)</span> terms of the form described in Eq. <span class="math inline">\(\ref{eq:maxent_rules}\)</span>. Let also <span class="math inline">\(\mathbf{v}\)</span> be a vector of length <span class="math inline">\(N\)</span> containing all the constraints with each entry of the form <span class="math display">\[
 v_j = \left\langle{m^{x_j} p^{y_j}}\right\rangle,
 \]</span> i.e. the information that we have about the distribution. That means that the constraint equation <span class="math inline">\(\mathcal{L}\)</span> to be used for this problem takes the form <span class="math display">\[
 \mathcal{L} = -\sum_i P_i \ln P_i + \lambda_0 \left( 1 - \sum_i P_i \right)
   + \sum_{j&gt;0} \lambda_j \left( v_j - \sum_i A_{ij} P_i \right),
-\]</span> where <span class="math inline">\(\lambda_0\)</span> is the Lagrange multiplier associated with the normalization constraint, and <span class="math inline">\(\lambda_j\)</span> is the Lagrange multiplier associated with the <span class="math inline">\(j^\text{th}\)</span> constraint. This constraint equation is equivalent to , but now all the details of how to compute the moments are specified in matrix <span class="math inline">\(\mathbf{A}\)</span>.</p>
+\]</span> where <span class="math inline">\(\lambda_0\)</span> is the Lagrange multiplier associated with the normalization constraint, and <span class="math inline">\(\lambda_j\)</span> is the Lagrange multiplier associated with the <span class="math inline">\(j^\text{th}\)</span> constraint. This constraint equation is equivalent to Eq. <span class="math inline">\(\ref{eq:constraint_eq}\)</span>, but now all the details of how to compute the moments are specified in matrix <span class="math inline">\(\mathbf{A}\)</span>.</p>
 <p>With this notation in hand we now proceed to rescale the problem. The first step consists of rescaling the terms to compute the entries of matrix <span class="math inline">\(\mathbf{A}\)</span>. As mentioned before, this is the key feature of the Bretthorst algorithm; the particular choice of rescaling factor used in the algorithm empirically promotes that the rescaled Lagrange multipliers are of the same order of magnitude. The rescaling takes the form <span class="math display">\[
 A_{ij}&#39; = \frac{A_{ij}}{G_j},
 \]</span> where <span class="math inline">\(G_j\)</span> serves to rescale the moments, providing numerical stability to the inference problem. Bretthorst proposes an empirical rescaling that satisfies <span class="math display">\[
@@ -1039,7 +1044,7 @@ v_k&#39;&#39; = \sum_j {e}_{jk} u_j&#39;,
 \sum_i A_{ij}&#39;&#39; A_{jk}&#39;&#39; = \beta_j \delta_{jk},
 \]</span> where <span class="math inline">\(\beta_j\)</span> is the <span class="math inline">\(j^\text{th}\)</span> eigenvalue of the matrix <span class="math inline">\(\mathbf{E}\)</span> and <span class="math inline">\(\delta_{jk}\)</span> is the Kronecker delta function. What this means is that, as desired, the constraints are orthogonal to each other, improving the algorithm convergence speed.</p>
 <h3 id="predicting-distributions-for-simple-repression-constructs">Predicting distributions for simple repression constructs</h3>
-<p>Having explained the theoretical background along with the practical difficulties and a workaround strategy proposed by Bretthorst, we implemented the inference using the moments obtained from averaging over the variability along the cell cycle (See ). and present these inferences for both mRNA and protein levels respectively for different values of the repressor-DNA binding energy and repressor copy numbers per cell. From these plots we can easily appreciate that despite the fact that the mean of each distribution changes as the induction level changes, there is a lot of overlap between distributions. This as a consequence means that at the single-cell level cells cannot perfectly resolve between different inputs.</p>
+<p>Having explained the theoretical background along with the practical difficulties and a workaround strategy proposed by Bretthorst, we implemented the inference using the moments obtained from averaging over the variability along the cell cycle (See ). Fig. 16 and Fig. 17 present these inferences for both mRNA and protein levels respectively for different values of the repressor-DNA binding energy and repressor copy numbers per cell. From these plots we can easily appreciate that despite the fact that the mean of each distribution changes as the induction level changes, there is a lot of overlap between distributions. This as a consequence means that at the single-cell level cells cannot perfectly resolve between different inputs.</p>
 <figure>
 <img src="ch5_fig16.png" id="fig:ch5_fig16" data-short-caption="Maximum entropy mRNA distributions for simple repression constructs" alt="Figure 16: Maximum entropy mRNA distributions for simple repression constructs. mRNA distributions for different biophysical parameters. From left to right the repressor-DNA affinity decreases as defined by the three lacI operators O1 (-15.3 \; k_BT), O2 (-13.9 \; k_BT), and O3 (-9.7 \; k_BT). From top to bottom the mean repressor copy number per cell increases. The curves on each plot represent different IPTG concentrations. Each distribution was fitted using the first three moments of the mRNA distribution." /><figcaption aria-hidden="true">Figure 16: <strong>Maximum entropy mRNA distributions for simple repression constructs.</strong> mRNA distributions for different biophysical parameters. From left to right the repressor-DNA affinity decreases as defined by the three lacI operators O1 (<span class="math inline">\(-15.3 \; k_BT\)</span>), O2 (<span class="math inline">\(-13.9 \; k_BT\)</span>), and O3 (<span class="math inline">\(-9.7 \; k_BT\)</span>). From top to bottom the mean repressor copy number per cell increases. The curves on each plot represent different IPTG concentrations. Each distribution was fitted using the first three moments of the mRNA distribution.</figcaption>
 </figure>
@@ -1047,11 +1052,11 @@ v_k&#39;&#39; = \sum_j {e}_{jk} u_j&#39;,
 <img src="ch5_fig17.png" id="fig:ch5_fig17" data-short-caption="Maximum entropy protein distributions for simple repression constructs" alt="Figure 17: Maximum entropy protein distributions for simple repression constructs. Protein distributions for different biophysical parameters. From left to right the repressor-DNA affinity decreases as defined by the three lacI operators O1 (-15.3 \; k_BT), O2 (-13.9 \; k_BT), and O3 (-9.7 \; k_BT). From top to bottom the mean repressor copy number per cell increases. The curves on each plot represent different IPTG concentrations. Each distribution was fitted using the first six moments of the protein distribution." /><figcaption aria-hidden="true">Figure 17: <strong>Maximum entropy protein distributions for simple repression constructs.</strong> Protein distributions for different biophysical parameters. From left to right the repressor-DNA affinity decreases as defined by the three lacI operators O1 (<span class="math inline">\(-15.3 \; k_BT\)</span>), O2 (<span class="math inline">\(-13.9 \; k_BT\)</span>), and O3 (<span class="math inline">\(-9.7 \; k_BT\)</span>). From top to bottom the mean repressor copy number per cell increases. The curves on each plot represent different IPTG concentrations. Each distribution was fitted using the first six moments of the protein distribution.</figcaption>
 </figure>
 <h3 id="comparison-with-experimental-data-1">Comparison with experimental data</h3>
-<p>Now that we have reconstructed an approximation of the probability distribution <span class="math inline">\(P(m, p)\)</span> we can compare this with our experimental measurements. But just as detailed in the single-cell microscopy measurements are given in arbitrary units of fluorescence. Therefore we cannot compare directly our predicted protein distributions with these values. To get around this issue we use the fact that the fold-change in gene expression that we defined as the ratio of the gene expression level in the presence of the repressor and the expression level of a knockout strain is a non-dimensional quantity. Therefore we normalize all of our single-cell measurements by the mean fluorescence value of the <span class="math inline">\(\Delta lacI\)</span> strain with the proper background fluorescence subtracted as explained in for the noise measurements. In the case of the theoretical predictions of the protein distribution we also normalize each protein value by the predicted mean protein level <span class="math inline">\(\left\langle p \right\rangle\)</span>, having now non-dimensional scales that can be directly compared. shows the experimental (color curves) and theoretical (dark dashed line) cumulative distribution functions for the three <span class="math inline">\(\Delta lacI\)</span> strains. As in , we do not expect differences between the operators, but we explicitly plot them separately to make sure that this is the case. We can see right away that as we would expect given the limitations of the model to accurately predict the noise and skewness of the distribution, the model doesn’t accurately predict the data. Our model predicts a narrower distribution compared to what we measured with single-cell microscopy.</p>
+<p>Now that we have reconstructed an approximation of the probability distribution <span class="math inline">\(P(m, p)\)</span> we can compare this with our experimental measurements. But just as detailed in the single-cell microscopy measurements are given in arbitrary units of fluorescence. Therefore we cannot compare directly our predicted protein distributions with these values. To get around this issue we use the fact that the fold-change in gene expression that we defined as the ratio of the gene expression level in the presence of the repressor and the expression level of a knockout strain is a non-dimensional quantity. Therefore we normalize all of our single-cell measurements by the mean fluorescence value of the <span class="math inline">\(\Delta lacI\)</span> strain with the proper background fluorescence subtracted as explained in for the noise measurements. In the case of the theoretical predictions of the protein distribution we also normalize each protein value by the predicted mean protein level <span class="math inline">\(\left\langle p \right\rangle\)</span>, having now non-dimensional scales that can be directly compared. Fig. 18 shows the experimental (color curves) and theoretical (dark dashed line) cumulative distribution functions for the three <span class="math inline">\(\Delta lacI\)</span> strains. As in Fig. 12, we do not expect differences between the operators, but we explicitly plot them separately to make sure that this is the case. We can see right away that as we would expect given the limitations of the model to accurately predict the noise and skewness of the distribution, the model doesn’t accurately predict the data. Our model predicts a narrower distribution compared to what we measured with single-cell microscopy.</p>
 <figure>
 <img src="ch5_fig18.png" id="fig:ch5_fig18" data-short-caption="Experiment vs. theory comparison for $\Delta lacI$ strain" alt="Figure 18: Experiment vs. theory comparison for \Delta lacI strain. Example fold-change empirical cumulative distribution functions (ECDF) for strains with no repressors and different operators. The color curves represent single-cell microscopy measurements while the dashed black lines represent the theoretical distributions as reconstructed by the maximum entropy principle. The theoretical distributions were fitted using the first six moments of the protein distribution." /><figcaption aria-hidden="true">Figure 18: <strong>Experiment vs. theory comparison for <span class="math inline">\(\Delta lacI\)</span> strain.</strong> Example fold-change empirical cumulative distribution functions (ECDF) for strains with no repressors and different operators. The color curves represent single-cell microscopy measurements while the dashed black lines represent the theoretical distributions as reconstructed by the maximum entropy principle. The theoretical distributions were fitted using the first six moments of the protein distribution.</figcaption>
 </figure>
-<p>The same narrower prediction applies to the regulated promoters. XXX, shows the theory-experiment comparison of the cumulative distribution functions for different repressor binding sites (different figures), repressor copy numbers (rows), and inducer concentrations (columns). In general the predictions are systematically narrower compared to the actual experimental data.</p>
+<p>The same narrower prediction applies to the regulated promoters. Fig. 19, shows the theory-experiment comparison of the cumulative distribution functions for different repressor binding sites (different figures), repressor copy numbers (rows), and inducer concentrations (columns). In general the predictions are systematically narrower compared to the actual experimental data.</p>
 <figure>
 <img src="ch5_fig19.png" id="fig:ch5_fig19" data-short-caption="Experiment vs. theory comparison for regulated promoters" alt="Figure 19: Experiment vs. theory comparison for regulated promoters. Example fold-change empirical cumulative distribution functions (ECDF) for regulated strains with the three operators (different colors) as a function of repressor copy numbers (rows) and inducer concentrations (columns). The color curves represent single-cell microscopy measurements while the dashed black lines represent the theoretical distributions as reconstructed by the maximum entropy principle. The theoretical distributions were fitted using the first six moments of the protein distribution" /><figcaption aria-hidden="true">Figure 19: <strong>Experiment vs. theory comparison for regulated promoters.</strong> Example fold-change empirical cumulative distribution functions (ECDF) for regulated strains with the three operators (different colors) as a function of repressor copy numbers (rows) and inducer concentrations (columns). The color curves represent single-cell microscopy measurements while the dashed black lines represent the theoretical distributions as reconstructed by the maximum entropy principle. The theoretical distributions were fitted using the first six moments of the protein distribution</figcaption>
 </figure>
@@ -1059,34 +1064,34 @@ v_k&#39;&#39; = \sum_j {e}_{jk} u_j&#39;,
 <p>(Note: The Python code used for the calculations presented in this section can be found in the <a href="https://www.rpgroup.caltech.edu//chann_cap/software/gillespie_simulation.html">following link</a> as an annotated Jupyter notebook)</p>
 <p>So far we have generated a way to compute an approximated form of the joint distribution of protein and mRNA <span class="math inline">\(P(m, p)\)</span> as a function of the moments of the distribution <span class="math inline">\(\left\langle m^x p^y \right\rangle\)</span>. This is a non-conventional form to work with the resulting distribution of the master equation. A more conventional approach to work with master equations whose closed-form solutions are not known or not computable is to use stochastic simulations commonly known as Gillespie simulations. To benchmark the performance of our approach based on distribution moments and maximum entropy we implemented the Gillespie algorithm. Our implementation as detailed in the corresponding Jupyter notebook makes use of just-in-time compilation as implemented with the Python package <a href="http://numba.pydata.org">numba</a>.</p>
 <h3 id="mrna-distribution-with-gillespie-simulations">mRNA distribution with Gillespie simulations</h3>
-<p>To confirm that the implementation of the Gillespie simulation was correct we perform the simulation at the mRNA level for which the closed-form solution of the steady-state distribution is known as detailed in . Fig. 20 shows example trajectories of mRNA counts. Each of these trajectories were computed over several cell cyles, where the cell division was implemented generating a binomially distributed random variable that depended on the last mRNA count before the division event.</p>
+<p>To confirm that the implementation of the Gillespie simulation was correct we perform the simulation at the mRNA level for which the closed-form solution of the steady-state distribution is known as detailed in XXX. Fig. 20 shows example trajectories of mRNA counts. Each of these trajectories were computed over several cell cyles, where the cell division was implemented generating a binomially distributed random variable that depended on the last mRNA count before the division event.</p>
 <figure>
 <img src="ch5_fig20.png" id="fig:ch5_fig20" data-short-caption="Stochastic trajectories of mRNA counts" alt="Figure 20: Stochastic trajectories of mRNA counts. 100 stochastic trajectories generated with the Gillespie algorithm for mRNA counts over time for a two-state unregulated promoter. Cells spend a fraction of the cell cycle with a single copy of the promoter (light brown) and the rest of the cell cycle with two copies (light yellow). When trajectories reach a new cell cycle, the mRNA counts undergo a binomial partitioning to simulate the cell division." /><figcaption aria-hidden="true">Figure 20: <strong>Stochastic trajectories of mRNA counts.</strong> 100 stochastic trajectories generated with the Gillespie algorithm for mRNA counts over time for a two-state unregulated promoter. Cells spend a fraction of the cell cycle with a single copy of the promoter (light brown) and the rest of the cell cycle with two copies (light yellow). When trajectories reach a new cell cycle, the mRNA counts undergo a binomial partitioning to simulate the cell division.</figcaption>
 </figure>
-<p>To check the implementation of our stochastic algorithm we generated several of these stochastic trajectories in order to reconstruct the mRNA steady-state distribution. These reconstructed distributions for a single- and double-copy of the promoter can be compared with - the steady-state distribution for the two-state promoter. Fig. 21 shows the great agreement between the stochastic simulation and the analytical result, confirming that our implementation of the Gillespie simulation is correct.</p>
+<p>To check the implementation of our stochastic algorithm we generated several of these stochastic trajectories in order to reconstruct the mRNA steady-state distribution. These reconstructed distributions for a single- and double-copy of the promoter can be compared with Eq. <span class="math inline">\(\ref{eq:two_state_mRNA}\)</span>–the steady-state distribution for the two-state promoter. Fig. 21 shows the great agreement between the stochastic simulation and the analytical result, confirming that our implementation of the Gillespie simulation is correct.</p>
 <figure>
-<img src="ch5_fig21.png" id="fig:ch5_fig21" data-short-caption="Comparison of analytical and simulated mRNA distribution" alt="Figure 21: Comparison of analytical and simulated mRNA distribution. Solid lines show the steady-state mRNA distributions for one copy (light blue) and two copies of the promoter (dark blue) as defined by . Shaded regions represent the corresponding distribution obtained using 2500 stochastic mRNA trajectories and taking the last cell-cyle to approximate the distribution." /><figcaption aria-hidden="true">Figure 21: <strong>Comparison of analytical and simulated mRNA distribution.</strong> Solid lines show the steady-state mRNA distributions for one copy (light blue) and two copies of the promoter (dark blue) as defined by . Shaded regions represent the corresponding distribution obtained using 2500 stochastic mRNA trajectories and taking the last cell-cyle to approximate the distribution.</figcaption>
+<img src="ch5_fig21.png" id="fig:ch5_fig21" data-short-caption="Comparison of analytical and simulated mRNA distribution" alt="Figure 21: Comparison of analytical and simulated mRNA distribution. Solid lines show the steady-state mRNA distributions for one copy (light blue) and two copies of the promoter (dark blue) as defined by Eq. \ref{eq:two_state_mRNA}. Shaded regions represent the corresponding distribution obtained using 2500 stochastic mRNA trajectories and taking the last cell-cyle to approximate the distribution." /><figcaption aria-hidden="true">Figure 21: <strong>Comparison of analytical and simulated mRNA distribution.</strong> Solid lines show the steady-state mRNA distributions for one copy (light blue) and two copies of the promoter (dark blue) as defined by Eq. <span class="math inline">\(\ref{eq:two_state_mRNA}\)</span>. Shaded regions represent the corresponding distribution obtained using 2500 stochastic mRNA trajectories and taking the last cell-cyle to approximate the distribution.</figcaption>
 </figure>
 <h3 id="protein-distribution-with-gillespie-simulations">Protein distribution with Gillespie simulations</h3>
 <p>Having confirmed that our implementation of the Gillespie algorithm that includes the binomial partitioning of molecules reproduces analytical results we extended the implementation to include protein counts. Fig. 22 shows representative trajectories for both mRNA and protein counts over several cell cycles. Specially for the protein we can see that it takes several cell cycles for counts to converge to the dynamical steady-state observed with the deterministic moment equations. Once this steady-state is reached, the ensemble of trajectories between cell cycles look very similar.</p>
 <figure>
 <img src="ch5_fig22.png" id="fig:ch5_fig22" data-short-caption="Stochastic trajectories of mRNA and protein counts" alt="Figure 22: Stochastic trajectories of mRNA and protein counts. 2500 protein counts over time for a two-state unregulated promoter. Cells spend a fraction of the cell cycle with a single copy of the promoter (light brown) and the rest of the cell cycle with two copies (light yellow). When trajectories reach a new cell cycle, the molecule counts undergo a binomial partitioning to simulate the cell division." /><figcaption aria-hidden="true">Figure 22: <strong>Stochastic trajectories of mRNA and protein counts.</strong> 2500 protein counts over time for a two-state unregulated promoter. Cells spend a fraction of the cell cycle with a single copy of the promoter (light brown) and the rest of the cell cycle with two copies (light yellow). When trajectories reach a new cell cycle, the molecule counts undergo a binomial partitioning to simulate the cell division.</figcaption>
 </figure>
-<p>From these trajectories we can compute the protein steady-state distribution, taking into account the cell-age distribution as detailed in Fig. 23. shows the comparison between this distribution and the one generated using the maximum entropy algorithm. Despite the notorious differences between the distributions, the Gillespie simulation and the maximum entropy results are indistinguishable in terms of the mean, variance, and skewness of the distribution. We remind the reader that the maximum entropy is an approximation of the distribution that gets better the more moments we add. We therefore claim that the approximation works sufficiently well for our purpose. The enormous advantage of the maximum entropy approach comes from the computation time. for the number of distributions that were needed for our calculations the Gillespie algorithm proved to be a very inefficient method given the large sample space. Our maximum entropy approach reduces the computation time by several orders of magnitude, allowing us to extensively explore different parameters of the regulatory model.</p>
+<p>From these trajectories we can compute the protein steady-state distribution, taking into account the cell-age distribution as detailed in XXX. Fig. 23 shows the comparison between this distribution and the one generated using the maximum entropy algorithm. Despite the notorious differences between the distributions, the Gillespie simulation and the maximum entropy results are indistinguishable in terms of the mean, variance, and skewness of the distribution. We remind the reader that the maximum entropy is an approximation of the distribution that gets better the more moments we add. We therefore claim that the approximation works sufficiently well for our purpose. The enormous advantage of the maximum entropy approach comes from the computation time. for the number of distributions that were needed for our calculations the Gillespie algorithm proved to be a very inefficient method given the large sample space. Our maximum entropy approach reduces the computation time by several orders of magnitude, allowing us to extensively explore different parameters of the regulatory model.</p>
 <figure>
 <img src="ch5_fig23.png" id="fig:ch5_fig23" data-short-caption="Comparison of protein distributions" alt="Figure 23: Comparison of protein distributions. Comparison of the protein distribution generated with Gillespie stochastic simulations (blue curve) and the maximum entropy approach presented in (orange curve). The upper panel shows the probability mass function. The lower panel compares the cumulative distribution functions." /><figcaption aria-hidden="true">Figure 23: <strong>Comparison of protein distributions.</strong> Comparison of the protein distribution generated with Gillespie stochastic simulations (blue curve) and the maximum entropy approach presented in (orange curve). The upper panel shows the probability mass function. The lower panel compares the cumulative distribution functions.</figcaption>
 </figure>
 <h2 id="computational-determination-of-the-channel-capacity">Computational determination of the channel capacity</h2>
 <p>(Note: The Python code used for the calculations presented in this section can be found in the <a href="https://www.rpgroup.caltech.edu//chann_cap/software/blahut_algorithm_channel_capacity.html">following link</a> as an annotated Jupyter notebook)</p>
-<p>In this section we detail the computation of the channel capacity of the simple genetic circuit shown in . As detailed in the channel capacity is defined as the mutual information between input <span class="math inline">\(c\)</span> and output <span class="math inline">\(p\)</span> maximized over all possible input distributions <span class="math inline">\(P(c)\)</span> <span class="citation" data-cites="Shannon1948"> [<a href="#ref-Shannon1948" role="doc-biblioref">33</a>]</span>. In principle there are an infinite number of input distributions, so the task of finding <span class="math inline">\(\hat{P}(c)\)</span>, the input distribution at channel capacity, requires an algorithmic approach that guarantees the convergence to this distribution. Tkačik, Callan and Bialek developed a clever analytical approximation to find the <span class="math inline">\(\hat{P}(c)\)</span> distribution <span class="citation" data-cites="Tkacik2008a"> [<a href="#ref-Tkacik2008a" role="doc-biblioref">34</a>]</span>. The validity of their so-called small noise approximation requires the standard deviation of the output distribution <span class="math inline">\(P(p \mid c)\)</span> to be much smaller than the domain of the distribution. For our particular case such condition is not satisfied given the spread of the inferred protein distributions shown in .</p>
-<p>Fortunately there exists a numerical algorithm to approximate <span class="math inline">\(\hat{P}(c)\)</span> for discrete distributions. In 1972 Richard Blahut and Suguru Arimoto independently came up with an algorithm mathematically shown to converge to <span class="math inline">\(\hat{P}(c)\)</span> <span class="citation" data-cites="Blahut1972"> [<a href="#ref-Blahut1972" role="doc-biblioref">35</a>]</span>. To compute both the theoretical and the experimental channel capacity shown in , we implemented Blahut’s algorithm. In the following section we detail the definitions needed for the algorithm. Then we detail how to compute the experimental channel capacity when the bins of the distribution are not clear given the intrinsic arbitrary nature of microscopy fluorescence measurements.</p>
+<p>In this section we detail the computation of the channel capacity of the simple genetic circuit shown in Fig. <strong>¿fig:ch3_fig05?</strong>. As detailed in XXX the channel capacity is defined as the mutual information between input <span class="math inline">\(c\)</span> and output <span class="math inline">\(p\)</span> maximized over all possible input distributions <span class="math inline">\(P(c)\)</span> <span class="citation" data-cites="Shannon1948"> [<a href="#ref-Shannon1948" role="doc-biblioref">33</a>]</span>. In principle there are an infinite number of input distributions, so the task of finding <span class="math inline">\(\hat{P}(c)\)</span>, the input distribution at channel capacity, requires an algorithmic approach that guarantees the convergence to this distribution. Tkačik, Callan and Bialek developed a clever analytical approximation to find the <span class="math inline">\(\hat{P}(c)\)</span> distribution <span class="citation" data-cites="Tkacik2008a"> [<a href="#ref-Tkacik2008a" role="doc-biblioref">34</a>]</span>. The validity of their so-called small noise approximation requires the standard deviation of the output distribution <span class="math inline">\(P(p \mid c)\)</span> to be much smaller than the domain of the distribution. For our particular case such condition is not satisfied given the spread of the inferred protein distributions shown in Fig. <strong>¿fig:ch3_fig04?</strong>.</p>
+<p>Fortunately there exists a numerical algorithm to approximate <span class="math inline">\(\hat{P}(c)\)</span> for discrete distributions. In 1972 Richard Blahut and Suguru Arimoto independently came up with an algorithm mathematically shown to converge to <span class="math inline">\(\hat{P}(c)\)</span> <span class="citation" data-cites="Blahut1972"> [<a href="#ref-Blahut1972" role="doc-biblioref">35</a>]</span>. To compute both the theoretical and the experimental channel capacity shown in Fig. <strong>¿fig:ch3_fig05?</strong>, we implemented Blahut’s algorithm. In the following section we detail the definitions needed for the algorithm. Then we detail how to compute the experimental channel capacity when the bins of the distribution are not clear given the intrinsic arbitrary nature of microscopy fluorescence measurements.</p>
 <h3 id="blahuts-algorithm">Blahut’s algorithm</h3>
 <p>Following <span class="citation" data-cites="Blahut1972"> [<a href="#ref-Blahut1972" role="doc-biblioref">35</a>]</span> we implemented the algorithm to compute the channel capacity. We define <span class="math inline">\(\mathbf{p_c}\)</span> to be an array containing the probability of each of the input inducer concentrations (twelve concentrations, See Methods). Each entry <span class="math inline">\(j\)</span> of the array is then of the form <span class="math display">\[
 p_c^{(j)} = P(c = c_j),
 \]</span> with <span class="math inline">\(j \in \{1, 2, \ldots, 12 \}\)</span>. The objective of the algorithm is to find the entries <span class="math inline">\(p_c^{(j)}\)</span> that maximize the mutual information between inputs and outputs. We also define <span class="math inline">\(\mathbf{Q}\)</span> to be a <span class="math inline">\(\vert \mathbf{p_c} \vert\)</span> by <span class="math inline">\(\vert \mathbf{p_{p \mid c}} \vert\)</span> matrix, where <span class="math inline">\(\vert \cdot \vert\)</span> specifies the length of the array, and <span class="math inline">\(\mathbf{p_{p \mid c}}\)</span> is an array containing the probability distribution of an output given a specific value of the input. In other words, the matrix <span class="math inline">\(\mathbf{Q}\)</span> recollects all of the individual output distribution arrays <span class="math inline">\(\mathbf{p_{p \mid c}}\)</span> into a single object. Then each entry of the matrix <span class="math inline">\(\mathbf{Q}\)</span> is of the form <span class="math display">\[
 Q^{(i, j)} = P(p = p_i \mid c = c_j).
 \]</span></p>
-<p>For the case of the theoretical predictions of the channel capacity (Solid lines in ) the entries of matrix <span class="math inline">\(\mathbf{Q}\)</span> are given by the inferred maximum entropy distributions as shown in . In the next section we will discuss how to define this matrix for the case of the single-cell fluorescence measurements. Having defined these matrices we proceed to implement the algorithm shown in Figure 1 of <span class="citation" data-cites="Blahut1972"> [<a href="#ref-Blahut1972" role="doc-biblioref">35</a>]</span>.</p>
+<p>For the case of the theoretical predictions of the channel capacity (Solid lines in Fig. <strong>¿fig:ch3_fig05?</strong>) the entries of matrix <span class="math inline">\(\mathbf{Q}\)</span> are given by the inferred maximum entropy distributions as shown in Fig. <strong>¿fig:ch3_fig04?</strong>. In the next section we will discuss how to define this matrix for the case of the single-cell fluorescence measurements. Having defined these matrices we proceed to implement the algorithm shown in Figure 1 of <span class="citation" data-cites="Blahut1972"> [<a href="#ref-Blahut1972" role="doc-biblioref">35</a>]</span>.</p>
 <h3 id="channel-capacity-from-arbitrary-units-of-fluorescence">Channel capacity from arbitrary units of fluorescence</h3>
 <p>A difficulty when computing the channel capacity between inputs and outputs from experimental data is that ideally we would like to compute <span class="math display">\[
 C(g; c) \equiv \sup_{P(c)} I(g; c),
@@ -1100,35 +1105,36 @@ I_{\text{biased}} = I_\infty + \frac{a_1}{N} + \frac{a_2}{N^2} + \cdots,
 \]</span> where <span class="math inline">\(I_{\text{biased}}\)</span> is the biased estimate of the mutual information as computed from experimental data, <span class="math inline">\(I_\infty\)</span> is the quantity we would like to estimate, being the unbiased mutual information when having access to infinity number of experimental samples, and the coefficients <span class="math inline">\(a_i\)</span> depend on the underlying distribution of the signal and the response. This is an empirical choice to be tested. Intuitively this choice satisfies the limit that as the number of samples from the distribution grows, the empirical estimate of the mutual information <span class="math inline">\(I_{\text{biased}}\)</span> should get closer to the actual value <span class="math inline">\(I_\infty\)</span>.</p>
 <p>In principle for a good number of data points the terms of higher order become negligible. So we can write the mutual information as <span class="math display">\[
 I_{\text{biased}} \approx I_\infty + \frac{a_1}{N} + \mathcal{O}(N^{-2}).
+\label{eq:mutual_biased}
 \]</span> This means that if this particular arbitrary choice of functional form is a good approximation, when computing the mutual information for varying number of samples - by taking subsamples of the experimental data - we expect to find a linear relationship as a function of the inverse of these number of data points. From this linear relationship the intercept is a bias-corrected estimate of the mutual information. We can therefore bootstrap the data by taking different sample sizes and then use the Blahut-Arimoto algorithm we implemented earlier to estimate the biased channel capacity. We can then fit a line and extrapolate for when <span class="math inline">\(1/N = 0\)</span> which corresponds to our unbiased estimate of the channel capacity.</p>
 <p>Let’s go through each of the steps to illustrate the method. Fig. 24 show a typical data set for a strain with an O2 binding site (<span class="math inline">\(\Delta\varepsilon_r = -13.9 \; k_BT\)</span>) and <span class="math inline">\(R = 260\)</span> repressors per cell. Each of the distributions in arbitrary units is binned into a specified number of bins to build matrix <span class="math inline">\(\mathbf{Q}\)</span>.</p>
 <figure>
 <img src="ch5_fig24.png" id="fig:ch5_fig24" data-short-caption="Single cell fluorescence distributions for different inducer concentrations" alt="Figure 24: Single cell fluorescence distributions for different inducer concentrations. Fluorescence distribution histogram (A) and cumulative distribution function (B) for a strain with 260 repressors per cell and a binding site with binding energy \Delta\varepsilon_r = -13.9\; k_BT. The different curves show the single cell fluorescence distributions under the 12 different IPTG concentrations used throughout this work. The triangles in (A) show the mean of each of the distributions." /><figcaption aria-hidden="true">Figure 24: <strong>Single cell fluorescence distributions for different inducer concentrations.</strong> Fluorescence distribution histogram (A) and cumulative distribution function (B) for a strain with 260 repressors per cell and a binding site with binding energy <span class="math inline">\(\Delta\varepsilon_r = -13.9\; k_BT\)</span>. The different curves show the single cell fluorescence distributions under the 12 different IPTG concentrations used throughout this work. The triangles in (A) show the mean of each of the distributions.</figcaption>
 </figure>
-<p>Given a specific number of bins used to construct <span class="math inline">\(\mathbf{Q}\)</span>, we subsample a fraction of the data and compute the channel capacity for such matrix using the Blahut-Arimoto algorithm. Fig. 25 shows an example where 50% of the data on each distribution from was sampled and binned into 100 equal bins. The counts on each of these bins are then normalized and used to build matrix <span class="math inline">\(\mathbf{Q}\)</span> that is then fed to the Blahut-Arimoto algorithm. We can see that for these 200 bootstrap samples the channel capacity varies by <span class="math inline">\(\approx\)</span> 0.1 bits. Not a significant variability, nevertheless we consider that it is important to bootstrap the data multiple times to get a better estimate of the channel capacity.</p>
+<p>Given a specific number of bins used to construct <span class="math inline">\(\mathbf{Q}\)</span>, we subsample a fraction of the data and compute the channel capacity for such matrix using the Blahut-Arimoto algorithm. Fig. 25 shows an example where 50% of the data on each distribution from Fig. 24 was sampled and binned into 100 equal bins. The counts on each of these bins are then normalized and used to build matrix <span class="math inline">\(\mathbf{Q}\)</span> that is then fed to the Blahut-Arimoto algorithm. We can see that for these 200 bootstrap samples the channel capacity varies by <span class="math inline">\(\approx\)</span> 0.1 bits. Not a significant variability, nevertheless we consider that it is important to bootstrap the data multiple times to get a better estimate of the channel capacity.</p>
 <figure>
-<img src="ch5_fig25.png" id="fig:ch5_fig25" data-short-caption="Channel capacity bootstrap for experimental data" alt="Figure 25: Channel capacity bootstrap for experimental data. Cumulative distribution function of the resulting channel capacity estimates obtained by subsampling 200 times 50% of each distribution shown in , binning it into 100 bins, and feeding the resulting \mathbf{Q} matrix to the Blahut-Arimoto algorithm." /><figcaption aria-hidden="true">Figure 25: <strong>Channel capacity bootstrap for experimental data.</strong> Cumulative distribution function of the resulting channel capacity estimates obtained by subsampling 200 times 50% of each distribution shown in , binning it into 100 bins, and feeding the resulting <span class="math inline">\(\mathbf{Q}\)</span> matrix to the Blahut-Arimoto algorithm.</figcaption>
+<img src="ch5_fig25.png" id="fig:ch5_fig25" data-short-caption="Channel capacity bootstrap for experimental data" alt="Figure 25: Channel capacity bootstrap for experimental data. Cumulative distribution function of the resulting channel capacity estimates obtained by subsampling 200 times 50% of each distribution shown in Fig. 24, binning it into 100 bins, and feeding the resulting \mathbf{Q} matrix to the Blahut-Arimoto algorithm." /><figcaption aria-hidden="true">Figure 25: <strong>Channel capacity bootstrap for experimental data.</strong> Cumulative distribution function of the resulting channel capacity estimates obtained by subsampling 200 times 50% of each distribution shown in Fig. 24, binning it into 100 bins, and feeding the resulting <span class="math inline">\(\mathbf{Q}\)</span> matrix to the Blahut-Arimoto algorithm.</figcaption>
 </figure>
-<p>XXX tells us that if we subsample each of the distributions from at different fractions, and plot them as a function of the inverse sample size we will find a linear relationship if the expansion of the mutual information is valid. To test this idea we repeated the bootstrap estimate of sampling 10%, 20%, and so on until taking 100% of the data. We repeated this for different number of bins since <em>a priori</em> for arbitrary units of fluorescence we do not have a way to select the optimal number of bins. Fig. 26 shows the result of these estimates. We can see that the linear relationship proposed in holds true for all number of bins selected. We also note that the value of the intercept of the linear regression varies depending on the number of bins.</p>
+<p>Eq. <span class="math inline">\(\ref{eq:mutual_biased}\)</span> tells us that if we subsample each of the distributions from Fig. 24 at different fractions, and plot them as a function of the inverse sample size we will find a linear relationship if the expansion of the mutual information is valid. To test this idea we repeated the bootstrap estimate of Fig. 25 sampling 10%, 20%, and so on until taking 100% of the data. We repeated this for different number of bins since <em>a priori</em> for arbitrary units of fluorescence we do not have a way to select the optimal number of bins. Fig. 26 shows the result of these estimates. We can see that the linear relationship proposed in Eq. <span class="math inline">\(\ref{eq:mutual_biased}\)</span> holds true for all number of bins selected. We also note that the value of the intercept of the linear regression varies depending on the number of bins.</p>
 <figure>
-<img src="ch5_fig26.png" id="fig:ch5_fig26" data-short-caption="Inverse sample size vs channel capacity" alt="Figure 26: Inverse sample size vs channel capacity. As indicated in if the channel capacity obtained for different subsample sizes of the data is plotted against the inverse sample size there must exist a linear relationship between these variables. Here we perform 15 bootstrap samples of the data from , bin these samples using different number of bins, and perform a linear regression (solid lines) between the bootstrap channel capacity estimates, and the inverse sample size." /><figcaption aria-hidden="true">Figure 26: <strong>Inverse sample size vs channel capacity.</strong> As indicated in if the channel capacity obtained for different subsample sizes of the data is plotted against the inverse sample size there must exist a linear relationship between these variables. Here we perform 15 bootstrap samples of the data from , bin these samples using different number of bins, and perform a linear regression (solid lines) between the bootstrap channel capacity estimates, and the inverse sample size.</figcaption>
+<img src="ch5_fig26.png" id="fig:ch5_fig26" data-short-caption="Inverse sample size vs channel capacity" alt="Figure 26: Inverse sample size vs channel capacity. As indicated in Eq. \ref{eq:mutual_biased} if the channel capacity obtained for different subsample sizes of the data is plotted against the inverse sample size there must exist a linear relationship between these variables. Here we perform 15 bootstrap samples of the data from Fig. 24, bin these samples using different number of bins, and perform a linear regression (solid lines) between the bootstrap channel capacity estimates, and the inverse sample size." /><figcaption aria-hidden="true">Figure 26: <strong>Inverse sample size vs channel capacity.</strong> As indicated in Eq. <span class="math inline">\(\ref{eq:mutual_biased}\)</span> if the channel capacity obtained for different subsample sizes of the data is plotted against the inverse sample size there must exist a linear relationship between these variables. Here we perform 15 bootstrap samples of the data from Fig. 24, bin these samples using different number of bins, and perform a linear regression (solid lines) between the bootstrap channel capacity estimates, and the inverse sample size.</figcaption>
 </figure>
 <p>To address the variability in the estimates of the unbiased channel capacity <span class="math inline">\(I_\infty\)</span> we again follow the methodology suggested in <span class="citation" data-cites="Cheong2011a"> [<a href="#ref-Cheong2011a" role="doc-biblioref">36</a>]</span>. We perform the data subsampling and computation of the channel capacity for a varying number of bins. As a control we perform the same procedure with shuffled data, where the structure that connects the fluorescence distribution to the inducer concentration input is lost. The expectation is that this control should give a channel capacity of zero if the data is not “over-binned.” Once the number of bins is too high, we would expect some structure to emerge in the data that would cause the Blahut-Arimoto algorithm to return non-zero channel capacity estimates.</p>
-<p>[Fig:ch5_fig27] shows the result of the unbiased channel capacity estimates obtained for the data shown in . For the blue curve we can distinguish three phases: 1. A rapid increment from 0 bits to about 1.5 bits as the number of bins increases. 2. A flat region between <span class="math inline">\(\approx\)</span> 50 and 1000 bins. 3. A second rapid increment for large number of bins.</p>
+<p>Fig. 27 shows the result of the unbiased channel capacity estimates obtained for the data shown in Fig. 24. For the blue curve we can distinguish three phases: 1. A rapid increment from 0 bits to about 1.5 bits as the number of bins increases. 2. A flat region between <span class="math inline">\(\approx\)</span> 50 and 1000 bins. 3. A second rapid increment for large number of bins.</p>
 <p>We can see that the randomized data presents two phases only: 1. A flat region where there is, as expected no information being processed since the structure of the data was lost when the data was shuffled. 2. A region with fast growth of the channel capacity as the over-binning generates separated peaks on the distribution, making it look like there is structure in the data.</p>
 <p>We take the flat region of the experimental data (<span class="math inline">\(\approx\)</span> 100 bins) to be our best unbiased estimate of the channel capacity from this experimental dataset.</p>
 <figure>
-<img src="ch5_fig27.png" id="fig:ch5_fig27" data-short-caption="Channel capacity as a function of the number of bins" alt="Figure 27: Channel capacity as a function of the number of bins. Unbiased channel capacity estimates obtained from linear regressions as in . The blue curve show the estimates obtained from the data shown in . The orange curve is generated from estimates where the same data is shuffled, loosing the relationship between fluorescence distributions and inducer concentration." /><figcaption aria-hidden="true">Figure 27: <strong>Channel capacity as a function of the number of bins.</strong> Unbiased channel capacity estimates obtained from linear regressions as in . The blue curve show the estimates obtained from the data shown in . The orange curve is generated from estimates where the same data is shuffled, loosing the relationship between fluorescence distributions and inducer concentration.</figcaption>
+<img src="ch5_fig27.png" id="fig:ch5_fig27" data-short-caption="Channel capacity as a function of the number of bins" alt="Figure 27: Channel capacity as a function of the number of bins. Unbiased channel capacity estimates obtained from linear regressions as in Fig. 26. The blue curve show the estimates obtained from the data shown in Fig. 24. The orange curve is generated from estimates where the same data is shuffled, loosing the relationship between fluorescence distributions and inducer concentration." /><figcaption aria-hidden="true">Figure 27: <strong>Channel capacity as a function of the number of bins.</strong> Unbiased channel capacity estimates obtained from linear regressions as in Fig. 26. The blue curve show the estimates obtained from the data shown in Fig. 24. The orange curve is generated from estimates where the same data is shuffled, loosing the relationship between fluorescence distributions and inducer concentration.</figcaption>
 </figure>
 <h3 id="assumptions-involved-in-the-computation-of-the-channel-capacity">Assumptions involved in the computation of the channel capacity</h3>
 <p>An interesting suggestion by Professor Gasper Tkacik was to dissect the different physical assumptions that went into the construction of the input-output function <span class="math inline">\(P(p \mid c)\)</span>, and their relevance when comparing the theoretical channel capacities with the experimental inferences. In what follows we describe the relevance of four important aspects that all affect the predictions of the information processing capacity.</p>
 <h4 id="i-cell-cycle-variability.">(i) Cell cycle variability.</h4>
-<p>We think that the inclusion of the gene copy number variability during the cell cycle and the non-Poissoninan protein degradation is a key component to our estimation of the input-output functions and as a consequence of the channel capacity. This variability in gene copy number is an additional source of noise that systematically decreases the ability of the system to resolve different inputs. The absence of the effects that the gene copy number variability and the protein partition has on the information processing capacity leads to an overestimate of the channel capacity as shown in [Fig:ch5_fig28]. Only when these noise sources are included in our inferences is that we get to capture the experimental channel capacities with no further fit parameters.</p>
+<p>We think that the inclusion of the gene copy number variability during the cell cycle and the non-Poissoninan protein degradation is a key component to our estimation of the input-output functions and as a consequence of the channel capacity. This variability in gene copy number is an additional source of noise that systematically decreases the ability of the system to resolve different inputs. The absence of the effects that the gene copy number variability and the protein partition has on the information processing capacity leads to an overestimate of the channel capacity as shown in Fig. 28. Only when these noise sources are included in our inferences is that we get to capture the experimental channel capacities with no further fit parameters.</p>
 <figure>
 <img src="ch5_fig28.png" id="fig:ch5_fig28" data-short-caption="Comparison of channel capacity predictions for single- and multi-promoter models" alt="Figure 28: Comparison of channel capacity predictions for single- and multi-promoter models. Channel capacity for the multi-promoter model (solid lines) vs. the single-promoter steady state model (dot-dashed lines) as a function of repressor copy numbers for different repressor-DNA binding energies. The single-promoter model assumes Poissonian protein degradation (\gamma _p &gt; 0) and steady state, while the multi-promoter model accounts for gene copy number variability and during the cell cycle and has protein degradation as an effect due to dilution as cells grow and divide." /><figcaption aria-hidden="true">Figure 28: <strong>Comparison of channel capacity predictions for single- and multi-promoter models.</strong> Channel capacity for the multi-promoter model (solid lines) vs. the single-promoter steady state model (dot-dashed lines) as a function of repressor copy numbers for different repressor-DNA binding energies. The single-promoter model assumes Poissonian protein degradation (<span class="math inline">\(\gamma _p &gt; 0\)</span>) and steady state, while the multi-promoter model accounts for gene copy number variability and during the cell cycle and has protein degradation as an effect due to dilution as cells grow and divide.</figcaption>
 </figure>
 <h4 id="ii-non-gaussian-noise-distributions.">(ii) Non-Gaussian noise distributions.</h4>
-<p>For the construction of the probability distributions used in the main text () we utilized the first 6 moments of the protein distribution. The maximum entropy formalism tells us that the more constraints we include in the inference, the closer the maximum entropy distribution will be to the real distribution. But <em>a priori</em> there is no way of knowing how many moments should be included in order to capture the essence of the distribution. In principle two moments could suffice to describe the entire distribution as happens with the Gaussian distribution. To compare the effect that including more or less constraints on the maximum entropy inference we constructed maximum entropy distributions using an increasing number of moments from 2 to 6. We then computed the Kullback-Leibler divergence <span class="math inline">\(D_{KL}\)</span> of the form <span class="math display">\[
+<p>For the construction of the probability distributions used in the main text (Fig. <strong>¿fig:ch3_fig04?</strong>) we utilized the first 6 moments of the protein distribution. The maximum entropy formalism tells us that the more constraints we include in the inference, the closer the maximum entropy distribution will be to the real distribution. But <em>a priori</em> there is no way of knowing how many moments should be included in order to capture the essence of the distribution. In principle two moments could suffice to describe the entire distribution as happens with the Gaussian distribution. To compare the effect that including more or less constraints on the maximum entropy inference we constructed maximum entropy distributions using an increasing number of moments from 2 to 6. We then computed the Kullback-Leibler divergence <span class="math inline">\(D_{KL}\)</span> of the form <span class="math display">\[
 D_{KL}(P_6(p \mid c) || P_i(p \mid c)) =
     \sum_p P_6(p \mid c) \log_2 \frac{P_6(p \mid c)}{P_i(p \mid c)},
 \]</span> where <span class="math inline">\(P_i(p \mid c)\)</span> is the maximum entropy distribution constructed with the first <span class="math inline">\(i\)</span> moments, <span class="math inline">\(i \in \{2, 3, 4, 5, 6\}\)</span>. Since the Kullback-Leibler divergence <span class="math inline">\(D_{KL}(P || Q)\)</span> can be interpreted as the amount of information lost by assuming the incorrect distribution <span class="math inline">\(Q\)</span> when the correct distribution is <span class="math inline">\(P\)</span>, we used this metric as a way of how much information we would have lost by using less constraints compared to the six moments used in the main text.</p>
@@ -1139,7 +1145,7 @@ D_{KL}(P_6(p \mid c) || P_i(p \mid c)) =
 <h4 id="iii-multi-state-promoter.">(iii) Multi-state promoter.</h4>
 <p>This particular point is something that we are still exploring from a theoretical perspective. We have shown that in order to capture the single-molecule mRNA FISH data a single-state promoter wouldn’t suffice. This model predicts a Poisson distribution as the steady-state and the data definitely shows super Poissonian noise. Given the bursty nature of gene expression we opt to use a two-state promoter where the states reflect effective transcriptionally “active” and “inactive” states. We are currently exploring alternative formulations of this model to turn it into a single state with a geometrically distributed burst-size.</p>
 <h4 id="iv-optimal-vs-log-flat-distributions.">(iv) Optimal vs Log-flat Distributions.</h4>
-<p>The relevance of having use the Blahut-Arimoto algorithm to predict the maximum mutual information between input and outputs was just to understand the best case scenario. We show the comparison between theoretical and experimental input-output functions <span class="math inline">\(P(p \mid c)\)</span> in . Given the good agreement between these distributions we could compute the mutual information <span class="math inline">\(I(c; p)\)</span> for any arbitrary input distribution <span class="math inline">\(P(c)\)</span> and obtain a good agreement with the corresponding experimental mutual information.</p>
+<p>The relevance of having use the Blahut-Arimoto algorithm to predict the maximum mutual information between input and outputs was just to understand the best case scenario. We show the comparison between theoretical and experimental input-output functions <span class="math inline">\(P(p \mid c)\)</span> in Fig. 19. Given the good agreement between these distributions we could compute the mutual information <span class="math inline">\(I(c; p)\)</span> for any arbitrary input distribution <span class="math inline">\(P(c)\)</span> and obtain a good agreement with the corresponding experimental mutual information.</p>
 <p>The reason we opted to specifically report the mutual information at channel capacity was to put the results in a context. By reporting the upper bound in performance of these genetic circuits we can start to dissect how different molecular parameters such as repressor-DNA binding affinity or repressor copy number affect the ability of this genetic circuit to extract information from the environmental state.</p>
 <h2 id="empirical-fits-to-noise-predictions">Empirical fits to noise predictions</h2>
 <p>(Note: The Python code used for the calculations presented in this section can be found in the <a href="https://www.rpgroup.caltech.edu/chann_cap/src/theory/html/empirical_constants.html">following link</a> as an annotated Jupyter notebook)</p>
@@ -1147,9 +1153,9 @@ D_{KL}(P_6(p \mid c) || P_i(p \mid c)) =
 <h3 id="multiplicative-factor-for-the-noise">Multiplicative factor for the noise</h3>
 <p>The first option we will explore is to modify our noise predictions by a constant multiplicative factor. This means that we assume the relationship between our minimal model predictions and the data for noise in gene expression are of the from <span class="math display">\[
 \text{noise}_{\text{exp}} = \alpha \cdot \text{noise}_{\text{theory}},
-\]</span> where <span class="math inline">\(\alpha\)</span> is a dimensionless constant to be fit from the data. The data, especially in suggests that our predictions are within a factor of <span class="math inline">\(\approx\)</span> two from the experimental data. To further check that intuition we performed a weighted linear regression between the experimental and theoretical noise measurements. The weight for each datum was taken to be proportional to the bootstrap errors in the noise estimate, this to have poorly determined noises weigh less during the regression. The result of this regression with no intercept shows exactly that a factor of two systematically improves the theoretical vs. experimental predictions. Fig. 30 shows the improved agreement when the theoretical predictions for the noise are multiplied by <span class="math inline">\(\approx 1.5\)</span>.</p>
+\]</span> where <span class="math inline">\(\alpha\)</span> is a dimensionless constant to be fit from the data. The data, especially in Fig. 12 suggests that our predictions are within a factor of <span class="math inline">\(\approx\)</span> two from the experimental data. To further check that intuition we performed a weighted linear regression between the experimental and theoretical noise measurements. The weight for each datum was taken to be proportional to the bootstrap errors in the noise estimate, this to have poorly determined noises weigh less during the regression. The result of this regression with no intercept shows exactly that a factor of two systematically improves the theoretical vs. experimental predictions. Fig. 30 shows the improved agreement when the theoretical predictions for the noise are multiplied by <span class="math inline">\(\approx 1.5\)</span>.</p>
 <figure>
-<img src="ch5_fig30.png" id="fig:ch5_fig30" data-short-caption="Multiplicative factor to improve theoretical vs. experimental comparison of noise in gene expression" alt="Figure 30: Multiplicative factor to improve theoretical vs. experimental comparison of noise in gene expression. Theoretical vs. experimental noise both in linear (left) and log (right) scale. The dashed line shows the identity line of slope 1 and intercept zero. All data are colored by the corresponding value of the experimental fold-change in gene expression as indicated by the color bar. The x-axis was multiplied by a factor of \approx 1.5 as determined by a linear regression from the data in . Each datum represents a single date measurement of the corresponding strain and IPTG concentration with \geq 300 cells. The points correspond to the median, and the error bars correspond to the 95% confidence interval as determined by 10,000 bootstrap samples." /><figcaption aria-hidden="true">Figure 30: <strong>Multiplicative factor to improve theoretical vs. experimental comparison of noise in gene expression.</strong> Theoretical vs. experimental noise both in linear (left) and log (right) scale. The dashed line shows the identity line of slope 1 and intercept zero. All data are colored by the corresponding value of the experimental fold-change in gene expression as indicated by the color bar. The <span class="math inline">\(x\)</span>-axis was multiplied by a factor of <span class="math inline">\(\approx 1.5\)</span> as determined by a linear regression from the data in . Each datum represents a single date measurement of the corresponding strain and IPTG concentration with <span class="math inline">\(\geq 300\)</span> cells. The points correspond to the median, and the error bars correspond to the 95% confidence interval as determined by 10,000 bootstrap samples.</figcaption>
+<img src="ch5_fig30.png" id="fig:ch5_fig30" data-short-caption="Multiplicative factor to improve theoretical vs. experimental comparison of noise in gene expression" alt="Figure 30: Multiplicative factor to improve theoretical vs. experimental comparison of noise in gene expression. Theoretical vs. experimental noise both in linear (left) and log (right) scale. The dashed line shows the identity line of slope 1 and intercept zero. All data are colored by the corresponding value of the experimental fold-change in gene expression as indicated by the color bar. The x-axis was multiplied by a factor of \approx 1.5 as determined by a linear regression from the data in Fig. 11. Each datum represents a single date measurement of the corresponding strain and IPTG concentration with \geq 300 cells. The points correspond to the median, and the error bars correspond to the 95% confidence interval as determined by 10,000 bootstrap samples." /><figcaption aria-hidden="true">Figure 30: <strong>Multiplicative factor to improve theoretical vs. experimental comparison of noise in gene expression.</strong> Theoretical vs. experimental noise both in linear (left) and log (right) scale. The dashed line shows the identity line of slope 1 and intercept zero. All data are colored by the corresponding value of the experimental fold-change in gene expression as indicated by the color bar. The <span class="math inline">\(x\)</span>-axis was multiplied by a factor of <span class="math inline">\(\approx 1.5\)</span> as determined by a linear regression from the data in Fig. 11. Each datum represents a single date measurement of the corresponding strain and IPTG concentration with <span class="math inline">\(\geq 300\)</span> cells. The points correspond to the median, and the error bars correspond to the 95% confidence interval as determined by 10,000 bootstrap samples.</figcaption>
 </figure>
 <p>For completeness Fig. 31 shows the noise in gene expression as a function of the inducer concentration including this factor of <span class="math inline">\(\approx 1.5\)</span>. It is clear that overall a simple multiplicative factor improves the predictive power of the model.</p>
 <figure>
@@ -1160,7 +1166,7 @@ D_{KL}(P_6(p \mid c) || P_i(p \mid c)) =
 \text{noise}_{\text{exp}} = \beta + \text{noise}_{\text{theory}},
 \]</span> where <span class="math inline">\(\beta\)</span> is an additive constant to be determined from the data. As with the multiplicative constant we performed a regression to determine this empirical additive constant comparing experimental and theoretical gene expression noise values. We use the error in the 95% bootstrap confidence interval as a weight for the linear regression. Fig. 32 shows the resulting theoretical vs. experimental noise where <span class="math inline">\(\beta \approx 0.2\)</span>. We can see a great improvement in the agreement between theory and experiment with this additive constant.</p>
 <figure>
-<img src="ch5_fig32.png" id="fig:ch5_fig32" data-short-caption="Additive factor to improve theoretical vs. experimental comparison of noise in gene expression" alt="Figure 32: Additive factor to improve theoretical vs. experimental comparison of noise in gene expression. Theoretical vs. experimental noise both in linear (left) and log (right) scale. The dashed line shows the identity line of slope 1 and intercept zero. All data are colored by the corresponding value of the experimental fold-change in gene expression as indicated by the color bar. A value of \approx 0.2 was added to all values in the x-axis as determined by a linear regression from the data in . Each datum represents a single date measurement of the corresponding strain and IPTG concentration with \geq 300 cells. The points correspond to the median, and the error bars correspond to the 95% confidence interval as determined by 10,000 bootstrap samples." /><figcaption aria-hidden="true">Figure 32: <strong>Additive factor to improve theoretical vs. experimental comparison of noise in gene expression.</strong> Theoretical vs. experimental noise both in linear (left) and log (right) scale. The dashed line shows the identity line of slope 1 and intercept zero. All data are colored by the corresponding value of the experimental fold-change in gene expression as indicated by the color bar. A value of <span class="math inline">\(\approx 0.2\)</span> was added to all values in the <span class="math inline">\(x\)</span>-axis as determined by a linear regression from the data in . Each datum represents a single date measurement of the corresponding strain and IPTG concentration with <span class="math inline">\(\geq 300\)</span> cells. The points correspond to the median, and the error bars correspond to the 95% confidence interval as determined by 10,000 bootstrap samples.</figcaption>
+<img src="ch5_fig32.png" id="fig:ch5_fig32" data-short-caption="Additive factor to improve theoretical vs. experimental comparison of noise in gene expression" alt="Figure 32: Additive factor to improve theoretical vs. experimental comparison of noise in gene expression. Theoretical vs. experimental noise both in linear (left) and log (right) scale. The dashed line shows the identity line of slope 1 and intercept zero. All data are colored by the corresponding value of the experimental fold-change in gene expression as indicated by the color bar. A value of \approx 0.2 was added to all values in the x-axis as determined by a linear regression from the data in Fig. 11. Each datum represents a single date measurement of the corresponding strain and IPTG concentration with \geq 300 cells. The points correspond to the median, and the error bars correspond to the 95% confidence interval as determined by 10,000 bootstrap samples." /><figcaption aria-hidden="true">Figure 32: <strong>Additive factor to improve theoretical vs. experimental comparison of noise in gene expression.</strong> Theoretical vs. experimental noise both in linear (left) and log (right) scale. The dashed line shows the identity line of slope 1 and intercept zero. All data are colored by the corresponding value of the experimental fold-change in gene expression as indicated by the color bar. A value of <span class="math inline">\(\approx 0.2\)</span> was added to all values in the <span class="math inline">\(x\)</span>-axis as determined by a linear regression from the data in Fig. 11. Each datum represents a single date measurement of the corresponding strain and IPTG concentration with <span class="math inline">\(\geq 300\)</span> cells. The points correspond to the median, and the error bars correspond to the 95% confidence interval as determined by 10,000 bootstrap samples.</figcaption>
 </figure>
 <p>For completeness Fig. 33 shows the noise in gene expression as a function of the inducer concentration including this additive factor of <span class="math inline">\(\beta \approx 0.2\)</span>. If anything, the additive factor seems to improve the agreement between theory and data even more than the multiplicative factor.</p>
 <figure>
@@ -1189,7 +1195,7 @@ I = \log_2 \left( \frac{\mathcal{Z}}{\sqrt{2 \pi e}} \right).
 I^{\exp} = \log_2 \left( \frac{\mathcal{Z}^{\exp}}{\sqrt{2 \pi e}} \right)
 = \log_2 \left( \frac{\mathcal{Z}^{\text{theory}}}{\sqrt{2 \pi e}} \right)
 - \log_2(2).
-\]</span> Therefore under the small noise approximation we would expect our predictions for the channel capacity to be off by a constant of 1 bit (<span class="math inline">\(\log_2(2)\)</span>) of information. Again, the conditions for the small noise approximation do not apply to our data given the intrinsic level of cell-to-cell variability in the system, nevertheless what this analysis tells is is that we expect that an additive constant should be able to explain the discrepancy between our model predictions and the experimental channel capacity. To test this hypothesis we performed a “linear regression” between the model predictions and the experimental channel capacity with a fixed slope of 1. The intercept of this regression, -0.56 bits, indicates the systematic deviation we expect should explain the difference between our model and the data. Fig. 34 shows the comparison between the original predictions shown in (A) and the resulting predictions with this shift. Other than the data with zero channel capacity, this shift is able to correct the systematic deviation for all data. We therefore conclude that our model ends up underestimating the experimentally determined channel capacity by a constant amount of 0.43 bits.</p>
+\]</span> Therefore under the small noise approximation we would expect our predictions for the channel capacity to be off by a constant of 1 bit (<span class="math inline">\(\log_2(2)\)</span>) of information. Again, the conditions for the small noise approximation do not apply to our data given the intrinsic level of cell-to-cell variability in the system, nevertheless what this analysis tells is is that we expect that an additive constant should be able to explain the discrepancy between our model predictions and the experimental channel capacity. To test this hypothesis we performed a “linear regression” between the model predictions and the experimental channel capacity with a fixed slope of 1. The intercept of this regression, -0.56 bits, indicates the systematic deviation we expect should explain the difference between our model and the data. Fig. 34 shows the comparison between the original predictions shown in Fig. 5(A) and the resulting predictions with this shift. Other than the data with zero channel capacity, this shift is able to correct the systematic deviation for all data. We therefore conclude that our model ends up underestimating the experimentally determined channel capacity by a constant amount of 0.43 bits.</p>
 <figure>
 <img src="ch5_fig34.png" id="fig:ch5_fig34" data-short-caption="Additive correction factor for channel capacity" alt="Figure 34: Additive correction factor for channel capacity. Solid lines represent the theoretical predictions of the channel capacity shown in (A). The dashed lines show the resulting predictions with a constant shift of -0.43 bits. Points represent single biological replicas of the inferred channel capacity." /><figcaption aria-hidden="true">Figure 34: <strong>Additive correction factor for channel capacity.</strong> Solid lines represent the theoretical predictions of the channel capacity shown in (A). The dashed lines show the resulting predictions with a constant shift of -0.43 bits. Points represent single biological replicas of the inferred channel capacity.</figcaption>
 </figure>
@@ -1207,9 +1213,801 @@ I^{\exp} = \log_2 \left( \frac{\mathcal{Z}^{\exp}}{\sqrt{2 \pi e}} \right)
 - \overbrace{r_m P(m, t)}^{m \rightarrow m+1}
 + \overbrace{\gamma_m (m+1) P(m+1, t)}^{m+1 \rightarrow m}
 - \overbrace{\gamma_m m P(m, t)}^{m \rightarrow m-1}.
-\label{eq:eq_test}
+\label{eq:one_state_master}
 \]</span></p>
-<p>This is <span class="math inline">\(\ref{eq:eq_test}\)</span></p>
+<p>Our objective when solving for the distribution is to obtain the equation that defines <span class="math inline">\(P(m, t)\)</span> for all possible values of <span class="math inline">\(m \in \mathbb{Z}\)</span>. The power of the generating functions is that these values of the probability distribution are used as the coefficients of a power series. To make this clear let us define the generating function <span class="math inline">\(G(z, t)\)</span> as <span class="math display">\[
+G(z, t) \equiv \sum_{m=0}^\infty z^m P(m, t),
+\label{eq:gen_fn_def}
+\]</span> where <span class="math inline">\(z\)</span> is a “dummy” variable that we don’t care about. The reason this is useful is that if we find the closed-form solution for this generating function, and we are able to split the factor <span class="math inline">\(z^m\)</span> from its coefficient <span class="math inline">\(P(m, t)\)</span>, then we will have find the solution for the distribution. Furthermore, the generating function allows us to compute the moments of the distribution. For example, for the zeroth moment <span class="math inline">\(\langle m^0 \rangle\)</span> we know that <span class="math display">\[
+\langle m^0 \rangle = \sum_{m=0}^\infty m^0 P(m, t) = 1,
+\]</span> i.e., this is the normalization constraint of the distribution. From the definition of the generating function we can then see that <span class="math display">\[
+G(1, t) = \sum_{m=0}^\infty 1^m P(m, t) = 1.
+\label{eq:generating_norm}
+\]</span> Furthermore, the first moment of the distribution is defined as <span class="math display">\[
+\langle m \rangle = \sum_{m=0}^\infty m P(m, t).
+\]</span> From the definition of the generating function we can construct this quantity by computing <span class="math display">\[
+\left. \frac{\partial G(z, t)}{\partial z} \right\vert_{z=1} =
+\frac{\partial}{\partial z} \left[ 
+\sum_{m=0}^\infty z^m P(m, t)
+\right]_{z=1} =
+\sum_{m=0}^\infty m P(m, t).
+\]</span> Therefore we have that <span class="math display">\[
+\langle m \rangle = 
+\left. \frac{\partial G(z, t)}{\partial z} \right\vert_{z=1}.
+\label{eq:first_mom_gen}
+\]</span> Similar constructions can be built for higher moments of the distribution.</p>
+<p>Let us then apply the definition of the generating function to Eq. <span class="math inline">\(\ref{eq:one_state_master}\)</span>. For this we multiply both sides by <span class="math inline">\(z^m\)</span> and sum over all values of <span class="math inline">\(m\)</span>, obtaining <span class="math display">\[
+\begin{split}
+\sum_{m=0}^\infty z^m
+\frac{d P(m, t)}{dt} &amp;=
+\sum_{m=0}^\infty z^m \left[
+r_m P(m-1, t)
+- r_m P(m, t) \right. \\
+&amp;+ \left. \gamma_m (m+1) P(m+1, t)
+- \gamma_m m P(m, t).
+\right]
+\end{split}
+\]</span> Distributing the sum we find <span class="math display">\[
+\begin{split}
+\frac{d}{dt} \sum_{m=0}^\infty z^m P(m, t) &amp;=
+\sum_{m=0}^\infty z^m r_m P(m-1, t)
+- \sum_{m=0}^\infty z^m r_m P(m, t) \\
+&amp;+ \sum_{m=0}^\infty z^m \gamma_m (m+1) P(m+1, t)
+- \sum_{m=0}^\infty z^m \gamma_m m P(m, t).
+\end{split}
+\label{eq:one_state_master_sum}
+\]</span> We see that the terms involving <span class="math inline">\(z^m P(m, t)\)</span> can be directly substituted with Eq. <span class="math inline">\(\ref{eq:gen_fn_def}\)</span>. For the other terms we have to be slightly more clever. The first trick will allow us to rewrite the term involving <span class="math inline">\(z^m m P(m, t)\)</span> as <span class="math display">\[
+\begin{aligned}
+\sum_{m} z^{m} \cdot m \cdot P(m, t) &amp;=
+\sum_{m} z \frac{\partial z^{m}}{\partial z} P(m, t), \\
+&amp;=\sum_{m} z \frac{\partial}{\partial z}\left(z^{m} P(m, t)\right), \\
+&amp;=z \frac{\partial}{\partial z}\left(\sum_{m} z^{m} P(m, t)\right), \\
+&amp;=z \frac{\partial G(z, t)}{\partial z}.
+\end{aligned}
+\]</span> Next, let us deal with the term involving <span class="math inline">\((m+1)\)</span>. We first define <span class="math inline">\(k = m + 1\)</span>. With this we can write <span class="math display">\[
+\begin{aligned}
+\sum_{m=0}^{\infty} z^{m} \cdot(m+1) \cdot P(m+1, t) &amp;=
+\sum_{k=1}^{\infty} z^{k-l} \cdot k \cdot P(k, t), \\
+&amp;=z^{-1} \sum_{k=1}^{\infty} z^{k} \cdot k \cdot P(k, t), \\
+&amp;=z^{-1} \sum_{k=0}^{\infty} z^{k} \cdot k \cdot P(k, t), \\
+&amp;=z^{-1}\left(z \frac{ \partial G(z)}{\partial z}\right), \\
+&amp;=\frac{\partial G(z)}{\partial z},
+\end{aligned}
+\]</span> where for the third step we reindex the sum to include <span class="math inline">\(k=0\)</span> since it does not contribute to the total sum. Finally for the term involving <span class="math inline">\(P(m-1, t)\)</span>. For this we define <span class="math inline">\(k = m-1\)</span>. This allows us to rewrite the term as <span class="math display">\[
+\begin{aligned}
+\sum_{m=0}^{\infty} z^{m} P(m-1, t) &amp;=\sum_{k=-1}^{\infty} z^{k+1} P(k, t), \\
+&amp;=\sum_{k=0}^{\infty} z^{k+1} P(k, t), \\
+&amp;=z \sum_{k=0}^{\infty} z^{k} P(k, t), \\
+&amp;=z G(z, t)
+\end{aligned}
+\]</span> For the second step we reindex the sum from <span class="math inline">\(-1\)</span> to <span class="math inline">\(0\)</span> since <span class="math inline">\(P(-1, t) = 0\)</span>.</p>
+<p>All of these clever reindexing allows us to rewrite Eq. <span class="math inline">\(\ref{eq:one_state_master_sum}\)</span> as <span class="math display">\[
+\frac{\partial G(z, t)}{\partial t} =
+r z G(z, t)-r G(z, t)
++ \gamma \frac{\partial G(z, t)}{\partial z}
+- \gamma z \frac{\partial G(z, t)}{\partial z}.
+\]</span> Factorizing terms we have <span class="math display">\[
+\frac{\partial G(z, t)}{\partial t} 
+=-r G(z, t)(1-z)
++\gamma \frac{\partial G(z, t)}{\partial z}(1-z).
+\]</span> Let us appreciate how beautiful this is: we took an infinite-dimensional system of ordinary differential equations–the master equation–and turn it into a single partial differential equation (PDE). All we have to do now is solve this PDE, and then transform the solution into a power series in order to extract the distribution.</p>
+<p>Let us focus on the steady-sate case. For this we set the time derivative to zero. Doing this cancels the <span class="math inline">\((1-z)\)</span> term, leaving a very simple ordinary differential equation for <span class="math inline">\(G(z)\)</span> <span class="math display">\[
+\frac{dG(z)}{dz} = \frac{r}{\gamma} G(z).
+\]</span> Solving this equation by separation of variables results in <span class="math display">\[
+G(z) = C e^{\frac{r}{\gamma}z}.
+\]</span> To obtain the integration constant we use the normalization condition of the probability distribution (Eq. <span class="math inline">\(\ref{eq:generating_norm}\)</span>), obtaining <span class="math display">\[
+1 = C e^{\frac{r}{\gamma}} \Rightarrow
+C = e^{-\frac{r}{\gamma}}.
+\]</span> This means that the generating function takes the form <span class="math display">\[
+G(z) = e^{-\frac{r}{\gamma}} e^{\frac{r}{\gamma}z}.
+\]</span> All we have left is trying to rewrite the generating function as a power series on <span class="math inline">\(z\)</span>. If we succeed in doing so, we will have recovered the probability distribution <span class="math inline">\(P(m, t)\)</span>. For this we simply use the Taylor expansion of <span class="math inline">\(e^x\)</span>, obtaining <span class="math display">\[
+G(z) = e^{-\frac{r}{\gamma}} 
+\sum_{m=0}^\infty \frac{\left( \frac{r}{\gamma}z \right)^m}{m!}.
+\]</span> From this form it becomes clear how to split the <span class="math inline">\(z^m\)</span> term from the coefficient that, by the definition of ghe generating function, is the probability distribution we are looking for. The separation takes the form <span class="math display">\[
+G(z)=\sum_{m=0}^{\infty} z^{m}
+\left[\frac{e^{-r / \gamma}\left(\frac{r}{\gamma}\right)^{m}}{m !}\right],
+\]</span> where we can see that we recover the expected Poisson distribution for this one-state promoter <span class="math display">\[
+P(m) = e^{-r / \gamma}\frac{\left(\frac{r}{\gamma}\right)^{m}}{m !}.
+\]</span></p>
+<h3 id="two-state-promoter">Two-state promoter</h3>
+<p>Having shown the power of the generating function, let us now turn our attention to the relevant equation we are after: the two-state mRNA distribution. This model assumes that the promoter can exist in two discrete states (See Fig. 36(A)): a transcriptionally active state <span class="math inline">\(A\)</span> from which transcription can take place at a constant rate <span class="math inline">\(r_m\)</span>, and an inactive state <span class="math inline">\(I\)</span> where no transcription takes place. The mRNA is stochastically degraded with rate <span class="math inline">\(\gamma_m\)</span> regardless of the state of the promoter. Fig. 36(B) shows the Markov chain that connects all of the possible states of the promoter. For this particular case there are not only “horizontal” transitions where the mRNA copy number changes, but “vertical” transitions where only the state of the promoter itself changes. Because of this we need to define two coupled master equations that take the form <span class="math display">\[
+\begin{aligned}
+\frac{d P_{A}(m, t)}{d t} &amp;=-k^{(p)}_{\text{off}} P_{A}(m, t) +
+k^{(p)}_{\text{on}} P_{I}(m, t) \\
+&amp;+\gamma_m (m+1) P_{A}(m+1, t) - \gamma_m m P_{n}(m, t) \\
+&amp;+r_m P_{A}(m-1, t)-r_m P_{A}(m, t) \\
+\end{aligned}
+\]</span> for the active state, and <span class="math display">\[
+\begin{aligned}
+\frac{d P_{I}(m, t)}{dt} &amp;=k^{(p)}_{\text{off}} P_{A}(m, t)-
+k^{(p)}_{\text{on}} P_{I}(m, t) \\
+&amp;+\gamma_m (m+1) P_{I}(m+1, t)-\gamma_m m P_{I}(m, t).
+\end{aligned}
+\]</span> for the inactive state.</p>
+<figure>
+<img src="ch5_fig36.png" id="fig:ch5_fig36" data-short-caption="One-state Poisson promoter" alt="Figure 36: Two-state Poisson promoter. (A) Schematic of the kinetics of the two-state promoter. The promoter is imagined to exist in two state–a transcriptionally active state A and an inactive state I. The transition between these states is governed by the rates k^{(p)}_{\text{on}} and k^{(p)}_{\text{off}} mRNA is produced and degrade stochastically with a rate r_m and \gamma_m, respectively. (B) Representation of the Markov-chain for the state space that the promoter can be in. The distribution P(m, t) represents the probability of having certain discrete number of mRNA m at time t. The transition between states depends on the previously mentioned rates." /><figcaption aria-hidden="true">Figure 36: <strong>Two-state Poisson promoter.</strong> (A) Schematic of the kinetics of the two-state promoter. The promoter is imagined to exist in two state–a transcriptionally active state <span class="math inline">\(A\)</span> and an inactive state <span class="math inline">\(I\)</span>. The transition between these states is governed by the rates <span class="math inline">\(k^{(p)}_{\text{on}}\)</span> and <span class="math inline">\(k^{(p)}_{\text{off}}\)</span> mRNA is produced and degrade stochastically with a rate <span class="math inline">\(r_m\)</span> and <span class="math inline">\(\gamma_m\)</span>, respectively. (B) Representation of the Markov-chain for the state space that the promoter can be in. The distribution <span class="math inline">\(P(m, t)\)</span> represents the probability of having certain discrete number of mRNA <span class="math inline">\(m\)</span> at time <span class="math inline">\(t\)</span>. The transition between states depends on the previously mentioned rates.</figcaption>
+</figure>
+<h4 id="obtaining-the-partial-differential-equation-for-the-generating-function">Obtaining the partial differential equation for the generating function</h4>
+<p>The first thing we must do is to transform this infinite-dimensional system of ordinary differential equations in <span class="math inline">\(m\)</span> to a single partial differential equation using the generating function. For this particular case there are two generating functions of the form <span class="math display">\[
+G_x(z, t) = \sum_{m=0}^\infty z^m P_x(m, t),
+\]</span> where <span class="math inline">\(x \in \{A, I \}\)</span>. The probability of having <span class="math inline">\(m\)</span> mRNA at time <span class="math inline">\(t\)</span> regardless of the promoter state is given by <span class="math display">\[
+P(m, t) = P_A(m, t) + P_I(m, t).
+\]</span> Therefore, the corresponding generating function for the whole system is given by <span class="math display">\[
+G(z, t) = G_A(z, t) + G_I(z, t).
+\]</span></p>
+<p>As with the one-state promoter case, let us transform our master equations by multiplying both sides by <span class="math inline">\(z^m\)</span> and sum over all <span class="math inline">\(m\)</span>. For the active state <span class="math inline">\(A\)</span> we have <span class="math display">\[
+\begin{aligned}
+\sum_{m} z^{m} \frac{d P_{A}(m, t)}{d t} =
+\sum_{m} z^{m} &amp;\left[-k^{(p)}_{\text{off}} P_{A}(m, t) 
++ k^{(p)}_{\text{on}} P_{I}(m, t)\right.\\
+&amp;+ \gamma_m (m+1) P_{A}(m+1, t)-\gamma_m m P_{m}(m, t) \\
+&amp;\left. + r_m P_{A}(m-1, t) - r_m P_{A}(m, t)\right].
+\end{aligned}
+\]</span> After distributing the sum, we can use the tricks from the previous, allowing us to write this as a partial differential equation of the form <span class="math display">\[
+\begin{aligned}
+\frac{\partial G_{A}(z, t)}{\partial t} &amp;=
+-k^{(p)}_{\text{off}} G_{A}(z, t)+k^{(p)}_{\text{on}} G_{I}(z, t) \\
+&amp;-\gamma_m(z-1) \frac{\partial G_A(z, t)}{\partial z} 
++r_m(z-1) G_{A}(z, t).
+\end{aligned}
+\label{eq:gn_fn_act}
+\]</span> An equivalent process can be done for the inactive state I, obtaining <span class="math display">\[
+\begin{aligned}
+\frac{\partial G_{I}(z, t)}{\partial t} &amp;=
+k^{(p)}_{\text{off}} G_{A}(z, t) - k^{(p)}_{\text{on}} G_{I}(z, t) \\
+&amp;-\gamma_m(z-1) \frac{\partial G A(z, t)}{\partial z} 
++r_m(z-1) G_{I}(z, t).
+\end{aligned}
+\label{eq:gn_fn_inact}
+\]</span> At this point we turned the infinite dimensional system of ordinary differential equations into a system of two couped partial differential equations. Let us transform further the equations. Since we have a common term <span class="math inline">\((z - 1)\)</span>, it will be convenient to define <span class="math inline">\(v \equiv (z -1)\)</span>. From the chain rule it follows that <span class="math display">\[
+d v=d(z-1)=d z \Rightarrow \frac{\partial G}{\partial v} = 
+\frac{\partial G}{\partial z} \frac{d z}{d v}.
+\]</span> Making this substitution in Eqs. <span class="math inline">\(\ref{eq:gn_fn_act}\)</span> and <span class="math inline">\(\ref{eq:gn_fn_inact}\)</span> results in <span class="math display">\[
+\begin{aligned}
+\frac{\partial G_{A}(v, t)}{\partial t} &amp;=-k^{(p)}_{\text{off}} G_{A}(v, t)
++ k^{(p)}_{\text{on}} G_{I}(v, t) \\
+&amp;-\gamma_m v \frac{\partial G_{A}(v, t)}{\partial v} + r_m v G_{A}(v, t) \\
+\end{aligned}
+\]</span> for the actives state, and <span class="math display">\[
+\begin{aligned}
+\frac{\partial G I(v, t)}{\partial t}=&amp; k^{(p)}_{\text{off}} G_{A}(v, t)
+- k^{(p)}_{\text{on}} G_{I}(v, t) \\
+&amp;-r_m v \frac{\partial G_{I}(v, t)}{\partial v},
+\end{aligned}
+\]</span> for the active state.</p>
+<p>Since we care about the steady-state distribution, it is at this point that we set the time derivative of both equations to zero. Doing this results in <span class="math display">\[
+\gamma_{m} v \frac{d G_{A}(v)}{d v}= 
+-k^{(p)}_{\text{off}} G_{A}(v)
++ k^{(p)}_{\text{on}} G_{I}(v).
++ r_m v G_{A}(v),
+\label{eq:steady_act}
+\]</span> and <span class="math display">\[
+\gamma_{m} v \frac{d G_{I}(v)}{d v}= 
+k^{(p)}_{\text{off}} G_{A}(v)
+- k^{(p)}_{\text{on}} G_{I}(v).
+\label{eq:steady_inact}
+\]</span> Adding Eqs. <span class="math inline">\(\ref{eq:steady_act}\)</span> and <span class="math inline">\(\ref{eq:steady_inact}\)</span> gives a simple result <span class="math display">\[
+\gamma_m \frac{d G(v)}{dv} = r_m G_A(v).
+\label{eq:gen_fn_rel}
+\]</span></p>
+<p>Our objective is not to write Eqs. <span class="math inline">\(\ref{eq:steady_act}\)</span> and <span class="math inline">\(\ref{eq:steady_inact}\)</span> as a function of only one of the generating functions, i.e., we want two independent differential equations. These equations are both function of <span class="math inline">\(G_A(v)\)</span> and <span class="math inline">\(G_I(v)\)</span>, but Eq. <span class="math inline">\(\ref{eq:gen_fn_rel}\)</span> tells us how to relate both generating functions via the first derivative. This suggests that taking another derivative of Eqs. <span class="math inline">\(\ref{eq:steady_act}\)</span> and <span class="math inline">\(\ref{eq:steady_inact}\)</span> with respect to <span class="math inline">\(z\)</span> could be useful. Let us go ahead and compute these derivatives. For the active state we find <span class="math display">\[
+\small
+\gamma_m \frac{d G_{A}(v)}{d v} 
++ \gamma_{m} v \frac{d^{2} G_{A}(v)}{d v^{2}} =
+-k^{(p)}_{\text{off}} \frac{d G_{A}(v)}{d v}
++ k^{(p)}_{\text{on}} \frac{d \sigma I(v)}{d v}
++ r_m G_{A}(v, t) + r_m v \frac{d G_{A}(v)}{d v}
+\]</span> Upon simplification we can write this Eq. as <span class="math display">\[
+\gamma_m v \frac{d^2 G_A}{d v^{2}}
++ \left(\gamma_m +k^{(p)}_{\text{off}}
+-r_m v\right) \frac{d G_A}{d v}
+-k^{(p)}_{\text{on}} \frac{d G_I}{d v}
+-r_m G_{A}(v)=0.
+\label{eq:gen_fn_2nd_act}
+\]</span> From Eq. <span class="math inline">\(\ref{eq:gen_fn_rel}\)</span> we have that <span class="math display">\[
+\frac{G_I}{dv} = \frac{r_m}{\gamma_m} G_A(v) 
+- \frac{d G_A}{dv}.
+\]</span> Substituting this into <span class="math inline">\(\ref{eq:gen_fn_2nd_act}\)</span> results in <span class="math display">\[
+\gamma_m v \frac{d^{2} G_A}{d v^{2}}
++ \left(\gamma_m + k^{(p)}_{\text{off}} 
++ k^{(p)}_{\text{on}} 
+- r_m v \right) \frac{d G_A}{d v}
+- r_m \left(1+\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right) G_A(v) = 0.
+\label{eq:gen_2nd_act_final}
+\]</span> For the inactive state, upon taking a derivative with respect to <span class="math inline">\(v\)</span> we find <span class="math display">\[
+\gamma_{m} v \frac{d^{2} G_{I}}{d v^{2}}
++ \left(\gamma_m + k^{(p)}_{\text{on}}\right) \frac{d G_I}{d v}
+- k^{(p)}_{\text{off}} \frac{d G_A}{d v} = 0.
+\label{eq:gen_fn_2nd_inact}
+\]</span> Again from <span class="math inline">\(\ref{eq:gen_fn_rel}\)</span> we have that <span class="math display">\[
+\frac{d G_A}{dv} = \frac{r_m}{\gamma_m} G_A - \frac{d G_I}{dv}.
+\]</span> Substituting this result into Eq. <span class="math inline">\(\ref{eq:gen_fn_2nd_inact}\)</span> gives <span class="math display">\[
+\gamma_{m} v \frac{d^{2} G_{I}}{d v^{2}}
++ \left(\gamma_m+k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}\right) 
+\frac{d G_I}{d v} 
+- \frac{k^{(p)}_{\text{off}} r_m}{\gamma_m} G_{A}(v)=0.
+\label{eq:gen_fn_2nd_inact_2}
+\]</span> So far we have not been able to remove the dependence on <span class="math inline">\(G_A(v)\)</span>. But we notice that from Eq. <span class="math inline">\(\ref{eq:steady_inact}\)</span> we have that <span class="math display">\[
+G_A(v) = \frac{\gamma_m v}{k^{(p)}_{\text{off}}} \frac{d G_I}{d v}
++ \frac{k^{(p)}_{\text{on}}}{k^{(p)}_{\text{off}}} G_I.
+\]</span> Using this identity allows us to write Eq. <span class="math inline">\(\ref{eq:gen_fn_2nd_inact_2}\)</span> as <span class="math display">\[
+\gamma_{m} v \frac{d^{2} G_{I}}{d v^{2}}
++ \left(\gamma_m + k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}} -r_m v\right) 
+\frac{d G_I}{d v} - \frac{k^{(p)}_{\text{on}} r_m}{\gamma_m} G_I = 0.
+\label{eq:gen_2nd_inact_final}
+\]</span></p>
+<p>To obtain a single partial differential equation we add Eqs. <span class="math inline">\(\ref{eq:gen_2nd_act_final}\)</span> and <span class="math inline">\(\ref{eq:gen_2nd_inact_final}\)</span>, obtaining <span class="math display">\[
+\gamma_m v \frac{d^{2} G}{d v^{2}}
++ \left(\gamma_m + k^{(p)}_{\text{off}} + k^{(p)}_{\text{on}} -r_m v\right) 
+\frac{d G}{d v} 
+- \frac{r_m k^{(p)}_{\text{on}}}{\gamma_m} G(v)
+- r_m G_A(v) = 0,
+\]</span> where we substituted <span class="math inline">\(G_A(v) + G_I(v) = G(v)\)</span>. To remove the last <span class="math inline">\(G_A(v)\)</span> we utilize again Eq. <span class="math inline">\(\ref{eq:gen_fn_rel}\)</span>, obtaining <span class="math display">\[
+\gamma_m v \frac{d^2 G}{dv^2} 
++ \left( k^{(p)}_{\text{off}} + k^{(p)}_{\text{on}} - r_m v \right)
+\frac{dG}{dv} 
+- \frac{r_m k^{(p)}_{\text{on}}}{\gamma_m} G(v) = 0.
+\label{eq:gen_2nd}
+\]</span></p>
+<h4 id="solving-the-partial-differential-equation">Solving the partial differential equation</h4>
+<p>Eq. <span class="math inline">\(\ref{eq:gen_2nd}\)</span> looks almost like the so-called Kummer’s equation also known as the confluent hypergeometric differential equation–a second order differential equationof the form <span class="math display">\[
+z \frac{d^2w}{dz^2} + (b - z) \frac{dw}{dz} - aw = 0.
+\label{eq:kummer}
+\]</span> The solution fo the Kummer equation can be expressed as the sum of two functions: 1. The confluent hypergeometric function of the first kind, 2. The Tricomi function. This is written as <span class="math display">\[
+w(z) = A {}_1F_1(a, b, z) + B z^{1-b} {}_1 F 1(a+1-b, 2-b, z),
+\label{eq:kummer_sol}
+\]</span> where <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are constants, and <span class="math inline">\({}_1F_1\)</span> is the confluent hypergeometric function of the first kind, defined as <span class="math display">\[
+{}_1F_1(a, b, z) = \sum_{m=0}^{\infty} 
+\frac{a^{(m)}z^n}{b^{(m)} m!},
+\]</span> where <span class="math inline">\(a^{(n})\)</span> and <span class="math inline">\(b^{(n)}\)</span> are the rising factorials, i.e., <span class="math display">\[
+a^{(0)} = 1,
+\]</span> and <span class="math display">\[
+a^{(n)} = a (a + 1) (a + 2) \cdots (a + n - 1).
+\]</span></p>
+<p>To write Eq. <span class="math inline">\(\ref{eq:gen_2nd}\)</span> in the form of Eq. <span class="math inline">\(\ref{eq:kummer}\)</span> we can define <span class="math inline">\(s \equiv r_m v / \gamma_m\)</span>. The chain rule tells us that <span class="math display">\[
+ds = \frac{r_m}{\gamma_m} dv \Rightarrow 
+\frac{dG}{ds} = \frac{dG}{dv}\frac{dv}{ds} = 
+\frac{\gamma_m}{r_m} \frac{dG}{dv}.
+\]</span> From the chain rule we also conclude that <span class="math display">\[
+\frac{d^2G}{ds^2} = 
+\frac{d}{dv} \left( \frac{dG}{dv} \frac{dv}{ds} \right) \frac{dv}{ds} =
+\frac{\gamma_m ^2}{r_m^2} \frac{d^G}{d v^2}.
+\]</span> So the three relationships of <span class="math inline">\(v\)</span> with <span class="math inline">\(s\)</span> that we have are <span class="math display">\[
+v = \frac{\gamma_m}{r_m} s, \;
+\frac{dG}{dv} = \frac{r_m}{\gamma_m} \frac{dG}{ds}, \; \text{and }
+\frac{d^2 G}{dv^2} = \frac{r_m^2}{\gamma_m^2} \frac{d^2G}{dv^2}.
+\]</span> Substituting these definitions results in <span class="math display">\[
+\gamma_m \left( \frac{\gamma_m}{r_m} s \right) 
+\frac{r_m^2}{\gamma_m^2} \frac{d^2 G}{ds^2}
++ \left[ k^{(p)}_{\text{off}} + k^{(p)}_{\text{on}} 
+- r_m \left( \frac{\gamma_m}{r_m} s \right) \right] 
+\frac{r_m}{\gamma_m} \frac{dG}{ds}
+- \frac{r_m k^{(p)}_{\text{on}}}{\gamma_m} G(s) = 0.
+\]</span> Upon simplifying terms we find an equation that is now in the form of Eq. <span class="math inline">\(\ref{eq:kummer}\)</span> <span class="math display">\[
+s \frac{d^2 G}{ds^2}
++ \left(\frac{k^{(p)}_{\text{off}} + k^{(p)}_{\text{off}}}{\gamma_m} - s \right)
+\frac{dG}{ds}
+- \frac{k^{(p)}_{\text{on}}}{\gamma_m} G(s) = 0.
+\label{eq:gen_kummer}
+\]</span></p>
+<p>Having put this in the form of the Kummer Eq. we can use Eq. <span class="math inline">\(\ref{eq:kummer_sol}\)</span> to write <span class="math inline">\(G(s)\)</span> as <span class="math display">\[
+\begin{aligned}
+G(s) &amp;= A {}_1F_1 
+\left(
+    \frac{k^{(p)}_{\text{on}}}{\gamma_m}, 
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}, 
+    s
+\right) \\
+&amp;+ B s^{1 - \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}}
+{}_1 F_1
+\left(
+    \frac{k^{(p)}_{\text{on}}}{\gamma_m} + 1 -
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m},
+    2 - 
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m},
+    s
+\right).
+\end{aligned}
+\]</span> We can write down this solution in terms of the original variable of the generating function. We have that <span class="math inline">\(s = r_m/\gamma_m v\)</span>, and <span class="math inline">\(v = z - 1\)</span>. With this we then write <span class="math display">\[
+\begin{aligned}
+G(z) &amp;= A {}_1F_1 
+\left(
+    \frac{k^{(p)}_{\text{on}}}{\gamma_m}, 
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}, 
+    \frac{r_m}{\gamma_m}(z - 1)
+\right) \\
+&amp;+ B \left[\frac{r_m}{\gamma_m}(z - 1)\right]
+^{1 - \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}}
+{}_1 F_1
+\left(
+    \frac{k^{(p)}_{\text{on}}}{\gamma_m} + 1 -
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m},
+    2 - 
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m},
+    \frac{r_m}{\gamma_m}(z - 1)
+\right).
+\end{aligned}
+\label{eq:gen_sol}
+\]</span></p>
+<h4 id="finding-the-coefficients-for-the-solution">Finding the coefficients for the solution</h4>
+<p>We can now use the normalization condition for the generating function, this is, <span class="math display">\[
+G(1) = \sum_{m=0}^\infty 1^m P(m) = 1.
+\]</span> Evaluating <span class="math inline">\(z=1\)</span> in Eq. <span class="math inline">\(\ref{eq:gen_sol}\)</span> results in <span class="math display">\[
+G(1) = A {}_1F_1 
+\left(
+    \frac{k^{(p)}_{\text{on}}}{\gamma_m}, 
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}, 
+    0
+\right).
+\label{eq:gen_sol_1}
+\]</span> Let’s look at the hypergeometric function evaluated of the form <span class="math inline">\({}_1F_1(a, b , 0)\)</span>. This takes the form <span class="math display">\[
+{}_1 F_{1}(a, b, 0)=\sum_{m=0}^{\infty} \frac{a^{(m)} 0^{n}}{b^{(m)} m!} 
+\]</span> All of the terms but one (<span class="math inline">\(n = 0\)</span>) are zero. The first term involving <span class="math inline">\(0^0\)</span> is undefined. Taking the limit as <span class="math inline">\(z \rightarrow 0\)</span> from the positive side we find <span class="math display">\[
+{}_1F_{1}(a, b, 0) = 
+\lim _{z \rightarrow 0^{+}} {}_1 F_{1}(a, b, z) = 
+\lim _{z \rightarrow 0^{+}} z^{0} = 1.
+\]</span> Using this property in Eq. <span class="math inline">\(\ref{eq:gen_sol_1}\)</span> tells us that <span class="math inline">\(A = 1\)</span>.</p>
+<p>We do not have another constraint for <span class="math inline">\(B\)</span>. Nevertheless, recall that Eq. <span class="math inline">\(\ref{eq:first_mom_gen}\)</span> tells us how to compute the first moment of the distribution from the generating function. For this we need to compute the derivative of the confluent hypergeometric function. Let us derive this identity. Rather than computing the derivative directly, we will compute <span class="math display">\[
+z \frac{d}{dz}{}_1F_1 = 
+z \frac{d}{dz} 
+\left[ \sum_{m=0}^{\infty} \frac{a^{(m)} z^{m}}{b^{(m)} m!}\right].
+\]</span> Taking the derivative inside the sum gives <span class="math display">\[
+z \frac{d}{dz}{}_1F_1 = 
+z 
+\left[ 
+    \sum_{m=0}^{\infty} \frac{a^{(m)} }{b^{(m)} m!}
+    \frac{d}{dz} z^{m}
+\right] 
+=
+\left[ 
+    \sum_{m=0}^{\infty} \frac{a^{(m)} }{b^{(m)}}
+    \frac{m z^m}{m!}
+\right] .
+\]</span> Simplifying the term <span class="math inline">\(m/m!\)</span> gives <span class="math display">\[
+z \frac{d}{dz}{}_1F_1 = 
+\left[ 
+    \sum_{m=0}^{\infty} \frac{a^{(m)} }{b^{(m)}}
+    \frac{z^m}{(m-1)!}
+\right] .
+\label{eq:confluent_1}
+\]</span> Note that the rising factorials can be rewritten as <span class="math display">\[
+\begin{aligned}
+    a^{(m)} &amp;=a(a+1)(a+2) \cdots(a+m-1) \\
+    &amp;=a \cdot(a+1)[(a+1)+1][(a+1)+2] \cdots[(a+1)+m - 2] \\
+    &amp;=a \cdot(a+1)^{(m-1)} .
+\end{aligned}
+\]</span> Therefore we can rewrite Eq. <span class="math inline">\(\ref{eq:confluent_1}\)</span> as <span class="math display">\[
+\begin{aligned}
+\sum_{m=0}^{\infty} \frac{a^{(m)}}{b^{(m)}} \frac{z^{m}}{(m-1) !} &amp;=
+\sum_{m=0}^{\infty} \frac{a \cdot(a+1)^{(m-1)}}{b \cdot(b+1)^{(m-1)}} 
+\frac{z \cdot z^{(m-1)}}{(m-1) !} \\
+&amp;=\frac{a z}{b} 
+\sum_{m=0}^{\infty} \frac{(a+1)^{(m-1)}}{(b+1)^{(m-1)}} \frac{z^{m-1}}{(m-1) !}
+\end{aligned}
+\]</span> If we define <span class="math inline">\(m&#39; = m - 1\)</span> we have <span class="math display">\[
+\frac{a z}{b} \sum_{m=0}^{\infty} \frac{(a+1)^{(m-1)}}{(b+1)^{(m-1)}} 
+\frac{z^{m-1}}{(m-1) !} = 
+\frac{a z}{b} \sum_{m&#39;=-1}^{\infty}
+\frac{(a+1)^{m&#39;}}{(b+1)^{m&#39;}} 
+\frac{z^{m&#39;}}{m&#39;!}
+\]</span> The term on the left is almost of the form of the conlfuent hypergeometric function again. The only difference is that the sum starts at <span class="math inline">\(m&#39; = -1\)</span>. This first term of the sum would then involve a term of the form <span class="math inline">\(1 / (-1)!\)</span>. But what does this even mean? To find this out we can generalize the factorial function using the Gamma function such that <span class="math display">\[
+(x - 1)! = \Gamma(x).
+\]</span> The Gamma function diverges as <span class="math inline">\(x \rightarrow 0\)</span>, therefore <span class="math inline">\(1/\Gamma(x) \rightarrow 0\)</span> as <span class="math inline">\(x \rightarrow 0\)</span>. This means that the first term of the sum is zero, so we can begin the sum at <span class="math inline">\(m&#39; = 0\)</span>, recovering a confluent hypergeometric function. With this we find that <span class="math display">\[
+z \frac{d}{d z} {}_1F_1 = 
+\frac{a z}{b} \sum_{m=0}^{\infty} \frac{(a+1)^{m}}{(b+1)^{m}} 
+\frac{z^{m}}{m !} = 
+\frac{a}{b} z_{1} F_{1}(a+1, b+1, z),
+\]</span> therefore <span class="math display">\[
+\frac{d}{dz}{}_1F_1 = \frac{a}{b} {}_1F_1(a + 1, b + 1, z).
+\label{eq:gen_deriv}
+\]</span></p>
+<p>After this small but necessary detour we can come back to computing the first moment of our distribution from the generating function. to evaluate Eq. <span class="math inline">\(\ref{eq:first_mom_gen}\)</span> on Eq. <span class="math inline">\(\ref{eq:gen_sol}\)</span> we first compute the derivative of the generating function. This can be easily evaluated by using the relationship we derived for derivatives of <span class="math inline">\({}_1F_1\)</span>. The only thing to be aware of is that of the chain rule. In particular for our third entry of the third entry of the function we have <span class="math inline">\(r_m / \gamma_m (z - 1)\)</span> rather than simply <span class="math inline">\(z\)</span> as we had in Eq. <span class="math inline">\(\ref{eq:gen_deriv}\)</span>. This means that by the chain rule we have that if we define <span class="math inline">\(u = r_m / \gamma_m (z - 1)\)</span>, we have <span class="math display">\[
+du = \frac{r_m}{\gamma_m} dz \Rightarrow
+\frac{dG}{dz} = 
+\frac{dG}{du} \frac{du}{dz} = 
+\frac{dG}{du} \frac{r_m}{\gamma_m}.
+\]</span> So there is an extra factor of <span class="math inline">\(r_m / \gamma_m\)</span> that will come along when we compute the derivative of our generating functions. Computing the derivative of Eq. <span class="math inline">\(\ref{eq:gen_sol}\)</span> results in <span class="math display">\[
+\small
+\begin{aligned}
+\frac{dG}{dz} &amp;= 
+\frac{k^{(p)}_{\text{on}}}{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+\frac{r_m}{\gamma_m}
+{}_1F_1 
+\left(
+    \frac{k^{(p)}_{\text{on}}}{\gamma_m} + 1, 
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m} + 1, 
+    \frac{r_m}{\gamma_m}(z - 1)
+\right) \\
+&amp; + B 
+\left( 1 - \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m} \right)
+\left[\frac{r_m}{\gamma_m}(z - 1)\right]
+^{\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}}
+{}_1 F_1
+\left(
+    \frac{k^{(p)}_{\text{on}}}{\gamma_m} + 1 -
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m},
+    2 - 
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m},
+    \frac{r_m}{\gamma_m}(z - 1)
+\right) \\
+&amp;+ B \left[\frac{r_m}{\gamma_m}(z - 1)\right]
+^{1 - \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}}
+\left( 
+    \frac{k^{(p)}_{\text{on}} + \gamma_m}
+    {k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}} + \gamma_m}
+\right)
+\frac{r_m}{\gamma_m}
+{}_1 F_1
+\left(
+    \frac{k^{(p)}_{\text{on}}}{\gamma_m} + 2 -
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m},
+    1 - 
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m},
+    \frac{r_m}{\gamma_m}(z - 1)
+\right).
+\end{aligned}
+\]</span> This rather convoluted result is enormously simplified upon evaluating the derivative at <span class="math inline">\(z = 1\)</span> (See Eq. <span class="math inline">\(\ref{eq:first_mom_gen}\)</span>). This results in <span class="math display">\[
+\left. \frac{dG}{dz} \right\vert_{z = 1} = 
+\frac{k^{(p)}_{\text{on}}}{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+\frac{r_m}{\gamma_m}
+{}_1F_1 
+\left(
+    \frac{k^{(p)}_{\text{on}}}{\gamma_m} + 1, 
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m} + 1, 
+    0
+\right) = 
+\frac{r_m}{\gamma_m}
+\frac{k^{(p)}_{\text{on}}}{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}},
+\]</span> which is exactly the mean mRNA copy number we derived before. Since <span class="math inline">\(B\)</span> does not contribute to the mean, we can safely assume that <span class="math inline">\(B = 0\)</span>. This means that the final result for the generating function takes the much more compact form <span class="math display">\[
+G(z) = 
+{}_1F_1 
+\left(
+    \frac{k^{(p)}_{\text{on}}}{\gamma_m}, 
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}, 
+    \frac{r_m}{\gamma_m}(z - 1)
+\right).
+\label{eq:gen_final}
+\]</span></p>
+<h4 id="extracting-the-steady-state-mrna-distribution">Extracting the steady-state mRNA distribution</h4>
+<p>Let us quickly recapitulate where we are. We started with a system of infinite many ordinary differential equations, one for each promoter state and mRNA copy number that defined the master equation for our two-state promoter. We then used the generating function to transform this system into a single partial differential equation. The resulting differential equation for the generating function took the form of the so-called Kummer differential equation which has as solution the confluent hypergeometric function and the Tricomi function. After imposing the normalization condition on the generating function we found that the coefficient of the confluent hypergeometric function was <span class="math inline">\(A=1\)</span>. We then used the fact that the mean mRNA copy number <span class="math inline">\(\langle m \rangle\)</span> exists to show that the coefficient of the Tricomi function is <span class="math inline">\(B=0\)</span>. All that effort lead us to Eq. <span class="math inline">\(\ref{eq:gen_final}\)</span>, the generating function for the two-state promoter mRNA steady state distribution. All we have left is trying to beat Eq. <span class="math inline">\(\ref{eq:gen_final}\)</span> into the form of a standard generating function in order to extract the probability distribution from it.</p>
+<p>Let us begin this task by writing down Eq. <span class="math inline">\(\ref{eq:gen_final}\)</span> with the full definition of the confluent hypergeometric function. This gives us <span class="math display">\[
+G(z) = \sum_{m=0}^\infty 
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(m)}
+}{
+    \left(\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(m)}
+}
+\frac{
+    \left[\frac{r_m}{\gamma_m} (z-1) \right]^m
+}{
+    m!
+}
+\]</span> Let us now split apart the term <span class="math inline">\((z-1)\)</span>, obtaining <span class="math display">\[
+G(z) = \sum_{m=0}^\infty 
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(m)}
+}{
+    \left(\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(m)}
+}
+\frac{
+    \left(\frac{r_m}{\gamma_m} \right)^m
+}{
+    m!
+}
+(z - 1)^m.
+\]</span> We now rewrite this last term <span class="math inline">\((z-2)^m\)</span> using the binomial expansion. This results in <span class="math display">\[
+G(z) = \sum_{m=0}^\infty 
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(m)}
+}{
+    \left(\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(m)}
+}
+\frac{
+    \left(\frac{r_m}{\gamma_m} \right)^m
+}{
+    m!
+}
+\left[ 
+    \sum_{n=0}^m {m \choose n} z^n (-1)^{m -  n}.
+\right]
+\]</span> We can take out the sum over the index <span class="math inline">\(n\)</span> to the front, obtaining <span class="math display">\[
+G(z) = \sum_{m=0}^\infty \sum_{n=0}^n
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(m)}
+}{
+    \left(\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(m)}
+}
+\frac{
+    \left(\frac{r_m}{\gamma_m} \right)^m
+}{
+    m!
+}
+\left[ 
+    {m \choose n} z^n (-1)^{m -  n}
+\right].
+\]</span> To make further progress we must re-index the sum. The trick is to reverse the default order of the sums as <span class="math display">\[
+\sum_{m=0}^{\infty} \sum_{n=0}^{m} = \sum_{n=0}^{\infty} \sum_{m=n}^{\infty}.
+\]</span> To see the logic of the sum we point the reader to Fig. 37. The key is to notice that the double sum <span class="math inline">\(\sum_{m=0}^\infty \sum_{n=0}^m\)</span> is adding all possible pairs <span class="math inline">\((m, n)\)</span> in the lower triangle, so we can add the terms vertically as the original sum indexing suggests, i.e. <span class="math display">\[
+\sum_{m=0}^{\infty} \sum_{n=0}^{m} x_{(m, n)}= 
+x_{(0, 0)} + x_{(1, 0)} + x_{(1, 1)} + x_{(2, 0)} + x_{(2, 1)} + x_{(2, 2)} + 
+\ldots,
+\]</span> where the variable <span class="math inline">\(x\)</span> is just a placeholder to indicate the order in which the sum is taking place. But we can also add the terms horizontally as <span class="math display">\[
+\sum_{n=0}^{\infty} \sum_{m=n}^{\infty} x_{(m, n)} =
+x_{(0, 0)} + x_{(1, 0)} + x_{(2, 0)} + \ldots + x_{(1,1)} + x_{(2, 1)} + \ldots,
+\]</span> which still adds all of the lower triangle terms.</p>
+<figure>
+<img src="ch5_fig37.png" id="fig:ch5_fig37" data-short-caption="Reindexing double sum" alt="Figure 37: Reindexing double sum. Schematic for reindexing the sum \sum_{m=0}^\infty \sum_{n=0}^m. Blue circles depict the 2D grid of nonnegative integers restricted to the lower triangular part of the m, n plane. The trick is that this double sum runs over all (m, n) pairs with n\le m. Summing m first instead of n requires determining the boundary: the upper boundary of the n-first double sum becomes the lower boundary of the m-first double sum." /><figcaption aria-hidden="true">Figure 37: <strong>Reindexing double sum.</strong> Schematic for reindexing the sum <span class="math inline">\(\sum_{m=0}^\infty \sum_{n=0}^m\)</span>. Blue circles depict the 2D grid of nonnegative integers restricted to the lower triangular part of the <span class="math inline">\(m, n\)</span> plane. The trick is that this double sum runs over all <span class="math inline">\((m, n)\)</span> pairs with <span class="math inline">\(n\le m\)</span>. Summing <span class="math inline">\(m\)</span> first instead of <span class="math inline">\(n\)</span> requires determining the boundary: the upper boundary of the <span class="math inline">\(n\)</span>-first double sum becomes the lower boundary of the <span class="math inline">\(m\)</span>-first double sum.</figcaption>
+</figure>
+<p>Rewriting the sum in this way results in <span class="math display">\[
+G(z) = \sum_{n=0}^\infty \sum_{m=n}^\infty
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(m)}
+}{
+    \left(\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(m)}
+}
+\frac{
+    \left(\frac{r_m}{\gamma_m} \right)^m
+}{
+    m!
+}
+\left[ 
+    {m \choose n} z^n (-1)^{m -  n}
+\right].
+\]</span> What this allows us to do is to separate the variable <span class="math inline">\(z^n\)</span> from the rest of the equation, leaving the generating function in the standard format from where to read the probability distribution <span class="math inline">\(P(m)\)</span>. This looks as <span class="math display">\[
+G(z) = \sum_{n=0}^\infty z^n 
+\left[
+\sum_{m=n}^\infty
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(m)}
+}{
+    \left(\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(m)}
+}
+\frac{
+    \left(\frac{r_m}{\gamma_m} \right)^m
+}{
+    m!
+}
+    {m \choose n} (-1)^{m -  n}
+\right].
+\]</span> Given the “dummy” nature of <span class="math inline">\(z\)</span>, it does not matter what the sum variable name is. We can simply rename <span class="math inline">\(m = n\)</span> and <span class="math inline">\(n = m\)</span> and conclude that our distribution takes the form <span class="math display">\[
+P(m) = 
+\sum_{n=m}^\infty
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(n)}
+}{
+    \left(\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(n)}
+}
+\frac{
+    \left(\frac{r_m}{\gamma_m} \right)^n
+}{
+    n!
+}
+    \frac{n!}{m! (n - m)!} (-1)^{n -  m}.
+\label{eq:prob_ss_1}
+\]</span></p>
+<p>We can simplify Eq. <span class="math inline">\(\ref{eq:prob_ss_1}\)</span> further. First we split the term <span class="math inline">\((-1)^{n-m} = (-1)^{-m} (-1)^{n}\)</span>. Furthermore we absorbe the <span class="math inline">\((-1)^{n}\)</span> term on the <span class="math inline">\((r_m / \gamma_m)^n\)</span> term. We also cancel the obvious <span class="math inline">\(n!/n!\)</span> term, obtaining <span class="math display">\[
+P(m) = \sum_{n = m}^\infty
+\frac{(-1)^{-m}}{m!}
+\frac{
+    \left( \frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(n)}
+}{
+    \left( \frac{k^{(p)}_{\text{on}}+ k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(n)}
+}
+\frac{\left( - \frac{r_m}{\gamma_m}\right)^n}{(n - m)!}.
+\label{eq:prob_ss_2}
+\]</span> We recognize in Eq. <span class="math inline">\(\ref{eq:prob_ss_2}\)</span> that we have almost all the terms for a confluent hypergeometric function <span class="math inline">\({}_1F_1\)</span>. The problem is that the sum starts at <span class="math inline">\(n = m\)</span> rather than <span class="math inline">\(n = 0\)</span>. Since the upper limit of the sum is <span class="math inline">\(\infty\)</span>, we can simply define <span class="math inline">\(u = n - m \Rightarrow n = m + u\)</span>. We can then use the following property of raising factorials <span class="math display">\[
+\begin{split}
+a^{(n)} &amp;=a(a+1)(a+2) \cdots(a+n-1), \\
+&amp;=a(a+1)(a+2) \cdots(a+(u+m)-1), \\
+&amp;=a(a+1) \cdots(a+m-1)(a+m)(a+m+1) \cdots(a+m+u-1), \\
+&amp;=a^{(m)}(a+m)^{(u)}.
+\end{split}
+\]</span> Making these substitutions results in <span class="math display">\[
+P(m) = \sum_{u=0}^{\infty} 
+\frac{(-1)^{-m}}{m !} 
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m} \right)^{(m)}
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m} + m \right)^{(u)}
+    \left(-\frac{r_m}{\gamma_m}\right)^{u}
+    \left(-\frac{r_m}{\gamma_m}\right)^{m}
+}{
+    \left(
+        \frac{
+            k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}
+        }{
+            \gamma_m
+        }
+    \right)^{(m)}
+    \left(
+        \frac{
+            k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}
+            }{
+                \gamma_m
+            } + m
+    \right)^{(n)}}
+    \frac{1}{u!}.
+\]</span> Taking out of the sum the terms that do not depend on <span class="math inline">\(u\)</span> gives <span class="math display">\[
+P(m) = 
+\frac{(-1)^{-m}}{m!}
+\frac{
+    \left(
+        \frac{
+            k^{(p)}_{\text{on}}
+        }{
+            \gamma_m
+        }
+    \right)^{(m)}
+}{
+    \left(
+        \frac{
+            k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}
+        }{
+            \gamma_m
+        }
+    \right)^{(m)}
+}
+\left(- \frac{r_m}{\gamma_m}\right)^m
+\left[
+    \sum_{u=0}^{\infty}
+    \frac{
+        \left(
+            \frac{
+                k^{(p)}_{\text{on}} 
+            }{
+                \gamma_m
+            }
+            + m
+        \right)^{(u)}
+    }{
+        \left(
+            \frac{
+                k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}} 
+            }{
+                \gamma_m
+            }
+            + m
+        \right)^{(u)}
+    }
+    \frac{
+        \left(- \frac{r_m}{\gamma_m}\right)^u
+    }{u!}
+\right].
+\]</span> We recognize the term in the square brackets to be the necessary components for a confluent hypergeometric function. We can therefore write the mRNA steady state distribution as <span class="math display">\[
+P(m) = 
+\frac{1}{m!}
+\frac{
+    \left(
+        \frac{
+            k^{(p)}_{\text{on}}
+        }{
+            \gamma_m
+        }
+    \right)^{(m)}
+}{
+    \left(
+        \frac{
+            k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}
+        }{
+            \gamma_m
+        }
+    \right)^{(m)}
+}
+\left(\frac{r_m}{\gamma_m}\right)^m
+{}_1F_1 
+\left(
+    \frac{
+            k^{(p)}_{\text{on}} 
+        }{
+            \gamma_m
+        }
+    + m,
+    \frac{
+            k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}} 
+        }{
+            \gamma_m
+        }
+    + m,
+    - \frac{r_m}{\gamma_m}
+\right).
+\]</span> For the last ingredient, we remove the rising factorials using the identity <span class="math display">\[
+\begin{split}
+a^{(m)} &amp;=(a)(a+1)(a+2) \cdots(a+m-1), \\
+&amp;=\frac{(a+m-1) \cdots(a)(a-1) \cdots (1)}{(a+1) \cdots(1)}, \\
+&amp;=\frac{(a+m-1) !}{(a-1) !}.
+\end{split}
+\]</span> This allows us to write <span class="math display">\[
+\begin{split}
+P(m) &amp;= 
+\frac{1}{m!}
+\frac{
+    \left(
+        \frac{k^{(p)}_{\text{on}}}{\gamma_m} + m - 1
+    \right) !
+}{
+    \left(
+        \frac{k^{(p)}_{\text{on}}}{\gamma_m} - 1
+    \right) !
+}
+\frac{
+    \left(
+        \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m} - 1
+    \right) !
+}{
+    \left(
+        \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m} + m - 1
+    \right) !
+}
+\left( \frac{r_m}{\gamma_m} \right)^m \\
+&amp;\times {}_1F_1 
+\left(
+    \frac{
+            k^{(p)}_{\text{on}} 
+        }{
+            \gamma_m
+        }
+    + m,
+    \frac{
+            k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}} 
+        }{
+            \gamma_m
+        }
+    + m,
+    - \frac{r_m}{\gamma_m}
+\right).
+\end{split}
+\]</span> Or in terms of Gamma functions we obtain the final form of the steady-state mRNA distribution <span class="math display">\[
+\begin{aligned}
+P(m) &amp;= 
+\frac{1}{\Gamma(m + 1)}
+\frac{
+    \Gamma
+    \left(
+        \frac{k^{(p)}_{\text{on}}}{\gamma_m} + m
+    \right)
+}{
+    \Gamma
+    \left(
+        \frac{k^{(p)}_{\text{on}}}{\gamma_m}
+    \right)
+}
+\frac{
+    \Gamma
+    \left(
+        \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}
+    \right)
+}{
+    \Gamma
+    \left(
+        \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m} + m 
+    \right)
+}
+\left( \frac{r_m}{\gamma_m} \right)^m \\
+&amp;\times {}_1F_1 
+\left(
+    \frac{
+            k^{(p)}_{\text{on}} 
+        }{
+            \gamma_m
+        }
+    + m,
+    \frac{
+            k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}} 
+        }{
+            \gamma_m
+        }
+    + m,
+    - \frac{r_m}{\gamma_m}
+\right),
+\end{aligned}
+\]</span> The equation used to fit the kinetic parameters for the unregulated promoter.</p>
 <h2 id="derivation-of-the-cell-age-distribution">Derivation of the cell age distribution</h2>
 <p>E. O. Powell first derive in 1956 the distribution of cell age for a cell population growing steadily in the exponential phase <span class="citation" data-cites="Powell1956"> [<a href="#ref-Powell1956" role="doc-biblioref">15</a>]</span>. This distribution is of the form <span class="math display">\[
 P(a) = \ln(2) \cdot 2^{1 - a},

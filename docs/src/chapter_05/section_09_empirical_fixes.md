@@ -23,12 +23,12 @@ $$
 \text{noise}_{\text{exp}} = \alpha \cdot \text{noise}_{\text{theory}},
 $$
 where $\alpha$ is a dimensionless constant to be fit from the data. The data,
-especially in suggests that our predictions are within a factor of $\approx$ two
-from the experimental data. To further check that intuition we performed a
-weighted linear regression between the experimental and theoretical noise
-measurements. The weight for each datum was taken to be proportional to the
-bootstrap errors in the noise estimate, this to have poorly determined noises
-weigh less during the regression. The result of this regression with no
+especially in [@Fig:ch5_fig12] suggests that our predictions are within a factor
+of $\approx$ two from the experimental data. To further check that intuition we
+performed a weighted linear regression between the experimental and theoretical
+noise measurements. The weight for each datum was taken to be proportional to
+the bootstrap errors in the noise estimate, this to have poorly determined
+noises weigh less during the regression. The result of this regression with no
 intercept shows exactly that a factor of two systematically improves the
 theoretical vs. experimental predictions. [@Fig:ch5_fig30] shows the improved
 agreement when the theoretical predictions for the noise are multiplied by
@@ -40,10 +40,10 @@ noise in gene expression.** Theoretical vs. experimental noise both in linear
 and intercept zero. All data are colored by the corresponding value of the
 experimental fold-change in gene expression as indicated by the color bar. The
 $x$-axis was multiplied by a factor of $\approx 1.5$ as determined by a linear
-regression from the data in . Each datum represents a single date measurement of
-the corresponding strain and IPTG concentration with $\geq 300$ cells. The
-points correspond to the median, and the error bars correspond to the 95%
-confidence interval as determined by 10,000 bootstrap
+regression from the data in [@Fig:ch5_fig11]. Each datum represents a single
+date measurement of the corresponding strain and IPTG concentration with $\geq
+300$ cells. The points correspond to the median, and the error bars correspond
+to the 95% confidence interval as determined by 10,000 bootstrap
 samples.](ch5_fig30){#fig:ch5_fig30 short-caption="Multiplicative factor to
 improve theoretical vs. experimental comparison of noise in gene expression"}
 
@@ -92,10 +92,10 @@ and log (right) scale. The dashed line shows the identity line of slope 1 and
 intercept zero. All data are colored by the corresponding value of the
 experimental fold-change in gene expression as indicated by the color bar. A
 value of $\approx 0.2$ was added to all values in the $x$-axis as determined by
-a linear regression from the data in . Each datum represents a single date
-measurement of the corresponding strain and IPTG concentration with $\geq 300$
-cells. The points correspond to the median, and the error bars correspond to the
-95% confidence interval as determined by 10,000 bootstrap
+a linear regression from the data in [@Fig:ch5_fig11]. Each datum represents a
+single date measurement of the corresponding strain and IPTG concentration with
+$\geq 300$ cells. The points correspond to the median, and the error bars
+correspond to the 95% confidence interval as determined by 10,000 bootstrap
 samples.](ch5_fig32){#fig:ch5_fig32 short-caption="Additive factor to improve
 theoretical vs. experimental comparison of noise in gene expression"}
 
@@ -194,10 +194,10 @@ performed a "linear regression" between the model predictions and the
 experimental channel capacity with a fixed slope of 1. The intercept of this
 regression, -0.56 bits, indicates the systematic deviation we expect should
 explain the difference between our model and the data. [@Fig:ch5_fig34] shows
-the comparison between the original predictions shown in (A) and the resulting
-predictions with this shift. Other than the data with zero channel capacity,
-this shift is able to correct the systematic deviation for all data. We
-therefore conclude that our model ends up underestimating the experimentally
+the comparison between the original predictions shown in [@Fig:ch5_fig05](A) and
+the resulting predictions with this shift. Other than the data with zero channel
+capacity, this shift is able to correct the systematic deviation for all data.
+We therefore conclude that our model ends up underestimating the experimentally
 determined channel capacity by a constant amount of 0.43 bits.
 
 ![**Additive correction factor for channel capacity.** Solid lines represent the

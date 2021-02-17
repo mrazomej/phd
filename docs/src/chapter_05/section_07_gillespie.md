@@ -21,11 +21,11 @@ of just-in-time compilation as implemented with the Python package
 
 To confirm that the implementation of the Gillespie simulation was correct we
 perform the simulation at the mRNA level for which the closed-form solution of
-the steady-state distribution is known as detailed in . [@Fig:ch5_fig20] shows
-example trajectories of mRNA counts. Each of these trajectories were computed
-over several cell cyles, where the cell division was implemented generating a
-binomially distributed random variable that depended on the last mRNA count
-before the division event.
+the steady-state distribution is known as detailed in XXX. [@Fig:ch5_fig20]
+shows example trajectories of mRNA counts. Each of these trajectories were
+computed over several cell cyles, where the cell division was implemented
+generating a binomially distributed random variable that depended on the last
+mRNA count before the division event.
 
 ![**Stochastic trajectories of mRNA counts.** 100 stochastic trajectories
 generated with the Gillespie algorithm for mRNA counts over time for a two-state
@@ -39,16 +39,16 @@ mRNA counts"}
 To check the implementation of our stochastic algorithm we generated several of
 these stochastic trajectories in order to reconstruct the mRNA steady-state
 distribution. These reconstructed distributions for a single- and double-copy of
-the promoter can be compared with - the steady-state distribution for the
-two-state promoter. [@Fig:ch5_fig21] shows the great agreement between the
-stochastic simulation and the analytical result, confirming that our
-implementation of the Gillespie simulation is correct.
+the promoter can be compared with Eq. $\ref{eq:two_state_mRNA}$--the
+steady-state distribution for the two-state promoter. [@Fig:ch5_fig21] shows the
+great agreement between the stochastic simulation and the analytical result,
+confirming that our implementation of the Gillespie simulation is correct.
 
 ![**Comparison of analytical and simulated mRNA distribution.** Solid lines show
 the steady-state mRNA distributions for one copy (light blue) and two copies of
-the promoter (dark blue) as defined by . Shaded regions represent the
-corresponding distribution obtained using 2500 stochastic mRNA trajectories and
-taking the last cell-cyle to approximate the
+the promoter (dark blue) as defined by Eq. $\ref{eq:two_state_mRNA}$. Shaded
+regions represent the corresponding distribution obtained using 2500 stochastic
+mRNA trajectories and taking the last cell-cyle to approximate the
 distribution.](ch5_fig21){#fig:ch5_fig21 short-caption="Comparison of analytical
 and simulated mRNA distribution"}
 
@@ -72,20 +72,20 @@ division.](ch5_fig22){#fig:ch5_fig22 short-caption="Stochastic trajectories of
 mRNA and protein counts"}
 
 From these trajectories we can compute the protein steady-state distribution,
-taking into account the cell-age distribution as detailed in [@Fig:ch5_fig23].
-shows the comparison between this distribution and the one generated using the
-maximum entropy algorithm. Despite the notorious differences between the
-distributions, the Gillespie simulation and the maximum entropy results are
-indistinguishable in terms of the mean, variance, and skewness of the
-distribution. We remind the reader that the maximum entropy is an approximation
-of the distribution that gets better the more moments we add. We therefore claim
-that the approximation works sufficiently well for our purpose. The enormous
-advantage of the maximum entropy approach comes from the computation time. for
-the number of distributions that were needed for our calculations the Gillespie
-algorithm proved to be a very inefficient method given the large sample space.
-Our maximum entropy approach reduces the computation time by several orders of
-magnitude, allowing us to extensively explore different parameters of the
-regulatory model.
+taking into account the cell-age distribution as detailed in XXX.
+[@Fig:ch5_fig23] shows the comparison between this distribution and the one
+generated using the maximum entropy algorithm. Despite the notorious differences
+between the distributions, the Gillespie simulation and the maximum entropy
+results are indistinguishable in terms of the mean, variance, and skewness of
+the distribution. We remind the reader that the maximum entropy is an
+approximation of the distribution that gets better the more moments we add. We
+therefore claim that the approximation works sufficiently well for our purpose.
+The enormous advantage of the maximum entropy approach comes from the
+computation time. for the number of distributions that were needed for our
+calculations the Gillespie algorithm proved to be a very inefficient method
+given the large sample space. Our maximum entropy approach reduces the
+computation time by several orders of magnitude, allowing us to extensively
+explore different parameters of the regulatory model.
 
 ![**Comparison of protein distributions.** Comparison of the protein
 distribution generated with Gillespie stochastic simulations (blue curve) and

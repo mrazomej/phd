@@ -6,28 +6,28 @@ link](https://www.rpgroup.caltech.edu//chann_cap/software/blahut_algorithm_chann
 as an annotated Jupyter notebook)
 
 In this section we detail the computation of the channel capacity of the simple
-genetic circuit shown in . As detailed in the channel capacity is defined as the
-mutual information between input $c$ and output $p$ maximized over all possible
-input distributions $P(c)$ [@Shannon1948]. In principle there are an infinite
-number of input distributions, so the task of finding $\hat{P}(c)$, the input
-distribution at channel capacity, requires an algorithmic approach that
-guarantees the convergence to this distribution. Tkačik, Callan and Bialek
-developed a clever analytical approximation to find the $\hat{P}(c)$
-distribution [@Tkacik2008a]. The validity of their so-called small noise
-approximation requires the standard deviation of the output distribution $P(p
-\mid c)$ to be much smaller than the domain of the distribution. For our
-particular case such condition is not satisfied given the spread of the inferred
-protein distributions shown in .
+genetic circuit shown in [@Fig:ch3_fig05]. As detailed in XXX the channel
+capacity is defined as the mutual information between input $c$ and output $p$
+maximized over all possible input distributions $P(c)$ [@Shannon1948]. In
+principle there are an infinite number of input distributions, so the task of
+finding $\hat{P}(c)$, the input distribution at channel capacity, requires an
+algorithmic approach that guarantees the convergence to this distribution.
+Tkačik, Callan and Bialek developed a clever analytical approximation to find
+the $\hat{P}(c)$ distribution [@Tkacik2008a]. The validity of their so-called
+small noise approximation requires the standard deviation of the output
+distribution $P(p \mid c)$ to be much smaller than the domain of the
+distribution. For our particular case such condition is not satisfied given the
+spread of the inferred protein distributions shown in [@Fig:ch3_fig04].
 
 Fortunately there exists a numerical algorithm to approximate $\hat{P}(c)$ for
 discrete distributions. In 1972 Richard Blahut and Suguru Arimoto independently
 came up with an algorithm mathematically shown to converge to $\hat{P}(c)$
 [@Blahut1972]. To compute both the theoretical and the experimental channel
-capacity shown in , we implemented Blahut's algorithm. In the following section
-we detail the definitions needed for the algorithm. Then we detail how to
-compute the experimental channel capacity when the bins of the distribution are
-not clear given the intrinsic arbitrary nature of microscopy fluorescence
-measurements.
+capacity shown in [@Fig:ch3_fig05], we implemented Blahut's algorithm. In the
+following section we detail the definitions needed for the algorithm. Then we
+detail how to compute the experimental channel capacity when the bins of the
+distribution are not clear given the intrinsic arbitrary nature of microscopy
+fluorescence measurements.
 
 ### Blahut's algorithm
 
@@ -52,11 +52,11 @@ Q^{(i, j)} = P(p = p_i \mid c = c_j).
 $$
 
 For the case of the theoretical predictions of the channel capacity (Solid lines
-in ) the entries of matrix $\mathbf{Q}$ are given by the inferred maximum
-entropy distributions as shown in . In the next section we will discuss how to
-define this matrix for the case of the single-cell fluorescence measurements.
-Having defined these matrices we proceed to implement the algorithm shown in
-Figure 1 of [@Blahut1972].
+in [@Fig:ch3_fig05]) the entries of matrix $\mathbf{Q}$ are given by the
+inferred maximum entropy distributions as shown in [@Fig:ch3_fig04]. In the next
+section we will discuss how to define this matrix for the case of the
+single-cell fluorescence measurements. Having defined these matrices we proceed
+to implement the algorithm shown in Figure 1 of [@Blahut1972].
 
 ### Channel capacity from arbitrary units of fluorescence
 
@@ -106,6 +106,7 @@ In principle for a good number of data points the terms of higher order become
 negligible. So we can write the mutual information as
 $$
 I_{\text{biased}} \approx I_\infty + \frac{a_1}{N} + \mathcal{O}(N^{-2}).
+\label{eq:mutual_biased}
 $$
 This means that if this particular arbitrary choice of functional form is a good
 approximation, when computing the mutual information for varying number of
@@ -137,38 +138,40 @@ concentrations"}
 Given a specific number of bins used to construct $\mathbf{Q}$, we subsample a
 fraction of the data and compute the channel capacity for such matrix using the
 Blahut-Arimoto algorithm. [@Fig:ch5_fig25] shows an example where 50% of the
-data on each distribution from was sampled and binned into 100 equal bins. The
-counts on each of these bins are then normalized and used to build matrix
-$\mathbf{Q}$ that is then fed to the Blahut-Arimoto algorithm. We can see that
-for these 200 bootstrap samples the channel capacity varies by $\approx$ 0.1
-bits. Not a significant variability, nevertheless we consider that it is
-important to bootstrap the data multiple times to get a better estimate of the
-channel capacity.
+data on each distribution from [@Fig:ch5_fig24] was sampled and binned into 100
+equal bins. The counts on each of these bins are then normalized and used to
+build matrix $\mathbf{Q}$ that is then fed to the Blahut-Arimoto algorithm. We
+can see that for these 200 bootstrap samples the channel capacity varies by
+$\approx$ 0.1 bits. Not a significant variability, nevertheless we consider that
+it is important to bootstrap the data multiple times to get a better estimate of
+the channel capacity.
 
 ![**Channel capacity bootstrap for experimental data.** Cumulative distribution
 function of the resulting channel capacity estimates obtained by subsampling 200
-times 50% of each distribution shown in , binning it into 100 bins, and feeding
-the resulting $\mathbf{Q}$ matrix to the Blahut-Arimoto
+times 50% of each distribution shown in [@Fig:ch5_fig24], binning it into 100
+bins, and feeding the resulting $\mathbf{Q}$ matrix to the Blahut-Arimoto
 algorithm.](ch5_fig25){#fig:ch5_fig25 short-caption="Channel capacity bootstrap
 for experimental data"}
 
-XXX tells us that if we subsample each of the distributions from at different
-fractions, and plot them as a function of the inverse sample size we will find a
-linear relationship if the expansion of the mutual information is valid. To test
-this idea we repeated the bootstrap estimate of sampling 10%, 20%, and so on
-until taking 100% of the data. We repeated this for different number of bins
-since *a priori* for arbitrary units of fluorescence we do not have a way to
-select the optimal number of bins. [@Fig:ch5_fig26] shows the result of these
-estimates. We can see that the linear relationship proposed in holds true for
-all number of bins selected. We also note that the value of the intercept of the
-linear regression varies depending on the number of bins.
+Eq. $\ref{eq:mutual_biased}$ tells us that if we subsample each of the
+distributions from [@Fig:ch5_fig24] at different fractions, and plot them as a
+function of the inverse sample size we will find a linear relationship if the
+expansion of the mutual information is valid. To test this idea we repeated the
+bootstrap estimate of [@Fig:ch5_fig25] sampling 10%, 20%, and so on until taking
+100% of the data. We repeated this for different number of bins since *a priori*
+for arbitrary units of fluorescence we do not have a way to select the optimal
+number of bins. [@Fig:ch5_fig26] shows the result of these estimates. We can see
+that the linear relationship proposed in Eq. $\ref{eq:mutual_biased}$ holds true
+for all number of bins selected. We also note that the value of the intercept of
+the linear regression varies depending on the number of bins.
 
-![**Inverse sample size vs channel capacity.** As indicated in if the channel
-capacity obtained for different subsample sizes of the data is plotted against
-the inverse sample size there must exist a linear relationship between these
-variables. Here we perform 15 bootstrap samples of the data from , bin these
-samples using different number of bins, and perform a linear regression (solid
-lines) between the bootstrap channel capacity estimates, and the inverse sample
+![**Inverse sample size vs channel capacity.** As indicated in Eq.
+$\ref{eq:mutual_biased}$ if the channel capacity obtained for different
+subsample sizes of the data is plotted against the inverse sample size there
+must exist a linear relationship between these variables. Here we perform 15
+bootstrap samples of the data from [@Fig:ch5_fig24], bin these samples using
+different number of bins, and perform a linear regression (solid lines) between
+the bootstrap channel capacity estimates, and the inverse sample
 size.](ch5_fig26){#fig:ch5_fig26 short-caption="Inverse sample size vs channel
 capacity"}
 
@@ -183,9 +186,9 @@ number of bins is too high, we would expect some structure to emerge in the data
 that would cause the Blahut-Arimoto algorithm to return non-zero channel
 capacity estimates.
 
-[Fig:ch5_fig27] shows the result of the unbiased channel capacity estimates
-obtained for the data shown in . For the blue curve we can distinguish three
-phases:
+[@Fig:ch5_fig27] shows the result of the unbiased channel capacity estimates
+obtained for the data shown in [@Fig:ch5_fig24]. For the blue curve we can
+distinguish three phases:
 1.  A rapid increment from 0 bits to about 1.5 bits as the number of
     bins increases.
 2.  A flat region between $\approx$ 50 and 1000 bins.
@@ -203,11 +206,12 @@ We take the flat region of the experimental data ($\approx$ 100 bins) to be our
 best unbiased estimate of the channel capacity from this experimental dataset.
 
 ![**Channel capacity as a function of the number of bins.** Unbiased channel
-capacity estimates obtained from linear regressions as in . The blue curve show
-the estimates obtained from the data shown in . The orange curve is generated
-from estimates where the same data is shuffled, loosing the relationship between
-fluorescence distributions and inducer concentration.](ch5_fig27){#fig:ch5_fig27
-short-caption="Channel capacity as a function of the number of bins"}
+capacity estimates obtained from linear regressions as in [@Fig:ch5_fig26]. The
+blue curve show the estimates obtained from the data shown in [@Fig:ch5_fig24].
+The orange curve is generated from estimates where the same data is shuffled,
+loosing the relationship between fluorescence distributions and inducer
+concentration.](ch5_fig27){#fig:ch5_fig27 short-caption="Channel capacity as a
+function of the number of bins"}
 
 ### Assumptions involved in the computation of the channel capacity
 
@@ -227,7 +231,7 @@ capacity. This variability in gene copy number is an additional source of noise
 that systematically decreases the ability of the system to resolve different
 inputs. The absence of the effects that the gene copy number variability and the
 protein partition has on the information processing capacity leads to an
-overestimate of the channel capacity as shown in [Fig:ch5_fig28]. Only when
+overestimate of the channel capacity as shown in [@Fig:ch5_fig28]. Only when
 these noise sources are included in our inferences is that we get to capture the
 experimental channel capacities with no further fit parameters.
 
@@ -243,17 +247,17 @@ of channel capacity predictions for single- and multi-promoter models"}
 
 #### (ii) Non-Gaussian noise distributions.
 
-For the construction of the probability distributions used in the main text ()
-we utilized the first 6 moments of the protein distribution. The maximum entropy
-formalism tells us that the more constraints we include in the inference, the
-closer the maximum entropy distribution will be to the real distribution. But *a
-priori* there is no way of knowing how many moments should be included in order
-to capture the essence of the distribution. In principle two moments could
-suffice to describe the entire distribution as happens with the Gaussian
-distribution. To compare the effect that including more or less constraints on
-the maximum entropy inference we constructed maximum entropy distributions using
-an increasing number of moments from 2 to 6. We then computed the
-Kullback-Leibler divergence $D_{KL}$ of the form
+For the construction of the probability distributions used in the main text
+([@Fig:ch3_fig04]) we utilized the first 6 moments of the protein distribution.
+The maximum entropy formalism tells us that the more constraints we include in
+the inference, the closer the maximum entropy distribution will be to the real
+distribution. But *a priori* there is no way of knowing how many moments should
+be included in order to capture the essence of the distribution. In principle
+two moments could suffice to describe the entire distribution as happens with
+the Gaussian distribution. To compare the effect that including more or less
+constraints on the maximum entropy inference we constructed maximum entropy
+distributions using an increasing number of moments from 2 to 6. We then
+computed the Kullback-Leibler divergence $D_{KL}$ of the form
 $$
 D_{KL}(P_6(p \mid c) || P_i(p \mid c)) =
     \sum_p P_6(p \mid c) \log_2 \frac{P_6(p \mid c)}{P_i(p \mid c)},
@@ -298,10 +302,10 @@ geometrically distributed burst-size.
 The relevance of having use the Blahut-Arimoto algorithm to predict the maximum
 mutual information between input and outputs was just to understand the best
 case scenario. We show the comparison between theoretical and experimental
-input-output functions $P(p \mid c)$ in . Given the good agreement between these
-distributions we could compute the mutual information $I(c; p)$ for any
-arbitrary input distribution $P(c)$ and obtain a good agreement with the
-corresponding experimental mutual information.
+input-output functions $P(p \mid c)$ in [@Fig:ch5_fig19]. Given the good
+agreement between these distributions we could compute the mutual information
+$I(c; p)$ for any arbitrary input distribution $P(c)$ and obtain a good
+agreement with the corresponding experimental mutual information.
 
 The reason we opted to specifically report the mutual information at channel
 capacity was to put the results in a context. By reporting the upper bound in

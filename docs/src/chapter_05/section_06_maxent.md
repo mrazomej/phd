@@ -39,7 +39,8 @@ To illustrate the principle let us focus on a univariate distribution $P_X(x)$.
 The $n^{\text{th}}$ moment of the distribution for a discrete set of possible
 values of $x$ is given by
 $$
-\left\langle{x^n}\right\rangle \equiv \sum_x x^n P_X(x).
+    \left\langle{x^n}\right\rangle \equiv \sum_x x^n P_X(x).
+    \label{eq:mom_ref}
 $$
 
 Now assume that we have knowledge of the first $m$ moments
@@ -68,9 +69,10 @@ For an optimization problem subject to constraints we make use of the method of
 the Lagrange multipliers. For this we define the constraint equation
 $\mathcal{L}(x)$ as 
 $$
-\mathcal{L}(x) \equiv H(x) - \sum_{i=0}^m
-\left[ \lambda_i \left( \left\langle{x^i}\right\rangle -
-\sum_x x^i P_X(x) \right) \right],
+    \mathcal{L}(x) \equiv H(x) - \sum_{i=0}^m
+    \left[ \lambda_i \left( \left\langle{x^i}\right\rangle -
+    \sum_x x^i P_X(x) \right) \right],
+    \label{eq:constraint_eq}
 $$
 where $\lambda_i$ is the Lagrange multiplier associated with the $i^\text{th}$
 moment. The inclusion of the zeroth moment is an additional constraint to
@@ -90,6 +92,7 @@ $$
 P_H(x) = \exp \left(- 1 - \sum_{i=0}^m \lambda_i x^i \right)
 = \frac{1}{\mathcal{Z}}
 \exp \left( - \sum_{i=1}^m \lambda_i x^i \right),
+\label{eq:maxEnt}
 $$
 where $\mathcal{Z}$ is the normalization constant that can be obtained by
 substituting this solution into the normalization constraint. This results in
@@ -98,13 +101,13 @@ $$
 \sum_x \exp \left( - \sum_{i=1}^m \lambda_i x^i \right).
 $$
 
-XXX is the general form of the MaxEnt distribution for a univariate
-distribution. The computational challenge then consists in finding numerical
-values for the Lagrange multipliers $\{ \lambda_i \}$ such that $P_H(x)$
-satisfies our constraints. In other words, the Lagrange multipliers weight the
-contribution of each term in the exponent such that when computing any of the
-moments we recover the value of our constraint. Mathematically what this means
-is that $P_H(x)$ must satisfy
+Eq. $\ref{eq:maxEnt}$ is the general form of the MaxEnt distribution for a
+univariate distribution. The computational challenge then consists in finding
+numerical values for the Lagrange multipliers $\{ \lambda_i \}$ such that
+$P_H(x)$ satisfies our constraints. In other words, the Lagrange multipliers
+weight the contribution of each term in the exponent such that when computing
+any of the moments we recover the value of our constraint. Mathematically what
+this means is that $P_H(x)$ must satisfy
 $$
 \sum_x x^n P_H(x) =
 \sum_x \frac{x^n}{\mathcal{Z}}
@@ -122,11 +125,11 @@ $$
 P_H(x) = \frac{1}{\mathcal{Z}} \exp \left( \lambda x \right).
 $$
 Using any numerical minimization package we can easily find the value of the
-Lagrange multiplier $\lambda$ that satisfies our constraint. shows two two
-examples of distributions that satisfy the constraint. Panel (A) shows a
-distribution consistent with the 4.5 average where both 4 and 5 are equally
-likely. Nevertheless in the information we got about the nature of the die it
-was never stated that some of the faces were forbidden. In that sense the
+Lagrange multiplier $\lambda$ that satisfies our constraint. [@Fig:ch5_fig15]
+shows two two examples of distributions that satisfy the constraint. Panel (A)
+shows a distribution consistent with the 4.5 average where both 4 and 5 are
+equally likely. Nevertheless in the information we got about the nature of the
+die it was never stated that some of the faces were forbidden. In that sense the
 distribution is committing to information about the process that we do not
 posses. Panel (B) by contrast shows the MaxEnt distribution that satisfies this
 constraint. Since this distribution maximizes Shannon's entropy it is guaranteed
@@ -142,7 +145,7 @@ short-caption="Maximum entropy distribution of six-face die"}
 The MaxEnt principle can easily be extended to multivariate distributions. For
 our particular case we are interested in the mRNA and protein joint distribution
 $P(m, p)$. The definition of a moment $\left\langle m^x p^y \right\rangle$ is a
-natural extension of of the form
+natural extension of Eq. $\ref{eq:mom_ref}$ of the form
 $$
 \left\langle m^x p^y \right\rangle = \sum_m \sum_p m^x p^y P(m, p).
 $$
@@ -151,6 +154,7 @@ As a consequence the MaxEnt joint distribution $P_H(m, p)$ is of the form
 $$
 P_H(m, p) = \frac{1}{\mathcal{Z}}
               \exp \left( - \sum_{(x,y)} \lambda_{(x,y)} m^x p^y \right),
+\label{eq:maxEnt_joint}
 $$
 where $\lambda_{(x,y)}$ is the Lagrange multiplier associated with the moment
 $\left\langle m^x p^y \right\rangle$, and again $\mathcal{Z}$ is the
@@ -215,6 +219,7 @@ Let the $M \times N$ matrix $\mathbf{A}$ contain all the factors used to compute
 the moments that serve as constraints, where each entry is of the form 
 $$
 A_{ij} = m_i^{x_j} \cdot p_i^{y_j}.
+\label{eq:maxent_rules}
 $$
 In other words, recall that to obtain any moment $\left\langle m^x p^y
 \right\rangle$ we compute
@@ -226,8 +231,9 @@ can't include the sample space up to infinity) $\{(m, p)_1, (m, p)_2, \ldots (m,
 p)_N \}$, and we have $N$ exponent pairs $(x, y)$ corresponding to the $N$
 moments used to constraint the maximum entropy distribution $\{(x, y)_1, (x,
 y)_2, \ldots, (x, y)_N \}$, then matrix $\mathbf{A}$ contains all the possible
-$M$ by $N$ terms of the form described in . Let also $\mathbf{v}$ be a vector of
-length $N$ containing all the constraints with each entry of the form 
+$M$ by $N$ terms of the form described in Eq. $\ref{eq:maxent_rules}$. Let also
+$\mathbf{v}$ be a vector of length $N$ containing all the constraints with each
+entry of the form 
 $$
 v_j = \left\langle{m^{x_j} p^{y_j}}\right\rangle,
 $$
@@ -239,9 +245,9 @@ $$
 $$
 where $\lambda_0$ is the Lagrange multiplier associated with the normalization
 constraint, and $\lambda_j$ is the Lagrange multiplier associated with the
-$j^\text{th}$ constraint. This constraint equation is equivalent to , but now
-all the details of how to compute the moments are specified in matrix
-$\mathbf{A}$.
+$j^\text{th}$ constraint. This constraint equation is equivalent to Eq.
+$\ref{eq:constraint_eq}$, but now all the details of how to compute the moments
+are specified in matrix $\mathbf{A}$.
 
 With this notation in hand we now proceed to rescale the problem. The first step
 consists of rescaling the terms to compute the entries of matrix $\mathbf{A}$.
@@ -313,13 +319,13 @@ convergence speed.
 Having explained the theoretical background along with the practical
 difficulties and a workaround strategy proposed by Bretthorst, we implemented
 the inference using the moments obtained from averaging over the variability
-along the cell cycle (See ). and present these inferences for both mRNA and
-protein levels respectively for different values of the repressor-DNA binding
-energy and repressor copy numbers per cell. From these plots we can easily
-appreciate that despite the fact that the mean of each distribution changes as
-the induction level changes, there is a lot of overlap between distributions.
-This as a consequence means that at the single-cell level cells cannot perfectly
-resolve between different inputs.
+along the cell cycle (See ). [@Fig:ch5_fig16] and [@Fig:ch5_fig17] present these
+inferences for both mRNA and protein levels respectively for different values of
+the repressor-DNA binding energy and repressor copy numbers per cell. From these
+plots we can easily appreciate that despite the fact that the mean of each
+distribution changes as the induction level changes, there is a lot of overlap
+between distributions. This as a consequence means that at the single-cell level
+cells cannot perfectly resolve between different inputs.
 
 ![**Maximum entropy mRNA distributions for simple repression constructs.** mRNA
 distributions for different biophysical parameters. From left to right the
@@ -356,14 +362,15 @@ strain with the proper background fluorescence subtracted as explained in for
 the noise measurements. In the case of the theoretical predictions of the
 protein distribution we also normalize each protein value by the predicted mean
 protein level $\left\langle p \right\rangle$, having now non-dimensional scales
-that can be directly compared. shows the experimental (color curves) and
-theoretical (dark dashed line) cumulative distribution functions for the three
-$\Delta lacI$ strains. As in , we do not expect differences between the
-operators, but we explicitly plot them separately to make sure that this is the
-case. We can see right away that as we would expect given the limitations of the
-model to accurately predict the noise and skewness of the distribution, the
-model doesn't accurately predict the data. Our model predicts a narrower
-distribution compared to what we measured with single-cell microscopy.
+that can be directly compared. [@Fig:ch5_fig18] shows the experimental (color
+curves) and theoretical (dark dashed line) cumulative distribution functions for
+the three $\Delta lacI$ strains. As in [@Fig:ch5_fig12], we do not expect
+differences between the operators, but we explicitly plot them separately to
+make sure that this is the case. We can see right away that as we would expect
+given the limitations of the model to accurately predict the noise and skewness
+of the distribution, the model doesn't accurately predict the data. Our model
+predicts a narrower distribution compared to what we measured with single-cell
+microscopy.
 
 ![**Experiment vs. theory comparison for $\Delta lacI$ strain.** Example
 fold-change empirical cumulative distribution functions (ECDF) for strains with
@@ -374,11 +381,12 @@ distributions were fitted using the first six moments of the protein
 distribution.](ch5_fig18){#fig:ch5_fig18 short-caption="Experiment vs. theory
 comparison for $\Delta lacI$ strain"}
 
-The same narrower prediction applies to the regulated promoters. XXX, shows the
-theory-experiment comparison of the cumulative distribution functions for
-different repressor binding sites (different figures), repressor copy numbers
-(rows), and inducer concentrations (columns). In general the predictions are
-systematically narrower compared to the actual experimental data.
+The same narrower prediction applies to the regulated promoters.
+[@Fig:ch5_fig19], shows the theory-experiment comparison of the cumulative
+distribution functions for different repressor binding sites (different
+figures), repressor copy numbers (rows), and inducer concentrations (columns).
+In general the predictions are systematically narrower compared to the actual
+experimental data.
 
 ![**Experiment vs. theory comparison for regulated promoters.** Example
 fold-change empirical cumulative distribution functions (ECDF) for regulated
