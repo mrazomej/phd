@@ -252,6 +252,8 @@ having certain discrete number of mRNA $m$ at time $t$. The transition between
 states depends on the previously mentioned rates.](ch5_fig36){#fig:ch5_fig36
 short-caption="One-state Poisson promoter"}
 
+#### Obtaining the partial differential equation for the generating function
+
 The first thing we must do is to transform this infinite-dimensional system of
 ordinary differential equations in $m$ to a single partial differential equation
 using the generating function. For this particular case there are two generating
@@ -444,6 +446,8 @@ $$
 \label{eq:gen_2nd}
 $$
 
+#### Solving the partial differential equation
+
 Eq. $\ref{eq:gen_2nd}$ looks almost like the so-called Kummer's equation also
 known as the confluent hypergeometric differential equation--a second order
 differential equationof the form
@@ -558,6 +562,9 @@ G(z) &= A {}_1F_1
 \end{aligned}
 \label{eq:gen_sol}
 $$
+
+#### Finding the coefficients for the solution
+
 We can now use the normalization condition for the generating function, this is,
 $$
 G(1) = \sum_{m=0}^\infty 1^m P(m) = 1.
@@ -623,7 +630,7 @@ Note that the rising factorials can be rewritten as
 $$
 \begin{aligned}
     a^{(m)} &=a(a+1)(a+2) \cdots(a+m-1) \\
-    &=a \cdot(a+1)[(a+1)+1][(a+1)+2] \cdots[(a+1)+m 2] \\
+    &=a \cdot(a+1)[(a+1)+1][(a+1)+2] \cdots[(a+1)+m - 2] \\
     &=a \cdot(a+1)^{(m-1)} .
 \end{aligned}
 $$
@@ -750,8 +757,429 @@ $$
 G(z) = 
 {}_1F_1 
 \left(
-    \frac{k^{(p)}_{\text{on}}}{\gamma_m} + 1, 
-    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m} + 1, 
+    \frac{k^{(p)}_{\text{on}}}{\gamma_m}, 
+    \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}, 
     \frac{r_m}{\gamma_m}(z - 1)
 \right).
+\label{eq:gen_final}
 $$
+
+#### Extracting the steady-state mRNA distribution
+
+Let us quickly recapitulate where we are. We started with a system of infinite
+many ordinary differential equations, one for each promoter state and mRNA copy
+number that defined the master equation for our two-state promoter. We then used
+the generating function to transform this system into a single partial
+differential equation. The resulting differential equation for the generating
+function took the form of the so-called Kummer differential equation which has
+as solution the confluent hypergeometric function and the Tricomi function.
+After imposing the normalization condition on the generating function we found
+that the coefficient of the confluent hypergeometric function was $A=1$. We then
+used the fact that the mean mRNA copy number $\langle m \rangle$ exists to show
+that the coefficient of the Tricomi function is $B=0$. All that effort lead us
+to Eq. $\ref{eq:gen_final}$, the generating function for the two-state promoter
+mRNA steady state distribution. All we have left is trying to beat Eq.
+$\ref{eq:gen_final}$ into the form of a standard generating function in order
+to extract the probability distribution from it.
+
+Let us begin this task by writing down Eq. $\ref{eq:gen_final}$ with the full
+definition of the confluent hypergeometric function. This gives us
+$$
+G(z) = \sum_{m=0}^\infty 
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(m)}
+}{
+    \left(\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(m)}
+}
+\frac{
+    \left[\frac{r_m}{\gamma_m} (z-1) \right]^m
+}{
+    m!
+}
+$$
+Let us now split apart the term $(z-1)$, obtaining
+$$
+G(z) = \sum_{m=0}^\infty 
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(m)}
+}{
+    \left(\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(m)}
+}
+\frac{
+    \left(\frac{r_m}{\gamma_m} \right)^m
+}{
+    m!
+}
+(z - 1)^m.
+$$
+We now rewrite this last term $(z-2)^m$ using the binomial expansion. This
+results in
+$$
+G(z) = \sum_{m=0}^\infty 
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(m)}
+}{
+    \left(\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(m)}
+}
+\frac{
+    \left(\frac{r_m}{\gamma_m} \right)^m
+}{
+    m!
+}
+\left[ 
+    \sum_{n=0}^m {m \choose n} z^n (-1)^{m -  n}.
+\right]
+$$
+We can take out the sum over the index $n$ to the front, obtaining
+$$
+G(z) = \sum_{m=0}^\infty \sum_{n=0}^n
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(m)}
+}{
+    \left(\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(m)}
+}
+\frac{
+    \left(\frac{r_m}{\gamma_m} \right)^m
+}{
+    m!
+}
+\left[ 
+    {m \choose n} z^n (-1)^{m -  n}
+\right].
+$$
+To make further progress we must re-index the sum. The trick is to reverse the
+default order of the sums as
+$$
+\sum_{m=0}^{\infty} \sum_{n=0}^{m} = \sum_{n=0}^{\infty} \sum_{m=n}^{\infty}.
+$$
+To see the logic of the sum we point the reader to [@Fig:ch5_fig37]. The key is
+to notice that the double sum $\sum_{m=0}^\infty \sum_{n=0}^m$ is adding all
+possible pairs $(m, n)$ in the lower triangle, so we can add the terms
+vertically as the original sum indexing suggests, i.e.
+$$
+\sum_{m=0}^{\infty} \sum_{n=0}^{m} x_{(m, n)}= 
+x_{(0, 0)} + x_{(1, 0)} + x_{(1, 1)} + x_{(2, 0)} + x_{(2, 1)} + x_{(2, 2)} + 
+\ldots,
+$$
+where the variable $x$ is just a placeholder to indicate the order in which the
+sum is taking place. But we can also add the terms horizontally as
+$$
+\sum_{n=0}^{\infty} \sum_{m=n}^{\infty} x_{(m, n)} =
+x_{(0, 0)} + x_{(1, 0)} + x_{(2, 0)} + \ldots + x_{(1,1)} + x_{(2, 1)} + \ldots,
+$$
+which still adds all of the lower triangle terms.
+
+![**Reindexing double sum.** Schematic for reindexing the sum $\sum_{m=0}^\infty
+\sum_{n=0}^m$. Blue circles depict the 2D grid of nonnegative integers
+restricted to the lower triangular part of the $m, n$ plane. The trick is that
+this double sum runs over all $(m, n)$ pairs with $n\le m$. Summing $m$ first
+instead of $n$ requires determining the boundary: the upper boundary of the
+$n$-first double sum becomes the lower boundary of the $m$-first double
+sum.](ch5_fig37){#fig:ch5_fig37 short-caption="Reindexing double sum"}
+
+Rewriting the sum in this way results in
+$$
+G(z) = \sum_{n=0}^\infty \sum_{m=n}^\infty
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(m)}
+}{
+    \left(\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(m)}
+}
+\frac{
+    \left(\frac{r_m}{\gamma_m} \right)^m
+}{
+    m!
+}
+\left[ 
+    {m \choose n} z^n (-1)^{m -  n}
+\right].
+$$
+What this allows us to do is to separate the variable $z^n$ from the rest of the
+equation, leaving the generating function in the standard format from where to
+read the probability distribution $P(m)$. This looks as
+$$
+G(z) = \sum_{n=0}^\infty z^n 
+\left[
+\sum_{m=n}^\infty
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(m)}
+}{
+    \left(\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(m)}
+}
+\frac{
+    \left(\frac{r_m}{\gamma_m} \right)^m
+}{
+    m!
+}
+    {m \choose n} (-1)^{m -  n}
+\right].
+$$
+Given the "dummy" nature of $z$, it does not matter what the sum variable name 
+is. We can simply rename $m = n$ and $n = m$ and conclude that our distribution
+takes the form
+$$
+P(m) = 
+\sum_{n=m}^\infty
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(n)}
+}{
+    \left(\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(n)}
+}
+\frac{
+    \left(\frac{r_m}{\gamma_m} \right)^n
+}{
+    n!
+}
+    \frac{n!}{m! (n - m)!} (-1)^{n -  m}.
+\label{eq:prob_ss_1}
+$$
+
+We can simplify Eq. $\ref{eq:prob_ss_1}$ further. First we split the term 
+$(-1)^{n-m} = (-1)^{-m} (-1)^{n}$. Furthermore we absorbe the $(-1)^{n}$ term
+on the $(r_m / \gamma_m)^n$ term. We also cancel the obvious $n!/n!$ term, 
+obtaining
+$$
+P(m) = \sum_{n = m}^\infty
+\frac{(-1)^{-m}}{m!}
+\frac{
+    \left( \frac{k^{(p)}_{\text{on}}}{\gamma_m}\right)^{(n)}
+}{
+    \left( \frac{k^{(p)}_{\text{on}}+ k^{(p)}_{\text{off}}}
+    {\gamma_m}\right)^{(n)}
+}
+\frac{\left( - \frac{r_m}{\gamma_m}\right)^n}{(n - m)!}.
+\label{eq:prob_ss_2}
+$$
+We recognize in Eq. $\ref{eq:prob_ss_2}$ that we have almost all the terms for a
+confluent hypergeometric function ${}_1F_1$. The problem is that the sum starts
+at $n = m$ rather than $n = 0$. Since the upper limit of the sum is $\infty$, we
+can simply define $u = n - m \Rightarrow n = m + u$. We can then use the 
+following property of raising factorials
+$$
+\begin{split}
+a^{(n)} &=a(a+1)(a+2) \cdots(a+n-1), \\
+&=a(a+1)(a+2) \cdots(a+(u+m)-1), \\
+&=a(a+1) \cdots(a+m-1)(a+m)(a+m+1) \cdots(a+m+u-1), \\
+&=a^{(m)}(a+m)^{(u)}.
+\end{split}
+$$
+Making these substitutions results in
+$$
+P(m) = \sum_{u=0}^{\infty} 
+\frac{(-1)^{-m}}{m !} 
+\frac{
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m} \right)^{(m)}
+    \left(\frac{k^{(p)}_{\text{on}}}{\gamma_m} + m \right)^{(u)}
+    \left(-\frac{r_m}{\gamma_m}\right)^{u}
+    \left(-\frac{r_m}{\gamma_m}\right)^{m}
+}{
+    \left(
+        \frac{
+            k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}
+        }{
+            \gamma_m
+        }
+    \right)^{(m)}
+    \left(
+        \frac{
+            k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}
+            }{
+                \gamma_m
+            } + m
+    \right)^{(n)}}
+    \frac{1}{u!}.
+$$
+Taking out of the sum the terms that do not depend on $u$ gives
+$$
+P(m) = 
+\frac{(-1)^{-m}}{m!}
+\frac{
+    \left(
+        \frac{
+            k^{(p)}_{\text{on}}
+        }{
+            \gamma_m
+        }
+    \right)^{(m)}
+}{
+    \left(
+        \frac{
+            k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}
+        }{
+            \gamma_m
+        }
+    \right)^{(m)}
+}
+\left(- \frac{r_m}{\gamma_m}\right)^m
+\left[
+    \sum_{u=0}^{\infty}
+    \frac{
+        \left(
+            \frac{
+                k^{(p)}_{\text{on}} 
+            }{
+                \gamma_m
+            }
+            + m
+        \right)^{(u)}
+    }{
+        \left(
+            \frac{
+                k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}} 
+            }{
+                \gamma_m
+            }
+            + m
+        \right)^{(u)}
+    }
+    \frac{
+        \left(- \frac{r_m}{\gamma_m}\right)^u
+    }{u!}
+\right].
+$$
+We recognize the term in the square brackets to be the necessary components for
+a confluent hypergeometric function. We can therefore write the mRNA steady 
+state distribution as
+$$
+P(m) = 
+\frac{1}{m!}
+\frac{
+    \left(
+        \frac{
+            k^{(p)}_{\text{on}}
+        }{
+            \gamma_m
+        }
+    \right)^{(m)}
+}{
+    \left(
+        \frac{
+            k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}
+        }{
+            \gamma_m
+        }
+    \right)^{(m)}
+}
+\left(\frac{r_m}{\gamma_m}\right)^m
+{}_1F_1 
+\left(
+    \frac{
+            k^{(p)}_{\text{on}} 
+        }{
+            \gamma_m
+        }
+    + m,
+    \frac{
+            k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}} 
+        }{
+            \gamma_m
+        }
+    + m,
+    - \frac{r_m}{\gamma_m}
+\right).
+$$
+For the last ingredient, we remove the rising factorials using the identity
+$$
+\begin{split}
+a^{(m)} &=(a)(a+1)(a+2) \cdots(a+m-1), \\
+&=\frac{(a+m-1) \cdots(a)(a-1) \cdots (1)}{(a+1) \cdots(1)}, \\
+&=\frac{(a+m-1) !}{(a-1) !}.
+\end{split}
+$$
+This allows us to write
+$$
+\begin{split}
+P(m) &= 
+\frac{1}{m!}
+\frac{
+    \left(
+        \frac{k^{(p)}_{\text{on}}}{\gamma_m} + m - 1
+    \right) !
+}{
+    \left(
+        \frac{k^{(p)}_{\text{on}}}{\gamma_m} - 1
+    \right) !
+}
+\frac{
+    \left(
+        \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m} - 1
+    \right) !
+}{
+    \left(
+        \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m} + m - 1
+    \right) !
+}
+\left( \frac{r_m}{\gamma_m} \right)^m \\
+&\times {}_1F_1 
+\left(
+    \frac{
+            k^{(p)}_{\text{on}} 
+        }{
+            \gamma_m
+        }
+    + m,
+    \frac{
+            k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}} 
+        }{
+            \gamma_m
+        }
+    + m,
+    - \frac{r_m}{\gamma_m}
+\right).
+\end{split}
+$$
+Or in terms of Gamma functions we obtain the final form of the steady-state
+mRNA distribution
+$$
+\begin{aligned}
+P(m) &= 
+\frac{1}{\Gamma(m + 1)}
+\frac{
+    \Gamma
+    \left(
+        \frac{k^{(p)}_{\text{on}}}{\gamma_m} + m
+    \right)
+}{
+    \Gamma
+    \left(
+        \frac{k^{(p)}_{\text{on}}}{\gamma_m}
+    \right)
+}
+\frac{
+    \Gamma
+    \left(
+        \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}
+    \right)
+}{
+    \Gamma
+    \left(
+        \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m} + m 
+    \right)
+}
+\left( \frac{r_m}{\gamma_m} \right)^m \\
+&\times {}_1F_1 
+\left(
+    \frac{
+            k^{(p)}_{\text{on}} 
+        }{
+            \gamma_m
+        }
+    + m,
+    \frac{
+            k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}} 
+        }{
+            \gamma_m
+        }
+    + m,
+    - \frac{r_m}{\gamma_m}
+\right),
+\end{aligned}
+$$
+The equation used to fit the kinetic parameters for the unregulated promoter.
