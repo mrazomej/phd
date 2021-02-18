@@ -65,7 +65,8 @@ p_\text{bound} =
 e^{-\beta \Delta\varepsilon_{RA}} + 
 \frac{R_I}{N_{NS}}e^{-\beta \Delta\varepsilon_{RI}} + 
 \frac{P}{N_{NS}}e^{-\beta\Delta\varepsilon_{P}}},
-$${#eq:p_bound_definition}
+\label{eq:p_bound_definition}
+$$
 with $\beta = \frac{1}{k_BT}$ where $k_B$ is the Boltzmann constant and $T$ is
 the temperature of the system. As $k_BT$ is the natural unit of energy at the
 molecular length scale, we treat the products $\beta \Delta\varepsilon_{j}$ as
@@ -79,7 +80,8 @@ expression), namely,
 $$
 \text{fold-change}
 \equiv \frac{p_\text{bound}(R > 0)}{p_\text{bound}(R = 0)}.
-$${#eq:fold_change_definition} 
+\label{eq:fold_change_definition}
+$$
 We can simplify this expression using two well-justified approximations: (1)
 $\frac{P}{N_{NS}}e^{-\beta\Delta\varepsilon_{P}}\ll 1$ implying that the RNAP
 binds weakly to the promoter ($N_{NS} = 4.6 \times 10^6$, $P \approx 10^3$
@@ -94,7 +96,8 @@ $$
 \left(1+\frac{R_A}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}}\right)^{-1} \equiv
 \left( 1+p_A(c) \frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}}
 \right)^{-1},
-$${#eq:fold_change_approx} 
+\label{eq:fold_change_approx}
+$$
 where in the last step we have introduced the fraction $p_A(c)$ of repressors in
 the active state given a concentration $c$ of inducer, such that $R_A(c)=p_A(c)
 R$. Since inducer binding shifts the repressors from the active to the inactive
@@ -108,7 +111,8 @@ states (see [@Fig:ch2_fig02](B)), namely,
 $$
 p_A(c) = \frac{\left(1+\frac{c}{K_A}\right)^n}{\left(1+\frac{c}{K_A}\right)^n +
 e^{-\beta \Delta \varepsilon_{AI} }\left(1+\frac{c}{K_I}\right)^n},
-$${#eq:p_active}
+\label{eq:p_active}
+$$
 where $K_A$ and $K_I$ represent the dissociation constant between the inducer
 and repressor in the active and inactive states, respectively, and $\Delta
 \varepsilon_{AI} = \varepsilon_{I} - \varepsilon_{A}$ is the free energy
@@ -124,7 +128,7 @@ inducer ($\Delta \varepsilon_{AI} > 0$) will be driven towards the inactive
 state upon inducer binding when $K_I < K_A$. The specific case of a repressor
 dimer with $n=2$ inducer binding sites is shown in [@Fig:ch2_fig02](B).
 
-Substituting $p_A(c)$ from [@Eq:p_active] into [@Eq:fold_change_approx] yields
+Substituting $p_A(c)$ from Eq. $\ref{eq:p_active}$ into Eq. $\ref{eq:fold_change_approx}$ yields
 the general formula for induction of a simple repression regulatory architecture
 [@Phillips2015a], namely,
 $$
@@ -132,7 +136,8 @@ $$
 \left( 1+\frac{\left(1+\frac{c}{K_A}\right)^n}{\left(1+\frac{c}{K_A}\right)^n +
 e^{-\beta \Delta \varepsilon_{AI} }\left(1+\frac{c}{K_I}\right)^n}
 \frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}} \right)^{-1}.
-$${#eq:fold_change_full}
+\label{eq:fold_change_full}
+$$
 While we have used the specific case of simple repression with induction to
 craft this model, the same mathematics describe the case of corepression in
 which binding of an allosteric effector stabilizes the active state of the
@@ -144,9 +149,9 @@ general approach can be used to describe a variety of other motifs such as
 activation, multiple repressor binding sites, and combinations of activator and
 repressor binding sites [@Bintu2005; @Brewster2014; @Weinert2014].
 
-The formula presented in [@Eq:fold_change_full] enables us to make precise
+The formula presented in Eq. $\ref{eq:fold_change_full}$ enables us to make precise
 quantitative statements about induction profiles. Motivated by the broad range
-of predictions implied by [@Eq:fold_change_full], we designed a series of
+of predictions implied by Eq. $\ref{eq:fold_change_full}$, we designed a series of
 experiments using the *lac* system in *E. coli* to tune the control parameters
 for a simple repression genetic circuit. As discussed in [@Fig:ch2_fig01](C),
 previous studies from our lab have provided well-characterized values for many

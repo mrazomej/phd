@@ -135,7 +135,8 @@ $$
 \text{fold-change} = \frac{\langle I_{R > 0}
 \rangle - \langle I_\text{auto}\rangle}{\langle I_{R = 0} \rangle - \langle
 I_\text{auto}\rangle},
-$${#eq:fold_change_fluor}
+\label{eq:fold_change_fluor}
+$$
 where $\langle I_{R > 0}\rangle$ is the average cell
 YFP intensity in the presence of repressor, $\langle I_{R = 0}\rangle$ is the
 average cell YFP intensity in the absence of repressor, and $\langle
@@ -152,7 +153,8 @@ by
 $$
 P(K_A, K_I \mid D) = \frac{P(D \mid K_A, K_I)P(K_A,
 K_I)}{P(D)},
-$${#eq:bayes_theorem}
+\label{eq:bayes_theorem}
+$$
 where $D$ is all the data composed of independent variables (repressor copy
 number $R$, repressor-DNA binding energy $\Delta\varepsilon_{RA}$, and inducer
 concentration $c$) and one dependent variable (experimental fold-change). $P(D
@@ -181,7 +183,8 @@ P(D \vert K_A, K_I, \sigma) =
 \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}\prod\limits_{i=1}^n \exp
 \left[-\frac{(\text{fold-change}^{(i)}_{\exp} - \text{fold-change}(K_A, K_I,
 R^{(i)}, \Delta\varepsilon_{RA}^{(i)}, c^{(i)}))^2}{2\sigma^2}\right],
-$${#eq:likelihood} 
+\label{eq:likelihood}
+$$
 where $\text{fold-change}^{(i)}_{\text{exp}}$ is the experimental fold-change
 and $\text{fold-change}(\,\cdots)$ is the theoretical prediction. The product
 $\prod_{i=1}^n$ captures the assumption that the $n$ data points are
@@ -204,7 +207,8 @@ $$
 P(\tilde{k}_A, \tilde{k}_I, \sigma)
 \equiv \frac{1}{(\tilde{k}_A^{\max} - \tilde{k}_A^{\min})}
 \frac{1}{(\tilde{k}_I^{\max} - \tilde{k}_I^{\min})}\frac{1}{\sigma}.
-$${#eq:ka_ki_prior}
+\label{eq:ka_ki_prior}
+$$
 These priors are maximally uninformative meaning that they imply no prior
 knowledge of the parameter values. We defined the $\tilde{k}_A$ and
 $\tilde{k}_A$ ranges uniform on the range of $-7$ to $7$, although we note that

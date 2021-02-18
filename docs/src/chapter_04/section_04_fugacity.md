@@ -30,7 +30,8 @@ Appendix XXX, we can write the fold-change in the grand
 canonical ensemble as 
 $$
 \text{fold-change} = \frac{1}{1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}},
-$${#eq:ch4_eq10}
+\label{eq:ch4_eq10}
+$$
 where $\lambda_r$ is the fugacity of the repressor and $\Delta \varepsilon_{RA}$
 represents the energy difference between the repressor's binding affinity to the
 specific operator of interest relative to the repressor's non-specific binding
@@ -40,7 +41,8 @@ We now expand our definition of the total number of repressors in the
 system, $R_{\text{tot}}$, so that it is given by 
 $$
 R_{\text{tot}} = R_S + R_{NS} + R_C,
-$${#eq:ch4_eq11}
+\label{eq:ch4_eq11}
+$$
 where $R_S$, $R_{NS}$, and
 $R_C$ represent the number of repressors bound to the specific promoter,
 a non-specific binding site, or to a competitor binding site,
@@ -48,7 +50,8 @@ respectively. The value of $R_S$ is given by
 $$
 R_S = N_S \frac{\lambda_r e^{-\beta \Delta \varepsilon_{RA}}}
 {1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}},
-$${#eq:ch4_eq12}
+\label{eq:ch4_eq12}
+$$
 where $N_S$ is the number of specific binding sites in the cell. The
 value of $R_{NS}$ is similarly give by 
 $$
@@ -59,7 +62,8 @@ use $N_{NS} = 4.6 \times 10^6$ for *E. coli*), and $R_C$ is given by
 $$
 R_C = N_C \frac{\lambda_r e^{-\beta \Delta \varepsilon_C}}
 {1 + \lambda_r e^{-\beta \Delta \varepsilon_C}},
-$${#eq:ch4_eq14}
+\label{eq:ch4_eq14}
+$$
 where $N_C$ is the number of competitor sites in the cell and $\Delta
 \varepsilon_C$ is the binding energy of the repressor to the competitor site
 relative to its non-specific binding energy to the rest of the genome.
@@ -73,7 +77,8 @@ p_A(c) =
 \frac{\left(1+\frac{c}{K_A}\right)^n}
 {\left(1+\frac{c}{K_A}\right)^n+e^{-\beta \Delta \varepsilon_{AI} }
 \left(1+\frac{c}{K_I}\right)^n}.
-$${#eq:ch4_eq15}
+\label{eq:ch4_eq15}
+$$
 Substituting in into the modified yields the form
 $$
 p_A(c) R_{\text{tot}} = 
@@ -82,7 +87,8 @@ N_S \frac{\lambda_r e^{-\beta \Delta \varepsilon_{RA}}}
 N_{NS} \frac{\lambda_r}{1 + \lambda_r} + 
 N_C \frac{\lambda_r e^{-\beta \Delta \varepsilon_C}}
 {1 + \lambda_r e^{-\beta \Delta \varepsilon_C}}.
-$${#eq:ch4_eq16}
+\label{eq:ch4_eq16}
+$$
 For systems where the number of binding sites $N_S$, $N_{NS}$, and $N_C$ are
 known, together with the binding affinities $\Delta \varepsilon_{RA}$ and
 $\Delta \varepsilon_C$, we can solve numerically for $\lambda_r$ and then
@@ -185,7 +191,8 @@ N_S \frac{\lambda_r e^{-\beta \Delta \varepsilon_{RA}}}
 N_{NS} \frac{\lambda_r}{1 + \lambda_r} +
 N_C \frac{\lambda_r e^{-\beta \Delta \varepsilon_C}}
 {1 + \lambda_r e^{-\beta \Delta \varepsilon_C}},
-$${#eq:ch4_eq17}
+\label{eq:ch4_eq17}
+$$
 whereupon substituting in the value of $\lambda_r$ into will yield the
 leakiness. Similarly, the limit of saturating inducer is found by determining
 $\lambda_r$ from the form
@@ -197,7 +204,8 @@ R_{\text{tot}}
 \frac{\lambda_r}{1 + \lambda_r} +
 N_C \frac{\lambda_r e^{-\beta \Delta \varepsilon_C}}
 {1 + \lambda_r e^{-\beta \Delta \varepsilon_C}}.
-$${#eq:ch4_eq18}
+\label{eq:ch4_eq18}
+$$
 
 In we show how the leakiness, saturation, and dynamic range vary with $R$ and
 $\Delta \varepsilon_{RA}$ in systems with $N_S =10$ or $N_S = 100$. An

@@ -36,7 +36,8 @@ by
 $$
 \text{fold-change} = (\text{leakiness}) + (\text{dynamic range}) 
 \frac{\left( \frac{c}{K} \right)^n}{1 + \left( \frac{c}{K} \right)^n},
-$${#eq:ch4_eq27}
+\label{eq:ch4_eq27}
+$$
 where, as in the main text, the leakiness represents the minimum fold-change,
 the dynamic range represents the difference between the maximum and minimum
 fold-change, $K$ is the repressor-inducer dissociation constant, and $n$ denotes
@@ -95,12 +96,14 @@ Following , fold-change is given by
 $$
 \text{fold-change} = \left( 1 + p_A(c) \frac{R}{N_{NS}}e^{-\beta
 \Delta\varepsilon_{RA}} \right)^{-1}
-$${#eq:ch4_eq28}
+\label{eq:ch4_eq28}
+$$
 where the Hill function
 $$
 p_A(c) = p_A^{\text{max}} - p_A^{\text{range}}
 \frac{\left( \frac{c}{K_D} \right)^n}{1 + \left( \frac{c}{K_D} \right)^n}
-$${#eq:ch4_eq29}
+\label{eq:ch4_eq29}
+$$
 represents the fraction of repressors in the allosterically active state, with
 $p_A^{\text{max}}$ denoting the fraction of active repressors in the absence of
 inducer and $p_A^{\text{max}} - p_A^{\text{range}}$ the minimum fraction of

@@ -16,7 +16,8 @@ quantitative, we define
 $$
 \Delta \text{fold-change}_{K_A} \equiv \text{fold-change}(K_A,K_I^\text{fit}) - 
 \text{fold-change}(K_A^\text{fit},K_I^\text{fit}),
-$${#eq:ch4_eq23}
+\label{eq:ch4_eq23}
+$$
 the difference between the fold-change at a particular $K_A$ value relative to
 the best-fit dissociation constant $K_A^\text{fit}=139 \times 10^{-6} \,
 \text{M}$. For simplicity, we keep the inactive state dissociation constant
@@ -26,7 +27,8 @@ region. Similarly, we define the analogous quantity
 $$
 \Delta \text{fold-change}_{K_I} = \text{fold-change}(K_A^{\text{fit}},K_I) - 
 \text{fold-change}(K_A^{\text{fit}},K_I^{\text{fit}})
-$${#eq:ch4_eq24}
+\label{eq:ch4_eq24}
+$$
 to measure the sensitivity of the fold-change to $K_I$ at a fixed
 $K_A^{\text{fit}}$. shows both of these quantities in the limit $c \to \infty$
 for different repressor-DNA binding energies $\Delta\varepsilon_{RA}$ and
@@ -51,7 +53,8 @@ e^{-\beta \Delta\varepsilon_{RA}}
 \left(\frac{K_A}{K_I}\right)^n }
 \frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}}
 \right)^{-2}.
-$${#eq:ch4_eq25}
+\label{eq:ch4_eq25}
+$$
 Similarly, the Taylor expansion
 $\Delta \text{fold-change}_{K_I} \approx \frac{\partial
     \text{fold-change}}{\partial K_I} \left( K_I - K_I^{\text{fit}} \right)$
@@ -67,7 +70,8 @@ e^{-\beta \Delta\varepsilon_{RA}}
 1+\frac{1}{1+e^{-\beta \Delta \varepsilon_{AI} }
 \left(\frac{K_A}{K_I}\right)^n }\frac{R}{N_{NS}}
 e^{-\beta \Delta\varepsilon_{RA}} \right)^{-2}.
-$${#eq:ch4_eq26}
+\label{eq:ch4_eq26}
+$$
 From , we find that both $\Delta \text{fold-change}_{K_A}$ and $\Delta
 \text{fold-change}_{K_I}$ increase in magnitude with $R$ and decrease in
 magnitude with $\Delta\varepsilon_{RA}$. Accordingly, we expect that the O3

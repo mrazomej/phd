@@ -101,7 +101,7 @@ transcription factors must rely on trial and error to achieve specific responses
 Despite the diversity observed in the induction profiles of each of our strains,
 our data are unified by their reliance on fundamental biophysical parameters. In
 particular, we have shown that our model for fold-change can be rewritten in
-terms of the free energy [@Eq:free_energy_MWC_parameters], which encompasses all
+terms of the free energy Eq. $\ref{eq:free_energy_MWC_parameters}$, which encompasses all
 of the physical parameters of the system. This has proven to be an illuminating
 technique in a number of studies of allosteric proteins [@Sourjik2002;
 @Keymer2006; @Swem2008]. Although it is experimentally straightforward to

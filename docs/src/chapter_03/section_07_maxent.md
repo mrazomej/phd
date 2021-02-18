@@ -11,7 +11,8 @@ of the form (See for full derivation)
 $$
 P(m, p) = \frac{1}{\mathcal{Z}} \exp
 \left( - \sum_{(x,y)} \lambda_{(x,y)} m^x p^y \right), 
-$${#eq:ch3_eq15}
+\label{eq:ch3_eq15}
+$$
 where $\lambda_{(x,y)}$ is the Lagrange multiplier associated with the
 constraint set by the moment $\langle m^x p^y \rangle$, and $\mathcal{Z}$ is a
 normalization constant. The more moments $\langle m^x p^y \rangle$ included as

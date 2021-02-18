@@ -107,7 +107,8 @@ $$
 I_\text{flat} = 
 \frac{I - I_\text{dark}}{I_\text{YFP} - 
 I_\text{dark}}\langle I_\text{YFP} - I_\text{dark} \rangle,
-$${#eq:ch4_eq20}
+\label{eq:ch4_eq20}
+$$
 where $I_\text{flat}$ is the renormalized image and $I$ is the original
 fluorescence image. An example of this correction can be seen in .
 
@@ -133,7 +134,8 @@ lengths of $0.5\,\mu\text{m}$ and $0.25\,\mu\text{m}$, respectively. The
 eccentricity of this hypothetical cell can be computed as
 $$
 \text{eccentricity} = \sqrt{1 - \left(\frac{b}{a}\right)^2},
-$${#eq:ch4_eq21}
+\label{eq:ch4_eq21}
+$$
 yielding a value of approximately 0.8. Any objects with an eccentricity below
 this value were not considered to be single cells. After imposing both an area
 () and eccentricity filter (), the remaining objects were considered cells of
@@ -159,7 +161,8 @@ $$
 \text{fold-change} = 
 \frac{\langle I_{R > 0} \rangle - \langle I_\text{auto} \rangle}
 {\langle I_{R = 0} \rangle - \langle I_\text{auto} \rangle},
-$${#eq:ch4_eq22}
+\label{eq:ch4_eq22}
+$$
 where $\langle I_{R > 0}\rangle$ is the mean fluorescence intensity of cells
 expressing LacI repressors, $\langle I_\text{auto}\rangle$ is the mean intensity
 of cells expressing only the mCherry volume marker, and $\langle I_{R =

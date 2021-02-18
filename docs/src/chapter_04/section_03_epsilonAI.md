@@ -80,20 +80,23 @@ binding energies $\Delta\tilde{\varepsilon}_{RA}$ for each operator,
 $$
 \text{fold-change}(c=0) = \left(
 1+\frac{R}{N_{NS}}e^{-\beta \Delta\tilde{\varepsilon}_{RA}} \right)^{-1}.
-$${#eq:ch4_eq01}
+\label{eq:ch4_eq01}
+$$
 Note that this functional form does not exactly match our fold-change in the
 limit $c=0$, 
 $$
 \text{fold-change}(c=0) = \left(
 1+\frac{1}{1+e^{-\beta \Delta \varepsilon_{AI}}}
 \frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}} \right)^{-1},
-$${#eq:ch4_eq02}
+\label{eq:ch4_eq02}
+$$
 since it is missing the factor $\frac{1}{1+e^{-\beta \Delta\varepsilon_{AI}}}$
 which specifies what fraction of repressors are in the active state in the
 absence of inducer, 
 $$
 \frac{1}{1+e^{-\beta \Delta\varepsilon_{AI}}} = p_A(0).
-$${#eq:ch4_eq03}
+\label{eq:ch4_eq03}
+$$
 In other words, Garcia and Phillips assumed that in the absence of inducer, all
 repressors were active. In terms of our notation, the convoluted energy values
 $\Delta\tilde{\varepsilon}_{RA}$ extracted by Garcia and Phillips (namely,
@@ -103,7 +106,8 @@ $$
 \beta \Delta\tilde{\varepsilon}_{RA} = 
 \beta \Delta\varepsilon_{RA} - 
 \log \left( \frac{1}{1 + e^{-\beta \Delta \varepsilon_{AI}}} \right).
-$${#eq:ch4_eq04}
+\label{eq:ch4_eq04}
+$$
 Note that if $e^{-\beta \Delta \varepsilon_{AI}} \ll 1$, then nearly all of the
 repressors are active in the absence of inducer so that
 $\Delta\tilde{\varepsilon}_{RA} \approx \Delta\varepsilon_{RA}$. In simple
@@ -132,7 +136,8 @@ follow @Weinert2014, writing the fold-change in terms of the the grand
 canonical ensemble as 
 $$
 \text{fold-change} = \frac{1}{1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}},
-$${#eq:ch4_eq05}
+\label{eq:ch4_eq05}
+$$
 where $\lambda_r = e^{\beta \mu}$ is the fugacity and $\mu$ is the chemical
 potential of the repressor. The fugacity will enable us to easily enumerate the
 possible states available to the repressor.
@@ -141,7 +146,8 @@ To determine the value of $\lambda_r$, we first consider that the total number
 of repressors in the system, $R_{\text{tot}}$, is fixed and given by 
 $$
 R_{\text{tot}} = R_S + R_{NS},
-$${#eq:ch4_eq06}
+\label{eq:ch4_eq06}
+$$
 where $R_S$ represents the number
 of repressors specifically bound to the promoter and $R_{NS}$ represents
 the number of repressors nonspecifically bound throughout the genome.
@@ -150,7 +156,8 @@ $$
 R_S = N \frac{\lambda_r 
 e^{-\beta \Delta \varepsilon_{RA}}}
 {1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}},
-$${#eq:ch4_eq07}
+\label{eq:ch4_eq07}
+$$
 where $N$ is the number of available promoters in the cell. Note that in
 counting $N$, we do not distinguish between promoters that are on plasmid or
 chromosomally integrated provided that they both have the same
@@ -158,7 +165,8 @@ repressor-operator binding energy [@Weinert2014]. The value of $R_{NS}$ is
 similarly give by 
 $$
 R_{NS} = N_{NS} \frac{\lambda_r}{1 + \lambda_r},
-$${#eq:ch4_eq08}
+\label{eq:ch4_eq08}
+$$
 where $N_{NS}$ is the number of non-specific sites in the cell (recall that we
 use $N_{NS} = 4.6 \times 10^6$ for *E. coli*).
 
@@ -169,7 +177,8 @@ p_A(0) R_{\text{tot}} =
 \left( N \frac{\lambda_r e^{-\beta \Delta \varepsilon_{RA}}}
 {1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}} + N_{NS} 
 \frac{\lambda_r}{1 + \lambda_r} \right),
-$${#eq:ch4_eq09}
+\label{eq:ch4_eq09}
+$$
 where we recall from that $\beta \Delta \varepsilon_{RA} =   \beta \Delta
 \tilde\varepsilon_{RA} + \log{\left(\frac{1}{1 + e^{-\beta \Delta
 \varepsilon_{AI}}}\right)}.$ Numerically solving for $\lambda_r$ and plugging

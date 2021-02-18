@@ -28,19 +28,22 @@ cell has $i \in \{1, 2 \}$ copies of the reporter gene. This means that $P(m)$,
 the probability of any cell having $m$ mRNA molecules is given by 
 $$
 P(m) = (1 - f) P_1(m) + f P_2(m).
-$${#eq:ch4_eq52}
+\label{eq:ch4_eq52}
+$$
 
 The average number of mRNA $\left\langle m \right\rangle$ is therefore given by 
 $$
 \left\langle m \right\rangle= \sum_{m=0}^\infty m P(m) =
 (1 - f) \sum_{m=0}^\infty m P_1(m) +
 f \sum_{m=0}^\infty m P_2(m).
-$${#eq:ch4_eq53}
+\label{eq:ch4_eq53}
+$$
 This can be simply written as
 $$
 \left\langle m \right\rangle= (1 - f)
 \left\langle m \right\rangle_1 + f \left\langle m \right\rangle_2
-$${#eq:ch4_eq54}
+\label{eq:ch4_eq54}
+$$
 where $\left\langle m \right\rangle_i$ is the average number of mRNA molecules
 for a cell with $i \in \{ 1 , 2 \}$ reporter gene copies.
 
@@ -53,13 +56,15 @@ $$
 \left\langle m \right\rangle_1 + 2 f \left\langle m \right\rangle_1,\\
 &= (1 + f) \left\langle m \right\rangle_1.
 \end{split}
-$${#eq:ch4_eq55}
+\label{eq:ch4_eq55}
+$$
 
 From a kinetic model of this transcriptional regulation we know that the mean
 expression level for a single unregulated promoter is given by [@Jones2014a]
 $$
 \left\langle m \right\rangle_1(R = 0) = \frac{r}{\gamma},
-$${#eq:ch4_eq56}
+\label{eq:ch4_eq56}
+$$
 where $r$ is the mRNA production rate and $\gamma$ is the mRNA degradation rate.
 For a single regulated promoter then the mean mRNA copy number is given by
 $$
@@ -69,7 +74,8 @@ $$
 & = \frac{r}{\gamma} \times \frac{1}{
 1 + \frac{R p_{\text{act}}}{N_{NS}} e^{-\beta \Delta \varepsilon_{RA}}}.
 \end{split}
-$${#eq:ch4_eq57}
+\label{eq:ch4_eq57}
+$$
 
 This means that when we compute the fold-change for the case of
 independent promoters we have
@@ -80,13 +86,15 @@ $$
 &= \frac{(1 + f) \left\langle m \right\rangle_1 (R > 0)}{
 (1 + f) \left\langle m \right\rangle_1 (R = 0)}.
 \end{split}
-$${#eq:ch4_eq58}
+\label{eq:ch4_eq58}
+$$
 Since the $(1 + f)$ factor cancels, the expression for fold-change is not
 altered obtaining
 $$
 \text{fold-change} = \frac{1}{1 + \frac{R p_{\text{act}}}{N_{NS}}
 e^{-\beta \Delta\varepsilon_{RA}}}.
-$${#eq:ch4_eq59}
+\label{eq:ch4_eq59}
+$$
 
 #### Dependent promoters
 
@@ -95,7 +103,8 @@ canonical ensemble formulation as described in [@Weinert2014]. In this
 description the fold-change equation is given by
 $$
 \text{fold-change} = \frac{1}{1 + \lambda_r e^{-\beta\Delta\varepsilon_{RA}}},
-$${#eq:ch4_eq60}
+\label{eq:ch4_eq60}
+$$
 where $\lambda_r$ is the fugacity of the repressor. The value of this fugacity
 is obtained by taking into account all of the repressor reservoirs considered in
 the system. In our case there are two repressor reservoirs: repressors bound to
@@ -105,7 +114,8 @@ reservoirs are connected through the constraint
 $$
 \left\langle R_{\text{tot}} \right\rangle = 
 \left\langle R_S \right\rangle + \left\langle R_{NS} \right\rangle,
-$${#eq:ch4_eq61}
+\label{eq:ch4_eq61}
+$$
 where $\left\langle R_{\text{tot}} \right\rangle$ is the repressor copy number
 as determined by an independent method -- quantitative westerns as in
 [@Garcia2011c] or binomial partitioning as in [@Brewster2014] --. As shown in
@@ -114,11 +124,13 @@ $$
 \left\langle R_S \right\rangle= N_{S}
 \frac{\lambda_r e{-\beta\Delta\varepsilon_{RA}}}{
 1 + \lambda_r e^{-\beta\Delta\varepsilon_{RA}}},
-$${#eq:ch4_eq62}
+\label{eq:ch4_eq62}
+$$
 and
 $$
 \left\langle R_{NS} \right\rangle = N_{NS}\frac{\lambda_r}{1 + \lambda_r},
-$${#eq:ch4_eq63}
+\label{eq:ch4_eq63}
+$$
 where $N_{S}$ is the number of specific binding sites for the repressor, i.e.
 the number of promoters, and $N_{NS}$ is the number of non-specific binding
 sites.
@@ -132,7 +144,8 @@ N_{S} \frac{ \lambda_r \exp( -\beta \Delta \varepsilon_{RA} ) }
 {1 + \lambda_r \exp( -\beta \Delta \varepsilon_{RA} ) } 
 +
 N_{NS}\frac{\lambda_r}{1 + \lambda_r},
-$${#eq:ch4_eq64}
+\label{eq:ch4_eq64}
+$$
 <!-- Distributing terms gives a second order polynomial on $\lambda_r$ of the form
 $$
 \lambda_r^2 e^{-\beta\Delta\varepsilon_{RA}} (\left\langle R_{\text{tot}}
@@ -142,7 +155,8 @@ $$
 e^{-\beta\Delta\varepsilon_{RA}} - N_{S}
 e^{-\beta\Delta\varepsilon_{RA}} - N_{NS}) +
 \left\langle R_{\text{tot}} \right\rangle= 0.
-$${#eq:ch4_eq65}
+\label{eq:ch4_eq65}
+$$
 
 For the quadratic term in $\lambda_r$ we note that $N_{NS}\gg \left\langle
 R_{\text{tot}} \right\rangle, N_{S}$, therefore we can approximate it as
@@ -150,7 +164,8 @@ $$
 \lambda_r^2 e^{-\beta\Delta\varepsilon_{RA}}
 (\left\langle R_{\text{tot}} \right\rangle- N_{S}- N_{NS}) \approx
 \lambda_r^2 e^{-\beta\Delta\varepsilon_{RA}} N_{NS}.
-$${#eq:ch4_eq66} -->
+\label{eq:ch4_eq66}
+$$
 
 <!-- For the linear term on $\lambda_r$ only the terms $\left\langle R_{\text{tot}}
 \right\rangle e^{-\beta\Delta\varepsilon_{RA}})$ and
@@ -163,7 +178,8 @@ e^{-\beta\Delta\varepsilon_{RA}} - N_{S}e^{-\beta\Delta\varepsilon_{RA}} -
 N_{NS}) 
 \approx \lambda_r \left[ e^{-\beta\Delta\varepsilon_{RA}} 
 \left(\left\langle R_{\text{tot}} \right\rangle- N_{S}\right)  - N_{NS}\right].
-$${#eq:ch4_eq67}
+\label{eq:ch4_eq67}
+$$
 With these simplifications in hand is a matter of finding the positive root of
 this second order polynomial to obtain the value for the fugacity. -->
 
@@ -171,7 +187,8 @@ this second order polynomial to obtain the value for the fugacity. -->
 $$
 \left\langle m \right\rangle = (1 - f)
 \left\langle m \right\rangle_1 + f \left\langle m \right\rangle_2.
-$${#eq:ch4_eq68}
+\label{eq:ch4_eq68}
+$$
 
 If we again assume that having two copies of the promoter produces twice as much
 as one promoter this is given by
@@ -179,7 +196,8 @@ $$
 \left\langle m \right\rangle= (1 - f) \frac{r}{\gamma} \times
 \text{fold-change}(N_{S}= 1) +
 f \frac{(2r)}{\gamma} \times \text{fold-change}(N_{S}= 2),
-$${#eq:ch4_eq69}
+\label{eq:ch4_eq69}
+$$
 where we explicitly state that the fold-change function depends on the number of
 specific binding sites. -->
 
@@ -190,14 +208,16 @@ $$
 2 f \times \text{fold-change}(N_{S}=2) \right]
 }{
 \frac{r}{\gamma} \left[ (1 - f) + 2 f \right]. }
-$${#eq:ch4_eq70} 
+\label{eq:ch4_eq70}
+$$
 When substituting the definition of fold-change we obtain our
 final expression 
 $$
 \text{fold-change} = \frac{1}{(1 + f)} \left[
 (1 - f) \frac{1}{1 + \frac{R}{N_{NS}} e^{-\beta\Delta\varepsilon_{RA}}} +
 2 f \frac{1}{1 + \lambda_r e^{-\beta\Delta\varepsilon_{RA}}} \right].
-$${#eq:ch4_eq71} -->
+\label{eq:ch4_eq71}
+$$
 
 Using we can evaluate the effect of having two promoters for a fraction of the
 cell cycle. For this we consider that the non-specific number of binding sites

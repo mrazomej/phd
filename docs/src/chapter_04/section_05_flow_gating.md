@@ -93,7 +93,8 @@ of the data by defining an elliptical region given by
 $$
 \left(\boldsymbol{x} - \boldsymbol{\mu} \right)^T \boldsymbol{\Sigma}^{-1}
 \left(\boldsymbol{x} - \boldsymbol{\mu} \right) \leq \chi^2_\alpha(p),
-$${#eq:ch4_eq19}
+\label{eq:ch4_eq19}
+$$
 where $\boldsymbol{x}$ is the $2 \times 1$ vector containing the
 $\log(\text{FSC})$ and $\log(\text{SSC})$, $\boldsymbol{\mu}$ is the $2 \times
 1$ vector representing the mean values of $\log(\text{FSC})$ and
