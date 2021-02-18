@@ -55,7 +55,8 @@ $$
     + \overbrace{\gamma _p (p + 1) P_A(m, p + 1)}^{p + 1 \rightarrow p} % p+1 -> p
     - \overbrace{\gamma _p p P_A(m, p)}^{p \rightarrow p-1}, % p -> p-1
 \end{split}
-$${#eq:ch3_eq02}
+\label{eq:ch3_eq02}
+$$
 where the state transitions for each term are labeled by overbraces. For the
 transcriptionally inactive state $I$, we have
 $$
@@ -72,7 +73,8 @@ $$
     + \overbrace{\gamma _p (p + 1) P_I(m, p + 1)}^{p + 1 \rightarrow p} % p+1 -> p
     - \overbrace{\gamma _p p P_I(m, p)}^{p \rightarrow p-1}. % p -> p-1
 \end{split}
-$${#eq:ch3_eq03}
+\label{eq:ch3_eq03}
+$$
 And finally, for the repressor bound state $R$,
 $$
 \begin{split}
@@ -86,7 +88,8 @@ $$
     + \overbrace{\gamma _p (p + 1) P_R(m, p + 1)}^{p + 1 \rightarrow p} % p+1 -> p
     - \overbrace{\gamma _p p P_R(m, p)}^{p \rightarrow p-1}. % p -> p-1
 \end{split}
-$${#eq:ch3_eq04}
+\label{eq:ch3_eq04}
+$$
 As we will discuss later, the protein degradation term $\gamma _p$ is set to
 zero since active protein degradation is slow compared to the cell cycle of
 exponentially growing bacteria, but rather we explicitly implement binomial
@@ -96,7 +99,8 @@ It is convenient to rewrite these equations in a compact matrix notation
 [@Sanchez2013]. For this we define the vector $\mathbf{P}(m, p)$ as 
 $$
 \mathbf{P}(m, p) = (P_A(m, p), P_I(m, p), P_R(m, p))^T,
-$${#eq:ch3_eq05}
+\label{eq:ch3_eq05}
+$$
 where $^T$ is the transpose. By defining the matrices $\mathbf{K}$ to contain
 the promoter state transitions, $\mathbf{R}_m$ and $\mathbf{\Gamma} _m$ to
 contain the mRNA production and degradation terms, respectively, and
@@ -113,9 +117,10 @@ $$
     &+ m \mathbf{R}_p \mathbf{P}(m, p - 1)
     + (p + 1) \mathbf{\Gamma}_p \mathbf{P}(m, p + 1).
 \end{split}
-$${#eq:ch3_eq06}
+\label{eq:ch3_eq06}
+$$
 Having defined the gene expression dynamics we now proceed to determine all rate
-parameters in [@Eq:ch3_eq06].
+parameters in Eq. $\ref{eq:ch3_eq06}$.
 
 ### Inferring parameters from published data sets {#sec_param}
 

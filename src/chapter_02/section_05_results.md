@@ -35,7 +35,7 @@ systems to determine the values of $K_A$ and $K_I$.
 
 We determine the values of $K_A$ and $K_I$ by fitting to a single induction
 profile using Bayesian inferential methods [@Sivia2006]. We then use
-[@Eq:fold_change_full] to predict gene expression for any concentration of
+Eq. $\ref{eq:fold_change_full}$ to predict gene expression for any concentration of
 inducer, repressor copy number, and DNA binding energy and compare these
 predictions against experimental measurements. To obtain induction profiles for
 a set of strains with varying repressor copy numbers, we used modified *lacI*
@@ -141,7 +141,7 @@ in Panel ) with $R=260$, $\Delta\varepsilon_{RA} = -13.9~k_BT$, $n=2$, and
 $\Delta\varepsilon_{AI}=4.5~k_BT$ can be used to determine the thermodynamic
 parameters $K_A=139^{+29}_{-22} \times 10^{-6} \, \text{M}$ and
 $K_I=0.53^{+0.04}_{-0.04} \times 10^{-6}\, \text{M}$ (orange line). The
-remaining solid lines predict the fold-change [@Eq:fold_change_full] for all
+remaining solid lines predict the fold-change Eq. $\ref{eq:fold_change_full}$ for all
 other combinations of repressor copy numbers (shown in the legend) and
 repressor-DNA binding energies corresponding to the O1 operator ($-15.3~k_B T$),
 O2 operator ($-13.9~k_B T$), and O3 operator ($-9.7~k_B T$). Error bars of
@@ -227,7 +227,7 @@ other hand, enables us to quantify how each trait depends upon a single set of
 physical parameters as shown by [@Fig:ch2_fig04](F-J).
 
 We define these five phenotypic traits using expressions derived from the model,
-[@Eq:fold_change_full]. These results build upon extensive work by
+Eq. $\ref{eq:fold_change_full}$. These results build upon extensive work by
 @Martins2011, who computed many such properties for ligand-receptor binding
 within the MWC model. We begin by analyzing the leakiness, which is the minimum
 fold-change observed in the absence of ligand, given by
@@ -238,7 +238,8 @@ $$
     1+\frac{1}{1+e^{-\beta \Delta \varepsilon_{AI} }}
     \frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}} \right)^{-1},
 \end{split}
-$${#eq:leakiness}
+\label{eq:leakiness}
+$$
 and the saturation, which is the maximum fold change observed in the
 presence of saturating ligand,
 $$
@@ -249,7 +250,8 @@ $$
     \left(\frac{K_A}{K_I}\right)^n }\frac{R}{N_{NS}}
     e^{-\beta \Delta\varepsilon_{RA}} \right)^{-1}.
 \end{split}
-$${#eq:saturation}
+\label{eq:saturation}
+$$
 
 Systems that minimize leakiness repress strongly in the absence of effector
 while systems that maximize saturation have high expression in the presence of
@@ -257,7 +259,8 @@ effector. Together, these two properties determine the dynamic range of a
 system's response, which is given by the difference
 $$
     \text{dynamic range} = \text{saturation} - \text{leakiness}.
-$${#eq:dynamic_range_def} 
+\label{eq:dynamic_range_def}
+$$
 These three properties are shown in [@Fig:ch2_fig04](F-H). We discuss these
 properties in greater detail in XXX. [@Fig:ch2_fig06](A-C) shows that the
 measurements of these three properties, derived from the fold-change data in the
@@ -271,14 +274,14 @@ saturating concentrations of IPTG. The three repressor-operator binding energies
 in the legend correspond to the O1 operator ($-15.3~k_B T$), O2 operator
 ($-13.9~k_B T$), and O3 operator ($-9.7~k_B T$). Both the $[EC_{50}]$ and
 effective Hill coefficient are inferred by individually fitting each
-operator-repressor pairing in [@Fig:ch2_fig05](A-C) separately to
-[@Eq:fold_change_full] in order to smoothly interpolate between the data points.
-Error bars for (A-C) represent the standard error of the mean for eight or more
-replicates; error bars for (D-E) represent the 95% credible region for the
-parameter found by propagating the credible region of our estimates of $K_A$ and
-$K_I$ into [@Eq:ec50] and [@Eq:effective_Hill].](ch2_fig06){#fig:ch2_fig06
-short-caption="Predictions and experimental measurements of key properties of
-induction profiles"}
+operator-repressor pairing in [@Fig:ch2_fig05](A-C) separately to Eq.
+$\ref{eq:fold_change_full}$ in order to smoothly interpolate between the data
+points. Error bars for (A-C) represent the standard error of the mean for eight
+or more replicates; error bars for (D-E) represent the 95% credible region for
+the parameter found by propagating the credible region of our estimates of $K_A$
+and $K_I$ into Eq. $\ref{eq:ec50}$ and Eq.
+$\ref{eq:effective_Hill}$](ch2_fig06){#fig:ch2_fig06 short-caption="Predictions
+and experimental measurements of key properties of induction profiles"}
 
 Two additional properties of induction profiles are the $[EC_{50}]$ and
 effective Hill coefficient, which determine the range of inducer concentration
@@ -287,14 +290,16 @@ $[EC_{50}]$ denotes the inducer concentration required to generate a system
 response halfway between its minimum and maximum value, 
 $$
 \text{fold-change}(c = [EC_{50}]) = \frac{\text{leakiness} + \text{saturation}}{2}.
-$${#eq:ec50}
+\label{eq:ec50}
+$$
 The effective Hill coefficient $h$, which quantifies the steepness of
 the curve at the $[EC_{50}]$ [@Marzen2013], is given by
 $$
 h = \left( 2 \frac{d}{d \log c} \left[ \log \left( \frac{ \text{fold-change}(c)
 - \text{leakiness}}{\text{dynamic range}} \right) \right] \right)_{c =
   [EC_{50}]}. 
-$${#eq:effective_Hill}
+\label{eq:effective_Hill}
+$$
 [@Fig:ch2_fig04](I),(J) shows how the $[EC_{50}]$ and effective Hill
 coefficient depend on the repressor copy number. In XXX, we discuss
 the analytic forms of these two properties as well as their dependence on the
@@ -302,9 +307,9 @@ repressor-DNA binding energy.
 
 [@Fig:ch2_fig06](D) and [@Fig:ch2_fig06](E) shows the estimated values of the
 $[EC_{50}]$ and the effective Hill coefficient overlaid on the theoretical
-predictions. Both properties were obtained by fitting [@Eq:fold_change_full] to
+predictions. Both properties were obtained by fitting Eq. $\ref{eq:fold_change_full}$ to
 each individual titration curve and computing the $[EC_{50}]$ and effective Hill
-coefficient using [@Eq:ec50] and [@Eq:effective_Hill], respectively. We find
+coefficient using Eq. $\ref{eq:ec50}$ and Eq. $\ref{eq:effective_Hill}$, respectively. We find
 that the predictions made with the single strain fit closely match those made
 for each of the strains with O1 and O2 operators, but the predictions for the O3
 operator are markedly off. In XXX we show that the large, asymmetric error bars
@@ -332,10 +337,11 @@ will give rise to the same mean cellular output? These are key questions both
 for understanding how the system is governed and for engineering specific
 responses in a synthetic biology context. To address these questions, we follow
 the data collapse strategy used in a number of previous studies [@Sourjik2002;
-@Keymer2006; @Swem2008], and rewrite [@Eq:fold_change_full] as a Fermi function,
+@Keymer2006; @Swem2008], and rewrite Eq. $\ref{eq:fold_change_full}$ as a Fermi function,
 $$
 \text{fold-change}= \frac{1}{1 + e^{-F(c)}},
-$${#eq:free_energy_definition}
+\label{eq:free_energy_definition}
+$$
 where $F(c)$ is the free energy of the repressor binding to the operator of
 interest relative to the unbound operator state in $k_B T$ units [@Keymer2006;
 @Swem2008; @Phillips2015a], which is given by 
@@ -344,7 +350,8 @@ F(c) = \frac{\Delta\varepsilon_{RA}}{k_BT} -
 \log \frac{\left(1+\frac{c}{K_A}\right)^n}{\left(1+\frac{c}{K_A}\right)^n + 
 e^{-\beta \Delta\varepsilon_{AI} }\left(1+\frac{c}{K_I}\right)^n} -
 \log \frac{R}{N_{NS}}.
-$${#eq:free_energy_MWC_parameters}
+\label{eq:free_energy_MWC_parameters}
+$$
 The first term in $F(c)$ denotes the repressor-operator binding energy, the
 second the contribution from the inducer concentration, and the last the effect
 of the repressor copy number. We note that elsewhere, this free energy has been
@@ -363,7 +370,7 @@ the theoretical predictions and experimental measurements across all eighteen
 strains.
 
 There are many different combinations of parameter values that can result in the
-same free energy as defined in [@Eq:free_energy_MWC_parameters]. For example,
+same free energy as defined in Eq. $\ref{eq:free_energy_MWC_parameters}$. For example,
 suppose a system originally has a fold-change of 0.2 at a specific inducer
 concentration, and then operator mutations increase the $\Delta\varepsilon_{RA}$
 binding energy [@Garcia2012]. While this serves to initially increase both the
@@ -378,8 +385,8 @@ a single master curve.** (A) Any combination of parameters can be mapped to a
 single physiological response (i.e. fold-change) via the free energy, which
 encompasses the parametric details of the model. (B) Experimental data from
 collapse onto a single master curve as a function of the free energy
-[@Eq:free_energy_MWC_parameters]. The free energy for each strain was calculated
-from [@Eq:free_energy_MWC_parameters] using $n=2$,
+Eq. $\ref{eq:free_energy_MWC_parameters}$. The free energy for each strain was calculated
+from Eq. $\ref{eq:free_energy_MWC_parameters}$ using $n=2$,
 $\Delta\varepsilon_{AI}=4.5~k_BT$, $K_A=139 \times 10^{-6} \, \text{M}$,
 $K_I=0.53 \times 10^{-6}\, \text{M}$, and the strain-specific $R$ and
 $\Delta\varepsilon_{RA}$. All data points represent the mean, and error bars are

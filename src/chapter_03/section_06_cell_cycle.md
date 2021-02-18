@@ -69,7 +69,8 @@ protein copy number over the span of the cell cycle. Mathematically this is
 expressed as
 $$
 \langle p \rangle_c = \int_{t_o}^{t_d} \langle p(t) \rangle P(t) dt,
-$${#eq:ch3_eq13}
+\label{eq:ch3_eq13}
+$$
 where $\langle p(t) \rangle$ represents the first moment of the protein
 distribution as computed from , $\langle p\rangle_c$ represents the average
 protein copy number over a cell cycle, $t_o$ represents the start of the cell
@@ -95,7 +96,8 @@ level with respect to an unregulated promoter. For protein this is
 $$
 \text{fold-change} = 
 \frac{\langle p(R > 0) \rangle_c}{\langle p(R = 0) \rangle_c},
-$${#eq:ch2_eq14}
+\label{eq:ch2_eq14}
+$$
 where $\langle p(R > 0)i \rangle_c$ represents the mean protein count for cells
 with non-zero repressor copy number count $R$ over the entire cell cycle, and
 $\langle p(R = 0) \rangle_c$ represents the equivalent for a strain with no

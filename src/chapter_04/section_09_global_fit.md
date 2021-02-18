@@ -35,7 +35,8 @@ P(\tilde{k}_A, \tilde{k}_I, \mathbf{R},
 \mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma) P(\tilde{k}_A,
 \tilde{k}_I, \mathbf{R},
 \mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma)}{P(D)},
-$${#eq:ch4_eq30}
+\label{eq:ch4_eq30}
+$$
 where $\textbf{R}$ is an array containing the six different repressor
 copy numbers to be fit,
 $\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}$ is an array
@@ -62,7 +63,8 @@ P(D \mid \tilde{k}_A, \tilde{k}_I, \mathbf{R},
 \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}\prod\limits_{i=1}^n \exp
 \left[-\frac{(\text{fc}^{(i)}_{\exp} - \text{fc}(\tilde{k}_A, \tilde{k}_I,
 R^{(i)}, \Delta\varepsilon_{RA}^{(i)}, c^{(i)}))^2}{2\sigma^2}\right],
-$${#eq:ch4_eq31}
+\label{eq:ch4_eq31}
+$$
 where $\text{fc}^{(i)}_{\text{exp}}$ is the $i^{\text{th}}$ experimental
 fold-change and $\text{fc}(\cdot\cdot\cdot)$ is the theoretical prediction. Note
 that the standard deviation $\sigma$ of this distribution is not known and hence
@@ -76,7 +78,8 @@ P(\tilde{k}_A, \tilde{k}_I, \mathbf{R},
 \mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma) =
 P(\tilde{k}_A ) \cdot P(\tilde{k}_I ) \cdot \prod_i P(R^{(i)}) \cdot \prod_j
 P(\Delta\varepsilon_{RA}^{(j)}) \cdot P(\sigma),
-$${#eq:ch4_eq32}
+\label{eq:ch4_eq32}
+$$
 where the superscript $(i)$ indicates the repressor copy number of index $i$ and
 the superscript $(j)$ denotes the binding energy of index $j$. As above, we note
 that a prior must also be included for the unknown parameter $\sigma$.
@@ -95,7 +98,8 @@ repressor copy numbers to be fit satisfies
 $$
 P(R^{(i)}) = \frac{1}{\sqrt{2\pi\sigma_{R_i}^2}} 
 \exp \left(-\frac{(R^{(i)} - \bar{R}^{(i)})^2}{2 \sigma_{R_i}^2} \right),
-$${#eq:ch4_eq33}
+\label{eq:ch4_eq33}
+$$
 where $\bar{R}^{(i)}$ is the mean repressor copy number and $\sigma_{R_i}$ is
 the variability associated with this parameter as reported in @Garcia2011c. Note
 that we use the given value of $\sigma_{R_i}$ from previous measurements rather
@@ -108,7 +112,8 @@ P(\Delta\varepsilon_{RA}^{(j)}) =
 \frac{1}{\sqrt{2\pi\sigma_{\varepsilon_j}^2}}
 \exp \left(- \frac{(\Delta\varepsilon_{RA}^{(j)} -
 \Delta\bar{\varepsilon}_{RA}^{(j)})^2}{2 \sigma_{\varepsilon_j}^2} \right),
-$${#eq:ch4_eq34}
+\label{eq:ch4_eq34}
+$$
 where $\Delta\bar{\varepsilon}_{RA}^{(j)}$ is the binding energy and
 $\sigma_{\varepsilon_j}$ is the variability associated with that
 parameter around the mean value as reported in @Garcia2011c .
@@ -194,7 +199,7 @@ and presence of IPTG. All prediction curves were generated using the parameters
 listed in \ref{tab_global_fit}. Both the (D) $[EC_{50}]$ and (E) effective Hill
 coefficient are inferred by individually fitting all parameters--$K_A,\, K_I,\,
 R,\, \Delta\varepsilon_{RA}$--to each operator-repressor pairing in XXX(A)-(C)
-separately to [@Eq:fold_change_full] in order to smoothly interpolate between
+separately to Eq. $\ref{eq:fold_change_full}$ in order to smoothly interpolate between
 the data points. Note that where error bars are not visible, this indicates that
 the error bars are smaller than the point itself.](ch4_fig20){#fig:ch4_fig20
 short-caption="Key properties of induction profiles as predicted with a global

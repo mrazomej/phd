@@ -33,7 +33,8 @@ relationship between inputs and outputs known as the mutual information. The
 mutual information $I$ between input $c$ and output $p$, given by
 $$
 I = \sum_c P(c) \sum_p P(p \mid c) \log_2 \frac{P(p \mid c)}{P(p)},
-$${#eq:ch3_eq01}
+\label{eq:ch3_eq01}
+$$
 quantifies how much we learn about the state of the input $c$ given that we get
 to observe the output $p$. In other words, the mutual information can be thought
 of as a generalized correlation coefficient that quantifies the degree to which

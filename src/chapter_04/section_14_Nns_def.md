@@ -28,17 +28,20 @@ by a repressor or having an empty promoter. This is
 $$
 \text{fold-change} \rightarrow p^r_{bound} = \frac{1}{ 1 +
 \frac{R}{N_{NS}} e^{-\beta\Delta\varepsilon_{RA}}}.
-$${#eq:ch4_eq41}
+\label{eq:ch4_eq41}
+$$
 This expression can be rewritten as
 $$
 p^r_{bound} = \frac{1}{ 1 + e^{-\beta\Delta E}},
-$${#eq:ch4_eq42}
+\label{eq:ch4_eq42}
+$$
 where $\Delta E$ is the free energy difference between the empty and occupied
 promoter. This definition implies that
 $$
 \Delta E\equiv \overbrace{\Delta\varepsilon_{RA}}^{\text{enthalpic term}}
   - \overbrace{k_BT \ln \left( \frac{R}{N_{NS}} \right)}^{\text{entropic term}}.
-$${#eq:ch4_eq43}
+\label{eq:ch4_eq43}
+$$
 
 Given that the parameter $\Delta\varepsilon_{RA}$ is inferred rather than
 directly measured, this puts us in the position of being able to redefine
@@ -49,7 +52,8 @@ a given repressor copy number we choose a different value of $N_{NS}$, it still
 should hold true that
 $$
 \Delta E= \Delta\varepsilon_{RA}' - k_BT \ln \left( \frac{R}{N_{NS}'} \right),
-$${#eq:ch4_eq44}
+\label{eq:ch4_eq44}
+$$
 where $N_{NS}'$ is the changed value of the non-specific background and
 $\Delta\varepsilon_{RA}'$ is a different value for the repressor binding energy
 that compensates for the difference in the non-specific background.
@@ -60,7 +64,8 @@ $$
 \Delta E= \Delta\varepsilon_{RA}' - 
 k_BT \ln \left( \frac{R}{\alpha N_{NS}} \right)
 = \Delta\varepsilon_{RA} - k_BT \ln \left( \frac{R}{N_{NS}} \right).
-$${#eq:ch4_eq45}
+\label{eq:ch4_eq45}
+$$
 Solving for $\Delta\varepsilon_{RA}'$ gives 
 $$
 \begin{split}
@@ -68,9 +73,10 @@ $$
 k_BT \ln \left( \frac{N_{NS}}{\alpha N_{NS}} \right)\\
 &= \Delta\varepsilon_{RA} - k_BT \ln \alpha.
 \end{split}
-$${#eq:ch4_eq46}
+\label{eq:ch4_eq46}
+$$
 
-[@Eq:ch4_eRA_redef] implies that we can redefine $N_{NS}$ to be any value as long as
+Eq. $\ref{eq:ch4_eRA_redef}$ implies that we can redefine $N_{NS}$ to be any value as long as
 $\Delta\varepsilon_{RA}$ compensates to maintain the value of $\Delta E$. This
 statement holds true whether we are considering a single promoter or multiple
 promoters. The same cannot be said about the $\Delta\varepsilon_{AI}$ parameter.
@@ -78,7 +84,8 @@ The parameter $\Delta\varepsilon_{AI}$ by itself sets the fraction of inactive
 repressors in the absence of inducer via
 $$
 p_{act} = \frac{1}{1 + e^{-\beta\Delta\varepsilon_{AI}}},
-$${#eq:ch4_eq47}
+\label{eq:ch4_eq47}
+$$
 where we have again a Fermi function for a two-state system in which the
 repressor can be in an active or inactive state.
 
@@ -96,14 +103,16 @@ $$
 \text{fold-change} = \frac{1}{
 1 + \left( \frac{1}{1 + e^{-\beta\Delta\varepsilon_{AI}}} \right)
 \frac{R}{N_{NS}} e^{-\beta\Delta\varepsilon_{RA}}}.
-$${#eq:ch4_eq48}
+\label{eq:ch4_eq48}
+$$
 So when we define the free energy $\Delta E$ we would include an extra term of
 the form
 $$
 \Delta E= \Delta\varepsilon_{RA} - 
 k_BT \left[ \ln \left( \frac{R}{N_{NS}} \right) +
 \ln \left( \frac{1}{1 + e^{-\beta\Delta\varepsilon_{AI}}} \right) \right].
-$${#eq:ch4_eq49}
+\label{eq:ch4_eq49}
+$$
 If we were only to use the statement brought up by the anonymous reviewer would
 be true since changes in $\Delta\varepsilon_{AI}$ could be compensated by
 changes in $\Delta\varepsilon_{RA}$ or $N_{NS}$. But as specified in appendix
@@ -123,7 +132,8 @@ $$
 N \sum_{m=0}^{\min (N,R)} \frac{R!}{(N_{NS})^m (R - m)!}
 {N \choose m} e^{-\beta m \Delta\varepsilon_{RA}}
 },
-$${#eq:ch4_eq50}
+\label{eq:ch4_eq50}
+$$
 where $N$ is the number of promoters. Notice that we can group the terms
 including $N_{NS}$ and $\Delta\varepsilon_{RA}$ as 
 $$
@@ -134,7 +144,8 @@ $$
 }{
 N \sum_{m=0}^{\min (N,R)} \frac{R!}{(R - m)!}
 {N \choose m} \left(\frac{e^{-\beta \Delta\varepsilon_{RA}}}{N_{NS}}\right)^m},
-$${#eq:ch4_eq51}
+\label{eq:ch4_eq51}
+$$
 to highlight that it is a combination of these two parameters that matters,
 rather than their individual values. For the case of the
 $\Delta\varepsilon_{AI}$ parameter this is not the case. Every term containing

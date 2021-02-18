@@ -18,7 +18,8 @@ $$
  \left(
 1+\frac{1}{1+e^{-\beta \Delta \varepsilon_{AI} }}
 \frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}} \right)^{-1}.
-$${#eq:ch4_eq35}
+\label{eq:ch4_eq35}
+$$
 The dynamic range, along with saturation and leakiness were plotted with our
 experimental data in - as a function of repressor copy number. shows how these
 properties are expected to vary as a function of the repressor-operator binding
@@ -37,14 +38,16 @@ $$
 \frac{R^*}{N_{NS}} = e^{-\beta (\Delta\varepsilon_{AI} -
 \Delta\varepsilon_{RA})} \sqrt{e^{\Delta\varepsilon_{AI}} + 1} 
 \sqrt{e^{\Delta\varepsilon_{AI}} + \left( \frac{K_A}{K_I} \right)^n}.
-$${#eq:ch4_eq36}
+\label{eq:ch4_eq36}
+$$
 The magnitude of the peak is given by
 $$
 \text{max dynamic range} = 
 \frac{\left( \sqrt{e^{\Delta\varepsilon_{AI}} + 1} - 
 \sqrt{e^{\Delta\varepsilon_{AI}} + \left( \frac{K_A}{K_I} \right)^n} 
 \right)^2}{\left( \frac{K_A}{K_I} \right)^n - 1},
-$${#eq:ch4_eq37}
+\label{eq:ch4_eq37}
+$$
 which is independent of the repressor-operator binding energy
 $\Delta\varepsilon_{RA}$ or $R$, and will only cause a shift in the location of
 the peak but not its magnitude.
@@ -87,7 +90,8 @@ e^{-\beta \Delta\varepsilon_{RA}} \right) +
  e^{-\beta \Delta \varepsilon_{AI}} + 
  \left( \frac{K_A}{K_I} \right)^n e^{-\beta \Delta \varepsilon_{AI}} } 
  \right)^{\frac{1}{n}}} - 1.
-$${#eq:ch4_eq38}
+\label{eq:ch4_eq38}
+$$
 Using this expression, we can then find the effective Hill coefficient $h$,
 which equals twice the log-log slope of the normalized fold-change evaluated at
 $c = [EC_{50}]$ (see ). In - we show how these two properties vary with
