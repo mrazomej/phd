@@ -34,11 +34,11 @@ grid_navigation:
       excerpt: Information processing as a feature of living organisms
       cta: read
       url: 'abstract'
-    # - title: >
-    #      Chapter I: Introduction
-    #   excerpt: The ubiquity of adaptive behavior in biological matter.
-    #   cta: read
-    #   url: 'chapter_01'
+    - title: >
+         Chapter I: Introduction
+      excerpt: From bio to bit - How do cells sense the world around them?
+      cta: read
+      url: 'chapter_01'
     - title: >
          Chapter II: Allosteric Gene Regulation
       excerpt: Understanding the physics of allosteric gene regulation
