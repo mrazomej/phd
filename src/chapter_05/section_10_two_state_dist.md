@@ -461,7 +461,7 @@ functions:
 2. The Tricomi function.
 This is written as
 $$
-w(z) = A {}_1F_1(a, b, z) + B z^{1-b} {}_1 F 1(a+1-b, 2-b, z),
+w(z) = A {}_1F_1(a, b, z) + B z^{1-b} {}_1 F_1(a+1-b, 2-b, z),
 \label{eq:kummer_sol}
 $$
 where $A$ and $B$ are constants, and ${}_1F_1$ is the confluent hypergeometric
@@ -490,7 +490,7 @@ From the chain rule we also conclude that
 $$
 \frac{d^2G}{ds^2} = 
 \frac{d}{dv} \left( \frac{dG}{dv} \frac{dv}{ds} \right) \frac{dv}{ds} =
-\frac{\gamma_m ^2}{r_m^2} \frac{d^G}{d v^2}.
+\frac{\gamma_m ^2}{r_m^2} \frac{d^2G}{d v^2}.
 $$
 So the three relationships of $v$ with $s$ that we have are
 $$

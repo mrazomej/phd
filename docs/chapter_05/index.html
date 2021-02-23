@@ -1454,7 +1454,7 @@ G_A(v) = \frac{\gamma_m v}{k^{(p)}_{\text{off}}} \frac{d G_I}{d v}
 z \frac{d^2w}{dz^2} + (b - z) \frac{dw}{dz} - aw = 0.
 \label{eq:kummer}
 \]</span> The solution fo the Kummer equation can be expressed as the sum of two functions: 1. The confluent hypergeometric function of the first kind, 2. The Tricomi function. This is written as <span class="math display">\[
-w(z) = A {}_1F_1(a, b, z) + B z^{1-b} {}_1 F 1(a+1-b, 2-b, z),
+w(z) = A {}_1F_1(a, b, z) + B z^{1-b} {}_1 F_1(a+1-b, 2-b, z),
 \label{eq:kummer_sol}
 \]</span> where <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are constants, and <span class="math inline">\({}_1F_1\)</span> is the confluent hypergeometric function of the first kind, defined as <span class="math display">\[
 {}_1F_1(a, b, z) = \sum_{m=0}^{\infty} 
@@ -1471,7 +1471,7 @@ ds = \frac{r_m}{\gamma_m} dv \Rightarrow
 \]</span> From the chain rule we also conclude that <span class="math display">\[
 \frac{d^2G}{ds^2} = 
 \frac{d}{dv} \left( \frac{dG}{dv} \frac{dv}{ds} \right) \frac{dv}{ds} =
-\frac{\gamma_m ^2}{r_m^2} \frac{d^G}{d v^2}.
+\frac{\gamma_m ^2}{r_m^2} \frac{d^2G}{d v^2}.
 \]</span> So the three relationships of <span class="math inline">\(v\)</span> with <span class="math inline">\(s\)</span> that we have are <span class="math display">\[
 v = \frac{\gamma_m}{r_m} s, \;
 \frac{dG}{dv} = \frac{r_m}{\gamma_m} \frac{dG}{ds}, \; \text{and }
