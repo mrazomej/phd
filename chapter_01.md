@@ -27,7 +27,8 @@ page_nav:
 prefix: chapter_01
 contents:
     - section_01_header
-    - section_01_introduction
+    - section_02_introduction
+    - section_03_gene_reg
 ---
 
 ## References
