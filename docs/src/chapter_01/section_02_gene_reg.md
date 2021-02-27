@@ -35,6 +35,28 @@ mechanical models, and kinetic models. In the following sections we will
 introduce the necessary background for both approaches relevant to the rest of
 the thesis.
 
+### Minimal model of gene expression
+
+Let us begin our introduction to gene expression modeling with the simplest 
+example. As shown in
+
+![**Minimal model of gene expression.** (A) Schematic of the kinetics governing
+gene expression. mRNA is produced at a constant rate $r_m$ independent of the
+current mRNA copy number. Degradation of each mRNA occurs at a rate $\gamma_m$.
+(B) Example of the qualitative analysis of the mRNA dynamics via a 1D
+phase-portrait. The differential equation governing the dynamics contains two
+terms: a constant production rate given by $r_m$, and a degradation rate
+$\gamma_m m$ that depends on the current mRNA count. The main plot shows each of
+the components in the $m$ vs $dm/dt$ plot. Since $r_m$ does not depend on the
+current number of mRNA it gives a straight production rate as a function of $m$.
+The total degradation rate depends linearly with the mRNA copy number, giving a
+line with slope $\gamma_m$. When the two components are equal (bot lines
+crossing), we obtain the steady-state mRNA value $m_{ss}$. The bottom line shows
+a qualitative schematic of the flow of the system towards this steady state. The
+further $m$ is from $m_{ss}$, the faster it moves towards this point as
+schematized by the size of the arrows.](ch1_fig01){#fig:ch1_fig01
+short-caption="Minimal model of gene expression"}
+
 ### The unreasonable effectiveness of unrealistic simplifications
 
 On the preface of the textbook *Molecular Driving Forces* Dill and Bromberg
@@ -75,7 +97,7 @@ probability of a system in thermal equilibrium to be found in a particular
 microstate with energy $E_1$ compared to being in a microstate with energy $E_2$
 is given by an exponential function of minus the energy of such microstate
 divided by $k_BT$, the thermal energy. To give concrete examples of what a
-microstate can look like, [@Fig:ch1_fig01](A) shows three molecular systems
+microstate can look like, [@Fig:ch1_fig02](A) shows three molecular systems
 relevant for biology. On the first example we have the classic ligand-receptor
 binding problem; here we imagine that a solution can be discretized into a
 series of small boxes. In each of these boxes one and only one ligand molecule
@@ -99,19 +121,19 @@ the case of the ligand-receptor binding, we rarely would care about the specific
 position of all the ligand molecules in the solution. What we would be
 interested in is whether or not the ligand is bound to the receptor. We can
 therefore define as our "macrostate" the particular configuration of the
-receptor as schematically shown in [@Fig:ch1_fig01](B).
+receptor as schematically shown in [@Fig:ch1_fig02](B).
 
 ![**Boltzmann's law and the definition of a micro and macrostate.** (A) Top
 panel: ligand-receptor binding microstates. Middle panel: ligand-gated ion
 channel microstates. Bottom panel: membrane patch deformations. (B) Schematic of
 the definition of a "macrostate." In the ligand-receptor binding problem we
 ignore the spatial configuration of all ligand molecules, and focus on the
-binding state of the receptor.](ch1_fig01){#fig:ch1_fig01
+binding state of the receptor.](ch1_fig02){#fig:ch1_fig02
 short-caption="Boltzmann's law and the definition of a micro and macrostate"}
 
 If we want to know the likelihood of finding a particular system in any specific
 configurationBoltzmann's law (Eq. $\ref{eq:boltzmann_law}$) is then telling us a
-protocol: 
+protocol we must follow: 
 1. Enumerate all possible microstates in which the system can be found.
 2. Compute the energy of each of these microstates.
 3. Compute the Boltzmann factor by exponentiating minus the energy divided by
