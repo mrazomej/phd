@@ -35,6 +35,98 @@ mechanical models, and kinetic models. In the following sections we will
 introduce the necessary background for both approaches relevant to the rest of
 the thesis.
 
+### Minimal model of gene expression
+
+Let us begin our introduction to gene expression modeling with the simplest
+example. As shown in [@Fig:ch1_fig01](A) we imagine a gene promoter (the region
+of the gene from which transcriptional regulation takes place) produces mRNA at
+a constant rate $r_m$. Each individual mRNA can stochastically decay with a rate
+$\gamma_m$. Our interest is to understand how the mRNA count $m$ changes over
+time given these two competing processes. For that let us write the mRNA count
+at time $m(t + \Delta t)$, where $t$ is the time--which we are thinking of as
+being "right now"--and $\Delta t$ is a tiny time step into the future. The mRNA
+count can then be predicted by computing
+$$
+m(t + \Delta t) = m(t) + r_m \Delta t - (\gamma_m \Delta t) m(t),
+$$
+where we can think of $r_m \Delta t$ as the probability of observing a single
+mRNA being produced in the time interval $[t, t + \Delta t]$ ($\Delta t$ is so
+small that we neglect the possibility of seing multiple mRNAs being produced),
+and $\gamma_m \Delta t$ the probability of seeing a single mRNA being degraded.
+But since each mRNA has the same probability of being degraded, the total number
+of mRNAs that we would see decay in this time window would be the probability
+per mRNA times the total number of mRNAs. If we send the term $m(t)$ to the left
+hand side of the equation and divide both sides by $\Delta t$, we obtain
+$$
+\frac{m(t + \Delta t) - m(t)}{\Delta t} = r_m - \gamma_m m(t).
+$$
+Upon taking the limit when $\Delta t \rightarrow 0$ we see that the left hand
+side is the definition of the derivative of the mRNA count with respect to time.
+We then obtain an ordinary differential equation of the form
+$$
+\frac{dm}{dt} = r_m - \gamma_m m(t).
+\label{eq:dm_dt}
+$$
+Before even attempting to solve $\ref{eq:dm_dt}$ we can perform a qualitative
+analysis of the dynamics [@Strogatz2018]. In particular it is useful to plot the
+contribution to the derivative $dm/dt$ for each of the components (production
+and degradation) as a function of $m$. This is shown in [@Fig:ch1_fig01](B)
+where the blue horizontal line $r_m$ shows the production rate--which does not
+depend on $m$, and the red line shows the degradation term $m\gamma_m$ which
+scales linearly with $m$. Notice that for the degradation term we are not
+including the negative sign, i.e., we are not plotting $-m \gamma_m$. The point
+$m_{ss}$ where both lines intersect represent the point where the production
+matches the degradation. For all values before $m_{ss}$ the production term is
+larger than the degradation, which means that for any value $m < m_{ss}$ the
+derivative is positive ($dm/dt > 0$), so over time the system will produce more
+mRNA. The opposite is true for values all values after $m_{ss}$ where the
+degradation term is larger than the production term, implying that $dm/dt < 0$.
+This means that for $m > m_{ss}$ the system will degrade mRNA. This opposite
+trends point at the idea that $m_{ss}$ must be what is called a stable fix point
+of the dynamical system. This can schematically be seen at the bottom of
+[@Fig:ch1_fig01](B) where the size of the arrow heads indicates the trend of the
+system to move either left or right in $m$. Since all arrows point at the
+special value $m_{ss}$ we can say that any small perturbation of the system will
+be dissipated as the system relaxes back to $m_{ss}$.
+
+This qualitative statement can be confirmed by solving Eq. $\ref{eq:dm_dt}$. If
+we define the initial condition $m(t=0) = m_o$ by separation of variables we 
+will obtain a solution of the form
+$$
+m(t) = m_o e^{-\gamma_m t} + \frac{r_m}{\gamma_m} (1 - e^{-\gamma_m t}).
+$$
+In the limit when $t \rightarrow \infty$ we can see that the steady state 
+solution is given by
+$$
+m_{ss} = \frac{r_m}{\gamma_m}.
+$$
+[@Fig:ch1_fig01](C) shows the time evolution of $m$ for different initial values
+$m_o$. We can see that indeed regardless of the initial mRNA count the system
+relaxes exponentially fast to $m_{ss} = r_m / \gamma_m$.
+
+![**Minimal model of gene expression.** (A) Schematic of the kinetics governing
+gene expression. mRNA is produced at a constant rate $r_m$ independent of the
+current mRNA copy number. Degradation of each mRNA occurs at a rate $\gamma_m$.
+(B) Example of the qualitative analysis of the mRNA dynamics via a 1D
+phase-portrait. The differential equation governing the dynamics contains two
+terms: a constant production rate given by $r_m$, and a degradation rate
+$\gamma_m m$ that depends on the current mRNA count. The main plot shows each of
+the components in the $m$ vs $dm/dt$ plot. Since $r_m$ does not depend on the
+current number of mRNA it gives a straight production rate as a function of $m$.
+The total degradation rate depends linearly with the mRNA copy number, giving a
+line with slope $\gamma_m$. When the two components are equal (bot lines
+crossing), we obtain the steady-state mRNA value $m_{ss}$. The bottom line shows
+a qualitative schematic of the flow of the system towards this steady state. The
+further $m$ is from $m_{ss}$, the faster it moves towards this point as
+schematized by the size of the arrows. (C) Example of mRNA dynamics for
+different initial conditions. Over time all curves converge to the steady-state
+mRNA value $m_{ss}=r_m/\gamma_m$. For this plot $\gamma_m = 1$ and $r_m/\gamma_m
+= 10$. The [Python code
+(`ch1_fig01C.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig01C.py)
+used to generate part (C) of this figure can be found on the thesis [GitHub
+repository](https://github.com/mrazomej/phd).](ch1_fig01){#fig:ch1_fig01
+short-caption="Minimal model of gene expression"}
+
 ### The unreasonable effectiveness of unrealistic simplifications
 
 On the preface of the textbook *Molecular Driving Forces* Dill and Bromberg
@@ -75,7 +167,7 @@ probability of a system in thermal equilibrium to be found in a particular
 microstate with energy $E_1$ compared to being in a microstate with energy $E_2$
 is given by an exponential function of minus the energy of such microstate
 divided by $k_BT$, the thermal energy. To give concrete examples of what a
-microstate can look like, [@Fig:ch1_fig01](A) shows three molecular systems
+microstate can look like, [@Fig:ch1_fig02](A) shows three molecular systems
 relevant for biology. On the first example we have the classic ligand-receptor
 binding problem; here we imagine that a solution can be discretized into a
 series of small boxes. In each of these boxes one and only one ligand molecule
@@ -99,19 +191,19 @@ the case of the ligand-receptor binding, we rarely would care about the specific
 position of all the ligand molecules in the solution. What we would be
 interested in is whether or not the ligand is bound to the receptor. We can
 therefore define as our "macrostate" the particular configuration of the
-receptor as schematically shown in [@Fig:ch1_fig01](B).
+receptor as schematically shown in [@Fig:ch1_fig02](B).
 
 ![**Boltzmann's law and the definition of a micro and macrostate.** (A) Top
 panel: ligand-receptor binding microstates. Middle panel: ligand-gated ion
 channel microstates. Bottom panel: membrane patch deformations. (B) Schematic of
 the definition of a "macrostate." In the ligand-receptor binding problem we
 ignore the spatial configuration of all ligand molecules, and focus on the
-binding state of the receptor.](ch1_fig01){#fig:ch1_fig01
+binding state of the receptor.](ch1_fig02){#fig:ch1_fig02
 short-caption="Boltzmann's law and the definition of a micro and macrostate"}
 
 If we want to know the likelihood of finding a particular system in any specific
 configurationBoltzmann's law (Eq. $\ref{eq:boltzmann_law}$) is then telling us a
-protocol: 
+protocol we must follow: 
 1. Enumerate all possible microstates in which the system can be found.
 2. Compute the energy of each of these microstates.
 3. Compute the Boltzmann factor by exponentiating minus the energy divided by
