@@ -65,13 +65,13 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-<link rel="icon" href="https://mrazomej.github.io/phd//favicon.ico"
+<link rel="icon" href="/favicon.ico"
     type="image/x-icon">
 <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Alegreya|Lora&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
-    href="https://mrazomej.github.io/phd//doks-theme/assets/css/style.css">
+    href="/doks-theme/assets/css/style.css">
 </head>
 
 <body class="grey" data-spy="scroll" data-target=".js-scrollspy">
@@ -83,7 +83,7 @@
 			<div class="row">
 				<div class="col-xs-12">
 					
-						<a href="https://mrazomej.github.io/phd//" class="site-header__logo"><i class="icon icon--chevron-left"></i> Home</a>
+						<a href="/" class="site-header__logo"><i class="icon icon--chevron-left"></i> Home</a>
 					
 					
 				</div><!-- /.col -->
@@ -92,7 +92,7 @@
 	</header><!-- /.site-header -->
 
 
-    <div class="hero-subheader" style="background-image: url(https://mrazomej.github.io/phd//doks-theme/assets/images/paihia.jpg); background-position: center; object-fit: cover; width:100%;">
+    <div class="hero-subheader" style="background-image: url(http://127.0.0.1:4000/doks-theme/assets/images/paihia.jpg); background-position: center; object-fit: cover; width:100%;">
 
         <div class="container" style="background-color: rgba(0,0,0, 0.75); border:0.75px solid white;">
             <div class="row">
@@ -109,12 +109,12 @@
                             
                             <!-- 
 									
-										<a href="https://mrazomej.github.io/phd/abstract" class="btn btn--dark btn--rounded btn--w-icon btn--w-icon-left">
+										<a href="abstract" class="btn btn--dark btn--rounded btn--w-icon btn--w-icon-left">
 											<i class="icon icon--arrow-left"></i>	
 										</a>
 									
 									
-										<a href="https://mrazomej.github.io/phd/chapter_02" class="btn btn--dark btn--rounded btn--w-icon">
+										<a href="chapter_02" class="btn btn--dark btn--rounded btn--w-icon">
 											<i class="icon icon--arrow-right"></i>
 										</a>
 									
@@ -147,14 +147,14 @@
             <div class="row">
                 <div class="col-xs-12">
                     
-                    <a href="https://mrazomej.github.io/phd/abstract"
+                    <a href="abstract"
                         class="page-nav__item page-nav__item--prev">
                         <i class="icon icon--arrow-left"></i>
                         Abstract
                     </a><!-- /.page-nav__item -->
                     
                     
-                    <a href="https://mrazomej.github.io/phd/chapter_02"
+                    <a href="chapter_02"
                         class="page-nav__item page-nav__item--next">
                         Chapter 2
                         <i class="icon icon--arrow-right"></i>
@@ -183,21 +183,51 @@
 <p>Our understanding of how organisms regulate the expression of their genes is still not as thorough as one might expect given the amount of effort that has gone into this question. Take for example <em>E. coli</em>–arguably the most well characterized model organism–for which we know the regulatory scheme of less than 1/3 of its genes <span class="citation" data-cites="Ireland2020"> [<a href="#ref-Ireland2020" role="doc-biblioref">9</a>]</span>. For more complex organisms such as <em>Drosophila</em>, <em>C. elegans</em>, or even humans we are even more hopeless on getting a holistic view of the regulatory landscape. Nevertheless we would not be doing justice to the great advances in the field if we were to pretend we are completely ignorant about how gene regulation takes place in bacteria. There is a rich mechanistic understanding of how the transcriptional machinery takes the information contained in the DNA and transcribes it into RNA <span class="citation" data-cites="Browning2004"> [<a href="#ref-Browning2004" role="doc-biblioref">8</a>]</span>. The relative simplicity of the process has inspired generations of biophysicists to try to write down minimal models that can describe and predict features of the process of gene regulation <span class="citation" data-cites="Ackers1982 Bintu2005 Kuhlman2007"> [<a href="#ref-Ackers1982" role="doc-biblioref">10</a>–<a href="#ref-Kuhlman2007" role="doc-biblioref">12</a>]</span>.</p>
 <p>These modeling efforts come into two main flavors: equilibrium statistical mechanical models, and kinetic models. In the following sections we will introduce the necessary background for both approaches relevant to the rest of the thesis.</p>
 <h3 id="minimal-model-of-gene-expression">Minimal model of gene expression</h3>
-<p>Let us begin our introduction to gene expression modeling with the simplest example. As shown in</p>
+<p>Let us begin our introduction to gene expression modeling with the simplest example. As shown in Fig. 1(A) we imagine a gene promoter (the region of the gene from which transcriptional regulation takes place) produces mRNA at a constant rate <span class="math inline">\(r_m\)</span>. Each individual mRNA can stochastically decay with a rate <span class="math inline">\(\gamma_m\)</span>. Our interest is to understand how the mRNA count <span class="math inline">\(m\)</span> changes over time given these two competing processes. For that let us write the mRNA count at time <span class="math inline">\(m(t + \Delta t)\)</span>, where <span class="math inline">\(t\)</span> is the time–which we are thinking of as being “right now”–and <span class="math inline">\(\Delta t\)</span> is a tiny time step into the future. The mRNA count can then be predicted by computing <span class="math display">\[
+m(t + \Delta t) = m(t) + r_m \Delta t - (\gamma_m \Delta t) m(t),
+\]</span> where we can think of <span class="math inline">\(r_m \Delta t\)</span> as the probability of observing a single mRNA being produced in the time interval <span class="math inline">\([t, t + \Delta t]\)</span> (<span class="math inline">\(\Delta t\)</span> is so small that we neglect the possibility of seing multiple mRNAs being produced), and <span class="math inline">\(\gamma_m \Delta t\)</span> the probability of seeing a single mRNA being degraded. But since each mRNA has the same probability of being degraded, the total number of mRNAs that we would see decay in this time window would be the probability per mRNA times the total number of mRNAs. If we send the term <span class="math inline">\(m(t)\)</span> to the left hand side of the equation and divide both sides by <span class="math inline">\(\Delta t\)</span>, we obtain <span class="math display">\[
+\frac{m(t + \Delta t) - m(t)}{\Delta t} = r_m - \gamma_m m(t).
+\]</span> Upon taking the limit when <span class="math inline">\(\Delta t \rightarrow 0\)</span> we see that the left hand side is the definition of the derivative of the mRNA count with respect to time. We then obtain an ordinary differential equation of the form <span class="math display">\[
+\frac{dm}{dt} = r_m - \gamma_m m(t).
+\label{eq:dm_dt}
+\]</span> Before even attempting to solve <span class="math inline">\(\ref{eq:dm_dt}\)</span> we can perform a qualitative analysis of the dynamics <span class="citation" data-cites="Strogatz2018"> [<a href="#ref-Strogatz2018" role="doc-biblioref">13</a>]</span>. In particular it is useful to plot the contribution to the derivative <span class="math inline">\(dm/dt\)</span> for each of the components (production and degradation) as a function of <span class="math inline">\(m\)</span>. This is shown in Fig. 1(B) where the blue horizontal line <span class="math inline">\(r_m\)</span> shows the production rate–which does not depend on <span class="math inline">\(m\)</span>, and the red line shows the degradation term <span class="math inline">\(m\gamma_m\)</span> which scales linearly with <span class="math inline">\(m\)</span>. Notice that for the degradation term we are not including the negative sign, i.e., we are not plotting <span class="math inline">\(-m \gamma_m\)</span>. The point <span class="math inline">\(m_{ss}\)</span> where both lines intersect represent the point where the production matches the degradation. For all values before <span class="math inline">\(m_{ss}\)</span> the production term is larger than the degradation, which means that for any value <span class="math inline">\(m &lt; m_{ss}\)</span> the derivative is positive (<span class="math inline">\(dm/dt &gt; 0\)</span>), so over time the system will produce more mRNA. The opposite is true for values all values after <span class="math inline">\(m_{ss}\)</span> where the degradation term is larger than the production term, implying that <span class="math inline">\(dm/dt &lt; 0\)</span>. This means that for <span class="math inline">\(m &gt; m_{ss}\)</span> the system will degrade mRNA. This opposite trends point at the idea that <span class="math inline">\(m_{ss}\)</span> must be what is called a stable fix point of the dynamical system. This can schematically be seen at the bottom of Fig. 1(B) where the size of the arrow heads indicates the trend of the system to move either left or right in <span class="math inline">\(m\)</span>. Since all arrows point at the special value <span class="math inline">\(m_{ss}\)</span> we can say that any small perturbation of the system will be dissipated as the system relaxes back to <span class="math inline">\(m_{ss}\)</span>.</p>
+<p>This qualitative statement can be confirmed by solving Eq. <span class="math inline">\(\ref{eq:dm_dt}\)</span>. If we define the initial condition <span class="math inline">\(m(t=0) = m_o\)</span> by separation of variables we will obtain a solution of the form <span class="math display">\[
+m(t) = m_o e^{-\gamma_m t} + \frac{r_m}{\gamma_m} (1 - e^{-\gamma_m t}).
+\]</span> In the limit when <span class="math inline">\(t \rightarrow \infty\)</span> we can see that the steady state solution is given by <span class="math display">\[
+m_{ss} = \frac{r_m}{\gamma_m}.
+\]</span> Fig. 1(C) shows the time evolution of <span class="math inline">\(m\)</span> for different initial values <span class="math inline">\(m_o\)</span>. We can see that indeed regardless of the initial mRNA count the system relaxes exponentially fast to <span class="math inline">\(m_{ss} = r_m / \gamma_m\)</span>.</p>
 <figure>
-<img src="ch1_fig01.png" id="fig:ch1_fig01" data-short-caption="Minimal model of gene expression" alt="Figure 1: Minimal model of gene expression. (A) Schematic of the kinetics governing gene expression. mRNA is produced at a constant rate r_m independent of the current mRNA copy number. Degradation of each mRNA occurs at a rate \gamma_m. (B) Example of the qualitative analysis of the mRNA dynamics via a 1D phase-portrait. The differential equation governing the dynamics contains two terms: a constant production rate given by r_m, and a degradation rate \gamma_m m that depends on the current mRNA count. The main plot shows each of the components in the m vs dm/dt plot. Since r_m does not depend on the current number of mRNA it gives a straight production rate as a function of m. The total degradation rate depends linearly with the mRNA copy number, giving a line with slope \gamma_m. When the two components are equal (bot lines crossing), we obtain the steady-state mRNA value m_{ss}. The bottom line shows a qualitative schematic of the flow of the system towards this steady state. The further m is from m_{ss}, the faster it moves towards this point as schematized by the size of the arrows." /><figcaption aria-hidden="true">Figure 1: <strong>Minimal model of gene expression.</strong> (A) Schematic of the kinetics governing gene expression. mRNA is produced at a constant rate <span class="math inline">\(r_m\)</span> independent of the current mRNA copy number. Degradation of each mRNA occurs at a rate <span class="math inline">\(\gamma_m\)</span>. (B) Example of the qualitative analysis of the mRNA dynamics via a 1D phase-portrait. The differential equation governing the dynamics contains two terms: a constant production rate given by <span class="math inline">\(r_m\)</span>, and a degradation rate <span class="math inline">\(\gamma_m m\)</span> that depends on the current mRNA count. The main plot shows each of the components in the <span class="math inline">\(m\)</span> vs <span class="math inline">\(dm/dt\)</span> plot. Since <span class="math inline">\(r_m\)</span> does not depend on the current number of mRNA it gives a straight production rate as a function of <span class="math inline">\(m\)</span>. The total degradation rate depends linearly with the mRNA copy number, giving a line with slope <span class="math inline">\(\gamma_m\)</span>. When the two components are equal (bot lines crossing), we obtain the steady-state mRNA value <span class="math inline">\(m_{ss}\)</span>. The bottom line shows a qualitative schematic of the flow of the system towards this steady state. The further <span class="math inline">\(m\)</span> is from <span class="math inline">\(m_{ss}\)</span>, the faster it moves towards this point as schematized by the size of the arrows.</figcaption>
+<img src="ch1_fig01.png" id="fig:ch1_fig01" data-short-caption="Minimal model of gene expression" alt="Figure 1: Minimal model of gene expression. (A) Schematic of the kinetics governing gene expression. mRNA is produced at a constant rate r_m independent of the current mRNA copy number. Degradation of each mRNA occurs at a rate \gamma_m. (B) Example of the qualitative analysis of the mRNA dynamics via a 1D phase-portrait. The differential equation governing the dynamics contains two terms: a constant production rate given by r_m, and a degradation rate \gamma_m m that depends on the current mRNA count. The main plot shows each of the components in the m vs dm/dt plot. Since r_m does not depend on the current number of mRNA it gives a straight production rate as a function of m. The total degradation rate depends linearly with the mRNA copy number, giving a line with slope \gamma_m. When the two components are equal (bot lines crossing), we obtain the steady-state mRNA value m_{ss}. The bottom line shows a qualitative schematic of the flow of the system towards this steady state. The further m is from m_{ss}, the faster it moves towards this point as schematized by the size of the arrows. (C) Example of mRNA dynamics for different initial conditions. Over time all curves converge to the steady-state mRNA value m_{ss}=r_m/\gamma_m. For this plot \gamma_m = 1 and r_m/\gamma_m = 10. The Python code (ch1_fig01C.py) used to generate part (C) of this figure can be found on the thesis GitHub repository." /><figcaption aria-hidden="true">Figure 1: <strong>Minimal model of gene expression.</strong> (A) Schematic of the kinetics governing gene expression. mRNA is produced at a constant rate <span class="math inline">\(r_m\)</span> independent of the current mRNA copy number. Degradation of each mRNA occurs at a rate <span class="math inline">\(\gamma_m\)</span>. (B) Example of the qualitative analysis of the mRNA dynamics via a 1D phase-portrait. The differential equation governing the dynamics contains two terms: a constant production rate given by <span class="math inline">\(r_m\)</span>, and a degradation rate <span class="math inline">\(\gamma_m m\)</span> that depends on the current mRNA count. The main plot shows each of the components in the <span class="math inline">\(m\)</span> vs <span class="math inline">\(dm/dt\)</span> plot. Since <span class="math inline">\(r_m\)</span> does not depend on the current number of mRNA it gives a straight production rate as a function of <span class="math inline">\(m\)</span>. The total degradation rate depends linearly with the mRNA copy number, giving a line with slope <span class="math inline">\(\gamma_m\)</span>. When the two components are equal (bot lines crossing), we obtain the steady-state mRNA value <span class="math inline">\(m_{ss}\)</span>. The bottom line shows a qualitative schematic of the flow of the system towards this steady state. The further <span class="math inline">\(m\)</span> is from <span class="math inline">\(m_{ss}\)</span>, the faster it moves towards this point as schematized by the size of the arrows. (C) Example of mRNA dynamics for different initial conditions. Over time all curves converge to the steady-state mRNA value <span class="math inline">\(m_{ss}=r_m/\gamma_m\)</span>. For this plot <span class="math inline">\(\gamma_m = 1\)</span> and <span class="math inline">\(r_m/\gamma_m = 10\)</span>. The <a href="https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig01C.py">Python code (<code>ch1_fig01C.py</code>)</a> used to generate part (C) of this figure can be found on the thesis <a href="https://github.com/mrazomej/phd">GitHub repository</a>.</figcaption>
 </figure>
+<p>So far our model assumes a simple constant transcription rate <span class="math inline">\(r_m\)</span>; let us expand this term a little further in order to include regulation by a transcriptional repressor further down the road. We knot that for a transcriptional event to take place the RNA polymerase (RNAP) must bind to the promoter region and undergo a series of irreversible steps such as opening the double helix to initiate the copying of the DNA sequence into mRNA <span class="citation" data-cites="Browning2004"> [<a href="#ref-Browning2004" role="doc-biblioref">8</a>]</span>. If we assume these irreversible steps take place in a much longer time-scale compared to the initial binding and unbinding of the RNAP on the promoter, we can separate these two events in different terms. In particular we can write that the mRNA production happens with a rate <span class="math display">\[
+\text{mRNA production} = r_m \cdot p_{\text{bound}},
+\]</span> where we split the original production term into two steps: <span class="math inline">\(p_{\text{bound}}\)</span>, the probability of finding an RNAP bound to the promoter, and <span class="math inline">\(r_m\)</span> which captures all of the downstream irreversible steps that take place once the RNAP is engaged in a transcriptional event. A way to think about it–relevant to what I am doing right now as I type my thesis–is to think that the speed at which I type this document has to do with two things: The probability of me being actively working on these notes times the rate at which I type these notes once I engage in the activity. The reason this splitting makes sense is because we can include the effect of the regulation by a transcriptional repressor as a reduction of the time (the probability) that the RNAP can be bound to the promoter by effectively taking away probability mass. Futhermore, since we are assuming that the binding and unbinding of the RNAP happen at a timescale much faster than the downstream events, we can assume this binding reaction is in quasi-equilibrium, for which we can use the powerful theoretical framework of statistical mechanics. Let us now delve into the basics of this physical theory.</p>
 <h3 id="the-unreasonable-effectiveness-of-unrealistic-simplifications">The unreasonable effectiveness of unrealistic simplifications</h3>
-<p>On the preface of the textbook <em>Molecular Driving Forces</em> Dill and Bromberg introduce the idea of Statistical Mechanics as <em>the unreasonable effectiveness of unrealistic simplifications <span class="citation" data-cites="Dill2010"> [<a href="#ref-Dill2010" role="doc-biblioref">13</a>]</span>. Although one could make the case that all of physics follows this description, it is certainly evident that statistical mechanics is a vivid example of how simple ideas can have profound consequences. Statistical mechanics can be simply defined as the theory that, upon assuming the atomic nature of matter, explains the phenomenology that classical thermodynamics established <span class="citation" data-cites="Dill2010"> [<a href="#ref-Dill2010" role="doc-biblioref">13</a>]</span> from the interactions of the microscopic components of a system. As with any other physical theory, statistical mechanics is built from a set of </em>empirical* facts that define axioms that we take to be truth. In other words, as Feynman famously described to us: if we want to come up with a new law of nature there is a simple recipe that we must follow: 1. We guess the law. Literally. The deepest understanding of physical reality we have up to now come from educated guesses made after a careful observation of nature. 2. We compute the consequences of such guess. That is why mathematical theories allow us to sharpen our statements about how nature works 3. We compare with experiments/observations. The scientific revolution came about when, after the dark ages, we finally learned it was okay to say “we don’t know.”</p>
-<p>In such simple statement, Feynman tells us, lies the key to science <span class="citation" data-cites="Feynman1965"> [<a href="#ref-Feynman1965" role="doc-biblioref">14</a>]</span>. For our purpose of understanding the basis of statistical mechanics one could argue that the main law upon which the field is founded is given by Boltzmann’s law <span class="math display">\[
+<p>On the preface of the textbook <em>Molecular Driving Forces</em> Dill and Bromberg introduce the idea of Statistical Mechanics as <em>the unreasonable effectiveness of unrealistic simplifications</em> <span class="citation" data-cites="Dill2010"> [<a href="#ref-Dill2010" role="doc-biblioref">14</a>]</span>. Although one could make the case that all of physics follows this description, it is certainly evident that statistical mechanics is a vivid example of how simple ideas can have profound consequences. Statistical mechanics can be simply defined as the theory that, upon assuming the atomic nature of matter, explains the phenomenology that classical thermodynamics established <span class="citation" data-cites="Dill2010"> [<a href="#ref-Dill2010" role="doc-biblioref">14</a>]</span> from the interactions of the microscopic components of a system. As with any other physical theory, statistical mechanics is built from a set of <em>empirical</em> facts that define “axioms” that we take to be truth. In other words, as Feynman famously described to us: if we want to come up with a new law of nature there is a simple recipe that we must follow:</p>
+<ol type="1">
+<li><p>We guess the law. Literally. The deepest understanding of physical reality we have up to now come from educated guesses made after a careful observation of nature.</p></li>
+<li><p>We compute the consequences of such guess. That is why mathematical theories allow us to sharpen our statements about how we think nature works.</p></li>
+<li><p>We compare with experiments/observations. The scientific revolution came about when, after the dark ages, we finally learned it was okay to say “we don’t know.”</p></li>
+</ol>
+<p>In such simple statement, Feynman tells us, lies the key to science <span class="citation" data-cites="Feynman1965"> [<a href="#ref-Feynman1965" role="doc-biblioref">15</a>]</span>. For our purpose of understanding the basis of statistical mechanics we will argue that the main law upon which the field is founded is given by Boltzmann’s law <span class="math display">\[
 \frac{P(E_1)}{P(E_2)} = \frac{e^{-E_1 / k_BT}}{e^{-E_2 / k_BT}}.
 \label{eq:boltzmann_law}
-\]</span> Let us unpack this equation. The main idea behind statistical mechanics is that macroscopic observables (temperature, pressure, specific heat in classic examples) are emergent properties dictated by the dynamics of the microscopic components of the system. What Boltzmann’s law tells us is that the relative probability of a system in thermal equilibrium to be found in a particular microstate with energy <span class="math inline">\(E_1\)</span> compared to being in a microstate with energy <span class="math inline">\(E_2\)</span> is given by an exponential function of minus the energy of such microstate divided by <span class="math inline">\(k_BT\)</span>, the thermal energy. To give concrete examples of what a microstate can look like, Fig. 2(A) shows three molecular systems relevant for biology. On the first example we have the classic ligand-receptor binding problem; here we imagine that a solution can be discretized into a series of small boxes. In each of these boxes one and only one ligand molecule can fit in. In principle we can list all possible spatial arrangements of ligands. We could then calculate the relative likelihood of finding the system in any of the configurations as long as we can assign an energy value to each of them. The second example focuses on ligand-gated ion channels. In this particular system we care about the state of the ion channel itself–either open or close–and the binding configuration of the ligands. If the channel responds to the concentration of the ligand by changing its probability of gating, that is something we can calculate using equilibrium statistical mechanics. Finally, the third example shows different configurations of a small patch of cell membrane. All deformations of a membrane have energetic costs associated with them. So listing all possible microstates of the system we can calculate what is the most likely configuration that we could find a membrane given the forces and stresses acting on the membrane.</p>
+\]</span> Let us unpack this equation. The main idea behind statistical mechanics is that macroscopic observables (temperature, pressure, specific heat in classic examples) are emergent properties dictated by the dynamics of the microscopic components of the system. What Boltzmann’s law tells us is that the relative probability of a system in thermal equilibrium to be found in a particular microstate with energy <span class="math inline">\(E_1\)</span> compared to being in a microstate with energy <span class="math inline">\(E_2\)</span> is given by an exponential function of minus the energy of such microstate divided by <span class="math inline">\(k_BT\)</span>, the thermal energy. To give concrete examples of what a microstate can look like, Fig. 2(A) shows three molecular systems relevant for biology. On the first example we have the classic ligand-receptor binding problem; here we imagine that a solution can be discretized into a series of small boxes. In each of these boxes one and only one ligand molecule can fit in. In principle we can list all possible spatial arrangements of ligands. We could then calculate the relative likelihood of finding the system in any of the configurations as long as we can assign an energy value to each of them. The second example focuses on ligand-gated ion channels. In this particular system we care about the state of the ion channel itself–either open or close–and the binding configuration of the ligands. If the channel responds to the concentration of the ligand by changing its probability of gating, that is something we can calculate using equilibrium statistical mechanics. Finally, the third example shows different configurations of a small patch of cell membrane. All deformations of a membrane have energetic costs associated with them. So listing all possible membrane configurations we can calculate what is the most likely shape of a membrane given the forces and stresses acting on it.</p>
 <p>The macroscopic states that we get to observe can then be thought of as a coarse-graining of many microstates into a single macrostate. For example, in the case of the ligand-receptor binding, we rarely would care about the specific position of all the ligand molecules in the solution. What we would be interested in is whether or not the ligand is bound to the receptor. We can therefore define as our “macrostate” the particular configuration of the receptor as schematically shown in Fig. 2(B).</p>
 <figure>
 <img src="ch1_fig02.png" id="fig:ch1_fig02" data-short-caption="Boltzmann&#39;s law and the definition of a micro and macrostate" alt="Figure 2: Boltzmann’s law and the definition of a micro and macrostate. (A) Top panel: ligand-receptor binding microstates. Middle panel: ligand-gated ion channel microstates. Bottom panel: membrane patch deformations. (B) Schematic of the definition of a “macrostate.” In the ligand-receptor binding problem we ignore the spatial configuration of all ligand molecules, and focus on the binding state of the receptor." /><figcaption aria-hidden="true">Figure 2: <strong>Boltzmann’s law and the definition of a micro and macrostate.</strong> (A) Top panel: ligand-receptor binding microstates. Middle panel: ligand-gated ion channel microstates. Bottom panel: membrane patch deformations. (B) Schematic of the definition of a “macrostate.” In the ligand-receptor binding problem we ignore the spatial configuration of all ligand molecules, and focus on the binding state of the receptor.</figcaption>
 </figure>
-<p>If we want to know the likelihood of finding a particular system in any specific configurationBoltzmann’s law (Eq. <span class="math inline">\(\ref{eq:boltzmann_law}\)</span>) is then telling us a protocol we must follow: 1. Enumerate all possible microstates in which the system can be found. 2. Compute the energy of each of these microstates. 3. Compute the Boltzmann factor by exponentiating minus the energy divided by the thermal energy.</p>
+<p>If we want to know the likelihood of finding a particular system in any specific configuration Boltzmann’s law (Eq. <span class="math inline">\(\ref{eq:boltzmann_law}\)</span>) is then telling us a protocol we must follow:</p>
+<ol type="1">
+<li><p>Enumerate all possible microstates in which the system can be found.</p></li>
+<li><p>Compute the energy of each of these microstates.</p></li>
+<li><p>Define the “macrostate” we care about by grouping all microstaes that belong to the same macrostate.</p></li>
+<li><p>Compute the Boltzmann factor by exponentiating minus the energy divided by the thermal energy.</p></li>
+</ol>
+<p>To see this protocol in action let us apply it to the calculation of <span class="math inline">\(p_{\text{bound}}\)</span>, the probability of finding an RNAP bound to the promoter.</p>
+<figure>
+<img src="ch1_fig03.png" id="fig:ch1_fig03" data-short-caption="Statistical Mechanics protocol for RNAP binding" alt="Figure 3: Statistical Mechanics protocol for RNAP binding. On a discretized genome we follow the statistical mechanics protocol to compute the Boltzmann weight of each of the relevant microstates. The P available RNAPs are assumed to have two binding configurations: One specific binding to the promoter of interest (with energy \varepsilon_P^{(S)}) and non-specific to any of the N_{NS} non-specific binding sites (with energy \varepsilon_P^{(NS)})." /><figcaption aria-hidden="true">Figure 3: <strong>Statistical Mechanics protocol for RNAP binding.</strong> On a discretized genome we follow the statistical mechanics protocol to compute the Boltzmann weight of each of the relevant microstates. The <span class="math inline">\(P\)</span> available RNAPs are assumed to have two binding configurations: One specific binding to the promoter of interest (with energy <span class="math inline">\(\varepsilon_P^{(S)}\)</span>) and non-specific to any of the <span class="math inline">\(N_{NS}\)</span> non-specific binding sites (with energy <span class="math inline">\(\varepsilon_P^{(NS)}\)</span>).</figcaption>
+</figure>
 <h2 id="entropy-information-and-the-math-behind-the-bit">Entropy, information, and the math behind the bit</h2>
 <h2 class="unnumbered" id="references">References</h2>
 <div id="refs" class="references csl-bib-body" role="doc-bibliography">
@@ -237,11 +267,14 @@
 <div id="ref-Kuhlman2007" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">[12] </div><div class="csl-right-inline">T. Kuhlman, Z. Zhang, M. H. Saier, and T. Hwa, <em><span class="nocase">Combinatorial transcriptional control of the lactose operon of <em>Escherichia coli</em></span>.</em>, Proceedings of the National Academy of Sciences <strong>104</strong>, 6043 (2007).</div>
 </div>
+<div id="ref-Strogatz2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">S. H. Strogatz, <em>Nonlinear Dynamics and Chaos with Student Solutions Manual: With Applications to Physics, Biology, Chemistry, and Engineering</em> (CRC press, 2018).</div>
+</div>
 <div id="ref-Dill2010" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">[13] </div><div class="csl-right-inline">K. Dill and S. Bromberg, <em>Molecular Driving Forces: Statistical Thermodynamics in Biology, Chemistry, Physics, and Nanoscience</em> (Garland Science, 2010).</div>
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">K. Dill and S. Bromberg, <em>Molecular Driving Forces: Statistical Thermodynamics in Biology, Chemistry, Physics, and Nanoscience</em> (Garland Science, 2010).</div>
 </div>
 <div id="ref-Feynman1965" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">[14] </div><div class="csl-right-inline">R. P. Feynman, R. B. Leighton, and M. Sands, <em>The Feynman Lectures on Physics; Vol. I</em>, American Journal of Physics <strong>33</strong>, 750 (1965).</div>
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">R. P. Feynman, R. B. Leighton, and M. Sands, <em>The Feynman Lectures on Physics; Vol. I</em>, American Journal of Physics <strong>33</strong>, 750 (1965).</div>
 </div>
 </div>
                     </div><!-- /.content -->
@@ -258,38 +291,6 @@
         </div><!-- /.container -->
     </div><!-- /.section -->
     
-    <div class="section section--grey">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7">
-                    <div id="disqus_thread"></div>
-<script>
-	/**
-	 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-	 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-	 */
-	 /*
-	var disqus_config = function () {
-	this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-		this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-	};
-	*/
-	(function() {
-		var d = document, s = d.createElement('script');
-
-		s.src = 'https://mrazomej-phd.disqus.com/embed.js';
-
-		s.setAttribute('data-timestamp', +new Date());
-		(d.head || d.body).appendChild(s);
-	})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </div><!-- /.section -->
-    
     <div class="js-footer-area">
         
         <nav class="page-nav">
@@ -297,14 +298,14 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-                        <a href="https://mrazomej.github.io/phd/abstract"
+                        <a href="abstract"
                             class="page-nav__item page-nav__item--prev">
                             <i class="icon icon--arrow-left"></i>
                             Abstract
                         </a><!-- /.page-nav__item -->
                         
                         
-                        <a href="https://mrazomej.github.io/phd/chapter_02"
+                        <a href="chapter_02"
                             class="page-nav__item page-nav__item--next">
                             Chapter 2
                             <i class="icon icon--arrow-right"></i>
@@ -322,7 +323,7 @@
 			<div class="row">
 				<div class="col-sm-6">
 					
-						<a href="https://mrazomej.github.io/phd//" class="site-footer__logo">Manuel Razo-Mejia | PhD Thesis</a>
+						<a href="/" class="site-footer__logo">Manuel Razo-Mejia | PhD Thesis</a>
 					
 					
 						<hr>
@@ -347,22 +348,12 @@
 	</footer><!-- /.site-footer -->
 
 
-<script src="https://mrazomej.github.io/phd//doks-theme/assets/js/vendor/jquery.min.js"></script>
-<script type="text/javascript" src="https://mrazomej.github.io/phd//doks-theme/assets/js/vendor/bootstrap/affix.min.js"></script>
-<script type="text/javascript" src="https://mrazomej.github.io/phd//doks-theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
-<script type="text/javascript" src="https://mrazomej.github.io/phd//doks-theme/assets/js/vendor/matchHeight.min.js"></script>
-<script type="text/javascript" src="https://mrazomej.github.io/phd//doks-theme/assets/js/scripts.min.js"></script>
+<script src="/doks-theme/assets/js/vendor/jquery.min.js"></script>
+<script type="text/javascript" src="/doks-theme/assets/js/vendor/bootstrap/affix.min.js"></script>
+<script type="text/javascript" src="/doks-theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
+<script type="text/javascript" src="/doks-theme/assets/js/vendor/matchHeight.min.js"></script>
+<script type="text/javascript" src="/doks-theme/assets/js/scripts.min.js"></script>
 
-
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-	ga('create', 'UA-109526846-4', 'auto');
-	ga('send', 'pageview');
-</script>
 
 
 
