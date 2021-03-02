@@ -247,7 +247,39 @@ a protocol we must follow:
    the thermal energy.
 
 To see this protocol in action let us apply it to the calculation of
-$p_{\text{bound}}$, the probability of finding an RNAP bound to the promoter.
+$p_{\text{bound}}$, the probability of finding an RNAP bound to the promoter. We
+will go through each of the steps on the protocol and build up the "unrealistic
+simplifications" that will allow us to make this calculation.
+
+**1. Enumerate possible microstates.** We begin by making a drastic
+coarse-graining of the bacterial genome. For us a genome is simply made of boxes
+where the RNAP can bind. We imagine that there is a single site where RNAP can
+bind specifically--the promoter of interest. There are also $N_{NS} \approx
+5\times 10^6$ non-specific binding sites, one per basepair (bp) in the genome.
+We ignore the fact that the RNAP footprint when it binds to the genome is
+roughly 30 bp. This assumption is valid if the number of available RNAP
+molecules is much smaller than the number of non-specific binding sites since it
+is extremely unlikely that by pure chance two RNAPs would fall next to each
+other. We also ignore the possibility of RNAP not being bound to the genome.
+Experimental evidence with mini-cells in which a mutant *E. coli* that sheds
+vesicles without segregating a chromosome support this assumption [@Bintu2005].
+The exercise then consists of choosing at random one box for each of the $P$
+polymerase available to bind. [@Fig:ch1_fig03] shows in the first column two
+possible configurations of our coarse-grained genome.
+
+**2. Compute the energy for each microstate.** Let us analyze first the case
+where all $P$ RNAP molecules are bound non-specifically to the genome. For
+simplicity we assume that RNAP binds to all $N_{NS}$ non-specific binding sites
+with the same affinity. We assign this energy to be $\varepsilon_P^{(NS)}$. This
+assumption could be relaxed as we explored in [@Phillips2019], but for now we
+don't have to worry about this complication. For a statistical mechanician the
+assignment of binding energies does not come from some quantum first-principled
+calculation or anything similar. We simply label the interaction of the RNAP and
+the rest of the genome with a single value, $\varepsilon_P^{(NS)}$, that
+coarse-grains all of the hydrogen bonds and other effects that go into this
+physical process. Since we have $P$ such polymerases bound non specifically, the
+energy of any state with a similar configuration is then $P
+\varepsilon_P^{(NS)}$ as shown in [@Fig:ch1_fig03] second column, top row.
 
 ![**Statistical Mechanics protocol for RNAP binding.** On a discretized genome
 we follow the statistical mechanics protocol to compute the Boltzmann weight of
