@@ -127,11 +127,40 @@ used to generate part (C) of this figure can be found on the thesis [GitHub
 repository](https://github.com/mrazomej/phd).](ch1_fig01){#fig:ch1_fig01
 short-caption="Minimal model of gene expression"}
 
+So far our model assumes a simple constant transcription rate $r_m$; let us
+expand this term a little further in order to include regulation by a
+transcriptional repressor further down the road. We knot that for a
+transcriptional event to take place the RNA polymerase (RNAP) must bind to the
+promoter region and undergo a series of irreversible steps such as opening the
+double helix to initiate the copying of the DNA sequence into mRNA
+[@Browning2004]. If we assume these irreversible steps take place in a much 
+longer time-scale compared to the initial binding and unbinding of the RNAP on
+the promoter, we can separate these two events in different terms. In particular
+we can write that the mRNA production happens with a rate
+$$
+\text{mRNA production} = r_m \cdot p_{\text{bound}},
+$$
+where we split the original production term into two steps: $p_{\text{bound}}$,
+the probability of finding an RNAP bound to the promoter, and $r_m$ which
+captures all of the downstream irreversible steps that take place once the RNAP
+is engaged in a transcriptional event. A way to think about it--relevant to what
+I am doing right now as I type my thesis--is to think that the speed at which I
+type this document has to do with two things: The probability of me being
+actively working on these notes times the rate at which I type these notes once
+I engage in the activity. The reason this splitting makes sense is because we
+can include the effect of the regulation by a transcriptional repressor as a
+reduction of the time (the probability) that the RNAP can be bound to the
+promoter by effectively taking away probability mass. Futhermore, since we are
+assuming that the binding and unbinding of the RNAP happen at a timescale much
+faster than the downstream events, we can assume this binding reaction is in
+quasi-equilibrium, for which we can use the powerful theoretical framework of
+statistical mechanics. Let us now delve into the basics of this physical theory.
+
 ### The unreasonable effectiveness of unrealistic simplifications
 
 On the preface of the textbook *Molecular Driving Forces* Dill and Bromberg
 introduce the idea of Statistical Mechanics as *the unreasonable effectiveness
-of unrealistic simplifications [@Dill2010]. Although one could make the case
+of unrealistic simplifications* [@Dill2010]. Although one could make the case
 that all of physics follows this description, it is certainly evident that
 statistical mechanics is a vivid example of how simple ideas can have profound
 consequences. Statistical mechanics can be simply defined as the theory that,
@@ -139,21 +168,24 @@ upon assuming the atomic nature of matter, explains the phenomenology that
 classical thermodynamics established [@Dill2010] from the interactions of the
 microscopic components of a system. As with any other physical theory,
 statistical mechanics is built from a set of *empirical* facts that define
-axioms that we take to be truth. In other words, as Feynman famously described
+"axioms" that we take to be truth. In other words, as Feynman famously described
 to us: if we want to come up with a new law of nature there is a simple recipe
 that we must follow:
+
 1. We guess the law. Literally. The deepest understanding of physical reality we
    have up to now come from educated guesses made after a careful observation of
    nature.
+
 2. We compute the consequences of such guess. That is why mathematical theories
-   allow us to sharpen our statements about how nature works
+   allow us to sharpen our statements about how we think nature works.
+
 3. We compare with experiments/observations. The scientific revolution came
    about when, after the dark ages, we finally learned it was okay to say "we
    don't know."
 
 In such simple statement, Feynman tells us, lies the key to science
 [@Feynman1965]. For our purpose of understanding the basis of statistical
-mechanics one could argue that the main law upon which the field is founded is
+mechanics we will argue that the main law upon which the field is founded is
 given by Boltzmann's law
 $$
 \frac{P(E_1)}{P(E_2)} = \frac{e^{-E_1 / k_BT}}{e^{-E_2 / k_BT}}.
@@ -181,9 +213,8 @@ to the concentration of the ligand by changing its probability of gating, that
 is something we can calculate using equilibrium statistical mechanics. Finally,
 the third example shows different configurations of a small patch of cell
 membrane. All deformations of a membrane have energetic costs associated with
-them. So listing all possible microstates of the system we can calculate what is
-the most likely configuration that we could find a membrane given the forces and
-stresses acting on the membrane.
+them. So listing all possible membrane configurations we can calculate what is
+the most likely shape of a membrane given the forces and stresses acting on it. 
 
 The macroscopic states that we get to observe can then be thought of as a
 coarse-graining of many microstates into a single macrostate. For example, in
@@ -202,9 +233,27 @@ binding state of the receptor.](ch1_fig02){#fig:ch1_fig02
 short-caption="Boltzmann's law and the definition of a micro and macrostate"}
 
 If we want to know the likelihood of finding a particular system in any specific
-configurationBoltzmann's law (Eq. $\ref{eq:boltzmann_law}$) is then telling us a
-protocol we must follow: 
+configuration Boltzmann's law (Eq. $\ref{eq:boltzmann_law}$) is then telling us
+a protocol we must follow: 
+
 1. Enumerate all possible microstates in which the system can be found.
+
 2. Compute the energy of each of these microstates.
-3. Compute the Boltzmann factor by exponentiating minus the energy divided by
+
+3. Define the "macrostate" we care about by grouping all microstaes that belong
+   to the same macrostate.
+
+4. Compute the Boltzmann factor by exponentiating minus the energy divided by
    the thermal energy.
+
+To see this protocol in action let us apply it to the calculation of
+$p_{\text{bound}}$, the probability of finding an RNAP bound to the promoter.
+
+![**Statistical Mechanics protocol for RNAP binding.** On a discretized genome
+we follow the statistical mechanics protocol to compute the Boltzmann weight of
+each of the relevant microstates. The $P$ available RNAPs are assumed to have
+two binding configurations: One specific binding to the promoter of interest
+(with energy $\varepsilon_P^{(S)}$) and non-specific to any of the $N_{NS}$
+non-specific binding sites (with energy
+$\varepsilon_P^{(NS)}$).](ch1_fig03){#fig:ch1_fig03 short-caption="Statistical
+Mechanics protocol for RNAP binding"}
