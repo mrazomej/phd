@@ -294,7 +294,7 @@ words, for the *specific* state shown in the first column/top row of
 [@Fig:ch1_fig03] we know its Boltzmann weight. Eq. $\ref{eq:boltzmann_law}$
 tells us that the probability of this particular configuration takes the form
 $$
-P(E_{\text{state}}) \propto e^{-\beta P \varepsilon_P^{(NS)}},
+P_{\text{state}} \propto e^{-\beta P \varepsilon_P^{(NS)}},
 $$
 since the $P$ RNAP molecules are bound non specifically. But every single 
 arrangement in which all RNAPs are bound non-specifically has the exact same
@@ -303,7 +303,7 @@ the system exist in? This is a combinatorics question of the form: in how many
 different ways can I arrange $P$ molecules into $N_{NS}$ boxes? Which of course
 the answer is
 $$
-\text{Number of states with all RNAPs bound non-specifically} = 
+\text{\# states with all RNAPs bound non-specifically} = 
 \frac{N_{NS}!}{P!(N_{NS} - P)!},
 $$
 as shown in the third column of [@Fig:ch1_fig03]. This multiplicity can be
@@ -328,7 +328,7 @@ is bound specifically for the promoter. The way to realize this state is then
 given by
 $$
 \small
-\text{Number of states with all but one RNAPs bound non-specifically} = 
+\text{\# states with one RNAP bound specifically} = 
 \frac{N_{NS}!}{(P - 1)!(N_{NS} - (P - 1))!} \approx
 \frac{N_{NS}^{P-1}}{(P-1)!}.
 $$
@@ -347,7 +347,7 @@ $$
 For the bound state we have
 $$
 \rho_{\text{bound}} = \frac{N_{NS}^{P-1}}{(P-1)!}
-e^{-\beta (\varepsilon_P^{(S)} +  P\varepsilon_(P-1)^{(NS)})}.
+e^{-\beta \left(\varepsilon_P^{(S)} +  (P - 1) \varepsilon_P^{(NS)}\right)}.
 $$
 For reasons that will become clear later in this chapter once we work with the
 entropy and derive the Boltzmann distribution, we know that to compute the
@@ -364,10 +364,11 @@ $$
 p_{\text{bound}} = 
 \frac{
 \frac{N_{NS}^{P-1}}{(P-1)!}
-e^{-\beta (\varepsilon_P^{(S)} +  P\varepsilon_P^{(NS)})}
+e^{-\beta \left(\varepsilon_P^{(S)} +  (P - 1) \varepsilon_P^{(NS)}\right)}
 }{
 \frac{N_{NS}^{P-1}}{(P-1)!}
-e^{-\beta (\varepsilon_P^{(S)} +  P\varepsilon_P^{(NS)})} + 
+e^{-\beta \left(\varepsilon_P^{(S)} +  (P - 1) \varepsilon_P^{(NS)}\right)}
++ 
 \frac{N_{NS}^P}{P!}
 e^{-\beta P \varepsilon_P^{(NS)}},
 }
@@ -382,13 +383,15 @@ p_{\text{bound}} =
 }{
     1 + \frac{P}{N_{NS}} e^{-\beta \Delta \varepsilon_P}
 },
+\label{eq:pbound_unreg}
 $$
 where $\Delta\varepsilon_P \equiv \varepsilon_P^{(S)} - \varepsilon_P^{(NS)}$.
 This simple expression, known as the Langmuir isothermal binding curve tells us
 that the more RNAPs available (larger $P$), or the stronger the promoter is
 (more negative $\Delta\varepsilon_P$), the more likely it is to find the 
 promoter bound by an RNAP, and according to Eq. $\ref{eq:mRNA_prod}$, the higher
-the mRNA production.
+the mRNA production. In the next section we connect this model to experimental
+measurements. 
 
 ![**Statistical Mechanics protocol for RNAP binding.** On a discretized genome
 we follow the statistical mechanics protocol to compute the Boltzmann weight of
@@ -398,3 +401,137 @@ two binding configurations: One specific binding to the promoter of interest
 non-specific binding sites (with energy
 $\varepsilon_P^{(NS)}$).](ch1_fig03){#fig:ch1_fig03 short-caption="Statistical
 Mechanics protocol for RNAP binding"}
+
+### Figure 1 theory in gene regulation
+
+We began this section with a simple model for the dynamics of mRNA production
+and degradation. We then expanded our model to deconvolve the production term
+into the rate at which mRNA is produced by RNAP, and the probability of finding
+such RNAP bound to the promoter. To calculate this probability we used the 
+statistical mechanics protocol, which culminated in Eq. $\ref{eq:pbound_unreg}$.
+So far we are missing two important steps in our logical construction that will
+lead us to specific quantitative predictions that we can test experimentally:
+
+1. The inclusion of a regulatory scheme via a transcriptional repressor.
+
+2. The connection of the model with experimentally accessible quantities.
+
+As hinted at earlier, for a transcriptional repressor we imagine that the effect
+that the repressor has on the regulation of the gene acts only through changes
+in $p_{\text{bound}}$. In order to include the regulation then we add a series
+of microstates in which rather than having only $P$ RNAP molecules to bind the
+genome, we also have $R$ repressors that can bind specifically and 
+non-specifically. Through the same statistical mechanics protocol as for the
+previous case we can arrive to the Boltzmann weights shown for the three 
+"macrostates" in [@Fig:ch1_fig04](A). For the regulated case we have that the
+probability of the promoter being bound by an RNAP takes the form
+$$
+p_{\text{bound}}(R > 0) = 
+\frac{
+    \frac{P}{N_{NS}} e^{-\beta \Delta \varepsilon_P}
+}{
+    1 
+    + \frac{P}{N_{NS}} e^{-\beta \Delta \varepsilon_P}
+    + \frac{R}{N_{NS}} e^{-\beta \Delta \varepsilon_R}
+},
+\label{eq:pbound_reg}
+$$
+where $\Delta\varepsilon_R$ is the binding energy difference between the
+repressor binding to a specific binding site and a non-specific one. Although
+interesting and insightful, the quantities we have derived so far do not have
+an immediate **quantitative** prediction we can connect with experimental 
+measurements. For example, for the regulated case, the steady state mRNA count
+takes the form
+$$
+m_{ss}(R > 0) = 
+\frac{r_m}{\gamma_m} p_{\text{bound}}(R > 0) = 
+\frac{r_m}{\gamma_m}
+\frac{
+    \frac{P}{N_{NS}} e^{-\beta \Delta \varepsilon_P}
+}{
+    1 
+    + \frac{P}{N_{NS}} e^{-\beta \Delta \varepsilon_P}
+    + \frac{R}{N_{NS}} e^{-\beta \Delta \varepsilon_R}
+}.
+$$
+Determining $r_m$ or $\gamma_m$ directly from experiments, although possible, it
+represents an enormous technical challenge. A convenient metric we can use
+instead is what we call the fold-change in gene expression. [@Fig:ch1_fig04](B)
+shows a schematic representation of what we mean by the fold-change. This
+ratiometric quantity normalizes the expression level of a gene with regulation
+given by a transcriptional repressor by the expression level of the same gene
+in the absence of the regulation--via a knock-out of the repressor gene for
+example. Mathematically this is defined as
+$$
+\text{fold-change} \equiv \frac{m_{ss}(R > 0)}{m_{ss}(R = 0)}.
+$$
+This expression is convenient because upon taking the ratio of these
+steady-state mRNA counts the ratio $r_m / \gamma_m$ drops out of the equation.
+All we are left is then the ratio of the $p_{\text{bound}}$s
+$$
+\text{fold-change} = \frac{p_{\text{bound}}(R > 0)}{p_{\text{bound}}(R = 0)}.
+$$
+Substitutin Eqs. $\ref{eq:pbound_unreg}$ and $\ref{eq:pbound_reg}$ results in
+$$
+\text{fold-change} = 
+\frac{
+    1 
+    + \frac{P}{N_{NS}} e^{-\beta \Delta \varepsilon_P}
+}{
+    1 
+    + \frac{P}{N_{NS}} e^{-\beta \Delta \varepsilon_P}
+    + \frac{R}{N_{NS}} e^{-\beta \Delta \varepsilon_R}
+}.
+$$
+To simplify this equation further we appeal to some experimental understanding
+of the bacterial proteome composition [@Bremer1996;@Schmidt2016;@Grigorova2006].
+RNAP copy number in *E. coli* is of the order $P \sim 10^3-10^4$
+[@Grigorova2006]. The binding affinity of these promoters is of the order
+$\Delta\varepsilon_P \sim -2\pm 1\;k_BT$ [@Bintu2005]. Along with the value of
+$N_{NS}\sim 10^6$ This results in
+$$
+\frac{P}{N_{NS}} e^{-\beta \Delta \varepsilon_P} \approx
+\frac{10^3}{10^6}e^{2.3} \approx
+\frac{10^3 \cdot 10}{10^6} \approx 10^{-2} \ll 1,
+$$
+the so-called weak-promoter approximation For the repressor we have that most
+repressors in *E. coli* are in the order of $R \sim 10$ [@Schmidt2016]. Their
+binding affinities take values between $\Delta\varepsilon_R \sim -15 \pm 5\;
+k_BT$ [@Bintu2005]. These numerical values then give
+$$
+\frac{R}{N_{NS}} e^{-\beta \Delta \varepsilon_R} \approx
+\frac{10}{10^6}e^{15} \approx
+\frac{10 \cdot 10^6}{10^6} \approx 10.
+$$
+If we implement these approximations we can justify simplifying the fold-change
+equation to take the form
+$$
+\text{fold-change} \approx
+\left(
+    1 + \frac{R}{N_{NS}} e^{-\beta\Delta\varepsilon_R}
+\right)^{-1}.
+\label{eq:fc}
+$$
+As shown in [@Fig:ch1_fig04](C) this expression points directly at two
+experimental knobs that we can tune using molecular biology. We can modify the
+number of repressors by changing the ribosomal binding site sequence (RBS) of
+the repressor gene [@Garcia2011c]. What that means is that with a
+sequence-dependent manner the ribosome translates mRNAs according to a specific
+region of the gene known as the RBS [@Chen2013]. Furthermore, we can change the
+affinity of the repressor for its binding site by mutating the binding site
+itself [@Garcia2011c]. [@Fig:ch1_fig04](D) shows predictions of Eq.
+$\ref{eq:fc}$ for different binding energies.
+
+![**Figure 1 theory in transcriptional regulation.** (A) States and (normalized)
+weights for the simple repression motif. The promoter can be found in three
+states: 1) empty, 2) bound by an RNAP, 3) bound by a repressor. The same
+statistical mechanics protocol as in [@Fig:ch1_fig03] can be used to derive the
+weights. (B) Schematic of the experimental determination of the fold-change in
+gene expression. The expression level of a regulated strain is normalized by the
+expression level of a strain with a knock-out of the repressor. (C)
+Experimentally accessible knobs predicted from the theoretical model. The number
+of transcription factors can be tuned by changing the amount of protein produced
+per mRNA. The binding energy of the repressor can be tuned by mutating the
+basepairs in the binding site. (D) Fold-change as a function of the repressor
+copy number for different binding energies.](ch1_fig04){#fig:ch1_fig04
+short-caption="Figure 1 theory in transcriptional regulation"}
