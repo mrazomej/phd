@@ -139,6 +139,7 @@ the promoter, we can separate these two events in different terms. In particular
 we can write that the mRNA production happens with a rate
 $$
 \text{mRNA production} = r_m \cdot p_{\text{bound}},
+\label{eq:mRNA_prod}
 $$
 where we split the original production term into two steps: $p_{\text{bound}}$,
 the probability of finding an RNAP bound to the promoter, and $r_m$ which
@@ -252,9 +253,9 @@ will go through each of the steps on the protocol and build up the "unrealistic
 simplifications" that will allow us to make this calculation.
 
 **1. Enumerate possible microstates.** We begin by making a drastic
-coarse-graining of the bacterial genome. For us a genome is simply made of boxes
-where the RNAP can bind. We imagine that there is a single site where RNAP can
-bind specifically--the promoter of interest. There are also $N_{NS} \approx
+coarse-graining of the bacterial genome. For us a genome is simply made out of
+boxes where the RNAP can bind. We imagine that there is a single site where RNAP
+can bind specifically--the promoter of interest. There are also $N_{NS} \approx
 5\times 10^6$ non-specific binding sites, one per basepair (bp) in the genome.
 We ignore the fact that the RNAP footprint when it binds to the genome is
 roughly 30 bp. This assumption is valid if the number of available RNAP
@@ -280,6 +281,114 @@ coarse-grains all of the hydrogen bonds and other effects that go into this
 physical process. Since we have $P$ such polymerases bound non specifically, the
 energy of any state with a similar configuration is then $P
 \varepsilon_P^{(NS)}$ as shown in [@Fig:ch1_fig03] second column, top row.
+
+**3. Define the "macrostate" we care about.** In a sense when we speak about
+macrostate, it does not necessarily mean something that we can macroscopically
+observe. What it means is that we group together--a form of coarse-graining--a
+bunch of states that we take to be functionally equivalent as shown in
+[@Fig:ch1_fig02](B). In our case we only care about whether or not the RNAP is
+bound to our promoter of interest. The configuration of the rest of the
+background sites is irrelevant to our question. What this means in practice is
+that we must compute the degeneracy or multiplicity of our state. In other
+words, for the *specific* state shown in the first column/top row of
+[@Fig:ch1_fig03] we know its Boltzmann weight. Eq. $\ref{eq:boltzmann_law}$
+tells us that the probability of this particular configuration takes the form
+$$
+P(E_{\text{state}}) \propto e^{-\beta P \varepsilon_P^{(NS)}},
+$$
+since the $P$ RNAP molecules are bound non specifically. But every single 
+arrangement in which all RNAPs are bound non-specifically has the exact same
+Boltzmann weight. The question then becomes: how many of such microstates can
+the system exist in? This is a combinatorics question of the form: in how many
+different ways can I arrange $P$ molecules into $N_{NS}$ boxes? Which of course
+the answer is
+$$
+\text{Number of states with all RNAPs bound non-specifically} = 
+\frac{N_{NS}!}{P!(N_{NS} - P)!},
+$$
+as shown in the third column of [@Fig:ch1_fig03]. This multiplicity can be
+simplified if we consider that $N_{NS} \gg P$. To more easily visualize how to
+simplify this let us for a second assume $N_{NS} = 100$ and $P = 3$. Given the
+definition of factorials this means that
+$$
+\frac{N_{NS}!}{(N_{NS} - P)!} = 
+\frac{100\cdot 99\cdot 98\cdots97\cdots 2\cdot 1}{97\cdots2\cdot 1} = 
+100\cdot 99\cdot 98.
+$$
+Given this result I can simply state that $100\cdot 99\cdot 98 \approx 100^3$
+without making such a big mistake. Imagine $N_{NS}$ is in the order of $10^6$,
+then the error would become even smaller. That is why, as shown in
+[@Fig:ch1_fig03] third column, we can approximate
+$$
+\frac{N_{NS}!}{P!(N_{NS} - P)!} \approx \frac{N_{NS}^P}{P!}, \;
+\text{for }N_{NS} \gg P.
+$$
+For our other "macrostate" we have the case where only one out of the $P$ RNAPs
+is bound specifically for the promoter. The way to realize this state is then
+given by
+$$
+\small
+\text{Number of states with all but one RNAPs bound non-specifically} = 
+\frac{N_{NS}!}{(P - 1)!(N_{NS} - (P - 1))!} \approx
+\frac{N_{NS}^{P-1}}{(P-1)!}.
+$$
+
+
+**4. Compute the Boltzmann Factor.** The last step in the protocol is simply to
+follow the recipe indicated by Eq. $\ref{eq:boltzmann_law}$ where we 
+exponentiate the energy, with the caveat that this time we multiply by the
+multiplicity that we just mentioned since we are lumping together all 
+microstates into a single functional macrostate. So the boltzmann weight for the
+unbound $\rho_{\text{unbound}}$ macrostate is given by
+$$
+\rho_{\text{unbound}} = \frac{N_{NS}^P}{P!}
+e^{-\beta P \varepsilon_P^{(NS)}}.
+$$
+For the bound state we have
+$$
+\rho_{\text{bound}} = \frac{N_{NS}^{P-1}}{(P-1)!}
+e^{-\beta (\varepsilon_P^{(S)} +  P\varepsilon_(P-1)^{(NS)})}.
+$$
+For reasons that will become clear later in this chapter once we work with the
+entropy and derive the Boltzmann distribution, we know that to compute the
+probability of a specific microstate (or a macrostate) we simply take the
+Boltzmann weight of the microstate and divide by the *sum* of all of the other
+Boltzmann weights of the states available to the system. Therefore, to calculate
+$p_{\text{bound}}$ we compute
+$$
+p_{\text{bound}} = 
+\frac{\rho_{\text{bound}}}{\rho_{\text{unbound}} + \rho_{\text{bound}}}.
+$$
+Substituting the Boltzmann weights we derived we find
+$$
+p_{\text{bound}} = 
+\frac{
+\frac{N_{NS}^{P-1}}{(P-1)!}
+e^{-\beta (\varepsilon_P^{(S)} +  P\varepsilon_P^{(NS)})}
+}{
+\frac{N_{NS}^{P-1}}{(P-1)!}
+e^{-\beta (\varepsilon_P^{(S)} +  P\varepsilon_P^{(NS)})} + 
+\frac{N_{NS}^P}{P!}
+e^{-\beta P \varepsilon_P^{(NS)}},
+}
+$$
+an algebraic nightmare. We can simplify this expression enormously multiplying
+numerator and denominator by $\rho_{\text{unbound}}^{-1}$. Upon simplification
+we find the neat expression
+$$
+p_{\text{bound}} = 
+\frac{
+    \frac{P}{N_{NS}} e^{-\beta \Delta \varepsilon_P}
+}{
+    1 + \frac{P}{N_{NS}} e^{-\beta \Delta \varepsilon_P}
+},
+$$
+where $\Delta\varepsilon_P \equiv \varepsilon_P^{(S)} - \varepsilon_P^{(NS)}$.
+This simple expression, known as the Langmuir isothermal binding curve tells us
+that the more RNAPs available (larger $P$), or the stronger the promoter is
+(more negative $\Delta\varepsilon_P$), the more likely it is to find the 
+promoter bound by an RNAP, and according to Eq. $\ref{eq:mRNA_prod}$, the higher
+the mRNA production.
 
 ![**Statistical Mechanics protocol for RNAP binding.** On a discretized genome
 we follow the statistical mechanics protocol to compute the Boltzmann weight of
