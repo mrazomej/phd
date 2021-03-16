@@ -48,6 +48,7 @@ being "right now"--and $\Delta t$ is a tiny time step into the future. The mRNA
 count can then be predicted by computing
 $$
 m(t + \Delta t) = m(t) + r_m \Delta t - (\gamma_m \Delta t) m(t),
+\label{eq:m_t_Delta_t}
 $$
 where we can think of $r_m \Delta t$ as the probability of observing a single
 mRNA being produced in the time interval $[t, t + \Delta t]$ ($\Delta t$ is so
@@ -522,6 +523,13 @@ affinity of the repressor for its binding site by mutating the binding site
 itself [@Garcia2011c]. [@Fig:ch1_fig04](D) shows predictions of Eq.
 $\ref{eq:fc}$ for different binding energies.
 
+The model and the predictions presented here were work out by Garcia and
+Phillips in a classic publication in 2011 [@Garcia2011c]. In the next chapter
+we build upon this theoretical scaffold to expand the predictive power of the
+model by including the allosteric nature of the transcription factor that allows
+the cells to change their genetic program upon the presence of an external
+molecule as a response to the environment.
+
 ![**Figure 1 theory in transcriptional regulation.** (A) States and (normalized)
 weights for the simple repression motif. The promoter can be found in three
 states: 1) empty, 2) bound by an RNAP, 3) bound by a repressor. The same
@@ -533,5 +541,168 @@ Experimentally accessible knobs predicted from the theoretical model. The number
 of transcription factors can be tuned by changing the amount of protein produced
 per mRNA. The binding energy of the repressor can be tuned by mutating the
 basepairs in the binding site. (D) Fold-change as a function of the repressor
-copy number for different binding energies.](ch1_fig04){#fig:ch1_fig04
+copy number for different binding energies. The [Python code
+(`ch1_fig04D.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig04D.py)
+used to generate part (C) of this figure can be found on the thesis [GitHub
+repository](https://github.com/mrazomej/phd)](ch1_fig04){#fig:ch1_fig04
 short-caption="Figure 1 theory in transcriptional regulation"}
+
+### The second secret of life
+
+### All cells are equal, but some are more equal than others
+
+One of the great discoveries that came from the single-cell biology revolution
+(understood as the revolution that came from careful observations of the
+behavior of individual cells rather than bulk measurements) was the discovery of
+the intrinsic cell-to-cell variability in many aspects of biology, gene
+expression being the canonical example [@Eldar2010]. What this means is that two
+cells with the exact same genome exposed to the exact same conditions will not
+express the same number of mRNAs and proteins of any specific gene. From a
+statistical physics perspective this is not entirely "surprising" since we know
+that a system can be found in many different microstates as described in
+[@Fig:ch1_fig02](A). What is different here is that a cell does not have an
+avogadro number of mRNA (or for that matter of anything) in it, making these
+fluctuations more relevant. If we think of fluctuations scaling as $\sqrt{N}$,
+that means that for an $N$ of $\approx$ 10 molecules or so, these variations can
+be significant in terms of the downstream cellular behavior. Cells have to cope
+with these physical limitations on precision, many times generating systems to
+actively buffer as much of the "noise" as possible [@Voliotis2014a], other times
+using this intrinsic variability to their advantage [@Balaban2004].
+
+The main assumption behind the thermodynamic models of gene regulation that we
+studied in the last section is that the gene expression is proportional to the
+probability of finding an RNAP bound to the promoter [@Gerland2002;@Bintu2005].
+A consequence of this construction is that the probability space--the set of all
+possible events captured by the distribution--only looks at the state of the
+promoter itself, not at the state of the mRNA copy number. That is why
+thermodynamic models of this kind do not speak to the intrinsic cell-to-cell
+variability. For this we need to use the so-called chemical master equation
+framework [@Sanchez2013]. There are two ways of thinking about the chemical
+master equation:
+
+1. The "particle" point of view.
+
+2. The occupation number point of view.
+
+Depending on the context we might want to use either of these approaches to
+write down the master equation for our problem of interest. Let us look into
+these two different ways of interpreting a master equation using our example of
+a cell producing mRNA. For the particle point of view, schematized in
+[@Fig:ch1_fig05](A), we imagine following the mRNA copy number $m$ of a single
+cell. The number of mRNAs in the cell change stochastically from time point to
+time point. On a small time window there can be  on the one hand a
+transcriptional even that increases the number of mRNAs, and on the other hand
+an mRNA can be degraded, decreasing the number of mRNAs. If we imagine tracking
+this cell for a very long time, we can quantify the fraction of the time that
+the cell spent with zero mRNAS, one, two, and so on and from that build the
+probability distribution $P(m, t)$ of having $m$ mRNA at time $t$ (there is a
+subtle point here of the process being memoryless, but I do not want to get into
+it). The occupation number point of view, schematized in [@Fig:ch1_fig05](B),
+takes a different perspective. For this we imagine tracking not one, but many
+cells simultaneously. On a small time window each cell can either produce or
+degrade an mRNA, changing their total individual count. The probability $P(m,
+t)$ is then built from counting how many cells out of the total have $m$ mRNAS.
+
+Regardless of how we think about the chemical master equation, both of these
+perspectives are describe what is called a Markov process. These are stochastic
+processes in which a system transitions between different states, but the
+transition between such states is only governed by the transition rates between
+the states and the current state of the system. In other words, a Markov process
+keeps no track of the states it previously visited; the only factor that
+determines where is the system going to head is its current state, and the
+transition rates out of such state--that is why these are considered memoryless
+processes. [@Fig:ch1_fig05](C) shows a schematic of what a Markov process looks
+like. The schematic of the unregulated promoter shows that there are two
+possible reactions: an mRNA production with rate $r_m$ and a degradation with
+rate $\gamma_m$. The Markov process for this simple model can then be
+represented as a series of nodes (representing the mRNA counts) connected with
+bi-directional arrows (representing the transition rates between states)
+indicating that the transitions can only take place between contiguous states.
+
+In practice the way we write down a chemical master equation is by a process
+christened by Professor Jane Kondev as "spread-the-butter". The idea of spread
+the butter is that some probability mass (the analogous of the butter) is to be
+spread over the range of possible values (the analogous of the toast) where
+probability mass migrates in an out of a particular bin keeping the total amount
+of probability to add up to one. The best way to explain this concept is by
+following the schematic in [@Fig:ch1_fig05](D), and actually going through the
+math. Let us imagine we are keeping track of a particular mRNA value $m$--the
+chemical master equations are in reality a system of many coupled equations, one
+for each mRNA count. We want to write down an equation that describes what is
+the probability of finding a cell with this particular count a small time window
+into the future $P(m, t + \Delta t)$, where $t$ represents the time "right now,"
+and $\Delta t$ is a tiny time increment. The master equation is nothing more 
+than a checks and balances notebook to keep track of all the flow of probability
+mass in and out of the bin we are interested in as shown in [@Fig:ch1_fig05](D).
+Informally we would write equation as
+$$
+P(m, t + \Delta t) = P(m, t)
++ \sum \left({\text{transitions from} \atop m'\text{ to }m}\right)
+- \sum \left({\text{transitions from} \atop m\text{ to }m'}\right),
+\label{eq:master_intuition}
+$$
+where we are describing the three main components that go into the equation for
+$P(m, t + \Delta t)$:
+
+1. The probability of having $m$ mRNA right now,
+
+2. the inflow of probability from other copy numbers $m'$ via production and
+   degradation,
+
+3. the outflow of probability from $m$ to other copy numbers via production and
+   degradation.
+
+Taking our time window $\Delta t$ to be sufficiently small, we can focus only on
+the two contiguous mRNA counts $m-1$ and $m+1$, and ignore the rest since jumps
+from further counts becomes increasingly improbable as the time step gets
+smaller. [@Fig:ch1_fig05](D) shows the four in- and outflows that can happen.
+Let us rewrite Eq. $\ref{eq:master_intuition}$ following this schematic. If a
+cell has $m - 1$ mRNA and during the time window $\Delta t$ produces one
+molecule, then it passes from state $m - 1$ to state $m$. This transition
+contributes to the inflow of probability mass by a factor $(r_m \Delta t) P(m-1,
+t)$, where we can think of $r_m \Delta t$ as the probability of the
+transcription event taking place during the time window, and this obviously
+multiplies the probability of having $m - 1$ mRNA to begin with. A similar
+argument can be made for all transitions in and out of $m$ depicted in
+[@Fig:ch1_fig05](D), with the only difference that as in Eq.
+$\ref{eq:m_t_Delta_t}$, the degradation of an mRNA molecule is proportional to
+the total number of molecules. The resulting equation for $P(m, t + \Delta t)$
+then takes the form
+$$
+\begin{split}
+P(m, t + \Delta t) = &P(m, t)
++ \overbrace{(r_m \Delta t) P(m-1, t)}^{m-1 \rightarrow m}
++ \overbrace{(\gamma_m \Delta t) (m + 1) P(m + 1, t)}^{m+1 \rightarrow m}\\
+&- \overbrace{(r_m \Delta t) P(m, t)}^{m \rightarrow m+1}
+- \overbrace{(\gamma_m \Delta t) m P(m, t)}^{m \rightarrow m-1}
+\end{split}.
+$$
+As we did before we will send the first term on the right-hand side to the left,
+divide both sides by $\Delta t$ and take the limit when $\Delta t \rightarrow
+0$. This gives us the master equation we were searching for
+$$
+\frac{dP(m, t)}{dt} = 
+r_m P(m - 1, t) + \gamma_m (m + 1) P(m + 1, t)
+- r_m P(m, t) + \gamma_m m P(m, t).
+\label{eq:master_simple}
+$$
+
+![**Chemical master equation in gene regulation.** . (A-B) Different points of
+view to understand the chemical master equation. (A) On the "particle" point of
+view we imagine following the time trajectory of *a single cell*. The
+probability $P(m, t)$ of finding a cell with $m$ mRNAs at time $t$ is then
+proportional to the time that this cell spent with this number of molecules. (B)
+On the occupation number point of view we imagine observing a large number of
+isogenic cells (different colors represent the individuality of each cell). The
+probability $P(m,t)$ is then interpreted as the fraction of the cells that
+present such copy number exactly at time $t$. (C) Chemical master equations
+mathematize the idea of Markov processes. For the case of the unregulated
+promoter, the Markov process consists of a connection of an infinite number of
+discrete states that cells can transition between by producing or degrading
+mRNAs. (D) Spread-the-butter idea. Since probability is conserved, the height of
+the central bar changes slightly by the effect of having in- and out-flow of
+probability mass from the contiguous bins. The [Python code
+(`ch1_fig05A.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig05A.py)
+used to generate the plot in part (A) of this figure can be found on the thesis
+[GitHub repository](https://github.com/mrazomej/phd).](ch1_fig05){#fig:ch1_fig05
+short-caption="Chemical master equation in gene regulation"}
