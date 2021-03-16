@@ -547,6 +547,8 @@ used to generate part (C) of this figure can be found on the thesis [GitHub
 repository](https://github.com/mrazomej/phd)](ch1_fig04){#fig:ch1_fig04
 short-caption="Figure 1 theory in transcriptional regulation"}
 
+### The second secret of life
+
 ### All cells are equal, but some are more equal than others
 
 One of the great discoveries that came from the single-cell biology revolution
@@ -682,6 +684,7 @@ $$
 \frac{dP(m, t)}{dt} = 
 r_m P(m - 1, t) + \gamma_m (m + 1) P(m + 1, t)
 - r_m P(m, t) + \gamma_m m P(m, t).
+\label{eq:master_simple}
 $$
 
 ![**Chemical master equation in gene regulation.** . (A-B) Different points of
