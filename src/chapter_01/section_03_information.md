@@ -21,7 +21,7 @@ reproducing a message emitted at one point in space and time with fidelity at
 a different point. Usually these messages carry with them *meaning* (otherwise 
 why would we even want to send such messages) by which we usually mean that the
 message "refers to or is correlated according to to some system with certain 
-physical or conceptual entities." [@Shannon1948]. But for the task of 
+physical or conceptual entities" [@Shannon1948]. But for the task of 
 engineering a reliable communication system this meaning is irrelevant--in the
 same way that whatever the cell decides to do with the meaning of the signals
 obtained from the environment can be thought as irrelevant for the biophysics
@@ -60,3 +60,37 @@ system with all the components. (B) Adaptation of the Shannon communication
 system to the context of bacterial gene expression regulated by an allosteric
 transcription factor.](ch1_fig07){#fig:ch1_fig07 short-caption="Abstract
 communication system"}
+
+Having this setup in mind, the question becomes: how do we define mathematically
+what information is? This brings a rather subtle difference between two related
+terms that many time are incorrectly use interchangeably even in textbooks:
+*Entropy* and *Information*. Information is that which allows the entity that
+possess it to make predictions with accuracy better than random, while entropy
+is a quantification of how much we do not know [@Adami2016]. From these
+definitions we see that having information therefore reduces our uncertainty,
+i.e., reduces the entropy.
+
+For Shannon, the amount of information that
+a source carries with it is related to the statistical structure of that source.
+The more structure (less random) a source is, the more predictable it becomes,
+and therefore the less we learn when we get to observe the outcome--consequently 
+having less information. At first this can be counterintuitive; how can 
+something structured and predictable carry little information? Books are really
+structured, nevertheless we think of them as carrying a lot of information. But
+what Shannon asks us to do is to think of information as something related to
+how surprised we are of seeing certain outcome. In the example of the book, 
+imagine the most boring book that consists of 400 pages of just one word 
+repeated over and over again. Nobody can deny that book is incredibly structured
+and completely predictable, but do we gain any information when we turn through
+the pages reading the same word? Definitely not.
+
+
+![**The randomness of the English language.** (A) Last paragraph of *On the
+Origin of Species* by Charles Darwin. This serves as a rather nice not-random
+text example. (B) Marginal distribution $P(x)$ of all 23 letters and the space.
+The size of the squares is proportional to how often each letter appears in the
+paragraph. (C) Joint distribution of pairs of characters $P(x, y)$. All pairs of
+characters in (A) were counted to build this histogram. The x-axis shows the
+first letter while the y-axis shows the second. For simplicity in (B) and (C)
+all punctuation was ignored.](ch1_fig08){#fig:ch1_fig08 short-caption="The
+randomness of the English language"}
