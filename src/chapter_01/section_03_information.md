@@ -219,8 +219,8 @@ inequalities since $\log$ is a monotonically increasing function--finding
 $$
 (t - 1) \log(m) < r \log(n) \leq t \log(m).
 $$
-We are free to take the logarithm in any base it is convenient; therefore let us
-use base $m$ for this, obtaining
+We are free to take the logarithm in any base it is convenient, therefore, let
+us use base $m$ for this, obtaining
 $$
 t - 1 < r \log_m(n) \leq t.
 \label{eq:ineq_logm}
@@ -236,11 +236,11 @@ needed to encode a message of length $r$ written with alphabet $\mathcal{X}$
 characters (such as *SOS* turned into ...---...). This means That $t/r$ is the
 average number of characters from alphabet $\mathcal{Y}$ per character from
 alphabet $\mathcal{Y}$, i.e., the proportionality constant $k$ from Eq.
-$\ref{eq:length_fn}$. This means that Eq. $\ref{eq:t_over_r$ implies
+$\ref{eq:length_fn}$. This means that Eq. $\ref{eq:t_over_r}$ implies
 $$
 \log_m(n) \leq k.
 $$
-In other words, this means that a lower bound for the number of characters from
+In words, this means that a lower bound for the number of characters from
 alphabet $\mathcal{Y}$ needed to encode a character from alphabet $\mathcal{X}$
 is given by $\log_m(n)$. Furthermore, Eq. $\ref{eq:t_over_r}$ implies that
 $$
