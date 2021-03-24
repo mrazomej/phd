@@ -17,6 +17,7 @@ phd.egg-info/*
 /node_modules
 /npm-debug.log
 src/data/*
+*/*/.vscode/*
 
 # ---------------
 # Compiled assets
