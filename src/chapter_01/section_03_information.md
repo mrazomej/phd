@@ -83,7 +83,7 @@ in the english alphabet, we obtain a distribution like the one shown in
 [@Fig:ch1_fig08](B). In this paragraph, we can see that the most common vowel is
 *e* exactly as in English writ-large. This distribution $P(x)$ is therefore not
 maximally random. In other words, if we were to put all letters in the paragraph
-in a hat and pick one letter at random, we could bet more money on the outcome
+in a hat, and pick one letter at random, we could bet more money on the outcome
 being a letter *e* and make money over time given this knowledge of the
 structure of the distribution. A maximally random distribution would be if all
 letters appeared equally frequent in the paragraph, such that betting on any
@@ -91,60 +91,60 @@ letter coming out of the hat would give us equal chances of guessing right. If
 instead of looking at the distribution of individual letters, we look at pairs
 of letters, the distribution $P(x, y)$ over the paragraph is shown in
 [@Fig:ch1_fig08](C). Here we can see that just as the letters were not
-completely random, the letters' pairs are also not random. For example, if we
+completely random, the pairs of letters are also not random. For example, if we
 take the first letter of the pair to be *t*, we see that it is more commonly
-followed by letter *h*. What this implies is that knowing that the first letter
-of the pair was *t* reduced our uncertainty of what character could come next.
-We would then say that knowing the first letter gave us *information* about the
-possible outcomes of the second letter. In the next section we will follow
-Shannon's original derivation to mathematically define both entropy and
-information.
+followed by the letter *h*. This implies that knowing that the first letter of
+the pair was *t* reduced our uncertainty of what character could come next. We
+would then say that knowing the first letter gave us *information* about the
+possible outcomes of the second letter. In the next section, we will follow
+Shannon's original derivation to define both entropy and
+information mathematically.
 
 ![**The statistical structure of the English language.** (A) Last paragraph of
 *On the Origin of Species* by Charles Darwin. This serves as a rather nice
 not-random text example. (B) Marginal distribution $P(x)$ of all 23 letters and
-the space. The size of the squares is proportional to how often each letter
-appears in the paragraph. (C) Joint distribution of pairs of characters $P(x,
-y)$. All pairs of characters in (A) were counted to build this histogram. The
-x-axis shows the first letter while the y-axis shows the second. For simplicity
-in (B) and (C) all punctuation was ignored.](ch1_fig08){#fig:ch1_fig08
+space. The size of the squares is proportional to how often each letter appears
+in the paragraph. (C) Joint distribution of pairs of characters $P(x, y)$. All
+pairs of characters in (A) were counted to build this histogram. The x-axis
+shows the first letter while the y-axis shows the second. For simplicity in (B)
+and (C) all punctuation was ignored.](ch1_fig08){#fig:ch1_fig08
 short-caption="The statistical structure of the English language"}
 
 ### Choice, Uncertainty, and Entropy
 
-So far our discussion about what entropy and information mean has been vague and
-not rigorous. In order to derive a formula to quantify these concepts we need to
-get more mathematical. Let us assume that an information source (See
+So far, our discussion about what entropy and information mean has been vague
+and not rigorous. To derive a formula to quantify these concepts, we need to get
+more mathematical. Let us assume that an information source (See
 [@Fig:ch1_fig07](A)) produces elements of a message following a distribution
 $\mathbf{p} = \{p_1, p_2, \ldots, p_n \}$, where each $p_i$ is the probability
 of the $i^{\text{th}}$ element. These elements could be letters, words,
-sentences, concentrations of a small molecule, etc. of which we have $n$
+sentences, concentrations of a small molecule, etc., of which we have $n$
 possibilities. What we are looking for is a metric $H(\mathbf{p})$ that
-quantifies how much "choice" is involved in the selection of each of the
-elements of the message. In other words, how uncertain we are about the message
-that the information source will produce? We demand of our desired quantity
-$H(\mathbf{p})$ that it satisfies three reasonable conditions [@Shannon1948]:
+quantifies how much "choice" is involved in the selection of each element of the
+message. In other words, how uncertain we are about the message that the
+information source will produce? We demand our desired quantity $H(\mathbf{p})$
+to satisfy three reasonable conditions [@Shannon1948]:
 
 1. $H$ should be continuous in the $p_i$s. Different information sources might
    have slightly different distributions $\mathbf{p}$, nevertheless $H$ should
    still apply to all possible information sources.
 
 2. If all of the elements of the distribution are equally likely, i.e. $p_i =
-   1/n$, then $H$ should be a monotonic increasing function of $n$. What this
-   means is that the more options to chose from, the more uncertain we are about
-   the possible outcome. For example, we are more uncertain about the outcome of
-   a fair 6-sided die than of a fair coin just because of the number of possible
+   1/n$, then $H$ should be a monotonic increasing function of $n$. This means
+   that the more options to choose from, the more uncertain we are about the
+   possible outcome. For example, we are more uncertain about the outcome of a
+   fair 6-sided die than of a fair coin just because of the number of possible
    outcomes from each of these "information sources."
 
 3. If the act of choosing one of the possible $n$ elements of our information
-   source can be break down into two successive choices, the original $H$ should
-   be the weighted sum of the individual $H$s. What thi means is illustrated in
-   [@Fig:ch1_fig09](A)where we imagine having an information source with only
-   $n=3$ choices, each with probabilities $\mathbf{p} = \{ 1/2, 1/3, 1/6\}$,
-   which gives $H(1/2, 1/3, 1/6)$ for the left case. For the right case we
-   imagine first choosing between the upper and the lower path, and then, if the
-   lower path is chosen, a second choice is made. This property then demands
-   that
+   source can be broken down into two successive choices, the original $H$
+   should be the weighted sum of the individual $H$s. What this means is
+   illustrated in [@Fig:ch1_fig09](A)where we imagine having an information
+   source with only $n=3$ choices, each with probabilities $\mathbf{p} = \{ 1/2,
+   1/3, 1/6\}$, which gives $H(1/2, 1/3, 1/6)$ for the left case. For the right
+   case we imagine first choosing between the upper and the lower path, and
+   then, if the lower path is chosen, a second choice is made. This property
+   then demands that
    $$
     \overbrace{H(1/2, 1/3, 1/6)}^{\text{single choice}} = 
     \overbrace{H(1/2, 1/2)}^{\text{first choice}} +
@@ -153,32 +153,32 @@ $H(\mathbf{p})$ that it satisfies three reasonable conditions [@Shannon1948]:
    Another way to think about this property is that we want our metric of
    uncertainty $H$ to be *additive*.
 
-We will now proof that the only functional form that satisfies all these three
-properties is given by
+We will now prove that the only functional form that satisfies all these three
+properties are given by
 $$
     H(\mathbf{p}) = - K \sum_{i=1}^n p_i \log p_i,
 $$
 where $K$ is a constant having to do with the units (choice of the logarithm
-base). In order to proof this we will follow Shannon's original work. Just as
-Shannon did, we imagine the problem of encoding a message. Let us for example
-imagine encoding a message from the english alphabet into Morse code as
-schematically depicted in [@Fig:ch1_fig09](B). In there we take letters in
-english alphabet (*SOS*), run it through an encoding function $E$ and obtain the
-message (...---...). This process of encoding can be though as taking a message
-$m_x$ written in an alphabet $\mathcal{X} = \{x_1, x_2, \ldots, x_n \}$, (where
-$n$ is 26 for the english alphabet) and converting it into a message $m_y$
-written in a different alphabet $\mathcal{Y} = \{y_1, y_2, \ldots, y_m \}$
-(where $m=2$ for Morse code since we only have dots and dashes). The encoding
-function $E: \mathcal{X}^r \rightarrow \mathcal{Y}^t$ takes a message of length
-$r$ (for our example $r=3$ with three letters, *SOS*) and translates it into a
-message of size $t$ (in our example $t=9$) such that we then have
+base). To prove this, we will follow Shannon's original work. We imagine the
+problem of encoding a message. For example, imagine encoding a message from the
+English alphabet into Morse code as schematically depicted in
+[@Fig:ch1_fig09](B). In there, we take letters in English alphabet (*SOS*), run
+it through an encoding function $E$ and obtain the message (...---...). This
+process of encoding can be thought of as taking a message $m_x$ written in an
+alphabet $\mathcal{X} = \{x_1, x_2, \ldots, x_n \}$, (where $n$ is 26 for the
+English alphabet) and converting it into a message $m_y$ written in a different
+alphabet $\mathcal{Y} = \{y_1, y_2, \ldots, y_m \}$ (where $m=2$ for Morse code
+since we only have dots and dashes). The encoding function $E: \mathcal{X}^r
+\rightarrow \mathcal{Y}^t$ takes a message of length $r$ (for our example $r=3$
+with three letters, *SOS*) and translates it into a message of size $t$ (in our
+example $t=9$) such that we then have
 $$
 m_y = E(m_x),
 $$
-i.e., the function $E$ takes messages in english alphabet as input and spits out
-a message in Morse code. It is obvious then that the larger the message $m_x$ we
-want to encode, the larger the corresponding message $m_y$ will be. Therefore we
-have that
+i.e., the function $E$ takes messages in the English alphabet as input and spits
+out a message in Morse code. Obviously, the larger the message $m_x$ we want to
+encode, the larger the corresponding message $m_y$ will be. Therefore we have
+that
 $$
 L(m_y) \propto L(m_x),
 $$
@@ -196,21 +196,20 @@ The number of messages of size $r$ that can be encoded with the alphabet
 $\mathcal{X}$ is given by $n^r$--because we have $m$ possible options to chose
 from for each of the $r$ characters, resulting in $n\cdot n\cdot n\cdots = n^r$.
 Likewise, the number of messages of size $t$ encoded with alphabet $\mathcal{Y}$
-is $m^t$. We then demand for our coding scheme that the number of messages that
-we can encode is at least the number of messages we could potentially send. In
+is $m^t$. We then demand from our coding scheme that the number of messages we
+can encode is at least the number of messages we could potentially send. In
 other words, for our coding scheme to be able to take *any* message of size $r$
-it must be true that the number of possible encoded messages is at least as 
-large as the number of possible messages to encode. This is expressed as
+it must be true that the number of possible encoded messages is at least as
+large as the number of possible messages to encode. This demand is expressed as
 $$
 n^r \leq m^t.
 $$
-If our encoding did not satisfy this, we would have to increase $t$, i.e. the
-number of characters that we use to encode our message. On the other extreme we
+If our encoding did not satisfy this, we would have to increase $t$, i.e., the
+number of characters we use to encode our message. On the other extreme, we
 could come up with a ridiculously long encoding scheme (imagine a version of
-Morse code where every letter is represented by 1000 dots and dashes). To avoid
-this absurd scheme we bound the size of the encoded message to be as long as
-necessary to encode all potential messages, but not any longer. This is
-expressed as
+Morse code where 1000 dots and dashes represent every letter). To avoid this
+absurd scheme, we bound the encoded message's size to be as long as necessary to
+encode all potential messages, but not any longer. This bound is expressed as
 $$
 m^{t-1} < n^r \leq m^t.
 \label{eq:ineq_messages}
@@ -220,8 +219,8 @@ inequalities since $\log$ is a monotonically increasing function--finding
 $$
 (t - 1) \log(m) < r \log(n) \leq t \log(m).
 $$
-We are free to take the logarithm in any base it is convenient, therefore let
-us use base $m$ for this, obtaining
+We are free to take the logarithm in any base it is convenient; therefore let us
+use base $m$ for this, obtaining
 $$
 t - 1 < r \log_m(n) \leq t.
 \label{eq:ineq_logm}
@@ -241,7 +240,7 @@ $\ref{eq:length_fn}$. This means that Eq. $\ref{eq:t_over_r$ implies
 $$
 \log_m(n) \leq k.
 $$
-In words, this means that a lower bound for the number of characters from
+In other words, this means that a lower bound for the number of characters from
 alphabet $\mathcal{Y}$ needed to encode a character from alphabet $\mathcal{X}$
 is given by $\log_m(n)$. Furthermore, Eq. $\ref{eq:t_over_r}$ implies that
 $$
