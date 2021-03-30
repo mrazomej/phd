@@ -5,15 +5,15 @@ constantly fight against the will of the second law of thermodynamics to bring
 them back to an equilibrium state. To face such challenges, cells are equipped
 with a toolkit of genes written in the language of A, T, C, and G of the genome.
 We can think of a typical bacteria genome with $\approx 5\times 10^3$ genes as
-the instruction manual to produce a repertoire of tools that allow cells to
-thrive under different circumstances that they face throughout their lives. But
-not all challenges are the same, and therefore not all tools are needed
-simultaneously. Thus all organisms are faced with the challenge of orchestrating
-the expression of the correct subset molecular tools at their disposal when
-trying to survive in different environments. From cells in the fly embryo
-expressing different genes that will define their identity on the animal's final
-body plan to a simple bacteria expressing the correct enzymes to process the
-available nutrients in the environment.
+the blueprint to produce a repertoire of tools that allow cells to thrive under
+myriad circumstances that they face throughout their lives. Given the vast
+number of challenges that organisms face, there is constant pressure on every
+living system to use the right tools for the right circumstances. Thus all
+organisms are faced with the task of orchestrating the expression of the correct
+subset of genes at their disposal when trying to survive. From cells in the fly
+embryo expressing different genes that will define their identity on the
+animal's final body plan to a simple bacteria expressing the correct enzymes to
+process the available nutrients in the environment.
 
 Our understanding of how organisms regulate their genes' expression is still not
 as thorough as one might expect, given the effort that has gone into this
@@ -39,7 +39,7 @@ the thesis.
 
 Let us begin our introduction to gene expression modeling with the simplest
 example. As shown in [@Fig:ch1_fig01](A), we imagine a gene promoter (the region
-of the gene from which transcriptional regulation takes place) produces mRNA at
+of the gene where transcriptional regulation takes place) produces mRNA at
 a constant rate $r_m$. Each mRNA can stochastically decay with a rate
 $\gamma_m$. Our interest is to understand how the mRNA count $m$ changes over
 time, given these two competing processes. For that, let us write the mRNA count
@@ -56,8 +56,10 @@ small that we neglect the possibility of seeing multiple mRNAs being produced),
 and $\gamma_m \Delta t$ the probability of seeing a single mRNA being degraded.
 But since each mRNA has the same probability of being degraded, the total number
 of mRNAs that we would see decay in this time window would be the probability
-per mRNA times the total number of mRNAs. If we send the term $m(t)$ to the left
-hand side of the equation and divide both sides by $\Delta t$, we obtain
+per mRNA times the total number of mRNAs. This is in contrast with the
+production of mRNA, which does not depend on the current number of mRNAs. If we
+send the term $m(t)$ to the left-hand side of the equation and divide both sides
+by $\Delta t$, we obtain
 $$
 \frac{m(t + \Delta t) - m(t)}{\Delta t} = r_m - \gamma_m m(t).
 $$
@@ -68,7 +70,7 @@ $$
 \frac{dm}{dt} = r_m - \gamma_m m(t).
 \label{eq:dm_dt}
 $$
-Before even attempting to solve $\ref{eq:dm_dt}$ we can perform a qualitative
+Before even attempting to solve $\ref{eq:dm_dt}$, we can perform a qualitative
 analysis of the dynamics [@Strogatz2018]. It is handy to plot the contribution
 of each of the components (production and degradation) to the derivative $dm/dt$
 as a function of $m$. This is shown in [@Fig:ch1_fig01](B), where the blue
@@ -77,18 +79,18 @@ and the red line shows the degradation term $m\gamma_m$ which scales linearly
 with $m$. Notice that we do not include the negative sign for the degradation
 term, i.e., we are not plotting $-m \gamma_m$. The point $m_{ss}$ where both
 lines intersect represents the point where the production matches the
-degradation. For all values before $m_{ss}$ the production term is larger than
-the degradation, which means that for any value $m < m_{ss}$ the derivative is
-positive ($dm/dt > 0$), so over time the system will produce more mRNA. The
-opposite is true for values all values after $m_{ss}$ where the degradation term
-is larger than the production term, implying that $dm/dt < 0$. This means that
-for $m > m_{ss}$, the system will degrade mRNA. These opposite trends point to
-the idea that $m_{ss}$ must be called a stable fixed point of the dynamical
-system. This can schematically be seen at the bottom of [@Fig:ch1_fig01](B). The
-arrowheads' size indicates the system's trend to move either left or right in
-$m$. Since all arrows point at the special value, $m_{ss}$, we can say that any
-small perturbation of the system will be dissipated as the system relaxes back
-to $m_{ss}$.
+degradation. For all values less than $m_{ss}$ the production term is larger
+than the degradation, which means that for any value $m < m_{ss}$ the derivative
+is positive ($dm/dt > 0$), so over time the system will accumulate more mRNA.
+The opposite is true for values all values after $m_{ss}$ where the degradation
+term is larger than the production term, implying that $dm/dt < 0$. This means
+that for $m > m_{ss}$, the system will tend to lose mRNA. These opposite trends
+point to the idea that $m_{ss}$ must be called a stable fixed point of the
+dynamical system. This can schematically be seen at the bottom of
+[@Fig:ch1_fig01](B). The arrowheads' size indicates the system's trend to move
+either left or right in $m$. Since all arrows point at the special value,
+$m_{ss}$, we can say that any small perturbation of the system will be
+dissipated as the system relaxes back to $m_{ss}$.
 
 This qualitative statement can be confirmed by solving Eq. $\ref{eq:dm_dt}$. If
 we define the initial condition $m(t=0) = m_o$ by separation of variables we 
@@ -103,7 +105,7 @@ m_{ss} = \frac{r_m}{\gamma_m}.
 $$
 [@Fig:ch1_fig01](C) shows the time evolution of $m$ for different initial values
 $m_o$. We can see that indeed regardless of the initial mRNA count the system
-relaxes exponentially fast to $m_{ss} = r_m / \gamma_m$.
+relaxes exponentially to $m_{ss} = r_m / \gamma_m$.
 
 ![**Minimal model of gene expression.** (A) Schematic of the kinetics governing
 gene expression. mRNA is produced at a constant rate $r_m$ independent of the
@@ -133,11 +135,12 @@ expand this term a little further to include regulation by a transcriptional
 repressor further down the road. We know that for a transcriptional event to
 occur, the RNA polymerase (RNAP) must bind to the promoter region and undergo a
 series of irreversible steps, such as opening the double helix to initiate the
-DNA sequence's copying into mRNA [@Browning2004]. If we assume these
-irreversible steps take place in a much longer timescale compared to the
-initial binding and unbinding of the RNAP on the promoter, we can separate these
-two events in different terms. In particular, we can write that the mRNA
-production happens at a rate
+DNA sequence's copying into mRNA [@Browning2004]. But before these irreversible
+steps take place, there is a chance that the RNAP falls off the promoter. If we
+assume these irreversible steps take place on a much longer timescale compared
+to the initial binding and unbinding of the RNAP on the promoter, we can
+separate the time scale and investigate them independently. In particular, we
+can write that mRNA production happens at a rate
 $$
 \text{mRNA production} = r_m \cdot p_{\text{bound}},
 \label{eq:mRNA_prod}
@@ -149,14 +152,14 @@ is engaged in a transcriptional event. A way to think about it--relevant to what
 I am doing right now as I type my thesis--is to think that the speed at which I
 type this document has to do with two things: The probability of me being
 actively working on these notes times the rate at which I type these notes once
-I engage in the activity. The reason this splitting makes sense is that we can
+I engage in the activity. The reason this separation makes sense is that we can
 include the effect of the regulation by a transcriptional repressor as a
 reduction of the time (the probability) that the RNAP can be bound to the
-promoter by effectively taking away probability mass. Furthermore, since we are
-assuming that the binding and unbinding of the RNAP happen at a timescale much
-faster than the downstream events, we can assume this binding reaction is in
-quasi-equilibrium, for which we can use the powerful theoretical framework of
-statistical mechanics. Let us now delve into the basics of this physical theory.
+promoter. Furthermore, since we are assuming that the binding and unbinding of
+the RNAP happen at a timescale much faster than the downstream events, we can
+assume this binding reaction is in quasi-equilibrium, for which we can use the
+powerful theoretical framework of statistical mechanics. Let us now delve into
+the basics of this physical theory.
 
 ### The unreasonable effectiveness of unrealistic simplifications
 
@@ -167,11 +170,12 @@ that all of physics follows this description, it is undoubtedly evident that
 statistical mechanics is a vivid example of how simple ideas can have profound
 consequences. Statistical mechanics can be defined as the theory that, upon
 assuming the atomic nature of matter, explains the phenomenology that classical
-thermodynamics established [@Dill2010] from the interactions of the microscopic
-components of a system. As with any other physical theory, statistical mechanics
-is built from a set of *empirical* facts that define "axioms" that we take to be
-true. In other words, as Feynman famously described to us: if we want to come up
-with a new law of nature, there is a simple recipe that we must follow:
+thermodynamics established from the interactions of the microscopic components
+of a system [@Dill2010]. As with any other physical theory, statistical
+mechanics is built from a set of *empirical* facts that define "axioms" that we
+take to be true. In other words, as Feynman famously described to us: if we want
+to come up with a new law of nature, there is a simple recipe that we must
+follow:
 
 1. We guess the law. Literally. The most profound understanding of our physical
    reality we have comes from educated guesses made after a careful observation
@@ -193,29 +197,32 @@ $$
 \label{eq:boltzmann_law}
 $$
 Let us unpack this equation. The main idea behind statistical mechanics is that
-macroscopic observables (temperature, pressure, specific heat in classic
-examples) are emergent properties dictated by the dynamics of the system's
-microscopic components. What Boltzmann's law tells us is that the relative
-probability of a system in thermal equilibrium to be found in a particular
-microstate with energy $E_1$ compared to being in a microstate with energy $E_2$
-is given by an exponential function of minus the energy of such microstate
-divided by $k_BT$, the thermal energy. To provide concrete examples of what a
-microstate can look like, [@Fig:ch1_fig02](A) shows three molecular systems
+macroscopic observables (temperature and pressure in classic examples) are
+emergent properties dictated by the dynamics of the system's microscopic
+components. What Boltzmann's law tells us is that the relative probability of a
+system in thermal equilibrium to be found in a particular microstate with energy
+$E_1$ compared to being in a microstate with energy $E_2$ is given by an
+exponential function of the negative energy of such microstate relative to the
+thermal energy $k_BT$. The minus sign in the exponent comes from the fact that
+states with negative energies are more favorable by convention in physics. Thus,
+having a large negative energy has a high probability when taking the
+exponential of minus such negative number. To provide concrete examples of what
+a microstate can look like, [@Fig:ch1_fig02](A) shows three molecular systems
 relevant to biology. In the first example, we have the classic ligand-receptor
-binding problem; here, we imagine a solution can be discretized into a series of
-small boxes. In each of these boxes, one and only one ligand molecule can fit
-in. In principle, we can list all possible spatial arrangements of ligands. We
-could then calculate the relative likelihood of finding the system in any
-configurations as long as we can assign an energy value to each of them. The
-second example focuses on ligand-gated ion channels. In this particular system,
-we care about the ion channel's state--either open or close--and the ligands'
-binding configuration. If the channel responds to the ligand's concentration by
-changing its probability of gating, we can calculate using equilibrium
-statistical mechanics. Finally, the third example shows different configurations
-of a small patch of the cell membrane. All deformations of a membrane have
-energetic costs associated with them. So listing all possible membrane
-configurations, we can calculate the most likely shape of a membrane given the
-forces and stresses acting on it. 
+binding problem; here, we imagine a solution can be discretized in space into a
+series of small boxes. In each of these boxes, one and only one ligand molecule
+can fit in. In principle, we can list all possible spatial arrangements of
+ligands. We could then calculate the relative likelihood of finding the system
+in any configurations as long as we can assign an energy value to each of them.
+The second example focuses on ligand-gated ion channels. In this particular
+system, we care about the ion channel's state--either open or close--and the
+ligands' binding configuration. If the channel responds to the ligand's
+concentration by changing its probability of gating, we can calculate using
+equilibrium statistical mechanics. Finally, the third example shows different
+configurations of a small patch of the cell membrane. All deformations of a
+membrane have energetic costs associated with them. So listing all possible
+membrane configurations, we can calculate the most likely shape of a membrane
+given the forces and stresses acting on it. 
 
 The macroscopic states that we observe can then be thought of as a
 coarse-graining of many microstates into a single macrostate. For example, in
@@ -242,10 +249,11 @@ a protocol we must follow:
 2. Compute the energy of each of these microstates.
 
 3. Define the "macrostate" we care about by grouping all microstates that belong
-   to the same macrostate.
+   to the same energy.
 
-4. Compute the Boltzmann factor by exponentiating minus the energy divided by
-   the thermal energy.
+4. Compute the Boltzmann factor. This factor is defined as the exponential of
+   the negative energy divided by the thermal energy, as indicated in Eq.
+   $\ref{eq:boltzmann_law}$.
 
 To see this protocol in action, let us apply it to the calculation of
 $p_{\text{bound}}$, the probability of finding an RNAP bound to the promoter. We
@@ -257,51 +265,63 @@ coarse-graining of the bacterial genome. For us, a genome is simply made out of
 boxes where the RNAP can bind. We imagine that there is a single site where RNAP
 can bind specifically--the promoter of interest. There are also $N_{NS} \approx
 5\times 10^6$ non-specific binding sites, one per basepair (bp) in the genome.
-We ignore the fact that the RNAP footprint when it binds to the genome is
-roughly 30 bp. This assumption is valid if the number of available RNAP
-molecules is much smaller than the number of non-specific binding sites since it
-is improbable that two RNAPs would fall next to each other by pure chance. We
-also ignore the possibility of RNAP not being bound to the genome. Experimental
-evidence with mini-cells in which a mutant *E. coli* that sheds vesicles without
-segregating chromosomes support this assumption [@Bintu2005]. The exercise then
-consists of choosing at random one box for each $P$ polymerase available to
-bind. [@Fig:ch1_fig03] shows in the first column two possible configurations of
-our coarse-grained genome.
+This means that because of the sequence-dependent interactions between the RNAP
+molecule, and the DNA, the energy associated with specific binding to the gene
+promoter is more favorable than the rest of the genome. We ignore the fact that
+the RNAP footprint when it binds to the genome is roughly 30 bp. This assumption
+is valid if the number of available RNAP molecules is much smaller than the
+number of non-specific binding sites since it is improbable that two RNAPs would
+fall next to each other by pure chance. A useful analogy for this point is to
+think about sitting $\sim \text{few}\times 10$ people on a large stadium with
+$\sim 10^4$ seats. If the seats are chosen randomly, we do not need to worry
+about doing the sampling "without replacement" because the chances of two people
+ending up with the same seat number are negligible. We also ignore the
+possibility of RNAP not being bound to the genome. This assumption is supported
+by experimental evidence on a particular type of *E. coli* mutant that sheds
+lipid vesicles without segregating DNA into such vesicles. Mass spectrometry
+analysis on these "min-cells" has shown that there are no RNAP molecules to be
+found, implying that RNAPs are bound to DNA most if not all of the time
+[@Bintu2005]. The exercise then consists of randomly choosing one box for each
+of the $P$ polymerases available to bind. [@Fig:ch1_fig03] shows in the first
+column two possible configurations of our coarse-grained genome.
 
 **2. Compute the energy for each microstate.** Let us analyze the case where all
 $P$ RNAP molecules are bound non-specifically to the genome. For simplicity, we
 assume that RNAP binds to all $N_{NS}$ non-specific binding sites with the same
 affinity. We assign this energy to be $\varepsilon_P^{(NS)}$. This assumption
-could be relaxed, as we explored in [@Phillips2019], but for now, we don't have
-to worry about this complication. For a statistical mechanician the assignment
-of binding energies does not come from some quantum first-principled calculation
-or anything similar. We label the interaction of the RNAP and the rest of the
-genome with a single value, $\varepsilon_P^{(NS)}$, that coarse-grains all of
-the hydrogen bonds and other effects that go into this physical process. Since
-we have $P$ such polymerases bound non specifically, the energy of any state
-with a similar configuration is then $P \varepsilon_P^{(NS)}$ as shown in
-[@Fig:ch1_fig03] second column, top row.
+could be relaxed, as explored in [@Phillips2019]. But for now, we don't have to
+worry about this complication. For the statistical mechanics' protocol the
+assignment of binding energies does not come from some quantum first-principled
+calculation or anything similar. We label the interaction of the RNAP and the
+rest of the genome with a single value, $\varepsilon_P^{(NS)}$, that
+coarse-grains all of the hydrogen bonds and other effects that go into this
+physical process and gives an average energy. The calculation continues with
+this "labeled energy," and, as we will see at the end, a very clean functional
+form emerges. Since we have $P$ such polymerases bound non specifically, the
+energy of any state with a similar configuration is then $P
+\varepsilon_P^{(NS)}$ as shown in [@Fig:ch1_fig03] second column, top row.
 
 **3. Define the "macrostate" we care about.** In a sense, when we speak about
 macrostate, it does not necessarily mean something that we can macroscopically
-observe. What it means is that we group--a form of coarse-graining--a bunch of
-states that we take to be functionally equivalent, as shown in
-[@Fig:ch1_fig02](B). In our case, we only care about whether or not the RNAP is
-bound to our promoter of interest. The configuration of the rest of the
-background sites is irrelevant to our question. What this means in practice is
-that we must compute the degeneracy or multiplicity of our state. In other
-words, for the *specific* state shown in the first column/top row of
-[@Fig:ch1_fig03] we know its Boltzmann weight. Eq. $\ref{eq:boltzmann_law}$
-tells us that the probability of this particular configuration takes the form
+observe. What it means is that we group a bunch of states that we take to be
+functionally equivalent, as shown in [@Fig:ch1_fig02](B). In our case, we only
+care about whether or not the RNAP is bound to our promoter of interest. The
+configuration of the rest of the background sites is irrelevant to our question.
+What this means in practice is that we must compute the degeneracy or
+multiplicity of our state. In other words, for the *specific* state shown in the
+first column/top row of [@Fig:ch1_fig03] we know its Boltzmann weight. Eq.
+$\ref{eq:boltzmann_law}$ tells us that the probability of this particular
+configuration takes the form
 $$
 P_{\text{state}} \propto e^{-\beta P \varepsilon_P^{(NS)}},
 $$
-since the $P$ RNAP molecules are bound non specifically. But every single
-arrangement in which all RNAPs are bound non-specifically has the same Boltzmann
-weight. The question then becomes: how many of such microstates can the system
-exist in? This is a combinatorics question of the form: in how many different
-ways can I arrange $P$ molecules into $N_{NS}$ boxes? Which of course, the
-answer is
+where we define $\beta \equiv (k_BT)^{-1}$. The probability of this binding
+configuration takes this form since the $P$ RNAP molecules are bound non
+specifically. But every single arrangement in which all RNAPs are bound
+non-specifically has the same Boltzmann weight. The question then becomes: in
+how many of such microstates can the system exist? This is a combinatorics
+question of the form: in how many different ways can I arrange $P$ molecules
+into $N_{NS}$ boxes? Which of course, the answer is
 $$
 \text{\# states with all RNAPs bound non-specifically} = 
 \frac{N_{NS}!}{P!(N_{NS} - P)!},
@@ -315,31 +335,48 @@ $$
 \frac{100\cdot 99\cdot 98\cdots97\cdots 2\cdot 1}{97\cdots2\cdot 1} = 
 100\cdot 99\cdot 98.
 $$
-Given this result, we can simply state that $100\cdot 99\cdot 98 \approx 100^3$
-without making such a big mistake. Imagine $N_{NS}$ is in the order of $10^6$,
-then the error would become even smaller. That is why, as shown in
-[@Fig:ch1_fig03] third column, we can approximate
+Given this result, we can simply state that $100\cdot 99\cdot 98 \approx 100^3$,
+only making a three percent error ($100\cdot 99\cdot 98 / 100^3$ \approx 0.97).
+Imagine $N_{NS}$ is in the order of $10^6$, then the error would become
+negligible. That is why, as shown in the third column of [@Fig:ch1_fig03], we
+can approximate
 $$
 \frac{N_{NS}!}{P!(N_{NS} - P)!} \approx \frac{N_{NS}^P}{P!}, \;
 \text{for }N_{NS} \gg P.
 $$
 For our other "macrostate" we have the case where only one out of the $P$ RNAPs
-is bound specifically for the promoter. The way to realize this state is then
-given by
+is bound specifically for the promoter. We define the energy of this single RNAP
+specifically binding to the promoter as $\varepsilon_{P}^{(S)}$. We assume that
+the other $P-1$ RNAPs are bound non-specifically with the usual energy
+$\varepsilon_{P}^{(NS)}$. The way to realize this state is then given by
 $$
 \small
 \text{\# states with one RNAP bound specifically} = 
 \frac{N_{NS}!}{(P - 1)!(N_{NS} - (P - 1))!} \approx
 \frac{N_{NS}^{P-1}}{(P-1)!}.
 $$
+What these Boltzmann weights mean is that for us *any* state on which a single
+RNAP is bound to the promoter while the rest are bound non specifically is
+equivalent. Therefore the probability of finding the promoter occupied by an
+RNAP would be of the form
+$$
+p_{\text{bound}} \propto e^{-\beta \epsilon_1} + e^{-\beta \epsilon_2} +
+e^{-\beta \epsilon_3} + \cdots
+$$
+where $\epsilon_i$ is the energy of the $i^{\text{th}}$ state that has a single
+RNAP bound to the promoter. But we established that all of the $\epsilon_i$
+energies are the same. So instead of writing this long sum, we multiply the 
+Boltzmann weight of a single state by the number of states with equivalent
+energy, i.e., we multiply it by the state's multiplicity or degeneracy. The 
+same logic applies for the states where none of the RNAPs are specifically bound
+to the promoter.
 
-
-**4. Compute the Boltzmann Factor.** The last step in the protocol is simply to
-follow the recipe indicated by Eq. $\ref{eq:boltzmann_law}$ where we 
-exponentiate the energy, with the caveat that this time we multiply by the
-multiplicity that we just mentioned since we are lumping together all 
-microstates into a single functional macrostate. So the Boltzmann weight for the
-unbound $\rho_{\text{unbound}}$ macrostate is given by
+**4. Compute the Boltzmann Factor.** The last step in the protocol is to follow
+the recipe indicated by Eq. $\ref{eq:boltzmann_law}$. We exponentiate the
+energy, with the caveat we mentioned on the last point that this time we
+multiply by the multiplicity that we just computed. This is because we are
+lumping together all microstates into a single functional macrostate. So the
+Boltzmann weight for the unbound $\rho_{\text{unbound}}$ macrostate is given by
 $$
 \rho_{\text{unbound}} = \frac{N_{NS}^P}{P!}
 e^{-\beta P \varepsilon_P^{(NS)}}.
@@ -353,7 +390,9 @@ For reasons that will become clear later in this chapter once we work with the
 entropy and derive the Boltzmann distribution, we know that to compute the
 probability of a specific microstate (or a macrostate), we simply take the
 Boltzmann weight of the microstate and divide by the *sum* of all of the other
-Boltzmann weights of the states available to the system. Therefore, to calculate
+Boltzmann weights of the states available to the system. This sum of Boltzmann
+weights place a very special role in statistical mechanics, and it is known as
+the *partition function* of the system. Therefore, to calculate
 $p_{\text{bound}}$ we compute
 $$
 p_{\text{bound}} = 
@@ -370,8 +409,8 @@ e^{-\beta \left(\varepsilon_P^{(S)} +  (P - 1) \varepsilon_P^{(NS)}\right)}
 e^{-\beta \left(\varepsilon_P^{(S)} +  (P - 1) \varepsilon_P^{(NS)}\right)}
 + 
 \frac{N_{NS}^P}{P!}
-e^{-\beta P \varepsilon_P^{(NS)}},
-}
+e^{-\beta P \varepsilon_P^{(NS)}}
+},
 $$
 an algebraic nightmare. We can simplify this expression enormously by
 multiplying the numerator and denominator by $\rho_{\text{unbound}}^{-1}$. Upon
@@ -548,25 +587,27 @@ short-caption="Figure 1 theory in transcriptional regulation"}
 
 ### The second secret of life
 
+TBD. Allostery
+
 ### All cells are equal, but some are more equal than others
 
 One of the great discoveries that came from the single-cell biology revolution
-(understood as the revolution that came from careful observations of the
-behavior of individual cells rather than bulk measurements) was the discovery of
-the intrinsic cell-to-cell variability in many aspects of biology, gene
-expression being the canonical example [@Eldar2010]. This means that two cells
-with the same genome exposed to the same conditions will not express the same
-number of mRNAs and proteins of any specific gene. From a statistical physics
-perspective, this is not entirely "surprising" since we know that a system can
-be found in many different microstates as described in [@Fig:ch1_fig02](A). What
-is different here is that a cell does not have an Avogadro number of mRNA (or,
-for that matter of anything) in it, making these fluctuations more relevant. If
-we think of fluctuations scaling as $\sqrt{N}$, that means that for an $N$ of
-$\approx$ ten molecules or so, these variations can be significant in terms of
-the downstream cellular behavior. Cells have to cope with these physical
-limitations on precision, many times generating systems to actively buffer as
-much of the "noise" as possible [@Voliotis2014a], other times using this
-intrinsic variability to their advantage [@Balaban2004].
+where we began to measure individual cellular behavior rather than bulk
+observations, was the discovery of the intrinsic cell-to-cell variability in
+many aspects of biology, gene expression being the canonical example
+[@Eldar2010]. This means that two cells with the same genome exposed to the same
+conditions will not express the same number of mRNAs and proteins of any
+specific gene. From a statistical physics perspective, this is not entirely
+"surprising" since we know that a system can be found in many different
+microstates as described in [@Fig:ch1_fig02](A). What is different here is that
+a cell does not have an Avogadro number of mRNA (or, for that matter of
+anything) in it, making these fluctuations more relevant. If we think of
+fluctuations scaling as $\sqrt{N}$, that means that for an $N$ of $\approx$ ten
+molecules or so, these variations can be significant in terms of the downstream
+cellular behavior. Cells have to cope with these physical limitations on
+precision, many times generating systems to actively buffer as much of the
+"noise" as possible [@Voliotis2014a], other times using this intrinsic
+variability to their advantage [@Balaban2004].
 
 The central assumption behind the thermodynamic models of gene regulation that
 we studied in the last section is that the gene expression is proportional to
@@ -675,9 +716,9 @@ P(m, t + \Delta t) = &P(m, t)
 - \overbrace{(\gamma_m \Delta t) m P(m, t)}^{m \rightarrow m-1}
 \end{split}.
 $$
-As we did before, we will send the first term on the right-hand side to the
-left, divide both sides by $\Delta t$ and take the limit when $\Delta t
-\rightarrow 0$. This gives us the master equation we were searching for
+We send the first term on the right-hand side to the left, divide both sides by
+$\Delta t$ and take the limit when $\Delta t \rightarrow 0$. This gives us the
+master equation we were searching for
 $$
 \frac{dP(m, t)}{dt} = 
 r_m P(m - 1, t) + \gamma_m (m + 1) P(m + 1, t)
