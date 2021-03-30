@@ -44,7 +44,7 @@ communication system essentially consists of five components:
 5. The **destination** for whom the message is intended.
 
 [@Fig:ch1_fig07](B) shows an analogous schematic to [@Fig:ch1_fig07](A) with the
-relevant components involved in the gene expression context that we focus on
+relevant components involved in the gene expression context that we focus on in
 this thesis. In our bacterial gene regulation model, the information source role
 is played by a small molecule's environmental concentration. It is this signal
 that the cells are trying to measure and respond to by up-regulating the
@@ -69,21 +69,20 @@ of how much we do not know [@Adami2016]. From these definitions, we see that
 having information, therefore, reduces our uncertainty, i.e., reduces the
 entropy. This means that for Shannon, the amount of information we have from a
 source is related to that source's statistical structure and how much we can
-predict the message produced by the source given our knowledge of this
-statistical structure. Let us look at a concrete example: English text. We know
-that written and spoken language is not completely random. For a message to be
-meaningful, the choice of words has to come from a statistical structure that
-obeys the language's grammar rules. The choice of letters within a word also
-follows a certain statistical structure. Imagine the text shown in
-[@Fig:ch1_fig08](A). This is arguably one of the most important and most
-beautiful and insightful pieces of prose ever put together by a human mind as it
-is the last paragraph of *On the Origin of Species* by Darwin. If we ignore the
-paragraph's message and just quantify how often we find each of the 26 letters
-in the english alphabet, we obtain a distribution like the one shown in
-[@Fig:ch1_fig08](B). In this paragraph, we can see that the most common vowel is
-*e* exactly as in English writ-large. This distribution $P(x)$ is therefore not
+predict the source's message given our knowledge of this statistical structure.
+Let us look at a concrete example: English text. We know that written and spoken
+language is not completely random. For a message to be meaningful, the choice of
+words has to come from a statistical structure that obeys the language's grammar
+rules. The choice of letters within a word also follows a certain statistical
+structure. Imagine the text shown in [@Fig:ch1_fig08](A). This is arguably one
+of the most important and most beautiful pieces of prose ever put together by a
+human mind as it is the last paragraph of *On the Origin of Species* by Darwin.
+If we ignore the paragraph's message and just quantify how often we find each of
+the 26 letters in the English alphabet, we obtain a distribution like the one
+shown in [@Fig:ch1_fig08](B). This paragraph shows that the most common vowel is
+*e*, exactly as in English writ-large. This distribution $P(x)$ is therefore not
 maximally random. In other words, if we were to put all letters in the paragraph
-in a hat, and pick one letter at random, we could bet more money on the outcome
+in a hat and pick one letter at random, we could bet more money on the outcome
 being a letter *e* and make money over time given this knowledge of the
 structure of the distribution. A maximally random distribution would be if all
 letters appeared equally frequent in the paragraph, such that betting on any
@@ -97,8 +96,8 @@ followed by the letter *h*. This implies that knowing that the first letter of
 the pair was *t* reduced our uncertainty of what character could come next. We
 would then say that knowing the first letter gave us *information* about the
 possible outcomes of the second letter. In the next section, we will follow
-Shannon's original derivation to define both entropy and
-information mathematically.
+Shannon's original derivation to define both entropy and information
+mathematically.
 
 ![**The statistical structure of the English language.** (A) Last paragraph of
 *On the Origin of Species* by Charles Darwin. This serves as a rather nice
@@ -129,7 +128,7 @@ to satisfy three reasonable conditions [@Shannon1948]:
    have slightly different distributions $\mathbf{p}$, nevertheless $H$ should
    still apply to all possible information sources.
 
-2. If all of the elements of the distribution are equally likely, i.e. $p_i =
+2. If all of the elements of the distribution are equally likely, i.e., $p_i =
    1/n$, then $H$ should be a monotonic increasing function of $n$. This means
    that the more options to choose from, the more uncertain we are about the
    possible outcome. For example, we are more uncertain about the outcome of a
@@ -142,7 +141,7 @@ to satisfy three reasonable conditions [@Shannon1948]:
    illustrated in [@Fig:ch1_fig09](A)where we imagine having an information
    source with only $n=3$ choices, each with probabilities $\mathbf{p} = \{ 1/2,
    1/3, 1/6\}$, which gives $H(1/2, 1/3, 1/6)$ for the left case. For the right
-   case we imagine first choosing between the upper and the lower path, and
+   case, we imagine first choosing between the upper and the lower path, and
    then, if the lower path is chosen, a second choice is made. This property
    then demands that
    $$
@@ -161,17 +160,20 @@ $$
 where $K$ is a constant having to do with the units (choice of the logarithm
 base). To prove this, we will follow Shannon's original work. We imagine the
 problem of encoding a message. For example, imagine encoding a message from the
-English alphabet into Morse code as schematically depicted in
-[@Fig:ch1_fig09](B). In there, we take letters in English alphabet (*SOS*), run
-it through an encoding function $E$ and obtain the message (...---...). This
-process of encoding can be thought of as taking a message $m_x$ written in an
-alphabet $\mathcal{X} = \{x_1, x_2, \ldots, x_n \}$, (where $n$ is 26 for the
-English alphabet) and converting it into a message $m_y$ written in a different
-alphabet $\mathcal{Y} = \{y_1, y_2, \ldots, y_m \}$ (where $m=2$ for Morse code
-since we only have dots and dashes). The encoding function $E: \mathcal{X}^r
-\rightarrow \mathcal{Y}^t$ takes a message of length $r$ (for our example $r=3$
-with three letters, *SOS*) and translates it into a message of size $t$ (in our
-example $t=9$) such that we then have
+English alphabet into Morse code, or a protein sequence into the corresponding
+mRNA sequence, as schematically depicted in [@Fig:ch1_fig09](B). In there, we
+take letters in the English alphabet (*SOS* for the English alphabet, *MGF* for
+the protein), run it through an encoding function $E$ and obtain the message
+(...---... for the Morse code, *AUGGGCUUC* for the mRNA). This process of
+encoding can be thought of as taking a message $m_x$ written in an alphabet
+$\mathcal{X} = \{x_1, x_2, \ldots, x_n \}$, (where $n$ is 26 for the English
+alphabet, and 20 for the number of amino acids) and converting it into a message
+$m_y$ written in a different alphabet $\mathcal{Y} = \{y_1, y_2, \ldots, y_m \}$
+(where $m=2$ for Morse code since we only have dots and dashes, and $m=4$ for
+the mRNA with 4 possible nucleotides). The encoding function $E: \mathcal{X}^r
+\rightarrow \mathcal{Y}^t$ takes a message of length $r$ (for our exmaples
+$r=3$) and translates it into a message of size $t$ (in our examples $t=9$)
+such that we then have
 $$
 m_y = E(m_x),
 $$
@@ -181,19 +183,24 @@ encode, the larger the corresponding message $m_y$ will be. Therefore we have
 that
 $$
 L(m_y) \propto L(m_x),
+\label{eq:length_proportionality}
 $$
 where $L(\cdot)$ is a function that counts the number of characters in a
-message. We have then $L(m_x) = r$ and $L(m_y) = t$. Let us call $k$ this
-proportionality constant such that
+message. An essential difference between both of the examples in
+[@Fig:ch1_fig09](B) is that for the English to Morse code case, the number of
+dots and dashes for different letters is different (*e*$\rightarrow$.,
+*x*$\rightarrow$-..-). Meanwhile, for the amino acid to codon case, every single
+codon has the same length. Let us focus for now on this second coding scheme
+where every character from alphabet $\mathcal{X}$ is encoded with the same
+number of characters from alphabet $\mathcal{Y}$. We have then $L(m_x) = r$ and
+$L(m_y) = t$. Let us call $k$ the proportionality constant from Eq.
+$\ref{eq:length_proportionality}$ such that
 $$
 L(m_y) = k L(m_x).
 \label{eq:length_fn}
 $$
-The engineering problem of designing an efficient coding scheme is then reduced
-to find the smallest $K$ possible.
-
 The number of messages of size $r$ that can be encoded with the alphabet
-$\mathcal{X}$ is given by $n^r$--because we have $m$ possible options to chose
+$\mathcal{X}$ is given by $n^r$--because we have $n$ possible options to chose
 from for each of the $r$ characters, resulting in $n\cdot n\cdot n\cdots = n^r$.
 Likewise, the number of messages of size $t$ encoded with alphabet $\mathcal{Y}$
 is $m^t$. We then demand from our coding scheme that the number of messages we
@@ -205,11 +212,13 @@ $$
 n^r \leq m^t.
 $$
 If our encoding did not satisfy this, we would have to increase $t$, i.e., the
-number of characters we use to encode our message. On the other extreme, we
-could come up with a ridiculously long encoding scheme (imagine a version of
-Morse code where 1000 dots and dashes represent every letter). To avoid this
-absurd scheme, we bound the encoded message's size to be as long as necessary to
-encode all potential messages, but not any longer. This bound is expressed as
+number of characters we use to encode our message. For example, if codons were
+made out of only two basepair, the genetic code would not be able to code for
+all 20 amino acids plus the stop codons. On the other extreme, we could develop
+a ridiculously long encoding scheme (imagine a version of the genetic code where
+1000 basepair represented a single amino acid). To avoid this absurd scheme, we
+bound the encoded message's size to be as long as necessary to encode all
+potential messages, but not any longer. This bound is expressed as
 $$
 m^{t-1} < n^r \leq m^t.
 \label{eq:ineq_messages}
@@ -219,7 +228,7 @@ inequalities since $\log$ is a monotonically increasing function--finding
 $$
 (t - 1) \log(m) < r \log(n) \leq t \log(m).
 $$
-We are free to take the logarithm in any base it is convenient, therefore, let
+We are free to choose the logarithm base as we find convenient; therefore, let
 us use base $m$ for this, obtaining
 $$
 t - 1 < r \log_m(n) \leq t.
@@ -233,16 +242,20 @@ $$
 Let us stare at Eq. $\ref{eq:t_over_r}$. In Eq. $\ref{eq:ineq_messages}$ We
 established $t$ as the minimum number of characters from alphabet $\mathcal{Y}$
 needed to encode a message of length $r$ written with alphabet $\mathcal{X}$
-characters (such as *SOS* turned into ...---...). This means That $t/r$ is the
-average number of characters from alphabet $\mathcal{Y}$ per character from
-alphabet $\mathcal{Y}$, i.e., the proportionality constant $k$ from Eq.
+characters (such as *MGF* turned into *AUGGGCUUC*). This means that, for the
+case where all symbols use the same number of characters when encoded, $t/r$ is
+the number of characters from alphabet $\mathcal{Y}$ per character from alphabet
+$\mathcal{X}$, i.e., the proportionality constant $k$ from Eq.
 $\ref{eq:length_fn}$. This means that Eq. $\ref{eq:t_over_r}$ implies
 $$
 \log_m(n) \leq k.
 $$
-In words, this means that a lower bound for the number of characters from
-alphabet $\mathcal{Y}$ needed to encode a character from alphabet $\mathcal{X}$
-is given by $\log_m(n)$. Furthermore, Eq. $\ref{eq:t_over_r}$ implies that
+In other words, a lower bound for the number of characters from alphabet
+$\mathcal{Y}$ needed to encode a character from alphabet $\mathcal{X}$ is given
+by $\log_m(n)$. For the amino acid to codon case, the minimum number of letters
+in a codon would be $\log_4(20) \approx 2.16 > 2$. This shows why we could not
+encode all 20 amino acids with two basepair long codons. Furthermore, Eq.
+$\ref{eq:t_over_r}$ implies that
 $$
 \frac{t}{r} - \log_m(n) < \frac{t}{r} - \frac{(t-1)}{r},
 \label{eq:t_over_r_diff}
@@ -252,8 +265,227 @@ results in
 $$
 \frac{t}{r} - \log_m(n) < \frac{1}{r}
 \Rightarrow k - \log_m(n) < \frac{1}{r}.
+\label{eq:logn_1_over_r}
 $$
-We can therefore make $k$, the number of encoding characters
+Therefore, we can make $k$, the number of encoding characters, as arbitrarily
+close to $\log_m(n)$ as we want by increasing the length of the message being
+encoded, i.e., making $r \rightarrow \infty$. This would imply a genetic code,
+not for individual amino acids but entire polypeptides. This scheme would not
+work biologically; nevertheless, this mathematical limit will help us find the
+functional form of our desired function $H(\mathrm{p})$. 
 
-![**TBD.** .](ch1_fig09){#fig:ch1_fig09
-short-caption="TBD"}
+Coming back to the function $H$, let us define
+$$
+A(n) \equiv H \left(\frac{1}{n}, \frac{1}{n}, \frac{1}{n}, \ldots\right),
+$$
+as the maximum possible value of $H$ when all outcomes are equally likely.
+Property 2 tells us that $A(n)$ increases monotonically with the length of the
+message. This means that if we apply the function $A(\cdot)$ to the terms in Eq.
+$\ref{eq:ineq_messages}$, we conserve the inequality, i.e.,
+$$
+A(m^{t-1}) < A(n^r) \leq A(m^t).
+\label{eq:A_ineq}
+$$
+Using Property 3, we can divide the $n^r$ possible choices into $r$ independent
+decisions, each with $n$ options to chose from. This property is depicted in
+[@Fig:ch1_fig09](C). On the left, it shows we can choose from eight different
+codons that code for $2^3 = 8$ different amino acids. On the right, we can
+choose base by base, building up the codon in three consecutive decisions, each
+with two equally likely choices, for a total of $2\cdot 2 \cdot 2 = 8$ possible
+outcomes. This division of choices allows us to rewrite Eq. $\ref{eq:A_ineq}$ as
+$$
+(t - 1) A(m) < r A(n) \leq t A(m),
+\label{eq:A_div}
+$$
+because our requirement of the uncertainty $H$ being an additive property. For
+the example in [@Fig:ch1_fig09](C), at each of the three decision steps, the
+uncertainty is given by $A(2)$. Given that the uncertainty is additive, for each
+of the routes, our total uncertainty is given by
+$$
+A(2) + A(2) + A(2) = 3 A(2),
+$$
+therefore $A(2^3) = 3 A(2)$. Dividing Eq. $\ref{eq:A_div}$ by $r$ results in
+$$
+\frac{(t - 1)}{r} A(m) < A(n) \leq \frac{t}{r} A(m).
+$$
+Since $\frac{(t - 1)}{r} A(m) < A(n)$, it is also true that
+$$
+\frac{t}{r} A(m) - A(n) < A(m) \left(\frac{t}{r} - \frac{(t-1)}{r} \right).
+$$
+Simplifying terms we are left with
+$$
+\frac{t}{r} A(m) - A(n) < \frac{1}{r} A(m).
+$$
+Dividing both sides by $A(m)$ we find 
+$$
+k - \frac{A(n)}{A(m)} < \frac{1}{r}.
+\label{eq:A_1_over_r}
+$$
+We can make the ratio $A(n)/A(m)$ as close as $k$ as we want by making $r$
+larger. This equation looks shockingly similar to Eq. $\ref{eq:logn_1_over_r}$,
+but what is the connection? On the one hand Eq. $\ref{eq:logn_1_over_r}$ is the
+result of imposing the condition that our coding scheme must be able to encode
+any possible message from one alphabet $\mathcal{X}$ to another alphabet
+$\mathcal{Y}$. This condition leads us to the conclusion that the number of
+characters from alphabet $\mathcal{Y}$ needed to encode the characters from
+alphabet $\mathcal{X}$ (the constant $k$) can be made as arbitrarily close to
+$\log_m(n)$ as we want by writing a code, not for individual characters
+(individual amino acids), but for sequences of characters (polypeptides). On the
+other hand Eq. $\ref{eq:A_1_over_r}$ is a direct consequence of the three
+logical properties we imposed on our uncertainty metric $H$. These properties
+led us to conclude that, whatever our uncertainty function for the equally
+likely choices $A(\cdot)$ is, the ratio of the uncertainties for each of our two
+alphabets $A(n)/A(m)$ approaches the same constant $k$ as we make the encoded
+message longer. Since both $\log_m(n)$ and $A(n)/A(m)$ approach $k$ as $r$
+grows, we can conclude that
+$$
+\frac{A(n)}{A(m)} \rightarrow \frac{\log_m(n)}{\log_m(m)}\; \text{ as }
+r \rightarrow \infty.
+$$
+We wrote the ratio $\log_m(n)/\log_m(m)$ because our choice of the logarithm
+base was arbitrary. Therefore, more generally, we have
+$$
+\frac{A(n)}{A(m)} \rightarrow \frac{\log(n)}{\log(m)}\; \text{ as }
+r \rightarrow \infty,
+$$
+for any base. This convergence only takes place if and only if
+$$
+A(n) = K \log(n),
+$$
+where $K$ is some constant. This is quite beautiful. What we just demonstrated
+is that the functional form for the uncertainty metric we are after scales as
+the logarithm of the number of possible characters in our alphabet. We know that
+our uncertainty function $H(1/n, 1/n, \ldots)$ is a function of $1/n$ rather
+than of $n$. This is easily fixed by using the properties of logarithms, writing
+$$
+H\left(\frac{1}{n}, \frac{1}{n}, \ldots \right) = 
+-K \log\left(\frac{1}{n} \right).
+\label{eq:entropy_equally}
+$$
+The general form of Shannon's entropy is starting to show up. After all, for the
+case where all choices are equally likely, we have $p_i = 1/n$. We can therefore
+write
+$$
+H\left(\frac{1}{n}, \frac{1}{n}, \ldots \right) = -K 
+\sum_{i=1}^n \frac{1}{n} \log\left(\frac{1}{n} \right).
+$$
+
+Let us generalize the proof for cases where choices are not equally likely. To
+continue with the amino acid to codon encoding example, we now consider the
+genetic code's redundancy. Given that there are $4^3 = 64$ possible codons,
+multiple codons map to the same amino acid. An example of three amino acids that
+share the first letter is depicted on [@Fig:ch1_fig09](D). The diagram on the
+left shows a total of nine different codons; two of such codons code for
+asparagine (*N*), three for isoleucine (*I*), and four for threonine (*T*). A
+way to express the asymmetry between the choices is to have each codon as an
+independent and equally likely choice, as depicted on the middle diagram of
+[@Fig:ch1_fig09](D). Let us define the total number of codons 
+$$
+N = \sum_{i=1}^n n_i,
+\label{eq:sum_amino}
+$$
+where $n_i$ counts the number of codons for amino acid $i$, and $n$ is the total
+number of amino acid choices. Let us call $H_1$ the uncertainty of this set of
+equal choices. From Eq. $\ref{eq:entropy_equally}$ we know that the resulting
+uncertainty function $H_1$ is of the form 
+$$
+H_1 = K \log\left(\sum_{i=1}^n n_i \right) = K \log (N),
+$$
+since all codons are equally likely.
+
+Although each codon is equally likely, the resulting amino acid is not. The
+probability of amino acid *I* in this case is the number of codons encoding it
+(two) divided by the total number of codons in the example (nine). In general,
+we assume that each of the $n$ choices has a probability
+$$
+p_i = \frac{\text{\# codons for amino acid }i}{\text{total \# of codons}} =
+\frac{n_i}{N}.
+\label{eq:p_i_amino}
+$$
+By Property 3 of our function $H$, we can partition the codon's choice into two
+consecutive decisions (not three since the first codon is the same for all amino
+acids in this example). This partitioning is shown on the right diagram of
+[@Fig:ch1_fig09](D). The uncertainty $H_2$ for this case has two contributions,
+one for each of the decisions
+$$
+H_2 = 
+\overbrace{H(p_1, p_2, \ldots, p_n)}^{\text{first choice}} + 
+\overbrace{K \sum_{i=1}^n p_i \log n_i}^{\text{second choice}}.
+$$
+The first decision has an unknown functional form we are trying to figure out.
+The second choice consists of choosing between $n_i$ equally likely bases for
+the codon's last position, each weighted by the probability of going to this
+particular branch (the one that defines the amino acid) as demanded by Property
+3. But whether or not we choose each codon on a single decision or in two steps,
+the uncertainty of this event is the same. This means that $H_1 = H_2$ as
+Property 3 requires. This equality results in
+$$
+K \log (N) = H(p_1, p_2, \ldots, p_n) + K \sum_{i=1}^n p_i \log(n_i).
+$$
+Solving for $H(p_1, p_2, \ldots, p_n)$ results in
+$$
+H(p_1, p_2, \ldots, p_n) = K \left[ 
+    \log N - \sum_{i=1}^n p_i \log(n_i)
+\right].
+$$
+Using Eq. $\ref{eq:sum_amino}$ results in
+$$
+H(p_1, p_2, \ldots, p_n) = - K \left[ 
+    \sum_{i=1}^n p_i \log(n_i)
+    - \log\left( \sum_{i=1}^n n_i \right)
+\right].
+$$
+Since probabilities must be normalized, i.e., $\sum_{i=1}^n p_i = 1$, we can
+write
+$$
+H(p_1, p_2, \ldots, p_n) = - K \left[ 
+    \sum_{i=1}^n p_i \log(n_i)
+    - \sum_{i=1}^n p_i \log\left( \sum_{i=1}^n n_i \right)
+\right].
+$$
+Using the property of logarithms, we can rewrite this as
+$$
+H(p_1, p_2, \ldots, p_n) = - K \left[ 
+    \sum_{i=1}^n p_i 
+    \log\left( \frac{n_i}{\sum_{i=1}^n n_i} \right)
+\right].
+$$
+Using Eq. $\ref{eq:p_i_amino}$ we find the expected result
+$$
+H(p_1, p_2, \ldots, p_n) = - K \sum_{i=1}^n p_i \log p_i.
+\label{eq:shannon_result}
+$$
+
+Let us dissect this result. We began this derivation by stating three logical
+properties that a metric for uncertainty should have. The properties could be
+summarized simply as 1) the function exists for all possible $p_i$s, 2) the
+uncertainty grows as the number of possible outcomes grows, and 3) the
+uncertainty must be additive. We thought about a coding scheme to encode a
+message written in an alphabet into a different one. We demanded that our coding
+scheme should be able to encode *any* message we want, and this led us to
+conclude that the average number of characters needed to encode each character
+on the original message can approach $\log_m(n)$, where $n$ is the number of
+characters in the original alphabet and $m$ is the number of characters in the
+encoding alphabet. We then used the properties of our desired uncertainty
+function and found a non-obvious connection between the number of characters
+needed to pass from one alphabet to another and the uncertainty on the message.
+When we generalized this analysis to cases where not all outcomes are equally
+likely, we arrived at Eq. $\ref{eq:shannon_result}$, the so-called Shannon
+entropy. This is Shannon's theorem, and what it shows is that Eq.
+$\ref{eq:shannon_result}$ is the only function that satisfies the three very
+reasonable conditions we established for an uncertainty measurement.
+
+![**Shannon's theorem.** (A) One of the properties of a reasonable metric for
+uncertainty is that we can partition choices into multiple steps, and the
+resulting uncertainty should remain the same. (B) Example of coding functions
+$E$. The English alphabet can be converted into Morse code. Amino acids can be
+encoded in codons. (C) Partitioning of $2^3$ equally likely choices into three
+decision steps, each with two choices. Eight different amino acids can be
+selected using two schemes: 1) each of the eight codons is chosen at random with
+equally likely chances, or 2) the codon is built by choosing one basepair at the
+time. (D) Partitioning of unequal choices. Given the redundancy of the genetic
+code, for equally likely codons, the resulting amino acid has different
+probabilities being chosen.](ch1_fig09){#fig:ch1_fig09 short-caption="Shannon's
+theorem"}
+
+### Information Theory and Statistical Mechanics
