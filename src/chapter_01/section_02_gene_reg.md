@@ -82,15 +82,15 @@ lines intersect represents the point where the production matches the
 degradation. For all values less than $m_{ss}$ the production term is larger
 than the degradation, which means that for any value $m < m_{ss}$ the derivative
 is positive ($dm/dt > 0$), so over time the system will accumulate more mRNA.
-The opposite is true for values all values after $m_{ss}$ where the degradation
-term is larger than the production term, implying that $dm/dt < 0$. This means
-that for $m > m_{ss}$, the system will tend to lose mRNA. These opposite trends
-point to the idea that $m_{ss}$ must be called a stable fixed point of the
-dynamical system. This can schematically be seen at the bottom of
-[@Fig:ch1_fig01](B). The arrowheads' size indicates the system's trend to move
-either left or right in $m$. Since all arrows point at the special value,
-$m_{ss}$, we can say that any small perturbation of the system will be
-dissipated as the system relaxes back to $m_{ss}$.
+The opposite is true for all values after $m_{ss}$ where the degradation term is
+larger than the production term, implying that $dm/dt < 0$. This means that for
+$m > m_{ss}$, the system will tend to lose mRNA. These opposite trends point to
+the idea that $m_{ss}$ must be called a stable fixed point of the dynamical
+system. This can schematically be seen at the bottom of [@Fig:ch1_fig01](B). The
+arrowheads' size indicates the system's trend to move either left or right in
+$m$. Since all arrows point at the special value, $m_{ss}$, we can say that any
+small perturbation of the system will be dissipated as the system relaxes back
+to $m_{ss}$.
 
 This qualitative statement can be confirmed by solving Eq. $\ref{eq:dm_dt}$. If
 we define the initial condition $m(t=0) = m_o$ by separation of variables we 
@@ -215,12 +215,12 @@ can fit in. In principle, we can list all possible spatial arrangements of
 ligands. We could then calculate the relative likelihood of finding the system
 in any configurations as long as we can assign an energy value to each of them.
 The second example focuses on ligand-gated ion channels. In this particular
-system, we care about the ion channel's state--either open or close--and the
+system, we care about the ion channel's state--either open or closed--and the
 ligands' binding configuration. If the channel responds to the ligand's
 concentration by changing its probability of gating, we can calculate using
 equilibrium statistical mechanics. Finally, the third example shows different
 configurations of a small patch of the cell membrane. All deformations of a
-membrane have energetic costs associated with them. So listing all possible
+membrane have energetic costs associated with them. By listing all possible
 membrane configurations, we can calculate the most likely shape of a membrane
 given the forces and stresses acting on it. 
 
@@ -251,9 +251,9 @@ a protocol we must follow:
 3. Define the "macrostate" we care about by grouping all microstates that belong
    to the same energy.
 
-4. Compute the Boltzmann factor. This factor is defined as the exponential of
-   the negative energy divided by the thermal energy, as indicated in Eq.
-   $\ref{eq:boltzmann_law}$.
+4. Compute the Boltzmann factor. This factor, sometimes called the Boltzmann
+   weight, is defined as the exponential of the negative energy divided by the
+   thermal energy, as indicated in Eq. $\ref{eq:boltzmann_law}$.
 
 To see this protocol in action, let us apply it to the calculation of
 $p_{\text{bound}}$, the probability of finding an RNAP bound to the promoter. We
@@ -268,28 +268,29 @@ can bind specifically--the promoter of interest. There are also $N_{NS} \approx
 This means that because of the sequence-dependent interactions between the RNAP
 molecule, and the DNA, the energy associated with specific binding to the gene
 promoter is more favorable than the rest of the genome. We ignore the fact that
-the RNAP footprint when it binds to the genome is roughly 30 bp. This assumption
-is valid if the number of available RNAP molecules is much smaller than the
-number of non-specific binding sites since it is improbable that two RNAPs would
-fall next to each other by pure chance. A useful analogy for this point is to
-think about sitting $\sim \text{few}\times 10$ people on a large stadium with
-$\sim 10^4$ seats. If the seats are chosen randomly, we do not need to worry
-about doing the sampling "without replacement" because the chances of two people
-ending up with the same seat number are negligible. We also ignore the
-possibility of RNAP not being bound to the genome. This assumption is supported
-by experimental evidence on a particular type of *E. coli* mutant that sheds
-lipid vesicles without segregating DNA into such vesicles. Mass spectrometry
-analysis on these "min-cells" has shown that there are no RNAP molecules to be
-found, implying that RNAPs are bound to DNA most if not all of the time
-[@Bintu2005]. The exercise then consists of randomly choosing one box for each
-of the $P$ polymerases available to bind. [@Fig:ch1_fig03] shows in the first
-column two possible configurations of our coarse-grained genome.
+the RNAP footprint where it binds to the genome is roughly 30 bp. This
+assumption is valid if the number of available RNAP molecules is much smaller
+than the number of non-specific binding sites since it is improbable that two
+RNAPs would fall next to each other by pure chance. A useful analogy for this
+point is to think about sitting $\sim \text{few}\times 10$ people on a large
+stadium with $\sim 10^4$ seats. If the seats are chosen randomly, we do not need
+to worry about doing the sampling "without replacement" because the chances of
+two people ending up with the same seat number are negligible. We also ignore
+the possibility of RNAP not being bound to the genome. This assumption is
+supported by experimental evidence on a particular type of *E. coli* mutant that
+sheds lipid vesicles without segregating DNA into such vesicles. Mass
+spectrometry analysis on these "min-cells" has shown that there are no RNAP
+molecules to be found, implying that RNAPs are bound to DNA most if not all of
+the time [@Bintu2005]. The exercise then consists of randomly choosing one box
+for each of the $P$ polymerases available to bind. [@Fig:ch1_fig03] shows in the
+first column two possible configurations of our coarse-grained genome.
 
 **2. Compute the energy for each microstate.** Let us analyze the case where all
 $P$ RNAP molecules are bound non-specifically to the genome. For simplicity, we
 assume that RNAP binds to all $N_{NS}$ non-specific binding sites with the same
 affinity. We assign this energy to be $\varepsilon_P^{(NS)}$. This assumption
-could be relaxed, as explored in [@Phillips2019]. But for now, we don't have to
+could be relaxed and we could assign instead a distribution of non-specific
+binding energies, as explored in [@Phillips2019]. But for now, we don't have to
 worry about this complication. For the statistical mechanics' protocol the
 assignment of binding energies does not come from some quantum first-principled
 calculation or anything similar. We label the interaction of the RNAP and the
@@ -507,7 +508,7 @@ $$
 $$
 This expression is convenient because upon taking the ratio of these
 steady-state mRNA counts, the ratio $r_m / \gamma_m$ drops out of the equation.
-All we are left is then the ratio of the $p_{\text{bound}}$s
+All we are left with is then the ratio of the $p_{\text{bound}}$s
 $$
 \text{fold-change} = \frac{p_{\text{bound}}(R > 0)}{p_{\text{bound}}(R = 0)}.
 $$
