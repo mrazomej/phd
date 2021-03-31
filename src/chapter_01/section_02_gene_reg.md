@@ -337,7 +337,7 @@ $$
 100\cdot 99\cdot 98.
 $$
 Given this result, we can simply state that $100\cdot 99\cdot 98 \approx 100^3$,
-only making a three percent error ($100\cdot 99\cdot 98 / 100^3$ \approx 0.97).
+only making a three percent error ($100\cdot 99\cdot 98 / 100^3 \approx 0.97$).
 Imagine $N_{NS}$ is in the order of $10^6$, then the error would become
 negligible. That is why, as shown in the third column of [@Fig:ch1_fig03], we
 can approximate
