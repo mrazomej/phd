@@ -353,8 +353,11 @@ delimits the fraction of the cell cycle that cells spend with a single copy of
 the promoter. The light shaded region delimits the fraction of the cell cycle
 that cells spend with two copies of the promoter. For a 100 min doubling time at
 the *galK* locus cells spend 60% of the time with one copy of the promoter and
-the rest with two copies.](ch5_fig08){#fig:ch5_fig08 short-caption="First and
-second moment dynamics over cell the cell cycle"}
+the rest with two copies. The Python code
+[(`ch5_fig08.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS08.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch5_fig08){#fig:ch5_fig08
+short-caption="First and second moment dynamics over cell the cell cycle"}
 
 In principle when measuring gene expression levels experimentally from an
 asynchronous culture, cells are sampled from any time point across their
@@ -499,7 +502,10 @@ varying repressor copy numbers and operator binding energy. The equilibrium
 model is directly computed from Eq. $\ref{seq_fold_change_thermo}$ while the
 kinetic model is computed by numerically integrating the moment equations over
 several cell cycles, and then averaging over the extent of the cell cycle as
-defined in Eq. $\ref{seq_moment_avg}$ .](ch5_fig09){#fig:ch5_fig09
+defined in Eq. $\ref{seq_moment_avg}$ . The Python code
+[(`ch5_fig09.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS09.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch5_fig09){#fig:ch5_fig09
 short-caption="Comparison of the equilibrium and kinetic repressor titration
 predictions"}
 
@@ -519,7 +525,10 @@ is directly computed as Eq. 5 of reference [@Razo-Mejia2018] with repressor-DNA
 binding energy $\Delta\varepsilon_r = -13.5 \; k_BT$ while the kinetic model is
 computed by numerically integrating the moment dynamics over several cell
 cycles, and then averaging over the extent of a single cell cycle as defined in
-Eq. $\ref{seq_moment_avg}$ .](ch5_fig10){#fig:ch5_fig10
+Eq. $\ref{seq_moment_avg}$ The Python code
+[(`ch5_fig10.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS10.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig10){#fig:ch5_fig10
 short-caption="Comparison of the equilibrium and kinetic inducer titration
 predictions"}
 
@@ -563,7 +572,10 @@ deviation/mean) between a kinetic model that considers a single promoter at all
 times (dashed line) and the multi-promoter model developed in this section
 (solid line) for different repressor operators. (A) Operator O1,
 $\Delta\varepsilon_r = -15.3 \; k_BT$, (B) O2, $\Delta\varepsilon_r = -13.9 \;
-k_BT$, (C) O3, $\Delta\varepsilon_r = -9.7 \; k_BT$](ch5_fig11){#fig:ch5_fig11
+k_BT$, (C) O3, $\Delta\varepsilon_r = -9.7 \; k_BT$. The Python code
+[(`ch5_fig11.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS11.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig11){#fig:ch5_fig11
 short-caption="Comparison of the predicted protein noise between a single- and a
 multi-promoter kinetic model"}
 
@@ -648,8 +660,11 @@ single-promoter (gray dotted line) and the multi-promoter model (black dashed
 line). Each datum represents a single date measurement of the corresponding
 $\Delta lacI$ strain with $\geq 300$ cells. The points correspond to the median,
 and the error bars correspond to the 95% confidence interval as determined by
-10,000 bootstrap samples.](ch5_fig12){#fig:ch5_fig12 short-caption="Protein
-noise of the unregulated promoter"}
+10,000 bootstrap samples. The Python code
+[(`ch5_fig12.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS12.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig12){#fig:ch5_fig12
+short-caption="Protein noise of the unregulated promoter"}
 
 To further test the model predictive power we compare the predictions for the
 three-state regulated promoter. [@Fig:ch5_fig13] shows the theoretical
@@ -673,8 +688,11 @@ represents a single date measurement of the corresponding strain and IPTG
 concentration with $\geq 300$ cells. The points correspond to the median, and
 the error bars correspond to the 95% confidence interval as determined by 10,000
 bootstrap samples. White-filled dots are plot at a different scale for better
-visualization.](ch5_fig13){#fig:ch5_fig13 short-caption="Protein noise of the
-regulated promoter"}
+visualization. The Python code
+[(`ch5_fig13.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS13.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig13){#fig:ch5_fig13
+short-caption="Protein noise of the regulated promoter"}
 
 #### Systematic deviation of the noise in gene expression
 
@@ -700,5 +718,9 @@ fold-change in gene expression as indicated by the color bar. Each datum
 represents a single date measurement of the corresponding strain and IPTG
 concentration with $\geq 300$ cells. The points correspond to the median, and
 the error bars correspond to the 95% confidence interval as determined by 10,000
-bootstrap samples.](ch5_fig14){#fig:ch5_fig14 short-caption="Systematic
-comparison of theoretical vs experimental noise in gene expression"}
+bootstrap samples. The Python code
+[(`ch5_fig14.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS14.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig14){#fig:ch5_fig14
+short-caption="Systematic comparison of theoretical vs. experimental noise in
+gene expression"}

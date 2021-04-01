@@ -131,7 +131,10 @@ distribution function (B) for a strain with 260 repressors per cell and a
 binding site with binding energy $\Delta\varepsilon_r = -13.9\; k_BT$. The
 different curves show the single cell fluorescence distributions under the 12
 different IPTG concentrations used throughout this work. The triangles in (A)
-show the mean of each of the distributions.](ch5_fig24){#fig:ch5_fig24
+show the mean of each of the distributions. The Python code
+[(`ch5_fig24.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS24.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig24){#fig:ch5_fig24
 short-caption="Single cell fluorescence distributions for different inducer
 concentrations"}
 
@@ -150,8 +153,11 @@ the channel capacity.
 function of the resulting channel capacity estimates obtained by subsampling 200
 times 50% of each distribution shown in [@Fig:ch5_fig24], binning it into 100
 bins, and feeding the resulting $\mathbf{Q}$ matrix to the Blahut-Arimoto
-algorithm.](ch5_fig25){#fig:ch5_fig25 short-caption="Channel capacity bootstrap
-for experimental data"}
+algorithm. The Python code
+[(`ch5_fig25.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS25.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig25){#fig:ch5_fig25
+short-caption="Channel capacity bootstrap for experimental data"}
 
 Eq. $\ref{eq:mutual_biased}$ tells us that if we subsample each of the
 distributions from [@Fig:ch5_fig24] at different fractions, and plot them as a
@@ -165,15 +171,18 @@ that the linear relationship proposed in Eq. $\ref{eq:mutual_biased}$ holds true
 for all number of bins selected. We also note that the value of the intercept of
 the linear regression varies depending on the number of bins.
 
-![**Inverse sample size vs channel capacity.** As indicated in Eq.
+![**Inverse sample size vs. channel capacity.** As indicated in Eq.
 $\ref{eq:mutual_biased}$ if the channel capacity obtained for different
 subsample sizes of the data is plotted against the inverse sample size there
 must exist a linear relationship between these variables. Here we perform 15
 bootstrap samples of the data from [@Fig:ch5_fig24], bin these samples using
 different number of bins, and perform a linear regression (solid lines) between
-the bootstrap channel capacity estimates, and the inverse sample
-size.](ch5_fig26){#fig:ch5_fig26 short-caption="Inverse sample size vs channel
-capacity"}
+the bootstrap channel capacity estimates, and the inverse sample size. The
+Python code
+[(`ch5_fig26.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS26.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig26){#fig:ch5_fig26
+short-caption="Inverse sample size vs. channel capacity"}
 
 To address the variability in the estimates of the unbiased channel capacity
 $I_\infty$ we again follow the methodology suggested in [@Cheong2011a]. We
@@ -210,8 +219,11 @@ capacity estimates obtained from linear regressions as in [@Fig:ch5_fig26]. The
 blue curve show the estimates obtained from the data shown in [@Fig:ch5_fig24].
 The orange curve is generated from estimates where the same data is shuffled,
 loosing the relationship between fluorescence distributions and inducer
-concentration.](ch5_fig27){#fig:ch5_fig27 short-caption="Channel capacity as a
-function of the number of bins"}
+concentration. The Python code
+[(`ch5_fig27.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS27.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig27){#fig:ch5_fig27
+short-caption="Channel capacity as a function of the number of bins"}
 
 ### Assumptions involved in the computation of the channel capacity
 
@@ -242,8 +254,12 @@ copy numbers for different repressor-DNA binding energies. The single-promoter
 model assumes Poissonian protein degradation ($\gamma _p > 0$) and steady state,
 while the multi-promoter model accounts for gene copy number variability and
 during the cell cycle and has protein degradation as an effect due to dilution
-as cells grow and divide.](ch5_fig28){#fig:ch5_fig28 short-caption="Comparison
-of channel capacity predictions for single- and multi-promoter models"}
+as cells grow and divide. The Python code
+[(`ch5_fig28.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS28.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig28){#fig:ch5_fig28
+short-caption="Comparison of channel capacity predictions for single- and
+multi-promoter models"}
 
 #### (ii) Non-Gaussian noise distributions.
 
@@ -281,7 +297,10 @@ important feature for our inferences.
 ![**Measuring the loss of information by using different number of
 constraints.** The Kullback-Leibler divergence was computed between the maximum
 entropy distribution constructed using the first 6 moments of the distribution
-and a variable number of moments.](ch5_fig29){#fig:ch5_fig29
+and a variable number of moments. The Python code
+[(`ch5_fig29.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS29.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig29){#fig:ch5_fig29
 short-caption="Measuring the loss of information by using different number of
 constraints"}
 

@@ -137,7 +137,10 @@ to be the least biased distribution given the available information.
 
 ![**Maximum entropy distribution of six-face die.** (A)biased distribution
 consistent with the constraint $\left\langle{x}\right\rangle = 4.5$. (B) MaxEnt
-distribution also consistent with the constraint.](ch5_fig15){#fig:ch5_fig15
+distribution also consistent with the constraint. The Python code
+[(`ch5_fig15.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS15.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig15){#fig:ch5_fig15
 short-caption="Maximum entropy distribution of six-face die"}
 
 #### The mRNA and protein joint distribution
@@ -333,7 +336,10 @@ repressor-DNA affinity decreases as defined by the three lacI operators O1
 ($-15.3 \; k_BT$), O2 ($-13.9 \; k_BT$), and O3 ($-9.7 \; k_BT$). From top to
 bottom the mean repressor copy number per cell increases. The curves on each
 plot represent different IPTG concentrations. Each distribution was fitted using
-the first three moments of the mRNA distribution.](ch5_fig16){#fig:ch5_fig16
+the first three moments of the mRNA distribution. The Python code
+[(`ch5_fig16.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS16.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig16){#fig:ch5_fig16
 short-caption="Maximum entropy mRNA distributions for simple repression
 constructs"}
 
@@ -343,7 +349,10 @@ the repressor-DNA affinity decreases as defined by the three lacI operators O1
 ($-15.3 \; k_BT$), O2 ($-13.9 \; k_BT$), and O3 ($-9.7 \; k_BT$). From top to
 bottom the mean repressor copy number per cell increases. The curves on each
 plot represent different IPTG concentrations. Each distribution was fitted using
-the first six moments of the protein distribution.](ch5_fig17){#fig:ch5_fig17
+the first six moments of the protein distribution. The Python code
+[(`ch5_fig17.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS17.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig17){#fig:ch5_fig17
 short-caption="Maximum entropy protein distributions for simple repression
 constructs"}
 
@@ -378,8 +387,11 @@ no repressors and different operators. The color curves represent single-cell
 microscopy measurements while the dashed black lines represent the theoretical
 distributions as reconstructed by the maximum entropy principle. The theoretical
 distributions were fitted using the first six moments of the protein
-distribution.](ch5_fig18){#fig:ch5_fig18 short-caption="Experiment vs. theory
-comparison for $\Delta lacI$ strain"}
+distribution. The Python code
+[(`ch5_fig18.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS18.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig18){#fig:ch5_fig18
+short-caption="Experiment vs. theory comparison for $\Delta lacI$ strain"}
 
 The same narrower prediction applies to the regulated promoters.
 [@Fig:ch5_fig19], shows the theory-experiment comparison of the cumulative
@@ -395,5 +407,8 @@ copy numbers (rows) and inducer concentrations (columns). The color curves
 represent single-cell microscopy measurements while the dashed black lines
 represent the theoretical distributions as reconstructed by the maximum entropy
 principle. The theoretical distributions were fitted using the first six moments
-of the protein distribution](ch5_fig19){#fig:ch5_fig19 short-caption="Experiment
-vs. theory comparison for regulated promoters"}
+of the protein distribution. The Python code
+[(`ch5_fig19.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS19.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig19){#fig:ch5_fig19
+short-caption="Experiment vs. theory comparison for regulated promoters"}

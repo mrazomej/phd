@@ -43,9 +43,13 @@ $x$-axis was multiplied by a factor of $\approx 1.5$ as determined by a linear
 regression from the data in [@Fig:ch5_fig11]. Each datum represents a single
 date measurement of the corresponding strain and IPTG concentration with $\geq
 300$ cells. The points correspond to the median, and the error bars correspond
-to the 95% confidence interval as determined by 10,000 bootstrap
-samples.](ch5_fig30){#fig:ch5_fig30 short-caption="Multiplicative factor to
-improve theoretical vs. experimental comparison of noise in gene expression"}
+to the 95% confidence interval as determined by 10,000 bootstrap samples. The
+Python code
+[(`ch5_fig30.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS30.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig30){#fig:ch5_fig30
+short-caption="Multiplicative factor to improve theoretical vs. experimental
+comparison of noise in gene expression"}
 
 For completeness [@Fig:ch5_fig31] shows the noise in gene expression as a
 function of the inducer concentration including this factor of $\approx 1.5$. It
@@ -65,9 +69,13 @@ plot in linear rather than logarithmic scale. Each datum represents a single
 date measurement of the corresponding strain and IPTG concentration with $\geq
 300$ cells. The points correspond to the median, and the error bars correspond
 to the 95% confidence interval as determined by 10,000 bootstrap samples.
-White-filled dots are plot at a different scale for better
-visualization.](ch5_fig31){#fig:ch5_fig31 short-caption="Protein noise of the
-regulated promoter with multiplicative factor"}
+White-filled dots are plot at a different scale for better visualization. The
+Python code
+[(`ch5_fig31.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS31.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig31){#fig:ch5_fig31
+short-caption="Protein noise of the regulated promoter with multiplicative
+factor"}
 
 ### Additive factor for the noise 
 
@@ -96,8 +104,12 @@ a linear regression from the data in [@Fig:ch5_fig11]. Each datum represents a
 single date measurement of the corresponding strain and IPTG concentration with
 $\geq 300$ cells. The points correspond to the median, and the error bars
 correspond to the 95% confidence interval as determined by 10,000 bootstrap
-samples.](ch5_fig32){#fig:ch5_fig32 short-caption="Additive factor to improve
-theoretical vs. experimental comparison of noise in gene expression"}
+samples. The Python code
+[(`ch5_fig32.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS32.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig32){#fig:ch5_fig32
+short-caption="Additive factor to improve theoretical vs. experimental
+comparison of noise in gene expression"}
 
 For completeness [@Fig:ch5_fig33] shows the noise in gene expression as a
 function of the inducer concentration including this additive factor of $\beta
@@ -117,7 +129,10 @@ than logarithmic scale. Each datum represents a single date measurement of the
 corresponding strain and IPTG concentration with $\geq 300$ cells. The points
 correspond to the median, and the error bars correspond to the 95% confidence
 interval as determined by 10,000 bootstrap samples. White-filled dots are plot
-at a different scale for better visualization.](ch5_fig33){#fig:ch5_fig33
+at a different scale for better visualization. The Python code
+[(`ch5_fig33.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS33.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig33){#fig:ch5_fig33
 short-caption="Protein noise of the regulated promoter with additive factor"}
 
 ### Correction factor for channel capacity with multiplicative factor
@@ -203,6 +218,9 @@ determined channel capacity by a constant amount of 0.43 bits.
 ![**Additive correction factor for channel capacity.** Solid lines represent the
 theoretical predictions of the channel capacity shown in (A). The dashed lines
 show the resulting predictions with a constant shift of -0.43 bits. Points
-represent single biological replicas of the inferred channel
-capacity.](ch5_fig34){#fig:ch5_fig34 short-caption="Additive correction factor
-for channel capacity"}
+represent single biological replicas of the inferred channel capacity. The
+Python code
+[(`ch5_fig34.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS34.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig34){#fig:ch5_fig34
+short-caption="Additive correction factor for channel capacity"}

@@ -32,9 +32,11 @@ generated with the Gillespie algorithm for mRNA counts over time for a two-state
 unregulated promoter. Cells spend a fraction of the cell cycle with a single
 copy of the promoter (light brown) and the rest of the cell cycle with two
 copies (light yellow). When trajectories reach a new cell cycle, the mRNA counts
-undergo a binomial partitioning to simulate the cell
-division.](ch5_fig20){#fig:ch5_fig20 short-caption="Stochastic trajectories of
-mRNA counts"}
+undergo a binomial partitioning to simulate the cell division. The Python code
+[(`ch5_fig20.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS20.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig20){#fig:ch5_fig20
+short-caption="Stochastic trajectories of mRNA counts"}
 
 To check the implementation of our stochastic algorithm we generated several of
 these stochastic trajectories in order to reconstruct the mRNA steady-state
@@ -48,9 +50,12 @@ confirming that our implementation of the Gillespie simulation is correct.
 the steady-state mRNA distributions for one copy (light blue) and two copies of
 the promoter (dark blue) as defined by Eq. $\ref{eq:two_state_mRNA}$. Shaded
 regions represent the corresponding distribution obtained using 2500 stochastic
-mRNA trajectories and taking the last cell-cyle to approximate the
-distribution.](ch5_fig21){#fig:ch5_fig21 short-caption="Comparison of analytical
-and simulated mRNA distribution"}
+mRNA trajectories and taking the last cell-cyle to approximate the distribution.
+The Python code
+[(`ch5_fig21.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS21.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig21){#fig:ch5_fig21
+short-caption="Comparison of analytical and simulated mRNA distribution"}
 
 ### Protein distribution with Gillespie simulations
 
@@ -68,8 +73,11 @@ over time for a two-state unregulated promoter. Cells spend a fraction of the
 cell cycle with a single copy of the promoter (light brown) and the rest of the
 cell cycle with two copies (light yellow). When trajectories reach a new cell
 cycle, the molecule counts undergo a binomial partitioning to simulate the cell
-division.](ch5_fig22){#fig:ch5_fig22 short-caption="Stochastic trajectories of
-mRNA and protein counts"}
+division. The Python code
+[(`ch5_fig22.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS22.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig22){#fig:ch5_fig22
+short-caption="Stochastic trajectories of mRNA and protein counts"}
 
 From these trajectories we can compute the protein steady-state distribution,
 taking into account the cell-age distribution as detailed in XXX.
@@ -91,5 +99,8 @@ explore different parameters of the regulatory model.
 distribution generated with Gillespie stochastic simulations (blue curve) and
 the maximum entropy approach presented in (orange curve). The upper panel shows
 the probability mass function. The lower panel compares the cumulative
-distribution functions.](ch5_fig23){#fig:ch5_fig23 short-caption="Comparison of
-protein distributions"}
+distribution functions. The Python code
+[(`ch5_fig23.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS23.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig23){#fig:ch5_fig23
+short-caption="Comparison of protein distributions"}
