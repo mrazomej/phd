@@ -3,7 +3,7 @@
 layout: default
 keywords:
 comments: true
-image: alaska.jpg
+image: amazon.jpg
 # Hero section
 title:  Chapter IV
 subtitle: >  
