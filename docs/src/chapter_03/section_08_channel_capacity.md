@@ -77,6 +77,11 @@ Example input-output functions in opposite limits of channel capacity. Lower
 panel illustrates that zero channel capacity indicates that all distributions
 overlap. Upper panel illustrates that as the channel capacity increases, the
 separation between distributions increases as well. Arrows point to the
-corresponding channel capacity computed from the predicted
-distributions.](ch3_fig05){#fig:ch3_fig05 short-caption="Comparison of
-theoretical and experimental channel capacity."}
+corresponding channel capacity computed from the predicted distributions. The
+Python code used to generate part (A)
+[(`ch3_fig05A.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/fig05A.py)
+and part (B)
+[(`ch3_fig04B.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/fig05B.py)
+of this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch3_fig05){#fig:ch3_fig05
+short-caption="Comparison of theoretical and experimental channel capacity."}

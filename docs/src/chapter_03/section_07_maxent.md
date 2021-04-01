@@ -64,6 +64,12 @@ comparison of predicted fold-change empirical cumulative distribution functions
 with their corresponding theoretical predictions (dashed lines). Distributions
 were normalized to the mean expression value of the unregulated strain in order
 to compare theoretical predictions in discrete protein counts with experimental
-fluorescent measurements in arbitrary units.](ch3_fig04){#fig:ch3_fig04
+fluorescent measurements in arbitrary units. The Python code used to generate
+part (A)
+[(`ch3_fig04A.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/fig04A.py)
+and part (B)
+[(`ch3_fig04B.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/fig04B.py)
+of this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch3_fig04){#fig:ch3_fig04
 short-caption="Maximum entropy protein distributions for varying physical
 parameters."}

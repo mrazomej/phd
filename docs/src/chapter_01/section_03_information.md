@@ -74,34 +74,34 @@ Let us look at a concrete example: English text. We know that written and spoken
 language is not completely random. For a message to be meaningful, the choice of
 words has to come from a statistical structure that obeys the language's grammar
 rules. The choice of letters within a word also follows a certain statistical
-structure. Imagine the text shown in [@Fig:ch1_fig08](A). This is arguably one
-of the most important and most beautiful pieces of prose ever put together by a
-human mind as it is the last paragraph of *On the Origin of Species* by Darwin.
-If we ignore the paragraph's message and just quantify how often we find each of
-the 26 letters in the English alphabet, we obtain a distribution like the one
-shown in [@Fig:ch1_fig08](B). This paragraph shows that the most common vowel is
-*e*, exactly as in English writ-large. This distribution $P(x)$ is therefore not
-maximally random. In other words, if we were to put all letters in the paragraph
-in a hat and pick one letter at random, we could bet more money on the outcome
-being a letter *e* and make money over time given this knowledge of the
-structure of the distribution. A maximally random distribution would be if all
-letters appeared equally frequent in the paragraph, such that betting on any
-letter coming out of the hat would give us equal chances of guessing right. If
-instead of looking at the distribution of individual letters, we look at pairs
-of letters, the distribution $P(x, y)$ over the paragraph is shown in
-[@Fig:ch1_fig08](C). Here we can see that just as the letters were not
-completely random, the pairs of letters are also not random. For example, if we
-take the first letter of the pair to be *t*, we see that it is more commonly
-followed by the letter *h*. This implies that knowing that the first letter of
-the pair was *t* reduced our uncertainty of what character could come next. We
-would then say that knowing the first letter gave us *information* about the
-possible outcomes of the second letter. In the next section, we will follow
-Shannon's original derivation to define both entropy and information
+structure. Let us look at the text shown in [@Fig:ch1_fig08](A). This is
+arguably one of the most important and most beautiful pieces of prose ever put
+together by a human mind as it is the last paragraph of *On the Origin of
+Species* by Darwin. If we ignore the paragraph's message and just quantify how
+often we find each of the 26 letters in the English alphabet, we obtain a
+distribution like the one shown in [@Fig:ch1_fig08](B). This paragraph shows
+that the most common vowel is *e*, exactly as in English writ-large. This
+distribution $P(x)$ is therefore not maximally random. In other words, if we
+were to put all letters in the paragraph in a hat and pick one letter at random,
+we could bet more money on the outcome being a letter *e* and make money over
+time given this knowledge of the structure of the distribution. A maximally
+random distribution would be if all letters appeared equally frequent in the
+paragraph, such that betting on any letter coming out of the hat would give us
+equal chances of guessing right. If instead of looking at the distribution of
+individual letters, we look at pairs of letters, the distribution $P(x, y)$ over
+the paragraph is shown in [@Fig:ch1_fig08](C). Here we can see that just as the
+letters were not completely random, the pairs of letters are also not random.
+For example, if we take the first letter of the pair to be *t*, we see that it
+is more commonly followed by the letter *h*. This implies that knowing that the
+first letter of the pair was *t* reduced our uncertainty of what character could
+come next. We would then say that knowing the first letter gave us *information*
+about the possible outcomes of the second letter. In the next section, we will
+follow Shannon's original derivation to define both entropy and information
 mathematically.
 
 ![**The statistical structure of the English language.** (A) Last paragraph of
 *On the Origin of Species* by Charles Darwin. This serves as a rather nice
-not-random text example. (B) Marginal distribution $P(x)$ of all 23 letters and
+not-random text example. (B) Marginal distribution $P(x)$ of all 26 letters and
 space. The size of the squares is proportional to how often each letter appears
 in the paragraph. (C) Joint distribution of pairs of characters $P(x, y)$. All
 pairs of characters in (A) were counted to build this histogram. The x-axis
@@ -117,12 +117,12 @@ more mathematical. Let us assume that an information source (See
 [@Fig:ch1_fig07](A)) produces elements of a message following a distribution
 $\mathbf{p} = \{p_1, p_2, \ldots, p_n \}$, where each $p_i$ is the probability
 of the $i^{\text{th}}$ element. These elements could be letters, words,
-sentences, concentrations of a small molecule, etc., of which we have $n$
-possibilities. What we are looking for is a metric $H(\mathbf{p})$ that
+sentences, basepairs, concentrations of a small molecule, etc., of which we have
+$n$ possibilities. What we are looking for is a metric $H(\mathbf{p})$ that
 quantifies how much "choice" is involved in the selection of each element of the
 message. In other words, how uncertain we are about the message that the
-information source will produce? We demand our desired quantity $H(\mathbf{p})$
-to satisfy three reasonable conditions [@Shannon1948]:
+information source will produce at random? We demand our desired quantity
+$H(\mathbf{p})$ to satisfy three reasonable conditions [@Shannon1948]:
 
 1. $H$ should be continuous in the $p_i$s. Different information sources might
    have slightly different distributions $\mathbf{p}$, nevertheless $H$ should
@@ -138,12 +138,12 @@ to satisfy three reasonable conditions [@Shannon1948]:
 3. If the act of choosing one of the possible $n$ elements of our information
    source can be broken down into two successive choices, the original $H$
    should be the weighted sum of the individual $H$s. What this means is
-   illustrated in [@Fig:ch1_fig09](A)where we imagine having an information
-   source with only $n=3$ choices, each with probabilities $\mathbf{p} = \{ 1/2,
-   1/3, 1/6\}$, which gives $H(1/2, 1/3, 1/6)$ for the left case. For the right
-   case, we imagine first choosing between the upper and the lower path, and
-   then, if the lower path is chosen, a second choice is made. This property
-   then demands that
+   illustrated in [@Fig:ch1_fig09](A) where we imagine having an information
+   source with $n=3$ choices, each with probabilities $\mathbf{p} = \{ 1/2, 1/3,
+   1/6\}$, which gives $H(1/2, 1/3, 1/6)$ for the left case. For the right case,
+   we imagine first choosing between the upper and the lower path, and then, if
+   the lower path is chosen, a second choice is made. This property then demands
+   that
    $$
     \overbrace{H(1/2, 1/3, 1/6)}^{\text{single choice}} = 
     \overbrace{H(1/2, 1/2)}^{\text{first choice}} +
@@ -152,8 +152,21 @@ to satisfy three reasonable conditions [@Shannon1948]:
    Another way to think about this property is that we want our metric of
    uncertainty $H$ to be *additive*.
 
+![**Shannon's theorem.** (A) One of the properties of a reasonable metric for
+uncertainty is that we can partition choices into multiple steps, and the
+resulting uncertainty should remain the same. (B) Example of coding functions
+$E$. The English alphabet can be converted into Morse code. Amino acids can be
+encoded in codons. (C) Partitioning of $2^3$ equally likely choices into three
+decision steps, each with two choices. Eight different amino acids can be
+selected using two schemes: 1) each of the eight codons is chosen at random with
+equally likely chances, or 2) the codon is built by choosing one basepair at the
+time. (D) Partitioning of unequal choices. Given the redundancy of the genetic
+code, for equally likely codons, the resulting amino acid has different
+probabilities being chosen.](ch1_fig09){#fig:ch1_fig09 short-caption="Shannon's
+theorem"}
+
 We will now prove that the only functional form that satisfies all these three
-properties are given by
+properties is given by
 $$
     H(\mathbf{p}) = - K \sum_{i=1}^n p_i \log p_i,
 $$
@@ -164,7 +177,7 @@ English alphabet into Morse code, or a protein sequence into the corresponding
 mRNA sequence, as schematically depicted in [@Fig:ch1_fig09](B). In there, we
 take letters in the English alphabet (*SOS* for the English alphabet, *MGF* for
 the protein), run it through an encoding function $E$ and obtain the message
-(...---... for the Morse code, *AUGGGCUUC* for the mRNA). This process of
+(...- - -... for the Morse code, *AUGGGCUUC* for the mRNA). This process of
 encoding can be thought of as taking a message $m_x$ written in an alphabet
 $\mathcal{X} = \{x_1, x_2, \ldots, x_n \}$, (where $n$ is 26 for the English
 alphabet, and 20 for the number of amino acids) and converting it into a message
@@ -177,10 +190,8 @@ such that we then have
 $$
 m_y = E(m_x),
 $$
-i.e., the function $E$ takes messages in the English alphabet as input and spits
-out a message in Morse code. Obviously, the larger the message $m_x$ we want to
-encode, the larger the corresponding message $m_y$ will be. Therefore we have
-that
+Obviously, the larger the message $m_x$ we want to encode, the larger the
+corresponding message $m_y$ will be. Therefore we have that
 $$
 L(m_y) \propto L(m_x),
 \label{eq:length_proportionality}
@@ -242,11 +253,12 @@ $$
 Let us stare at Eq. $\ref{eq:t_over_r}$. In Eq. $\ref{eq:ineq_messages}$ We
 established $t$ as the minimum number of characters from alphabet $\mathcal{Y}$
 needed to encode a message of length $r$ written with alphabet $\mathcal{X}$
-characters (such as *MGF* turned into *AUGGGCUUC*). This means that, for the
-case where all symbols use the same number of characters when encoded, $t/r$ is
-the number of characters from alphabet $\mathcal{Y}$ per character from alphabet
-$\mathcal{X}$, i.e., the proportionality constant $k$ from Eq.
-$\ref{eq:length_fn}$. This means that Eq. $\ref{eq:t_over_r}$ implies
+characters (such as *MGF* turned into *AUGGGCUUC* as in [@Fig:ch1_fig09](B)).
+This means that, for the case where all symbols use the same number of
+characters when encoded, $t/r$ is the number of characters from alphabet
+$\mathcal{Y}$ per character from alphabet $\mathcal{X}$, i.e., the
+proportionality constant $k$ from Eq. $\ref{eq:length_fn}$. This means that Eq.
+$\ref{eq:t_over_r}$ implies
 $$
 \log_m(n) \leq k.
 $$
@@ -272,7 +284,7 @@ close to $\log_m(n)$ as we want by increasing the length of the message being
 encoded, i.e., making $r \rightarrow \infty$. This would imply a genetic code,
 not for individual amino acids but entire polypeptides. This scheme would not
 work biologically; nevertheless, this mathematical limit will help us find the
-functional form of our desired function $H(\mathrm{p})$. 
+functional form of our desired function $H(\mathbf{p})$. 
 
 Coming back to the function $H$, let us define
 $$
@@ -475,17 +487,7 @@ entropy. This is Shannon's theorem, and what it shows is that Eq.
 $\ref{eq:shannon_result}$ is the only function that satisfies the three very
 reasonable conditions we established for an uncertainty measurement.
 
-![**Shannon's theorem.** (A) One of the properties of a reasonable metric for
-uncertainty is that we can partition choices into multiple steps, and the
-resulting uncertainty should remain the same. (B) Example of coding functions
-$E$. The English alphabet can be converted into Morse code. Amino acids can be
-encoded in codons. (C) Partitioning of $2^3$ equally likely choices into three
-decision steps, each with two choices. Eight different amino acids can be
-selected using two schemes: 1) each of the eight codons is chosen at random with
-equally likely chances, or 2) the codon is built by choosing one basepair at the
-time. (D) Partitioning of unequal choices. Given the redundancy of the genetic
-code, for equally likely codons, the resulting amino acid has different
-probabilities being chosen.](ch1_fig09){#fig:ch1_fig09 short-caption="Shannon's
-theorem"}
-
 ### Information Theory and Statistical Mechanics
+
+Our result in Eq. $\ref{eq:shannon_result}$ is of the same functional form as 
+the
