@@ -583,7 +583,7 @@ basepairs in the binding site. (D) Fold-change as a function of the repressor
 copy number for different binding energies. The [Python code
 (`ch1_fig04D.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig04D.py)
 used to generate part (C) of this figure can be found on the thesis [GitHub
-repository](https://github.com/mrazomej/phd)](ch1_fig04){#fig:ch1_fig04
+repository](https://github.com/mrazomej/phd).](ch1_fig04){#fig:ch1_fig04
 short-caption="Figure 1 theory in transcriptional regulation"}
 
 ### The second secret of life

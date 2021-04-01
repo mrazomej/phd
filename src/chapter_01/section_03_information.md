@@ -106,7 +106,10 @@ space. The size of the squares is proportional to how often each letter appears
 in the paragraph. (C) Joint distribution of pairs of characters $P(x, y)$. All
 pairs of characters in (A) were counted to build this histogram. The x-axis
 shows the first letter while the y-axis shows the second. For simplicity in (B)
-and (C) all punctuation was ignored.](ch1_fig08){#fig:ch1_fig08
+and (C) all punctuation was ignored. The [Python code
+(`ch1_fig04D.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig08.py)
+used to generate this figure can be found on the thesis [GitHub
+repository](https://github.com/mrazomej/phd).](ch1_fig08){#fig:ch1_fig08
 short-caption="The statistical structure of the English language"}
 
 ### Choice, Uncertainty, and Entropy
