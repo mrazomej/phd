@@ -1,16 +1,16 @@
 ## Derivation of the steady-state mRNA distribution
 
-In this section we will derive the two-state promoter mRNA distribution we quote
-in XXX. For this method we will make use of the so-called generating functions.
-Generating functions are mathematical objects on which we can encode a series of
-infinite numbers as coefficients of a power series. The power of generating
-functions comes from the fact that we can convert an infinite-dimensional system
-of coupled ordinary differential equations--in our case the system of
-differential equations defining all probabilities $P(m, t)$ for $m \in
-\mathbb{Z}$--into a single partial differential equation that we can then solve
-to extract back the probability distributions.
+In this section, we will derive the two-state promoter mRNA distribution we
+quote in XXX. For this method, we will make use of the so-called generating
+functions. Generating functions are mathematical objects on which we can encode
+a series of infinite numbers as coefficients of a power series. The power of
+generating functions comes from the fact that we can convert an
+infinite-dimensional system of coupled ordinary differential equations--in our
+case the system of differential equations defining all probabilities $P(m, t)$
+for $m \in \mathbb{Z}$--into a single partial differential equation that we can
+then solve to extract back the probability distributions.
 
-To motivate the use of generating functions we will begin with the simplest
+To motivate the use of generating functions, we will begin with the simplest
 case: the one-state Poisson promoter.
 
 ### One-state Poisson promoter
@@ -23,8 +23,8 @@ of the system (part (B)).
 ![**One-state Poisson promoter.** (A) Schematic of the kinetics of the one
 state-promoter. mRNA is produced and degrade stochastically with a rate $r_m$
 and $\gamma_m$, respectively. (B) Representation of the Markov-chain for the
-state space that the promoter can be in. The distribution $P(m, t)$ represents
-the probability of having certain discrete number of mRNA $m$ at time $t$. The
+state space that the promoter can be. The distribution $P(m, t)$ represents the
+probability of having a certain discrete number of mRNA $m$ at time $t$. The
 transition between states depends on the previously mentioned
 rates.](ch5_fig35){#fig:ch5_fig35 short-caption="One-state Poisson promoter"}
 
@@ -39,11 +39,11 @@ $$
 \label{eq:one_state_master}
 $$
 
-Our objective when solving for the distribution is to obtain the equation that
+When solving for the distribution, our objective is to obtain the equation that
 defines $P(m, t)$ for all possible values of $m \in \mathbb{Z}$. The power of
-the generating functions is that these values of the probability distribution
-are used as the coefficients of a power series. To make this clear let us define
-the generating function $G(z, t)$ as
+the generating functions is that these probability distribution values are used
+as a power series's coefficients. To make this clear, let us define the
+generating function $G(z, t)$ as
 $$
 G(z, t) \equiv \sum_{m=0}^\infty z^m P(m, t),
 \label{eq:gen_fn_def}
@@ -67,8 +67,8 @@ Furthermore, the first moment of the distribution is defined as
 $$
 \langle m \rangle = \sum_{m=0}^\infty m P(m, t).
 $$
-From the definition of the generating function we can construct this quantity by
-computing
+From the definition of the generating function, we can construct this quantity
+by computing
 $$
 \left. \frac{\partial G(z, t)}{\partial z} \right\vert_{z=1} =
 \frac{\partial}{\partial z} \left[ 
@@ -85,7 +85,7 @@ $$
 Similar constructions can be built for higher moments of the distribution.
 
 Let us then apply the definition of the generating function to Eq.
-$\ref{eq:one_state_master}$. For this we multiply both sides by $z^m$ and sum
+$\ref{eq:one_state_master}$. For this, we multiply both sides by $z^m$ and sum
 over all values of $m$, obtaining
 $$
 \begin{split}
@@ -99,7 +99,7 @@ r_m P(m-1, t)
 \right]
 \end{split}
 $$
-Distributing the sum we find
+Distributing the sum, we find
 $$
 \begin{split}
 \frac{d}{dt} \sum_{m=0}^\infty z^m P(m, t) &=
@@ -111,7 +111,7 @@ $$
 \label{eq:one_state_master_sum}
 $$
 We see that the terms involving $z^m P(m, t)$ can be directly substituted with
-Eq. $\ref{eq:gen_fn_def}$. For the other terms we have to be slightly more
+Eq. $\ref{eq:gen_fn_def}$. For the other terms, we have to be slightly more
 clever. The first trick will allow us to rewrite the term involving $z^m m P(m,
 t)$ as
 $$
@@ -124,7 +124,7 @@ $$
 \end{aligned}
 $$
 Next, let us deal with the term involving $(m+1)$. We first define $k = m + 1$.
-With this we can write
+With this, we can write
 $$
 \begin{aligned}
 \sum_{m=0}^{\infty} z^{m} \cdot(m+1) \cdot P(m+1, t) &=
@@ -135,9 +135,9 @@ $$
 &=\frac{\partial G(z)}{\partial z},
 \end{aligned}
 $$
-where for the third step we reindex the sum to include $k=0$ since it does not
-contribute to the total sum. Finally for the term involving $P(m-1, t)$. For
-this we define $k = m-1$. This allows us to rewrite the term as
+where for the third step, we reindexed the sum to include $k=0$ since it does
+not contribute to the total sum. Finally, for the term involving $P(m-1, t)$.
+For this we define $k = m-1$. This allows us to rewrite the term as
 $$
 \begin{aligned}
 \sum_{m=0}^{\infty} z^{m} P(m-1, t) &=\sum_{k=-1}^{\infty} z^{k+1} P(k, t), \\
@@ -146,7 +146,7 @@ $$
 &=z G(z, t)
 \end{aligned}
 $$
-For the second step we reindex the sum from $-1$ to $0$ since $P(-1, t) = 0$.
+For the second step we reindexed the sum from $-1$ to $0$ since $P(-1, t) = 0$.
 
 All of these clever reindexing allows us to rewrite Eq.
 $\ref{eq:one_state_master_sum}$ as
@@ -165,11 +165,11 @@ $$
 Let us appreciate how beautiful this is: we took an infinite-dimensional system
 of ordinary differential equations--the master equation--and turn it into a
 single partial differential equation (PDE). All we have to do now is solve this
-PDE, and then transform the solution into a power series in order to extract the
+PDE, and then transform the solution into a power series to extract the
 distribution.
 
-Let us focus on the steady-sate case. For this we set the time derivative to
-zero. Doing this cancels the $(1-z)$ term, leaving a very simple ordinary
+Let us focus on the steady-state case. For this, we set the time derivative to
+zero. Doing this cancels the $(1-z)$ term, leaving a straightforward ordinary
 differential equation for $G(z)$
 $$
 \frac{dG(z)}{dz} = \frac{r}{\gamma} G(z).
@@ -178,7 +178,7 @@ Solving this equation by separation of variables results in
 $$
 G(z) = C e^{\frac{r}{\gamma}z}.
 $$
-To obtain the integration constant we use the normalization condition of the
+To obtain the integration constant, we use the normalization condition of the
 probability distribution (Eq. $\ref{eq:generating_norm}$), obtaining
 $$
 1 = C e^{\frac{r}{\gamma}} \Rightarrow
@@ -190,15 +190,15 @@ G(z) = e^{-\frac{r}{\gamma}} e^{\frac{r}{\gamma}z}.
 $$
 All we have left is trying to rewrite the generating function as a power series
 on $z$. If we succeed in doing so, we will have recovered the probability
-distribution $P(m, t)$. For this we simply use the Taylor expansion of $e^x$,
+distribution $P(m, t)$. For this, we simply use the Taylor expansion of $e^x$,
 obtaining
 $$
 G(z) = e^{-\frac{r}{\gamma}} 
 \sum_{m=0}^\infty \frac{\left( \frac{r}{\gamma}z \right)^m}{m!}.
 $$
-From this form it becomes clear how to split the $z^m$ term from the coefficient
-that, by the definition of ghe generating function, is the probability
-distribution we are looking for. The separation takes the form
+From this form, it becomes clear how to split the $z^m$ term from the
+coefficient that, by the definition of the generating function, is the
+probability distribution we are looking for. The separation takes the form
 $$
 G(z)=\sum_{m=0}^{\infty} z^{m}
 \left[\frac{e^{-r / \gamma}\left(\frac{r}{\gamma}\right)^{m}}{m !}\right],
@@ -211,18 +211,18 @@ $$
 
 ### Two-state promoter
 
-Having shown the power of the generating function, let us now turn our attention
-to the relevant equation we are after: the two-state mRNA distribution. This
-model assumes that the promoter can exist in two discrete states (See
+Having shown the generating function's power, let us now turn our attention to
+the relevant equation we are after: the two-state mRNA distribution. This model
+assumes that the promoter can exist in two discrete states (See
 [@Fig:ch5_fig36](A)): a transcriptionally active state $A$ from which
 transcription can take place at a constant rate $r_m$, and an inactive state $I$
-where no transcription takes place. The mRNA is stochastically degraded with
+where no transcription takes place. The mRNA is stochastically degraded with a
 rate $\gamma_m$ regardless of the state of the promoter. [@Fig:ch5_fig36](B)
 shows the Markov chain that connects all of the possible states of the promoter.
-For this particular case there are not only "horizontal" transitions where the
-mRNA copy number changes, but "vertical" transitions where only the state of the
-promoter itself changes. Because of this we need to define two coupled master
-equations that take the form
+For this particular case, there are not only "horizontal" transitions where the
+mRNA copy number changes, but "vertical" transitions where only the promoter's
+state changes. Because of this, we need to define two coupled master equations
+that take the form
 $$
 \begin{aligned}
 \frac{d P_{A}(m, t)}{d t} &=-k^{(p)}_{\text{off}} P_{A}(m, t) +
@@ -236,19 +236,19 @@ $$
 \begin{aligned}
 \frac{d P_{I}(m, t)}{dt} &=k^{(p)}_{\text{off}} P_{A}(m, t)-
 k^{(p)}_{\text{on}} P_{I}(m, t) \\
-&+\gamma_m (m+1) P_{I}(m+1, t)-\gamma_m m P_{I}(m, t).
+&+\gamma_m (m+1) P_{I}(m+1, t)-\gamma_m m P_{I}(m, t),
 \end{aligned}
 $$
 for the inactive state.
 
 ![**Two-state Poisson promoter.** (A) Schematic of the kinetics of the two-state
-promoter. The promoter is imagined to exist in two state--a transcriptionally
+promoter. The promoter is imagined to exist in two-state--a transcriptionally
 active state $A$ and an inactive state $I$. The transition between these states
 is governed by the rates $k^{(p)}_{\text{on}}$ and $k^{(p)}_{\text{off}}$ mRNA
 is produced and degrade stochastically with a rate $r_m$ and $\gamma_m$,
 respectively. (B) Representation of the Markov-chain for the state space that
 the promoter can be in. The distribution $P(m, t)$ represents the probability of
-having certain discrete number of mRNA $m$ at time $t$. The transition between
+having a certain discrete number of mRNA $m$ at time $t$. The transition between
 states depends on the previously mentioned rates.](ch5_fig36){#fig:ch5_fig36
 short-caption="One-state Poisson promoter"}
 
@@ -256,8 +256,8 @@ short-caption="One-state Poisson promoter"}
 
 The first thing we must do is to transform this infinite-dimensional system of
 ordinary differential equations in $m$ to a single partial differential equation
-using the generating function. For this particular case there are two generating
-functions of the form
+using the generating function. For this particular case, there are two
+generating functions of the form
 $$
 G_x(z, t) = \sum_{m=0}^\infty z^m P_x(m, t),
 $$
@@ -305,10 +305,10 @@ k^{(p)}_{\text{off}} G_{A}(z, t) - k^{(p)}_{\text{on}} G_{I}(z, t) \\
 \end{aligned}
 \label{eq:gn_fn_inact}
 $$
-At this point we turned the infinite dimensional system of ordinary differential
-equations into a system of two couped partial differential equations. Let us
-transform further the equations. Since we have a common term $(z - 1)$, it will
-be convenient to define $v \equiv (z -1)$. From the chain rule it follows that
+We turned the infinite-dimensional system of ordinary differential equations
+into a system of two coupled partial differential equations. Let us transform
+the equations further. Since we have a common term $(z - 1)$, it will be
+convenient to define $v \equiv (z -1)$. From the chain rule, it follows that
 $$
 d v=d(z-1)=d z \Rightarrow \frac{\partial G}{\partial v} = 
 \frac{\partial G}{\partial z} \frac{d z}{d v}.
@@ -362,7 +362,7 @@ function of $G_A(v)$ and $G_I(v)$, but Eq. $\ref{eq:gen_fn_rel}$ tells us how to
 relate both generating functions via the first derivative. This suggests that
 taking another derivative of Eqs. $\ref{eq:steady_act}$ and
 $\ref{eq:steady_inact}$ with respect to $z$ could be useful. Let us go ahead and
-compute these derivatives. For the active state we find
+compute these derivatives. For the active state, we find
 $$
 \small
 \gamma_m \frac{d G_{A}(v)}{d v} 
@@ -371,7 +371,7 @@ $$
 + k^{(p)}_{\text{on}} \frac{d \sigma I(v)}{d v}
 + r_m G_{A}(v, t) + r_m v \frac{d G_{A}(v)}{d v}
 $$
-Upon simplification we can write this Eq. as
+Upon simplification, we can write this Eq. as
 $$
 \gamma_m v \frac{d^2 G_A}{d v^{2}}
 + \left(\gamma_m +k^{(p)}_{\text{off}}
@@ -394,7 +394,7 @@ $$
 - r_m \left(1+\frac{k^{(p)}_{\text{on}}}{\gamma_m}\right) G_A(v) = 0.
 \label{eq:gen_2nd_act_final}
 $$
-For the inactive state, upon taking a derivative with respect to $v$ we find
+For the inactive state, upon taking a derivative with respect to $v$, we find
 $$
 \gamma_{m} v \frac{d^{2} G_{I}}{d v^{2}}
 + \left(\gamma_m + k^{(p)}_{\text{on}}\right) \frac{d G_I}{d v}
@@ -413,8 +413,8 @@ $$
 - \frac{k^{(p)}_{\text{off}} r_m}{\gamma_m} G_{A}(v)=0.
 \label{eq:gen_fn_2nd_inact_2}
 $$
-So far we have not been able to remove the dependence on $G_A(v)$. But we notice
-that from Eq. $\ref{eq:steady_inact}$ we have that
+So far, we have not removed the dependence on $G_A(v)$. But we notice that from
+Eq. $\ref{eq:steady_inact}$ we have that
 $$
 G_A(v) = \frac{\gamma_m v}{k^{(p)}_{\text{off}}} \frac{d G_I}{d v}
 + \frac{k^{(p)}_{\text{on}}}{k^{(p)}_{\text{off}}} G_I.
@@ -450,7 +450,7 @@ $$
 
 Eq. $\ref{eq:gen_2nd}$ looks almost like the so-called Kummer's equation also
 known as the confluent hypergeometric differential equation--a second order
-differential equationof the form
+differential equation of the form
 $$
 z \frac{d^2w}{dz^2} + (b - z) \frac{dw}{dz} - aw = 0.
 \label{eq:kummer}
@@ -465,7 +465,7 @@ w(z) = A {}_1F_1(a, b, z) + B z^{1-b} {}_1 F_1(a+1-b, 2-b, z),
 \label{eq:kummer_sol}
 $$
 where $A$ and $B$ are constants, and ${}_1F_1$ is the confluent hypergeometric
-function of the first kind, defined as
+function of the first kind defined as
 $$
 {}_1F_1(a, b, z) = \sum_{m=0}^{\infty} 
 \frac{a^{(m)}z^n}{b^{(m)} m!},
@@ -486,13 +486,13 @@ ds = \frac{r_m}{\gamma_m} dv \Rightarrow
 \frac{dG}{ds} = \frac{dG}{dv}\frac{dv}{ds} = 
 \frac{\gamma_m}{r_m} \frac{dG}{dv}.
 $$
-From the chain rule we also conclude that
+From the chain rule, we also conclude that
 $$
 \frac{d^2G}{ds^2} = 
 \frac{d}{dv} \left( \frac{dG}{dv} \frac{dv}{ds} \right) \frac{dv}{ds} =
 \frac{\gamma_m ^2}{r_m^2} \frac{d^2G}{d v^2}.
 $$
-So the three relationships of $v$ with $s$ that we have are
+So the three relationships of $v$ with $s$ that we have take the form
 $$
 v = \frac{\gamma_m}{r_m} s, \;
 \frac{dG}{dv} = \frac{r_m}{\gamma_m} \frac{dG}{ds}, \; \text{and }
@@ -507,7 +507,7 @@ $$
 \frac{r_m}{\gamma_m} \frac{dG}{ds}
 - \frac{r_m k^{(p)}_{\text{on}}}{\gamma_m} G(s) = 0.
 $$
-Upon simplifying terms we find an equation that is now in the form of Eq.
+Upon simplifying terms, we find an equation that is now in the form of Eq.
 $\ref{eq:kummer}$
 $$
 s \frac{d^2 G}{ds^2}
@@ -517,7 +517,7 @@ s \frac{d^2 G}{ds^2}
 \label{eq:gen_kummer}
 $$
 
-Having put this in the form of the Kummer Eq. we can use Eq.
+Having put this in the form of the Kummer Eq., we can use Eq.
 $\ref{eq:kummer_sol}$ to write $G(s)$ as
 $$
 \begin{aligned}
@@ -585,7 +585,7 @@ $$
 {}_1 F_{1}(a, b, 0)=\sum_{m=0}^{\infty} \frac{a^{(m)} 0^{n}}{b^{(m)} m!} 
 $$
 All of the terms but one ($n = 0$) are zero. The first term involving $0^0$ is
-undefined. Taking the limit as $z \rightarrow 0$ from the positive side we find
+undefined. Taking the limit as $z \rightarrow 0$ from the positive side, we find
 $$
 {}_1F_{1}(a, b, 0) = 
 \lim _{z \rightarrow 0^{+}} {}_1 F_{1}(a, b, z) = 
@@ -595,8 +595,8 @@ Using this property in Eq. $\ref{eq:gen_sol_1}$ tells us that $A = 1$.
 
 We do not have another constraint for $B$. Nevertheless, recall that Eq.
 $\ref{eq:first_mom_gen}$ tells us how to compute the first moment of the
-distribution from the generating function. For this we need to compute the 
-derivative of the confluent hypergeometric function. Let us derive this 
+distribution from the generating function. For this, we need to compute the
+derivative of the confluent hypergeometric function. Let us derive this
 identity. Rather than computing the derivative directly, we will compute
 $$
 z \frac{d}{dz}{}_1F_1 = 
@@ -652,10 +652,10 @@ $$
 \frac{(a+1)^{m'}}{(b+1)^{m'}} 
 \frac{z^{m'}}{m'!}
 $$
-The term on the left is almost of the form of the conlfuent hypergeometric
+The term on the left is almost of the form of the confluent hypergeometric
 function again. The only difference is that the sum starts at $m' = -1$. This
 first term of the sum would then involve a term of the form $1 / (-1)!$. But
-what does this even mean? To find this out we can generalize the factorial
+what does this even mean? To find this out, we can generalize the factorial
 function using the Gamma function such that
 $$
 (x - 1)! = \Gamma(x).
@@ -663,7 +663,7 @@ $$
 The Gamma function diverges as $x \rightarrow 0$, therefore $1/\Gamma(x)
 \rightarrow 0$ as $x \rightarrow 0$. This means that the first term of the sum
 is zero, so we can begin the sum at $m' = 0$, recovering a confluent
-hypergeometric function. With this we find that
+hypergeometric function. With this, we find that
 $$
 z \frac{d}{d z} {}_1F_1 = 
 \frac{a z}{b} \sum_{m=0}^{\infty} \frac{(a+1)^{m}}{(b+1)^{m}} 
@@ -676,10 +676,10 @@ $$
 \label{eq:gen_deriv}
 $$
 
-After this small but necessary detour we can come back to computing the first
+After this small but necessary detour, we can come back to computing the first
 moment of our distribution from the generating function. to evaluate Eq.
 $\ref{eq:first_mom_gen}$ on Eq. $\ref{eq:gen_sol}$ we first compute the 
-derivative of the generating function. This can be easily evaluated by using
+derivative of the generating function. This can be easily evaluated using
 the relationship we derived for derivatives of ${}_1F_1$. The only thing to be
 aware of is that of the chain rule. In particular for our third entry of the
 third entry of the function we have $r_m / \gamma_m (z - 1)$ rather than simply
@@ -691,7 +691,7 @@ du = \frac{r_m}{\gamma_m} dz \Rightarrow
 \frac{dG}{du} \frac{du}{dz} = 
 \frac{dG}{du} \frac{r_m}{\gamma_m}.
 $$
-So there is an extra factor of $r_m / \gamma_m$ that will come along  when we
+So there is an extra factor of $r_m / \gamma_m$ that will come along when we
 compute the derivative of our generating functions. Computing the derivative
 of Eq. $\ref{eq:gen_sol}$ results in
 $$
@@ -771,16 +771,16 @@ many ordinary differential equations, one for each promoter state and mRNA copy
 number that defined the master equation for our two-state promoter. We then used
 the generating function to transform this system into a single partial
 differential equation. The resulting differential equation for the generating
-function took the form of the so-called Kummer differential equation which has
-as solution the confluent hypergeometric function and the Tricomi function.
-After imposing the normalization condition on the generating function we found
-that the coefficient of the confluent hypergeometric function was $A=1$. We then
-used the fact that the mean mRNA copy number $\langle m \rangle$ exists to show
-that the coefficient of the Tricomi function is $B=0$. All that effort lead us
-to Eq. $\ref{eq:gen_final}$, the generating function for the two-state promoter
-mRNA steady state distribution. All we have left is trying to beat Eq.
-$\ref{eq:gen_final}$ into the form of a standard generating function in order
-to extract the probability distribution from it.
+function took the form of the so-called Kummer differential equation, which has
+as a solution the confluent hypergeometric function and the Tricomi function.
+After imposing the normalization condition on the generating function, we found
+that the confluent hypergeometric function's coefficient was $A=1$. We then used
+the fact that the mean mRNA copy number $\langle m \rangle$ exists to show that
+the Tricomi function's coefficient is $B=0$. All that effort lead us to Eq.
+$\ref{eq:gen_final}$, the generating function for the two-state promoter mRNA
+steady-state distribution. All we have left is trying to beat Eq.
+$\ref{eq:gen_final}$ into the form of a standard generating function to extract
+the probability distribution from it.
 
 Let us begin this task by writing down Eq. $\ref{eq:gen_final}$ with the full
 definition of the confluent hypergeometric function. This gives us
@@ -851,12 +851,12 @@ G(z) = \sum_{m=0}^\infty \sum_{n=0}^n
     {m \choose n} z^n (-1)^{m -  n}
 \right].
 $$
-To make further progress we must re-index the sum. The trick is to reverse the
+To make further progress, we must reindex the sum. The trick is to reverse the
 default order of the sums as
 $$
 \sum_{m=0}^{\infty} \sum_{n=0}^{m} = \sum_{n=0}^{\infty} \sum_{m=n}^{\infty}.
 $$
-To see the logic of the sum we point the reader to [@Fig:ch5_fig37]. The key is
+To see the logic of the sum, we point the reader to [@Fig:ch5_fig37]. The key is
 to notice that the double sum $\sum_{m=0}^\infty \sum_{n=0}^m$ is adding all
 possible pairs $(m, n)$ in the lower triangle, so we can add the terms
 vertically as the original sum indexing suggests, i.e.
@@ -899,9 +899,9 @@ G(z) = \sum_{n=0}^\infty \sum_{m=n}^\infty
     {m \choose n} z^n (-1)^{m -  n}
 \right].
 $$
-What this allows us to do is to separate the variable $z^n$ from the rest of the
-equation, leaving the generating function in the standard format from where to
-read the probability distribution $P(m)$. This looks as
+This allows us to separate the variable $z^n$ from the rest of the equation,
+leaving the standard format generating function to read the probability
+distribution $P(m)$. This looks as
 $$
 G(z) = \sum_{n=0}^\infty z^n 
 \left[
@@ -942,7 +942,7 @@ P(m) =
 $$
 
 We can simplify Eq. $\ref{eq:prob_ss_1}$ further. First we split the term 
-$(-1)^{n-m} = (-1)^{-m} (-1)^{n}$. Furthermore we absorbe the $(-1)^{n}$ term
+$(-1)^{n-m} = (-1)^{-m} (-1)^{n}$. Furthermore we absorbed the $(-1)^{n}$ term
 on the $(r_m / \gamma_m)^n$ term. We also cancel the obvious $n!/n!$ term, 
 obtaining
 $$
@@ -1045,8 +1045,8 @@ P(m) =
 \right].
 $$
 We recognize the term in the square brackets to be the necessary components for
-a confluent hypergeometric function. We can therefore write the mRNA steady 
-state distribution as
+a confluent hypergeometric function. We can therefore write the mRNA
+steady-state distribution as
 $$
 P(m) = 
 \frac{1}{m!}
@@ -1135,7 +1135,7 @@ P(m) &=
 \right).
 \end{split}
 $$
-Or in terms of Gamma functions we obtain the final form of the steady-state
+Or in terms of Gamma functions, we obtain the final form of the steady-state
 mRNA distribution
 $$
 \begin{aligned}

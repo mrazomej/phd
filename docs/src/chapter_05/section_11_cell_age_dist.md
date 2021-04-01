@@ -1,6 +1,6 @@
 ## Derivation of the cell age distribution 
 
-E. O. Powell first derive in 1956 the distribution of cell age for a cell
+E. O. Powell first derived in 1956 the distribution of cell age for a cell
 population growing steadily in the exponential phase [@Powell1956]. This
 distribution is of the form
 $$
@@ -8,18 +8,18 @@ P(a) = \ln(2) \cdot 2^{1 - a},
 $$
 where $a \in [0, 1]$ is the fraction of the cell cycle, 0 being the moment right
 after the mother cell divides, and 1 being the end of the cell cycle just before
-cell division. In this section we will reproduce and expand the details on each
+cell division. In this section, we will reproduce and expand the details on each
 of the steps of the derivation.
 
 For an exponentially growing bacterial culture, the cells satisfy the growth law
 $$
 {\frac{dn}{dt}} = \mu n,
 $$
-where $n$ is the number of cells and $\mu$ is the growth rate in units of
+where $n$ is the number of cells, and $\mu$ is the growth rate in units of
 time$^{-1}$. We begin by defining $P(a)$ to be the probability density function
-of a cell having age $a$. At time zero of a culture in exponential growth, i.e.
+of a cell having age $a$. At time zero of a culture in exponential growth, i.e.,
 the time when we start considering the growth, not the initial condition of the
-culture, there are $NP(a)da$ cells with age range between $[a, a + da]$. In
+culture, there are $NP(a)da$ cells with an age range between $[a, a + da]$. In
 other words, for $N \gg 1$ and $da \ll a$
 $$
 N P(a \leq x \leq a + da) \approx N P(a)da.
@@ -29,9 +29,9 @@ $$
 F(\tau) = \int_\tau^\infty f(\xi) d\xi,
 $$
 as the fraction of cells whose division time is greater than $\tau$. This is
-because in principle not all cells divide exactly after $\tau$ minutes, but
+because in principle, not all cells divide exactly after $\tau$ minutes, but
 there is a distribution function $f(\tau)$ for the division time after birth.
-Empirically it has been observed that a generalize Gamma distribution fits well
+Empirically it has been observed that a generalized Gamma distribution fits well
 to experimental data on cell division time, but we will worry about this
 specific point later on.
 
@@ -54,13 +54,13 @@ redundant and we have
 $$
 F(a, a + t) = F(a + t).
 $$
-This explains XXX. From this equation we can find that out of the $N P(a)da$
+This explains XXX. From this equation, we can find that out of the $N P(a)da$
 cells with age $a$ only a fraction
 $$
 \left[ NP(a)da \right] F(a + t \mid a) = NP(a) \frac{F(a + t)}{F(a)} da
 $$
 will survive without dividing until time $a + t$. During that time interval $t$
-the culture has passed from $N$ cells to $N e^{\mu t}$ cells given the
+the culture has passed from $N$ cells to $N e^{\mu t}$ cells, given the
 assumption that they are growing exponentially. The survivors $NP(a)F(a + t \mid
 a)da$ then represent a fraction of the total number of cells
 $$
@@ -77,7 +77,7 @@ $$
 P(a + t) da = P(a) \frac{F(a + t)}{F(a)}e^{-\mu t} da.
 $$
 What this equation shows is a relationship that connects the probability of
-having a life time of $a + t$ with a probability of having a shorter life time
+having a lifetime of $a + t$ with a probability of having a shorter lifetime
 $a$ and the growth of the population. If we take $t$ to be very small,
 specifically if we assume $t \ll \mu^{-1}$ we can Taylor expand around $a$ the
 following terms:
@@ -91,7 +91,7 @@ and
 $$
 e^{-\mu t} \approx 1 - \mu t.
 $$
-Substituting these equations into gives
+Substituting these equations gives
 $$
 P(a) + \frac{dP}{da} t = P(a) \left( \frac{F(a) + \frac{dF}{da}t}{
   F(a)} \right) (1 - \mu t).
@@ -101,8 +101,8 @@ $$
 \frac{1}{P(a)} \frac{dP}{da} =
 \frac{1}{F(a)} \frac{dF}{da} - \mu - \frac{\mu t}{F(a)} \frac{dF}{da}.
 $$
-Since we assumed $t \ll \mu^{-1}$ we then approximate the last term to be close
-to zero. We can then simplify this result into
+Since we assumed $t \ll \mu^{-1}$, we approximate the last term to be close to
+zero. We can then simplify this result into
 $$
 \frac{1}{P(a)} \frac{dP}{da} = \frac{1}{F(a)} \frac{dF}{da} - \mu.
 $$
@@ -114,9 +114,9 @@ where $C$ is the integration constant. Exponentiating both sides gives
 $$
 P(a) = C' F(a)e^{-\mu a}.
 $$
-Where $C' \equiv e^C$. To obtain the value of the unknown constant we recall
-that $F(0) = 1$ since the probability of having a life equal or longer than zero
-must add up to one, therefore we have that $P(0) = C'$. This gives then 
+Where $C' \equiv e^C$. To obtain the value of the unknown constant, we recall
+that $F(0) = 1$ since the probability of having a life equal to or longer than
+zero must add up to one. Therefore we have that $P(0) = C'$. This gives then 
 $$
 P(a) = P(0) e^{-\mu a} F(a).
 $$
@@ -128,8 +128,8 @@ The last step of the derivation involves writing $P(0)$ and the growth rate
 $\mu$ in terms of the cell cycle length distribution $f(\tau)$.
 
 The growth rate of the population cell number (not the growth of cell mass) is
-defined as the number of cell doublings per unit time divided by the number of
-cells. This is more clear to see if we write as a finite difference
+defined as the number of cell doublings per unit of time divided by the number
+of cells. This is more clear to see if we write as a finite difference
 $$
 \frac{N(t + \Delta t) - N(t)}{\Delta t} = \mu N(t).
 $$
@@ -145,12 +145,12 @@ $$
 \overbrace{\frac{1}{N}}^{\frac{1}{\text{population size}}}.
 $$
 We defined $F(a)$ to be the probability of a cell reaching an age $a$ or
-greater. For a cell to reach an age $a + da$ we can then write
+greater. For a cell to reach an age $a + da$, we can then write
 $$
 F(a + da) = \int_{a + da}^{\infty} f(\xi) d\xi
 = \int_a^{\infty} f(\xi) d\xi - \int_a^{a + da} f(\xi) d\xi.
 $$
-We can approximate the second term on the right hand side to be
+We can approximate the second term on the right-hand side to be
 $$
 \int_a^{a + da} f(\xi) d\xi \approx f(a) da,
 $$
@@ -179,7 +179,7 @@ $$
 $$
 We now have the growth rate $\mu$ written in terms of the cell cycle length
 probability distribution $f(a)$ and the probability $P(0)$. Since $P(a)$ is a
-probability distribution it must be normalized, i.e. 
+probability distribution, it must be normalized, i.e.,
 $$
 \int_0^\infty P(a) da = 1.
 $$
@@ -187,10 +187,9 @@ Substituting into this normalization constraint gives
 $$
 \int_0^\infty P(0) e^{-\mu a} F(a) da = 1.
 $$
-From here we can
-integrate the left hand side by parts. We note that given the definition
-of $F(a)$, the derivative with respect to $a$ is $-f(a)$ rather than
-$f(a)$. This is because if we write the derivative of $F(a)$ we have
+From here, we can integrate the left-hand side by parts. We note that given the
+definition of $F(a)$, the derivative with respect to $a$ is $-f(a)$ rather than
+$f(a)$. This is because if we write the derivative of $F(a)$, we have
 $$
 \frac{dF(a)}{da} \equiv \lim_{da \rightarrow 0}
   \frac{F(a + da) - F(a)}{da}.
@@ -205,7 +204,7 @@ $$
 \lim_{da \rightarrow 0} \frac{1}{da} \left[ \int_{a + da}^\infty f(\xi) d\xi -
   \int_a^\infty f(\xi) d\xi \right]\approx \frac{-f(a)da}{da} = -f(a).
 $$
-Taking this into account we now perform the integration by parts obtaining 
+Taking this into account, we now perform the integration by parts obtaining 
 $$
 P(0) \left[ \frac{e^{-\mu t}}{-\mu} F(a) \right]^\infty_0
  - P(0) \int_0^\infty \frac{e^{-\mu a}}{-\mu} (-f(a)) da = 1.
@@ -216,27 +215,27 @@ and $F(0) = 1$. This results in
 $$
 \frac{P(0)}{\mu} - P(0) \int_0^\infty \frac{e^{-\mu a}}{\mu} f(a) da = 1.
 $$
-The second term on the left hand side is equal to since
+The second term on the left-hand side is equal to since
 $$
 \mu = \int_0^\infty P(0) e^{-\mu a} f(a)da \Rightarrow
   1 = \int_0^\infty P(0) \frac{e^{-\mu a}}{\mu} f(a)da.
 $$
-This implies that on we have 
+This implies that we have 
 $$
 \frac{P(0)}{\mu} - 1 = 1 \Rightarrow P(0) = 2 \mu.
 $$
-With this result in hand we can rewrite as
+With this result in hand, we can rewrite it as
 $$
 P(a) = 2\mu e^{-\mu a} \int_a^\infty f(\xi) d\xi.
 $$
-Also we can rewrite the result for the growth rate $\mu$ on as
+Also, we can rewrite the result for the growth rate $\mu$ on as
 $$
 \mu = 2 \mu \int_0^\infty e^{-\mu a} f(a) da \Rightarrow
   2 \int_0^\infty e^{-\mu a} f(a) da = 1.
 $$
 
-As mentioned before the distribution $f(a)$ has been empirically fit to a
-generalize Gamma distribution. But if we assume that our distribution has almost
+As mentioned before, the distribution $f(a)$ has been empirically fit to a
+generalized Gamma distribution. But if we assume that our distribution has almost
 negligible dispersion around the mean average doubling time $a = \tau_d$, we can
 approximate $f(a)$ as
 $$
@@ -259,13 +258,13 @@ F(a) =
     0 \text{ for } a > \tau_d.
   \end{cases}
 $$
-Fianlly we can rewrite as
+Finally, we can rewrite it as
 $$
 P(a) = 2 \left( \frac{\ln 2}{\tau_d} \right)
 e^{- \frac{\ln 2}{\tau_d} a} \int_a^\infty \delta(\xi - \tau_d) d\xi
 \Rightarrow = 2 \ln 2 \cdot 2^\frac{-a}{\tau_d}.
 $$
-Simplifying this we obtain 
+Simplifying this, we obtain 
 $$
 P(a) =
   \begin{cases}
