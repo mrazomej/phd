@@ -148,6 +148,12 @@ from 10,000 bootstrap estimates generated from $> 500$ single-cell fluorescence
 measurements. In the theory curves, dotted lines indicate plot in linear scale
 to include zero, while solid lines indicate logarithmic scale. For visual
 clarity, data points in the noise panel with exceptionally large values coming
-from highly repressed strains are plotted on a separate
-panel.](ch3_fig03){#fig:ch3_fig03 short-caption="Accounting for gene copy number
-variability during the cell cycle."}
+from highly repressed strains are plotted on a separate panel. The Python code
+used to generate part (B)
+[(`ch3_fig03B.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/fig03B.py)
+and part (C)
+[(`ch3_fig03C.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/fig03C.py)
+of this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch3_fig03){#fig:ch3_fig03
+short-caption="Accounting for gene copy number variability during the cell
+cycle."}
