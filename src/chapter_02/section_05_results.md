@@ -141,8 +141,8 @@ in Panel ) with $R=260$, $\Delta\varepsilon_{RA} = -13.9~k_BT$, $n=2$, and
 $\Delta\varepsilon_{AI}=4.5~k_BT$ can be used to determine the thermodynamic
 parameters $K_A=139^{+29}_{-22} \times 10^{-6} \, \text{M}$ and
 $K_I=0.53^{+0.04}_{-0.04} \times 10^{-6}\, \text{M}$ (orange line). The
-remaining solid lines predict the fold-change Eq. $\ref{eq:fold_change_full}$ for all
-other combinations of repressor copy numbers (shown in the legend) and
+remaining solid lines predict the fold-change Eq. $\ref{eq:fold_change_full}$
+for all other combinations of repressor copy numbers (shown in the legend) and
 repressor-DNA binding energies corresponding to the O1 operator ($-15.3~k_B T$),
 O2 operator ($-13.9~k_B T$), and O3 operator ($-9.7~k_B T$). Error bars of
 experimental data show the standard error of the mean (eight or more replicates)
@@ -154,9 +154,13 @@ $10^{-7}$ M to linear rather than logarithmic, as indicated by a dashed line.
 Additionally, our model allows us to investigate key phenotypic properties of
 the induction profiles (see [@Fig:ch2_fig01](B)). (F-J) Specifically, we show
 predictions for the (F) leakiness, (G) saturation, (H) dynamic range, (I)
-$[EC_{50}]$, and (J) effective Hill coefficient of the induction
-profiles.](ch2_fig04){#fig:ch2_fig04 short-caption="Predicting induction
-profiles for different biological control parameters"}
+$[EC_{50}]$, and (J) effective Hill coefficient of the induction profiles. The
+Python code
+[(`ch2_fig04.py`)](https://github.com/RPGroup-PBoC/mwc_induction/blob/master/code/figures/fig4.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/mwc_induction)](ch2_fig04){#fig:ch2_fig04
+short-caption="Predicting induction profiles for different biological control
+parameters"}
 
 ### Comparison of Experimental Measurements with Theoretical Predictions 
 
@@ -208,9 +212,12 @@ of the O2 $R=260$ strain. Nearly identical parameter values are inferred from
 each strain, demonstrating that the same set of induction profiles would have
 been predicted regardless of which strain was chosen. The points show the mode,
 and the error bars denote the $95\%$ credible region of the parameter value
-distribution. Error bars not visible are smaller than the size of the
-marker.](ch2_fig05){#fig:ch2_fig05 short-caption="Comparison of predictions
-against measured and inferred data"}
+distribution. Error bars not visible are smaller than the size of the marker.
+The Python code
+[(`ch2_fig05.py`)](https://github.com/RPGroup-PBoC/mwc_induction/blob/master/code/figures/fig5.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/mwc_induction)](ch2_fig05){#fig:ch2_fig05
+short-caption="Comparison of predictions against measured and inferred data"}
 
 ### Predicting the Phenotypic Traits of the Induction Response
 
@@ -279,9 +286,13 @@ $\ref{eq:fold_change_full}$ in order to smoothly interpolate between the data
 points. Error bars for (A-C) represent the standard error of the mean for eight
 or more replicates; error bars for (D-E) represent the 95% credible region for
 the parameter found by propagating the credible region of our estimates of $K_A$
-and $K_I$ into Eq. $\ref{eq:ec50}$ and Eq.
-$\ref{eq:effective_Hill}$](ch2_fig06){#fig:ch2_fig06 short-caption="Predictions
-and experimental measurements of key properties of induction profiles"}
+and $K_I$ into Eq. $\ref{eq:ec50}$ and Eq. $\ref{eq:effective_Hill}$. The Python
+code
+[(`ch2_fig06.py`)](https://github.com/RPGroup-PBoC/mwc_induction/blob/master/code/figures/fig6_props.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/mwc_induction)](ch2_fig06){#fig:ch2_fig06
+short-caption="Predictions and experimental measurements of key properties of
+induction profiles"}
 
 Two additional properties of induction profiles are the $[EC_{50}]$ and
 effective Hill coefficient, which determine the range of inducer concentration
@@ -384,12 +395,15 @@ degenerate space of parameters with multiple, equally valid paths.
 a single master curve.** (A) Any combination of parameters can be mapped to a
 single physiological response (i.e. fold-change) via the free energy, which
 encompasses the parametric details of the model. (B) Experimental data from
-collapse onto a single master curve as a function of the free energy
-Eq. $\ref{eq:free_energy_MWC_parameters}$. The free energy for each strain was calculated
-from Eq. $\ref{eq:free_energy_MWC_parameters}$ using $n=2$,
+collapse onto a single master curve as a function of the free energy Eq.
+$\ref{eq:free_energy_MWC_parameters}$. The free energy for each strain was
+calculated from Eq. $\ref{eq:free_energy_MWC_parameters}$ using $n=2$,
 $\Delta\varepsilon_{AI}=4.5~k_BT$, $K_A=139 \times 10^{-6} \, \text{M}$,
 $K_I=0.53 \times 10^{-6}\, \text{M}$, and the strain-specific $R$ and
 $\Delta\varepsilon_{RA}$. All data points represent the mean, and error bars are
-the standard error of the mean for eight or more
-replicates.](ch2_fig07){#fig:ch2_fig07 short-caption="Fold-change data from a
-broad collection of different strains collapse onto a single master curve"}
+the standard error of the mean for eight or more replicates. The Python code
+[(`ch2_fig07.py`)](https://github.com/RPGroup-PBoC/mwc_induction/blob/master/code/figures/fig7_collapse.py)
+used to generate this figure can be found on the original paper [GitHub
+repository.](https://github.com/RPGroup-PBoC/mwc_induction)](ch2_fig07){#fig:ch2_fig07
+short-caption="Fold-change data from a broad collection of different strains
+collapse onto a single master curve"}
