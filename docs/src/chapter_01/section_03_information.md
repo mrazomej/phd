@@ -492,5 +492,176 @@ reasonable conditions we established for an uncertainty measurement.
 
 ### Information Theory and Statistical Mechanics
 
-Our result in Eq. $\ref{eq:shannon_result}$ is of the same functional form as 
-the
+Our result in Eq. $\ref{eq:shannon_result}$ is of the same functional form as
+the thermodynamic entropy. The story goes that Shannon was discussing this
+concept with his friend John von Neumann. It was von Neumann who allegedly
+convinced Shannon of calling his metric of randomness *entropy* under the
+argument that nobody understands the concept. But the fact that the functional
+forms are the same is too suggestive to dismiss a potential connection between
+these concepts immediately. It was until much later on that E. T. Jaynes
+formalized ways to link both ideas [@Jaynes1957]. Nevertheless, Jaynes himself
+strongly discourages people from trying to map one concept to the other
+explicitly. In his book "*Probability Theory: The Logic of Science" Jaynes warns
+the reader about failing to distinguish *information entropy*, which is a
+property of the mathematical object we call a probability distribution, and the
+*experimental entropy* of thermodynamics, which is instead a property of the
+state of the system as defined by experimentally measurable quantities such as
+volume, temperature, pressure, magnetization, etc. Jaynes goes on to say: "*they
+should never have been called by the same name; the experimental entropy makes
+no reference to any probability distribution, and the information entropy makes
+no reference o thermodynamics*" [@Jaynes2003].
+
+When Jaynes makes such strong remarks about the disconnection between both
+entropy concepts, he is strictly referring to the classical thermodynamic
+definition. This classical definition of entropy, due to Clausius, strictly
+talks about the inability of any thermal engine to convert all of the input
+energy into useful work. Clausius defined a new quantity $S$ as the amount of
+energy per unit temperature unavailable to do work. To understand this idea is
+to realize that from the energy liberated in gasoline combustion on a car
+engine, we only end up extracting $\approx 20\%$ of the energy to move the car.
+The other $80\%$ is lost into heating the engine and the environment. But this
+is not because the engineers are using bad designs. The second law of
+thermodynamics on its classical definition states that nothing in the universe
+can convert $100\%$ of the energy into useful work; there will always be
+residual energy that gets turned into heat.
+
+At the time, the existence of atoms was not widely accepted by the scientific
+community. But then came Boltzmann and the statistical mechanics' conceptual
+revolution. The giant leap in our understanding of why the second law of
+thermodynamics does not allow the total conversion of energy into useful work
+came with Boltzmann's revolutionary entropy idea. Boltzmann hypothesized that
+matter was made out of atoms. Therefore, everything we can observe and measure
+macroscopically about any system results from the microscopic configuration of
+all of the atoms that make up the system. Furthermore, many microscopic
+arrangements are indistinguishable at our macroscopic scale (recall the
+microstate and macrostate concept in [@Fig:ch1_fig02]). This line of reasoning
+led Boltzmann to the law we stated in Eq. $\ref{eq:boltzmann_law}$. This law and
+all of the classic results from statistical mechanics are founded on several
+assumptions about the microscopic scale processes' reversibility. In other
+words, for Boltzmann's law to be "a legit law of nature" it must be the case
+that if we play a movie featuring a single atom moving around the system, the
+same movie played in reverse should be as equally likely to happen.
+
+But it might be the case that the assumptions underlying statistical mechanics
+laws are not the most fundamental constructs of reality. As we will show next,
+we can derive a classic result of statistical mechanics from a completely
+different premise having to do more with statistical inference rather than
+physical laws of motion governing atoms. This becomes a circular argument where
+some physicists have the laws of motion as the defining foundation on which to
+base statistical mechanics laws is better. For others, having an
+information-theoretic justification for statistical mechanics independent of the
+underlying physical laws is more appealing. At the end of the day is a matter of
+taste. Having said all of this, let us delve into the connection between
+information-theoretic entropy and the Boltzmann distribution.
+
+We already used the Boltzmann distribution when we computed the probability of
+an RNAP molecule being bound to the promoter $p_{\text{bound}}$. The Boltzmann
+distribution applies to systems in thermodynamic equilibrium in contact with a
+heat bath at a constant temperature. Think of a small Eppendorf tube ($\approx
+2$ mL) that we perfectly seal before submerging it into the ocean. The tube's
+temperature will equilibrate with that of the ocean, but the ocean's temperature
+will not be affected by the tube's presence. Submerging the tube into the
+reservoir allows the total energy of the tube not to be fixed. Sometimes
+the tube can borrow energy from the ocean; sometimes, it can give energy to it.
+The Boltzmann distribution precisely dictates the likelihood of such energy
+states. The probability of a state with energy $E_i$ is given by
+$$
+P(E_i) = \frac{e^{-\beta E_i}}{\mathcal{Z}},
+$$
+where, as before, $\beta \equiv (k_BT)^{-1}$. $\mathcal{Z}$ is the partition
+function defined by the sum of the Boltzmann weight for all possible
+microstates, i.e.,
+$$
+\mathcal{Z} \equiv \sum_{\text{states}} e^{-\beta E_i},
+$$
+where the sum is taken over all microstates available to the system. This
+equation is equivalent to Eq. $\ref{eq:pbound_unreg}$ and Eq.
+$\ref{eq:pbound_reg}$. We can derive this functional form from the so-called
+maximum entropy principle. This framework is expanded more in Chapter 5 of this
+thesis. But for our purposes here, the idea is that we are trying to make a
+"best guess" of what a distribution looks like, given limited information. For
+our Eppendorf tube inside the ocean, we are thinking about the distribution of
+all of the molecules' microstates inside the tube. Experimentally, we never get
+to observe any of the microstates of the system. But we know that the
+probability of each microstate depends on its energy, as Boltzmann told us. Let
+us say we can measure the average energy $\langle E \rangle$ of our little
+Eppendorf tube. What is then the optimal guess of the functional form of the
+distribution that does not use any information we do not have at hand? For
+example, we cannot say that there is only one microstate available to the system
+with energy $\langle E \rangle$, because that constrains the possibilities of
+the system, and measuring the average energy does not lead to such a conclusion.
+The next best case we can do is to maximize the Shannon entropy, subject to this
+constraint on the average energy. This makes sense because, as we derived in the
+previous section, the Shannon entropy is the only functional form that satisfies
+our properties for a metric of uncertainty. Maximizing the Shannon entropy leads
+then to a maximally uninformative distribution. Including the constraints when
+implementing this maximization guarantees that we use all that we know about the
+distribution and nothing else.
+
+Given Property 1 of our function $H$, the Shannon entropy is continuous on the
+individual probabilities' values $p_i$. This means that we can maximize the
+Shannon entropy by taking its derivative with respect to $p_i$ and equating it
+to zero. This operation does not include the constraints we have on the values
+of the probabilities of each microstate. Let us say that each microstate
+available to the system with energy $E_i$ has a probability $p_i$ of happening.
+The constraint on the average energy is given by
+$$
+\langle E \rangle = \sum_{\text{states}} E_i p_i,
+$$
+where again, the sum is taken over all possible microstates. Furthermore, we
+know that the probability distribution must be normalized. This means that
+$$
+\sum_{\text{states}} p_i = 1.
+$$
+To include these constraints in our optimization, we can use the Lagrange
+multipliers technique. We refer the reader to any introductory text on
+multivariate calculus for a quick refresher of this technique. We proceed by
+defining a Lagrangian $\mathcal{L}$ of the form
+$$
+\mathcal{L}(p_1, p_2,\ldots, p_N, \beta, \mu) =
+\overbrace{- \sum_{i=1}^N p_i \log (p_i)}^{\text{Shannon entropy}} -
+\overbrace{\beta \left(\sum_{i=1}^N E_i p_i - \langle E \rangle \right)}^
+{\text{average energy constraint}} -
+\overbrace{\mu \left(\sum_{i=1}^N  p_i - 1 \right)}^
+{\text{normalization constraint}},
+$$
+where $N$ is the total number of microstates available to the system, and
+$\beta$, and $\mu$ are the Lagrange multipliers associated with each of the
+constraints. The next step consists on computing the gradient of this Lagrangian
+which returns a vector of size $N$ where the $k^{\text{th}}$ entry is the
+derivative of the Lagrangian with respect to $p_k$. But notice that all of these
+derivatives will look the same. So taking one of these derivatives is enough.
+We then take the derivative with respect to a particular $p_k$ and equate it
+to zero, obtaining
+$$
+\frac{d\mathcal{L}}{d p_k} = -\log(p_k) - 1 - \lambda - \beta E_k = 0.
+$$
+Notice that all of the terms with $i\neq k$ disappear, leaving a simple
+expression. Solving for $p_k$ gives
+$$
+p_k = \exp\left[1 - \lambda - E_k \right] = e^{1 - \lambda} e^{-\beta E_k}.
+$$
+Every single probability $p_k$ takes the same form. We substitute this
+probability $p_k$ on our normalization constraint, obtaining
+$$
+\sum_{i=1}^N p_i = e^{1 - \lambda} \sum_{i=1}^N e^{-\beta E_i}=1.
+$$
+This tells us that the term $e^{1 - \lambda}$ is given by
+$$
+e^{1 - \lambda} = \frac{1}{\sum_{i=1}^Ne^{-\beta E_k}}.
+$$
+Therefore, the probability of microstate $i$ is given by
+$$
+P(E_i) = p_i = \frac{e^{-\beta E_k}}{\sum_{i=1}^N e^{-\beta E_k}},
+$$
+exactly the Boltzmann distribution. One can show why it is the case that our
+Lagrange multiplier $\beta$ is exactly $1/k_BT$ as demanded by the thermodynamic
+version of this distribution, but that is out of the scope for our purposes.
+This section aims only to show the subtle and deep connection between
+statistical mechanics and information theory. This suggests that part of the
+unreasonable effectiveness of statistical mechanics might not come from the
+physical basis of its core theory; but instead from the statistical inference
+problem on which, given the limited information we have of any thermodynamic
+system's microstate, entropy maximization gives us a recipe on what the best
+guess for the probability distribution over the microstates is.
+
