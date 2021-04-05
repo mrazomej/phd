@@ -26,8 +26,8 @@ where the first big name on this story appeared. Adrian Jinich, back then a
 staff scientist at a nearby research center and a soon-to-be graduate student at
 Harvard, came to my middle-of-nowhere school with a simple idea: He was going to
 inspire the next generation of Mexican scientists by working with students on a
-hands-on project. Those Saturday meetings with Adrian were going to change my
-life in unexpected ways. 
+hands-on project during the weekends. Those Saturday meetings with Adrian were
+going to change my life in unexpected ways. 
 
 Adrian happened to have a textbook that has guided my thinking and my love for
 science for the last decade and, with a little bit of more luck, will continue
@@ -38,30 +38,30 @@ school, I dedicated countless hours to understanding the contents of this
 textbook. And, on a lonely night of April 2011, when I was feeling more
 desperate than ever after having gotten into a heated discussion with one of my
 professors, I sent an innocent email to the first author of the book with zero
-expectations of ever receiving a reply. The email said something like this
+expectations of ever receiving a reply. The email said something like this:
 
- Dear Professor Phillips PhD, 
+Dear Professor Phillips PhD, 
 
- My name is Manuel Razo, I'm a Mexican student in the National Polytechnic
- Institute in Mexico... The reason for writing you this letter is because I've
- been studying your book... I found fascinating every single page in the book,
- to the point that I'm looking forward to work one day in a topic related with
- biophysics...I know that you are a very busy and important Scientist, but it
- would mean a lot to me if you could give me any advice of what to do in order
- to achieve my goals.
+My name is Manuel Razo, I'm a Mexican student in the National Polytechnic
+Institute in Mexico... The reason for writing you this letter is because I've
+been studying your book... I found fascinating every single page in the book, to
+the point that I'm looking forward to work one day in a topic related with
+biophysics...I know that you are a very busy and important Scientist, but it
+would mean a lot to me if you could give me any advice of what to do in order to
+achieve my goals.
 
 Little I knew that this innocent email would set my career path for the rest of
-my life. This was because a few weeks after sending this email, Mr. Phillips
-took the time to reply to the message, giving me inspiring words about the way
-he sees life and the meaning of being a scientist. One conversation led to
-another, and sooner than I realized, Rob challenged me to come up with a project
-to work on during a summer internship. Talks with Adrian and a lot of reading
-led me to an idea. I wrote down this proposal and sent it to Rob. At this time,
-I did not know what to expect. I had never been involved in any research project
-or knew what it took to become a Caltech summer student. But, to my fortune, Rob
-liked my naive idea and invited me to spend not only the summer but an entire
-year working in his lab. There I was, a nobody with no credentials being given
-the opportunity of my life.
+my life. A few weeks after sending this email, Mr. Phillips took the time to
+reply to the message, giving me inspiring words about how he sees life and the
+meaning of being a scientist. One conversation led to another, and sooner than I
+realized, Rob challenged me to come up with a project to work on during a summer
+internship. Talks with Adrian and a lot of reading led me to an idea. I wrote
+down this proposal and sent it to Rob. At this time, I did not know what to
+expect. I had never been involved in any research project or knew what it took
+to become a Caltech summer student. But, to my fortune, Rob liked my naive idea
+and invited me to spend not only the summer but an entire year working in his
+lab. There I was, a nobody with no credentials being given the opportunity of my
+life. I will have more to say about Mr. Phillips later on.
 
 That year, my horizons expanded like never before. I passed from only
 interacting with people with my cultural background that spoke my language to be
@@ -87,52 +87,183 @@ once a week during our group meeting to have the chance to hang out with other
 physical biologists. Rob decided to recruit Justin and me as honorary TAs for
 his famous Bi1x class. Every Sunday for the next few months, I helped Justin
 develop a new module for the class involving fluorescent microscopy on fly
-embryos. These interactions turned into a friendship where Justin went beyond
-what he had to and treated my family and me unbelievably nicely.
+embryos. These interactions turned into a friendship where Justin treated my
+family and me unbelievably nicely. After Rob, Justin has been the scientist that
+has influenced my thinking the most. His classes, sharp mind, computational
+skills, unbelievably ethical behavior and his will to share his knowledge set me
+on the right track from the beginning of my Ph.D., when Justin started a
+position as a teaching faculty for the Biology division. 
 
-After Rob, Justin has been the scientist that has influenced my thinking the
-most. His classes, sharp mind, computational skills, unbelievably ethical
-behavior, and his will to share his knowledge set me on the right track from the
-beginning of my Ph.D. when Justin started a position as a teaching faculty for
-the Biology division. Because of course, I had to come back to Caltech. A year
-was not enough, and I needed more. So as soon as I could, I came back to begin
-my Ph.D. working again with Rob.
+As the reader can infer from the context of these acknowledgments, a year at
+Caltech was not enough, and I needed more. So as soon as I could, I came back to
+begin my Ph.D. working again with Rob. My twenties came and went by faster than
+I thought. Nevertheless, I had the immense fortune to share the lab with three
+of my great friends and co-authors for all those years. Nathan Belliveau, Muir
+Morrison, and Griffin Chure became my lab family. They helped me think through
+problems and worked with me on numerous successful (and unsuccessful) projects,
+as we all grew as scientists under Rob's tutelage. It is not an exaggeration
+when I say that their friendship and support have been a fundamental part of why
+my Ph.D. experience has been the best time of my life. I would not do justice to
+Griffin's influence on my thinking if I did not give a special shout-out to him.
+For the past seven years, Griffin and I talked almost every single day. We fed
+off each other's ideas and together traveled the world. From Korea to New
+Zealand to Sweden, Griffin became my closest collaborator and someone that every
+time he has something to say, I am ready to take notes on whatever comes out of
+his creative and rigorous mind.
 
-My twenties came and went by faster than I thought. Nevertheless, I had the
-immense fortune to share the lab with three of my great friends and co-authors
-for all those years. Nathan Belliveau, Muir Morrison, and Griffin Chure became
-my lab family. They helped me think through problems and worked with me on
-numerous successful (and unsuccessful) projects, as we all grew as scientists
-under Rob's tutelage. It is not an exaggeration when I say that their friendship
-and support have been a fundamental part of why my Ph.D. experience has been the
-best time of my life. I would not do justice to Griffin's influence on my
-thinking if I did not give a special shout-out to him. For the past seven years,
-Griffin and I talked almost every single day. We fed off each other's ideas and
-together traveled the world. From Korea to New Zealand to Sweden, Griffin became
-my closest collaborator and someone that every time he has something to say, I
-am ready to take notes on whatever comes out of his creative and rigorous mind.
+Within the Phillips lab, I always felt the environment encouraged collaborations
+and casual science conversations, for which I will be forever thankful. Rob
+Brewster, now a professor at U. Mass., taught me several lab tricks that I still
+use up to this day. Heun Jin Lee, the microscopy master, was an incredible
+resource and mentor that allowed my research to run smoothly. Without his work
+and input, it would have been incredibly hard for my projects to take off. I am
+also thankful to members of the Phillips lab that, over the years, shared
+projects, ideas, lunches, and visits to Red Door cafe. People like Suzy Beeler,
+Stephanie Barnes, Soichi Hirokawa, Niko McCarty, Tom Roeschinger, and Scott
+Saunders made my Caltech experience much better.
 
+I am enormously thankful to Dianne Newman. I met Dianne for the first time when
+I was a visiting undergrad at Caltech. I vividly remember having finished giving
+my MicroMorning talk when Dianne approached me. She congratulated me and told me
+that I should come back to Caltech since she thought I had what it takes to be
+part of this institution. When I came back to Caltech as a Ph.D. student, I
+worked in her lab for ten weeks as part of a rotation where I learned about a
+completely different way to tackling biological problems from what I was used
+to. Later on, Dianne helped my sister to visit the Caltech daycare and learned
+from them. She also made my mom unbelievably happy when, in Dianne's perfect
+Spanish, she told my mom that I was a great student and that she was very proud
+of me. Her support and kindness are things I do not take for granted, and I am
+enormously thankful for them.
 
+I am also thankful to Ginger and Kim Caldwell. Thanks to Mr. and Mrs. Caldwell's
+kindness, I was awarded a one–year fellowship that covered my stipend. But they
+did not only give away the money and forgot about it. They took the time to meet
+with me and learn about my research projects. This experience reinforced my
+vision of the kindness that this country's society can have for a person like
+myself, pursuing the American dream.
 
-List:
+Of course, not everything in my life for the last few years has been strictly
+about my Ph.D. project and my work at the lab. I owe a significant component of
+the enormous happiness I experienced since coming to Caltech to my friends
+outside of work. In particular I want to give a shout out to my best friends
+Stephanie Threatt, and Porfirio Quintero. Stephanie and I share a love for
+hip-hop and good food. We went to concerts, amusement parks, and restaurants,
+and she has always been there when I needed emotional support. Porfirio and I
+not only share a nationality, but we shared an apartment for five years. Living
+with my best friend and having deep conversations and many other adventures out
+in the wild made all those years an authentic delight to experience. I would
+also like to give a shout-out to my friend Andres Ortiz. Andres and I have
+shared long conversations about the meaning of life, physics, math, and
+everything in between. His powerful intellect and will to always chat about deep
+stuff make Andres a delightful person to call your friend. More recently, my
+friend David Larios joined my inner circle and became a really close friend.
+David and I share a love for learning, talking about science, and, more
+recently, doing outreach via a podcast where we share ideas from different books
+that we read. We also share an openness to share feelings between friends,
+constantly looking after each other. All of my friends became my family outside
+of my home, so I never felt like I was alone during this journey.
 
-Adrian X
-Justin X
-James X
-Griffin
-Muir
-Nathan
-Heun Jin
-Dianne
-Wallace
-Hernan
-The Caldwells
-Porfi
-Steph
-Cat
-Christina
-My parents
-Herman
-Amy, Molly, and Casey
-Bob
-Daniela
+Shockingly enough, with all the good luck that has gotten me to this point,
+there is a lot more for which to be thankful. Because of Rob, my professional
+relationships have not been limited to Caltech only. I spent a total of six
+months at the Marine Biological Laboratory (MBL) as a teaching assistant for the
+Physiology and the Physical Biology of the Cell courses. There, I had the
+fortune to interact with Wallace Marshall, Jane Kondev, Hernan Garcia, Julie
+Theriot, and Madhav Mani, all of which have been supportive and inspiring
+throughout these years. At MBL, I also met my good friends Cat Triandafillou and
+Christina Hueschen.
+
+After this long list, I would like to dedicate specific words to Rob:
+
+Dear Mr. Phillips, Ph.D., 
+
+It is tough to write these words and not shed tears of happiness. I do not have
+words to express my feelings, but I will try to do my best. Working with you and
+sharing so many moments has been by far the most significant honor of my entire
+life. To me, it is clear that the only reason I am writing a Ph.D. thesis for
+arguably the best research institute in the world is because of you. When I sent
+that innocent email, I never imagined the quality of person that would await at
+the receiving end. Not only you took time out of your insanely busy schedule to
+talk with a stranger with no credentials whatsoever, but you allowed me to prove
+myself capable of pursuing my scientific dreams. Even when I almost stopped
+believing in myself, you believed in me. And, after a decade of having sent this
+email, I stand proud of what we have accomplished together. This thesis reflects
+everything I have learned from you as I pave my path to become who I want to be.
+
+On multiple occasions, you have told me that you don't have a recipe for a happy
+and fulfilling life. But the way you operate and interact with other people
+makes me want to shape my professional and personal life after yours. I have
+learned from you that science is not only our job but, if one wants it, it can
+be a complete lifestyle. Hike after hike, trip after trip, calculation after
+calculation, I have witnessed your boundless love for the natural world and the
+constant everyday effort that it takes to get closer to unveiling its mysteries.
+It is hard to imagine myself one day knowing a fraction of what you know about
+science, but I will for sure try to keep up with your learning pace, working as
+hard as I can every single day.
+
+Although I have technically been your employee for the last decade, our
+relationship has been much deeper than that. Sometimes I have to pinch myself to
+make sure that all of this is not a dream. I am actually hanging out with my
+hero, and he is actually welcoming me to his family. Everything you have done
+for me, and now for Daniela, means the world to me. Welcoming us to the most
+sacred family celebration over thanksgiving has been a privilege I never
+expected to live. I cannot thank you, Amy, Molly, Casey, and the rest of your
+beautiful family, for making us feel part of the festivity and the extended
+family.
+
+I know that you despise honors, prizes, and people praising you. But I would not
+do justice to my feelings if I could not express my deep love and admiration for
+you. The way you see the world has shaped my vision and understanding of what it
+means to be alive. Your love for numbers and their explanatory power is an
+incredible tool I try to apply to science and mundane activities. Your passion
+for teaching and your unorthodox methodology has shown me that even a random kid
+from Mexico can get the most complex concepts if one works hard enough and puts
+the time into it. Each and every lesson you have given me over the last decade
+will continue to shape my thinking for the rest of my life.
+
+But this is not a farewell. I might be "getting fired" for the n-th time, this
+time for real, but that does not mean that our scientific adventures have to be
+over. I hope that we both share the mutual feeling that this is just the
+beginning. There are many more things to discover, many more books to write
+(plural for you, obviously), and many more courses to teach together. Thank you
+for being part of my life, and more importantly, thank you for letting me be a
+part of yours.
+
+A mi familia:
+
+Papá, Mamá, Hermanini. Es increíble pensar que esta aventura comenzó hace una
+década. ¿Cuándo íbamos a imaginar que un simple correo que le envié a Rob
+cambiaría mi vida de manera tan drástica? Pero no toda la fortuna que la vida me
+ha dado en estos años es obra del azar. Las oportunidades en la vida vienen para
+las personas que están preparadas para tomarlas. Y no puedo pensar en una mejor
+preparación que el haber crecido en un hogar como el nuestro. 
+
+No es exageración cuando digo que no hay día que reconozca el enorme privilegio
+que siempre he tenido. A mi hermana y a mi nunca nos faltó nada y siempre nos
+sobró amor. Cada característica en mi persona de la que me siento orgulloso son
+el resultado de los valores que ustedes me inculcaron. Mi fortaleza para
+levantarme todos los días a estudiar se deriva de esas mañanas de estudio a las
+cinco a.m. donde me mostraron cómo ser disciplinado. Mi compasión hacia mi
+prójimo son las enseñanzas que los abuelos nos dejaron. El hecho de que sepa
+hablar inglés es la consecuencia de los sacrificios que ambos hicieron para
+darnos la mejor educación disponible. Y, aunque los individuos en esa escuela
+siempre quisieron desahogar sus frustraciones familiares en mí, siempre tuve a
+mi hermana para defenderme y a mi madre para decirme cómo es que podía
+sobrellevar esos, pensando en la frase "yo puedo, yo quiero, es muy fácil, y lo
+voy a lograr." 
+
+Esta tesis es clara evidencia de que esa lección de vida encapsulada en la
+célebre frase de mi madre siempre fue cierta. Sí pude, sí quise, y
+definitivamente, sí lo logré. Pero, este logro no solo es mío. Después de todo
+soy el reflejo de la persona que criaron. Este logro es de la familia Razo–Mejía
+entera que siempre ha estado ahí para apoyarme cuando más lo he necesitado.
+Desde el día que partí de la casa, sabía que tenía lo que se necesitaba para
+buscar mi felicidad. Ustedes me dieron las herramientas para construir el camino
+en busca de mis sueños. Ese camino continua, y las valiosas lecciones que me
+dieron a través de los años guiarán el resto de mi vida.
+
+Termino una etapa maravillosa de mi vida. Entré al doctorado como un puberto sin
+ninguna experiencia de haber vivido fuera de casa. No me queda más que
+agradecerles por siempre haber estado ahí para mi. Gracias por ser mis papás.
+Gracias por ser mi hermana. Ustedes, junto con Daniela, hacen que valga la pena
+vivir cada momento.
