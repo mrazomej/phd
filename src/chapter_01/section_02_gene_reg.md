@@ -768,7 +768,7 @@ distribution.
 of the mRNA distribution (Eq. $\ref{eq:master_simple}$) with $P(m=0, t=0) = 1$,
 i.e., a delta function at zero mRNAs at time zero. (B) Snapshots of the same
 time-evolving distribution at different time points. The [Python code
-(`ch1_fig05A.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig06.py)
+(`ch1_fig06.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig06.py)
 used to generate the plot in part (A) of this figure can be found on the thesis
 [GitHub repository](https://github.com/mrazomej/phd).](ch1_fig06){#fig:ch1_fig06
 short-caption="Chemical master equation in gene regulation"}
