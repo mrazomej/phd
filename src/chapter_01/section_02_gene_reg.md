@@ -586,10 +586,6 @@ used to generate part (C) of this figure can be found on the thesis [GitHub
 repository](https://github.com/mrazomej/phd).](ch1_fig04){#fig:ch1_fig04
 short-caption="Figure 1 theory in transcriptional regulation"}
 
-### The second secret of life
-
-TBD. Allostery
-
 ### All cells are equal, but some are more equal than others
 
 One of the great discoveries that came from the single-cell biology revolution
@@ -777,59 +773,60 @@ In this system, where we have a series of state transitions as represented in
 [@Fig:ch1_fig05](C), steady-state is reached when the flux of probability from
 two contiguous states is zero. In other words, when the probability distribution
 does not change over time anymore, the flow of probability from state $m=0$ to
-state $m=1$ should be the same as the reverse. The same condition applies for
+state $m=1$ should be the same as the reverse. The same condition applies to
 all other pairs of states. Mathematically this is expressed as
 $$
-\overbrace{r P(0)}^{0 \rightarrow 1} = 
-\overbrace{\gamma \cdot 1 \cdot P(1)}^{1 \rightarrow 0},
+\overbrace{r_m P(0)}^{0 \rightarrow 1} = 
+\overbrace{\gamma_m \cdot 1 \cdot P(1)}^{1 \rightarrow 0},
 $$
 where we removed the time dependency from $P(m, t)$ since we are at
 steady-state. Solving for $P(1)$ results in
 $$
-P(1) = \left(\frac{r}{\gamma} \right) P(0).
+P(1) = \left(\frac{r_m}{\gamma_m} \right) P(0).
 $$
 The same condition applies between state $m=1$ and $m=2$, resulting in
 $$
-\overbrace{r P(1)}^{1 \rightarrow 2} = 
-\overbrace{\gamma \cdot 2 \cdot P(2)}^{2 \rightarrow 1}.
+\overbrace{r_m P(1)}^{1 \rightarrow 2} = 
+\overbrace{\gamma_m \cdot 2 \cdot P(2)}^{2 \rightarrow 1}.
 $$
 Again, we can solve for $P(2)$ and obtain
 $$
-P(2) = \frac{1}{2}\left(\frac{r}{\gamma} \right) P(1).
+P(2) = \frac{1}{2}\left(\frac{r_m}{\gamma_m} \right) P(1).
 $$
 Substituting the solution for $P(1)$ gives
 $$
-P(2) = \frac{1}{2} \left(\frac{r}{\gamma} \right)^2 P(0).
+P(2) = \frac{1}{2} \left(\frac{r_m}{\gamma_m} \right)^2 P(0).
 $$
 Let's do one more example to see the general pattern. Between $m=2$ and $m=3$
 we have
 $$
-\overbrace{r P(2)}^{2 \rightarrow 3} = 
-\overbrace{\gamma \cdot 3 \cdot P(3)}^{3 \rightarrow 2}.
+\overbrace{r_m P(2)}^{2 \rightarrow 3} = 
+\overbrace{\gamma_m \cdot 3 \cdot P(3)}^{3 \rightarrow 2}.
 $$
 Following the same procedure and substitutions results in
 $$
-P(3) = \frac{1}{2\cdot 3} \left(\frac{r}{\gamma} \right)^3 P(0).
+P(3) = \frac{1}{2\cdot 3} \left(\frac{r_m}{\gamma_m} \right)^3 P(0).
 $$
-Deducing the pattern from these examples we can see that for any $m$ we have
+Deducing the pattern from these examples, we can see that for any $m$ we have
 $$
-P(m) = P(0) \frac{\left( \frac{r}{\gamma}\right)^m}{m!}.
+P(m) = P(0) \frac{\left( \frac{r_m}{\gamma_m}\right)^m}{m!}.
 $$
-All we have left is the unknown value $P(0)$. To get at it we use the fact that
+All we have left is the unknown value $P(0)$. To get at it, we use the fact that
 the distribution must be normalized, giving
 $$
-\sum_{m=0}^{\infty} P(m)=1 \Rightarrow  P(0)\sum_{m=0}^{\infty} \frac{\left(\frac{r}{\gamma}\right)^{m}}{m !}=1.
+\sum_{m=0}^{\infty} P(m)=1 \Rightarrow  P(0)\sum_{m=0}^{\infty} 
+\frac{\left(\frac{r_m}{\gamma_m}\right)^{m}}{m !}=1.
 $$
 We recognize the sum as the Taylor series for $e^x$. This means that our 
 constant $P(0)$ is given by
 $$
 P(0) = \frac{1}{\sum_{m=0}^{\infty} 
-\frac{\left(\frac{r}{\gamma}\right)^{m}}{m
-!}} = e^{-r / \gamma}.
+\frac{\left(\frac{r_m}{\gamma_m}\right)^{m}}{m
+!}} = e^{-r_m / \gamma_m}.
 $$
 Substituting this result, we find that the mRNA steady-state distribution is
-a Poission distribution with mean $r/\gamma$, i.e.,
+a Poission distribution with mean $r_m/\gamma_m$, i.e.,
 $$
-P(m) = \frac{e^{- r / \gamma} \left( \frac{r}{\gamma}\right)^m}{m!}.
+P(m) = \frac{e^{- r_m / \gamma_m} \left( \frac{r_m}{\gamma_m}\right)^m}{m!}.
 \label{eq:mRNA_steady}
 $$
