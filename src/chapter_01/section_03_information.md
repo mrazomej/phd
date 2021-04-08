@@ -107,7 +107,7 @@ in the paragraph. (C) Joint distribution of pairs of characters $P(x, y)$. All
 pairs of characters in (A) were counted to build this histogram. The x-axis
 shows the first letter while the y-axis shows the second. For simplicity in (B)
 and (C) all punctuation was ignored. The [Python code
-(`ch1_fig04D.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig08.py)
+(`ch1_fig08.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig08.py)
 used to generate this figure can be found on the thesis [GitHub
 repository](https://github.com/mrazomej/phd).](ch1_fig08){#fig:ch1_fig08
 short-caption="The statistical structure of the English language"}
@@ -490,6 +490,22 @@ entropy. This is Shannon's theorem, and what it shows is that Eq.
 $\ref{eq:shannon_result}$ is the only function that satisfies the three very
 reasonable conditions we established for an uncertainty measurement.
 
+To gain intuition on what this equation is telling us, let us look at two
+examples. In our first example we will think about the simplest random process:
+a coin toss. 
+
+
+![**Entropy in action.** (A) Entropy of a coin as a function of the probability
+of heads $p$. The entropy is maximum when the coin is fair, i.e., $p=0.5$,
+meaning that this is the most unpredictable coin one could have. (B) Entropy of
+the steady-state mRNA distribution as derived in Eq. ${eq:mRNA_steady}$ as a
+function of the mean mRNA copy number. The point shows the entropy of the
+distribution shown in the inset. The [Python code
+(`ch1_fig10.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig10.py)
+used to generate this figure can be found on the thesis [GitHub
+repository](https://github.com/mrazomej/phd).](ch1_fig10){#fig:ch1_fig10
+short-caption="Shannon's theorem"}
+
 ### Information Theory and Statistical Mechanics
 
 Our result in Eq. $\ref{eq:shannon_result}$ is of the same functional form as
@@ -648,20 +664,72 @@ $$
 $$
 This tells us that the term $e^{1 - \lambda}$ is given by
 $$
-e^{1 - \lambda} = \frac{1}{\sum_{i=1}^Ne^{-\beta E_k}}.
+e^{1 - \lambda} = \frac{1}{\sum_{i=1}^Ne^{-\beta E_i}}.
 $$
 Therefore, the probability of microstate $i$ is given by
 $$
-P(E_i) = p_i = \frac{e^{-\beta E_k}}{\sum_{i=1}^N e^{-\beta E_k}},
+P(E_i) = p_i = \frac{e^{-\beta E_i}}{\sum_{i=1}^N e^{-\beta E_i}},
 $$
 exactly the Boltzmann distribution. One can show why it is the case that our
 Lagrange multiplier $\beta$ is exactly $1/k_BT$ as demanded by the thermodynamic
 version of this distribution, but that is out of the scope for our purposes.
 This section aims only to show the subtle and deep connection between
-statistical mechanics and information theory. This suggests that part of the
-unreasonable effectiveness of statistical mechanics might not come from the
-physical basis of its core theory; but instead from the statistical inference
-problem on which, given the limited information we have of any thermodynamic
-system's microstate, entropy maximization gives us a recipe on what the best
-guess for the probability distribution over the microstates is.
+statistical mechanics and information theory. This connection suggests that part
+of the unreasonable effectiveness of statistical mechanics might not come from
+the physical basis of its core theory; but instead from the statistical
+inference problem on which, given the limited information we have of any
+thermodynamic system's microstate, entropy maximization gives us a recipe on
+what the best guess for the probability distribution over the microstates is.
 
+### Thinking Conditionally, a Condition for Thinking.
+
+Part of the complexity in understanding biological systems is that their
+components form a network of interactions. This connectivity means that one part
+of the organism's state depends on many other parts' states. For example, the
+wild-type *lac* operon's expression depends on the conformation state of two
+transcription factors: CRP and LacI. The state of these transcription factors
+depends on the concentration of cyclic-AMP and allolactose, respectively. These
+concentrations depend on the state of the environment and transporters' availability to bring them into the cell.
+
+The mathematical language to express the dependence between two variables is
+that of joint and conditional probability. Shannon's entropy (Eq.
+$\ref{eq:shannon_result}$) can also be extended to account for dependence
+between variables. Let us use a different notation from now on. We will now
+express Shannon's entropy as
+$$
+H(X) = -\sum_x P(x) \log P(x),
+\label{eq:shannon_x}
+$$
+where instead of giving a vector of probabilities $\mathbf{p}$ to the function
+$H$, we now give it a random variable $X$. This notation is understood as the
+entropy will be calculated over the distribution of possible values that $X$ can
+take. If $X$ can take values $\{x_1, x_2, \ldots, x_n\}$, the probability of 
+obtaining $X = x_k$ is given by the function $P(X=x_k)$, which for brevity we
+can write simply as $P(x_k)$. What Eq. $\ref{eq:shannon_x}$ is saying is: Take
+the random variable $X$ and all the possible values it can have; compute the
+Shannon entropy by summing over all those values.
+
+With this notation in hand, let's think about two correlated random variables
+$X$ and $Y$. These could be the number of mRNAs and proteins in the cells, for
+example. The *joint entropy* $H(X, Y)$ measures the uncertainty we have about
+the outcome of a pair of variables rather than a single. All it takes is to sum
+over both variables on Eq. $\ref{eq:shannon_x}$ as
+$$
+H(X, Y) = -\sum_x \sum_y P(x, y) \log P(x, y).
+\label{eq:joint_entropy}
+$$
+
+ 
+
+
+### One person's entropy is another person's information.
+
+So far, our discussion has focused on the concept of entropy. We first derived
+the Shannon entropy from three basic principles that a metric of uncertainty
+should satisfy. Then, we showed that one of the main results in statistical
+mechanics could be derived from maximizing this entropy subject to certain
+constraints, suggesting that statistical mechanics could be nothing more than an
+optimal statistical inference protocol, given limited information. But no
+mention of information up to now. This intentional omission is because we must
+first master the idea of entropy to understand the mathematical definition of
+information. 

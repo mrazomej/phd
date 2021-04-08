@@ -831,4 +831,5 @@ Substituting this result, we find that the mRNA steady-state distribution is
 a Poission distribution with mean $r/\gamma$, i.e.,
 $$
 P(m) = \frac{e^{- r / \gamma} \left( \frac{r}{\gamma}\right)^m}{m!}.
+\label{eq:mRNA_steady}
 $$
