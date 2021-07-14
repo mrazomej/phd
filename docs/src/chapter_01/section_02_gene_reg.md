@@ -586,10 +586,6 @@ used to generate part (C) of this figure can be found on the thesis [GitHub
 repository](https://github.com/mrazomej/phd).](ch1_fig04){#fig:ch1_fig04
 short-caption="Figure 1 theory in transcriptional regulation"}
 
-### The second secret of life
-
-TBD. Allostery
-
 ### All cells are equal, but some are more equal than others
 
 One of the great discoveries that came from the single-cell biology revolution
@@ -609,6 +605,26 @@ cellular behavior. Cells have to cope with these physical limitations on
 precision, many times generating systems to actively buffer as much of the
 "noise" as possible [@Voliotis2014a], other times using this intrinsic
 variability to their advantage [@Balaban2004].
+
+![**Chemical master equation in gene regulation.** (A-B) Different points of
+view to understand the chemical master equation. (A) From the "particle" point
+of view, we imagine following the time trajectory of *a single cell*. The
+probability $P(m, t)$ of finding a cell with $m$ mRNAs at time $t$ is then
+proportional to the time this cell spent with this number of molecules. (B) On
+the occupation number point of view we imagine observing a large number of
+isogenic cells (different colors represent the individuality of each cell). The
+probability $P(m,t)$ is then interpreted as the fraction of the cells
+representing such copy number exactly at time $t$. (C) Chemical master equations
+mathematize the idea of Markov processes. For the case of the unregulated
+promoter, the Markov process consists of a connection of an infinite number of
+discrete states that cells can transition between by producing or degrading
+mRNAs. (D) Spread-the-butter idea. Since probability is conserved, the central
+bar's height changes slightly by having in- and outflow of probability mass from
+the contiguous bins. The [Python code
+(`ch1_fig05A.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig05A.py)
+used to generate the plot in part (A) of this figure can be found on the thesis
+[GitHub repository](https://github.com/mrazomej/phd).](ch1_fig05){#fig:ch1_fig05
+short-caption="Chemical master equation in gene regulation"}
 
 The central assumption behind the thermodynamic models of gene regulation that
 we studied in the last section is that the gene expression is proportional to
@@ -716,6 +732,7 @@ P(m, t + \Delta t) = &P(m, t)
 &- \overbrace{(r_m \Delta t) P(m, t)}^{m \rightarrow m+1}
 - \overbrace{(\gamma_m \Delta t) m P(m, t)}^{m \rightarrow m-1}
 \end{split}.
+\label{eq:master_recipe}
 $$
 We send the first term on the right-hand side to the left, divide both sides by
 $\Delta t$ and take the limit when $\Delta t \rightarrow 0$. This gives us the
@@ -726,23 +743,90 @@ r_m P(m - 1, t) + \gamma_m (m + 1) P(m + 1, t)
 - r_m P(m, t) + \gamma_m m P(m, t).
 \label{eq:master_simple}
 $$
+Eq. $\ref{eq:master_simple}$ is not isolated. It represents an
+infinite-dimensional system of coupled ordinary differential equations (one for
+each mRNA copy number $m$). It can therefore be tricky to work directly with
+these types of equations. Instead, let us take Eq. $\ref{eq:master_recipe}$ for
+a ride. With modern computational power, we can explicitly use this equation as
+a recipe on how to update an mRNA distribution numerically. [@Fig:ch1_fig06]
+shows such numerical integration for a system with initially no mRNAs present.
+This could be achieved experimentally by having an inducible system, adding the
+inducer, and tracking the time evolution of the single-molecule mRNA counts
+inside cells. [@Fig:ch1_fig06](A) presents a heatmap of such time evolution with
+time running on the vertical axis, while [@Fig:ch1_fig06](B) presents specific
+snapshots. We can see that the distribution begins as a single peak (a delta
+function in the physics jargon) centered at zero mRNAs. The distribution then
+relaxes to a broader shape and remains the same after that. This suggests that
+the distribution converges to a steady-state. Let us compute this steady state
+distribution.
 
-![**Chemical master equation in gene regulation.** (A-B) Different points of
-view to understand the chemical master equation. (A) From the "particle" point
-of view, we imagine following the time trajectory of *a single cell*. The
-probability $P(m, t)$ of finding a cell with $m$ mRNAs at time $t$ is then
-proportional to the time this cell spent with this number of molecules. (B) On
-the occupation number point of view we imagine observing a large number of
-isogenic cells (different colors represent the individuality of each cell). The
-probability $P(m,t)$ is then interpreted as the fraction of the cells
-representing such copy number exactly at time $t$. (C) Chemical master equations
-mathematize the idea of Markov processes. For the case of the unregulated
-promoter, the Markov process consists of a connection of an infinite number of
-discrete states that cells can transition between by producing or degrading
-mRNAs. (D) Spread-the-butter idea. Since probability is conserved, the central
-bar's height changes slightly by having in- and outflow of probability mass from
-the contiguous bins. The [Python code
-(`ch1_fig05A.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig05A.py)
+![**Time evolution of mRNA distribution.** . (A) Heat map of the time evolution
+of the mRNA distribution (Eq. $\ref{eq:master_simple}$) with $P(m=0, t=0) = 1$,
+i.e., a delta function at zero mRNAs at time zero. (B) Snapshots of the same
+time-evolving distribution at different time points. The [Python code
+(`ch1_fig06.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig06.py)
 used to generate the plot in part (A) of this figure can be found on the thesis
-[GitHub repository](https://github.com/mrazomej/phd).](ch1_fig05){#fig:ch1_fig05
+[GitHub repository](https://github.com/mrazomej/phd).](ch1_fig06){#fig:ch1_fig06
 short-caption="Chemical master equation in gene regulation"}
+
+In this system, where we have a series of state transitions as represented in
+[@Fig:ch1_fig05](C), steady-state is reached when the flux of probability from
+two contiguous states is zero. In other words, when the probability distribution
+does not change over time anymore, the flow of probability from state $m=0$ to
+state $m=1$ should be the same as the reverse. The same condition applies to
+all other pairs of states. Mathematically this is expressed as
+$$
+\overbrace{r_m P(0)}^{0 \rightarrow 1} = 
+\overbrace{\gamma_m \cdot 1 \cdot P(1)}^{1 \rightarrow 0},
+$$
+where we removed the time dependency from $P(m, t)$ since we are at
+steady-state. Solving for $P(1)$ results in
+$$
+P(1) = \left(\frac{r_m}{\gamma_m} \right) P(0).
+$$
+The same condition applies between state $m=1$ and $m=2$, resulting in
+$$
+\overbrace{r_m P(1)}^{1 \rightarrow 2} = 
+\overbrace{\gamma_m \cdot 2 \cdot P(2)}^{2 \rightarrow 1}.
+$$
+Again, we can solve for $P(2)$ and obtain
+$$
+P(2) = \frac{1}{2}\left(\frac{r_m}{\gamma_m} \right) P(1).
+$$
+Substituting the solution for $P(1)$ gives
+$$
+P(2) = \frac{1}{2} \left(\frac{r_m}{\gamma_m} \right)^2 P(0).
+$$
+Let's do one more example to see the general pattern. Between $m=2$ and $m=3$
+we have
+$$
+\overbrace{r_m P(2)}^{2 \rightarrow 3} = 
+\overbrace{\gamma_m \cdot 3 \cdot P(3)}^{3 \rightarrow 2}.
+$$
+Following the same procedure and substitutions results in
+$$
+P(3) = \frac{1}{2\cdot 3} \left(\frac{r_m}{\gamma_m} \right)^3 P(0).
+$$
+Deducing the pattern from these examples, we can see that for any $m$ we have
+$$
+P(m) = P(0) \frac{\left( \frac{r_m}{\gamma_m}\right)^m}{m!}.
+$$
+All we have left is the unknown value $P(0)$. To get at it, we use the fact that
+the distribution must be normalized, giving
+$$
+\sum_{m=0}^{\infty} P(m)=1 \Rightarrow  P(0)\sum_{m=0}^{\infty} 
+\frac{\left(\frac{r_m}{\gamma_m}\right)^{m}}{m !}=1.
+$$
+We recognize the sum as the Taylor series for $e^x$. This means that our 
+constant $P(0)$ is given by
+$$
+P(0) = \frac{1}{\sum_{m=0}^{\infty} 
+\frac{\left(\frac{r_m}{\gamma_m}\right)^{m}}{m
+!}} = e^{-r_m / \gamma_m}.
+$$
+Substituting this result, we find that the mRNA steady-state distribution is
+a Poission distribution with mean $r_m/\gamma_m$, i.e.,
+$$
+P(m) = \frac{e^{- r_m / \gamma_m} \left( \frac{r_m}{\gamma_m}\right)^m}{m!}.
+\label{eq:mRNA_steady}
+$$
