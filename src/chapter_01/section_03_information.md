@@ -491,20 +491,58 @@ $\ref{eq:shannon_result}$ is the only function that satisfies the three very
 reasonable conditions we established for an uncertainty measurement.
 
 To gain intuition on what this equation is telling us, let us look at two
-examples. In our first example we will think about the simplest random process:
-a coin toss. 
+examples. In our first example, we will think about the simplest random process:
+a coin toss. To compute how unpredictable the outcome of our simple coin toss
+is, we can use Eq. $\ref{eq:shannon_result}$. For this particular case, we only
+have two possible outcomes--heads with probability $p$ or tails with probability
+$1 - p$. The resulting entropy is of the form
+$$
+H = - p \log(p) - (1 - p) \log(1 - p).
+\label{eq:entropy_coin}
+$$
+[@Fig:ch1_fig10](A) plots Eq. $\ref{eq:entropy_coin}$ as a function of the
+probability of heads $p$. Notice that the curve is concave with a minimum at
+$p=0$ and $p=1$ and a maximum at $p=1/2$. This shape should make intuitive sense
+given that Eq. $\ref{eq:entropy_coin}$ quantifies how unpredictable the outcome
+of tossing the coin is. If the coin toss's outcome is always heads (p=1) or
+always tails (p=0), there is no uncertainty about the resulting face. The more
+both outcomes become (the closer $p$ gets to $1/2$), the more unpredictable the
+random even is. One mathematical subtly here is that for $p=1$ or $p=0$ we have
+to compute $0 \times \log(0)$, which is undefined. We take this to be zero
+because for $x \log(x)$, the limit where $x \rightarrow 0^+$ converges to zero.
+Notice that the units on the $y$-axis are given in bits. These units mean that
+we used base two for our logarithms. An easy way to think about what a bit means
+is as the number of *yes*/*no* questions one would need to ask on average to
+infer the random event's outcome. For a coin, all we need is a single question
+(therefore one bit) to know what the outcome was.
 
+For our second example, we go back to the mRNA steady-state distribution we
+derived in Eq. $\ref{eq:mRNA_steady}$. We found that for our simple one-state
+DNA promoter, the steady-state distribution resulted Poisson with mean $\langle
+m \rangle = r_m / \gamma_m$. [@Fig:ch1_fig10](B) shows the entropy of this
+Poisson distribution as a function of the mean mRNA. WE se a quick initial
+increase in this entropy up to $\langle m \rangle \approx 20$, after which there
+is a much less steep increment. Imagine we sample a random cell from one of
+these Poisson distributions. Using the interpretation of bits again as the
+number of *yes/no* questions, what [@Fig:ch1_fig10](B) tells us is that if the
+promoter produces $\approx 10$ mRNA on average, it will take on average 3.5 of
+these questions to infer the number of mRNA for random cell. For an average of
+$\approx 20$ mRNA it would take four questions, and for an average of $\approx
+60$ mRNA five questions. These questions would be of the form "*is it greater
+than the average?*" or "*is it less than or equal to 1/3 of the average?*" and
+so on.
 
-![**Entropy in action.** (A) Entropy of a coin as a function of the probability
-of heads $p$. The entropy is maximum when the coin is fair, i.e., $p=0.5$,
-meaning that this is the most unpredictable coin one could have. (B) Entropy of
-the steady-state mRNA distribution as derived in Eq. ${eq:mRNA_steady}$ as a
-function of the mean mRNA copy number. The point shows the entropy of the
-distribution shown in the inset. The [Python code
+![**Shannon entropy in action.** (A) The entropy of a coin as a function of the
+probability of heads $p$. The entropy is maximum when the coin is fair, i.e.,
+$p=0.5$, meaning that this is the most unpredictable coin one could have. (B)
+The entropy of the steady-state mRNA distribution as derived in Eq.
+$\ref{eq:mRNA_steady}$ as a function of the mean mRNA copy number. The point
+shows the entropy of the distribution shown in the inset. Bot figures use base 2
+for the logarithm, resulting in units of bits for the entropy. The [Python code
 (`ch1_fig10.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig10.py)
 used to generate this figure can be found on the thesis [GitHub
 repository](https://github.com/mrazomej/phd).](ch1_fig10){#fig:ch1_fig10
-short-caption="Shannon's theorem"}
+short-caption="Shannon entropy in action"}
 
 ### Information Theory and Statistical Mechanics
 
@@ -514,32 +552,32 @@ concept with his friend John von Neumann. It was von Neumann who allegedly
 convinced Shannon of calling his metric of randomness *entropy* under the
 argument that nobody understands the concept. But the fact that the functional
 forms are the same is too suggestive to dismiss a potential connection between
-these concepts immediately. It was until much later on that E. T. Jaynes
-formalized ways to link both ideas [@Jaynes1957]. Nevertheless, Jaynes himself
-strongly discourages people from trying to map one concept to the other
-explicitly. In his book "*Probability Theory: The Logic of Science" Jaynes warns
-the reader about failing to distinguish *information entropy*, which is a
-property of the mathematical object we call a probability distribution, and the
-*experimental entropy* of thermodynamics, which is instead a property of the
-state of the system as defined by experimentally measurable quantities such as
-volume, temperature, pressure, magnetization, etc. Jaynes goes on to say: "*they
-should never have been called by the same name; the experimental entropy makes
-no reference to any probability distribution, and the information entropy makes
-no reference o thermodynamics*" [@Jaynes2003].
+these concepts immediately. It was until much later that E. T. Jaynes formalized
+ways to link both ideas [@Jaynes1957]. Nevertheless, Jaynes himself strongly
+discourages people from trying to map one concept to the other explicitly. In
+his book "*Probability Theory: The Logic of Science*" Jaynes warns the reader
+about failing to distinguish information entropy, which is a property of the
+mathematical object we call a probability distribution, and the *experimental
+entropy* of thermodynamics, which is instead a property of the state of the
+system as defined by experimentally measurable quantities such as volume,
+temperature, pressure, magnetization, etc. Jaynes goes on to say: "*they should
+never have been called by the same name; the experimental entropy makes no
+reference to any probability distribution, and the information entropy makes no
+reference o thermodynamics*" [@Jaynes2003].
 
 When Jaynes makes such strong remarks about the disconnection between both
-entropy concepts, he is strictly referring to the classical thermodynamic
-definition. This classical definition of entropy, due to Clausius, strictly
-talks about the inability of any thermal engine to convert all of the input
-energy into useful work. Clausius defined a new quantity $S$ as the amount of
-energy per unit temperature unavailable to do work. To understand this idea is
-to realize that from the energy liberated in gasoline combustion on a car
-engine, we only end up extracting $\approx 20\%$ of the energy to move the car.
-The other $80\%$ is lost into heating the engine and the environment. But this
-is not because the engineers are using bad designs. The second law of
-thermodynamics on its classical definition states that nothing in the universe
-can convert $100\%$ of the energy into useful work; there will always be
-residual energy that gets turned into heat.
+entropy concepts, he strictly refers to the classical thermodynamic definition.
+This classical definition of entropy, due to Clausius, refers to the inability
+of any thermal engine to convert all of the input energy into useful work.
+Clausius defined a new quantity $S$ as the amount of energy per unit temperature
+unavailable to do work. To understand this idea is to realize that from the
+energy liberated in gasoline combustion on a car engine, we only end up
+extracting $\approx 20\%$ of the energy to move the car. The other $80\%$ is
+lost into heating the engine and the environment. But this is not because the
+engineers are using poor designs. The second law of thermodynamics on its
+classical definition states that nothing in the universe can convert $100\%$ of
+the energy into useful work; there will always be residual energy that gets
+turned into heat.
 
 At the time, the existence of atoms was not widely accepted by the scientific
 community. But then came Boltzmann and the statistical mechanics' conceptual
@@ -548,13 +586,13 @@ thermodynamics does not allow the total conversion of energy into useful work
 came with Boltzmann's revolutionary entropy idea. Boltzmann hypothesized that
 matter was made out of atoms. Therefore, everything we can observe and measure
 macroscopically about any system results from the microscopic configuration of
-all of the atoms that make up the system. Furthermore, many microscopic
+all the atoms that make up the system. Furthermore, many microscopic
 arrangements are indistinguishable at our macroscopic scale (recall the
 microstate and macrostate concept in [@Fig:ch1_fig02]). This line of reasoning
 led Boltzmann to the law we stated in Eq. $\ref{eq:boltzmann_law}$. This law and
 all of the classic results from statistical mechanics are founded on several
 assumptions about the microscopic scale processes' reversibility. In other
-words, for Boltzmann's law to be "a legit law of nature" it must be the case
+words, for Boltzmann's law to be "a legit law of nature," it must be the case
 that if we play a movie featuring a single atom moving around the system, the
 same movie played in reverse should be as equally likely to happen.
 
@@ -681,7 +719,7 @@ inference problem on which, given the limited information we have of any
 thermodynamic system's microstate, entropy maximization gives us a recipe on
 what the best guess for the probability distribution over the microstates is.
 
-### Thinking Conditionally, a Condition for Thinking.
+### Joint Uncertainty in an Uncertain World
 
 Part of the complexity in understanding biological systems is that their
 components form a network of interactions. This connectivity means that one part
@@ -689,47 +727,179 @@ of the organism's state depends on many other parts' states. For example, the
 wild-type *lac* operon's expression depends on the conformation state of two
 transcription factors: CRP and LacI. The state of these transcription factors
 depends on the concentration of cyclic-AMP and allolactose, respectively. These
-concentrations depend on the state of the environment and transporters' availability to bring them into the cell.
+concentrations rely on the state of the environment and transporters'
+availability to bring them into the cell. This chain of connections continues
+indefinitely.
 
 The mathematical language to express the dependence between two variables is
 that of joint and conditional probability. Shannon's entropy (Eq.
 $\ref{eq:shannon_result}$) can also be extended to account for dependence
-between variables. Let us use a different notation from now on. We will now
-express Shannon's entropy as
+between variables. To make the notation for this extension easier to follow, let
+us use a different notation from now on. Let us express Shannon's entropy as
 $$
-H(X) = -\sum_x P(x) \log P(x),
+H(m) = -\sum_m P(m) \log P(m),
 \label{eq:shannon_x}
 $$
 where instead of giving a vector of probabilities $\mathbf{p}$ to the function
-$H$, we now give it a random variable $X$. This notation is understood as the
-entropy will be calculated over the distribution of possible values that $X$ can
-take. If $X$ can take values $\{x_1, x_2, \ldots, x_n\}$, the probability of 
-obtaining $X = x_k$ is given by the function $P(X=x_k)$, which for brevity we
-can write simply as $P(x_k)$. What Eq. $\ref{eq:shannon_x}$ is saying is: Take
-the random variable $X$ and all the possible values it can have; compute the
-Shannon entropy by summing over all those values.
+$H$, we now give it a random variable $m$. This notation is understood as: the
+entropy is calculated over the distribution of possible values that $m$ can
+take. If $m$ can take values $\{m_1, m_2, \ldots, m_n\}$, the probability of
+obtaining $m = m_k$ is given by the function $P(m=m_k)$, which for brevity we
+can write simply as $P(m_k)$. What Eq. $\ref{eq:shannon_x}$ is saying is: Take
+the random variable $m$ and all the possible values it can have; compute the
+Shannon entropy by summing over the probability of all those values. In this
+way, $H(m)$ is a shorthand for writing $H[P(m)]$.
 
 With this notation in hand, let's think about two correlated random variables
-$X$ and $Y$. These could be the number of mRNAs and proteins in the cells, for
-example. The *joint entropy* $H(X, Y)$ measures the uncertainty we have about
-the outcome of a pair of variables rather than a single. All it takes is to sum
-over both variables on Eq. $\ref{eq:shannon_x}$ as
+$m$ and $p$. These could be the number of mRNAs and proteins in the cells, as
+depicted in [@Fig:ch1_fig11](A). The *joint entropy* $H(m, p)$ measures the
+uncertainty we have about the outcome of a pair of variables rather than a
+single. All it takes is to sum over both variables on Eq. $\ref{eq:shannon_x}$
+as
 $$
-H(X, Y) = -\sum_x \sum_y P(x, y) \log P(x, y).
+H(m, p) = -\sum_m \sum_p P(m, p) \log P(m, p).
 \label{eq:joint_entropy}
 $$
+Eq. $\ref{eq:joint_entropy}$ then does the same computation as Eq.
+$\ref{eq:shannon_x}$, except that the sum is taken over all possible pairs of
+random variables $m$ and $p$. But what if we get to observe the outcome of one
+of the two variables (observing mRNA via RNA-seq, for example), can that tell us
+something about the outcome of the other one? For this, we need to understand
+the concept of conditional entropy.
 
+![**Shannon's entropy for more than one random variable.** (A) Toy model of a
+random process where mRNA (random variable $m$) is stochastically produced as a
+Poisson process with a fixed mean. Proteins (random variable $p$) are also
+stochastically produced as a Poisson process, but the mean depends on the number
+of mRNAs. (B) Samples from the model presented in (A). The center plot shows the
+joint distribution $P(m, p)$, while the edge histograms show the marginal
+distributions $P(m)$ and $P(p)$. (C) Venn diagram of the relationship of
+different information metrics. The [Python code
+(`ch1_fig11.py`)](https://github.com/mrazomej/phd/blob/master/src/chapter_01/code/ch1_fig11.py)
+used to generate this figure can be found on the thesis [GitHub
+repository](https://github.com/mrazomej/phd).](ch1_fig11){#fig:ch1_fig11
+short-caption="Shannon's entropy for more than one random variable"}
  
+### Thinking Conditionally, a Condition for Thinking.
 
+In Joe Blitztein's excellent *Introduction to probability* [@Blitzstein2019], he
+clarifies how conditional probability is one of the most powerful concepts in
+probability theory. Through the concept of conditional probability, we can learn
+whether or not two things are somehow correlated, allowing us from there to
+dissect the nature of such correlation. Given the probabilistic nature of
+Shannon's entropy, the power of conditional entropy is extended to the so-called
+conditional entropy $H(p \mid m)$. Let us think of our two random variables $m$
+and $p$ with a joint probability distribution $P(m, p)$. We can assume that the
+outcome of both random variables is correlated for our mRNA-protein pair,
+meaning that specific pairs of values are more likely to appear. If we observed
+the outcome of one of the random variables and knew the correlation function
+between random variables, our guess for the variable's value that we did not
+observe would improve over a completely random choice. In our example, if we get
+to observe that $m$ is a small (or large) number, we would suspect that $p$ is
+also a small (or large) number, as shown in [@Fig:ch1_fig11](B). This means that
+our uncertainty on the value of $p$ changed--it was reduced--upon observing the
+value of $m$. The new uncertainty, i.e., the entropy of $p$ having learned the
+value of $m$, averaged over all possible values of $m$, is computed as
+$$
+H(p \mid m) = - \sum_m \sum_p P(m) P(p \mid m) \log P(p \mid m),
+\label{eq:conditional_entropy}
+$$
+where $P(p \mid m)$ is read as "probability of $p$ given that we observe $m$."
+Finally, with all these concepts in hand, we can discuss the idea of information
+in the Shannon sense.
 
 ### One person's entropy is another person's information.
 
 So far, our discussion has focused on the concept of entropy. We first derived
 the Shannon entropy from three basic principles that a metric of uncertainty
-should satisfy. Then, we showed that one of the main results in statistical
-mechanics could be derived from maximizing this entropy subject to certain
-constraints, suggesting that statistical mechanics could be nothing more than an
-optimal statistical inference protocol, given limited information. But no
-mention of information up to now. This intentional omission is because we must
-first master the idea of entropy to understand the mathematical definition of
-information. 
+should satisfy. Then, we showed that one of the main statistical mechanics
+results, i.e., the Boltzmann distribution, could be derived from maximizing this
+entropy subject to certain constraints, suggesting that statistical mechanics
+could be nothing more than an optimal statistical inference protocol, given
+limited information. But no mention of information up to now. This intentional
+omission is because we first needed to master the idea of entropy to understand
+the mathematical definition of information. 
+
+Recall that $H(p)$ quantifies the uncertainty about the outcome of the random
+process that generates the value of the variable $p$. Furthermore, $H(p \mid m)$
+quantifies the uncertainty about the outcome of the same variable, but this time
+observing the outcome of the random variable $m$. In the worst-case scenario,
+$m$ and $p$ are uncorrelated, and learning the value of $m$ does not tell us
+anything about $p$. In that case, we then have that
+$$
+ H(p \mid m) = H(p)\;\; \text{ for $m$ and $p$ uncorrelated}.
+$$
+If $m$ and $p$ are correlated, as depicted in [@Fig:ch1_fig11](B), then the
+uncertainty about $p$ is reduced upon learning the value of $m$, giving us a
+general relationship between marginal and conditional entropy of the form
+$$
+H(p) \geq H(p \mid m).
+$$
+In this latter scenario, learning the value of $m$ reduced our uncertainty in
+the possible value of $p$. This reduction in uncertainty agrees with an informal
+definition of what "obtaining information" means. We can then define the mutual
+information $I(m;p)$ between random variable $m$ and $p$ as the reduction in
+uncertainty about the value of one of the random variables when we learn the
+value of the other random variable. For our example in which we get to observe
+the mRNA copy number, this would mean that the mutual information is computed as
+$$
+I(m; p) \equiv H(p) - H(p \mid m).
+\label{eq:mutual_info_entropy}
+$$
+But the mutual information is symmetric, meaning that the information about the
+outcome of one of the variables by observing the other variables is the same
+when the roles of what we get to observe are inverted. This argument means that
+we can mathematically show that
+$$
+I(m; p) = H(m) - H(m \mid p).
+$$
+This symmetry is why traditionally, the mutual information is written with a
+semi-colon rather than a regular comma, indicating that the order of the
+variables does not matter. To show the above symmetry, let us substitute the
+definitions of the marginal conditional entropy. This substitution for Eq.
+$\ref{eq:mutual_info_entropy}$ results in
+$$
+I(m; p) = 
+- \sum_p P(p)\log P(p) - 
+\left[ - \sum_m \sum_p P(m) P(p \mid m) \log P(p \mid m)\right].
+\label{eq:mutual_info_probs}
+$$
+The trick is now to use the definition of conditional probability in the right
+way. We know that the conditional probability is defined as
+$$
+P(p \mid m) \equiv \frac{P(m, p)}{P(m)}.
+\label{eq:cond_prob}
+$$
+Furthermore, we know that we can obtain the probability $P(p)$ by marginalizing
+the joint distribution $P(m, p)$ over all values of $m$. Mathematically this is
+written as
+$$
+P(p) = \sum_m P(m, p).
+\label{eq:marginalization}
+$$
+What Eq. $\ref{eq:marginalization}$ is stating is that to compute the
+probability of observing value $p$ of our random variable, we can add the
+probability of all pairs $m, p$ with the desired that have the desired value of
+$p$. For Eq. $\ref{eq:mutual_info_probs}$, we substitute Eq.
+$\ref{eq:marginalization}$ on the first term (outside of the $\log$) of the
+right-hand side and Eq.~$\ref{eq:cond_prob}$ on the second term (in and outside
+of the $\log$), obtaining
+$$
+I(m; p) = 
+- \sum_p \left[ \sum_m P(m, p) \right]\log P(p)
++ \sum_m \sum_p P(m, p) \log \frac{P(m, p)}{P(m)}.
+$$
+Since the order of the sums do not matter, we can factorize the common terms
+on the left-hand side and use the properties of logarithms to write
+$$
+I(m; p) = \sum_m \sum_p P(m, p) \log \frac{P(m, p)}{P(m)P(p)}.
+$$
+It is now easier to see that we would arrive at the same result if we started
+with the opposite conditional entropy $P(m \mid p)$. These series of
+manipulations where we write either joint or conditional entropies will become
+handy in this thesis as we explore biophysical models of how to compute gene
+expression input-output functions. [@Fig:ch1_fig11](C) shows a schematic
+representation of the relationship of all the entropy-based quantities that we
+explored in this chapter. Although it is impossible to cover an entire field in
+a short introduction, I hope this intuitive explanation will suffice to
+understand the rest of the thesis.
