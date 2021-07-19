@@ -100,14 +100,14 @@ were introduced.
 ### Variable Repressor Copy Number ($\boldsymbol{R}$) with Multiple Specific Binding Sites ($\boldsymbol{N_S > 1}$) {#sec:ch4_sec04.2}
 
 In the main text, we consider the induction profiles of strains with varying $R$
-but a single, specific binding site $N_S = 1$ (see Fig. 2.5). Here we predict
-the induction profiles for similar strains in which $R$ is varied, but $N_S >
-1$, as shown in [@Fig:ch4_fig03]. The top row shows induction profiles in which
-$N_S = 10$ and the bottom row shows profiles in which $N_S = 100$, assuming
-three different choices for the specific operator binding sites given by the O1,
-O2, and O3 operators. These values of $N_S$ were chosen to mimic the common
-scenario in which a promoter construct is placed on either a low or high copy
-number plasmid. A few features stand out in these profiles. First, as the
+but a single, specific binding site $N_S = 1$ (see [@Fig:ch2_fig05]). Here we
+predict the induction profiles for similar strains in which $R$ is varied, but
+$N_S > 1$, as shown in [@Fig:ch4_fig03]. The top row shows induction profiles in
+which $N_S = 10$ and the bottom row shows profiles in which $N_S = 100$,
+assuming three different choices for the specific operator binding sites given
+by the O1, O2, and O3 operators. These values of $N_S$ were chosen to mimic the
+common scenario in which a promoter construct is placed on either a low or high
+copy number plasmid. A few features stand out in these profiles. First, as the
 magnitude of $N_S$ surpasses the number of repressors $R$, the leakiness begins
 to increase significantly since there are no longer enough repressors to
 regulate all copies of the promoter of interest. Second, in the cases where
@@ -180,10 +180,10 @@ competitor sites, a single specific site, and fixed $\boldsymbol{R}$"}
 
 As discussed in the main body of the paper, our treatment of the MWC model
 allows us to predict key properties of induction responses. Here, we consider
-the leakiness, saturation, and dynamic range (see Fig 2.1) by numerically
-solving Eq. $\ref{eq:ch4_eq16}$ in the absence of inducer, $c=0$, and in the
-presence of saturating inducer $c \to \infty$. Using Eq. $\ref{eq:ch4_eq15}$,
-the former case is given by
+the leakiness, saturation, and dynamic range (see [@Fig:ch2_fig01]) by
+numerically solving Eq. $\ref{eq:ch4_eq16}$ in the absence of inducer, $c=0$,
+and in the presence of saturating inducer $c \to \infty$. Using Eq.
+$\ref{eq:ch4_eq15}$, the former case is given by
 $$
 R_{\text{tot}} \frac{1}{1 + e^{-\beta \Delta \varepsilon_{AI}}} =
 N_S \frac{\lambda_r e^{-\beta \Delta \varepsilon_{RA}}}
