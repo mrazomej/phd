@@ -149,25 +149,25 @@ general approach can be used to describe a variety of other motifs such as
 activation, multiple repressor binding sites, and combinations of activator and
 repressor binding sites [@Bintu2005; @Brewster2014; @Weinert2014].
 
-The formula presented in Eq. $\ref{eq:fold_change_full}$ enables us to make precise
-quantitative statements about induction profiles. Motivated by the broad range
-of predictions implied by Eq. $\ref{eq:fold_change_full}$, we designed a series of
-experiments using the *lac* system in *E. coli* to tune the control parameters
-for a simple repression genetic circuit. As discussed in [@Fig:ch2_fig01](C),
-previous studies from our lab have provided well-characterized values for many
-of the parameters in our experimental system, leaving only the values of the the
-MWC parameters ($K_A$, $K_I$, and $\Delta \varepsilon_{AI}$) to be determined.
-We note that while previous studies have obtained values for $K_A$, $K_I$, and
-$L=e^{-\beta \Delta \varepsilon_{AI}}$ [@OGorman1980; @Daber2011a], they were
-either based upon biochemical experiments or *in vivo* conditions involving
-poorly characterized transcription factor copy numbers and gene copy numbers.
-These differences relative to our experimental conditions and fitting techniques
-led us to believe that it was important to perform our own analysis of these
-parameters. After inferring these three MWC parameters (see , Section "" for
-details regarding the inference of $\Delta \varepsilon_{AI}$, which was fitted
-separately from $K_A$ and $K_I$), we were able to predict the input/output
-response of the system under a broad range of experimental conditions. For
-example, this framework can predict the response of the system at different
-repressor copy numbers $R$, repressor-operator affinities
-$\Delta\varepsilon_{RA}$, inducer concentrations $c$, and gene copy numbers (see
-Appendix XXX.
+The formula presented in Eq. $\ref{eq:fold_change_full}$ enables us to make
+precise quantitative statements about induction profiles. Motivated by the broad
+range of predictions implied by Eq. $\ref{eq:fold_change_full}$, we designed a
+series of experiments using the *lac* system in *E. coli* to tune the control
+parameters for a simple repression genetic circuit. As discussed in
+[@Fig:ch2_fig01](C), previous studies from our lab have provided
+well-characterized values for many of the parameters in our experimental system,
+leaving only the values of the the MWC parameters ($K_A$, $K_I$, and $\Delta
+\varepsilon_{AI}$) to be determined. We note that while previous studies have
+obtained values for $K_A$, $K_I$, and $L=e^{-\beta \Delta \varepsilon_{AI}}$
+[@OGorman1980; @Daber2011a], they were either based upon biochemical experiments
+or *in vivo* conditions involving poorly characterized transcription factor copy
+numbers and gene copy numbers. These differences relative to our experimental
+conditions and fitting techniques led us to believe that it was important to
+perform our own analysis of these parameters. After inferring these three MWC
+parameters (see Chapter 4 for details regarding the inference of $\Delta
+\varepsilon_{AI}$, which was fitted separately from $K_A$ and $K_I$), we were
+able to predict the input/output response of the system under a broad range of
+experimental conditions. For example, this framework can predict the response of
+the system at different repressor copy numbers $R$, repressor-operator
+affinities $\Delta\varepsilon_{RA}$, inducer concentrations $c$, and gene copy
+numbers (see Chapter 4).

@@ -28,52 +28,51 @@ difference $\Delta\varepsilon_{AI}$ between the repressor's active and inactive
 states. As explained in that Section, this additional data set is critical
 because multiple degenerate sets of parameters can characterize an induction
 curve equally well, with the $\Delta\varepsilon_{AI}$ parameter compensated by
-the inducer dissociation constants $K_A$ and $K_I$ (see XXX). After fixing
+the inducer dissociation constants $K_A$ and $K_I$ (see Chapter 4). After fixing
 $\Delta\varepsilon_{AI}$ as described in the [Materials \&
 Methods](#ch2_methods), we can use data from single-site simple repression
 systems to determine the values of $K_A$ and $K_I$.
 
 We determine the values of $K_A$ and $K_I$ by fitting to a single induction
-profile using Bayesian inferential methods [@Sivia2006]. We then use
-Eq. $\ref{eq:fold_change_full}$ to predict gene expression for any concentration of
+profile using Bayesian inferential methods [@Sivia2006]. We then use Eq.
+$\ref{eq:fold_change_full}$ to predict gene expression for any concentration of
 inducer, repressor copy number, and DNA binding energy and compare these
 predictions against experimental measurements. To obtain induction profiles for
 a set of strains with varying repressor copy numbers, we used modified *lacI*
-ribosomal binding sites from @Garcia2011c to generate strains with mean repressor
-copy number per cell of $R = 22 \pm 4$, $60 \pm 20$, $124 \pm 30$, $260 \pm 40$,
-$1220 \pm 160$, and $1740 \pm 340$, where the error denotes standard deviation
-of at least three replicates as measured by @Garcia2011c. We note that $R$ refers
-to the number of repressor dimers in the cell, which is twice the number of
-repressor tetramers reported by @Garcia2011c; since both heads of the repressor
-are assumed to always be either specifically or non-specifically bound to the
-genome, the two repressor dimers in each LacI tetramer can be considered
-independently. Gene expression was measured using a Yellow Fluorescent Protein
-(YFP) gene, driven by a *lacUV5* promoter. Each of the six repressor copy number
-variants were paired with the native O1, O2, or O3 *lac* operator [@Oehler1994]
-placed at the YFP transcription start site, thereby generating eighteen unique
-strains. The repressor-operator binding energies (O1 $\Delta\varepsilon_{RA} =
--15.3 \pm 0.2~k_BT$, O2 $\Delta\varepsilon_{RA} = -13.9~k_BT \pm 0.2$, and O3
-$\Delta\varepsilon_{RA} = -9.7 \pm 0.1~k_BT$) were previously inferred by
-measuring the fold-change of the *lac* system at different repressor copy
-numbers, where the error arises from model fitting [@Garcia2011c]. Additionally,
-we were able to obtain the value $\Delta \varepsilon_{AI} = 4.5\; k_BT$ by
-fitting to previous data as discussed in [Materials \& Methods](#ch2_methods),
-Section XXX. We measure fold-change over a range of known IPTG concentrations
-$c$, using $n=2$ inducer binding sites per LacI dimer and approximating the
-number of non-specific binding sites as the length in base-pairs of the *E.
-coli* genome, $N_{NS} = 4.6 \times 10^6$.
+ribosomal binding sites from @Garcia2011c to generate strains with mean
+repressor copy number per cell of $R = 22 \pm 4$, $60 \pm 20$, $124 \pm 30$,
+$260 \pm 40$, $1220 \pm 160$, and $1740 \pm 340$, where the error denotes
+standard deviation of at least three replicates as measured by @Garcia2011c. We
+note that $R$ refers to the number of repressor dimers in the cell, which is
+twice the number of repressor tetramers reported by @Garcia2011c; since both
+heads of the repressor are assumed to always be either specifically or
+non-specifically bound to the genome, the two repressor dimers in each LacI
+tetramer can be considered independently. Gene expression was measured using a
+Yellow Fluorescent Protein (YFP) gene, driven by a *lacUV5* promoter. Each of
+the six repressor copy number variants were paired with the native O1, O2, or O3
+*lac* operator [@Oehler1994] placed at the YFP transcription start site, thereby
+generating eighteen unique strains. The repressor-operator binding energies (O1
+$\Delta\varepsilon_{RA} = -15.3 \pm 0.2~k_BT$, O2 $\Delta\varepsilon_{RA} =
+-13.9~k_BT \pm 0.2$, and O3 $\Delta\varepsilon_{RA} = -9.7 \pm 0.1~k_BT$) were
+previously inferred by measuring the fold-change of the *lac* system at
+different repressor copy numbers, where the error arises from model fitting
+[@Garcia2011c]. Additionally, we were able to obtain the value $\Delta
+\varepsilon_{AI} = 4.5\; k_BT$ by fitting to previous data as discussed in
+Materials \& Methods. We measure fold-change over a range of known IPTG
+concentrations $c$, using $n=2$ inducer binding sites per LacI dimer and
+approximating the number of non-specific binding sites as the length in
+base-pairs of the *E. coli* genome, $N_{NS} = 4.6 \times 10^6$.
 
 Our experimental pipeline for determining fold-change using flow cytometry is
 shown in [@Fig:ch2_fig03]. Briefly, cells were grown to exponential phase, in
 which gene expression reaches steady state [@Scott2010], under concentrations of
 the inducer IPTG ranging between 0 and $5\,\text{mM}$. We measure YFP
 fluorescence using flow cytometry and automatically gate the data to include
-only single-cell measurements (see [Materials \& Methods](#ch2_methods), section
-[flow cytometry](#sec:flow_cytometry)). To validate the use of flow cytometry,
-we also measured the fold-change of a subset of strains using the established
-method of single-cell microscopy (see Appendix XXX). We found that the
-fold-change measurements obtained from microscopy were indistinguishable from
-that of flow-cytometry and yielded values for the inducer binding constants
+only single-cell measurements (see Materials \& Methods). To validate the use of
+flow cytometry, we also measured the fold-change of a subset of strains using
+the established method of single-cell microscopy (see Chapter 4). We found that
+the fold-change measurements obtained from microscopy were indistinguishable
+from that of flow-cytometry and yielded values for the inducer binding constants
 $K_A$ and $K_I$ that were within error.
 
 ![**An experimental pipeline for high-throughput fold-change measurements.**
@@ -94,8 +93,8 @@ The three parameters that we tune experimentally are shown in
 [@Fig:ch2_fig04](A), leaving the three allosteric parameters ($\Delta
 \varepsilon_{AI}$, $K_A$, and $K_I$) to be determined by fitting. We used
 previous LacI fold-change data [@Brewster2014] to infer that
-$\Delta\varepsilon_{AI} = 4.5~k_BT$ (see XXX). Rather than fitting $K_A$ and
-$K_I$ to our entire data set of eighteen unique constructs, we performed
+$\Delta\varepsilon_{AI} = 4.5~k_BT$ (see Chapter 4). Rather than fitting $K_A$
+and $K_I$ to our entire data set of eighteen unique constructs, we performed
 Bayesian parameter estimation on data from a single strain with $R=260$ and an
 O2 operator ($\Delta\varepsilon_{RA}=-13.9~k_BT$ [@Garcia2011c]) shown in
 [@Fig:ch2_fig04](D) (white circles). Using Markov Chain Monte Carlo, we
@@ -107,12 +106,12 @@ percentile of the parameter value distributions (see [@Fig:ch2_fig04](B)).
 Unfortunately, we are not able to make a meaningful value-for-value comparison
 of our parameters to those of earlier studies [@Daber2009; @Daber2011a] because
 of uncertainties in both gene copy number and transcription factor copy numbers
-in these studies, as illustrated by the plots in Appendix XXX. We then predicted
-the fold-change for the remaining seventeen strains with no further fitting (see
+in these studies (see Chapter 4). We then predicted the fold-change for the
+remaining seventeen strains with no further fitting (see
 [@Fig:ch2_fig04](C)-(E)) together with the specific phenotypic properties
 described in and discussed in detail below (see [@Fig:ch2_fig04](F)-(J)). The
 shaded regions in - denote the 95% credible regions. Factors determining the
-width of the credible regions are explored in Appendix XXX.
+width of the credible regions are explored in Chapter 4.
 
 We stress that the entire suite of predictions in is based upon the induction
 profile of a single strain. Our ability to make such a broad range of
@@ -120,11 +119,10 @@ predictions stems from the fact that our parameters of interest --such as the
 repressor copy number and DNA binding energy--appear as distinct physical
 parameters within our model. While the single data set in [@Fig:ch2_fig04](D)
 could also be fit using a Hill function, such an analysis would be unable to
-predict any of the other curves in the figure (see Appendix XXX).
-Phenomenological expressions such as the Hill function can describe data, but
-lack predictive power and are thus unable to build our intuition, help us design
-*de novo* input-output functions, or guide future experiments [@Kuhlman2007;
-@Murphy2007].
+predict any of the other curves in the figure (see Chapter 4). Phenomenological
+expressions such as the Hill function can describe data, but lack predictive
+power and are thus unable to build our intuition, help us design *de novo*
+input-output functions, or guide future experiments [@Kuhlman2007; @Murphy2007].
 
 ![**Predicting induction profiles for different biological control parameters.**
 (A) We can quantitatively tune $R$ via ribosomal binding site (RBS)
@@ -175,7 +173,7 @@ imprecise previous determinations of their $\Delta\varepsilon_{RA}$ and $R$
 values. By performing a global fit where we infer all parameters including the
 repressor copy number $R$ and the binding energy $\Delta\varepsilon_{RA}$, we
 found better agreement for these strains, although a discrepancy in the
-steepness of the response for all O3 strains remains (see XXX). We
+steepness of the response for all O3 strains remains (see Chapter 4). We
 considered a number of hypotheses to explain these discrepancies such as
 including other states (e.g. non-negligible binding of the inactive repressor),
 relaxing the weak promoter approximation, and accounting for variations in gene
@@ -184,19 +182,19 @@ observed discrepancies. As an additional test of our model, we considered
 strains using the synthetic Oid operator which exhibits an especially strong
 binding energy of $\Delta\varepsilon_{RA}=-17~k_B T$ [@Garcia2011c]. The global
 fit agrees well with the Oid microscopy data, though it asserts a stronger Oid
-binding energy of $\Delta\varepsilon_{RA}=-17.7~k_B T$ (see Appendix XXX).
+binding energy of $\Delta\varepsilon_{RA}=-17.7~k_B T$ (see Chapter 4).
 
 To ensure that the agreement between our predictions and data is not an accident
 of the strain we used to perform our fitting, we also inferred $K_A$ and $K_I$
-from each of the other strains. As shown in XXX and [@Fig:ch2_fig05](D), the
-inferred values of $K_A$ and $K_I$ depend minimally upon which strain is chosen,
-indicating that these parameter values are highly robust. We also performed a
-global fit using the data from all eighteen strains in which we fitted for the
-inducer dissociation constants $K_A$ and $K_I$, the repressor copy number $R$,
-and the repressor DNA binding energy $\Delta\varepsilon_{RA}$ (see XXX). The
-resulting parameter values were nearly identical to those fitted from any single
-strain. For the remainder of the text we continue using parameters fitted from
-the strain with $R=260$ repressors and an O2 operator.
+from each of the other strains. As shown in Chapter 4 and [@Fig:ch2_fig05](D),
+the inferred values of $K_A$ and $K_I$ depend minimally upon which strain is
+chosen, indicating that these parameter values are highly robust. We also
+performed a global fit using the data from all eighteen strains in which we
+fitted for the inducer dissociation constants $K_A$ and $K_I$, the repressor
+copy number $R$, and the repressor DNA binding energy $\Delta\varepsilon_{RA}$
+(see Chapter 4). The resulting parameter values were nearly identical to those
+fitted from any single strain. For the remainder of the text we continue using
+parameters fitted from the strain with $R=260$ repressors and an O2 operator.
 
 ![**Comparison of predictions against measured and inferred data.** (A-C) Flow
 cytometry measurements of fold-change over a range of IPTG concentrations for
@@ -269,7 +267,7 @@ $$
 \label{eq:dynamic_range_def}
 $$
 These three properties are shown in [@Fig:ch2_fig04](F-H). We discuss these
-properties in greater detail in XXX. [@Fig:ch2_fig06](A-C) shows that the
+properties in greater detail in Chapter 4. [@Fig:ch2_fig06](A-C) shows that the
 measurements of these three properties, derived from the fold-change data in the
 absence of IPTG and the presence of saturating IPTG, closely match the
 predictions for all three operators.
@@ -312,27 +310,27 @@ h = \left( 2 \frac{d}{d \log c} \left[ \log \left( \frac{ \text{fold-change}(c)
 \label{eq:effective_Hill}
 $$
 [@Fig:ch2_fig04](I),(J) shows how the $[EC_{50}]$ and effective Hill
-coefficient depend on the repressor copy number. In XXX, we discuss
+coefficient depend on the repressor copy number. In Chapter 4, we discuss
 the analytic forms of these two properties as well as their dependence on the
 repressor-DNA binding energy.
 
 [@Fig:ch2_fig06](D) and [@Fig:ch2_fig06](E) shows the estimated values of the
 $[EC_{50}]$ and the effective Hill coefficient overlaid on the theoretical
-predictions. Both properties were obtained by fitting Eq. $\ref{eq:fold_change_full}$ to
-each individual titration curve and computing the $[EC_{50}]$ and effective Hill
-coefficient using Eq. $\ref{eq:ec50}$ and Eq. $\ref{eq:effective_Hill}$, respectively. We find
-that the predictions made with the single strain fit closely match those made
-for each of the strains with O1 and O2 operators, but the predictions for the O3
-operator are markedly off. In XXX we show that the large, asymmetric error bars
-for the O3 $R=22$ strain arise from its nearly flat response, where the lack of
-dynamic range makes it impossible to determine the value of the inducer
-dissociation constants $K_A$ and $K_I$, as can be seen in the uncertainty of
-both the $[EC_{50}]$ and effective Hill coefficient. Discrepancies between
-theory and data for O3 are improved, but not fully resolved, by performing a
-global fit or fitting the MWC model individually to each curve (see XXX). It
-remains an open question how to account for discrepancies in O3, in particular
-regarding the significant mismatch between the predicted and fitted effective
-Hill coefficients.
+predictions. Both properties were obtained by fitting Eq.
+$\ref{eq:fold_change_full}$ to each individual titration curve and computing the
+$[EC_{50}]$ and effective Hill coefficient using Eq. $\ref{eq:ec50}$ and Eq.
+$\ref{eq:effective_Hill}$, respectively. We find that the predictions made with
+the single strain fit closely match those made for each of the strains with O1
+and O2 operators, but the predictions for the O3 operator are markedly off. In
+Chapter 4 we show that the large, asymmetric error bars for the O3 $R=22$ strain arise
+from its nearly flat response, where the lack of dynamic range makes it
+impossible to determine the value of the inducer dissociation constants $K_A$
+and $K_I$, as can be seen in the uncertainty of both the $[EC_{50}]$ and
+effective Hill coefficient. Discrepancies between theory and data for O3 are
+improved, but not fully resolved, by performing a global fit or fitting the MWC
+model individually to each curve (see Chapter 4). It remains an open question
+how to account for discrepancies in O3, in particular regarding the significant
+mismatch between the predicted and fitted effective Hill coefficients.
 
 ### Data Collapse of Induction Profiles
 
