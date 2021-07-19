@@ -1,4 +1,4 @@
-## Induction of Simple Repression with Multiple Promoters or Competitor Sites 
+## Induction of Simple Repression with Multiple Promoters or Competitor Sites {#sec:ch4_sec04}
 
 We made the choice to perform all of our experiments using strains in which a
 single copy of our simple repression construct had been integrated into the

@@ -1,4 +1,4 @@
-## Single-Cell Microscopy 
+## Single-Cell Microscopy {#sec:ch4_sec06}
 
 In this section, we detail the procedures and results from single-cell
 microscopy verification of our flow cytometry measurements. Our previous

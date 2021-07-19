@@ -1,4 +1,4 @@
-## Comparison of Parameter Estimation and Fold-Change Predictions across Strains
+## Comparison of Parameter Estimation and Fold-Change Predictions across Strains {#sec:ch4_sec11}
 
 The inferred parameter values for $K_A$ and $K_I$ in the main text were
 determined by fitting to induction fold-change measurements from a single strain

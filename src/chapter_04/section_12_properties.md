@@ -1,4 +1,4 @@
-## Properties of Induction Titration Curves
+## Properties of Induction Titration Curves {#sec:ch4_sec12}
 
 In this section, we expand on the phenotypic properties of the induction
 response that were explored in the main text (see ). We begin by expanding on

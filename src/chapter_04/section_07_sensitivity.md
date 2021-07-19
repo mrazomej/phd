@@ -1,4 +1,4 @@
-## Fold-Change Sensitivity Analysis 
+## Fold-Change Sensitivity Analysis {#sec:ch4_sec07}
 
 In we found that the width of the credible regions varied widely depending on
 the repressor copy number $R$ and repressor operator binding energy $\Delta

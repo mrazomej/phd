@@ -1,4 +1,4 @@
-## Global Fit of All Parameters
+## Global Fit of All Parameters {#sec:ch4_sec09}
 
 In the main text, we used the repressor copy numbers $R$ and repressor-DNA
 binding energies $\Delta\varepsilon_{RA}$ as reported by @Garcia2011c. However,

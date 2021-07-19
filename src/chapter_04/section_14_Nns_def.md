@@ -1,4 +1,4 @@
-## Definition of the non-specific background $N_{NS}$
+## Definition of the non-specific background $N_{NS}$ {#sec:ch4_sec14}
 
 In this section we will explore the definition of the non-specific background
 $N_{NS}$. As raised by an anonymous reviewer the nature of this parameter seems

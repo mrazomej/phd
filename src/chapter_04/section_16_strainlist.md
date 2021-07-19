@@ -1,4 +1,4 @@
-### *E. coli* Primer and Strain List 
+### *E. coli* Primer and Strain List {#sec:ch4_sec16}
 
 Here we provide additional details about the genotypes of the strains used, as
 well as the primer sequences used to generate them. *E. coli* strains were
