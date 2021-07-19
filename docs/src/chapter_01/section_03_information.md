@@ -898,8 +898,8 @@ It is now easier to see that we would arrive at the same result if we started
 with the opposite conditional entropy $P(m \mid p)$. These series of
 manipulations where we write either joint or conditional entropies will become
 handy in this thesis as we explore biophysical models of how to compute gene
-expression input-output functions. [@Fig:ch1_fig11](C) shows a schematic
-representation of the relationship of all the entropy-based quantities that we
-explored in this chapter. Although it is impossible to cover an entire field in
-a short introduction, I hope this intuitive explanation will suffice to
-understand the rest of the thesis.
+expression input-output functions (more on that in Chapter 3).
+[@Fig:ch1_fig11](C) shows a schematic representation of the relationship of all
+the entropy-based quantities that we explored in this chapter. Although it is
+impossible to cover an entire field in a short introduction, I hope this
+intuitive explanation will suffice to understand the rest of the thesis.
