@@ -2,12 +2,12 @@
 
 Having numerically computed the moments of the mRNA and protein distributions as
 cells progress through the cell cycle, we now proceed to make an approximate
-reconstruction of the full distributions given this limited information. As
-hinted in the maximum entropy principle, first proposed by E.T. Jaynes in 1957
-[@Jaynes1957], approximates the entire distribution by maximizing the Shannon
-entropy subject to constraints given by the values of the moments of the
-distribution [@Jaynes1957]. This procedure leads to a probability distribution
-of the form (See for full derivation)
+reconstruction of the full distributions given this limited information. The
+maximum entropy principle, first proposed by E.T. Jaynes in 1957 [@Jaynes1957],
+approximates the entire distribution by maximizing the Shannon entropy subject
+to constraints given by the values of the moments of the distribution
+[@Jaynes1957]. This procedure leads to a probability distribution of the form
+(See for full derivation)
 $$
 P(m, p) = \frac{1}{\mathcal{Z}} \exp
 \left( - \sum_{(x,y)} \lambda_{(x,y)} m^x p^y \right), 
@@ -58,12 +58,12 @@ Predicted protein distributions under different inducer (IPTG) concentrations
 for different combinations of repressor-DNA affinities (columns) and repressor
 copy numbers (rows). The first six moments of the protein distribution used to
 constrain the maximum entropy approximation were computed by integrating as
-cells progressed through the cell cycle as described in . (B) Theory-experiment
-comparison of predicted fold-change empirical cumulative distribution functions
-(ECDF). Each panel shows two example concentrations of inducer (colored curves)
-with their corresponding theoretical predictions (dashed lines). Distributions
-were normalized to the mean expression value of the unregulated strain in order
-to compare theoretical predictions in discrete protein counts with experimental
+cells progressed through the cell cycle. (B) Theory-experiment comparison of
+predicted fold-change empirical cumulative distribution functions (ECDF). Each
+panel shows two example concentrations of inducer (colored curves) with their
+corresponding theoretical predictions (dashed lines). Distributions were
+normalized to the mean expression value of the unregulated strain in order to
+compare theoretical predictions in discrete protein counts with experimental
 fluorescent measurements in arbitrary units. The Python code used to generate
 part (A)
 [(`ch3_fig04A.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/fig04A.py)

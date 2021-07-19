@@ -147,8 +147,8 @@ to inform the parameter values of the model presented in [@Fig:ch3_fig02](A).
 to measure gene expression along with the parameters that can be inferred from
 them.
 
-Section XXX expands on the details of how the inference was performed for each
-of the parameters. Briefly, the promoter activation and inactivation rates
+Chapter 5 expands on the details of how the inference was performed for each of
+the parameters. Briefly, the promoter activation and inactivation rates
 $k^{(p)}_{\text{on}}$ and $k^{(p)}_{\text{off}}$, as well as the transcription
 rate $r_m$ were obtained in units of the mRNA degradation rate $\gamma _m$ by
 fitting a two-state promoter model (no state $R$ from [@Fig:ch3_fig02](A))

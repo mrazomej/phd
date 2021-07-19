@@ -23,7 +23,7 @@ $r_m$ inferred in assume that cells spend a fraction $f$ of the cell cycle with
 one copy of the promoter (mRNA production rate $r_m$) and a fraction $(1-f)$ of
 the cell cycle with two copies of the promoter (mRNA production rate $2 r_m$).
 This inference was performed considering that at each cell state the mRNA level
-immediately reaches the steady state value for the corresponding mRNA production
+immediately reaches the steady-state value for the corresponding mRNA production
 rate. This assumption is justified since the timescale to reach this steady
 state depends only on the degradation rate $\gamma _m$, which for the mRNA is
 much shorter ($\approx 3$ min) than the length of the cell cycle ($\approx$ 60
@@ -33,19 +33,19 @@ molecule mRNA counts of an unregulated (constitutively expressed) promoter.
 
 Given that the protein degradation rate $\gamma _p$ in our model is set by the
 cell division time, we do not expect that the protein count will reach the
-corresponding steady state value for each stage in the cell cycle. In other
+corresponding steady-state value for each stage in the cell cycle. In other
 words, cells do not spend long enough with two copies of the promoter for the
-protein level to reach the steady state value corresponding to a transcription
+protein level to reach the steady-state value corresponding to a transcription
 rate of $2 r_m$. We therefore use the dynamical equations developed in to
 numerically integrate the time trajectory of the moments of the distribution
 with the corresponding parameters for each phase of the cell cycle. (B) shows an
 example corresponding to the mean mRNA level (upper panel) and the mean protein
 level (lower panel) for the case of the unregulated promoter. Given that we
-inferred the promoter rate parameters considering that mRNA reaches steady state
+inferred the promoter rate parameters considering that mRNA reaches steady-state
 in each stage, we see that the numerical integration of the equations is
 consistent with the assumption of having the mRNA reach a stable value in each
 stage (See (B) upper panel). On the other hand, the mean protein level does not
-reach a steady state at either of the cellular stages. Nevertheless it is
+reach a steady-state at either of the cellular stages. Nevertheless it is
 notable that after several cell cycles the trajectory from cycle to cycle
 follows a repetitive pattern (See (B) lower panel). Previously we have
 experimentally observed this repetitive pattern by tracking the expression level
@@ -86,7 +86,7 @@ cycles under a constant environment that we need to account for. It is through
 this averaging over the span of a cell cycle that we turn a periodic process as
 the one shown in [@Fig:ch3_fig03](B) into a stationary process that we can
 compare with experimental data and, as we will see later, use to reconstruct the
-steady state gene expression distribution.
+steady-state gene expression distribution.
 
 [@Fig:ch3_fig03](C) compares zero-parameter fit predictions (lines) with
 experimentally determined quantities (points). The upper row shows the
