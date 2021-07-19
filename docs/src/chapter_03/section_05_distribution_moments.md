@@ -28,9 +28,11 @@ $$
 \sum_{m=0}^\infty \sum_{p=0}^\infty m^x p^y P_S(m, p).
 \label{eq:ch3_eq08}
 $$
-Summing over all possible values for $m$ and $p$ in Eq. $\ref{eq:ch3_eq06}$ results in an
-ODE for any moment of the distribution of the form (See XXX for full derivation) 
-$$\begin{split}
+Summing over all possible values for $m$ and $p$ in Eq. $\ref{eq:ch3_eq06}$
+results in an ODE for any moment of the distribution of the form (See Chapter 5
+for full derivation) 
+$$
+\begin{split}
     \frac{d \mathbf{\langle m^x p^y \rangle }}{dt} &=
     \mathbf{K} \mathbf{\langle m^x p^y \rangle}\\
     &+ \mathbf{R}_m \mathbf{\langle p^y \left[ (m + 1)^x -m^x \right]\rangle }
@@ -43,14 +45,14 @@ $$
 
 Given that all transitions in our stochastic model are first order reactions,
 has no moment-closure problem [@Voliotis2014a]. This means that the dynamical
-equation for a given moment only depends on lower moments (See XXX for full
-proof). This feature of our model implies, for example, that the second moment
-of the protein distribution $\langle p^2 \rangle$ depends only on the first two
-moments of the mRNA distribution $\langle m \rangle$ and $\langle m^2 \rangle$,
-the first protein moment $\langle p \rangle$, and the cross-correlation term
-$\langle mp \rangle$. We can therefore define $\boldsymbol{\mu}^{\mathbf{(x,
-y)}}$ to be a vector containing all moments up to $\mathbf{\langle m^x
-p^y\rangle}$ for all promoter states, 
+equation for a given moment only depends on lower moments (See Chapter 5 for
+full proof). This feature of our model implies, for example, that the second
+moment of the protein distribution $\langle p^2 \rangle$ depends only on the
+first two moments of the mRNA distribution $\langle m \rangle$ and $\langle m^2
+\rangle$, the first protein moment $\langle p \rangle$, and the
+cross-correlation term $\langle mp \rangle$. We can therefore define
+$\boldsymbol{\mu}^{\mathbf{(x, y)}}$ to be a vector containing all moments up to
+$\mathbf{\langle m^x p^y\rangle}$ for all promoter states, 
 $$
 \boldsymbol{\mu}^{\mathbf{(x, y)}} = \left[ \mathbf{\langle m^0 p^0 \rangle},
 \mathbf{\langle m^1 p^0 \rangle},

@@ -1,4 +1,4 @@
-## Measurement of Steady State {#AppendixSteadyState}
+## Measurement of Steady State {#ch4_sec15}
 
 All measurements have been performed with cells in exponential growth phase,
 where we expect an average expression to be maintained across the cell

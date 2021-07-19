@@ -42,7 +42,7 @@ mRNA and protein distributions. Furthermore, our formulation in terms of
 dynamical equations allows us to account for the time-varying nature of the
 moments of the mRNA and protein copy numbers. Specifically, since the protein
 mean lifetime is comparable with the cell cycle length, the protein copy number
-does not reach a steady state over the duration of the cell cycle. Accounting
+does not reach a steady-state over the duration of the cell cycle. Accounting
 for this effect increases the expected cell-to-cell variability when measuring
 non-synchronized cells. We first test these novel predictions by comparing the
 noise in protein copy number (standard deviation / mean) with experimental data.

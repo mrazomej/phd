@@ -1,4 +1,4 @@
-## Sources of variability
+## Sources of variability {#sec:ch4_sec17}
 
 In this section we will explore possible sources of variability that could
 explain some of the discrepancies between our theoretical predictions and the

@@ -1,4 +1,4 @@
-## Alternate Characterizations of Induction 
+## Alternate Characterizations of Induction {#sec:ch4_sec08}
 
 In this section we discuss a different way to describe the induction data,
 namely, through using the conventional Hill approach. We first demonstrate how

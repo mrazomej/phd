@@ -1,4 +1,4 @@
-## Applicability of Theory to the Oid Operator Sequence 
+## Applicability of Theory to the Oid Operator Sequence {#sec:ch4_sec10}
 
 In addition to the native operator sequences (O1, O2, and O3) considered in the
 main text, we were also interested in testing our model predictions against the

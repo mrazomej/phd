@@ -1,4 +1,4 @@
-## Applications to Other Regulatory Architectures
+## Applications to Other Regulatory Architectures {#sec:ch4_sec13}
 
 In this section, we discuss how the theoretical framework presented in this work
 is sufficiently general to include a variety of regulatory architectures outside
