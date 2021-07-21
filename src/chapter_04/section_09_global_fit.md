@@ -3,17 +3,17 @@
 In the main text, we used the repressor copy numbers $R$ and repressor-DNA
 binding energies $\Delta\varepsilon_{RA}$ as reported by @Garcia2011c. However,
 any error in these previous measurements of $R$ and $\Delta\varepsilon_{RA}$
-will necessarily propagate into our own fold-change predictions. In this section
-we take an alternative approach to fitting the physical parameters of the system
-to that used in the main text. First, rather than fitting only a single strain,
-we fit the entire data set in along with microscopy data for the synthetic
-operator Oid (see Appendix XXX). In addition, we also simultaneously fit the
-parameters $R$ and $\Delta\varepsilon_{RA}$ using the prior information given by
-the previous measurements. By using the entire data set and fitting all of the
-parameters, we obtain the best possible characterization of the statistical
-mechanical parameters of the system given our current state of knowledge. As a
-point of reference, we state all of the parameters of the MWC model derived in
-the text in Table XXX.
+will necessarily propagate into our own fold-change predictions. This section
+takes an alternative approach to fitting the system's physical parameters to
+that used in the main text. First, rather than fitting only a single strain, we
+fit the entire data set in [@Fig:ch2_fig05] along with microscopy data for the
+synthetic operator Oid (see [Sec. 4.10](#sec:ch4_sec10)). In addition, we also
+simultaneously fit the parameters $R$ and $\Delta\varepsilon_{RA}$ using the
+prior information given by the previous measurements. By using the entire data
+set and fitting all of the parameters, we obtain the best possible
+characterization of the statistical mechanical parameters of the system, given
+our current state of knowledge. As a point of reference, we state all of the
+parameters of the MWC model derived in the text in [@tbl:ch4_tbl02].
 
 To fit all of the parameters simultaneously, we follow a similar approach to the
 one detailed in the Methods section. Briefly, we perform a Bayesian parameter
@@ -23,11 +23,12 @@ sites used in our work, and the four different binding energies $\Delta
 \varepsilon_{RA}$ characterizing the four distinct operators used to make the
 experimental strains. As in the main text, we fit the logarithms $\tilde{k}_A =
 -\log \frac{K_A}{1\,\text{M}}$ and $\tilde{k}_I = -\log \frac{K_I}{1\,\text{M}}$
-of the dissociation constants which grants better numerical stability.
+of the dissociation constants, which grants better numerical stability.
 
-As in , we assume that deviations of the experimental fold-change from the
-theoretical predictions are normally distributed with mean zero and standard
-deviation $\sigma$. We begin by writing Bayes' theorem,
+As in Eqs. $\ref{eq:ch4_eq28}$ and $\ref{eq:ch4_eq29}$, we assume that
+deviations of the experimental fold-change from the theoretical predictions are
+normally distributed with mean zero and standard deviation $\sigma$. We begin by
+writing Bayes' theorem,
 $$
 P(\tilde{k}_A, \tilde{k}_I, \mathbf{R},
 \mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma \mid D) =
@@ -55,8 +56,8 @@ contains all the prior information on the values of these parameters. Lastly,
 $P(D)$ serves as a normalization constant and hence can be
 ignored.
 
-Given $n$ independent measurements of the fold-change, the first term in
-can be written as 
+Given $n$ independent measurements of the fold-change, the first term in Eq.
+$\ref{eq:ch4_eq30}$ can be written as 
 $$
 P(D \mid \tilde{k}_A, \tilde{k}_I, \mathbf{R},
 \mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma) =
@@ -70,9 +71,9 @@ fold-change and $\text{fc}(\cdot\cdot\cdot)$ is the theoretical prediction. Note
 that the standard deviation $\sigma$ of this distribution is not known and hence
 needs to be included as a parameter to be fit.
 
-The second term in represents the prior information of the parameter
-values. We assume that all parameters are independent of each other, so
-that 
+The second term in $\ref{eq:ch4_eq30}$ represents the prior information of the
+parameter values. We assume that all parameters are independent of each other
+so that 
 $$
 P(\tilde{k}_A, \tilde{k}_I, \mathbf{R},
 \mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma) =
@@ -121,42 +122,42 @@ parameter around the mean value as reported in @Garcia2011c .
 The $\sigma_{R_i}$ and $\sigma_{\varepsilon_j}$ parameters will constrain the
 range of values for $R^{(i)}$ and $\Delta\varepsilon_{RA}^{(j)}$ found from the
 fitting. For example, if for some $i$ the standard deviation $\sigma_{R_i}$ is
-very small, it implies a strong confidence in the previously reported value.
-Mathematically, the exponential in will ensure that the best-fit $R^{(i)}$ lies
-within a few standard deviations of $\bar{R}^{(i)}$. Since we are interested in
-exploring which values could give the best fit, the errors are taken to be wide
-enough to allow the parameter estimation to freely explore parameter space in
-the vicinity of the best estimates. Putting all these terms together, we use
-Markov chain Monte Carlo to sample the posterior distribution $P(\tilde{k}_A,
-\tilde{k}_I, \mathbf{R}, \mathbf{\Delta
-\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma \mid D)$, enabling us
-to determine both the most likely value for each physical parameter as well as
-its associated credible region (see the [GitHub
+very small, it implies strong confidence in the previously reported value.
+Mathematically, the exponential in Eq. $\ref{eq:ch4_eq33}$ will ensure that the
+best-fit $R^{(i)}$ lies within a few standard deviations of $\bar{R}^{(i)}$.
+Since we are interested in exploring which values could give the best fit, the
+errors are taken to be wide enough to allow the parameter estimation to explore
+parameter space in freely the vicinity of the best estimates. Putting all these
+terms together, we use Markov chain Monte Carlo to sample the posterior
+distribution $P(\tilde{k}_A, \tilde{k}_I, \mathbf{R}, \mathbf{\Delta
+\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma \mid D)$, enabling us to
+determine both the most likely value for each physical parameter as well as its
+associated credible region (see the [GitHub
 repository](https://rpgroup-pboc.github.io/mwc_induction/code/notebooks/global_fits.html)
 for the implementation).
 
-shows the result of this global fit. When compared with we can see that fitting
-for the binding energies and the repressor copy numbers improves the agreement
-between the theory and the data. Table XXX summarizes the values of the
-parameters as obtained with this MCMC parameter inference. We note that even
-though we allowed the repressor copy numbers and repressor-DNA binding energies
-to vary, the resulting fit values were very close to the previously reported
-values. The fit values of the repressor copy numbers were all within one
-standard deviation of the previous reported values provided in @Garcia2011c. And
-although some of the repressor-DNA binding energies differed by a few standard
-deviations from the reported values, the differences were always less than
-$1~k_BT$, which represents a small change in the biological scales we are
-considering. The biggest discrepancy between our fit values and the previous
-measurements arose for the synthetic Oid operator, which we discuss in more
-detail in Appendix XXX.
+[@Fig:ch4_fig19] shows the result of this global fit. When compared with
+[@Fig:ch2_fig05], we can see that fitting for the binding energies and the
+repressor copy numbers improve the agreement between the theory and the data.
+Table XXX summarizes the values of the parameters as obtained with this MCMC
+parameter inference. We note that even though we allowed the repressor copy
+numbers and repressor-DNA binding energies to vary, the resulting fit values
+were very close to the previously reported values. The fit values of the
+repressor copy numbers were all within one standard deviation of the previously
+reported values provided in @Garcia2011c. And although some of the repressor-DNA
+binding energies differed by a few standard deviations from the reported values,
+the differences were always less than $1~k_BT$, which represents a small change
+in the biological scales we are considering. The biggest discrepancy between our
+fit values and the previous measurements arose for the synthetic Oid operator,
+which we discuss in more detail [Sec. 4.10](#sec:ch4_sec10).
 
-XXX shows the same key properties as in XXX, but uses the parameters obtained
-from this global fitting approach. We note that even by increasing the number of
-degrees of freedom in our fit, the result does not change substantially, due to
-in general, only minor improvements between the theoretical curves and data. For
-the O3 operator data, again, agreement between the predicted $[EC_{50}]$ and the
-effective Hill coefficient remain poor due the theory being unable to capture
-the steepness of the response curves.
+[@Fig:ch4_fig20] shows the same key properties as in [@Fig:ch2_fig06], but uses
+the parameters obtained from this global fitting approach. We note that even by
+increasing the number of degrees of freedom in our fit, the result does not
+change substantially due to only minor improvements between the theoretical
+curves and data. For the O3 operator data, again, the agreement between the
+predicted $[EC_{50}]$ and the effective Hill coefficient remains poor due to the
+theory being unable to capture the steepness of the response curves.
 
 | **Parameter**                                    | **Description**                                                                                              |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
@@ -180,30 +181,31 @@ Table: **Key model parameters for induction of an allosteric repressor.** {#tbl:
 energies.** Theoretical predictions resulting from simultaneously fitting the
 dissociation constants $K_A$ and $K_I$, the six repressor copy numbers $R$, and
 the four repressor-DNA binding energies $\Delta\varepsilon_{RA}$ using the
-entire data set from XXX as well as the microscopy data for the Oid operator.
-Error bars of experimental data show the standard error of the mean (eight or
-more replicates) and shaded regions denote the 95\% credible region. Where error
-bars are not visible, they are smaller than the point itself. For the Oid
-operator, all of the data points are shown since a smaller number of replicates
-were taken. The shaded regions are significantly smaller than in XXX because
-this fit was based on all data points, and hence the fit parameters are much
-more tightly constrained. The dashed lines at 0 IPTG indicates a linear scale,
-whereas solid lines represent a log scale.](ch4_fig19){#fig:ch4_fig19
-short-caption="Global fit of dissociation constants, repressor copy numbers and
-binding energies"}
+entire data set from [@Fig:ch2_fig05] as well as the microscopy data for the Oid
+operator. Error bars of experimental data show the standard error of the mean
+(eight or more replicates), and shaded regions denote the 95\% credible region.
+Where error bars are not visible, they are smaller than the point itself. All of
+the data points are shown for the Oid operator since a smaller number of
+replicates were taken. The shaded regions are significantly smaller than in
+[@Fig:ch2_fig05] because this fit was based on all data points, and hence the
+fit parameters are much more tightly constrained. The dashed lines at 0 IPTG
+indicate a linear scale, whereas solid lines represent a log
+scale.](ch4_fig19){#fig:ch4_fig19 short-caption="Global fit of dissociation
+constants, repressor copy numbers and binding energies"}
 
 ![**Key properties of induction profiles as predicted with a global fit using
 all available data.** Data for the (A) leakiness, (B) saturation, and (C)
-dynamic range are obtained from fold-change measurements in XXX in the absence
-and presence of IPTG. All prediction curves were generated using the parameters
-listed in \ref{tab_global_fit}. Both the (D) $[EC_{50}]$ and (E) effective Hill
-coefficient are inferred by individually fitting all parameters--$K_A,\, K_I,\,
-R,\, \Delta\varepsilon_{RA}$--to each operator-repressor pairing in XXX(A)-(C)
-separately to Eq. $\ref{eq:fold_change_full}$ in order to smoothly interpolate between
-the data points. Note that where error bars are not visible, this indicates that
-the error bars are smaller than the point itself.](ch4_fig20){#fig:ch4_fig20
-short-caption="Key properties of induction profiles as predicted with a global
-fit using all available data"}
+dynamic range are obtained from fold-change measurements in [@Fig:ch2_fig05] in
+the absence and presence of IPTG. All prediction curves were generated using the
+parameters listed in [@tbl:ch4_tbl03]. Both the (D) $[EC_{50}]$ and (E)
+effective Hill coefficient are inferred by individually fitting all
+parameters--$K_A,\, K_I,\, R,\, \Delta\varepsilon_{RA}$--to each
+operator-repressor pairing in [@Fig:ch2_fig04](A)-(C) separately to Eq.
+$\ref{eq:fold_change_full}$ to smoothly interpolate between the data points.
+Note that where error bars are not visible indicates that the error bars are
+smaller than the point itself.](ch4_fig20){#fig:ch4_fig20 short-caption="Key
+properties of induction profiles as predicted with a global fit using all
+available data"}
 
 |                              | **Reported Values [@Garcia2011c]** | **Global Fit**                      |
 | ---------------------------- | ---------------------------------- | ----------------------------------- |
