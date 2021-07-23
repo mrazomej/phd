@@ -98,7 +98,7 @@ change the predicted response profiles. (B) In the case of inducible activation,
 binding of an effector molecule to an activator transcription factor increases
 the fold-change in gene expression. Note that for activation, the fold-change is
 greater than 1. The left and center panels show how changing the activator copy
-number $A$, and activator-DNA binding energy $\Delta\varepsilon_{AA}$ alter the
+number $A$ and activator-DNA binding energy $\Delta\varepsilon_{AA}$ alter the
 response, respectively. The right panel shows how varying the
 polymerase-activator interaction energy $\varepsilon_{AP}$ alters the
 fold-change. Relatively small perturbations to this energetic parameter
