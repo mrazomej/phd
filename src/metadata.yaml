@@ -2,7 +2,7 @@
 title: Physical Biology of Cellular Information Processing
 author: Manuel Razo-Mejia
 copyyear: 2021
-defense: June 1, 2021
+defense: August 17, 2021
 orcid: 0000-0002-9510-0527
 degree: 
     Doctor of Philosophy in  
@@ -15,7 +15,7 @@ rights_statement: |
     \href{http://github.com/mrazomej/phd}{http://github.com/mrazomej/phd} (DOI: 10.5281/zenodo.3815061).
     All data used in figure generation are available via the CaltechDATA
     research data repository via \href{http://dx.doi.org/10.22002/D1.1426}{DOI:10.22002/D1.1426} A digital version of this thesis can be accessed via
-    \href{http://gchure.github.io/phd}{http://gchure.github.io/phd}
+    \href{http://mrazomej.github.io/phd}{http://mrazomej.github.io/phd}
 logo: true
 bibliography: references.bib
 csl: styles/cell.csl
