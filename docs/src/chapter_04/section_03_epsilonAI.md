@@ -218,7 +218,7 @@ shows experimental measurements of fold-change for two O1 promoters with $N=64$
 and $N=52$ copy numbers and one Oid promoter with $N=10$ from @Brewster2014. By
 fitting these data to Eq. $\ref{eq:ch4_eq05}$, we extracted the parameter value
 $\Delta\varepsilon_{AI} = 4.5~k_B T$. Substituting this value into Eq.
-$\ref{ch4_eq03}$ shows that 99% of the repressors are in the active state in the
+$\ref{eq:ch4_eq03}$ shows that 99% of the repressors are in the active state in the
 absence of inducer and $\Delta\tilde{\varepsilon}_{RA} \approx
 \Delta\varepsilon_{RA}$, so that all of the previous energies and calculations
 made by @Garcia2011c [@Brewster2014] were accurate.

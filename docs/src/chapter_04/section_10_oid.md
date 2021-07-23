@@ -10,25 +10,23 @@ associated with this YFP construct was expected to be near the sensitivity limit
 for our flow cytometer, due to the especially strong binding energy of Oid
 ($\Delta \varepsilon_{RA}=-17.0 ~k_BT$) [@Garcia2011b]. Accordingly,
 fluorescence data for Oid were obtained using microscopy, which is more
-sensitive than flow cytometry. Appendix
-[\[AppendixMicroscopy\]](#AppendixMicroscopy){reference-type="ref"
-reference="AppendixMicroscopy"} gives a detailed explanation of how microscopy
-measurements were used to obtain induction curves.
+sensitive than flow cytometry. [Sec 4.6](#sec:ch4_sec06) gives a detailed
+explanation of how microscopy measurements were used to obtain induction curves.
 
 We follow the approach of the main text and make fold-change predictions based
 on the parameter estimates from our strain with $R=260$ and an O2 operator.
-These predictions are shown in , where we also plot data taken in triplicate for
-strains containing $R= 22$, 60, and 124, obtained by single-cell microscopy. We
-find that the data are systematically below the theoretical predictions. We also
-considered our global fitting approach (see Appendix
-[\[appendix_global_fit\]](#appendix_global_fit){reference-type="ref"
-reference="appendix_global_fit"}) to see whether we might find better agreement
-with the observed data. Interestingly, we findthat the majority of the
-parameters remain largely unchanged, but our estimate for the Oid binding energy
+These predictions are shown in [@Fig:ch4_fig21](A), where we also plot data
+taken in triplicate for strains containing $R= $22, 60, and 124, obtained by
+single-cell microscopy. We find that the data are systematically below the
+theoretical predictions. We also considered our global fitting approach (see
+[Sec. 4.9](#sec:ch4_sec09)) to see whether we might find better agreement with
+the observed data. Interestingly, we find that the majority of the parameters
+remain essentially unchanged, but our estimate for the Oid binding energy
 $\Delta \varepsilon_{RA}$ is shifted to $-17.7~k_BT$ instead of the value
-$-17.0~k_BT$ found by @Garcia2011c. In we again plot the Oid fold-change data
-but with theoretical predictions using the new estimate for the Oid binding
-energy from our global fit and find substantially better agreement.
+$-17.0~k_BT$ found by @Garcia2011c. In [@Fig:ch4_fig21](B), we again plot the
+Oid fold-change data but theoretical predictions using the new estimate for
+the Oid binding energy from our global fit and finding substantially better
+agreement.
 
 ![**Predictions of fold-change for strains with an Oid binding sequence versus
 experimental measurements with different repressor copy numbers.** Experimental
@@ -37,11 +35,9 @@ to the O2 strain with $R=260$. Here we use the previously measured binding
 energy $\Delta\varepsilon_{RA}=-17.0~k_BT$ [@Garcia2011c]. The same experimental
 data is plotted against the best-fit parameters using the complete O1, O2, O3,
 and Oid data sets to infer $K_A$, $K_I$, repressor copy numbers, and the binding
-energies of all operators (see Appendix
-[\[appendix_global_fit\]](#appendix_global_fit){reference-type="ref"
-reference="appendix_global_fit"}). Here the major difference in the inferred
-parameters is a shift in the binding energy for Oid from
-$\Delta\varepsilon_{RA}=-17.0~k_BT$ to $\Delta\varepsilon_{RA}=-17.7~k_BT$,
+energies of all operators (see [Sec. 4.9](#sec:ch4_sec09)). Here the major
+difference in the inferred parameters is a shift in the binding energy for Oid
+from $\Delta\varepsilon_{RA}=-17.0~k_BT$ to $\Delta\varepsilon_{RA}=-17.7~k_BT$,
 which now shows agreement between the theoretical predictions and experimental
 data. Shaded regions from the theoretical curves denote the 95% credible region.
 These are narrower in Panel because the inference of parameters was performed
@@ -70,9 +66,9 @@ available data from our work. Fold-change measurements from our experiments
 (outlined circles) @Garcia2011c (solid circles), and @Brewster2014 (diamonds)
 show that the small shifts in binding energy that we infer are still in
 agreement with prior data. Note that only a single flow cytometry data point is
-shown for Oid from this study, since the $R=60$ and $R=124$ curves from had
-extremely low fold-change in the absence of inducer ($c=0$) so as to be
-indistinguishable from autofluorescence, and in fact their fold-change values in
+shown for Oid from this study, since the $R=60$ and $R=124$ curves from
+[@Fig:ch4_fig21] had extremely low fold-change in the absence of inducer ($c=0$)
+to be indistinguishable from autofluorescence, and their fold-change values in
 this limit were negative and hence do not appear on this
 plot.](ch4_fig22){#fig:ch4_fig22 short-caption="Comparison of fold-change
 predictions based on binding energies from Garcia and Phillips and those

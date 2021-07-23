@@ -454,7 +454,7 @@ where the probability of sampling a cell with one promoter $\phi$ is given by
 $$
 \phi = \int_0^f P(a) da,
 $$
-where $P(a)$ is given by Eq. $\ref{eq:eq:cell_cycle_dist}$. What this equation
+where $P(a)$ is given by Eq. $\ref{eq:cell_cycle_dist}$. What this equation
 computes is the probability of sampling a cell during a stage of the cell cycle
 $< f$ where the reporter gene hasn't been replicated yet. [@Fig:ch5_fig05] shows
 the distribution of both groups. As expected, larger cells have a higher mRNA
