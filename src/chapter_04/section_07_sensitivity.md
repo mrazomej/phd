@@ -97,7 +97,7 @@ curves will be roughly 1/1000 the width of the O1 curves.
 the dissociation constants.** (A) The difference $\Delta
 \text{fold-change}_{K_A}$ in fold change when the dissociation constant $K_A$ is
 slightly offset from its best-fit value $K_A=139^{+29}_{-22} \times 10^{-6} \,
-\text{M}$, as given by Eq. $\ref{eq:ch3_eq23}$. Fold-change is computed in the
+\text{M}$, as given by Eq. $\ref{eq:ch4_eq23}$. Fold-change is computed in the
 limit of saturating inducer concentration ($c \to \infty$, see Eq. 2.7) where
 the credible regions in [@Fig:ch2_fig04] are the widest. The O3 strain
 ($\Delta\varepsilon_{RA} = -9.7~k_B T$) is about 1/1000 as sensitive as the O1

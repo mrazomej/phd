@@ -66,7 +66,7 @@ where $N_C$ is the number of competitor sites in the cell and $\Delta
 relative to its non-specific binding energy to the rest of the genome.
 
 To account for the induction of the repressor, we replace the total number of
-repressors $R_{\text{tot}}$ in Eq. $\ref{ch4_eq11}$ by the number of active
+repressors $R_{\text{tot}}$ in Eq. $\ref{eq:ch4_eq11}$ by the number of active
 repressors in the cell, $p_A(c) R_{\text{tot}}$. Here, $p_A$ denotes the
 probability that the repressor is in the active state (Eq. $\ref{ch3_eq13}$),
 $$

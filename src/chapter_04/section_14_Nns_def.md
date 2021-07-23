@@ -76,7 +76,7 @@ k_BT \ln \left( \frac{N_{NS}}{\alpha N_{NS}} \right)\\
 \label{eq:ch4_eq46}
 $$
 
-Eq. $\ref{eq:ch4_eq:46}$ implies that we can redefine $N_{NS}$ to be any value
+Eq. $\ref{eq:ch4_eq46}$ implies that we can redefine $N_{NS}$ to be any value
 as long as $\Delta\varepsilon_{RA}$ compensates to maintain the value of $\Delta
 E$. This statement holds true whether we are considering a single promoter or
 multiple promoters. The same cannot be said about the $\Delta\varepsilon_{AI}$
@@ -174,6 +174,6 @@ vary from 7 bp to 38 bp in *E. coli* on RegulonDB [@Gama-Castro2016]), we find
 that about 2.3 kbp or about half of the genome will be occupied. In the most
 extreme case, we could assume that this fraction is inaccessible, which would
 reduce $N_NS$ by a factor of about $2$. Applying this to Eq.
-$\ref{eq:ch4_eq:46}$, we see that this has a negligible effect on the actual
+$\ref{eq:ch4_eq46}$, we see that this has a negligible effect on the actual
 binding energy that we would infer and only corresponds to a change in energy
 $\varepsilon_{RA}$ by about 0.7 $k_B T$.

@@ -94,8 +94,8 @@ predictive power. More specifically, we will use the thermodynamic model in
 [@Fig:ch2_fig02](A) but substitute the statistical model in  [@Fig:ch2_fig02](B)
 with the phenomenological Hill function (Eq. $\ref{eq:ch4_eq27}$).
 
-Following Eqs. $\ref{eq:ch2_eq01}$, $\ref{eq:ch2_eq02}$, $\ref{eq:ch2_eq03}$ and
-fold-change is given by
+Following Eqs. $\ref{eq:p_bound_definition}$, $\ref{eq:fold_change_definition}$,
+$\ref{eq:fold_change_approx}$ and fold-change is given by
 $$
 \text{fold-change} = \left( 1 + p_A(c) \frac{R}{N_{NS}}e^{-\beta
 \Delta\varepsilon_{RA}} \right)^{-1}

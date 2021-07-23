@@ -82,7 +82,7 @@ necessarily be greater than one. An interesting feature of these predictions is
 the observation that even small changes in the interaction energy ($< 0.5~k_BT$)
 can result in a dramatic increase in fold-change.
 
-As in the case of induction, the Eq. $\ref{eq:activation}$ is straightforward to
+As in the case of induction, the Eq. $\ref{eq:ch4_eq40}$ is straightforward to
 generalize. For example, the relative values of $K_I$ and $K_A$ can be switched
 such that $K_I < K_A$ in which the secondary molecule drives the activator to
 assume the inactive state represents induction of an activator. Thus, while
