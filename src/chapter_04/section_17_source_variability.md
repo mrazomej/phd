@@ -1,21 +1,21 @@
 ## Sources of variability {#sec:ch4_sec17}
 
-In this section we will explore possible sources of variability that could
-explain some of the discrepancies between our theoretical predictions and the
-actual data. This section appeared as an intellectual exercise after our first
+This section will explore possible sources of variability that could explain
+some of the discrepancies between our theoretical predictions and the actual
+data. This section appeared as an intellectual exercise after our first
 reviewing process. We thank the anonymous reviewer for bringing these points to
-our attention as we keep on exploring the extent to which our general
+our attention, as we keep on exploring the extent to which our general
 theoretical framework can describe the data in terms of a small set of
 parameters.
 
 ### Multiple gene copies
 
-The first source of variability that we will explore is the fact that during the
-cell cycle cells at the growth rate that we perform our experiments will have up
-to two copies of the reporter gene . For this scenario we will explore two
+The first source of variability that we will explore is that cells at the growth
+rate at which we perform our experiments will have up to two copies of the
+reporter gene during the cell cycle. For this scenario, we will explore two
 possibilities:
 1.  The case in which both promoters are independent of each other.
-2.  The case in which the connection between both promoters due to a
+2.  The case in which both promoters connect due to a
     shared transcription factor pool is explicitly accounted for.
 
 #### Independent promoters
@@ -59,14 +59,15 @@ $$
 \label{eq:ch4_eq55}
 $$
 
-From a kinetic model of this transcriptional regulation we know that the mean
+From a kinetic model of this transcriptional regulation, we know that the mean
 expression level for a single unregulated promoter is given by [@Jones2014a]
 $$
 \left\langle m \right\rangle_1(R = 0) = \frac{r}{\gamma},
 \label{eq:ch4_eq56}
 $$
-where $r$ is the mRNA production rate and $\gamma$ is the mRNA degradation rate.
-For a single regulated promoter then the mean mRNA copy number is given by
+where $r$ is the mRNA production rate, and $\gamma$ is the mRNA degradation
+rate. For a single regulated promoter, then the mean mRNA copy number is given
+by
 $$
 \begin{split}
 \left\langle m \right\rangle_1 (R > 0) &= \frac{r}{\gamma} \times 
@@ -98,16 +99,16 @@ $$
 
 #### Dependent promoters
 
-When we relax the promoters independence assumption we can use the grand
+When we relax the promoters' independence assumption, we can use the grand
 canonical ensemble formulation as described in [@Weinert2014]. In this
-description the fold-change equation is given by
+description, the fold-change equation is given by
 $$
 \text{fold-change} = \frac{1}{1 + \lambda_r e^{-\beta\Delta\varepsilon_{RA}}},
 \label{eq:ch4_eq60}
 $$
 where $\lambda_r$ is the fugacity of the repressor. The value of this fugacity
 is obtained by taking into account all of the repressor reservoirs considered in
-the system. In our case there are two repressor reservoirs: repressors bound to
+the system. In our case, there are two repressor reservoirs: repressors bound to
 specific binding sites $\left\langle R_S \right\rangle$ and repressors bound to
 non-specific binding sites $\left\langle R_{NS} \right\rangle$. These two
 reservoirs are connected through the constraint
@@ -117,8 +118,8 @@ $$
 \label{eq:ch4_eq61}
 $$
 where $\left\langle R_{\text{tot}} \right\rangle$ is the repressor copy number
-as determined by an independent method -- quantitative westerns as in
-[@Garcia2011c] or binomial partitioning as in [@Brewster2014] --. As shown in
+as determined by an independent method--quantitative westerns as in
+[@Garcia2011c] or binomial partitioning as in [@Brewster2014]. As shown in
 [@Weinert2014] the repressor reservoir expressions are given by
 $$
 \left\langle R_S \right\rangle= N_{S}
