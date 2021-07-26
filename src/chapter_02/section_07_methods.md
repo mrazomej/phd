@@ -4,51 +4,50 @@
 
 All strains used in these experiments were derived from *E. coli* K12 MG1655
 with the *lac* operon removed, adapted from those created and described in
-@Garcia2011c [@Garcia2011b]. Briefly, the operator variants and YFP reporter gene
-were cloned into a pZS25 background which contains a *lacUV5* promoter that
-drives expression as is shown schematically in . These constructs carried a
-kanamycin resistance gene and were integrated into the *galK* locus of the
-chromosome using $\lambda$ Red recombineering [@Sharan2009]. The *lacI* gene was
-constitutively expressed via a P$_\mathrm{LtetO\hbox{-}1}$ promoter [@Lutz1997],
-with ribosomal binding site mutations made to vary the LacI copy number as
-described in @Salis2009 using site-directed mutagenesis (Quickchange II;
-Stratagene), with further details in @Garcia2011c. These *lacI* constructs
-carried a chloramphenicol resistance gene and were integrated into the *ybcN*
-locus of the chromosome. Final strain construction was achieved by performing
-repeated P1 transduction [@Thomason2007] of the different operator and *lacI*
-constructs to generate each combination used in this work. Integration was
-confirmed by PCR amplification of the replaced chromosomal region and by
-sequencing. Primers and final strain genotypes are listed in Appendix
-[\[AppendixStrainlist\]](#AppendixStrainlist){reference-type="ref"
-reference="AppendixStrainlist"}.
+@Garcia2011c [@Garcia2011b]. Briefly, the operator variants and YFP reporter
+gene were cloned into a pZS25 background which contains a *lacUV5* promoter that
+drives expression, as is shown schematically in [@Fig:ch2_fig02]. These
+constructs carried a kanamycin resistance gene and were integrated into the
+*galK* locus of the chromosome using $\lambda$ Red recombineering [@Sharan2009].
+The *lacI* gene was constitutively expressed via a P$_\mathrm{LtetO\hbox{-}1}$
+promoter [@Lutz1997], with ribosomal binding site mutations made to vary the
+LacI copy number as described in [@Salis2009] using site-directed mutagenesis
+(Quickchange II; Stratagene), with further details in @Garcia2011c. These *lacI*
+constructs carried a chloramphenicol resistance gene and were integrated into
+the *ybcN* locus of the chromosome. Final strain construction was achieved by
+performing repeated P1 transduction [@Thomason2007] of the different operator
+and *lacI* constructs to generate each combination used in this work.
+Integration was confirmed by PCR amplification of the replaced chromosomal
+region and by sequencing. Primers and final strain genotypes are listed in
+Chapter 4.
 
 It is important to note that the rest of the *lac* operon (*lacZYA*) was never
-expressed. The LacY protein is a transmembrane protein which actively transports
+expressed. The LacY protein is a transmembrane protein that actively transports
 lactose as well as IPTG into the cell. As LacY was never produced in our
 strains, we assume that the extracellular and intracellular IPTG concentration
-was approximately equal due to diffusion across the membrane into the cell as is
+was approximately equal due to diffusion across the membrane into the cell, as
 suggested by previous work [@FernandezCastane2012].
 
 To make this theory applicable to transcription factors with any number of DNA
 binding domains, we used a different definition for repressor copy number than
 has been used previously. We define the LacI copy number as the average number
-of repressor dimers per cell whereas in @Garcia2011c, the copy number is defined
-as the average number of repressor tetramers in each cell. To motivate this
-decision, we consider the fact that the LacI repressor molecule exists as a
-tetramer in *E. coli* [@Lewis1996] in which a single DNA binding domain is
-formed from dimerization of LacI proteins, so that wild-type LacI might be
-described as dimer of dimers. Since each dimer is allosterically independent
-(i.e. either dimer can be allosterically active or inactive, independent of the
-configuration of the other dimer) [@Daber2009], a single LacI tetramer can be
-treated as two functional repressors. Therefore, we have simply multiplied the
-number of repressors reported in @Garcia2011c by a factor of two. This factor is
-included as a keyword argument in the numerous Python functions used to perform
-this analysis, as discussed in the code documentation.
+of repressor dimers per cell, whereas in [@Garcia2011c], the copy number is
+defined as the average number of repressor tetramers in each cell. To motivate
+this decision, we consider that the LacI repressor molecule exists as a tetramer
+in *E. coli* [@Lewis1996] in which a single DNA binding domain is formed from
+dimerization of LacI proteins so that wild-type LacI might be described as dimer
+of dimers. Since each dimer is allosterically independent (i.e., either dimer
+can be allosterically active or inactive, independent of the configuration of
+the other dimer) [@Daber2009], a single LacI tetramer can be treated as two
+functional repressors. Therefore, we have multiplied the number of repressors
+reported in @Garcia2011c by a factor of two. This factor is included as a
+keyword argument in the numerous Python functions used to perform this analysis,
+as discussed in the code documentation.
 
-A subset of strains in these experiments were measured using fluorescence
-microscopy for validation of the flow cytometry data and results. To aid in the
+A subset of strains in these experiments was measured using fluorescence
+microscopy to validate the flow cytometry data and results. To aid in the
 high-fidelity segmentation of individual cells, the strains were modified to
-constitutively express an mCherry fluorophore. This reporter was cloned into a
+express an mCherry fluorophore constitutively. This reporter was cloned into a
 pZS4\*1 backbone [@Lutz1997] in which mCherry is driven by the *lacUV5*
 promoter. All microscopy and flow cytometry experiments were performed using
 these strains.
@@ -91,11 +90,11 @@ analyzer was calibrated using MACSQuant Calibration Beads (Cat. No. 130-093-607)
 such that day-to-day experiments would be comparable. All YFP fluorescence
 measurements were collected via $488\,\text{nm}$ laser excitation coupled with a
 525/$50\,\text{nm}$ emission filter. Unless otherwise specified, all
-measurements were taken over the course of two to three hours using automated
-sampling from a 96-well plate kept at approximately $4^\circ \, \hbox{-} \,
-10^\circ$C on a MACS Chill 96 Rack (Cat. No. 130-094-459). Cells were diluted to
-a final concentration of approximately $4\times 10^{4}$ cells per $\mu\text{L}$
-which corresponded to a flow rate of 2,000-6,000 measurements per second, and
+measurements were taken over two to three hours using automated sampling from a
+96-well plate kept at approximately $4^\circ \, \hbox{-} \, 10^\circ$C on a MACS
+Chill 96 Rack (Cat. No. 130-094-459). Cells were diluted to a final
+concentration of approximately $4\times 10^{4}$ cells per $\mu\text{L}$ which
+corresponded to a flow rate of 2,000-6,000 measurements per second, and
 acquisition for each well was halted after 100,000 events were detected. Once
 completed, the data were extracted and immediately processed using the following
 methods.
@@ -104,22 +103,21 @@ methods.
 
 Flow cytometry data will frequently include a number of spurious events or other
 undesirable data points such as cell doublets and debris. The process of
-restricting the collected data set to those data determined to be "real" is
-commonly referred to as gating. These gates are typically drawn manually
-[@Maecker2005] and restrict the data set to those points which display a high
-degree of linear correlation between their forward-scatter (FSC) and
-side-scatter (SSC). The development of unbiased and unsupervised methods of
-drawing these gates is an active area of research [@Lo2008; @Aghaeepour2013].
-For our purposes, we assume that the fluorescence level of the population should
-be log-normally distributed about some mean value. With this assumption in
-place, we developed a method that allows us to restrict the data used to compute
-the mean fluorescence intensity of the population to the smallest
-two-dimensional region of the $\log(\mathrm{FSC})$ vs. $\log(\mathrm{SSC})$
-space in which 40% of the data is found. This was performed by fitting a
-bivariate Gaussian distribution and restricting the data used for calculation to
-those that reside within the 40th percentile. This procedure is described in
-more detail in the supplementary information as well as in a Jupyter notebook
-located in this paper's [Github
+restricting the collected data set to those determined to be "real" is commonly
+referred to as gating. These gates are typically drawn manually [@Maecker2005]
+and restrict the data set to those points which display a high degree of linear
+correlation between their forward-scatter (FSC) and side-scatter (SSC). The
+development of unbiased and unsupervised methods of drawing these gates is an
+active area of research [@Lo2008; @Aghaeepour2013]. For our purposes, we assume
+that the fluorescence level of the population should be log-normally distributed
+about some mean value. With this assumption in place, we developed a method that
+allows us to restrict the data used to compute the mean fluorescence intensity
+of the population to the smallest two-dimensional region of the
+$\log(\mathrm{FSC})$ vs. $\log(\mathrm{SSC})$ space in which 40% of the data is
+found. This was performed by fitting a bivariate Gaussian distribution and
+restricting the data used for the calculation to those that reside within the
+40th percentile. This procedure is described in more detail in the supplementary
+information as well as in a Jupyter notebook located in this paper's [Github
 repository](https://rpgroup-pboc.github.io/mwc_induction/code/notebooks/unsupervised_gating.html).
 
 ### Experimental Determination of Fold-Change
@@ -145,7 +143,7 @@ measured from cells that lack the *lac*-YFP construct.
 
 ### Bayesian Parameter Estimation {#bayesian-parameter-estimation .unnumbered}
 
-In this work, we determine the the most likely parameter values for the inducer
+In this work, we determine the most likely parameter values for the inducer
 dissociation constants $K_A$ and $K_I$ of the active and inactive state,
 respectively, using Bayesian methods. We compute the probability distribution of
 the value of each parameter given the data $D$, which by Bayes' theorem is given
@@ -162,10 +160,10 @@ concentration $c$) and one dependent variable (experimental fold-change). $P(D
 parameter values for the dissociation constants, $P(K_A, K_I)$ contains all the
 prior information on these parameters, and $P(D)$ serves as a normalization
 constant, which we can ignore in our parameter estimation. assumes a
-deterministic relationship between the parameters and the data, so in order to
-construct a probabilistic relationship as required by , we assume that the
-experimental fold-change for the $i^\text{th}$ datum given the parameters is of
-the form 
+deterministic relationship between the parameters and the data, so to construct
+a probabilistic relationship as required by Eq. $\ref{eq:bayes_theorem}$, we
+assume that the experimental fold-change for the $i^\text{th}$ datum given the
+parameters is of the form 
 $$
 \text{fold-change}
 _{\exp}^{(i)} = \left( 1 + \frac{\left(1 + \frac{c^{(i)}}{K_A}\right)^2}{\left(
@@ -189,9 +187,10 @@ where $\text{fold-change}^{(i)}_{\text{exp}}$ is the experimental fold-change
 and $\text{fold-change}(\,\cdots)$ is the theoretical prediction. The product
 $\prod_{i=1}^n$ captures the assumption that the $n$ data points are
 independent. Note that the likelihood and prior terms now include the extra
-unknown parameter $\sigma$. In applying , a choice of $K_A$ and $K_I$ that
-provides better agreement between theoretical fold-change predictions and
-experimental measurements will result in a more probable likelihood.
+unknown parameter $\sigma$. In applying Eq. $\ref{eq:likelihood}$, a choice of
+$K_A$ and $K_I$ that provides a better agreement between theoretical fold-change
+predictions and experimental measurements will result in a more probable
+likelihood.
 
 Both mathematically and numerically, it is convenient to define $\tilde{k}_A =
 -\log \frac{K_A}{1\,\text{M}}$ and $\tilde{k}_I = -\log \frac{K_I}{1\,\text{M}}$
@@ -209,13 +208,13 @@ P(\tilde{k}_A, \tilde{k}_I, \sigma)
 \frac{1}{(\tilde{k}_I^{\max} - \tilde{k}_I^{\min})}\frac{1}{\sigma}.
 \label{eq:ka_ki_prior}
 $$
-These priors are maximally uninformative meaning that they imply no prior
+These priors are maximally uninformative, meaning that they imply no prior
 knowledge of the parameter values. We defined the $\tilde{k}_A$ and
 $\tilde{k}_A$ ranges uniform on the range of $-7$ to $7$, although we note that
 this particular choice does not affect the outcome provided the chosen range is
 sufficiently wide.
 
-Putting all these terms together we can now sample from $P(\tilde{k}_A,
+Putting all these terms together, we can now sample from $P(\tilde{k}_A,
 \tilde{k}_I, \sigma \mid D)$ using Markov chain Monte Carlo (see [GitHub
 repository](https://rpgroup-pboc.github.io/mwc_induction/code/notebooks/bayesian_parameter_estimation))
 to compute the most likely parameter as well as the error bars (given by the 95%
@@ -223,12 +222,12 @@ credible region) for $K_A$ and $K_I$.
 
 ### Data Curation
 
-All of the data used in this work as well as all relevant code can be found at
-this [dedicated website](http://rpgroup-pboc.github.io/mwc_induction). Data were
-collected, stored, and preserved using the Git version control software in
-combination with off-site storage and hosting website GitHub. Code used to
-generate all figures and complete all processing step as and analyses are
-available on the GitHub repository. Many analysis files are stored as
-instructive Jupyter Notebooks. The scientific community is invited to fork our
-repositories and open constructive issues on the [GitHub
+All of the data used in this work and all relevant code can be found at this
+[dedicated website](http://rpgroup-pboc.github.io/mwc_induction). Data were
+collected, stored, and preserved using the Git version control software combined
+with off-site storage and hosting website GitHub. Code is used to generate all
+figures and complete all processing steps, and analyses are available on the
+GitHub repository. Many analysis files are stored as instructive Jupyter
+Notebooks. The scientific community is invited to fork our repositories and open
+constructive issues on the [GitHub
 repository](https://www.github.com/rpgroup-pboc/mwc_induction).

@@ -1,6 +1,6 @@
 ## Abstract
 
-Allosteric regulation is found across all domains of life, yet we still lack
+Allosteric regulation is found across all domains of life. Yet, we still lack
 simple, predictive theories that directly link the experimentally tunable
 parameters of a system to its input-output response. To that end, we present a
 general theory of allosteric transcriptional regulation using the
@@ -11,5 +11,5 @@ then constructing and measuring their response. Our model not only accurately
 captures the induction profiles of these strains but also enables us to derive
 analytic expressions for key properties such as the dynamic range and
 $[EC_{50}]$. Finally, we derive an expression for the free energy of allosteric
-repressors which enables us to collapse our experimental data onto a single
+repressors, which enables us to collapse our experimental data onto a single
 master curve that captures the diverse phenomenology of the induction profiles.
