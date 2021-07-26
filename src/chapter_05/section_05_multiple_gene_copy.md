@@ -1,4 +1,4 @@
-## Accounting for the variability in gene copy number during the cell cycle
+## Accounting for the variability in gene copy number during the cell cycle {#sec:ch5_sec05}
 
 (Note: The Python code used for the calculations presented in this section can
 be found in the [following
@@ -333,18 +333,19 @@ production was determined in the first place under this assumption (See ). We
 note that there is no apparent delay before reaching steady-state of the mean
 mRNA count after the cell divides. This is because the mean mRNA count for the
 two promoters copies state is precisely twice the expected mRNA count for the
-single promoter state (See XXX). Therefore once the mean mRNA count is halved
-after the cell division, it is already at the steady-state value for the single
-promoter case. On the other hand, given that the degradation rate determines the
-relaxation time to steady-state, the mean protein count does not reach its
-corresponding steady-state value for either promoter copy number state.
-Interestingly once a couple of cell cycles have passed, the first moment has a
-repetitive trajectory over cell cycles. We have observed this experimentally by
-tracking cells as they grow under the microscope. Comparing cells at the
-beginning of the cell cycle with the daughter cells that appear after cell
-division showed that on average, all cells have the same amount of protein at
-the start of the cell cycle (See Fig. 18 of [@Phillips2019]), suggesting that
-this dynamical steady state takes place *in vivo*.
+single promoter state (See [Sec. 5.1](#sec:ch5_sec03)). Therefore, once the mean
+mRNA count is halved after the cell division, it is already at the steady-state
+value for the single promoter case. On the other hand, given that the
+degradation rate determines the relaxation time to steady-state, the mean
+protein count does not reach its corresponding steady-state value for either
+promoter copy number state. Interestingly once a couple of cell cycles have
+passed, the first moment has a repetitive trajectory over cell cycles. We have
+observed this experimentally by tracking cells as they grow under the
+microscope. Comparing cells at the beginning of the cell cycle with the daughter
+cells that appear after cell division showed that, on average, all cells have
+the same amount of protein at the start of the cell cycle (See Fig. 18 of
+[@Phillips2019]), suggesting that this dynamical steady state takes place *in
+vivo*.
 
 ![**First and second moment dynamics over the cell cycle.** Mean $\pm$ standard
 deviation mRNA (upper panel) and mean $\pm$ standard deviation protein copy
@@ -368,21 +369,22 @@ averages.
 
 ### Exponentially distributed ages
 
-As mentioned in XXX, cells in exponential growth have exponentially distributed
-ages across the cell cycle, having more young cells compared to old ones.
-Specifically, the probability of a cell being at any time point in the cell
-cycle is given by [@Powell1956]
+As mentioned in [Sec. 5.2](#sec:ch5_sec04), cells in exponential growth have
+exponentially distributed ages across the cell cycle, having more young cells
+than old ones. Specifically, the probability of a cell being at any time point
+in the cell cycle is given by [@Powell1956]
 $$
     P(a) = (\ln 2) \cdot 2^{1 - a},
     \label{seq_age_prob}
 $$
 where $a \in [0, 1]$ is the stage of the cell cycle, with $a = 0$ being the
-start of the cycle and $a = 1$ being the cell division. In XXX we reproduce this
-derivation. It is a surprising result, but it can be intuitively thought as
-follows: If the culture is growing exponentially, that means that all the time,
-there is an increasing number of cells. That means, for example, that if in a
-time interval $\Delta t$ $N$ "old" cells divided, these produced $2N$ "young"
-cells. So at any point, there are always more younger than older cells.
+start of the cycle and $a = 1$ being the cell division. In [Sec.
+5.10](#sec:ch5_sec11) we reproduce this derivation. It is a surprising result,
+but it can be intuitively thought as follows: If the culture is growing
+exponentially, that means that all the time, there is an increasing number of
+cells. That means, for example, that if in a time interval $\Delta t$ $N$ "old"
+cells divided, these produced $2N$ "young" cells. So at any point, there are
+always more younger than older cells.
 
 Our numerical integration of the moment equations gave us a time evolution of
 the moments as cells progress through the cell cycle. Since experimentally we
@@ -542,20 +544,22 @@ cycle. To this end, we systematically computed the average moments for varying
 repressor copy numbers and repressor-DNA affinities. We then compare these
 results with the moments obtained from a single-promoter model and their
 corresponding parameters. The derivation of the steady-state moments of the
-distribution for the single-promoter model is detailed in XXX.
+distribution for the single-promoter model is detailed in [Sec.
+4.3](#sec:ch5_sec04).
 
 [@Fig:ch5_fig09] and [@Fig:ch5_fig10] both suggest that since the dynamic
 multi-promoter model can reproduce the results of the equilibrium model at the
 first-moment level, it must then also be able to reproduce the results of the
-single-promoter model at this level (See XXX). The interesting comparison comes
-with higher moments. A useful metric to consider for gene expression variability
-is the noise in gene expression [@Shahrezaei2008]. This quantity, defined as the
-standard deviation divided by the mean, is a dimensionless metric of how much
-variability there is with respect to the mean of a distribution. As we will show
-below, this quantity differs from the also commonly used metric known as the
-Fano factor (variance/mean). For experimentally determined expression levels in
-arbitrary fluorescent units, the noise is a dimensionless quantity while the
-Fano factor is not.
+single-promoter model at this level (See [Sec. 4.2](#sec:ch5_sec03)). The
+interesting comparison comes with higher moments. A useful metric to consider
+for gene expression variability is the noise in gene expression
+[@Shahrezaei2008]. This quantity, defined as the standard deviation divided by
+the mean, is a dimensionless metric of how much variability there is with
+respect to the mean of a distribution. As we will show below, this quantity
+differs from the also commonly used metric known as the Fano factor
+(variance/mean). For experimentally determined expression levels in arbitrary
+fluorescent units, the noise is a dimensionless quantity while the Fano factor
+is not.
 
 [@Fig:ch5_fig11] shows the comparison of the predicted protein noise between the
 single- (dashed lines) and the multi-promoter model (solid lines) for different
@@ -708,14 +712,14 @@ corresponds to the data with the largest error bars and the smallest
 fold-change. This is because measurements with very small fold-changes
 correspond to intensities very close to the autofluorescence background.
 Therefore minimal changes when computing the noise are amplified given the ratio
-of std/mean. In XXX, we will explore empirical ways to improve the agreement
-between our minimal and experimental data to guide future efforts to
-improve the minimal.
+of std/mean. In [Sec. 4.8](#sec:ch5_sec09), we will explore empirical ways to
+improve the agreement between our minimal and experimental data to guide future
+efforts to improve the minimal.
 
 ![**Systematic comparison of theoretical vs. experimental noise in gene
 expression.** Theoretical vs. experimental noise both in linear (left) and log
 (right) scale. The dashed line shows the identity line of slope one and
-intercept zero. All data are colored by the experimental fold-change's
+intercept zero. All data are colored by the experimental fold-changes
 corresponding value in gene expression as indicated by the color bar. Each datum
 represents a single date measurement of the corresponding strain and IPTG
 concentration with $\geq 300$ cells. The points correspond to the median, and

@@ -1,4 +1,4 @@
-## Derivation of the cell age distribution 
+## Derivation of the cell age distribution {#sec:ch5_sec11}
 
 E. O. Powell first derived in 1956 the distribution of cell age for a cell
 population growing steadily in the exponential phase [@Powell1956]. This
@@ -40,6 +40,7 @@ the probability of surviving to an age $a + t$ without dividing is given by
 $$
 P(\text{age} = (a + t) \mid \text{age} = a) = F(a + t \mid a) =
 \frac{F(a + t)}{F(a)}.
+\label{eq:p_age_cond}
 $$
 This result comes simply from the definition of conditional probability. Since
 $F(a)$ is the probability of surviving $a$ or more minutes without dividing, by
@@ -50,12 +51,12 @@ $$
 where $F(a, a + t)$ is the joint probability of surviving $a$ minutes and $a +
 t$ minutes. But the probability of surviving $a + t$ minutes or more implies
 that the cell already survived $a$ minutes, therefore the information is
-redundant and we have 
+redundant, and we have 
 $$
 F(a, a + t) = F(a + t).
 $$
-This explains XXX. From this equation, we can find that out of the $N P(a)da$
-cells with age $a$ only a fraction
+This explains Eq. $\ref{eq:p_age_cond}$. From this equation, we can find that
+out of the $N P(a)da$ cells with age $a$ only a fraction
 $$
 \left[ NP(a)da \right] F(a + t \mid a) = NP(a) \frac{F(a + t)}{F(a)} da
 $$
@@ -69,7 +70,7 @@ $$
   P(a)\frac{F(a + t)}{F(a)}da \frac{1}{e^{\mu t}},
 $$
 and their ages lie in the range $[a+t, a+t+da]$. Since we assume that the
-culture is in steady state then it follows that the fraction of cells that
+culture is in steady-state then it follows that the fraction of cells that
 transitioned from age $a$ to age $a + t$ must be $P(a + t)da$. Therefore we have
 a difference equation - the discrete analogous of a differential equation - of
 the form

@@ -45,7 +45,7 @@ the Hill coefficient that characterizes the sharpness of the curve ($n > 1$
 signifies positive cooperativity, $n = 1$ denotes no cooperativity, and $n < 1$
 represents negative cooperativity). [@Fig:ch4_fig16] shows how the individual
 induction profiles can be fit (using the same Bayesian methods as described in
-[Sec. 4.9](#sec:ch4_sec09) to this Hill response, yielding a similar response to
+[Sec. 4.8](#sec:ch4_sec09) to this Hill response, yielding a similar response to
 that shown in [@Fig:ch2_fig05]. However, characterizing the induction response
 in this manner is unsatisfactory because each curve must be fit independently,
 thus removing our predictive power for other repressor copy numbers and binding
@@ -57,7 +57,7 @@ the physical system under consideration. For example, the dissociation constant
 $K$ between LacI and inducer should not be affected by either the copy number of
 the repressor or the DNA binding energy, and yet we see upward trends as $R$ is
 increased or the binding energy is decreased. Here, the $K$ parameter ultimately
-describes the midpoint of the induction curve and, therefore cannot strictly be
+describes the midpoint of the induction curve and, therefore, cannot strictly be
 considered a dissociation constant. Similarly, the Hill coefficient $n$ does not
 directly represent the cooperativity between the repressor and the inducer as
 the molecular details of the copy number and DNA binding strength are subsumed
@@ -71,9 +71,9 @@ approach where we use the Hill function to describe the available fraction of
 repressor as a function of inducer concentration.
 
 ![**Hill function and MWC analysis of each induction profile.** Data for each
-individual strain was fit to the general Hill function in XXX. (A) strains with
-O1 binding site, (B) strains with O2 binding site, and (C) strains with O3
-binding site. Shaded regions indicate the bounds of the 95\% credible
+individual strain was fit to the general Hill function in [@Fig:ch2_fig05]. (A)
+strains with O1 binding site, (B) strains with O2 binding site, and (C) strains
+with O3 binding site. Shaded regions indicate the bounds of the 95\% credible
 region.](ch4_fig16){#fig:ch4_fig16 short-caption="Hill function and MWC analysis
 of each induction profile"}
 

@@ -1,14 +1,15 @@
 ## Derivation of the steady-state mRNA distribution
 
 In this section, we will derive the two-state promoter mRNA distribution we
-quote in XXX. For this method, we will make use of the so-called generating
-functions. Generating functions are mathematical objects on which we can encode
-a series of infinite numbers as coefficients of a power series. The power of
-generating functions comes from the fact that we can convert an
-infinite-dimensional system of coupled ordinary differential equations--in our
-case the system of differential equations defining all probabilities $P(m, t)$
-for $m \in \mathbb{Z}$--into a single partial differential equation that we can
-then solve to extract back the probability distributions.
+quote in [Sec. 5.2](#sec:ch5_sec03). For this method, we will make use of the
+so-called generating functions. Generating functions are mathematical objects on
+which we can encode a series of infinite numbers as coefficients of a power
+series. The power of generating functions comes from the fact that we can
+convert an infinite-dimensional system of coupled ordinary differential
+equations--in our case, the system of differential equations defining all
+probabilities $P(m, t)$ for $m \in \mathbb{Z}$--into a single partial
+differential equation that we can then solve to extract back the probability
+distributions.
 
 To motivate the use of generating functions, we will begin with the simplest
 case: the one-state Poisson promoter.

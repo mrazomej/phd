@@ -117,7 +117,7 @@ $$
 If we were only to use Eq. $\ref{eq:ch4_eq49}$, the statement brought up by the
 anonymous reviewer would be true since changes in $\Delta\varepsilon_{AI}$ could
 be compensated by changes in $\Delta\varepsilon_{RA}$ or $N_{NS}$. But as
-specified in [Sec. 4.3](#sec:ch4_sec03) this is not the case for cells with
+specified in [Sec. 4.2](#sec:ch4_sec03) this is not the case for cells with
 multiple promoters.
 
 The case of multiple promoters can be handled using the Canonical ensemble as in

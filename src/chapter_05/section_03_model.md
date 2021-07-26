@@ -1,16 +1,16 @@
-## Three-state promoter model for simple repression {#supp_model}
+## Three-state promoter model for simple repression {#sec:ch5_sec03}
 
 To tackle the question of how much information the simple repression motif can
 process, we require the joint probability distribution of mRNA and protein $P(m,
 p; t)$. To obtain this distribution, we use the chemical master equation
-formalism as described in XXX. Specifically, we assume a three-state model,
-where the promoter can be found 1) in a transcriptionally active state ($A$
-state), 2) in a transcriptionally inactive state without the repressor bound
-($I$ state) and 3) with the repressor bound ($R$ state). (See
-[@Fig:ch3_fig02](A)). These three states generate a system of coupled
-differential equations for each of the three state distributions $P_A(m, p)$,
-$P_I(m, p)$ and $P_R(m, p)$. Given the rates shown in [@Fig:ch3_fig02](A), let
-us define the system of ODEs. For the transcriptionally active state, we have 
+formalism. Specifically, we assume a three-state model, where the promoter can
+be found 1) in a transcriptionally active state ($A$ state), 2) in a
+transcriptionally inactive state without the repressor bound ($I$ state) and 3)
+with the repressor bound ($R$ state). (See [@Fig:ch3_fig02](A)). These three
+states generate a system of coupled differential equations for each of the three
+state distributions $P_A(m, p)$, $P_I(m, p)$ and $P_R(m, p)$. Given the rates
+shown in [@Fig:ch3_fig02](A), let us define the system of ODEs. For the
+transcriptionally active state, we have 
 $$
 \begin{split}
     \frac{d P_A(m, p)}{dt} &=
@@ -260,7 +260,8 @@ molecule copy numbers and binding affinities to constrain the values that the
 rates in question can take.
 
 In the case of this two-state promoter, it can be shown that the mean number of
-mRNA is given by [@Sanchez2013] (See XXX for moment computation)
+mRNA is given by [@Sanchez2013] (See [Sec. 5.3](#sec:ch5_sec04) for moment
+computation)
 $$
 \langle m \rangle = \frac{r_m}{\gamma _m}
 \frac{k^{(p)}_{\text{on}}}{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}.
@@ -395,7 +396,8 @@ once the gene is replicated, the time scale in which the mRNA count relaxes to
 the new steady state is much shorter than the time that the cells spend in this
 two promoter copies state. This approximation should be valid for a short-lived
 mRNA molecule, but the assumption is not applicable for proteins whose
-degradation rate is comparable to the cell cycle length as explored in XXX.
+degradation rate is comparable to the cell cycle length as explored in [Sec.
+5.5](#sec:ch5_sec05).
 
 To repeat the Bayesian inference, including this variability in gene copy
 number, we must split the mRNA count data into two sets -- cells with a single
@@ -414,10 +416,10 @@ P(a) = (\ln 2) \cdot 2^{1 - a},
 \label{eq:cell_cycle_dist}
 $$
 where $a \in [0, 1]$ is the stage of the cell cycle, with $a = 0$ being the
-start of the cycle and $a = 1$ being the cell division (See XXX for a derivation
-of Eq. $\ref{eq:cell_cycle_dist}$). [@Fig:ch5_fig04] shows the separation of the
-two groups based on the area where was used to weight the distribution along the
-cell cycle.
+start of the cycle and $a = 1$ being the cell division (See [Sec.
+5.10](#sec:ch5_sec11) for a derivation of Eq. $\ref{eq:cell_cycle_dist}$).
+[@Fig:ch5_fig04] shows the separation of the two groups based on the area where
+was used to weight the distribution along the cell cycle.
 
 ![**Separation of cells based on cell size.** Using the area as a proxy for
 position in the cell cycle, cells can be sorted into two groups--small cells
@@ -643,9 +645,10 @@ bind [@Garcia2011c].
 To compute the fold-change in the chemical master equation language, we compute
 the first moment of the steady-state mRNA distribution $\langle m \rangle$ for
 both the three-state promoter ($R \neq 0$) and the two-state promoter case
-($R=0$) (See XXX for moment derivation). The unregulated (two-state) promoter
-mean mRNA copy number is given by Eq. $\ref{eq:mean_m_double_rates}$. For the
-regulated (three-state) promoter, we have an equivalent expression of the form 
+($R=0$) (See [Sec. 5.3](#sec:ch5_sec04) for moment derivation). The unregulated
+(two-state) promoter mean mRNA copy number is given by Eq.
+$\ref{eq:mean_m_double_rates}$. For the regulated (three-state) promoter, we
+have an equivalent expression of the form 
 $$
 \left\langle{m (R \neq 0)}\right\rangle = 
 (2 - \phi)\frac{r_m}{\gamma _m}
