@@ -52,15 +52,15 @@ concentrations of IPTG for the $R$ strain, 2 concentrations for the $\Delta$ and
 Pella Wilco Dish, Cat. No. 14027-20) that was sealed with parafilm.
 
 All imaging was done on an inverted fluorescent microscope (Nikon Ti-Eclipse)
-with custom-built laser illumination system. The YFP fluorescence (quantitative
-reporter) was imaged with a CrystaLaser 514 nm excitation laser coupled with a
-laser-optimized (Semrock Cat. No. LF514-C-000) emission filter. All strains,
-including the $auto$ strain, included a constitutively expressed mCherry protein
-to aid the segmentation. Therefore, for each image three channels (YFP, On
-average 30 images with roughly 20 cells per condition were taken. 25 images of a
-fluorescent slide and 25 images of the camera background noise were taken every
-imaging session in order to flatten the illumination. The image processing
-pipeline for this work is exactly the same as in [@Razo-Mejia2018].
+with a custom-built laser illumination system. The YFP fluorescence
+(quantitative reporter) was imaged with a CrystaLaser 514 nm excitation laser
+coupled with a laser-optimized (Semrock Cat. No. LF514-C-000) emission filter.
+All strains, including the $auto$ strain, included a constitutively expressed
+mCherry protein to aid the segmentation. Therefore, for each image, three
+channels (YFP, On average 30 images with roughly 20 cells per condition were
+taken. Twenty-five images of a fluorescent slide and 25 images of the camera
+background noise were taken every imaging session to flatten the illumination.
+The image processing pipeline for this work is the same as in [@Razo-Mejia2018].
 
 ### Data and Code Availability
 

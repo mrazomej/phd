@@ -1,11 +1,11 @@
 ### Computing the moments of the mRNA and protein distributions 
 
 Finding analytical solutions to chemical master equations is often fraught with
-difficulty. An alternative approach is to to approximate the distribution. One
-such scheme of approximation, the maximum entropy principle, makes use of the
-moments of the distribution to approximate the full distribution. In this
-section we will demonstrate an iterative algorithm to compute the mRNA and
-protein distribution moments.
+difficulty. An alternative approach is to approximate the distribution. One such
+scheme of approximation, the maximum entropy principle, uses the distribution
+moments to approximate the entire distribution. In this section, we will
+demonstrate an iterative algorithm to compute the mRNA and protein distribution
+moments.
 
 The kinetic model for the simple repression motif depicted in
 [@Fig:ch3_fig02](A) consists of an infinite system of ODEs for each possible
@@ -43,16 +43,16 @@ $$
 \label{eq:ch3_eq09}
 $$
 
-Given that all transitions in our stochastic model are first order reactions,
-has no moment-closure problem [@Voliotis2014a]. This means that the dynamical
-equation for a given moment only depends on lower moments (See Chapter 5 for
-full proof). This feature of our model implies, for example, that the second
-moment of the protein distribution $\langle p^2 \rangle$ depends only on the
-first two moments of the mRNA distribution $\langle m \rangle$ and $\langle m^2
-\rangle$, the first protein moment $\langle p \rangle$, and the
-cross-correlation term $\langle mp \rangle$. We can therefore define
-$\boldsymbol{\mu}^{\mathbf{(x, y)}}$ to be a vector containing all moments up to
-$\mathbf{\langle m^x p^y\rangle}$ for all promoter states, 
+Given that all transitions in our stochastic model are first-order reactions,
+Eq. $\ref{eq:ch3_eq09}$ has no moment-closure problem [@Voliotis2014a]. This
+means that the dynamical equation for a given moment only depends on lower
+moments (See Chapter 5 for full proof). This feature of our model implies, for
+example, that the second moment of the protein distribution $\langle p^2
+\rangle$ depends only on the first two moments of the mRNA distribution $\langle
+m \rangle$ and $\langle m^2 \rangle$, the first protein moment $\langle p
+\rangle$, and the cross-correlation term $\langle mp \rangle$. We can therefore
+define $\boldsymbol{\mu}^{\mathbf{(x, y)}}$ to be a vector containing all
+moments up to $\mathbf{\langle m^x p^y\rangle}$ for all promoter states, 
 $$
 \boldsymbol{\mu}^{\mathbf{(x, y)}} = \left[ \mathbf{\langle m^0 p^0 \rangle},
 \mathbf{\langle m^1 p^0 \rangle},
@@ -75,20 +75,20 @@ $$
 \label{eq:ch3_eq11}
 $$
 
-Given this definition we can compute the general moment dynamics as 
+Given this definition, we can compute the general moment dynamics as 
 $$
 \frac{d \boldsymbol{\mu}^{\mathbf{(x, y)}}}{dt} = \mathbf{A}
 \boldsymbol{\mu}^{\mathbf{(x, y)}}, 
 \label{eq:ch3_eq12}
 $$
 where $\mathbf{A}$ is a square matrix that contains all the numerical
-coefficients that relate each of the moments. We can then use Eq. $\ref{eq:ch3_eq09}$ to
-build matrix $\mathbf{A}$ by iteratively substituting values for the exponents
-$x$ and $y$ up to a specified value. In the next section, we will use
-Eq. $\ref{eq:ch3_eq12}$ to numerically integrate the dynamical equations for our moments
-of interest as cells progress through the cell cycle. We will then use the value
-of the moments of the distribution to approximate the full gene expression
-distribution. This method is computationally more efficient than trying to
-numerically integrate the infinite set of equations describing the full
-probability distribution $\mathbf{P}(m, p)$, or using a stochastic algorithm to
-sample from the distribution.
+coefficients that relate each of the moments. We can then use Eq.
+$\ref{eq:ch3_eq09}$ to build matrix $\mathbf{A}$ by iteratively substituting
+values for the exponents $x$ and $y$ up to a specified value. In the next
+section, we will use Eq. $\ref{eq:ch3_eq12}$ to numerically integrate the
+dynamical equations for our moments of interest as cells progress through the
+cell cycle. We will then use the value of the distribution moments to
+approximate the full gene expression distribution. This method is
+computationally more efficient than trying to numerically integrate the infinite
+set of equations describing the full probability distribution $\mathbf{P}(m,
+p)$, or using a stochastic algorithm to sample from the distribution.
