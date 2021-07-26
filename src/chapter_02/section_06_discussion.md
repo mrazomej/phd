@@ -55,7 +55,7 @@ induction profiles for seventeen other strains where $\Delta \varepsilon_{RA}$
 and $R$ were varied significantly (see ). We next measured the induction
 profiles of these seventeen strains using flow cytometry and found that our
 predictions consistently and accurately captured the primary features for each
-induction data set, as shown in [@Fich:ch2_fig05]. Importantly, we find that
+induction data set, as shown in [@Fig:ch2_fig05]. Importantly, we find that
 fitting $K_A$ and $K_I$ to data from any other strain would have resulted in
 nearly identical predictions (see Chapter 4 for further details). This suggests
 that a few carefully chosen measurements can lead to a deep quantitative
