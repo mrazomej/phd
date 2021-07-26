@@ -7,7 +7,7 @@ will necessarily propagate into our own fold-change predictions. This section
 takes an alternative approach to fitting the system's physical parameters to
 that used in the main text. First, rather than fitting only a single strain, we
 fit the entire data set in [@Fig:ch2_fig05] along with microscopy data for the
-synthetic operator Oid (see [Sec. 4.10](#sec:ch4_sec10)). In addition, we also
+synthetic operator Oid (see [Sec. 4.9](#sec:ch4_sec10)). In addition, we also
 simultaneously fit the parameters $R$ and $\Delta\varepsilon_{RA}$ using the
 prior information given by the previous measurements. By using the entire data
 set and fitting all of the parameters, we obtain the best possible
@@ -139,8 +139,8 @@ for the implementation).
 [@Fig:ch4_fig19] shows the result of this global fit. When compared with
 [@Fig:ch2_fig05], we can see that fitting for the binding energies and the
 repressor copy numbers improve the agreement between the theory and the data.
-Table XXX summarizes the values of the parameters as obtained with this MCMC
-parameter inference. We note that even though we allowed the repressor copy
+[@tbl:ch4_tbl03] summarizes the values of the parameters as obtained with this
+MCMC parameter inference. We note that even though we allowed the repressor copy
 numbers and repressor-DNA binding energies to vary, the resulting fit values
 were very close to the previously reported values. The fit values of the
 repressor copy numbers were all within one standard deviation of the previously
@@ -149,7 +149,7 @@ binding energies differed by a few standard deviations from the reported values,
 the differences were always less than $1~k_BT$, which represents a small change
 in the biological scales we are considering. The biggest discrepancy between our
 fit values and the previous measurements arose for the synthetic Oid operator,
-which we discuss in more detail [Sec. 4.10](#sec:ch4_sec10).
+which we discuss in more detail [Sec. 4.9](#sec:ch4_sec10).
 
 [@Fig:ch4_fig20] shows the same key properties as in [@Fig:ch2_fig06], but uses
 the parameters obtained from this global fitting approach. We note that even by
@@ -223,16 +223,16 @@ available data"}
 | O2 $\Delta\varepsilon_{RA}$  | $-13.9 \pm 0.2~k_BT$               | $-13.6^{+0.1}_{-0.1}~k_BT$          |
 | O3 $\Delta\varepsilon_{RA}$  | $-9.7 \pm 0.1~k_BT$                | $-9.4^{+0.1}_{-0.1}~k_BT$           |
 | Oid $\Delta\varepsilon_{RA}$ | $-17.0 \pm 0.2~k_BT$               | $-17.7^{+0.2}_{-0.1}~k_BT$          |
-Table: **Global fit of all parameter values using the entire data set in XXX.**
-In addition to fitting the repressor inducer dissociation constants $K_A$ and
-$K_I$ as was done in the text, we also fit the repressor DNA binding energy
-$\Delta\varepsilon_{RA}$ as well as the repressor copy numbers $R$ for each
-strain. The middle columns show the previously reported values for all
-$\Delta\varepsilon_{RA}$ and $R$ values, with $\pm$ representing the standard
-deviation of three replicates. The right column shows the global fits from this
-work, with the subscript and superscript notation denoting the 95\% credible
-region. Note that there is overlap between all of the repressor copy numbers and
-that the net difference in the repressor-DNA binding energies is less than
-$1~k_B T$. The logarithms $\tilde{k}_A = -\log \frac{K_A}{1\,\text{M}}$ and
-$\tilde{k}_I = -\log \frac{K_I}{1\,\text{M}}$ of the dissociation constants were
-fit for numerical stability. {#tbl:ch4_tbl03}
+Table: **Global fit of all parameter values using the entire data set in
+[@Fig:ch2_fig05].** In addition to fitting the repressor inducer dissociation
+constants $K_A$ and $K_I$ as was done in the text, we also fit the repressor DNA
+binding energy $\Delta\varepsilon_{RA}$ as well as the repressor copy numbers
+$R$ for each strain. The middle columns show the previously reported values for
+all $\Delta\varepsilon_{RA}$ and $R$ values, with $\pm$ representing the
+standard deviation of three replicates. The right column shows the global fits
+from this work, with the subscript and superscript notation denoting the 95\%
+credible region. Note that there is overlap between all of the repressor copy
+numbers and that the net difference in the repressor-DNA binding energies is
+less than $1~k_B T$. The logarithms $\tilde{k}_A = -\log
+\frac{K_A}{1\,\text{M}}$ and $\tilde{k}_I = -\log \frac{K_I}{1\,\text{M}}$ of
+the dissociation constants were fit for numerical stability. {#tbl:ch4_tbl03}

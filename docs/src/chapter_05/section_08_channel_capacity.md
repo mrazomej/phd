@@ -6,18 +6,18 @@ link](https://www.rpgroup.caltech.edu//chann_cap/software/blahut_algorithm_chann
 as an annotated Jupyter notebook)
 
 This section details the computation of the channel capacity of the simple
-genetic circuit shown in [@Fig:ch3_fig05]. As detailed in XXX the channel
-capacity is defined as the mutual information between input $c$ and output $p$
-maximized over all possible input distributions $P(c)$ [@Shannon1948]. In
-principle, there is an infinite number of input distributions, so the task of
-finding $\hat{P}(c)$, the input distribution at channel capacity, requires an
-algorithmic approach that guarantees the convergence to this distribution.
-Tkačik, Callan, and Bialek developed an analytical approximation to find the
-$\hat{P}(c)$ distribution [@Tkacik2008a]. The validity of their so-called small
-noise approximation requires the standard deviation of the output distribution
-$P(p \mid c)$ to be much smaller than the distribution domain. For our
-particular case, such a condition is not satisfied given the spread of the
-inferred protein distributions shown in [@Fig:ch3_fig04].
+genetic circuit shown in [@Fig:ch3_fig05]. The channel capacity is defined as
+the mutual information between input $c$ and output $p$ maximized over all
+possible input distributions $P(c)$ [@Shannon1948]. In principle, there is an
+infinite number of input distributions, so the task of finding $\hat{P}(c)$, the
+input distribution at channel capacity, requires an algorithmic approach that
+guarantees the convergence to this distribution. Tkačik, Callan, and Bialek
+developed an analytical approximation to find the $\hat{P}(c)$ distribution
+[@Tkacik2008a]. The validity of their so-called small noise approximation
+requires the standard deviation of the output distribution $P(p \mid c)$ to be
+much smaller than the distribution domain. For our particular case, such a
+condition is not satisfied given the spread of the inferred protein
+distributions shown in [@Fig:ch3_fig04].
 
 Fortunately, a numerical algorithm can approximate $\hat{P}(c)$ for discrete
 distributions. In 1972 Richard Blahut and Suguru Arimoto independently came up

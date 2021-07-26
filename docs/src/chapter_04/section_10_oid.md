@@ -19,7 +19,7 @@ These predictions are shown in [@Fig:ch4_fig21](A), where we also plot data
 taken in triplicate for strains containing $R= $22, 60, and 124, obtained by
 single-cell microscopy. We find that the data are systematically below the
 theoretical predictions. We also considered our global fitting approach (see
-[Sec. 4.9](#sec:ch4_sec09)) to see whether we might find better agreement with
+[Sec. 4.8](#sec:ch4_sec09)) to see whether we might find better agreement with
 the observed data. Interestingly, we find that the majority of the parameters
 remain essentially unchanged, but our estimate for the Oid binding energy
 $\Delta \varepsilon_{RA}$ is shifted to $-17.7~k_BT$ instead of the value
@@ -35,7 +35,7 @@ to the O2 strain with $R=260$. Here we use the previously measured binding
 energy $\Delta\varepsilon_{RA}=-17.0~k_BT$ [@Garcia2011c]. The same experimental
 data is plotted against the best-fit parameters using the complete O1, O2, O3,
 and Oid data sets to infer $K_A$, $K_I$, repressor copy numbers, and the binding
-energies of all operators (see [Sec. 4.9](#sec:ch4_sec09)). Here the major
+energies of all operators (see [Sec. 4.8](#sec:ch4_sec09)). Here the major
 difference in the inferred parameters is a shift in the binding energy for Oid
 from $\Delta\varepsilon_{RA}=-17.0~k_BT$ to $\Delta\varepsilon_{RA}=-17.7~k_BT$,
 which now shows agreement between the theoretical predictions and experimental

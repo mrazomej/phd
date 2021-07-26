@@ -1,4 +1,4 @@
-## Computing moments from the master equation
+## Computing moments from the master equation {#sec:ch5_sec04}
 
 This section will compute the moment equations for the distribution $P(m, p)$.
 Without loss of generality, here we will focus on the three-state regulated
@@ -361,7 +361,8 @@ $$
 $$
 The largest moment involved in this term is therefore $\mathbf{\left\langle{m^x
 p^{y-1}}\right\rangle}$. With this, we show that the four terms involved in our
-general moment equation depend only on lower moments that satisfy XXX.
+general moment equation depend only on lower moments that satisfy Eq.
+$\ref{eq:mom_conditions}$.
 
 As a reminder, we showed in this section that the kinetic model introduced in
 [@Fig:ch3_fig02](A) has no moment-closure problem. In other words, moments of
@@ -376,13 +377,13 @@ be found in the [following
 link](https://www.rpgroup.caltech.edu//chann_cap/software/chemical_master_steady_state_moments_general.html)
 as an annotated Jupyter notebook)
 
-As discussed in XXX, one of the main factors contributing to cell-to-cell
-variability in gene expression is the change in gene copy number during the cell
-cycle as cells replicate their genome before cell division. Our minimal model
-accounts for this variability by considering the time trajectory of the
-distribution moments given by Eq. $\ref{eq:mom_ode_factorized}$. These
-predictions will be contrasted with the predictions from a kinetic model that
-doesn't account for gene copy numbers changes during the cell cycle in XXX.
+One of the main factors contributing to cell-to-cell variability in gene
+expression is the change in gene copy number during the cell cycle as cells
+replicate their genome before cell division. Our minimal model accounts for this
+variability by considering the time trajectory of the distribution moments given
+by Eq. $\ref{eq:mom_ode_factorized}$. These predictions will be contrasted with
+the predictions from a kinetic model that doesn't account for gene copy numbers
+changes during the cell cycle in [Sec. 4.4](#sec:ch5_sec05).
 
 Suppose we do not account for the change in gene copy number during the cell
 cycle or the partition of proteins during division. In that case, the dynamics

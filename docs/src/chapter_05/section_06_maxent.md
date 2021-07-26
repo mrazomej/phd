@@ -1,4 +1,4 @@
-## Maximum entropy approximation of distributions 
+## Maximum entropy approximation of distributions {#sec:ch5_sec06}
 
 (Note: The Python code used for the calculations presented in this section can
 be found in the [following
@@ -320,10 +320,10 @@ convergence speed.
 
 ### Predicting distributions for simple repression constructs
 
-Having explained the theoretical background and the practical difficulties and a
-workaround strategy proposed by Bretthorst, we implemented the inference using
+Having explained the theoretical background and the practical difficulties, and
+a workaround strategy proposed by Bretthorst, we implemented the inference using
 the moments obtained from averaging over the variability along the cell cycle
-(See XXX). [@Fig:ch5_fig16] and [@Fig:ch5_fig17] present these inferences for
+(See [Sec. 5.4](#sec:ch5_sec05)). [@Fig:ch5_fig16] and [@Fig:ch5_fig17] present these inferences for
 both mRNA and protein levels respectively for different values of the
 repressor-DNA binding energy and repressor copy numbers per cell. From these
 plots, we can easily appreciate that even though the mean of each distribution

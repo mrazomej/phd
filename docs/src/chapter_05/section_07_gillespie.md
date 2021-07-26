@@ -21,11 +21,11 @@ package [numba](http://numba.pydata.org).
 
 To confirm that the Gillespie simulation's implementation was correct, we
 perform the simulation at the mRNA level, for which the closed-form solution of
-the steady-state distribution is known as detailed in XXX. [@Fig:ch5_fig20]
-shows example trajectories of mRNA counts. Each of these trajectories was
-computed over several cell cycles, where the cell division was implemented,
-generating a binomially distributed random variable that depended on the last
-mRNA count before the division event.
+the steady-state distribution is known as detailed in [Sec.
+5.2](#sec:ch5_sec03). [@Fig:ch5_fig20] shows example trajectories of mRNA
+counts. Each of these trajectories was computed over several cell cycles, where
+the cell division was implemented, generating a binomially distributed random
+variable that depended on the last mRNA count before the division event.
 
 ![**Stochastic trajectories of mRNA counts.** 100 stochastic trajectories
 generated with the Gillespie algorithm for mRNA counts over time for a two-state
@@ -80,20 +80,20 @@ repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig22){#fig:ch5_fi
 short-caption="Stochastic trajectories of mRNA and protein counts"}
 
 From these trajectories, we can compute the steady-state protein distribution,
-taking into account the cell-age distribution as detailed in XXX.
-[@Fig:ch5_fig23] shows the comparison between this distribution and the one
-generated using the maximum entropy algorithm. Although the notorious
-differences between the distributions, the Gillespie simulation and the maximum
-entropy results are indistinguishable in terms of the mean, variance, and
-skewness of the distribution. We remind the reader that the maximum entropy is
-an approximation of the distribution that gets better the more moments we add.
-We, therefore, claim that the approximation works sufficiently well for our
-purpose. The enormous advantage of the maximum entropy approach comes from the
-computation time. For the number of distributions needed for our calculations,
-the Gillespie algorithm proved to be a very inefficient method given the ample
-sample space. Our maximum entropy approach reduces the computation time by
-several orders of magnitude, allowing us to explore different regulatory models'
-parameters extensively.
+taking into account the cell-age distribution, as detailed in [Sec.
+5.5](#sec:ch5_sec06). [@Fig:ch5_fig23] shows the comparison between this
+distribution and the one generated using the maximum entropy algorithm. Although
+the notorious differences between the distributions, the Gillespie simulation
+and the maximum entropy results are indistinguishable in terms of the mean,
+variance, and skewness of the distribution. We remind the reader that the
+maximum entropy is an approximation of the distribution that gets better the
+more moments we add. We, therefore, claim that the approximation works
+sufficiently well for our purpose. The enormous advantage of the maximum entropy
+approach comes from the computation time. For the number of distributions needed
+for our calculations, the Gillespie algorithm proved to be a very inefficient
+method given the ample sample space. Our maximum entropy approach reduces the
+computation time by several orders of magnitude, allowing us to explore
+different regulatory models' parameters extensively.
 
 ![**Comparison of protein distributions.** Comparison of the protein
 distribution generated with Gillespie stochastic simulations (blue curve) and

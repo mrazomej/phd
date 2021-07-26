@@ -1,4 +1,4 @@
-## Empirical fits to noise predictions 
+## Empirical fits to noise predictions {#sec:ch5_sec09}
 
 (Note: The Python code used for the calculations presented in this section can
 be found in the [following
