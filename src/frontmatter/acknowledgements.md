@@ -60,8 +60,8 @@ down this proposal and sent it to Rob. At this time, I did not know what to
 expect. I had never been involved in any research project or knew what it took
 to become a Caltech summer student. But, to my fortune, Rob liked my naive idea
 and invited me to spend not only the summer but an entire year working in his
-lab. There I was, a nobody with no credentials being given the opportunity of my
-life. I will have more to say about Mr. Phillips later on.
+lab. So there I was, a nobody with no credentials being given the opportunity of
+my life. I will have more to say about Mr. Phillips later on.
 
 That year, my horizons expanded like never before. I passed from only
 interacting with people with my cultural background that spoke my language to be
@@ -90,8 +90,8 @@ develop a new module for the class involving fluorescent microscopy on fly
 embryos. These interactions turned into a friendship where Justin treated my
 family and me unbelievably nicely. After Rob, Justin has been the scientist that
 has influenced my thinking the most. His classes, sharp mind, computational
-skills, unbelievably ethical behavior and his will to share his knowledge set me
-on the right track from the beginning of my Ph.D., when Justin started a
+skills, unbelievably ethical behavior, and his will to share his knowledge set
+me on the right track from the beginning of my Ph.D., when Justin started a
 position as a teaching faculty for the Biology division. 
 
 As the reader can infer from the context of these acknowledgments, a year at
@@ -101,9 +101,9 @@ I thought. Nevertheless, I had the immense fortune to share the lab with three
 of my great friends and co-authors for all those years. Nathan Belliveau, Muir
 Morrison, and Griffin Chure became my lab family. They helped me think through
 problems and worked with me on numerous successful (and unsuccessful) projects,
-as we all grew as scientists under Rob's tutelage. It is not an exaggeration
-when I say that their friendship and support have been a fundamental part of why
-my Ph.D. experience has been the best time of my life. I would not do justice to
+as we all grew as scientists under Rob's tutelage. It is not an exaggeration to
+say that their friendship and support have been a fundamental part of why my
+Ph.D. experience has been the best time of my life. I would not do justice to
 Griffin's influence on my thinking if I did not give a special shout-out to him.
 For the past seven years, Griffin and I talked almost every single day. We fed
 off each other's ideas and together traveled the world. From Korea to New
@@ -117,8 +117,8 @@ Brewster, now a professor at U. Mass., taught me several lab tricks that I still
 use up to this day. Heun Jin Lee, the microscopy master, was an incredible
 resource and mentor that allowed my research to run smoothly. Without his work
 and input, it would have been incredibly hard for my projects to take off. I am
-also thankful to members of the Phillips lab that, over the years, shared
-projects, ideas, lunches, and visits to Red Door cafe. People like Suzy Beeler,
+also thankful to members of the Phillips lab who shared projects, ideas,
+lunches, and visits to Red Door cafe over the years. People like Suzy Beeler,
 Stephanie Barnes, Soichi Hirokawa, Niko McCarty, Tom Roeschinger, and Scott
 Saunders made my Caltech experience much better.
 
@@ -130,10 +130,10 @@ part of this institution. When I came back to Caltech as a Ph.D. student, I
 worked in her lab for ten weeks as part of a rotation where I learned about a
 completely different way to tackling biological problems from what I was used
 to. Later on, Dianne helped my sister to visit the Caltech daycare and learned
-from them. She also made my mom unbelievably happy when, in Dianne's perfect
-Spanish, she told my mom that I was a great student and that she was very proud
-of me. Her support and kindness are things I do not take for granted, and I am
-enormously thankful for them.
+from them. She also made my mom unbelievably happy when, in perfect Spanish, she
+told my mom that I was a great student and that she was very proud of me. Her
+support and kindness are things I do not take for granted, and I am enormously
+thankful for them.
 
 I am also thankful to Ginger and Kim Caldwell. Thanks to Mr. and Mrs. Caldwell's
 kindness, I was awarded a one–year fellowship that covered my stipend. But they
@@ -145,7 +145,7 @@ myself, pursuing the American dream.
 Of course, not everything in my life for the last few years has been strictly
 about my Ph.D. project and my work at the lab. I owe a significant component of
 the enormous happiness I experienced since coming to Caltech to my friends
-outside of work. In particular I want to give a shout out to my best friends
+outside of work. In particular, I want to give a shout-out to my best friends
 Stephanie Threatt, and Porfirio Quintero. Stephanie and I share a love for
 hip-hop and good food. We went to concerts, amusement parks, and restaurants,
 and she has always been there when I needed emotional support. Porfirio and I
@@ -160,8 +160,8 @@ friend David Larios joined my inner circle and became a really close friend.
 David and I share a love for learning, talking about science, and, more
 recently, doing outreach via a podcast where we share ideas from different books
 that we read. We also share an openness to share feelings between friends,
-constantly looking after each other. All of my friends became my family outside
-of my home, so I never felt like I was alone during this journey.
+constantly looking after each other. My friends became my family outside of my
+home, so I never felt alone during this journey.
 
 Shockingly enough, with all the good luck that has gotten me to this point,
 there is a lot more for which to be thankful. Because of Rob, my professional
@@ -190,11 +190,11 @@ believing in myself, you believed in me. And, after a decade of having sent this
 email, I stand proud of what we have accomplished together. This thesis reflects
 everything I have learned from you as I pave my path to become who I want to be.
 
-On multiple occasions, you have told me that you don't have a recipe for a happy
-and fulfilling life. But the way you operate and interact with other people
-makes me want to shape my professional and personal life after yours. I have
-learned from you that science is not only our job but, if one wants it, it can
-be a complete lifestyle. Hike after hike, trip after trip, calculation after
+You have told me that you don't have a recipe for a happy and fulfilling life on
+multiple occasions. But the way you operate and interact with other people makes
+me want to shape my professional and personal life after yours. I have learned
+from you that science is not only our job but, if one wants it, it can be a
+complete lifestyle. Hike after hike, trip after trip, calculation after
 calculation, I have witnessed your boundless love for the natural world and the
 constant everyday effort that it takes to get closer to unveiling its mysteries.
 It is hard to imagine myself one day knowing a fraction of what you know about
@@ -222,7 +222,7 @@ the time into it. Each and every lesson you have given me over the last decade
 will continue to shape my thinking for the rest of my life.
 
 But this is not a farewell. I might be "getting fired" for the n-th time, this
-time for real, but that does not mean that our scientific adventures have to be
+time for real. But that does not mean that our scientific adventures have to be
 over. I hope that we both share the mutual feeling that this is just the
 beginning. There are many more things to discover, many more books to write
 (plural for you, obviously), and many more courses to teach together. Thank you
@@ -240,7 +240,7 @@ preparación que el haber crecido en un hogar como el nuestro.
 
 No es exageración cuando digo que no hay día que reconozca el enorme privilegio
 que siempre he tenido. A mi hermana y a mi nunca nos faltó nada y siempre nos
-sobró amor. Cada característica en mi persona de la que me siento orgulloso son
+sobró amor. Cada característica en mi persona de la que me siento orgulloso es
 el resultado de los valores que ustedes me inculcaron. Mi fortaleza para
 levantarme todos los días a estudiar se deriva de esas mañanas de estudio a las
 cinco a.m. donde me mostraron cómo ser disciplinado. Mi compasión hacia mi
@@ -267,3 +267,37 @@ ninguna experiencia de haber vivido fuera de casa. No me queda más que
 agradecerles por siempre haber estado ahí para mi. Gracias por ser mis papás.
 Gracias por ser mi hermana. Ustedes, junto con Daniela, hacen que valga la pena
 vivir cada momento.
+
+A Dani:
+
+Los últimos dos años y medio de mi doctorado son muy probablemente la mejor
+etapa de mi vida (pandemia incluída). La perfecta correlación entre tu llegada a
+mi vida y esta enorme felicidad no son coincidencia. Bien supo mi madre que yo
+estaba enamorado, antes de que siquiera le contara sobre tu existencia.
+Respiraba un aire diferente, exudaba alegría pura, y trataba a mis seres
+queridos con mayor atención y compasión. Todo porque, desde el sur de este
+continente, había arrivado la persona que me permitiría por primera vez
+experimentar lo que es el verdadero amor de pareja.
+
+El camino hasta este punto, en el que ambos nos hemos comprometido a compartir
+nuestras vidas de aquí en adelante, ha estado lleno tanto de enormes
+satisfacciones como de momentos difíciles. Sin embargo, como todo lo bueno que
+vale la pena en esta vida, nuestro amor ha requerido––y seguirá requiriendo––de
+arduo y constante trabajo. De cierta manera, el hecho de que nuestro amor no sea
+un producto terminado, sino un ente en constante construcción, me llena de
+emoción por nuestra vida juntos. Después de todo, ¿qué sería de mis más grandes
+momentos de alegría si no tuviera con quién compartir ese sentimiento? Todo ese
+fervor simplemente aislado en la privacidad de mi experiencia consciente, sin
+poder ser expresado hacia otra persona; ¡que enorme desperdicio!. De igual
+manera, ¿qué sería de mis momentos de más profunda tristeza y decepción, si no
+pudiera aliviar mi sufrimiento al estar contigo? Tú haces que el estar vivo,
+experimentando esta realidad, sea una dicha constante.
+
+Desde el fondo de mi ser, espero que el patrón de felicidad que hemos
+experimentado por los últimos dos años, sea una muestra de lo que nos espera
+por el resto de nuestras vidas. Extrañaré nuestra vida en Pasadena, nuestro
+taco Thursday, y las noches de ver documentales juntos. Pero la vida debe de
+continuar. Una nueva etapa de auto–descubrimiento y aprendizaje hará de nuestro
+amor una estructura aún más sólida y compleja, mientras seguimos compartiendo
+juntos la dicha de estar vivos. Muchísimas gracias por amarme. Yo te amo, y te
+amaré todos los días de mi vida.
