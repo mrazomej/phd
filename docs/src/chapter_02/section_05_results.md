@@ -11,7 +11,7 @@ foundation of previous work as depicted in [@Fig:ch2_fig01](C). This includes
 work from our laboratory that used *E. coli* constructs based on components of
 the *lac* system to demonstrate how the Lac repressor (LacI) copy number $R$ and
 operator binding energy $\Delta\varepsilon_{RA}$ affect gene expression in the
-absence of inducer [@Garcia2011c]. @Rydenfelt2014B extended the theory used in
+absence of inducer [@Garcia2011c]. [@Rydenfelt2014B] extended the theory used in
 that work to the case of multiple promoters competing for a given transcription
 factor, which was validated experimentally by @Brewster2014, who modified this
 system to consider expression from multiple-copy plasmids as well as the
@@ -20,10 +20,10 @@ presence of competing repressor binding sites.
 The present study extends this body of work by introducing three additional
 biophysical parameters--$\Delta\varepsilon_{AI}$, $K_A$, and $K_I$--which
 capture the allosteric nature of the transcription factor and complement the
-results shown by @Garcia2011c and @Brewster2014. Although the current work
+results shown by [@Garcia2011c] and [@Brewster2014]. Although the current work
 focuses on systems with a single site of repression, in [Materials \&
-Methods](#ch2_methods), we utilize data from @Brewster2014, in which multiple
-sites of repression are explored, to characterize the allosteric free energy
+Methods](#ch2_methods), we utilize data from [@Brewster2014], in which multiple
+sites of repression are explored to characterize the allosteric free energy
 difference $\Delta\varepsilon_{AI}$ between the repressor's active and inactive
 states. As explained in that Section, this additional data set is critical
 because multiple degenerate sets of parameters can characterize an induction
@@ -41,11 +41,11 @@ predictions against experimental measurements. To obtain induction profiles for
 a set of strains with varying repressor copy numbers, we used modified *lacI*
 ribosomal binding sites from @Garcia2011c to generate strains with mean
 repressor copy number per cell of $R = 22 \pm 4$, $60 \pm 20$, $124 \pm 30$,
-$260 \pm 40$, $1220 \pm 160$, and $1740 \pm 340$, where the error denotes
+$260 \pm 40$, $1220 \pm 160$, and $1740 \pm 340$, where the error denotes the
 standard deviation of at least three replicates as measured by @Garcia2011c. We
 note that $R$ refers to the number of repressor dimers in the cell, which is
 twice the number of repressor tetramers reported by @Garcia2011c; since both
-heads of the repressor are assumed to always be either specifically or
+heads of the repressor are always assumed to be either specifically or
 non-specifically bound to the genome, the two repressor dimers in each LacI
 tetramer can be considered independently. Gene expression was measured using a
 Yellow Fluorescent Protein (YFP) gene, driven by a *lacUV5* promoter. Each of
@@ -65,7 +65,7 @@ base-pairs of the *E. coli* genome, $N_{NS} = 4.6 \times 10^6$.
 
 Our experimental pipeline for determining fold-change using flow cytometry is
 shown in [@Fig:ch2_fig03]. Briefly, cells were grown to exponential phase, in
-which gene expression reaches steady state [@Scott2010], under concentrations of
+which gene expression reaches steady-state [@Scott2010], under concentrations of
 the inducer IPTG ranging between 0 and $5\,\text{mM}$. We measure YFP
 fluorescence using flow cytometry and automatically gate the data to include
 only single-cell measurements (see Materials \& Methods). To validate the use of
@@ -76,8 +76,8 @@ from that of flow-cytometry and yielded values for the inducer binding constants
 $K_A$ and $K_I$ that were within error.
 
 ![**An experimental pipeline for high-throughput fold-change measurements.**
-Cells are grown to exponential steady state and their fluorescence is measured
-using flow cytometry. Automatic gating methods using forward- and
+Cells are grown to an exponential steady-state, and their fluorescence is
+measured using flow cytometry. Automatic gating methods using forward- and
 side-scattering are used to ensure that all measurements come from single cells
 (see [Materials \& Methods](#ch2_methods)). Mean expression is then quantified
 at different IPTG concentrations (top, blue histograms) and for a strain without
@@ -103,26 +103,26 @@ determine the most likely parameter values to be $K_A=139^{+29}_{-22} \times
 which are the modes of their respective distributions, where the superscripts
 and subscripts represent the upper and lower bounds of the $95^\text{th}$
 percentile of the parameter value distributions (see [@Fig:ch2_fig04](B)).
-Unfortunately, we are not able to make a meaningful value-for-value comparison
-of our parameters to those of earlier studies [@Daber2009; @Daber2011a] because
-of uncertainties in both gene copy number and transcription factor copy numbers
-in these studies (see Chapter 4). We then predicted the fold-change for the
+Unfortunately, we cannot make a meaningful value-for-value comparison of our
+parameters to those of earlier studies [@Daber2009; @Daber2011a] because of
+uncertainties in gene copy number and transcription factor copy numbers in
+these studies (see Chapter 4). We then predicted the fold-change for the
 remaining seventeen strains with no further fitting (see
 [@Fig:ch2_fig04](C)-(E)) together with the specific phenotypic properties
 described in and discussed in detail below (see [@Fig:ch2_fig04](F)-(J)). The
-shaded regions in - denote the 95% credible regions. Factors determining the
+shaded regions denote the 95% credible regions. Factors determining the
 width of the credible regions are explored in Chapter 4.
 
-We stress that the entire suite of predictions in is based upon the induction
-profile of a single strain. Our ability to make such a broad range of
-predictions stems from the fact that our parameters of interest --such as the
-repressor copy number and DNA binding energy--appear as distinct physical
-parameters within our model. While the single data set in [@Fig:ch2_fig04](D)
-could also be fit using a Hill function, such an analysis would be unable to
-predict any of the other curves in the figure (see Chapter 4). Phenomenological
-expressions such as the Hill function can describe data, but lack predictive
-power and are thus unable to build our intuition, help us design *de novo*
-input-output functions, or guide future experiments [@Kuhlman2007; @Murphy2007].
+We stress that the entire suite of predictions is based upon a single strain's
+induction profile. Our ability to make such a broad range of predictions stems
+from the fact that our parameters of interest--such as the repressor copy number
+and DNA binding energy--appear as distinct physical parameters within our model.
+While the single data set in [@Fig:ch2_fig04](D) could also be fit using a Hill
+function, such an analysis would be unable to predict any of the other curves in
+the figure (see Chapter 4). Phenomenological expressions such as the Hill
+function can describe data but lack predictive power and are thus unable to
+build our intuition, help us design *de novo* input-output functions, or guide
+future experiments [@Kuhlman2007; @Murphy2007].
 
 ![**Predicting induction profiles for different biological control parameters.**
 (A) We can quantitatively tune $R$ via ribosomal binding site (RBS)
@@ -170,16 +170,16 @@ theory and experiment. We note that there was an apparently systematic shift in
 the O3 $\Delta\varepsilon_{RA} = -9.7\ k_BT$ strains ([@Fig:ch2_fig05](C)) and
 all of the $R=1220$ and $R =1740$ strains. This may be partially due to
 imprecise previous determinations of their $\Delta\varepsilon_{RA}$ and $R$
-values. By performing a global fit where we infer all parameters including the
+values. By performing a global fit where we infer all parameters, including the
 repressor copy number $R$ and the binding energy $\Delta\varepsilon_{RA}$, we
-found better agreement for these strains, although a discrepancy in the
+found a better agreement for these strains. However, a discrepancy in the
 steepness of the response for all O3 strains remains (see Chapter 4). We
-considered a number of hypotheses to explain these discrepancies such as
+considered a number of hypotheses to explain these discrepancies, such as
 including other states (e.g. non-negligible binding of the inactive repressor),
 relaxing the weak promoter approximation, and accounting for variations in gene
 and repressor copy number throughout the cell cycle, but none explained the
 observed discrepancies. As an additional test of our model, we considered
-strains using the synthetic Oid operator which exhibits an especially strong
+strains using the synthetic Oid operator, which exhibits an especially strong
 binding energy of $\Delta\varepsilon_{RA}=-17~k_B T$ [@Garcia2011c]. The global
 fit agrees well with the Oid microscopy data, though it asserts a stronger Oid
 binding energy of $\Delta\varepsilon_{RA}=-17.7~k_B T$ (see Chapter 4).
@@ -188,30 +188,29 @@ To ensure that the agreement between our predictions and data is not an accident
 of the strain we used to perform our fitting, we also inferred $K_A$ and $K_I$
 from each of the other strains. As shown in Chapter 4 and [@Fig:ch2_fig05](D),
 the inferred values of $K_A$ and $K_I$ depend minimally upon which strain is
-chosen, indicating that these parameter values are highly robust. We also
-performed a global fit using the data from all eighteen strains in which we
-fitted for the inducer dissociation constants $K_A$ and $K_I$, the repressor
-copy number $R$, and the repressor DNA binding energy $\Delta\varepsilon_{RA}$
-(see Chapter 4). The resulting parameter values were nearly identical to those
-fitted from any single strain. For the remainder of the text we continue using
-parameters fitted from the strain with $R=260$ repressors and an O2 operator.
+chosen, indicating these parameter values are highly robust. We also performed a
+global fit using the data from all eighteen strains in which we fitted for the
+inducer dissociation constants $K_A$ and $K_I$, the repressor copy number $R$,
+and the repressor DNA binding energy $\Delta\varepsilon_{RA}$ (see Chapter 4).
+The resulting parameter values were nearly identical to those fitted from any
+single strain.  We continue using parameters fitted from the strain with $R=260$
+repressors and an O2 operator for the remainder of the text.
 
 ![**Comparison of predictions against measured and inferred data.** (A-C) Flow
 cytometry measurements of fold-change over a range of IPTG concentrations for
-O1, O2, and O3 strains at varying repressor copy numbers, overlaid on the
+O1, O2, and O3 strains at varying repressor copy numbers overlaid on the
 predicted responses. Error bars for the experimental data show the standard
 error of the mean (eight or more replicates). As discussed in [@Fig:ch2_fig04],
-all of the predicted induction curves were generated prior to measurement by
-inferring the MWC parameters using a single data set (O2 $R=260$, shown by white
-circles in Panel ). The predictions may therefore depend upon which strain is
-used to infer the parameters. (D) The inferred parameter values of the
-dissociation constants $K_A$ and $K_I$ using any of the eighteen strains instead
-of the O2 $R=260$ strain. Nearly identical parameter values are inferred from
-each strain, demonstrating that the same set of induction profiles would have
-been predicted regardless of which strain was chosen. The points show the mode,
-and the error bars denote the $95\%$ credible region of the parameter value
-distribution. Error bars not visible are smaller than the size of the marker.
-The Python code
+all predicted induction curves were generated prior to measurement by inferring
+the MWC parameters using a single data set (O2 $R=260$, shown by white circles
+in Panel (B)). The predictions may therefore depend upon which strain is used to
+infer the parameters. (D) The inferred parameter values of the dissociation
+constants $K_A$ and $K_I$ using any of the eighteen strains instead of the O2
+$R=260$ strain. Nearly identical parameter values are inferred from each strain,
+demonstrating that the same set of induction profiles would have been predicted
+regardless of which strain was chosen. The points show the mode, and the error
+bars denote the $95\%$ credible region of the parameter value distribution.
+Error bars not visible are smaller than the size of the marker. The Python code
 [(`ch2_fig05.py`)](https://github.com/RPGroup-PBoC/mwc_induction/blob/master/code/figures/fig5.py)
 used to generate this figure can be found on the original paper [GitHub
 repository.](https://github.com/RPGroup-PBoC/mwc_induction)](ch2_fig05){#fig:ch2_fig05
@@ -219,17 +218,17 @@ short-caption="Comparison of predictions against measured and inferred data"}
 
 ### Predicting the Phenotypic Traits of the Induction Response
 
-A subset of the properties shown in [@Fig:ch2_fig01](i.e. the leakiness,
+A subset of the properties shown in [@Fig:ch2_fig01](i.e., the leakiness,
 saturation, dynamic range, $[EC_{50}]$, and effective Hill coefficient) are of
 significant interest to synthetic biology. For example, synthetic biology is
-often focused on generating large responses (i.e. a large dynamic range) or
-finding a strong binding partner (i.e. a small $[EC_{50}]$) [@Brophy2014;
-@Shis2014]. While these properties are all individually informative, when taken
-together they capture the essential features of the induction response. We
+often focused on generating large responses (i.e., a large dynamic range) or
+finding a strong binding partner (i.e., a small $[EC_{50}]$) [@Brophy2014;
+@Shis2014]. While these properties are all individually informative, they
+capture the essential features of the induction response when taken together. We
 reiterate that a Hill function approach cannot predict these features *a priori*
-and furthermore requires fitting each curve individually. The MWC model, on the
-other hand, enables us to quantify how each trait depends upon a single set of
-physical parameters as shown by [@Fig:ch2_fig04](F-J).
+and requires fitting each curve individually. The MWC model, on the other hand,
+enables us to quantify how each trait depends upon a single set of physical
+parameters as shown by [@Fig:ch2_fig04](F-J).
 
 We define these five phenotypic traits using expressions derived from the model,
 Eq. $\ref{eq:fold_change_full}$. These results build upon extensive work by
@@ -258,9 +257,9 @@ $$
 \label{eq:saturation}
 $$
 
-Systems that minimize leakiness repress strongly in the absence of effector
+Systems that minimize leakiness repress strongly in the absence of the effector,
 while systems that maximize saturation have high expression in the presence of
-effector. Together, these two properties determine the dynamic range of a
+the effector. Together, these two properties determine the dynamic range of a
 system's response, which is given by the difference
 $$
     \text{dynamic range} = \text{saturation} - \text{leakiness}.
@@ -269,7 +268,7 @@ $$
 These three properties are shown in [@Fig:ch2_fig04](F-H). We discuss these
 properties in greater detail in Chapter 4. [@Fig:ch2_fig06](A-C) shows that the
 measurements of these three properties, derived from the fold-change data in the
-absence of IPTG and the presence of saturating IPTG, closely match the
+absence of IPTG and the presence of saturating IPTG closely match the
 predictions for all three operators.
 
 ![**Predictions and experimental measurements of key properties of induction
@@ -280,11 +279,11 @@ in the legend correspond to the O1 operator ($-15.3~k_B T$), O2 operator
 ($-13.9~k_B T$), and O3 operator ($-9.7~k_B T$). Both the $[EC_{50}]$ and
 effective Hill coefficient are inferred by individually fitting each
 operator-repressor pairing in [@Fig:ch2_fig05](A-C) separately to Eq.
-$\ref{eq:fold_change_full}$ in order to smoothly interpolate between the data
-points. Error bars for (A-C) represent the standard error of the mean for eight
-or more replicates; error bars for (D-E) represent the 95% credible region for
-the parameter found by propagating the credible region of our estimates of $K_A$
-and $K_I$ into Eq. $\ref{eq:ec50}$ and Eq. $\ref{eq:effective_Hill}$. The Python
+$\ref{eq:fold_change_full}$ to smoothly interpolate between the data points.
+Error bars for (A-C) represent the standard error of the mean for eight or more
+replicates; error bars for (D-E) represent the 95% credible region for the
+parameter found by propagating the credible region of our estimates of $K_A$ and
+$K_I$ into Eq. $\ref{eq:ec50}$ and Eq. $\ref{eq:effective_Hill}$. The Python
 code
 [(`ch2_fig06.py`)](https://github.com/RPGroup-PBoC/mwc_induction/blob/master/code/figures/fig6_props.py)
 used to generate this figure can be found on the original paper [GitHub
@@ -309,10 +308,9 @@ h = \left( 2 \frac{d}{d \log c} \left[ \log \left( \frac{ \text{fold-change}(c)
   [EC_{50}]}. 
 \label{eq:effective_Hill}
 $$
-[@Fig:ch2_fig04](I),(J) shows how the $[EC_{50}]$ and effective Hill
-coefficient depend on the repressor copy number. In Chapter 4, we discuss
-the analytic forms of these two properties as well as their dependence on the
-repressor-DNA binding energy.
+[@Fig:ch2_fig04](I),(J) shows how the $[EC_{50}]$ and effective Hill coefficient
+depend on the repressor copy number. Chapter 4 discusses the analytic forms of
+these two properties and their dependence on the repressor-DNA binding energy.
 
 [@Fig:ch2_fig06](D) and [@Fig:ch2_fig06](E) shows the estimated values of the
 $[EC_{50}]$ and the effective Hill coefficient overlaid on the theoretical
@@ -321,15 +319,15 @@ $\ref{eq:fold_change_full}$ to each individual titration curve and computing the
 $[EC_{50}]$ and effective Hill coefficient using Eq. $\ref{eq:ec50}$ and Eq.
 $\ref{eq:effective_Hill}$, respectively. We find that the predictions made with
 the single strain fit closely match those made for each of the strains with O1
-and O2 operators, but the predictions for the O3 operator are markedly off. In
-Chapter 4 we show that the large, asymmetric error bars for the O3 $R=22$ strain arise
-from its nearly flat response, where the lack of dynamic range makes it
+and O2 operators, but the predictions for the O3 operator are markedly off.
+Chapter 4 shows that the large, asymmetric error bars for the O3 $R=22$ strain
+arise from its nearly flat response, where the lack of dynamic range makes it
 impossible to determine the value of the inducer dissociation constants $K_A$
 and $K_I$, as can be seen in the uncertainty of both the $[EC_{50}]$ and
 effective Hill coefficient. Discrepancies between theory and data for O3 are
-improved, but not fully resolved, by performing a global fit or fitting the MWC
-model individually to each curve (see Chapter 4). It remains an open question
-how to account for discrepancies in O3, in particular regarding the significant
+improved but not fully resolved by performing a global fit or fitting the MWC
+model individually to each curve (see Chapter 4). It remains an open question on
+how to account for discrepancies in O3, particularly regarding the significant
 mismatch between the predicted and fitted effective Hill coefficients.
 
 ### Data Collapse of Induction Profiles
@@ -342,11 +340,12 @@ relevant quantity for cellular function is the fold-change enacted by the
 regulatory system. This raises the question: given a specific value of the
 fold-change, what combination of parameters will give rise to this desired
 response? In other words, what trade-offs between the parameters of the system
-will give rise to the same mean cellular output? These are key questions both
-for understanding how the system is governed and for engineering specific
-responses in a synthetic biology context. To address these questions, we follow
-the data collapse strategy used in a number of previous studies [@Sourjik2002;
-@Keymer2006; @Swem2008], and rewrite Eq. $\ref{eq:fold_change_full}$ as a Fermi function,
+will give rise to the same mean cellular output? These are key questions for
+understanding how the system is governed and for engineering specific responses
+in a synthetic biology context. To address these questions, we follow the data
+collapse strategy used in a number of previous studies [@Sourjik2002;
+@Keymer2006; @Swem2008], and rewrite Eq. $\ref{eq:fold_change_full}$ as a Fermi
+function,
 $$
 \text{fold-change}= \frac{1}{1 + e^{-F(c)}},
 \label{eq:free_energy_definition}
@@ -378,20 +377,20 @@ onto the same free energy. [@Fig:ch2_fig07](B) shows this data collapse for the
 the theoretical predictions and experimental measurements across all eighteen
 strains.
 
-There are many different combinations of parameter values that can result in the
-same free energy as defined in Eq. $\ref{eq:free_energy_MWC_parameters}$. For example,
-suppose a system originally has a fold-change of 0.2 at a specific inducer
+Many different combinations of parameter values can result in the same free
+energy as defined in Eq. $\ref{eq:free_energy_MWC_parameters}$. For example,
+suppose a system initially has a fold-change of 0.2 at a specific inducer
 concentration, and then operator mutations increase the $\Delta\varepsilon_{RA}$
-binding energy [@Garcia2012]. While this serves to initially increase both the
-free energy and the fold-change, a subsequent increase in the repressor copy
-number could bring the cell back to the original fold-change level. Such
-trade-offs hint that there need not be a single set of parameters that evoke a
-specific cellular response, but rather that the cell explores a large but
-degenerate space of parameters with multiple, equally valid paths.
+binding energy [@Garcia2012]. While this initially increases both the free
+energy and the fold-change, a subsequent increase in the repressor copy number
+could bring the cell back to the original fold-change level. Such trade-offs
+hint that there need not be a single set of parameters that evoke a specific
+cellular response, but rather that the cell explores a large but degenerate
+space of parameters with multiple, equally valid paths.
 
 ![**Fold-change data from a broad collection of different strains collapse onto
 a single master curve.** (A) Any combination of parameters can be mapped to a
-single physiological response (i.e. fold-change) via the free energy, which
+single physiological response (i.e., fold-change) via the free energy, which
 encompasses the parametric details of the model. (B) Experimental data from
 collapse onto a single master curve as a function of the free energy Eq.
 $\ref{eq:free_energy_MWC_parameters}$. The free energy for each strain was

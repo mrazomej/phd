@@ -2,18 +2,18 @@
 
 Given the stochastic nature of gene expression, genetically identical cells
 exposed to the same environmental inputs will produce different outputs. This
-heterogeneity has been hypothesized to have consequences for how cells are able
-to survive in changing environments. Recent work has explored the use of
+heterogeneity has been hypothesized to have consequences for how cells can
+survive in changing environments. Recent work has explored the use of
 information theory as a framework to understand the accuracy with which cells
-can ascertain the state of their surroundings. Yet the predictive power of these
-approaches is limited and has not been rigorously tested using precision
+can ascertain the state of their surroundings. Yet, the predictive power of
+these approaches is limited and has not been rigorously tested using precision
 measurements. To that end, we generate a minimal model for a simple genetic
 circuit in which all parameter values for the model come from independently
 published data sets. We then predict the information processing capacity of the
 genetic circuit for a suite of biophysical parameters such as protein copy
-number and protein-DNA affinity. We compare these parameter-free predictions
-with an experimental determination of protein expression distributions and the
-resulting information processing capacity of *E. coli* cells. We find that
-our minimal model captures the scaling of the cell-to-cell variability in the
-data and the inferred information processing capacity of our simple genetic
-circuit up to a systematic deviation.
+number and protein-DNA affinity. Finally, we compare these parameter-free
+predictions with an experimental determination of protein expression
+distributions and the resulting information processing capacity of *E. coli*
+cells. We find that our minimal model captures the scaling of the cell-to-cell
+variability in the data and the inferred information processing capacity of our
+simple genetic circuit up to a systematic deviation.

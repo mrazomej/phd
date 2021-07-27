@@ -50,14 +50,14 @@ substrate was composed of M9 minimal medium supplemented with 0.5% glucose and
 2% agarose (Life Technologies UltraPure Agarose, Cat. No. 16500100). This
 solution was heated in a microwave until molten, followed by the addition of the
 IPTG to the appropriate final concentration. This solution was then thoroughly
-mixed , and a $500\,\mu\text{L}$ aliquot was sandwiched between two glass
+mixed, and a $500\,\mu\text{L}$ aliquot was sandwiched between two glass
 coverslips and was allowed to solidify.
 
 Once solid, the agarose substrates were cut into approximately
 $10\,\text{mm}\times 10\,\text{mm}$ squares. An aliquot of one to two
 microliters of the diluted cell suspension was then added to each pad. For each
 concentration of inducer, a sample of the autofluorescence control, the $\Delta
-lacI$ constitutive expression control and the experimental strain was prepared,
+lacI$ constitutive expression control and the experimental strain were prepared,
 yielding a total of thirty-six agarose mounts per experiment. These samples were
 then mounted onto two glass-bottom dishes (Ted Pella Wilco Dish, Cat. No.
 14027-20) and sealed with parafilm.
@@ -69,10 +69,10 @@ was imaged using a CrystaLaser $514\,\text{nm}$ excitation laser coupled with a
 laser-optimized (Semrock Cat. No. LF514-C-000) emission filter.
 
 For each sample, between fifteen and twenty positions were imaged, allowing for
-measurement of several hundred cells. At each position, a phase-contrast image,
-an mCherry image, and a YFP image were collected in that order with exposures on
-a time scale of ten to twenty milliseconds. Thus, for each channel, the same
-exposure time was used across all samples in a given experiment. All images were
+the measurement of several hundred cells. At each position, a phase-contrast
+image, an mCherry image, and a YFP image were collected in that order with
+exposures on a time scale of ten to twenty milliseconds. Thus, each channel used
+the same exposure time across all samples in a given experiment. All images were
 collected and stored in `ome.tiff` format. All microscopy images are available
 on the CaltechDATA online repository under DOI: 10.22002/D1.229.
 
@@ -91,8 +91,8 @@ non-uniform illumination of a single field of view, the excitation beam was
 expanded to illuminate an area larger than that of the camera sensor. While this
 allowed for an entire field of view to be illuminated, there was still
 approximately a 10% difference in illumination across both dimensions. This
-nonuniformity was corrected for in post-processing by capturing twenty images of
-a homogeneously fluorescent plastic slide (Autofluorescent Plastic Slides,
+non-uniformity was corrected for in post-processing by capturing twenty images
+of a homogeneously fluorescent plastic slide (Autofluorescent Plastic Slides,
 Chroma Cat. No. 920001) and averaging to generate a map of illumination
 intensity at any pixel $I_\text{YFP}$. To correct for shot noise in the camera
 (Andor iXon+ 897 EMCCD), twenty images were captured in the absence of
@@ -113,9 +113,9 @@ fluorescence image. An example of this correction can be seen in
 **Cell Segmentation**
 
 Each bacterial strain constitutively expressed an mCherry fluorophore from a low
-copy-number plasmid. This served as a volume marker of cell mass allowing us to
+copy-number plasmid. This served as a volume marker of cell mass, allowing us to
 segment individual cells through edge detection in fluorescence. We used the
-Marr-Hildreth edge detector [@Marr1980] which identifies edges by taking the
+Marr-Hildreth edge detector [@Marr1980], which identifies edges by taking the
 second derivative of a lightly Gaussian blurred image. Edges are identified as
 those regions which cross from highly negative to highly positive values or
 vice-versa within a specified neighborhood. Bacterial cells were defined as
@@ -126,7 +126,7 @@ To ensure that primarily single cells were segmented, we imposed area and
 eccentricity bounds. We assumed that single cells projected into two dimensions
 are roughly $2\,\mu\text{m}$ long and $1\,\mu\text{m}$ wide, so that cells are
 likely to have an area between $0.5\,\mu\text{m}^2$ and $6\,\mu\text{m}$. To
-determine the eccentricity bounds, we assumed that the a single cell can be
+determine the eccentricity bounds, we assumed that a single cell could be
 approximated by an ellipse with semi-major ($a$) and semi-minor ($b$) axis
 lengths of $0.5\,\mu\text{m}$ and $0.25\,\mu\text{m}$, respectively. The
 eccentricity of this hypothetical cell can be computed as
@@ -135,7 +135,7 @@ $$
 \label{eq:ch4_eq21}
 $$
 yielding a value of approximately 0.8. Any objects with an eccentricity below
-this value were not considered to be single cells. After imposing both an area
+These values were not considered to be single cells. After imposing both an area
 ([@Fig:ch4_fig13](A)) and eccentricity filter ([@Fig:ch4_fig13](B)), the
 remaining objects were considered cells of interest ([@Fig:ch4_fig13](C)), and
 the mean fluorescence intensity of each cell was extracted.
@@ -152,10 +152,10 @@ short-caption="Segmentation of single bacterial cells"}
 **Calculation of Fold-Change**
 
 Cells exhibited background fluorescence even in the absence of an expressed
-fluorophore. We corrected for this autofluorescence contribution to the
-fold-change calculation by subtracting the mean YFP fluorescence of cells
-expressing only the mCherry volume marker from each experimental measurement.
-The fold-change in gene expression was therefore calculated as
+fluorophore. We corrected this autofluorescence contribution to the fold-change
+calculation by subtracting the mean YFP fluorescence of cells expressing only
+the mCherry volume marker from each experimental measurement. The fold-change in
+gene expression was, therefore, calculated as
 $$
 \text{fold-change} = 
 \frac{\langle I_{R > 0} \rangle - \langle I_\text{auto} \rangle}

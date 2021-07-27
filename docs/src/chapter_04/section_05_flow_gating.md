@@ -14,18 +14,18 @@ same flow cytometer for the formal measurements in this work graciously provided
 by the Pamela Björkman lab at Caltech. All measurements were made using an
 excitation wavelength of $488\,\text{nm}$ with an emission filter set of
 525/$50\,\text{nm}$. This excitation wavelength provides approximately 40% of
-the maximum YFP absorbance [@SpectraViewer], and this was found to be sufficient
-for the purposes of these experiments. A useful feature of modern flow cytometry
-is the high-sensitivity signal detection through the use of photomultiplier
-tubes (PMT) whose response can be tuned by adjusting the voltage. Thus, the
-voltage for the forward-scatter (FSC), side-scatter (SSC), and gene expression
-measurements were tuned manually to maximize the dynamic range between
-autofluorescence signal and maximal expression without losing the details of the
-population distribution. Once these voltages were determined, they were used for
-all subsequent measurements. The extremely low signal-producing particles were
-discarded before data storage by setting a basal voltage threshold, thus
-removing the majority of spurious events. The various instrument settings for
-data collection are given in [@tbl:ch4_tab01].
+the maximum YFP absorbance [@SpectraViewer], which was sufficient for these
+experiments. A useful feature of modern flow cytometry is the high-sensitivity
+signal detection through the use of photomultiplier tubes (PMT), whose response
+can be tuned by adjusting the voltage. Thus, the voltage for the forward-scatter
+(FSC), side-scatter (SSC) and gene expression measurements were tuned manually
+to maximize the dynamic range between autofluorescence signal and maximal
+expression without losing the details of the population distribution. Once these
+voltages were determined, they were used for all subsequent measurements. The
+extremely low signal-producing particles were discarded before data storage by
+setting a basal voltage threshold, thus removing the majority of spurious
+events. The various instrument settings for data collection are given in
+[@tbl:ch4_tab01].
 
 | **Laser**        | **Channel**                     | **Sensor Voltage** |
 | ---------------- | ------------------------------- | ------------------ |
@@ -39,7 +39,7 @@ these values. {#tbl:ch4_tab01}
 
 ### Experimental Measurement 
 
-Prior to each day's experiments, the analyzer was calibrated using MACSQuant
+Before each day's experiments, the analyzer was calibrated using MACSQuant
 Calibration Beads (Cat. No. 130-093-607) such that day-to-day experiments would
 be comparable. A single data set consisted of seven bacterial strains, all
 sharing the same operator, with varying repressor copy numbers ($R = 0$, 22, 60,
@@ -50,7 +50,7 @@ the 96-well plate on a MACSQuant ice block. Because the ice block thawed over
 the course of the experiment, the samples measured last were approximately at
 room temperature. This means that samples may have grown slightly by the end of
 the experiment. To confirm that this continued growth did not alter the measured
-results, a subset of experiments were run in reverse meaning that the fully
+results, a subset of experiments were run in reverse, meaning that the fully
 induced cultures were measured first and the uninduced samples last. The plate
 arrangements and corresponding fold-change measurements are shown in
 [@Fig:ch4_fig08](A) and (B), respectively. The measured fold-change values in
@@ -105,12 +105,12 @@ obtained from the Gaussian fit. $\chi^2_\alpha(p)$ is the quantile function for
 probability $p$ of the chi-squared distribution with two degrees of freedom.
 [@Fig:ch4_fig09] shows an example of different gating contours that would arise
 from different values of $\alpha$ in Eq. $\ref{eq:ch4_eq19}$. In this work, we
-chose $\alpha = 0.4$, which we deemed was a sufficient constraint to minimize
-the noise in the data. As explained in [Section 4.6](#sec:ch4_sec06), we
-compared our high throughput flow cytometry data with single-cell microscopy,
-confirming that the automatic gating did not introduce systematic biases to the
-analysis pipeline. The specific code where this gating is implemented can be
-found in [GitHub
+chose $\alpha = 0.4$, which we deemed as a sufficient constraint to minimize the
+noise in the data. As explained in [Section 4.6](#sec:ch4_sec06), we compared
+our high throughput flow cytometry data with single-cell microscopy, confirming
+that the automatic gating did not introduce systematic biases to the analysis
+pipeline. The specific code where this gating is implemented can be found in
+[GitHub
 repository](https://github.com/RPGroup-PBoC/mwc_induction/blob/master/code/analysis/unsupervised_gating.ipynb).
 
 ![**Representative unsupervised gating contours.** Points indicate individual

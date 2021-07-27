@@ -21,30 +21,30 @@ allosteric circuits for synthetic biology [@Lutz1997; @Moon2012; @Rogers2015;
 simple repression within the MWC model [@Daber2009] and experimentally measured
 how mutations alter the induction profiles of transcription factors
 [@Daber2011a]. Vilar and Saiz analyzed a variety of interactions in inducible
-*lac*-based systems including the effects of oligomerization and DNA folding on
+*lac*-based systems, including the effects of oligomerization and DNA folding on
 transcription factor induction [@Leonor2008; @Vilar2013]. Other work has
 attempted to use the *lac* system to reconcile *in vitro* and *in vivo*
 measurements [@Tungtur2011; @Sochor2014].
 
 Although this body of work has done much to improve our understanding of
-allosteric transcription factors, there have been few attempts to explicitly
-connect quantitative models to experiments. Here, we generate a predictive model
-of allosteric transcriptional regulation and then test the model against a
+allosteric transcription factors, there have been few attempts to connect
+quantitative models to experiments explicitly. Here, we generate a predictive
+model of allosteric transcriptional regulation and then test the model against a
 thorough set of experiments using well-characterized regulatory components.
 Specifically, we used the MWC model to build upon a well-established
 thermodynamic model of transcriptional regulation [@Bintu2005; @Garcia2011c],
 allowing us to compose the model from a minimal set of biologically meaningful
 parameters. This model combines both theoretical and experimental insights; for
-example, rather than considering gene expression directly we analyze the
+example, rather than considering gene expression directly, we analyze the
 fold-change in expression, where the weak promoter approximation (see )
 circumvents uncertainty in the RNAP copy number. The resulting model depended
 upon experimentally accessible parameters, namely, the repressor copy number,
-the repressor-DNA binding energy, and the concentration of inducer. We tested
-these predictions on a range of strains whose repressor copy number spanned two
-orders of magnitude and whose DNA binding affinity spanned 6 $k_BT$. We argue
-that one would not be able to generate such a wide array of predictions by using
-a Hill function, which abstracts away the biophysical meaning of the parameters
-into phenomenological parameters [@Forsen1995].
+the repressor-DNA binding energy, and inducer concentration. We tested these
+predictions on a range of strains whose repressor copy number spanned two orders
+of magnitude and whose DNA binding affinity spanned 6 $k_BT$. We argue that one
+would not generate such a wide array of predictions by using a Hill function,
+which abstracts away the biophysical meaning of the parameters into
+phenomenological parameters [@Forsen1995].
 
 More precisely, we tested our model in the context of a *lac*-based simple
 repression system by first determining the allosteric dissociation constants
@@ -55,28 +55,28 @@ induction profiles for seventeen other strains where $\Delta \varepsilon_{RA}$
 and $R$ were varied significantly (see ). We next measured the induction
 profiles of these seventeen strains using flow cytometry and found that our
 predictions consistently and accurately captured the primary features for each
-induction data set, as shown in -. Importantly, we find that fitting $K_A$ and
-$K_I$ to data from any other strain would have resulted in nearly identical
-predictions (see Chapter 4 for further details). This suggests that a few
-carefully chosen measurements can lead to a deep quantitative understanding of
-how simple regulatory systems work without requiring an extensive sampling of
-strains that span the parameter space. Moreover, the fact that we could
-consistently achieve reliable predictions after fitting only two free parameters
-stands in contrast to the common practice of fitting several free parameters
-simultaneously, which can nearly guarantee an acceptable fit provided that the
-model roughly resembles the system response, regardless of whether the details
-of the model are tied to any underlying molecular mechanism.
+induction data set, as shown in [@Fig:ch2_fig05]. Importantly, we find that
+fitting $K_A$ and $K_I$ to data from any other strain would have resulted in
+nearly identical predictions (see Chapter 4 for further details). This suggests
+that a few carefully chosen measurements can lead to a deep quantitative
+understanding of how simple regulatory systems work without requiring an
+extensive sampling of strains that span the parameter space. Moreover, the fact
+that we could consistently achieve reliable predictions after fitting only two
+free parameters stand in contrast to the common practice of fitting several
+free parameters simultaneously, which can nearly guarantee an acceptable fit
+provided that the model roughly resembles the system response, regardless of
+whether the details of the model are tied to any underlying molecular mechanism.
 
 Beyond observing changes in fold-change as a function of effector concentration,
-our application of the MWC model allows us to explicitly predict the values of
+our application of the MWC model allows us to predict the values of explicitly
 the induction curves' key parameters, namely, the leakiness, saturation, dynamic
 range, $[EC_{50}]$, and the effective Hill coefficient (see ). We are
 consistently able to accurately predict the leakiness, saturation, and dynamic
 range for each of the strains. For both the O1 and O2 data sets, our model also
-accurately predicts the effective Hill coefficient and $[EC_{50}]$, though these
+accurately predict the effective Hill coefficient and $[EC_{50}]$, though these
 predictions for O3 are noticeably less accurate. While performing a global fit
 for all model parameters marginally improves the prediction for O3 (see Chapter
-4), we are still unable to accurately predict the effective Hill coefficient or
+4), we are still unable to predict the effective Hill coefficient or accurately
 the $[EC_{50}]$. We further tried including additional states (such as allowing
 the inactive repressor to bind to the operator), relaxing the weak promoter
 approximation, accounting for changes in gene and repressor copy number
@@ -86,7 +86,7 @@ It remains an open question as to how the discrepancy between the theory and
 measurements for O3 can be reconciled.
 
 The dynamic range, which is of considerable interest when designing or
-characterizing a genetic circuit, is revealed to have an interesting property:
+characterizing a genetic circuit is revealed to have an interesting property:
 although changing the value of $\Delta \varepsilon_{RA}$ causes the dynamic
 range curves to shift to the right or left, each curve has the same shape and in
 particular the same maximum value. This means that strains with strong or weak
@@ -101,29 +101,29 @@ transcription factors must rely on trial and error to achieve specific responses
 Despite the diversity observed in the induction profiles of each of our strains,
 our data are unified by their reliance on fundamental biophysical parameters. In
 particular, we have shown that our model for fold-change can be rewritten in
-terms of the free energy Eq. $\ref{eq:free_energy_MWC_parameters}$, which encompasses all
-of the physical parameters of the system. This has proven to be an illuminating
-technique in a number of studies of allosteric proteins [@Sourjik2002;
-@Keymer2006; @Swem2008]. Although it is experimentally straightforward to
-observe system responses to changes in effector concentration $c$, framing the
-input-output function in terms of $c$ can give the misleading impression that
-changes in system parameters lead to fundamentally altered system responses.
-Alternatively, if one can find the "natural variable" that enables the output to
-collapse onto a single curve, it becomes clear that the system's output is not
-governed by individual system parameters, but rather the contributions of
-multiple parameters that define the natural variable. When our fold-change data
-are plotted against the respective free energies for each construct, they
-collapse cleanly onto a single curve (see). This enables us to analyze how
-parameters can compensate each other. For example, rather than viewing strong
-repression as a consequence of low IPTG concentration $c$ or high repressor copy
-number $R$, we can now observe that strong repression is achieved when the free
-energy $F(c) \leq -5 k_BT$, a condition which can be reached in a number of
-ways.
+terms of the free energy Eq. $\ref{eq:free_energy_MWC_parameters}$, which
+encompasses all of the physical parameters of the system. This has proven to be
+an illuminating technique in a number of studies of allosteric proteins
+[@Sourjik2002; @Keymer2006; @Swem2008]. Although it is experimentally
+straightforward to observe system responses to changes in effector concentration
+$c$, framing the input-output function in terms of $c$ can give the misleading
+impression that changes in system parameters lead to fundamentally altered
+system responses.  Alternatively, suppose one can find the "natural variable"
+that enables the output to collapse onto a single curve. In that case, it
+becomes clear that the system's output is not governed by individual system
+parameters but rather the contributions of multiple parameters that define the
+natural variable. When our fold-change data are plotted against each construct's
+respective free energies, they collapse cleanly onto a single curve (see). This
+enables us to analyze how parameters can compensate for each other. For example,
+rather than viewing strong repression as a consequence of low IPTG concentration
+$c$ or high repressor copy number $R$, we can now observe that strong repression
+is achieved when the free energy $F(c) \leq -5 k_BT$, a condition which can be
+reached in a number of ways.
 
 While our experiments validated the theoretical predictions in the case of
 simple repression, we expect the framework presented here to apply much more
 generally to different biological instances of allosteric regulation. For
-example, we can use this model to study more complex systems such as when
+example, we can use this model to study more complex systems, such as when
 transcription factors interact with multiple operators [@Bintu2005]. We can
 further explore different regulatory configurations such as corepression,
 activation, and coactivation, each of which are found in *E. coli* (see Chapter
@@ -134,18 +134,18 @@ theoretically predict and experimentally verify whether the repressor-inducer
 dissociation constants $K_A$ and $K_I$ or the energy difference $\Delta
 \varepsilon_{AI}$ between the allosteric states can be tuned by making single
 amino acid substitutions in the transcription factor [@Daber2011a;
-@Phillips2015a]. Finally, we expect that the kind of rigorous quantitative
-description of the allosteric phenomenon provided here will make it possible to
-construct biophysical models of fitness for allosteric proteins similar to those
-already invoked to explore the fitness effects of transcription factor binding
-site strengths and protein stability [@Gerland2002; @Berg2004; @Zeldovich2008].
+@Phillips2015a]. Finally, we expect that the rigorous quantitative description
+of the allosteric phenomenon provided here will make it possible to construct
+biophysical models of fitness for allosteric proteins similar to those already
+invoked to explore the fitness effects of transcription factor binding site
+strengths and protein stability [@Gerland2002; @Berg2004; @Zeldovich2008].
 
 To conclude, we find that our application of the MWC model provides an accurate,
 predictive framework for understanding simple repression by allosteric
 transcription factors. To reach this conclusion, we analyzed the model in the
 context of a well-characterized system, in which each parameter had a clear
 biophysical meaning. As many of these parameters had been measured or inferred
-in previous studies, this gave us a minimal model with only two free parameters
+in previous studies, this gave us a minimal model with only two free parameters,
 which we inferred from a single data set. We then accurately predicted the
 behavior of seventeen other data sets in which repressor copy number and
 repressor-DNA binding energy were systematically varied. In addition, our model

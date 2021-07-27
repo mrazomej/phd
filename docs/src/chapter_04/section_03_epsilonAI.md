@@ -15,17 +15,17 @@ further degeneracy.
 
 In this section, we discuss how multiple sets of parameters may yield identical
 fold-change profiles. More precisely, we shall show that if we try to fit the
-data in to the fold-change and extract the three unknown parameters ($K_A$,
+data into the fold-change and extract the three unknown parameters ($K_A$,
 $K_I$, and $\Delta\varepsilon_{AI}$), then multiple degenerate parameter sets
 would yield equally good fits. In other words, this data set alone is
-insufficient to uniquely determine the actual physical parameter values of the
-system. This problem persists even when fitting multiple data sets
-simultaneously as we will see later.
+insufficient to determine the actual physical parameter values of the system
+uniquely. This problem persists even when fitting multiple data sets
+simultaneously, as we will see later.
 
-In [@Fig:ch4_fig01](A), we fit the $R=260$ data by fixing $\Delta\varepsilon_{AI}$
-to the value shown on the $x$-axis and determine the parameters $K_A$ and $K_I$
-given this constraint. We use the fold-change function but with $\beta
-\Delta\varepsilon_{RA}$ modified to the form $\beta
+In [@Fig:ch4_fig01](A), we fit the $R=260$ data by fixing
+$\Delta\varepsilon_{AI}$ to the value shown on the $x$-axis and determine the
+parameters $K_A$ and $K_I$ given this constraint. We use the fold-change
+function but with $\beta \Delta\varepsilon_{RA}$ modified to the form $\beta
 \Delta\tilde{\varepsilon}_{RA}$ in Eq. 2.5 to account for the underlying
 assumptions used when fitting previous data (see [Section 3.2](#sec:ch4_sec03.2)
 for a full explanation of why this modification is needed).
@@ -57,9 +57,9 @@ As shown in the previous section, the fold-change response of a single strain is
 not sufficient to determine the three MWC parameters ($K_A$, $K_I$, and
 $\Delta\varepsilon_{AI}$), since degenerate sets of parameters yield nearly
 identical fold-change responses. To circumvent this degeneracy, we now turn to
-some previous data from the *lac* system in order to determine the value of
+some previous data from the *lac* system to determine the value of
 $\Delta\varepsilon_{AI}$ in for the induction of the Lac repressor.
-Specifically, we consider two previous sets of work from: (1) @Garcia2011c and
+Specifically, we consider two previous sets of work from (1) @Garcia2011c and
 (2) @Brewster2014, both of which measured fold-change with the same simple
 repression system in the absence of inducer ($c=0$) but at various repressor
 copy numbers $R$. The original analysis for both data sets assumed that in the
@@ -119,29 +119,29 @@ fold-change values. However, the binding energy values that we use from
 @Garcia2011c are effective parameters $\Delta\tilde{\varepsilon}_{RA}$. In this
 case, we are faced with an undetermined system in which we have more variables
 than equations, and we are thus unable to determine the value of $\Delta
-\varepsilon_{AI}$. In order to obtain this parameter, we must turn to a more
-complex regulatory scenario which provides additional constraints that allow us
-to fit for $\Delta \varepsilon_{AI}$.
+\varepsilon_{AI}$. To obtain this parameter, we must turn to a more complex
+regulatory scenario which provides additional constraints that allow us to fit
+for $\Delta \varepsilon_{AI}$.
 
 A variation on simple repression in which multiple copies of the promoter are
 available for repressor binding (for instance, when the simple repression
-construct is on plasmid) can be used to circumvent the problems that arise when
-using $\Delta \tilde{\varepsilon}_{RA}$. This is because the behavior of the
-system is distinctly different when the number of active repressors $p_A(0) R$
-is less than or greater than the number of available promoters $N$. Repression
-data for plasmids with known copy number $N$ allows us to perform a fit for the
-value of $\Delta\varepsilon_{AI}$.
+construct is on a plasmid) can be used to circumvent the problems that arise
+when using $\Delta \tilde{\varepsilon}_{RA}$. This is because the behavior of
+the system is distinctly different when the number of active repressors $p_A(0)
+R$ is less than or greater than the number of available promoters $N$.
+Repression data for plasmids with known copy number $N$ allows us to perform a
+fit for the value of $\Delta\varepsilon_{AI}$.
 
-To obtain an expression for a system with multiple promoters $N$, we
-follow @Weinert2014, writing the fold-change in terms of the the grand
-canonical ensemble as 
+To obtain an expression for a system with multiple promoters $N$, we follow
+@Weinert2014, writing the fold-change in terms of the grand canonical ensemble
+as 
 $$
 \text{fold-change} = \frac{1}{1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}},
 \label{eq:ch4_eq05}
 $$
-where $\lambda_r = e^{\beta \mu}$ is the fugacity and $\mu$ is the chemical
-potential of the repressor. The fugacity will enable us to easily enumerate the
-possible states available to the repressor.
+where $\lambda_r = e^{\beta \mu}$ is the fugacity, and $\mu$ is the chemical
+potential of the repressor. The fugacity will enable us to enumerate the
+possible states available to the repressor easily.
 
 To determine the value of $\lambda_r$, we first consider that the total number
 of repressors in the system, $R_{\text{tot}}$, is fixed and given by 
@@ -151,7 +151,7 @@ R_{\text{tot}} = R_S + R_{NS},
 $$
 where $R_S$ represents the number
 of repressors specifically bound to the promoter and $R_{NS}$ represents
-the number of repressors nonspecifically bound throughout the genome.
+the number of repressors non-specifically bound throughout the genome.
 The value of $R_S$ is given by 
 $$
 R_S = N \frac{\lambda_r 
@@ -220,5 +220,5 @@ fitting these data to Eq. $\ref{eq:ch4_eq05}$, we extracted the parameter value
 $\Delta\varepsilon_{AI} = 4.5~k_B T$. Substituting this value into Eq.
 $\ref{eq:ch4_eq03}$ shows that 99% of the repressors are in the active state in the
 absence of inducer and $\Delta\tilde{\varepsilon}_{RA} \approx
-\Delta\varepsilon_{RA}$, so that all of the previous energies and calculations
+\Delta\varepsilon_{RA}$ so that all of the previous energies and calculations
 made by @Garcia2011c [@Brewster2014] were accurate.

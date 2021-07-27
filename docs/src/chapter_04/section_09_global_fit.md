@@ -117,7 +117,7 @@ P(\Delta\varepsilon_{RA}^{(j)}) =
 $$
 where $\Delta\bar{\varepsilon}_{RA}^{(j)}$ is the binding energy and
 $\sigma_{\varepsilon_j}$ is the variability associated with that
-parameter around the mean value as reported in @Garcia2011c .
+parameter around the mean value as reported in [@Garcia2011c].
 
 The $\sigma_{R_i}$ and $\sigma_{\varepsilon_j}$ parameters will constrain the
 range of values for $R^{(i)}$ and $\Delta\varepsilon_{RA}^{(j)}$ found from the
@@ -144,12 +144,13 @@ MCMC parameter inference. We note that even though we allowed the repressor copy
 numbers and repressor-DNA binding energies to vary, the resulting fit values
 were very close to the previously reported values. The fit values of the
 repressor copy numbers were all within one standard deviation of the previously
-reported values provided in @Garcia2011c. And although some of the repressor-DNA
-binding energies differed by a few standard deviations from the reported values,
-the differences were always less than $1~k_BT$, which represents a small change
-in the biological scales we are considering. The biggest discrepancy between our
-fit values and the previous measurements arose for the synthetic Oid operator,
-which we discuss in more detail [Sec. 4.9](#sec:ch4_sec10).
+reported values provided in [@Garcia2011c]. And although some of the
+repressor-DNA binding energies differed by a few standard deviations from the
+reported values, the differences were always less than $1~k_BT$, representing a
+small change in the biological scales we are considering. The biggest
+discrepancy between our fit values and the previous measurements arose for the
+synthetic Oid operator, which we discuss in more detail [Sec.
+4.9](#sec:ch4_sec10).
 
 [@Fig:ch4_fig20] shows the same key properties as in [@Fig:ch2_fig06], but uses
 the parameters obtained from this global fitting approach. We note that even by
@@ -177,7 +178,7 @@ theory being unable to capture the steepness of the response curves.
 | $\beta = \frac{1}{k_B T}$                        | The inverse product of the Boltzmann constant $k_B$ and the temperature $T$ of the system                    |
 Table: **Key model parameters for induction of an allosteric repressor.** {#tbl:ch4_tbl02}
 
-![**Global fit of dissociation constants, repressor copy numbers and binding
+![**Global fit of dissociation constants, repressor copy numbers, and binding
 energies.** Theoretical predictions resulting from simultaneously fitting the
 dissociation constants $K_A$ and $K_I$, the six repressor copy numbers $R$, and
 the four repressor-DNA binding energies $\Delta\varepsilon_{RA}$ using the
@@ -191,7 +192,7 @@ replicates were taken. The shaded regions are significantly smaller than in
 fit parameters are much more tightly constrained. The dashed lines at 0 IPTG
 indicate a linear scale, whereas solid lines represent a log
 scale.](ch4_fig19){#fig:ch4_fig19 short-caption="Global fit of dissociation
-constants, repressor copy numbers and binding energies"}
+constants, repressor copy numbers, and binding energies"}
 
 ![**Key properties of induction profiles as predicted with a global fit using
 all available data.** Data for the (A) leakiness, (B) saturation, and (C)

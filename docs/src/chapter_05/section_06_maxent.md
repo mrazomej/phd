@@ -26,8 +26,8 @@ implementation for our particular case study.
 
 ### The MaxEnt principle
 
-The principle of maximum entropy (MaxEnt) first proposed by E. T. Jaynes in 1957
-tackles the question of given limited information what is the least biased
+The principle of maximum entropy (MaxEnt), first proposed by E. T. Jaynes in
+1957, tackles the question of given limited information what is the least biased
 inference one can make about a particular probability distribution
 [@Jaynes1957]. In particular, Jaynes used this principle to show the
 correspondence between statistical mechanics and information theory,
@@ -52,15 +52,14 @@ $$
 \lim_{m \rightarrow \infty} 
 P_H(x \mid \mathbf{\left\langle{x}\right\rangle}_m) \rightarrow P_X(x),
 $$
-i.e. that the more moments we add to our approximation, the more the estimator
+i.e., that the more moments we add to our approximation, the more the estimator
 distribution converges to the real distribution.
 
 The MaxEnt principle tells us that our best guess for this estimator is to build
 it based on maximizing the Shannon entropy, constrained by the information we
-have about these $m$ moments. Shannon's entropy's maximization guarantees that
-we are the least committed possible to information that we do not possess. The
-Shannon entropy for a univariate discrete distribution is given by
-[@Shannon1948]
+have about these $m$ moments. Shannon's entropy maximization guarantees that we
+are the least committed to information that we do not possess. The Shannon
+entropy for a univariate discrete distribution is given by [@Shannon1948]
 $$
 H(x) \equiv - \sum_x P_X(x) \log P_X(x).
 $$
@@ -184,11 +183,11 @@ To get around this problem, we implemented a variation to the algorithm due to
 G. Larry Bretthorst, E.T. Jaynes' last student. With a straightforward argument,
 we can show that linearly rescaling the constraints, the Lagrange multipliers,
 and the "rules" for computing each of the moments, i.e., each of the individual
-products that go into the moment calculation, should converge to the same MaxEnt
-distribution. In order to see this let's consider again a univariate
-distribution $P_X(x)$ that we are trying to reconstruct given the first two
-moments $\left\langle{x}\right\rangle$, and $\left\langle{x^2}\right\rangle$.
-The MaxEnt distribution can be written as
+products that go into the moment calculation should converge to the same MaxEnt
+distribution. To see this, let's consider a univariate distribution $P_X(x)$
+that we are trying to reconstruct given the first two moments
+$\left\langle{x}\right\rangle$, and $\left\langle{x^2}\right\rangle$. The MaxEnt
+distribution can be written as
 $$
 P_H(x) = \frac{1}{\mathcal{Z}}
   \exp \left(- \lambda_1 x - \lambda_2 x^2 \right) =
@@ -241,14 +240,14 @@ entry of the form
 $$
 v_j = \left\langle{m^{x_j} p^{y_j}}\right\rangle,
 $$
-i.e. the information that we have about the distribution. That means that the
+i.e., the information that we have about the distribution. That means that the
 constraint equation $\mathcal{L}$ to be used for this problem takes the form
 $$
 \mathcal{L} = -\sum_i P_i \ln P_i + \lambda_0 \left( 1 - \sum_i P_i \right)
   + \sum_{j>0} \lambda_j \left( v_j - \sum_i A_{ij} P_i \right),
 $$
 where $\lambda_0$ is the Lagrange multiplier associated with the normalization
-constraint, and $\lambda_j$ is the Lagrange multiplier associated with the
+constraint and $\lambda_j$ is the Lagrange multiplier associated with the
 $j^\text{th}$ constraint. This constraint equation is equivalent to Eq.
 $\ref{eq:constraint_eq}$, but now all the details of how to compute the moments
 are specified in matrix $\mathbf{A}$.
@@ -314,22 +313,22 @@ $$
 \sum_i A_{ij}'' A_{jk}'' = \beta_j \delta_{jk},
 $$
 where $\beta_j$ is the $j^\text{th}$ eigenvalue of the matrix $\mathbf{E}$ and
-$\delta_{jk}$ is the Kronecker delta function. What this means is that, as
-desired, the constraints are orthogonal to each other, improving the algorithm
-convergence speed.
+$\delta_{jk}$ is the Kronecker delta function. This means that, as desired, the
+constraints are orthogonal to each other, improving the algorithm convergence
+speed.
 
 ### Predicting distributions for simple repression constructs
 
 Having explained the theoretical background and the practical difficulties, and
 a workaround strategy proposed by Bretthorst, we implemented the inference using
 the moments obtained from averaging over the variability along the cell cycle
-(See [Sec. 5.4](#sec:ch5_sec05)). [@Fig:ch5_fig16] and [@Fig:ch5_fig17] present these inferences for
-both mRNA and protein levels respectively for different values of the
-repressor-DNA binding energy and repressor copy numbers per cell. From these
-plots, we can easily appreciate that even though the mean of each distribution
-changes as the induction level changes, there is a lot of overlap between
-distributions. This, as a consequence, means that at the single-cell level,
-cells cannot perfectly resolve between different inputs.
+(See [Sec. 5.4](#sec:ch5_sec05)). [@Fig:ch5_fig16] and [@Fig:ch5_fig17] present
+these inferences for both mRNA and protein levels respectively for different
+values of the repressor-DNA binding energy and repressor copy numbers per cell.
+From these plots, we can easily appreciate that even though the mean of each
+distribution changes as the induction level changes, there is a lot of overlap
+between distributions. This, as a consequence, means that at the single-cell
+level, cells cannot perfectly resolve between different inputs.
 
 ![**Maximum entropy mRNA distributions for simple repression constructs.** mRNA
 distributions for different biophysical parameters. From left to right, the
@@ -377,7 +376,7 @@ curves) and theoretical (dark dashed line) cumulative distribution functions for
 the three $\Delta lacI$ strains. As in [@Fig:ch5_fig12], we do not expect
 differences between the operators, but we explicitly plot them separately to
 ensure that this is the case. We can see right away that as we would expect,
-given the limitations of the model to predict the noise and skewness of the
+given the model's limitations to predict the noise and skewness of the
 distribution accurately, the model doesn't accurately predict the data. Our
 model predicts a narrower distribution compared to what we measured with
 single-cell microscopy.
@@ -405,7 +404,7 @@ experimental data.
 fold-change empirical cumulative distribution functions (ECDF) for regulated
 strains with the three operators (different colors) as a function of repressor
 copy numbers (rows) and inducer concentrations (columns). The color curves
-represent single-cell microscopy measurements while the dashed black lines
+represent single-cell microscopy measurements, while the dashed black lines
 represent the theoretical distributions as reconstructed by the maximum entropy
 principle. The theoretical distributions were fitted using the first six moments
 of the protein distribution. The Python code

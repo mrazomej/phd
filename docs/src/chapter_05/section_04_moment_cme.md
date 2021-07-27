@@ -1,7 +1,7 @@
 ## Computing moments from the master equation {#sec:ch5_sec04}
 
 This section will compute the moment equations for the distribution $P(m, p)$.
-Without loss of generality, here we will focus on the three-state regulated
+Without loss of generality, here, we will focus on the three-state regulated
 promoter. The computation of the two-state promoter's moments follows the same
 procedure, changing only the matrices' definition in the master equation.
 
@@ -145,7 +145,7 @@ $$
 (m' - 1)^x p^y \mathbf{P}(m', p).
 $$
 Since the term on the right-hand side of the equation is multiplied by $m'$,
-starting the sum over $m'$ from 0 rather than from 1 will not affect the result
+starting the sum over $m'$ from zero rather than one will not affect the result
 since this factor will not contribute to the total sum. Nevertheless, this is
 useful since our definition of a moment from Eq. $\ref{eq:mom_def}$ requires the
 sum to start at zero. This means that we can rewrite this term as
@@ -388,8 +388,8 @@ changes during the cell cycle in [Sec. 4.4](#sec:ch5_sec05).
 Suppose we do not account for the change in gene copy number during the cell
 cycle or the partition of proteins during division. In that case, the dynamics
 of the moments of the distribution described in this section will reach a steady
-state. To compute the kinetic model's steady-state moments with a single
-gene across the cell cycle, we use the moment closure property of our master
+state. To compute the kinetic model's steady-state moments with a single gene
+across the cell cycle, we use the moment closure property of our master
 equation. By equating Eq. $\ref{eq:mom_ode_factorized}$ to zero for a given
 $\mathbf{x}$ and $\mathbf{y}$, we can solve the resulting linear system and
 obtain a solution for $\mathbf{\left\langle m^x p^y \right\rangle}$ at steady

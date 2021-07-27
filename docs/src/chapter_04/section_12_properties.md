@@ -58,8 +58,8 @@ the peak but not its magnitude.
 ![**Dependence of leakiness, saturation, and dynamic range on the operator
 binding energy and repressor copy number.** Increasing repressor copy number or
 decreasing the repressor-operator binding energy suppresses gene expression and
-decreases both the leakiness and saturation. The dynamic range retains its shape
-but shifts right as the repressor copy number increases. The peak in the dynamic
+decreases the leakiness and saturation. The dynamic range retains its shape but
+shifts right as the repressor copy number increases. The peak in the dynamic
 range can be understood by considering the two extremes for $\Delta
 \varepsilon_{RA}$: for small repressor-operator binding energies, the leakiness
 is small, but the saturation increases with $\Delta \varepsilon_{RA}$; for large

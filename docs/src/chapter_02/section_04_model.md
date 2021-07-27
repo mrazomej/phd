@@ -12,14 +12,14 @@ the operator, which increases gene expression. Simple repression motifs in the
 absence of inducer have been previously characterized by an equilibrium model
 where the probability of each state of repressor and RNAP promoter occupancy is
 dictated by the Boltzmann distribution [@Ackers1982; @Buchler2003; @Vilar2003;
-@Bintu2005a; @Garcia2011c; @Brewster2014] (we note that non-equilibrium models of
-simple repression have been shown to have the same functional form that we
+@Bintu2005a; @Garcia2011c; @Brewster2014] (we note that non-equilibrium models
+of simple repression have been shown to have the same functional form that we
 derive below [@Phillips2015a]). We extend these models to consider allostery by
 accounting for the equilibrium state of the repressor through the MWC model.
 
 Thermodynamic models of gene expression begin by enumerating all possible states
 of the promoter and their corresponding statistical weights. As shown in
-[@Fig:ch2_fig02](A) , the promoter can either be empty, occupied by RNAP, or
+[@Fig:ch2_fig02](A), the promoter can either be empty, occupied by RNAP, or
 occupied by either an active or inactive repressor. The probability of binding
 to the promoter will be affected by the protein copy number, which we denote as
 $P$ for RNAP, $R_{A}$ for active repressor, and $R_{I}$ for inactive repressor.
@@ -28,7 +28,7 @@ in thermodynamic equilibrium, such that $R_{A}$ and $R_{I}$ will remain constant
 for a given inducer concentration [@MONOD1965]. We assign the repressor a
 different DNA binding affinity in the active and inactive state. In addition to
 the specific binding sites at the promoter, we assume that there are $N_{NS}$
-non-specific binding sites elsewhere (i.e. on parts of the genome outside the
+non-specific binding sites elsewhere (i.e., on parts of the genome outside the
 simple repression architecture) where the RNAP or the repressor can bind. All
 specific binding energies are measured relative to the average non-specific
 binding energy. Thus, $\Delta\varepsilon_{P}$ represents the energy difference
@@ -49,11 +49,11 @@ represents the number of non-specific binding sites for both RNAP and repressor.
 A repressor has an active conformation (red, left column) and an inactive
 conformation (purple, right column), with the energy difference between these
 two states given by $\Delta \varepsilon_{AI}$. The inducer (blue circle) at
-concentration $c$ is capable of binding to the repressor with dissociation
-constants $K_A$ in the active state and $K_I$ in the inactive state. The eight
-states for a dimer with $n=2$ inducer binding sites are shown along with the
-sums of the active and inactive states.](ch2_fig02){#fig:ch2_fig02
-short-caption="States and weights for the simple repression motif."}
+concentration $c$ can bind to the repressor with dissociation constants $K_A$ in
+the active state and $K_I$ in the inactive state. The eight states for a dimer
+with $n=2$ inducer binding sites are shown along with the sums of the active and
+inactive states.](ch2_fig02){#fig:ch2_fig02 short-caption="States and weights
+for the simple repression motif."}
 
 Thermodynamic models of transcription [@Ackers1982; @Buchler2003; @Vilar2003;
 @Bintu2005; @Bintu2005a; @Kuhlman2007; @Daber2011a; @Garcia2011c; @Brewster2014;
@@ -75,7 +75,7 @@ fraught with experimental difficulties, as determining the exact proportionality
 between expression and $p_{\text{bound}}$ is not straightforward. Instead, we
 measure the fold-change in gene expression due to the presence of the repressor.
 We define fold-change as the ratio of gene expression in the presence of
-repressor relative to expression in the absence of repressor (i.e. constitutive
+repressor relative to expression in the absence of repressor (i.e., constitutive
 expression), namely,
 $$
 \text{fold-change}
@@ -122,15 +122,15 @@ $e^{-\Delta \beta \varepsilon_{AI}}$ is sometimes denoted by $L$ [@MONOD1965;
 $\frac{c}{K_A}$ and $\frac{c}{K_I}$ represent the change in free energy when an
 inducer binds to a repressor in the active or inactive state, respectively,
 while $e^{-\beta \Delta \varepsilon_{AI} }$ represents the change in free energy
-when the repressor changes from the active to inactive state in the absence of
-inducer. Thus, a repressor which favors the active state in the absence of
+when the repressor changes from the active to the inactive state in the absence
+of inducer. Thus, a repressor that favors the active state in the absence of
 inducer ($\Delta \varepsilon_{AI} > 0$) will be driven towards the inactive
 state upon inducer binding when $K_I < K_A$. The specific case of a repressor
 dimer with $n=2$ inducer binding sites is shown in [@Fig:ch2_fig02](B).
 
-Substituting $p_A(c)$ from Eq. $\ref{eq:p_active}$ into Eq. $\ref{eq:fold_change_approx}$ yields
-the general formula for induction of a simple repression regulatory architecture
-[@Phillips2015a], namely,
+Substituting $p_A(c)$ from Eq. $\ref{eq:p_active}$ into Eq.
+$\ref{eq:fold_change_approx}$ yields the general formula for induction of a
+simple repression regulatory architecture [@Phillips2015a], namely,
 $$
 \text{fold-change} = 
 \left( 1+\frac{\left(1+\frac{c}{K_A}\right)^n}{\left(1+\frac{c}{K_A}\right)^n +
@@ -156,7 +156,7 @@ series of experiments using the *lac* system in *E. coli* to tune the control
 parameters for a simple repression genetic circuit. As discussed in
 [@Fig:ch2_fig01](C), previous studies from our lab have provided
 well-characterized values for many of the parameters in our experimental system,
-leaving only the values of the the MWC parameters ($K_A$, $K_I$, and $\Delta
+leaving only the values of the MWC parameters ($K_A$, $K_I$, and $\Delta
 \varepsilon_{AI}$) to be determined. We note that while previous studies have
 obtained values for $K_A$, $K_I$, and $L=e^{-\beta \Delta \varepsilon_{AI}}$
 [@OGorman1980; @Daber2011a], they were either based upon biochemical experiments

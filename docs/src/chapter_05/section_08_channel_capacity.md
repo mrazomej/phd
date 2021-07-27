@@ -25,13 +25,13 @@ with an algorithm mathematically shown to converge to $\hat{P}(c)$
 [@Blahut1972]. To compute both the theoretical and the experimental channel
 capacity shown in [@Fig:ch3_fig05], we implemented Blahut's algorithm. In the
 following section, we detail the definitions needed for the algorithm. Then we
-describe how to compute the experimental channel capacity when the bins of the
-distribution are not clear given the arbitrary intrinsic nature of microscopy
+describe how to compute the experimental channel capacity when the distribution
+bins are not clear given the arbitrary intrinsic nature of microscopy
 fluorescence measurements.
 
 ### Blahut's algorithm
 
-Following [@Blahut1972] we implemented the algorithm to compute the channel
+Following [@Blahut1972], we implemented the algorithm to compute the channel
 capacity. We define $\mathbf{p_c}$ to be an array containing the probability of
 each of the input inducer concentrations (twelve concentrations, See Methods).
 Each entry $j$ of the array is then of the form 
@@ -66,7 +66,7 @@ $$
 C(g; c) \equiv \sup_{P(c)} I(g; c),
 $$
 where $g$ is the gene expression level, and $c$ is the inducer concentration.
-But in reality we are computing 
+But in reality, we are computing 
 $$
 C(f(g); c) \equiv \sup_{P(c)} I(f(g); c),
 $$
@@ -110,7 +110,7 @@ I_{\text{biased}} \approx I_\infty + \frac{a_1}{N} + \mathcal{O}(N^{-2}).
 $$
 This means that if this particular arbitrary choice of functional form is a good
 approximation, when computing the mutual information for varying numbers of
-samples - by taking subsamples of the experimental data - we expect to find a
+samples--by taking subsamples of the experimental data--we expect to find a
 linear relationship as a function of the inverse of these number of data points.
 From this linear relationship, the intercept is a bias-corrected estimate of the
 mutual information. Therefore, we can bootstrap the data by taking different
@@ -173,11 +173,11 @@ regression intercept varies depending on the number of bins.
 
 ![**Inverse sample size vs. channel capacity.** As indicated in Eq.
 $\ref{eq:mutual_biased}$ if the channel capacity obtained for different
-subsample sizes of the data are plotted against the inverse sample size there
+subsample sizes of the data are plotted against the inverse sample size, there
 must exist a linear relationship between these variables. Here we perform 15
-bootstrap samples of the data from [@Fig:ch5_fig24], bin these samples using
+bootstrap samples of the data from [@Fig:ch5_fig24], bin these samples using a
 different number of bins, and perform a linear regression (solid lines) between
-the bootstrap channel capacity estimates, and the inverse sample size. The
+the bootstrap channel capacity estimates and the inverse sample size. The
 Python code
 [(`ch5_fig26.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS26.py)
 used to generate this figure can be found on the original paper [GitHub
@@ -191,12 +191,12 @@ varying number of bins. As a control, we perform the same procedure with
 shuffled data, where the structure that connects the fluorescence distribution
 to the inducer concentration input is lost. The expectation is that this control
 should give a channel capacity of zero if the data is not "over-binned." Once
-the number of bins is too high, we would expect some structure to emerge in the
-data that would cause the Blahut-Arimoto algorithm to return non-zero channel
+the number of bins is too high, we expect some structure to emerge in the data
+that would cause the Blahut-Arimoto algorithm to return non-zero channel
 capacity estimates.
 
 [@Fig:ch5_fig27] shows the result of the unbiased channel capacity estimates
-obtained for the data shown in [@Fig:ch5_fig24]. For the blue curve we can
+obtained for the data shown in [@Fig:ch5_fig24]. For the blue curve, we can
 distinguish three phases:
 1.  A rapid increment from 0 bits to about 1.5 bits as the number of
     bins increases.
@@ -252,9 +252,9 @@ models.** Channel capacity for the multi-promoter model (solid lines) vs. the
 single-promoter steady-state model (dot-dashed lines) as a function of repressor
 copy numbers for different repressor-DNA binding energies. The single-promoter
 model assumes Poissonian protein degradation ($\gamma _p > 0$) and steady-state,
-while the multi-promoter model accounts for gene copy number variability and
-during the cell cycle and has protein degradation as an effect due to dilution
-as cells grow and divide. The Python code
+while the multi-promoter model accounts for gene copy number variability during
+the cell cycle and has protein degradation as an effect due to dilution as cells
+grow and divide. The Python code
 [(`ch5_fig28.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS28.py)
 used to generate this figure can be found on the original paper [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig28){#fig:ch5_fig28
@@ -270,7 +270,7 @@ we include in the inference, the closer the maximum entropy distribution will be
 to the real distribution. But *a priori* there is no way of knowing how many
 moments should be included to capture the distribution's essence. In principle,
 two moments could suffice to describe the entire distribution as happens with
-the Gaussian distribution. To compare the effect that including more or fewer
+the Gaussian distribution. To compare the effect of including more or fewer
 constraints on the maximum entropy inference, we constructed maximum entropy
 distributions using an increasing number of moments from 2 to 6. We then
 computed the Kullback-Leibler divergence $D_{KL}$ of the form
@@ -283,7 +283,7 @@ first $i$ moments, $i \in \{2, 3, 4, 5, 6\}$. Since the Kullback-Leibler
 divergence $D_{KL}(P || Q)$ can be interpreted as the amount of information lost
 by assuming the incorrect distribution $Q$ when the correct distribution is $P$,
 we used this metric as a way of how much information we would have lost by using
-less constraints compared to the six moments used in the main text.
+fewer constraints compared to the six moments used in the main text.
 
 [@Fig:ch5_fig29] shows this comparison for different operators and repressor
 copy numbers. We can see from here that using fewer moments as constraints gives
@@ -309,7 +309,7 @@ constraints"}
 This particular point is something that we are still exploring from a
 theoretical perspective. We have shown that to capture the single-molecule mRNA
 FISH data, a single-state promoter wouldn't suffice. This model predicts a
-Poisson distribution as the steady-state and the data shows super Poissonian
+Poisson distribution as the steady-state, and the data shows super Poissonian
 noise. Given the bursty nature of gene expression, we opt to use a two-state
 promoter to reflect effective transcriptionally "active" and "inactive" states.
 We are currently exploring alternative formulations of this model to turn it

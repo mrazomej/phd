@@ -1,6 +1,6 @@
 ## Derivation of the cell age distribution {#sec:ch5_sec11}
 
-E. O. Powell first derived in 1956 the distribution of cell age for a cell
+E. O. Powell first derived in 1956 the cell age distribution for a cell
 population growing steadily in the exponential phase [@Powell1956]. This
 distribution is of the form
 $$
@@ -18,9 +18,9 @@ $$
 where $n$ is the number of cells, and $\mu$ is the growth rate in units of
 time$^{-1}$. We begin by defining $P(a)$ to be the probability density function
 of a cell having age $a$. At time zero of a culture in exponential growth, i.e.,
-the time when we start considering the growth, not the initial condition of the
-culture, there are $NP(a)da$ cells with an age range between $[a, a + da]$. In
-other words, for $N \gg 1$ and $da \ll a$
+when we start considering the growth, not the initial condition of the culture,
+there are $NP(a)da$ cells with an age range between $[a, a + da]$. In other
+words, for $N \gg 1$ and $da \ll a$
 $$
 N P(a \leq x \leq a + da) \approx N P(a)da.
 $$
@@ -50,7 +50,7 @@ F(a + t \mid a) = \frac{F(a, a + t)}{F(a)},
 $$
 where $F(a, a + t)$ is the joint probability of surviving $a$ minutes and $a +
 t$ minutes. But the probability of surviving $a + t$ minutes or more implies
-that the cell already survived $a$ minutes, therefore the information is
+that the cell already survived $a$ minutes, therefore, the information is
 redundant, and we have 
 $$
 F(a, a + t) = F(a + t).
@@ -70,7 +70,7 @@ $$
   P(a)\frac{F(a + t)}{F(a)}da \frac{1}{e^{\mu t}},
 $$
 and their ages lie in the range $[a+t, a+t+da]$. Since we assume that the
-culture is in steady-state then it follows that the fraction of cells that
+culture is in a steady-state then it follows that the fraction of cells that
 transitioned from age $a$ to age $a + t$ must be $P(a + t)da$. Therefore we have
 a difference equation - the discrete analogous of a differential equation - of
 the form
@@ -115,9 +115,9 @@ where $C$ is the integration constant. Exponentiating both sides gives
 $$
 P(a) = C' F(a)e^{-\mu a}.
 $$
-Where $C' \equiv e^C$. To obtain the value of the unknown constant, we recall
-that $F(0) = 1$ since the probability of having a life equal to or longer than
-zero must add up to one. Therefore we have that $P(0) = C'$. This gives then 
+Where $C' \equiv e^C$. To obtain the unknown constant value, we recall that
+$F(0) = 1$ since the probability of having a life equal to or longer than zero
+must add up to one. Therefore we have that $P(0) = C'$. This gives then 
 $$
 P(a) = P(0) e^{-\mu a} F(a).
 $$
@@ -161,7 +161,7 @@ F(a + da) \approx F(a) - f(a)da.
 $$
 What this means is that from the original fraction of cells $F(a)$ with age $a$
 or greater a fraction $f(a)da / F(a)$ will not reach age $(a + da)$ because they
-will divide. So out of the $NP(a)$ cells that reached exactly age $a$, the
+will divide. So, out of the $NP(a)$ cells that reached exactly age $a$, the
 number of doubling events on a time interval $da$ is given by
 $$
 {\text{\# doublings of cells of age } a {\text{ on interval } da}} =
@@ -220,6 +220,7 @@ The second term on the left-hand side is equal to since
 $$
 \mu = \int_0^\infty P(0) e^{-\mu a} f(a)da \Rightarrow
   1 = \int_0^\infty P(0) \frac{e^{-\mu a}}{\mu} f(a)da.
+  \label{eq:ch5_eq202}
 $$
 This implies that we have 
 $$
@@ -242,7 +243,7 @@ approximate $f(a)$ as
 $$
 f(a) = \delta(a - \tau_d),
 $$
-a Dirac delta function. Applying this to results in 
+a Dirac delta function. Applying this to Eq. $\ref{eq:ch5_eq202}$ results in 
 $$
 2 \int_0^\infty e^{-\mu a} \delta(a - \tau_a) da = 1
   \Rightarrow 2 e^{-\mu \tau_d} = 1.

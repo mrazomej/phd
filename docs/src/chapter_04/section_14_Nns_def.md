@@ -23,8 +23,8 @@ consistent with the experimental data.
 
 Let us start by showing why the specific value of $N_{NS}$ is not the critical
 variable. Under the weak promoter approximation, the fold-change equation is
-equivalent to a two-state Fermi function of having the promoter being occupied
-by a repressor or having an empty promoter. This is
+equivalent to a two-state Fermi function of having the promoter occupied by a
+repressor or having an empty promoter. This is
 $$
 \text{fold-change} \rightarrow p^r_{bound} = \frac{1}{ 1 +
 \frac{R}{N_{NS}} e^{-\beta\Delta\varepsilon_{RA}}}.
@@ -49,7 +49,7 @@ $N_{NS}$ at will as long as $\Delta E$ is in accordance with the experimental
 data. In other words, the parameter that matters is the free energy difference
 rather than its components. For example, if for a given operator and a given
 repressor copy number we choose a different value of $N_{NS}$, it still should
-hold true that
+hold that
 $$
 \Delta E= \Delta\varepsilon_{RA}' - k_BT \ln \left( \frac{R}{N_{NS}'} \right),
 \label{eq:ch4_eq44}
@@ -106,7 +106,7 @@ $$
 \frac{R}{N_{NS}} e^{-\beta\Delta\varepsilon_{RA}}}.
 \label{eq:ch4_eq48}
 $$
-So when we define the free energy $\Delta E$ we would include an extra term of
+So when we define the free energy $\Delta E$, we would include an extra term of
 the form
 $$
 \Delta E= \Delta\varepsilon_{RA} - 

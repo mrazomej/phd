@@ -32,7 +32,7 @@ generated with the Gillespie algorithm for mRNA counts over time for a two-state
 unregulated promoter. Cells spend a fraction of the cell cycle with a single
 copy of the promoter (light brown) and the rest of the cell cycle with two
 copies (light yellow). When trajectories reach a new cell cycle, the mRNA counts
-undergo a binomial partitioning to simulate the cell division. The Python code
+undergo binomial partitioning to simulate the cell division. The Python code
 [(`ch5_fig20.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS20.py)
 used to generate this figure can be found on the original paper [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig20){#fig:ch5_fig20
@@ -50,7 +50,7 @@ confirming that our implementation of the Gillespie simulation is correct.
 the steady-state mRNA distributions for one copy (light blue) and two copies of
 the promoter (dark blue) as defined by Eq. $\ref{eq:two_state_mRNA}$. Shaded
 regions represent the corresponding distribution obtained using 2500 stochastic
-mRNA trajectories and taking the last cell-cycle to approximate the
+mRNA trajectories and taking the last cell cycle to approximate the
 distribution. The Python code
 [(`ch5_fig21.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS21.py)
 used to generate this figure can be found on the original paper [GitHub
@@ -72,7 +72,7 @@ of trajectories between cell cycles looks very similar.
 over time for a two-state unregulated promoter. Cells spend a fraction of the
 cell cycle with a single copy of the promoter (light brown) and the rest of the
 cell cycle with two copies (light yellow). When trajectories reach a new cell
-cycle, the molecule counts undergo a binomial partitioning to simulate the cell
+cycle, the molecule counts undergo binomial partitioning to simulate the cell
 division. The Python code
 [(`ch5_fig22.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS22.py)
 used to generate this figure can be found on the original paper [GitHub
@@ -86,12 +86,12 @@ distribution and the one generated using the maximum entropy algorithm. Although
 the notorious differences between the distributions, the Gillespie simulation
 and the maximum entropy results are indistinguishable in terms of the mean,
 variance, and skewness of the distribution. We remind the reader that the
-maximum entropy is an approximation of the distribution that gets better the
-more moments we add. We, therefore, claim that the approximation works
-sufficiently well for our purpose. The enormous advantage of the maximum entropy
-approach comes from the computation time. For the number of distributions needed
-for our calculations, the Gillespie algorithm proved to be a very inefficient
-method given the ample sample space. Our maximum entropy approach reduces the
+maximum entropy approximates the distribution that gets better the more moments
+we add. We, therefore, claim that the approximation works sufficiently well for
+our purpose. The enormous advantage of the maximum entropy approach comes from
+the computation time. For the number of distributions needed for our
+calculations, the Gillespie algorithm proved to be a very inefficient method
+given the ample sample space. Our maximum entropy approach reduces the
 computation time by several orders of magnitude, allowing us to explore
 different regulatory models' parameters extensively.
 

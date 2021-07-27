@@ -11,20 +11,20 @@ regulation due to the repressor occurs via exclusion of the RNAP from its
 binding site when the repressor is bound, decreasing the likelihood of having a
 transcription event. As with many important macromolecules, we consider the
 repressor to be allosteric, meaning that it can exist in two conformations, one
-in which the repressor is able to bind to the specific binding site (active
-state) and one in which it cannot bind the specific binding site (inactive
-state). The environmental signaling occurs via passive import of an
-extracellular inducer that binds the repressor, shifting the equilibrium between
-the two conformations of the repressor [@Razo-Mejia2018]. In previous work we
-have extensively characterized the mean response of this circuit under different
-conditions using equilibrium based models [@Phillips2019]. Here we build upon
-these models to characterize the full distribution of gene expression with
-parameters such as repressor copy number and its affinity for the DNA being
-systematically varied.
+in which the repressor can bind to the specific binding site (active state) and
+one in which it cannot bind the specific binding site (inactive state). The
+environmental signaling occurs via the passive import of an extracellular
+inducer that binds the repressor, shifting the equilibrium between the two
+conformations of the repressor [@Razo-Mejia2018]. In previous work, we have
+extensively characterized the mean response of this circuit under different
+conditions using equilibrium-based models [@Phillips2019]. Here we build upon
+these models to characterize the entire distribution of gene expression with
+parameters such as repressor copy number and its affinity for systematically
+varied DNA.
 
 As the copy number of molecular species is a discrete quantity, chemical master
 equations have emerged as a useful tool to model their inherent probability
-distribution [@Sanchez2013]. In [@Fig:ch3_fig02](A) we show the minimal model
+distribution [@Sanchez2013]. In [@Fig:ch3_fig02](A), we show the minimal model
 and the necessary set of parameters needed to compute the full distribution of
 mRNA and its protein gene product. Specifically, we assume a three-state model
 where the promoter can be found in a 1) transcriptionally active state ($A$
@@ -39,7 +39,7 @@ bursty nature of gene expression in *E. coli* [@Golding2005]. These three states
 generate a system of coupled differential equations for each of the three state
 distributions $P_A(m, p; t)$, $P_I(m, p; t)$ and $P_R(m, p; t)$, where $m$ and
 $p$ are the mRNA and protein count per cell, respectively and $t$ is time. Given
-the rates depicted in [@Fig:ch3_fig02](A) we define the system of ODEs for a
+the rates depicted in [@Fig:ch3_fig02](A), we define the system of ODEs for a
 specific $m$ and $p$. For the transcriptionally active state, we have
 $$
 \begin{split}
@@ -57,7 +57,7 @@ $$
 \end{split}
 \label{eq:ch3_eq02}
 $$
-where the state transitions for each term are labeled by overbraces. For the
+where overbraces label the state transitions for each term. For the
 transcriptionally inactive state $I$, we have
 $$
 \begin{split}
@@ -92,11 +92,11 @@ $$
 $$
 As we will discuss later, the protein degradation term $\gamma _p$ is set to
 zero since active protein degradation is slow compared to the cell cycle of
-exponentially growing bacteria, but rather we explicitly implement binomial
+exponentially growing bacteria, but instead, we explicitly implement binomial
 partitioning of the proteins into daughter cells upon division [@Maurizi1992].
 
 It is convenient to rewrite these equations in a compact matrix notation
-[@Sanchez2013]. For this we define the vector $\mathbf{P}(m, p)$ as 
+[@Sanchez2013]. For this, we define the vector $\mathbf{P}(m, p)$ as 
 $$
 \mathbf{P}(m, p) = (P_A(m, p), P_I(m, p), P_R(m, p))^T,
 \label{eq:ch3_eq05}
@@ -106,7 +106,7 @@ the promoter state transitions, $\mathbf{R}_m$ and $\mathbf{\Gamma} _m$ to
 contain the mRNA production and degradation terms, respectively, and
 $\mathbf{R}_p$ and $\mathbf{\Gamma}_p$ to contain the protein production and
 degradation terms, respectively, the system of ODEs can then be written as (See
-for full definition of these matrices)
+for the full definition of these matrices)
 $$
 \begin{split}
     \frac{d \mathbf{P}(m, p)}{dt} &= 
@@ -119,16 +119,16 @@ $$
 \end{split}
 \label{eq:ch3_eq06}
 $$
-Having defined the gene expression dynamics we now proceed to determine all rate
-parameters in Eq. $\ref{eq:ch3_eq06}$.
+Having defined the gene expression dynamics, we now proceed to determine all
+rate parameters in Eq. $\ref{eq:ch3_eq06}$.
 
 ### Inferring parameters from published data sets {#sec_param}
 
 A decade of research in our group has characterized the simple repression motif
-with an ever expanding array of predictions and corresponding experiments to
-uncover the physics of this genetic circuit [@Phillips2019]. In doing so we have
-come to understand the mean response of a single promoter in the presence of
-varying levels of repressor copy numbers and repressor-DNA affinities
+with an ever-expanding array of predictions and corresponding experiments to
+uncover the physics of this genetic circuit [@Phillips2019]. In doing so, we
+have come to understand the mean response of a single promoter in the presence
+of varying levels of repressor copy numbers and repressor-DNA affinities
 [@Garcia2011c], due to the effect that competing binding sites and multiple
 promoter copies impose [@Brewster2014], and in recent work, assisted by the
 Monod-Wyman-Changeux (MWC) model, we expanded the scope to the allosteric nature
@@ -141,7 +141,7 @@ system described by different theoretical frameworks, in earlier work in our
 laboratory an attempt to unite parametric knowledge across studies based on
 equilibrium and non-equilibrium models has not been performed previously. As a
 test case of the depth of our theoretical understanding of this simple
-transcriptional regulation system we combine all of the studies mentioned above
+transcriptional regulation system, we combine all of the studies mentioned above
 to inform the parameter values of the model presented in [@Fig:ch3_fig02](A).
 [@Fig:ch3_fig02](B) schematizes the data sets and experimental techniques used
 to measure gene expression along with the parameters that can be inferred from
@@ -157,8 +157,8 @@ present in the cell) [@Jones2014a]. The repressor on rate is assumed to be of
 the form $k^{(r)}_{\text{on}} = k_o [R]$ where $k_o$ is a diffusion-limited on
 rate and $[R]$ is the concentration of active repressor in the cell
 [@Jones2014a]. This concentration of active repressor is at the same time
-determined by the repressor copy number in the cell, and the fraction of these
-repressors that are in the active state, i.e. able to bind DNA. Existing
+determined by the repressor copy number in the cell and the fraction of these
+repressors that are in the active state, i.e., able to bind DNA. Existing
 estimates of the transition rates between conformations of allosteric molecules
 set them at the microsecond scale [@Cui2008]. By considering this to be
 representative for our repressor of interest, the separation of time-scales
