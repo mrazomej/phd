@@ -31,7 +31,7 @@ This condition, therefore, constrains the values that the kinetic rates in the
 model can take. To test whether or not the equilibrium picture can reproduce the
 predictions made by the kinetic model, we compare the experimental and
 theoretical fold-change in protein copy number for a suite of biophysical
-parameters and environmental conditions ([@Fic:ch3_fig03](C) upper row). The
+parameters and environmental conditions ([@Fig:ch3_fig03](C) upper row). The
 agreement between theory and experiment demonstrates that these two frameworks
 can indeed make consistent predictions.
 
