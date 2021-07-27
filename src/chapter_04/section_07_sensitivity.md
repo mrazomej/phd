@@ -1,14 +1,14 @@
 ## Fold-Change Sensitivity Analysis {#sec:ch4_sec07}
 
-In [@Fig:ch2_fig05] we found that the width of the credible regions varied
+In [@Fig:ch2_fig05], we found that the width of the credible regions varied
 widely depending on the repressor copy number $R$ and repressor operator binding
 energy $\Delta \varepsilon_{RA}$. More precisely, the credible regions were much
 narrower for low repressor copy numbers $R$ and weak binding energy
 $\Delta\varepsilon_{RA}$. In this section, we explain how this behavior comes
 about. We focus our attention on the maximum fold-change in the presence of
 saturating inducer given by Eq. 2.7. While it is straightforward to consider the
-width of the credible regions at any other inducer concentration, shows that the
-credible region is widest at saturation.
+width of the credible regions at any other inducer concentration, it shows that
+the credible region is widest at saturation.
 
 The width of the credible regions corresponds to how sensitive the fold-change
 is to the fit values of the dissociation constants $K_A$ and $K_I$. To be
@@ -85,8 +85,8 @@ Lastly, we note that Eqs. $\ref{eq:ch4_eq25}$ and $\ref{eq:ch4_eq26}$ enable us
 to quantify the scaling relationship between the width of the credible region
 and the two quantities $R$ and $\Delta\varepsilon_{RA}$. For example, for the O3
 strains, where the fold-change at saturating inducer concentration is $\approx
-1$, the right-most term in both equations which equal the fold-change squared
-is roughly 1. Therefore, we find that both $\frac{\partial
+1$, the right-most term in both equations which equal the fold-change squared is
+roughly one. Therefore, we find that both $\frac{\partial
 \text{fold-change}}{\partial K_A}$ and $\frac{\partial
 \text{fold-change}}{\partial K_I}$ scale linearly with $R$ and $e^{-\beta
 \Delta\varepsilon_{RA}}$. Thus the width of the $R=22$ strain will be roughly

@@ -23,9 +23,9 @@ an OD 0.3, which is the density at which we typically make our measurements. In
 flow cytometry). While it does look like there is a steady increase in
 fold-change from 0 to 4 hours, it seems to level off past this time point.
 However, there was also a large degree of variation in our measurements, making
-it difficult to say that fold-change is not changing over time.
+it difficult to say that the fold-change is not changing over time.
 
-In [@Fig:ch4_fig33] we also plot the raw fluorescence values against the
+In [@Fig:ch4_fig33], we also plot the raw fluorescence values against the
 measured OD$_{600nm}$ values. The variation is rather large, but it does appear
 that the overall expression is relatively constant across two decades of
 OD$_{600nm}$.

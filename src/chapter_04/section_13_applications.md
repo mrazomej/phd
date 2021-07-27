@@ -34,14 +34,14 @@ where $c$ now represents the concentration of the corepressor molecule.
 Mathematically, the difference between these two architectures can be seen in
 the relative sizes of the dissociation constants $K_A$ and $K_I$ between the
 inducer and repressor in the active and inactive states, respectively. The
-corepressor is defined by $K_A < K_I$, since the corepressor favors binding to
+corepressor is defined by $K_A < K_I$ since the corepressor favors binding to
 the repressor's active state; an inducer must satisfy $K_I < K_A$, as was found
 in the main text from the induction data (see [@Fig:ch2_fig04]). Much as was
 performed in the main text, we can make some predictions about the response of a
 corepressor. In [@Fig:ch4_fig28](A), we show how varying the repressor copy
 number $R$ and the repressor-DNA binding energy $\Delta\varepsilon_{RA}$
 influence the response. We draw the reader's attention to the decrease in
-fold-change as the concentration of effector is increased.
+fold-change as the concentration of the effector is increased.
 
 ### Activation
 
@@ -73,14 +73,14 @@ of a coactivator molecule, $\Delta\varepsilon_{AA}$ is the binding energy of the
 activator to the DNA in the active allosteric state, and $\varepsilon_{AP}$ is
 the interaction energy between the activator and the RNAP. Unlike in the cases
 of induction and corepression, the fold-change formula for activation includes
-terms from when the RNAP is bound by itself on the DNA as well as when both RNAP
-and the activator are simultaneously bound to the DNA. [@Fig:ch4_fig28](B)
-explores predictions of the fold-change in gene expression by manipulating the
-activator copy number, DNA binding energy, and the polymerase-activator
-interaction energy. Note that with this activation scheme, the fold-change must
-necessarily be greater than one. An interesting feature of these predictions is
-the observation that even small changes in the interaction energy ($< 0.5~k_BT$)
-can result in a dramatic increase in fold-change.
+terms from when the RNAP is bound by itself on the DNA and when both RNAP and
+the activator are simultaneously bound to the DNA. [@Fig:ch4_fig28](B) explores
+predictions of the fold-change in gene expression by manipulating the activator
+copy number, DNA binding energy, and the polymerase-activator interaction
+energy. Note that with this activation scheme, the fold-change must necessarily
+be greater than one. An interesting feature of these predictions is the
+observation that even small changes in the interaction energy ($< 0.5~k_BT$) can
+dramatically increase fold-change.
 
 As in the case of induction, the Eq. $\ref{eq:ch4_eq40}$ is straightforward to
 generalize. For example, the relative values of $K_I$ and $K_A$ can be switched

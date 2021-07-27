@@ -55,20 +55,20 @@ The fitted parameters obtained from this approach are shown in [@Fig:ch4_fig17].
 These are rather unsatisfactory because they do not reflect the properties of
 the physical system under consideration. For example, the dissociation constant
 $K$ between LacI and inducer should not be affected by either the copy number of
-the repressor or the DNA binding energy, and yet we see upward trends as $R$ is
+the repressor or the DNA binding energy. Yet, we see upward trends as $R$ is
 increased or the binding energy is decreased. Here, the $K$ parameter ultimately
 describes the midpoint of the induction curve and, therefore, cannot strictly be
 considered a dissociation constant. Similarly, the Hill coefficient $n$ does not
-directly represent the cooperativity between the repressor and the inducer as
-the molecular details of the copy number and DNA binding strength are subsumed
-in this parameter as well. While the leakiness and dynamic range describe
-important phenotypic properties of the induction response, this Hill approach
-leaves us with no means to predict them for other strains. In summary, the Hill
-equation (Eq. $\ref{eq:ch4_eq27}$) cannot predict how an induction profile
-varies with repressor copy number, operator binding energy, or how mutations
-will alter the induction profile. To that end, we turn to a more sophisticated
-approach where we use the Hill function to describe the available fraction of
-repressor as a function of inducer concentration.
+directly represent the cooperativity between the repressor and the inducer. The
+molecular details of the copy number and DNA binding strength are subsumed in
+this parameter. While the leakiness and dynamic range describe important
+phenotypic properties of the induction response, this Hill approach leaves us
+with no means to predict them for other strains. In summary, the Hill equation
+(Eq. $\ref{eq:ch4_eq27}$) cannot predict how an induction profile varies with
+repressor copy number, operator binding energy, or how mutations alter the
+induction profile. To that end, we turn to a more sophisticated approach where
+we use the Hill function to describe the available fraction of repressor as a
+function of inducer concentration.
 
 ![**Hill function and MWC analysis of each induction profile.** Data for each
 individual strain was fit to the general Hill function in [@Fig:ch2_fig05]. (A)

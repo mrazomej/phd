@@ -49,11 +49,12 @@ parameter estimates of $K_A$ and $K_I$. Each row uses a single set of parameter
 values based on the strain noted on the left axis. The shaded plots along the
 diagonal are those where the parameter estimates are plotted along with the data
 used to infer them. Values for repressor copy number and operator binding energy
-are from @Garcia2011c. The shaded region on the curve represents the uncertainty
-from our parameter estimates and reflect the 95% highest probability density
-region of the parameter predictions.](ch4_fig23){#fig:ch4_fig23
-short-caption="O1 strain fold-change predictions based on strain-specific
-parameter estimation of $\boldsymbol{K_A}$ and $\boldsymbol{K_I}$"}
+are from [@Garcia2011c]. The shaded region on the curve represents the
+uncertainty from our parameter estimates and reflects the 95% highest
+probability density region of the parameter
+predictions.](ch4_fig23){#fig:ch4_fig23 short-caption="O1 strain fold-change
+predictions based on strain-specific parameter estimation of $\boldsymbol{K_A}$
+and $\boldsymbol{K_I}$"}
 
 ![**O2 strain fold-change predictions based on strain-specific parameter
 estimation of $\boldsymbol{K_A}$ and $\boldsymbol{K_I}$.** Fold-change in

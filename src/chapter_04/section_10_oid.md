@@ -7,7 +7,7 @@ shorter in length ($20\,\text{bp}$), is fully symmetric, and is known to provide
 stronger repression than the native operator sequences considered so far. While
 the theory should be similarly applicable, measuring the lower fold-changes
 associated with this YFP construct was expected to be near the sensitivity limit
-for our flow cytometer, due to the especially strong binding energy of Oid
+for our flow cytometer due to the especially strong binding energy of Oid
 ($\Delta \varepsilon_{RA}=-17.0 ~k_BT$) [@Garcia2011b]. Accordingly,
 fluorescence data for Oid were obtained using microscopy, which is more
 sensitive than flow cytometry. [Sec 4.6](#sec:ch4_sec06) gives a detailed

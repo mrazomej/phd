@@ -5,7 +5,7 @@ single copy of our simple repression construct had been integrated into the
 chromosome. This stands in contrast to the methods used by a number of other
 studies [@Oehler1994; @Setty2003; @Oehler2006a; @Daber2009; @Daber2011a;
 @Vilar2013; @Shis2014; @Sochor2014], in which reporter constructs are placed on
-plasmid, meaning that the number of constructs in the cell is not precisely
+a plasmid, meaning that the number of constructs in the cell is not precisely
 known. It is also common to express repressor on plasmid to boost its copy
 number, which results in an uncertain value for repressor copy number. Here we
 show that our treatment of the MWC model has broad predictive power beyond the
@@ -42,7 +42,7 @@ R_{\text{tot}} = R_S + R_{NS} + R_C,
 \label{eq:ch4_eq11}
 $$
 where $R_S$, $R_{NS}$, and $R_C$ represent the number of repressors bound to the
-specific promoter, a non-specific binding site, or to a competitor binding site,
+specific promoter, a non-specific binding site, or a competitor binding site,
 respectively. The value of $R_S$ is given by 
 $$
 R_S = N_S \frac{\lambda_r e^{-\beta \Delta \varepsilon_{RA}}}
@@ -121,7 +121,7 @@ are nearly indifferent to the value of $N_S$.
 ![**Induction with variable $\boldsymbol{R}$ and multiple specific binding
 sites.** Induction profiles are shown for strains with variable R and $\Delta
 \varepsilon_{RA} = -15.3$, $-13.9$, or $-9.7~k_B T$. The number of specific
-sites, $N_S$, is held constant at 10 as $R$ and $\Delta \varepsilon_{RA}$ are
+sites, $N_S$, is held constant at ten as $R$ and $\Delta \varepsilon_{RA}$ are
 varied. $N_S$ is held constant at 100 as $R$ and $\Delta \varepsilon_{RA}$ are
 varied. These situations mimic the common scenario in which a promoter construct
 is placed on either a low or high copy number
@@ -163,8 +163,8 @@ number of competitor sites $N_C$ with strong binding energy $\Delta
 $N_C > R$ the leakiness is greatly increased, as many repressors are siphoned
 into the pool of competitor sites. This is most dramatic for the case where
 $\Delta \varepsilon_{RA} = -9.7~k_B T$, in which it appears that no repression
-occurs at all when $N_C = 500$. Interestingly, when $N_C < R$ the effects of the
-competitor are not especially notable.
+occurs at all when $N_C = 500$. Interestingly, when $N_C < R$, the effects of
+the competitor are not especially notable.
 
 ![**Induction with variable competitor sites, a single specific site, and fixed
 $\boldsymbol{R}$.** Induction profiles are shown for strains with $R=260$,
