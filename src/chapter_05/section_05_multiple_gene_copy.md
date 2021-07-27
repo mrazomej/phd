@@ -17,9 +17,9 @@ simultaneously, depending on the growth rate [@Bremer1996].
 This observation implies that during the cell cycle, gene copy number varies.
 This variation depends on the growth rate and the relative position of the gene
 with respect to the replication origin, having genes close to the replication
-origin spending more time with multiple copies compare to genes closer to the
-replication termination site. This change in gene dosage has a direct effect on
-the cell-to-cell variability in gene expression [@Jones2014a; @Peterson2015].
+origin spending more time with multiple copies than genes closer to the
+replication termination site. This change in gene dosage directly affects
+cell-to-cell variability in gene expression [@Jones2014a; @Peterson2015].
 
 ### Numerical integration of moment equations
 
@@ -30,17 +30,17 @@ as an annotated Jupyter notebook)
 
 For our specific locus (*galK*) and a doubling time of $\approx$ 60 min for our
 experimental conditions, cells have on average 1.66 copies of the reporter gene
-during the cell cycle [@Jones2014a]. What this means is that cells spend 60% of
-the time having one copy of the gene and 40% of the time with two copies. To
-account for this variability in gene copy number across the cell cycle, we
-numerically integrate the moment equations derived in for a time $t = [0, t_s]$
-with an mRNA production rate $r_m$, where $t_s$ is the time point at which the
-replication fork reaches our specific locus. For the remaining time before the
-cell division $t = [t_s, t_d]$ that the cell spends with two promoters, we
-assume that the only parameter that changes is the mRNA production rate from
-$r_m$ to $2 r_m$. This simplifying assumption ignores potential changes in
-protein translation rate $r_p$ or changes in the repressor copy number that
-would be reflected in changes on the repressor on rate $k^{(r)}_{\text{on}}$.
+during the cell cycle [@Jones2014a]. This means that cells spend 60% of the time
+having one copy of the gene and 40% of the time with two copies. To account for
+this variability in gene copy number across the cell cycle, we numerically
+integrate the moment equations derived in for a time $t = [0, t_s]$ with an mRNA
+production rate $r_m$, where $t_s$ is the time point at which the replication
+fork reaches our specific locus. For the remaining time before the cell division
+$t = [t_s, t_d]$ that the cell spends with two promoters, we assume that the
+only parameter that changes is the mRNA production rate from $r_m$ to $2 r_m$.
+This simplifying assumption ignores potential changes in protein translation
+rate $r_p$ or changes in the repressor copy number that would be reflected in
+changes on the repressor on rate $k^{(r)}_{\text{on}}$.
 
 ### Computing distribution moments after cell division
 
@@ -53,14 +53,14 @@ We have already solved a general form for the dynamics of the moments of the
 distribution, i.e., we wrote differential equations for the moments
 $\frac{d\left\langle{m^x p^y}\right\rangle}{dt}$. Given that we know all
 parameters for our model, we can numerically integrate these equations to
-compute how the moments of the distribution evolve as cells progress through
-their cell cycle. Once the cell reaches a time $t_d$ when is going to divide the
-mRNA and proteins that we are interested in undergo a binomial partitioning
-between the two daughter cells. In other words, each molecule flips a coin and
-decides whether to go to either daughter. The question then becomes given that
-we have a value for the moment $\left\langle m^x p^y \right\rangle_{t_d}$ at a
-time before the cell division, what would the value of this moment be after the
-cell division takes place $\left\langle m^x p^y \right\rangle_{t_o}$?
+compute how the distribution moments evolve as cells progress through their cell
+cycle. Once the cell reaches a time $t_d$ when dividing the mRNA and proteins
+that we are interested in, undergo a binomial partitioning between the two
+daughter cells. In other words, each molecule flips a coin and decides whether
+to go to either daughter. The question then becomes given that we have a value
+for the moment $\left\langle m^x p^y \right\rangle_{t_d}$ at a time before the
+cell division, what would the value of this moment be after the cell division
+takes place $\left\langle m^x p^y \right\rangle_{t_o}$?
 
 The probability distribution of mRNA and protein after the cell division
 $P_{t_o}(m, p)$ must satisfy
@@ -82,8 +82,8 @@ P(m, p \mid m', p') = {m' \choose m} \left( \frac{1}{2} \right)^{m'} \cdot
                       {p' \choose p} \left( \frac{1}{2} \right)^{p'}.
     \label{eq_binom_prod}
 $$
-Because of this product of binomial probabilities are allowed to extend the sum
-from Eq. $\ref{eq_dist_post_div}$ to start at $m'=0$ and $p'=0$ as 
+Because of this product of binomial probabilities, we are allowed to extend the
+sum from Eq. $\ref{eq_dist_post_div}$ to start at $m'=0$ and $p'=0$ as 
 $$
 P_{t_o}(m, p) = \sum_{m'=0}^\infty \sum_{p'=0}^\infty 
                   P(m, p \mid m', p') P_{t_d}(m', p'),
@@ -122,8 +122,8 @@ $$
                      \sum_m  m^x  P(m \mid m')
                      \sum_p p^y P(p \mid p').
 $$
-Notice that both terms summing over $m$ and $p$ are the conditional
-expected values, i.e.
+Notice that both terms summing over $m$ and $p$ are the conditional expected
+values, i.e.
 $$
 \sum_z  z^x  P(z \mid z') \equiv \left\langle{z^x \mid z'}\right\rangle, \; 
 {\text{ for } z\in \{m, p \}}.
@@ -189,16 +189,16 @@ where $\left\langle{\cdot}\right\rangle_{t_d}$ highlights that is the moment of
 the distribution prior to the cell division. This result makes perfect sense.
 What this is saying is that the mean protein copy number right after the cell
 divides is half of the mean protein copy number just before the cell division.
-That is exactly we would expect. So in principle to know the first moment of
-either the mRNA distribution $\langle m \rangle_{t_o}$ or the protein
-distribution $\langle m \rangle_{t_o}$ right after cell division it suffices to
+That is exactly what we would expect. So, in principle, to know the first moment
+of either the mRNA distribution $\langle m \rangle_{t_o}$ or the protein
+distribution $\langle m \rangle_{t_o}$ right after cell division, it suffices to
 multiply the moments before the cell division $\langle m \rangle_{t_d}$ or
 $\left\langle p \right\rangle_{t_d}$ by 1/2. Let's now explore how this
 generalizes to any other moment $\left\langle m^x p^y \right\rangle_{t_o}$.
 
 #### Computing the moments of a binomial distribution
 
-Last section's result was dependent on us knowing the functional form of the
+The last section's result depended on us knowing the functional form of the
 first moment of the binomial distribution. For higher moments, we need some
 systematic way to compute such moments. Luckily for us, we can do so by using
 the so-called moment generating function (MGF). The MGF of a random variable $X$
@@ -215,7 +215,7 @@ $$
 $$
 i.e., taking the $n$-th derivative of the MGF returns the $n$-th moment of the
 distribution. For the particular case of the binomial distribution $X \sim
-\text{Bin}(N, q)$ it can be shown that the MGF is of the form
+\text{Bin}(N, q)$, it can be shown that the MGF is of the form
 $$
 M_X(t) = \left[ (1 - q) + qe^{t} \right]^N.
 $$
@@ -297,7 +297,7 @@ $$
 $$
 where we define the vector $\mathbf{z}_{x'y'}$ as the vector containing all the
 coefficients that we obtain with the product of the two binomial distributions.
-For example for the case of the third protein moment
+For example, for the case of the third protein moment
 $\left\langle{p^3}\right\rangle_{t_o}$ the vector $\mathbf{z}_{x'y'}$ would have
 zeros for all entries except for the corresponding entry for
 $\left\langle{p^2}\right\rangle_{t_d}$ and for
@@ -332,7 +332,7 @@ and two promoter copies. This is expected since the parameters for the mRNA
 production was determined in the first place under this assumption (See ). We
 note that there is no apparent delay before reaching steady-state of the mean
 mRNA count after the cell divides. This is because the mean mRNA count for the
-two promoters copies state is precisely twice the expected mRNA count for the
+two promoter copies state is precisely twice the expected mRNA count for the
 single promoter state (See [Sec. 5.1](#sec:ch5_sec03)). Therefore, once the mean
 mRNA count is halved after the cell division, it is already at the steady-state
 value for the single promoter case. On the other hand, given that the
@@ -351,7 +351,7 @@ vivo*.
 deviation mRNA (upper panel) and mean $\pm$ standard deviation protein copy
 number (lower panel) as the cell cycle progresses. The dark shaded region
 delimits the fraction of the cell cycle that cells spend with a single copy of
-the promoter. The light shaded region delimits the fraction of the cell cycle
+the promoter. The light-shaded region delimits the fraction of the cell cycle
 that cells spend with two copies of the promoter. For a 100 min doubling time at
 the *galK* locus cells spend 60% of the time with one copy of the promoter and
 the rest with two copies. The Python code
@@ -387,7 +387,7 @@ cells divided, these produced $2N$ "young" cells. So at any point, there are
 always more younger than older cells.
 
 Our numerical integration of the moment equations gave us a time evolution of
-the moments as cells progress through the cell cycle. Since experimentally we
+the moments as cells progress through the cell cycle. Since experimentally, we
 sample asynchronous cells that follow Eq. $\ref{seq_age_prob}$, each time point
 along the moment dynamic must be weighted by the probability of having sampled a
 cell at such a specific time point of the cell cycle. Without loss of
@@ -395,7 +395,7 @@ generality, let's focus on the first mRNA moment
 $\left\langle{m(t)}\right\rangle$ (the same can be applied to all other
 moments). As mentioned before, to calculate the first moment across the entire
 cell cycle, we must weigh each time point by the corresponding probability that
-a cell is found in such a point of its cell cycle. This translates to computing
+a cell is found at such a point of its cell cycle. This translates to computing
 the integral
 $$
 \langle m \rangle_c = 
@@ -424,9 +424,9 @@ integral numerically for all moments using Simpson's rule.
 
 ### Reproducing the equilibrium picture
 
-Given the large variability of the first moments depicted in [@Fig:ch5_fig08] it
-is worth considering why a simplistic equilibrium picture has shown to be very
-successful in predicting the mean expression level under diverse conditions
+Given the large variability of the first moments depicted in [@Fig:ch5_fig08],
+it is worth considering why a simplistic equilibrium picture has shown to be
+very successful in predicting the mean expression level under diverse conditions
 [@Garcia2011c; @Brewster2014; @Barnes2019; @Razo-Mejia2018]. This section
 compares the simple repression thermodynamic model with this dynamical picture
 of the cell cycle. But before diving into this comparison, it is worth recapping
@@ -445,11 +445,11 @@ $$
 \frac{d \langle m \rangle}{dt} = 
 r_m \cdot p_{\text{bound}} - \gamma _m \langle m \rangle,
 $$
-where $r_m$ and $\gamma _m$ are the mRNA production and degradation rates
+where $r_m$ and $\gamma _m$ are the mRNA production and degradation rates,
 respectively, and $p_{\text{bound}}$ is the probability of finding the RNAP
 bound to the promoter [@Bintu2005a]. This dynamical system is predicted to have
-a single stable fixed point that we can find by computing the steady state. When
-we solve for the mean mRNA copy number at steady state $\langle m \rangle_{ss}$
+a single stable fixed point that we can find by computing the steady-state. When
+we solve for the mean mRNA copy number at steady-state $\langle m \rangle_{ss}$
 we find 
 $$
 \langle m \rangle_{ss} = \frac{r_m}{\gamma _m} p_{\text{bound}}.
@@ -512,7 +512,7 @@ repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch5_fig09){#fig:ch5_fig
 short-caption="Comparison of the equilibrium and kinetic repressor titration
 predictions"}
 
-For completeness [@Fig:ch5_fig10] compares the kinetic and equilibrium models
+For completeness, [@Fig:ch5_fig10] compares the kinetic and equilibrium models
 for the extended model of [@Razo-Mejia2018] in which the inducer concentration
 enters into the equation. The solid line is directly computed from Eq. 5 of
 [@Razo-Mejia2018]. The hollow triangles and solid points follow the same
@@ -556,17 +556,16 @@ for gene expression variability is the noise in gene expression
 [@Shahrezaei2008]. This quantity, defined as the standard deviation divided by
 the mean, is a dimensionless metric of how much variability there is with
 respect to the mean of a distribution. As we will show below, this quantity
-differs from the also commonly used metric known as the Fano factor
-(variance/mean). For experimentally determined expression levels in arbitrary
-fluorescent units, the noise is a dimensionless quantity while the Fano factor
-is not.
+differs from the commonly used metric known as the Fano factor (variance/mean).
+For experimentally determined expression levels in arbitrary fluorescent units,
+the noise is a dimensionless quantity while the Fano factor is not.
 
 [@Fig:ch5_fig11] shows the comparison of the predicted protein noise between the
 single- (dashed lines) and the multi-promoter model (solid lines) for different
 operators and repressor copy numbers. A striking difference between both is that
 the single-promoter model predicts that as the inducer concentration increases,
 the standard deviation grows much slower than the mean, giving a very small
-noise. In comparison the multi-promoter model has a much higher floor for the
+noise. In comparison, the multi-promoter model has a much higher floor for the
 lowest value of the noise, reflecting the expected result that the variability
 in gene copy number across the cell cycle should increase the cell-to-cell
 variability in gene expression [@Peterson2015; @Jones2014a]
@@ -594,8 +593,8 @@ can assess whether or not this model can predict experimental measurements of
 the noise. For this, we take the single-cell intensity measurements (See
 Methods) to compute the noise at the protein level.
 
-This metric differs from the Fano factor since for arbitrary fluorescent units,
-the noise is a dimensionless quantity. To see why consider that the noise is
+This metric differs from the Fano factor since the noise is a dimensionless
+quantity for arbitrary fluorescent units. To see why, consider that the noise is
 defined as
 $$
 \text{noise} \equiv \frac{\sqrt{\left\langle p^2 \right\rangle -
@@ -604,7 +603,7 @@ $$
     \label{seq_noise_protein}
 $$
 We assume that the intensity level of a cell $I$ is linearly proportional to the
-absolute protein count, i.e.
+absolute protein count, i.e.,
 $$
     I = \alpha p,
     \label{seq_calibration_factor}
@@ -719,8 +718,8 @@ efforts to improve the minimal.
 ![**Systematic comparison of theoretical vs. experimental noise in gene
 expression.** Theoretical vs. experimental noise both in linear (left) and log
 (right) scale. The dashed line shows the identity line of slope one and
-intercept zero. All data are colored by the experimental fold-changes
-corresponding value in gene expression as indicated by the color bar. Each datum
+intercept zero. All data are colored by the corresponding experimental
+fold-changes value in gene expression, as indicated by the color bar. Each datum
 represents a single date measurement of the corresponding strain and IPTG
 concentration with $\geq 300$ cells. The points correspond to the median, and
 the error bars correspond to the 95% confidence interval as determined by 10,000

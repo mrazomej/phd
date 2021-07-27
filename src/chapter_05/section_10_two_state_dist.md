@@ -23,7 +23,7 @@ of the system (part (B)).
 
 ![**One-state Poisson promoter.** (A) Schematic of the kinetics of the one
 state-promoter. mRNA is produced and degrade stochastically with a rate $r_m$
-and $\gamma_m$, respectively. (B) Representation of the Markov-chain for the
+and $\gamma_m$, respectively. (B) Representation of the Markov chain for the
 state space that the promoter can be. The distribution $P(m, t)$ represents the
 probability of having a certain discrete number of mRNA $m$ at time $t$. The
 transition between states depends on the previously mentioned
@@ -52,14 +52,14 @@ $$
 where $z$ is a "dummy" variable that we don't care about. The reason this is
 useful is that if we find the closed-form solution for this generating function,
 and we are able to split the factor $z^m$ from its coefficient $P(m, t)$, then
-we will have find the solution for the distribution. Furthermore, the generating
-function allows us to compute the moments of the distribution. For example, for
-the zeroth moment $\langle m^0 \rangle$ we know that
+we will have to find the solution for the distribution. Furthermore, the
+generating function allows us to compute the moments of the distribution. For
+example, for the zeroth moment $\langle m^0 \rangle$ we know that
 $$
 \langle m^0 \rangle = \sum_{m=0}^\infty m^0 P(m, t) = 1,
 $$
 i.e., this is the normalization constraint of the distribution. From the
-definition of the generating function we can then see that
+definition of the generating function, we can then see that
 $$
 G(1, t) = \sum_{m=0}^\infty 1^m P(m, t) = 1.
 \label{eq:generating_norm}
@@ -247,7 +247,7 @@ promoter. The promoter is imagined to exist in two-state--a transcriptionally
 active state $A$ and an inactive state $I$. The transition between these states
 is governed by the rates $k^{(p)}_{\text{on}}$ and $k^{(p)}_{\text{off}}$ mRNA
 is produced and degrade stochastically with a rate $r_m$ and $\gamma_m$,
-respectively. (B) Representation of the Markov-chain for the state space that
+respectively. (B) Representation of the Markov chain for the state space that
 the promoter can be in. The distribution $P(m, t)$ represents the probability of
 having a certain discrete number of mRNA $m$ at time $t$. The transition between
 states depends on the previously mentioned rates.](ch5_fig36){#fig:ch5_fig36
@@ -493,7 +493,7 @@ $$
 \frac{d}{dv} \left( \frac{dG}{dv} \frac{dv}{ds} \right) \frac{dv}{ds} =
 \frac{\gamma_m ^2}{r_m^2} \frac{d^2G}{d v^2}.
 $$
-So the three relationships of $v$ with $s$ that we have take the form
+So the three relationships of $v$ with $s$ that we have derived take the form
 $$
 v = \frac{\gamma_m}{r_m} s, \;
 \frac{dG}{dv} = \frac{r_m}{\gamma_m} \frac{dG}{ds}, \; \text{and }
@@ -566,7 +566,7 @@ $$
 
 #### Finding the coefficients for the solution
 
-We can now use the normalization condition for the generating function, this is,
+We can now use the normalization condition for the generating function; this is,
 $$
 G(1) = \sum_{m=0}^\infty 1^m P(m) = 1.
 $$
@@ -751,8 +751,8 @@ $$
 \frac{r_m}{\gamma_m}
 \frac{k^{(p)}_{\text{on}}}{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}},
 $$
-which is exactly the mean mRNA copy number we derived before. Since $B$ does not
-contribute to the mean, we can safely assume that $B = 0$. This means that
+which is precisely the mean mRNA copy number we derived before. Since $B$ does
+not contribute to the mean, we can safely assume that $B = 0$. This means that
 the final result for the generating function takes the much more compact form
 $$
 G(z) = 

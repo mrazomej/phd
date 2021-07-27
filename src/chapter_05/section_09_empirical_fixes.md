@@ -23,7 +23,7 @@ $$
 \text{noise}_{\text{exp}} = \alpha \cdot \text{noise}_{\text{theory}},
 $$
 where $\alpha$ is a dimensionless constant to be fit from the data. The data,
-especially in [@Fig:ch5_fig12] suggests that our predictions are within a factor
+especially in [@Fig:ch5_fig12], suggests that our predictions are within a factor
 of $\approx$ two from the experimental data. To further check that intuition, we
 performed a weighted linear regression between the experimental and theoretical
 noise measurements. The weight for each datum was proportional to the bootstrap
@@ -36,24 +36,23 @@ predictions are multiplied by $\approx 1.5$.
 ![**Multiplicative factor in improving theoretical vs. experimental comparison
 of noise in gene expression.** Theoretical vs. experimental noise both in linear
 (left) and log (right) scale. The dashed line shows the identity line of slope 1
-and intercept zero. All data are colored by the experimental fold-change's
-corresponding value in gene expression as indicated by the color bar. The
-$x$-axis was multiplied by a factor of $\approx 1.5$ as determined by linear
-regression from the data in [@Fig:ch5_fig11]. Each datum represents a single
-date measurement of the corresponding strain and IPTG concentration with $\geq
-300$ cells. The points correspond to the median, and the error bars correspond
-to the 95% confidence interval as determined by 10,000 bootstrap samples. The
-Python code
+and intercept zero. All data are colored by the corresponding experimental
+fold-changes in gene expression as indicated by the color bar. The $x$-axis was
+multiplied by a factor of $\approx 1.5$ as determined by linear regression from
+the data in [@Fig:ch5_fig11]. Each datum represents a single date measurement of
+the corresponding strain and IPTG concentration with $\geq 300$ cells. The
+points correspond to the median, and the error bars correspond to the 95%
+confidence interval as determined by 10,000 bootstrap samples. The Python code
 [(`ch5_fig30.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS30.py)
 used to generate this figure can be found on the original paper [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig30){#fig:ch5_fig30
 short-caption="Multiplicative factor in improving theoretical vs. experimental
 comparison of noise in gene expression"}
 
-For completeness [@Fig:ch5_fig31] shows the noise in gene expression as a
+For completeness, [@Fig:ch5_fig31] shows the noise in gene expression as a
 function of the inducer concentration, including this factor of $\approx 1.5$.
-Overall a simple multiplicative factor improves the predictive power of the
-model.
+Thus, overall a simple multiplicative factor improves the predictive power of
+the model.
 
 ![**Protein noise of the regulated promoter with multiplicative factor.**
 Comparison of the experimental noise for different operators ((A) O1,
@@ -63,13 +62,13 @@ predictions for the multi-promoter model. Linear regression revealed that
 multiplying the theoretical noise prediction by a factor of $\approx 1.5$ would
 improve agreement between theory and data. Points represent the experimental
 noise as computed from single-cell fluorescence measurements of different *E.
-coli* strains under 12 different inducer concentrations. Dotted line indicates
-the plot in linear rather than logarithmic scale. Each datum represents a single
-date measurement of the corresponding strain and IPTG concentration with $\geq
-300$ cells. The points correspond to the median, and the error bars correspond
-to the 95% confidence interval as determined by 10,000 bootstrap samples.
-White-filled dots are plot at a different scale for better visualization. The
-Python code
+coli* strains under 12 different inducer concentrations. The dotted line
+indicates the plot in linear rather than logarithmic scale. Each datum
+represents a single date measurement of the corresponding strain and IPTG
+concentration with $\geq 300$ cells. The points correspond to the median, and
+the error bars correspond to the 95% confidence interval as determined by 10,000
+bootstrap samples. White-filled dots are plot at a different scale for better
+visualization. The Python code
 [(`ch5_fig31.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS31.py)
 used to generate this figure can be found on the original paper [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig31){#fig:ch5_fig31
@@ -86,7 +85,7 @@ $$
 $$
 where $\beta$ is an additive constant to be determined from the data. As with
 the multiplicative constant, we performed a regression to determine this
-empirical additive constant comparing experimental and theoretical gene
+empirical additive constant, comparing experimental and theoretical gene
 expression noise values. We use the error in the 95% bootstrap confidence
 interval as a weight for the linear regression. [@Fig:ch5_fig32] shows the
 resulting theoretical vs. experimental noise where $\beta \approx 0.2$. We can
@@ -96,8 +95,8 @@ additive constant.
 ![**Additive factor in improving theoretical vs. experimental comparison of
 noise in gene expression.** Theoretical vs. experimental noise both in linear
 (left) and log (right) scale. The dashed line shows the identity line of slope 1
-and intercept zero. All data are colored by the experimental fold-change's
-corresponding value in gene expression as indicated by the color bar. A value of
+and intercept zero. All data are colored by the corresponding experimental
+fold-change in gene expression as indicated by the color bar. A value of
 $\approx 0.2$ was added to all values in the $x$-axis as determined by linear
 regression from the data in [@Fig:ch5_fig11]. Each datum represents a single
 date measurement of the corresponding strain and IPTG concentration with $\geq
@@ -110,7 +109,7 @@ repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig32){#fig:ch5_fi
 short-caption="Additive factor in improving theoretical vs. experimental
 comparison of noise in gene expression"}
 
-For completeness [@Fig:ch5_fig33] shows the noise in gene expression as a
+For completeness, [@Fig:ch5_fig33] shows the noise in gene expression as a
 function of the inducer concentration, including this additive factor of $\beta
 \approx 0.2$. If anything, the additive factor seems to improve the agreement
 between theory and data even more than the multiplicative factor.
@@ -181,7 +180,7 @@ $$
 
 From the theory-experiment comparison in, we know that the standard deviation
 predicted by our model is systematically off by a factor of two compared to the
-experimental data, i.e.
+experimental data, i.e.,
 $$
 \sigma_p^{\exp} = 2 \sigma_p^{\text{theory}}.
 $$
@@ -210,10 +209,10 @@ experimental channel capacity with a fixed slope of 1. The intercept of this
 regression, -0.56 bits, indicates the systematic deviation we expect should
 explain the difference between our model and the data. [@Fig:ch5_fig34] shows
 the comparison between the original predictions shown in [@Fig:ch5_fig05](A) and
-the resulting predictions with this shift. Other than the data with zero channel
-capacity, this shift can correct the systematic deviation for all data. We,
-therefore, conclude that our model ends up underestimating the experimentally
-determined channel capacity by a constant amount of 0.43 bits.
+the resulting predictions with this shift. Thus, other than the data with zero
+channel capacity, this shift can correct the systematic deviation for all data.
+We, therefore, conclude that our model ends up underestimating the
+experimentally determined channel capacity by a constant amount of 0.43 bits.
 
 ![**Additive correction factor for channel capacity.** Solid lines represent the
 theoretical predictions of the channel capacity shown in (A). The dashed lines
