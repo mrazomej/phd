@@ -62,16 +62,16 @@ present and therefore constitutively expresses the gene, we use a two-state
 model in which the state $R$ is not allowed. All the terms in the system of ODEs
 containing $k^{(r)}_{\text{on}}$ or $k^{(r)}_{\text{off}}$ are then set to zero.
 
-As detailed in it is convenient to express this system using matrix notation
-[@Sanchez2013]. For this we define $\mathbf{P}(m, p) = (P_A(m, p), P_I(m, p),
-P_R(m, p))^T$. Then the system of ODEs can be expressed as
+It is convenient to express this system using matrix notation [@Sanchez2013].
+For this we define $\mathbf{P}(m, p) = (P_A(m, p), P_I(m, p), P_R(m, p))^T$.
+Then the system of ODEs can be expressed as
 $$
 \begin{split}
     \frac{d \mathbf{P}(m, p)}{dt} &= \mathbf{K} \mathbf{P}(m, p)
-    - \mathbf{R}_m \mathbf{P}(m, p) + \mathbf{R}_m \mathbf{P}(m-1, p)
-    - m \mathbf{\Gamma}_m \mathbf{P}(m, p) + (m + 1) \mathbf{\Gamma}_m \mathbf{P}(m + 1, p)\\
-    &- m \mathbf{R}_p \mathbf{P}(m, p) + m \mathbf{R}_p \mathbf{P}(m, p - 1)
-    - p \mathbf{\Gamma}_p \mathbf{P}(m, p) + (p + 1) \mathbf{\Gamma}_p \mathbf{P}(m, p + 1),
+    - \mathbf{R}_m \mathbf{P}(m, p) + \mathbf{R}_m \mathbf{P}(m-1, p)\\
+    &- m \mathbf{\Gamma}_m \mathbf{P}(m, p) + (m + 1) \mathbf{\Gamma}_m \mathbf{P}(m + 1, p)\\
+    &- m \mathbf{R}_p \mathbf{P}(m, p) + m \mathbf{R}_p \mathbf{P}(m, p - 1)\\
+    &- p \mathbf{\Gamma}_p \mathbf{P}(m, p) + (p + 1) \mathbf{\Gamma}_p \mathbf{P}(m, p + 1),
 \end{split}
 $$
 where we defined matrices representing the promoter state transition
@@ -173,7 +173,7 @@ steady-state distribution for this particular two-state promoter model was
 solved analytically by Peccoud and Ycart [@Peccoud1995]. This distribution $P(m)
 \equiv P_I(m) + P_A(m)$ is of the form 
 $$
-\small
+{\scriptstyle
   P(m \mid k^{(p)}_{\text{on}}, k^{(p)}_{\text{off}}, r_m, \gamma _m) =
   {\Gamma \left( \frac{k^{(p)}_{\text{on}}}{\gamma _m} + m \right) \over
   \Gamma(m + 1) \Gamma\left( \frac{k^{(p)}_{\text{off}}+k^{(p)}_{\text{on}}}{\gamma _m} + m \right)}
@@ -183,6 +183,7 @@ $$
   F_1^1 \left( \frac{k^{(p)}_{\text{on}}}{\gamma _m} + m,
   \frac{k^{(p)}_{\text{off}} + k^{(p)}_{\text{on}}}{\gamma _m} + m,
   -\frac{r_m}{\gamma _m} \right),
+}
   \label{eq:two_state_mRNA}
 $$
 where $\Gamma(\cdot)$ is the gamma function, and $F_1^1$ is the confluent
@@ -385,8 +386,10 @@ when cells have two copies of the promoter, the mRNA production rate is $2 r_m$
 compared to the rate $r_m$ for a single promoter copy. The probability of
 observing a particular mRNA copy $m$ is therefore given by
 $$
+{\scriptstyle
 P(m) = P(m \mid \text{one promoter}) \cdot P(\text{one promoter}) +
 P(m \mid \text{two promoters}) \cdot P(\text{two promoters}).
+}
   \label{eq:prob_multipromoter}
 $$
 Both terms $P(m \mid \text{promoter copy})$ are given by Eq.
@@ -476,11 +479,12 @@ cells. Let $N_s$ be the number of cells in the small size group and $N_l$ the
 number of cells in the large size group. Then the posterior distribution for the
 parameters is of the form 
 $$
-\small
+{\scriptstyle
 P(k^{(p)}_{\text{on}}, k^{(p)}_{\text{off}}, r_m \mid \{m_i\}) \propto
 \left[\prod_{i=1}^{N_s} P(m_i \mid k^{(p)}_{\text{on}}, k^{(p)}_{\text{off}}, r_m)\right]
 \left[\prod_{j=1}^{N_l} P(m_j \mid k^{(p)}_{\text{on}}, k^{(p)}_{\text{off}}, 2 r_m)\right]
 P(k^{(p)}_{\text{on}}, k^{(p)}_{\text{off}}, r_m),
+}
   \label{eq:bayes_sample_double}
 $$
 where we split the product of small and large cells.

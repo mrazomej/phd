@@ -544,15 +544,15 @@ generating function. We have that $s = r_m/\gamma_m v$, and $v = z - 1$. With
 this we then write
 $$
 \begin{aligned}
-G(z) &= A {}_1F_1 
+G(z) = &A {}_1F_1 
 \left(
     \frac{k^{(p)}_{\text{on}}}{\gamma_m}, 
     \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}, 
     \frac{r_m}{\gamma_m}(z - 1)
-\right) \\
-&+ B \left[\frac{r_m}{\gamma_m}(z - 1)\right]
-^{1 - \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}}
-{}_1 F_1
+\right)
++ B \left[\frac{r_m}{\gamma_m}(z - 1)\right]
+^{1 - \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}} \times \\
+&{}_1 F_1
 \left(
     \frac{k^{(p)}_{\text{on}}}{\gamma_m} + 1 -
     \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m},
@@ -710,8 +710,8 @@ $$
 & + B 
 \left( 1 - \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m} \right)
 \left[\frac{r_m}{\gamma_m}(z - 1)\right]
-^{\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}}
-{}_1 F_1
+^{\frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m}} \times \\
+&{}_1 F_1
 \left(
     \frac{k^{(p)}_{\text{on}}}{\gamma_m} + 1 -
     \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m},
@@ -725,8 +725,8 @@ $$
     \frac{k^{(p)}_{\text{on}} + \gamma_m}
     {k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}} + \gamma_m}
 \right)
-\frac{r_m}{\gamma_m}
-{}_1 F_1
+\frac{r_m}{\gamma_m} \times \\
+&{}_1 F_1
 \left(
     \frac{k^{(p)}_{\text{on}}}{\gamma_m} + 2 -
     \frac{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}{\gamma_m},
@@ -1139,8 +1139,8 @@ $$
 Or in terms of Gamma functions, we obtain the final form of the steady-state
 mRNA distribution
 $$
-\begin{aligned}
-P(m) &= 
+{\scriptstyle
+P(m) = 
 \frac{1}{\Gamma(m + 1)}
 \frac{
     \Gamma
@@ -1165,7 +1165,7 @@ P(m) &=
     \right)
 }
 \left( \frac{r_m}{\gamma_m} \right)^m \\
-&\times {}_1F_1 
+\times {}_1F_1 
 \left(
     \frac{
             k^{(p)}_{\text{on}} 
@@ -1181,6 +1181,6 @@ P(m) &=
     + m,
     - \frac{r_m}{\gamma_m}
 \right),
-\end{aligned}
+}
 $$
 The equation used to fit the kinetic parameters for the unregulated promoter.

@@ -170,17 +170,22 @@ _{\exp}^{(i)} = \left( 1 + \frac{\left(1 + \frac{c^{(i)}}{K_A}\right)^2}{\left(
 1 + \frac{c^{(i)}}{K_A}\right)^2 + e^{-\beta \Delta \varepsilon_{AI}} \left(1 +
 \frac{c^{(i)}}{K_I} \right)^2} \frac{R^{(i)}}{N_{NS}} e^{-\beta \Delta
 \varepsilon_{RA}^{(i)}}\right)^{-1} + \epsilon^{(i)},
-$${eq:fold_change_exp}
+\label{eq:fold_change_exp}
+$$
 where $\epsilon^{(i)}$ represents the departure
 from the deterministic theoretical prediction for the $i^\text{th}$ data point.
 If we assume that these $\epsilon^{(i)}$ errors are normally distributed with
 mean zero and standard deviation $\sigma$, the likelihood of the data given the
 parameters is of the form 
 $$
+{\scriptstyle
 P(D \vert K_A, K_I, \sigma) =
-\frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}\prod\limits_{i=1}^n \exp
+\frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}} 
+\prod\limits_{i=1}^n 
+\exp
 \left[-\frac{(\text{fold-change}^{(i)}_{\exp} - \text{fold-change}(K_A, K_I,
 R^{(i)}, \Delta\varepsilon_{RA}^{(i)}, c^{(i)}))^2}{2\sigma^2}\right],
+}
 \label{eq:likelihood}
 $$
 where $\text{fold-change}^{(i)}_{\text{exp}}$ is the experimental fold-change
