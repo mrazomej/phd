@@ -125,35 +125,20 @@ build our intuition, help us design *de novo* input-output functions, or guide
 future experiments [@Kuhlman2007; @Murphy2007].
 
 ![**Predicting induction profiles for different biological control parameters.**
-(A) We can quantitatively tune $R$ via ribosomal binding site (RBS)
-modifications, $\Delta\varepsilon_{RA}$ by mutating the operator sequence, and
-$c$ by adding different amounts of IPTG to the growth medium. (B) Previous
-experiments have characterized the $R$, $N_{NS}$, $\Delta\varepsilon_{RA}$, and
-$\Delta\varepsilon_{AI}$ parameters (see [@Fig:ch2_fig01](C)), leaving only the
-unknown dissociation constants $K_A$ and $K_I$ between the inducer and the
-repressor in the active and inactive states, respectively. These two parameters
-can be inferred using Bayesian parameter estimation from a single induction
-curve. (C-E) Predicted IPTG titration curves for different repressor copy
-numbers and operator strengths. Titration data for the O2 strain (white circles
-in Panel ) with $R=260$, $\Delta\varepsilon_{RA} = -13.9~k_BT$, $n=2$, and
-$\Delta\varepsilon_{AI}=4.5~k_BT$ can be used to determine the thermodynamic
-parameters $K_A=139^{+29}_{-22} \times 10^{-6} \, \text{M}$ and
-$K_I=0.53^{+0.04}_{-0.04} \times 10^{-6}\, \text{M}$ (orange line). The
-remaining solid lines predict the fold-change Eq. $\ref{eq:fold_change_full}$
-for all other combinations of repressor copy numbers (shown in the legend) and
-repressor-DNA binding energies corresponding to the O1 operator ($-15.3~k_B T$),
-O2 operator ($-13.9~k_B T$), and O3 operator ($-9.7~k_B T$). Error bars of
-experimental data show the standard error of the mean (eight or more replicates)
-when this error is not smaller than the diameter of the data point. The shaded
-regions denote the 95% credible region, although the credible region is obscured
-when it is thinner than the curve itself. To display the measured fold-change in
-the absence of inducer, we alter the scaling of the $x$-axis between $0$ and
-$10^{-7}$ M to linear rather than logarithmic, as indicated by a dashed line.
-Additionally, our model allows us to investigate key phenotypic properties of
-the induction profiles (see [@Fig:ch2_fig01](B)). (F-J) Specifically, we show
-predictions for the (F) leakiness, (G) saturation, (H) dynamic range, (I)
-$[EC_{50}]$, and (J) effective Hill coefficient of the induction profiles. The
-Python code
+(A) Schematic representation of experimentally accessible variables. Repressor
+copy number $R$ is tuned by changing the sequence of the ribosomal binding site
+(RBS), DNA binding energy $\Delta\varepsilon_{RA}$ is controlled via the
+sequence of the operator, and the inducer concentration $c$ is controlled via a
+dilution series. (B) Markov Chain Monte Carlo (MCMC) sampling of the posterior
+distribution of $K_A$ and $K_I$. Each point corresponds to a single MCMC sample.
+Distribution on top and right represent the marginal posterior probability
+distribution over $K_A$ and $K_I$, respectively. (C)-(E) Predicted induction
+profiles for strains with various repressor copy numbers and DNA binding
+energies. White-faced points represent those to which the inducer binding
+constants $K_A$ and $K_I$ were determined. (F)-(J) Predicted properties of the
+induction profiles in (C) using parameter values known *a priori*. The shaded
+regions denote the 95% credible region. Region between 0 and $10^{-2}\, \mu$M is
+scaled linearly with log scaling elsewhere. The Python code
 [(`ch2_fig04.py`)](https://github.com/RPGroup-PBoC/mwc_induction/blob/master/code/figures/fig4.py)
 used to generate this figure can be found on the original paper [GitHub
 repository.](https://github.com/RPGroup-PBoC/mwc_induction)](ch2_fig04){#fig:ch2_fig04
