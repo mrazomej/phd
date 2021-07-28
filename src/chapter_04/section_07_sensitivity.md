@@ -42,6 +42,7 @@ fold-change to first order, $\Delta \text{fold-change}_{K_A} \approx
 \frac{\partial \text{fold-change}}{\partial K_A} \left( K_A - K_A^{\text{fit}}
 \right)$, where the partial derivative has the form
 $$
+{\scriptstyle
 \frac{\partial \text{fold-change}}{\partial K_A} =
 \frac{e^{-\beta \Delta \varepsilon_{AI}} 
 \frac{n}{K_I}\left(\frac{K_A}{K_I}\right)^{n-1}}
@@ -53,6 +54,7 @@ e^{-\beta \Delta\varepsilon_{RA}}
 \left(\frac{K_A}{K_I}\right)^n }
 \frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}}
 \right)^{-2}.
+}
 \label{eq:ch4_eq25}
 $$
 Similarly, the Taylor expansion
@@ -60,6 +62,7 @@ $\Delta \text{fold-change}_{K_I} \approx \frac{\partial
     \text{fold-change}}{\partial K_I} \left( K_I - K_I^{\text{fit}} \right)$
 features the partial derivative 
 $$
+{\scriptstyle
 \frac{\partial \text{fold-change}}{\partial K_I} = 
 -\frac{e^{-\beta \Delta \varepsilon_{AI}} 
 \frac{n}{K_I}\left(\frac{K_A}{K_I}\right)^{n}}
@@ -70,6 +73,7 @@ e^{-\beta \Delta\varepsilon_{RA}}
 1+\frac{1}{1+e^{-\beta \Delta \varepsilon_{AI} }
 \left(\frac{K_A}{K_I}\right)^n }\frac{R}{N_{NS}}
 e^{-\beta \Delta\varepsilon_{RA}} \right)^{-2}.
+}
 \label{eq:ch4_eq26}
 $$
 From Eqs. $\ref{eq:ch4_eq25}$ and $\ref{eq:ch4_eq26}$ we find that both $\Delta

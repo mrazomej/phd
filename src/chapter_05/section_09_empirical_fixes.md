@@ -5,7 +5,7 @@ be found in the [following
 link](https://www.rpgroup.caltech.edu/chann_cap/src/theory/html/empirical_constants.html)
 as an annotated Jupyter notebook)
 
-In [Fig:ch3_fig03](C) in the main text, we show that our minimal model has a
+In [@Fig:ch3_fig03](C) in the main text, we show that our minimal model has a
 systematic deviation on the gene expression noise predictions compared to the
 experimental data. This systematics will need to be addressed on an improved
 version of the minimal model presented in this work. To guide the insights into

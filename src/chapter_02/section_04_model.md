@@ -82,15 +82,16 @@ $$
 \equiv \frac{p_\text{bound}(R > 0)}{p_\text{bound}(R = 0)}.
 \label{eq:fold_change_definition}
 $$
-We can simplify this expression using two well-justified approximations: (1)
-$\frac{P}{N_{NS}}e^{-\beta\Delta\varepsilon_{P}}\ll 1$ implying that the RNAP
-binds weakly to the promoter ($N_{NS} = 4.6 \times 10^6$, $P \approx 10^3$
-[@Klumpp2008], $\Delta\varepsilon_{P} \approx -2 \,\, \text{to} \, -5~k_B T$
-[@Brewster2012], so that $\frac{P}{N_{NS}}e^{-\beta\Delta\varepsilon_{P}}
-\approx 0.01$) and (2) $\frac{R_I}{N_{NS}}e^{-\beta \Delta\varepsilon_{RI}} \ll
-1 + \frac{R_A}{N_{NS}} e^{-\beta\Delta\varepsilon_{RA}}$ which reflects our
-assumption that the inactive repressor binds weakly to the promoter of interest.
-Using these approximations, the fold-change reduces to the form
+We can simplify this expression using two well-justified approximations: (1) the
+RNAP binds weakly to the promoter, implying that
+$\frac{P}{N_{NS}}e^{-\beta\Delta\varepsilon_{P}}\ll 1$ ($N_{NS} = 4.6 \times
+10^6$, $P \approx 10^3$ [@Klumpp2008], $\Delta\varepsilon_{P} \approx -2 \,\,
+\text{to} \, -5~k_B T$ [@Brewster2012], so that
+$\frac{P}{N_{NS}}e^{-\beta\Delta\varepsilon_{P}} \approx 0.01$) and (2)
+$\frac{R_I}{N_{NS}}e^{-\beta \Delta\varepsilon_{RI}} \ll 1 + \frac{R_A}{N_{NS}}
+e^{-\beta\Delta\varepsilon_{RA}}$ which reflects our assumption that the
+inactive repressor binds weakly to the promoter of interest. Using these
+approximations, the fold-change reduces to the form
 $$
 \text{fold-change} \approx
 \left(1+\frac{R_A}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}}\right)^{-1} \equiv

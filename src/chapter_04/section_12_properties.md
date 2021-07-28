@@ -11,6 +11,7 @@ between the saturation and leakiness of the system. Using Eqs.
 $\ref{eq:leakiness}$, $\ref{eq:saturation}$ and $\ref{eq:dynamic_range_def}$ the dynamic
 range is given by
 $$
+{\scriptstyle
 \text{dynamic range} = 
 \left(
 1+\frac{1}{1+e^{-\beta \Delta \varepsilon_{AI} }
@@ -19,6 +20,7 @@ $$
  \left(
 1+\frac{1}{1+e^{-\beta \Delta \varepsilon_{AI} }}
 \frac{R}{N_{NS}}e^{-\beta \Delta\varepsilon_{RA}} \right)^{-1}.
+}
 \label{eq:ch4_eq35}
 $$
 The dynamic range, saturation, and leakiness were plotted with our experimental

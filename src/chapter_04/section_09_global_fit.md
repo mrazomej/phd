@@ -46,8 +46,8 @@ fold-change data. The term $P(\tilde{k}_A, \tilde{k}_I,
 \mathbf{R},
 \mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma \mid D)$
 gives the probability distributions of all of the parameters given the data. The
-term $P(D \mid \tilde{k}_A, \tilde{k}_I, \mathbf{R},
-\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma)$
+term ${\small P(D \mid \tilde{k}_A, \tilde{k}_I, \mathbf{R},
+\mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma)}$
 represents the likelihood of having observed our experimental data given some
 value for each parameter. $P(\tilde{k}_A, \tilde{k}_I,
 \mathbf{R},
@@ -59,11 +59,13 @@ ignored.
 Given $n$ independent measurements of the fold-change, the first term in Eq.
 $\ref{eq:ch4_eq30}$ can be written as 
 $$
+{\scriptstyle
 P(D \mid \tilde{k}_A, \tilde{k}_I, \mathbf{R},
 \mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma) =
 \frac{1}{(2\pi\sigma^2)^{\frac{n}{2}}}\prod\limits_{i=1}^n \exp
 \left[-\frac{(\text{fc}^{(i)}_{\exp} - \text{fc}(\tilde{k}_A, \tilde{k}_I,
 R^{(i)}, \Delta\varepsilon_{RA}^{(i)}, c^{(i)}))^2}{2\sigma^2}\right],
+}
 \label{eq:ch4_eq31}
 $$
 where $\text{fc}^{(i)}_{\text{exp}}$ is the $i^{\text{th}}$ experimental
