@@ -9,7 +9,7 @@ permalink: acknowledgements
 # Hero section
 title:  Acknowledgements
 subtitle: >  
-    The Grad School Archipelago
+    You Can Take the Kid out of Caltech, But you Can't take Caltech out of the Kid
     
 # Author box
 author:
