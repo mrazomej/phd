@@ -163,6 +163,13 @@ that we read. We also share an openness to share feelings between friends,
 constantly looking after each other. My friends became my family outside of my
 home, so I never felt alone during this journey.
 
+And how could I feel alone when so many people that I love were always there for
+me? Even when I felt like I was feeling homesick (or actually sick or injured),
+the Osegueda family was there for me. Carlos, Kathy, Patricio, Nico, and Matias,
+adopted me as an extra nephew/cousin, reminding me that family doesn't
+necessarily need a direct genetic relationship. I treasure every lunch and every
+dinner as some of the happiest and most delightful times during all these years.
+
 Shockingly enough, with all the good luck that has gotten me to this point,
 there is a lot more for which to be thankful. Because of Rob, my professional
 relationships have not been limited to Caltech only. I spent a total of six
@@ -171,7 +178,8 @@ Physiology and the Physical Biology of the Cell courses. There, I had the
 fortune to interact with Wallace Marshall, Jane Kondev, Hernan Garcia, Julie
 Theriot, and Madhav Mani, all of which have been supportive and inspiring
 throughout these years. At MBL, I also met my good friends Cat Triandafillou and
-Christina Hueschen.
+Christina Hueschen, who I'll be joining up north for the coming stage of my
+career.
 
 After this long list, I would like to dedicate specific words to Rob:
 
@@ -256,14 +264,16 @@ Esta tesis es clara evidencia de que esa lección de vida encapsulada en la
 célebre frase de mi madre siempre fue cierta. Sí pude, sí quise, y
 definitivamente, sí lo logré. Pero, este logro no solo es mío. Después de todo
 soy el reflejo de la persona que criaron. Este logro es de la familia Razo–Mejía
-entera que siempre ha estado ahí para apoyarme cuando más lo he necesitado.
-Desde el día que partí de la casa, sabía que tenía lo que se necesitaba para
-buscar mi felicidad. Ustedes me dieron las herramientas para construir el camino
-en busca de mis sueños. Ese camino continua, y las valiosas lecciones que me
-dieron a través de los años guiarán el resto de mi vida.
+entera, incluídos mis abuelos, mi tía Chio, mi tía Marilú y mi tío Pepe que
+siempre ha estado ahí para apoyarme cuando más lo he necesitado. Desde el día
+que partí de la casa, sabía que tenía lo que se necesitaba para buscar mi
+felicidad. Ustedes me dieron las herramientas para construir el camino en busca
+de mis sueños. Ese camino continua, y las valiosas lecciones que me dieron a
+través de los años guiarán el resto de mi vida.
 
 Termino una etapa maravillosa de mi vida. Entré al doctorado como un puberto sin
-ninguna experiencia de haber vivido fuera de casa. No me queda más que
+ninguna experiencia de haber vivido fuera de casa, y salgo de esta experiencia
+como un hombre, con un proyecto de vida por delante. No me queda más que
 agradecerles por siempre haber estado ahí para mi. Gracias por ser mis papás.
 Gracias por ser mi hermana. Ustedes, junto con Daniela, hacen que valga la pena
 vivir cada momento.
@@ -288,15 +298,15 @@ un producto terminado, sino un ente en constante construcción, me llena de
 emoción por nuestra vida juntos. Después de todo, ¿qué sería de mis más grandes
 momentos de alegría si no tuviera con quién compartir ese sentimiento? Todo ese
 fervor simplemente aislado en la privacidad de mi experiencia consciente, sin
-poder ser expresado hacia otra persona; ¡que enorme desperdicio!. De igual
+poder ser expresado hacia otra persona; ¡que enorme desperdicio! De igual
 manera, ¿qué sería de mis momentos de más profunda tristeza y decepción, si no
 pudiera aliviar mi sufrimiento al estar contigo? Tú haces que el estar vivo,
 experimentando esta realidad, sea una dicha constante.
 
 Desde el fondo de mi ser, espero que el patrón de felicidad que hemos
-experimentado por los últimos dos años, sea una muestra de lo que nos espera
-por el resto de nuestras vidas. Extrañaré nuestra vida en Pasadena, nuestro
-taco Thursday, y las noches de ver documentales juntos. Pero la vida debe de
+experimentado durante los últimos dos años, sea una muestra de lo que nos espera
+por el resto de nuestras vidas. Extrañaré nuestra vida en Pasadena, nuestro taco
+Thursday, y las noches de ver documentales juntos. Pero la vida debe de
 continuar. Una nueva etapa de auto–descubrimiento y aprendizaje hará de nuestro
 amor una estructura aún más sólida y compleja, mientras seguimos compartiendo
 juntos la dicha de estar vivos. Muchísimas gracias por amarme. Yo te amo, y te
