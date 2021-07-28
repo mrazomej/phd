@@ -16,7 +16,7 @@ explanation of how microscopy measurements were used to obtain induction curves.
 We follow the approach of the main text and make fold-change predictions based
 on the parameter estimates from our strain with $R=260$ and an O2 operator.
 These predictions are shown in [@Fig:ch4_fig21](A), where we also plot data
-taken in triplicate for strains containing $R= $22, 60, and 124, obtained by
+taken in triplicate for strains containing $R=$ 22, 60, and 124, obtained by
 single-cell microscopy. We find that the data are systematically below the
 theoretical predictions. We also considered our global fitting approach (see
 [Sec. 4.8](#sec:ch4_sec09)) to see whether we might find better agreement with
