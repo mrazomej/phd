@@ -1,4 +1,4 @@
-## Materials \& Methods {#ch2_methods}
+## Materials \& Methods {#sec:ch2_sec05}
 
 ### Bacterial Strains and DNA Constructs
 
