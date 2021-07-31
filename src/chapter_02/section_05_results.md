@@ -178,7 +178,7 @@ global fit using the data from all eighteen strains in which we fitted for the
 inducer dissociation constants $K_A$ and $K_I$, the repressor copy number $R$,
 and the repressor DNA binding energy $\Delta\varepsilon_{RA}$ (see Chapter 4).
 The resulting parameter values were nearly identical to those fitted from any
-single strain.  We continue using parameters fitted from the strain with $R=260$
+single strain. We continue using parameters fitted from the strain with $R=260$
 repressors and an O2 operator for the remainder of the text.
 
 ![**Comparison of predictions against measured and inferred data.** (A-C) Flow

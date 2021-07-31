@@ -108,7 +108,7 @@ an illuminating technique in a number of studies of allosteric proteins
 straightforward to observe system responses to changes in effector concentration
 $c$, framing the input-output function in terms of $c$ can give the misleading
 impression that changes in system parameters lead to fundamentally altered
-system responses.  Alternatively, suppose one can find the "natural variable"
+system responses. Alternatively, suppose one can find the "natural variable"
 that enables the output to collapse onto a single curve. In that case, it
 becomes clear that the system's output is not governed by individual system
 parameters but rather the contributions of multiple parameters that define the

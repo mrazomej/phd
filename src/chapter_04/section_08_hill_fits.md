@@ -91,7 +91,7 @@ Motivated by the inability in the previous section to characterize all eighteen
 strains using the Hill function with a single set of parameters, here we combine
 the Hill approach with a thermodynamic model of simple repression to garner
 predictive power. More specifically, we will use the thermodynamic model in
-[@Fig:ch2_fig02](A) but substitute the statistical model in  [@Fig:ch2_fig02](B)
+[@Fig:ch2_fig02](A) but substitute the statistical model in [@Fig:ch2_fig02](B)
 with the phenomenological Hill function (Eq. $\ref{eq:ch4_eq27}$).
 
 Following Eqs. $\ref{eq:p_bound_definition}$, $\ref{eq:fold_change_definition}$,
