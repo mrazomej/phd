@@ -10,11 +10,11 @@ institution that I was "just a kid from Mexico" and that I was not going to
 amount to much. My big dreams of making it out of my situation to study abroad
 and dedicate my life to understanding the natural world were almost shattered
 beyond repair. During this absolute low point of my life, a series of fortunate
-events got me here, writing my thesis's acknowledgments section. This journey
-over the last decade has only been possible because I have had the immense
-fortune of being surrounded by incredible people. I want to take this chance to
-recall the story of how I got into Caltech, hopefully thanking every person that
-has helped me reach this moment along the way.
+events got me here. This journey over the last decade has only been possible
+because I have had the immense fortune of being surrounded by incredible people.
+I want to take this chance to recall the story of how I got into Caltech,
+hopefully thanking every person that has helped me along the way to reach this
+moment.
 
 As I just mentioned, before coming to Caltech for the first time, my scientific
 credentials were next to null. Circumstances I did not choose had me stuck in an
@@ -87,18 +87,19 @@ once a week during our group meeting to have the chance to hang out with other
 physical biologists. Rob decided to recruit Justin and me as honorary TAs for
 his famous Bi1x class. Every Sunday for the next few months, I helped Justin
 develop a new module for the class involving fluorescent microscopy on fly
-embryos. These interactions turned into a friendship where Justin treated my
-family and me unbelievably nicely. After Rob, Justin has been the scientist that
-has influenced my thinking the most. His classes, sharp mind, computational
-skills, unbelievably ethical behavior, and his will to share his knowledge set
-me on the right track from the beginning of my Ph.D., when Justin started a
-position as a teaching faculty for the Biology division. 
+embryos. These interactions turned into a friendship. Ever since Justin and his
+wife Ramit have treated me and my family and me unbelievably nicely. After Rob,
+Justin has been the scientist that has influenced my thinking the most. His
+classes, sharp mind, computational skills, unbelievably ethical behavior, and
+his will to share his knowledge set me on the right track from the beginning of
+my Ph.D., when Justin started a position as a teaching faculty for the Biology
+division. 
 
 As the reader can infer from the context of these acknowledgments, a year at
-Caltech was not enough, and I needed more. So as soon as I could, I came back to
-begin my Ph.D. working again with Rob. My twenties came and went by faster than
-I thought. Nevertheless, I had the immense fortune to share the lab with three
-of my great friends and co-authors for all those years. Nathan Belliveau, Muir
+Caltech was not enough. As soon as I could, I came back to to Caltech  to begin
+my Ph.D. working again with Rob. My twenties came and went by faster than I
+thought. Nevertheless, I had the immense fortune to share the lab with three of
+my great friends and co-authors for many of those years. Nathan Belliveau, Muir
 Morrison, and Griffin Chure became my lab family. They helped me think through
 problems and worked with me on numerous successful (and unsuccessful) projects,
 as we all grew as scientists under Rob's tutelage. It is not an exaggeration to
@@ -151,17 +152,30 @@ hip-hop and good food. We went to concerts, amusement parks, and restaurants,
 and she has always been there when I needed emotional support. Porfirio and I
 not only share a nationality, but we shared an apartment for five years. Living
 with my best friend and having deep conversations and many other adventures out
-in the wild made all those years an authentic delight to experience. I would
-also like to give a shout-out to my friend Andres Ortiz. Andres and I have
-shared long conversations about the meaning of life, physics, math, and
+in the wild made all those years an authentic delight to experience. To both of
+you, thank you really for making my off-the-lab time in Pasadena such an amazing
+experience. Let's keep the HOI tradition alive for many, many years to come.
+
+I would also like to give a shout-out to my friend Andres Ortiz. Andres and I
+have shared long conversations about the meaning of life, physics, math, and
 everything in between. His powerful intellect and will to always chat about deep
 stuff make Andres a delightful person to call your friend. More recently, my
 friend David Larios joined my inner circle and became a really close friend.
 David and I share a love for learning, talking about science, and, more
 recently, doing outreach via a podcast where we share ideas from different books
 that we read. We also share an openness to share feelings between friends,
-constantly looking after each other. My friends became my family outside of my
-home, so I never felt alone during this journey.
+constantly looking after each other. The list of friends goes on and on and it
+would take forever to thank them all. But I would like to give a special mention
+to my good friends Scott Saunders, Enrique Amaya, Alejandro Granados, Jorge
+Castillo, and Emmanuel Flores. My friends became my family outside of my home,
+so I never felt alone during this journey.
+
+And how could I feel alone when so many people that I love were always there for
+me? Even when I felt like I was feeling homesick (or actually sick or injured),
+the Osegueda family was there for me. Kathy, Carlos, Patricio, Nico, and Matias,
+adopted me as an extra nephew/cousin, reminding me that family doesn't
+necessarily need a direct genetic relationship. I treasure every lunch and every
+dinner as some of the happiest and most delightful times during all these years.
 
 Shockingly enough, with all the good luck that has gotten me to this point,
 there is a lot more for which to be thankful. Because of Rob, my professional
@@ -171,15 +185,16 @@ Physiology and the Physical Biology of the Cell courses. There, I had the
 fortune to interact with Wallace Marshall, Jane Kondev, Hernan Garcia, Julie
 Theriot, and Madhav Mani, all of which have been supportive and inspiring
 throughout these years. At MBL, I also met my good friends Cat Triandafillou and
-Christina Hueschen.
+Christina Hueschen, who I'll be joining up north for the coming stage of my
+career.
 
 After this long list, I would like to dedicate specific words to Rob:
 
 Dear Mr. Phillips, Ph.D., 
 
-It is tough to write these words and not shed tears of happiness. I do not have
-words to express my feelings, but I will try to do my best. Working with you and
-sharing so many moments has been by far the most significant honor of my entire
+It is tough to write this section and not shed tears of happiness. I do not have
+words to express my feelings, but I will try to do my best. Working and sharing
+so many moments with you has been by far the most significant honor of my entire
 life. To me, it is clear that the only reason I am writing a Ph.D. thesis for
 arguably the best research institute in the world is because of you. When I sent
 that innocent email, I never imagined the quality of person that would await at
@@ -190,11 +205,11 @@ believing in myself, you believed in me. And, after a decade of having sent this
 email, I stand proud of what we have accomplished together. This thesis reflects
 everything I have learned from you as I pave my path to become who I want to be.
 
-You have told me that you don't have a recipe for a happy and fulfilling life on
-multiple occasions. But the way you operate and interact with other people makes
-me want to shape my professional and personal life after yours. I have learned
-from you that science is not only our job but, if one wants it, it can be a
-complete lifestyle. Hike after hike, trip after trip, calculation after
+On multiple occasions, you have told me that you don't have a recipe for a happy
+and fulfilling life. But the way you operate and interact with other people
+makes me want to shape my professional and personal life after yours. I have
+learned from you that science is not only our job but, if one wants it, it can
+be a complete lifestyle. Hike after hike, trip after trip, calculation after
 calculation, I have witnessed your boundless love for the natural world and the
 constant everyday effort that it takes to get closer to unveiling its mysteries.
 It is hard to imagine myself one day knowing a fraction of what you know about
@@ -203,13 +218,14 @@ hard as I can every single day.
 
 Although I have technically been your employee for the last decade, our
 relationship has been much deeper than that. Sometimes I have to pinch myself to
-make sure that all of this is not a dream. I am actually hanging out with my
-hero, and he is actually welcoming me to his family. Everything you have done
-for me, and now for Daniela, means the world to me. Welcoming us to the most
-sacred family celebration over thanksgiving has been a privilege I never
-expected to live. I cannot thank you, Amy, Molly, Casey, and the rest of your
-beautiful family, for making us feel part of the festivity and the extended
-family.
+make sure that this is not a dream. I am actually hanging out with my hero, and
+he is actually welcoming me to his family. Everything you have done for me, and
+now for Daniela, means the world to me. Welcoming us to the most sacred family
+celebration over thanksgiving has been a privilege I never expected to live. I
+cannot thank you, Amy, Molly, Casey, and the rest of your beautiful family, for
+making us feel part of the festivity and the extended family. I have even shared
+some incredibly stimulating and inspiring conversations with Bob Phillips, who
+literally reshaped my life priorities with his wisdom and kindness.
 
 I know that you despise honors, prizes, and people praising you. But I would not
 do justice to my feelings if I could not express my deep love and admiration for
@@ -254,16 +270,18 @@ voy a lograr."
 
 Esta tesis es clara evidencia de que esa lección de vida encapsulada en la
 célebre frase de mi madre siempre fue cierta. Sí pude, sí quise, y
-definitivamente, sí lo logré. Pero, este logro no solo es mío. Después de todo
+definitivamente, sí lo logré. Pero, este logro no solo es mío. Después de todo,
 soy el reflejo de la persona que criaron. Este logro es de la familia Razo–Mejía
-entera que siempre ha estado ahí para apoyarme cuando más lo he necesitado.
-Desde el día que partí de la casa, sabía que tenía lo que se necesitaba para
-buscar mi felicidad. Ustedes me dieron las herramientas para construir el camino
-en busca de mis sueños. Ese camino continua, y las valiosas lecciones que me
-dieron a través de los años guiarán el resto de mi vida.
+entera, incluídos mis abuelos, mi tía Chio, mi tía Marilú y mi tío Pepe que
+siempre ha estado ahí para apoyarme cuando más lo he necesitado. Desde el día
+que partí de la casa, sabía que tenía lo que se necesitaba para buscar mi
+felicidad. Todos los miembros de mi familia me dieron las herramientas para
+construir el camino en busca de mis sueños. Ese camino continua, y las valiosas
+lecciones que me dieron a través de los años guiarán el resto de mi vida.
 
 Termino una etapa maravillosa de mi vida. Entré al doctorado como un puberto sin
-ninguna experiencia de haber vivido fuera de casa. No me queda más que
+ninguna experiencia de haber vivido fuera de casa, y salgo de esta experiencia
+como un hombre, con un proyecto de vida por delante. No me queda más que
 agradecerles por siempre haber estado ahí para mi. Gracias por ser mis papás.
 Gracias por ser mi hermana. Ustedes, junto con Daniela, hacen que valga la pena
 vivir cada momento.
@@ -288,16 +306,16 @@ un producto terminado, sino un ente en constante construcción, me llena de
 emoción por nuestra vida juntos. Después de todo, ¿qué sería de mis más grandes
 momentos de alegría si no tuviera con quién compartir ese sentimiento? Todo ese
 fervor simplemente aislado en la privacidad de mi experiencia consciente, sin
-poder ser expresado hacia otra persona; ¡que enorme desperdicio!. De igual
+poder ser expresado hacia otra persona; ¡que enorme desperdicio! De igual
 manera, ¿qué sería de mis momentos de más profunda tristeza y decepción, si no
 pudiera aliviar mi sufrimiento al estar contigo? Tú haces que el estar vivo,
 experimentando esta realidad, sea una dicha constante.
 
-Desde el fondo de mi ser, espero que el patrón de felicidad que hemos
-experimentado por los últimos dos años, sea una muestra de lo que nos espera
-por el resto de nuestras vidas. Extrañaré nuestra vida en Pasadena, nuestro
-taco Thursday, y las noches de ver documentales juntos. Pero la vida debe de
-continuar. Una nueva etapa de auto–descubrimiento y aprendizaje hará de nuestro
-amor una estructura aún más sólida y compleja, mientras seguimos compartiendo
-juntos la dicha de estar vivos. Muchísimas gracias por amarme. Yo te amo, y te
-amaré todos los días de mi vida.
+Desde el fondo de mi ser, espero que el patrón de felicidad que hemos vivido
+durante los últimos dos años, sea una muestra de lo que nos espera por el resto
+de nuestras vidas. Extrañaré nuestra vida en Pasadena, nuestro taco Thursday, y
+las noches de ver documentales juntos. Pero la vida debe de continuar. Una nueva
+etapa de auto–descubrimiento y aprendizaje hará de nuestro amor una estructura
+aún más sólida y compleja, mientras seguimos compartiendo juntos la dicha de
+estar vivos. Muchísimas gracias por amarme. Yo te amo, y te amaré todos los días
+de mi vida.

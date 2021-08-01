@@ -21,17 +21,17 @@ The present study extends this body of work by introducing three additional
 biophysical parameters--$\Delta\varepsilon_{AI}$, $K_A$, and $K_I$--which
 capture the allosteric nature of the transcription factor and complement the
 results shown by [@Garcia2011c] and [@Brewster2014]. Although the current work
-focuses on systems with a single site of repression, in [Materials \&
-Methods](#ch2_methods), we utilize data from [@Brewster2014], in which multiple
+focuses on systems with a single site of repression, in [Sec.
+2.5](#sec:ch2_sec05), we utilize data from [@Brewster2014], in which multiple
 sites of repression are explored to characterize the allosteric free energy
 difference $\Delta\varepsilon_{AI}$ between the repressor's active and inactive
 states. As explained in that Section, this additional data set is critical
 because multiple degenerate sets of parameters can characterize an induction
 curve equally well, with the $\Delta\varepsilon_{AI}$ parameter compensated by
 the inducer dissociation constants $K_A$ and $K_I$ (see Chapter 4). After fixing
-$\Delta\varepsilon_{AI}$ as described in the [Materials \&
-Methods](#ch2_methods), we can use data from single-site simple repression
-systems to determine the values of $K_A$ and $K_I$.
+$\Delta\varepsilon_{AI}$ as described in the [Sec. 2.5](#sec:ch2_sec05), we can
+use data from single-site simple repression systems to determine the values of
+$K_A$ and $K_I$.
 
 We determine the values of $K_A$ and $K_I$ by fitting to a single induction
 profile using Bayesian inferential methods [@Sivia2006]. We then use Eq.
@@ -57,8 +57,8 @@ $\Delta\varepsilon_{RA} = -15.3 \pm 0.2~k_BT$, O2 $\Delta\varepsilon_{RA} =
 previously inferred by measuring the fold-change of the *lac* system at
 different repressor copy numbers, where the error arises from model fitting
 [@Garcia2011c]. Additionally, we were able to obtain the value $\Delta
-\varepsilon_{AI} = 4.5\; k_BT$ by fitting to previous data as discussed in
-Materials \& Methods. We measure fold-change over a range of known IPTG
+\varepsilon_{AI} = 4.5\; k_BT$ by fitting to previous data as discussed in [Sec.
+2.5](#sec:ch2_sec05). We measure fold-change over a range of known IPTG
 concentrations $c$, using $n=2$ inducer binding sites per LacI dimer and
 approximating the number of non-specific binding sites as the length in
 base-pairs of the *E. coli* genome, $N_{NS} = 4.6 \times 10^6$.
@@ -68,18 +68,18 @@ shown in [@Fig:ch2_fig03]. Briefly, cells were grown to exponential phase, in
 which gene expression reaches steady-state [@Scott2010], under concentrations of
 the inducer IPTG ranging between 0 and $5\,\text{mM}$. We measure YFP
 fluorescence using flow cytometry and automatically gate the data to include
-only single-cell measurements (see Materials \& Methods). To validate the use of
-flow cytometry, we also measured the fold-change of a subset of strains using
-the established method of single-cell microscopy (see Chapter 4). We found that
-the fold-change measurements obtained from microscopy were indistinguishable
-from that of flow-cytometry and yielded values for the inducer binding constants
-$K_A$ and $K_I$ that were within error.
+only single-cell measurements (see [Sec. 2.5](#sec:ch2_sec05)). To validate the
+use of flow cytometry, we also measured the fold-change of a subset of strains
+using the established method of single-cell microscopy (see Chapter 4). We found
+that the fold-change measurements obtained from microscopy were
+indistinguishable from that of flow-cytometry and yielded values for the inducer
+binding constants $K_A$ and $K_I$ that were within error.
 
 ![**An experimental pipeline for high-throughput fold-change measurements.**
 Cells are grown to an exponential steady-state, and their fluorescence is
 measured using flow cytometry. Automatic gating methods using forward- and
 side-scattering are used to ensure that all measurements come from single cells
-(see [Materials \& Methods](#ch2_methods)). Mean expression is then quantified
+(see [Sec. 2.5](#sec:ch2_sec05)). Mean expression is then quantified
 at different IPTG concentrations (top, blue histograms) and for a strain without
 repressor (bottom, green histograms), which shows no response to IPTG as
 expected. Fold-change is computed by dividing the mean fluorescence in the
@@ -178,7 +178,7 @@ global fit using the data from all eighteen strains in which we fitted for the
 inducer dissociation constants $K_A$ and $K_I$, the repressor copy number $R$,
 and the repressor DNA binding energy $\Delta\varepsilon_{RA}$ (see Chapter 4).
 The resulting parameter values were nearly identical to those fitted from any
-single strain.  We continue using parameters fitted from the strain with $R=260$
+single strain. We continue using parameters fitted from the strain with $R=260$
 repressors and an O2 operator for the remainder of the text.
 
 ![**Comparison of predictions against measured and inferred data.** (A-C) Flow
