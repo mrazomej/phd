@@ -28,3 +28,4 @@ src/data/*
 # Local files
 # -----------
 src/chapter_*/*tex
+dst/
