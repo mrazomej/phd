@@ -166,9 +166,9 @@ recently, doing outreach via a podcast where we share ideas from different books
 that we read. We also share an openness to share feelings between friends,
 constantly looking after each other. The list of friends goes on and on and it
 would take forever to thank them all. But I would like to give a special mention
-to my good friends Scott Saunders, Enrique Amaya, Alejandro Granados, Jorge
-Castillo, and Emmanuel Flores. My friends became my family outside of my home,
-so I never felt alone during this journey.
+to my good friends Ellen Yan, Scott Saunders, Enrique Amaya, Alejandro Granados,
+Jorge Castillo, Emmanuel Flores, Teddy, Adam Gomez, Paola. My friends became my
+family outside of my home, so I never felt alone during this journey.
 
 And how could I feel alone when so many people that I love were always there for
 me? Even when I felt like I was feeling homesick (or actually sick or injured),
