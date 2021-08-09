@@ -182,11 +182,11 @@ there is a lot more for which to be thankful. Because of Rob, my professional
 relationships have not been limited to Caltech only. I spent a total of six
 months at the Marine Biological Laboratory (MBL) as a teaching assistant for the
 Physiology and the Physical Biology of the Cell courses. There, I had the
-fortune to interact with Wallace Marshall, Jane Kondev, Hernan Garcia, Julie
-Theriot, and Madhav Mani, all of which have been supportive and inspiring
-throughout these years. At MBL, I also met my good friends Cat Triandafillou and
-Christina Hueschen, who I'll be joining up north for the coming stage of my
-career.
+fortune to interact with Wallace Marshall, Jane Kondev, Hernan Garcia, Greg
+Huber, Julie Theriot, and Madhav Mani, all of which have been supportive and
+inspiring throughout these years. At MBL, I also met my good friends Cat
+Triandafillou and Christina Hueschen, who I'll be joining up north for the
+coming stage of my career.
 
 After this long list, I would like to dedicate specific words to Rob:
 
