@@ -1,13 +1,13 @@
-### Maximum Entropy approximation
+### Maximum Entropy Approximation
 
 Having numerically computed the moments of the mRNA and protein distributions as
 cells progress through the cell cycle, we now proceed to make an approximate
 reconstruction of the full distributions given this limited information. The
-maximum entropy principle, first proposed by E.T. Jaynes in 1957 [@Jaynes1957],
+maximum entropy principle, first proposed by Jaynes in 1957 [@Jaynes1957],
 approximates the entire distribution by maximizing the Shannon entropy subject
 to constraints given by the values of the moments of the distribution
 [@Jaynes1957]. This procedure leads to a probability distribution of the form
-(See for full derivation)
+(see Chapter 5 for full derivation)
 $$
 P(m, p) = \frac{1}{\mathcal{Z}} \exp
 \left( - \sum_{(x,y)} \lambda_{(x,y)} m^x p^y \right), 
@@ -22,30 +22,32 @@ The computational challenge then becomes an optimization routine in which the
 values for the Lagrange multipliers $\lambda_{(x,y)}$ that are consistent with
 the constraints set by the moment values $\langle m^x p^y \rangle$ need to be
 found. This is computationally more efficient than sampling directly from the
-master equation with a stochastic algorithm (see for further comparison between
-maximum entropy estimates and the Gillespie algorithm). details our
-implementation of a robust algorithm to find the values of the Lagrange
-multipliers. [@Fig:ch3_fig05](A) shows example predicted protein distributions
-reconstructed using the first six moments of the protein distribution for a
-suite of different biophysical parameters and environmental inducer
-concentrations. As repressor-DNA binding affinity (columns in (A)) and repressor
-copy number (rows in (A)) are varied, the responses to different signals, i.e.,
-inducer concentrations, overlap to varying degrees. For example, the upper right
-corner frame with a weak binding site ($\Delta\varepsilon_r = -9.7 \; k_BT$) and
-a low repressor copy number (22 repressors per cell) have virtually identical
-distributions regardless of the input inducer concentration. This means that
-cells with this set of parameters cannot resolve any difference in the
-concentration of the signal. As the number of repressors is increased, the
-degree of overlap between distributions decreases, allowing cells to resolve the
-value of the signal input better. On the opposite extreme, the lower-left panel
-shows a strong binding site ($\Delta\varepsilon_r = -15.3 \; k_BT$) and a high
-repressor copy number (1740 repressors per cell). This parameter combination
-shows an overlap between distributions since the high degree of repression
-centers all distributions towards lower copy numbers, giving little ability for
-the cells to resolve the inputs. In (B) and we show the comparison of these
-predicted cumulative distributions with the experimental single-cell
-fluorescence distributions. Given the systematic deviation of our predictions
-for the protein copy number noise highlighted in (C), the theoretical
+master equation with a stochastic algorithm (see Chapter 5 for further
+comparison between maximum entropy estimates and the Gillespie algorithm). In
+Chapter 5 we derive our implementation of a robust algorithm to find the values
+of the Lagrange multipliers. [@Fig:ch3_fig04](A) shows an example of predicted
+protein distributions reconstructed using the first six moments of the protein
+distribution for a suite of different biophysical parameters and environmental
+inducer concentrations. From the predicted distributions at different inducer
+concentrations we can see that as repressor-DNA binding affinity (columns in
+[@Fig:ch3_fig04](A)) and repressor copy number (rows in [@Fig:ch3_fig04](A)) are
+varied, the responses to different signals, i.e., inducer concentrations,
+overlap to varying degrees. For example, the upper right corner frame with a
+weak binding site ($\Delta\varepsilon_r = -9.7 \; k_BT$) and a low repressor
+copy number (22 repressors per cell) have virtually identical distributions
+regardless of the input inducer concentration. This means that cells with this
+set of parameters cannot resolve any difference in the concentration of the
+signal. As the number of repressors is increased, the degree of overlap between
+distributions decreases, allowing cells to resolve the value of the signal input
+better. On the opposite extreme, the lower-left panel shows a strong binding
+site ($\Delta\varepsilon_r = -15.3 \; k_BT$) and a high repressor copy number
+(1740 repressors per cell). This parameter combination shows an overlap between
+distributions since the high degree of repression centers all distributions
+towards lower copy numbers, giving little ability for the cells to resolve the
+inputs. In [@Fig:ch3_fig04](B), we show the comparison of these predicted
+cumulative distributions with the experimental single-cell fluorescence
+distributions. Given the systematic deviation of our predictions for the protein
+copy number noise highlighted in [@Fig:ch3_fig03](C), the theoretical
 distributions (dashed lines) underestimate the width of the experimental data.
 We again direct the reader to [Sec. 5.8](#sec:ch5_sec09) for an exploration of
 empirical changes to the moments that improve the agreement of the predictions.
