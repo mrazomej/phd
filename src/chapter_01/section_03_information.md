@@ -1,10 +1,10 @@
-## Entropy, information, and the math behind the bit
+## Entropy, Information, and the Math Behind the Bit
 
 Central to the endeavor undertaken in this thesis is the idea that cells can
 process information from the environment to up or down-regulate their genes to
 generate an appropriate response to these external signals. Information as a
 concept is a very plastic term that we commonly use to explain having helpful
-knowledge to use to our advantage. Phrases such as "*that person carries so much
+knowledge to use to our advantage. Phrases such as "*That person carries so much
 information in her brain. She truly knows everything!*" point at this somewhat
 imprecise concept of what we mean by information. 
 
@@ -21,7 +21,7 @@ different point. Usually, these messages carry with them *meaning* (otherwise,
 why would we even want to send such messages) by which we typically mean that
 the message "refers to or is correlated according to some system with certain
 physical or conceptual entities" [@Shannon1948]. But for the task of engineering
-a reliable communication system, this meaning is irrelevant--in the same way
+a reliable communication system, this meaning is irrelevant---in the same way
 that whatever the cell decides to do with the meaning of the signals obtained
 from the environment can be thought as irrelevant for the biophysics of how the
 signal is sensed.
@@ -89,7 +89,7 @@ random distribution would be if all letters appeared equally frequent in the
 paragraph, such that betting on any letter coming out of the hat would give us
 equal chances of guessing right. If instead of looking at the distribution of
 individual letters, we look at pairs of letters, the distribution $P(x, y)$ over
-the paragraph is shown in [@Fig:ch1_fig08](C). Here we can see that just as the
+the paragraph is shown in [@Fig:ch1_fig08](C). Here we can see that, just as the
 letters were not completely random, the pairs of letters are also not random.
 For example, if we take the first letter of the pair to be *t*, we see that it
 is more commonly followed by the letter *h*. This implies that knowing that the
@@ -191,7 +191,7 @@ the mRNA with 4 possible nucleotides). The encoding function $E: \mathcal{X}^r
 $r=3$) and translates it into a message of size $t$ (in our examples $t=9$)
 such that we then have
 $$
-m_y = E(m_x),
+m_y = E(m_x).
 $$
 Obviously, the larger the message $m_x$ we want to encode, the larger the
 corresponding message $m_y$ will be. Therefore we have that
@@ -201,7 +201,7 @@ L(m_y) \propto L(m_x),
 $$
 where $L(\cdot)$ is a function that counts the number of characters in a
 message. An essential difference between both of the examples in
-[@Fig:ch1_fig09](B) is that for the English to Morse code case, the number of
+[@Fig:ch1_fig09](B) is that, for the English to Morse code case, the number of
 dots and dashes for different letters is different (*e*$\rightarrow$.,
 *x*$\rightarrow$-..-). Meanwhile, for the amino acid to codon case, every single
 codon has the same length. Let us focus for now on this second coding scheme
@@ -214,12 +214,12 @@ L(m_y) = k L(m_x).
 \label{eq:length_fn}
 $$
 The number of messages of size $r$ that can be encoded with the alphabet
-$\mathcal{X}$ is given by $n^r$--because we have $n$ possible options to chose
+$\mathcal{X}$ is given by $n^r$---because we have $n$ possible options to chose
 from for each of the $r$ characters, resulting in $n\cdot n\cdot n\cdots = n^r$.
 Likewise, the number of messages of size $t$ encoded with alphabet $\mathcal{Y}$
 is $m^t$. We then demand from our coding scheme that the number of messages we
 can encode is at least the number of messages we could potentially send. In
-other words, for our coding scheme to be able to take *any* message of size $r$
+other words, for our coding scheme to be able to take *any* message of size $r$,
 it must be true that the number of possible encoded messages is at least as
 large as the number of possible messages to encode. This demand is expressed as
 $$
@@ -227,7 +227,7 @@ n^r \leq m^t.
 $$
 If our encoding did not satisfy this, we would have to increase $t$, i.e., the
 number of characters we use to encode our message. For example, if codons were
-made out of only two basepair, the genetic code would not be able to code for
+made out of only two basepairs, the genetic code would not be able to code for
 all 20 amino acids plus the stop codons. On the other extreme, we could develop
 a ridiculously long encoding scheme (imagine a version of the genetic code where
 1000 basepair represented a single amino acid). To avoid this absurd scheme, we
@@ -237,13 +237,13 @@ $$
 m^{t-1} < n^r \leq m^t.
 \label{eq:ineq_messages}
 $$
-Let us now take the logarithm on our previous inequality--this preserves the
-inequalities since $\log$ is a monotonically increasing function--finding
+Let us now take the logarithm on our previous inequality---this preserves the
+inequalities since $\log$ is a monotonically increasing function---finding
 $$
 (t - 1) \log(m) < r \log(n) \leq t \log(m).
 $$
-We are free to choose the logarithm base as we find convenient; therefore, let
-us use base $m$ for this, obtaining
+We are free to choose the logarithm base we find convenient; therefore, let us
+use base $m$ for this, obtaining
 $$
 t - 1 < r \log_m(n) \leq t.
 \label{eq:ineq_logm}
@@ -253,7 +253,7 @@ $$
 \frac{t-1}{r} < \log_m(n) \leq \frac{t}{r}.
 \label{eq:t_over_r}
 $$
-Let us stare at Eq. $\ref{eq:t_over_r}$. In Eq. $\ref{eq:ineq_messages}$ We
+Let us stare at Eq. $\ref{eq:t_over_r}$. In Eq. $\ref{eq:ineq_messages}$, we
 established $t$ as the minimum number of characters from alphabet $\mathcal{Y}$
 needed to encode a message of length $r$ written with alphabet $\mathcal{X}$
 characters (such as *MGF* turned into *AUGGGCUUC* as in [@Fig:ch1_fig09](B)).
@@ -312,8 +312,8 @@ $$
 (t - 1) A(m) < r A(n) \leq t A(m),
 \label{eq:A_div}
 $$
-because our requirement of the uncertainty $H$ being an additive property. For
-the example in [@Fig:ch1_fig09](C), at each of the three decision steps, the
+because of our requirement of the uncertainty $H$ being an additive property.
+For the example in [@Fig:ch1_fig09](C), at each of the three decision steps, the
 uncertainty is given by $A(2)$. Given that the uncertainty is additive, for each
 of the routes, our total uncertainty is given by
 $$
@@ -327,18 +327,18 @@ Since $\frac{(t - 1)}{r} A(m) < A(n)$, it is also true that
 $$
 \frac{t}{r} A(m) - A(n) < A(m) \left(\frac{t}{r} - \frac{(t-1)}{r} \right).
 $$
-Simplifying terms we are left with
+Simplifying terms, we are left with
 $$
 \frac{t}{r} A(m) - A(n) < \frac{1}{r} A(m).
 $$
-Dividing both sides by $A(m)$ we find 
+Dividing both sides by $A(m)$, we find 
 $$
 k - \frac{A(n)}{A(m)} < \frac{1}{r}.
 \label{eq:A_1_over_r}
 $$
-We can make the ratio $A(n)/A(m)$ as close as $k$ as we want by making $r$
+We can make the ratio $A(n)/A(m)$ as close to $k$ as we want by making $r$
 larger. This equation looks shockingly similar to Eq. $\ref{eq:logn_1_over_r}$,
-but what is the connection? On the one hand Eq. $\ref{eq:logn_1_over_r}$ is the
+but what is the connection? On the one, hand Eq. $\ref{eq:logn_1_over_r}$ is the
 result of imposing the condition that our coding scheme must be able to encode
 any possible message from one alphabet $\mathcal{X}$ to another alphabet
 $\mathcal{Y}$. This condition leads us to the conclusion that the number of
@@ -346,7 +346,7 @@ characters from alphabet $\mathcal{Y}$ needed to encode the characters from
 alphabet $\mathcal{X}$ (the constant $k$) can be made as arbitrarily close to
 $\log_m(n)$ as we want by writing a code, not for individual characters
 (individual amino acids), but for sequences of characters (polypeptides). On the
-other hand Eq. $\ref{eq:A_1_over_r}$ is a direct consequence of the three
+other hand, Eq. $\ref{eq:A_1_over_r}$ is a direct consequence of the three
 logical properties we imposed on our uncertainty metric $H$. These properties
 led us to conclude that, whatever our uncertainty function for the equally
 likely choices $A(\cdot)$ is, the ratio of the uncertainties for each of our two
@@ -401,7 +401,7 @@ N = \sum_{i=1}^n n_i,
 $$
 where $n_i$ counts the number of codons for amino acid $i$, and $n$ is the total
 number of amino acid choices. Let us call $H_1$ the uncertainty of this set of
-equal choices. From Eq. $\ref{eq:entropy_equally}$ we know that the resulting
+equal choices. From Eq. $\ref{eq:entropy_equally}$, we know that the resulting
 uncertainty function $H_1$ is of the form 
 $$
 H_1 = K \log\left(\sum_{i=1}^n n_i \right) = K \log (N),
@@ -465,7 +465,7 @@ H(p_1, p_2, \ldots, p_n) = - K \left[
     \log\left( \frac{n_i}{\sum_{i=1}^n n_i} \right)
 \right].
 $$
-Using Eq. $\ref{eq:p_i_amino}$ we find the expected result
+Using Eq. $\ref{eq:p_i_amino}$, we find the expected result
 $$
 H(p_1, p_2, \ldots, p_n) = - K \sum_{i=1}^n p_i \log p_i.
 \label{eq:shannon_result}
@@ -494,7 +494,8 @@ To gain intuition on what this equation is telling us, let us look at two
 examples. In our first example, we will think about the simplest random process:
 a coin toss. To compute how unpredictable the outcome of our simple coin toss
 is, we can use Eq. $\ref{eq:shannon_result}$. For this particular case, we only
-have two possible outcomes--heads with probability $p$ or tails with probability
+have two possible outcomes---heads with probability $p$ or tails with
+probability
 $1 - p$. The resulting entropy is of the form
 $$
 H = - p \log(p) - (1 - p) \log(1 - p).
@@ -507,29 +508,29 @@ given that Eq. $\ref{eq:entropy_coin}$ quantifies how unpredictable the outcome
 of tossing the coin is. If the coin toss's outcome is always heads (p=1) or
 always tails (p=0), there is no uncertainty about the resulting face. The more
 both outcomes become (the closer $p$ gets to $1/2$), the more unpredictable the
-random even is. One mathematical subtly here is that for $p=1$ or $p=0$ we have
-to compute $0 \times \log(0)$, which is undefined. We take this to be zero
-because for $x \log(x)$, the limit where $x \rightarrow 0^+$ converges to zero.
-Notice that the units on the $y$-axis are given in bits. These units mean that
-we used base two for our logarithms. An easy way to think about what a bit means
-is as the number of *yes*/*no* questions one would need to ask on average to
-infer the random event's outcome. For a coin, all we need is a single question
-(therefore one bit) to know what the outcome was.
+random even is. One mathematical subtly here is that for $p=1$ or $p=0$, we have
+to compute $0 \times \log(0)$, which is undefined. For these values of $p$ we
+take $0 \times \log(0) = 0$ since the limit where $x \rightarrow 0^+$ converges
+to zero. Notice that the units on the $y$-axis are given in bits. These units
+mean that we used base two for our logarithms. An easy way to think about what a
+bit means is the number of *yes*/*no* questions one would need to ask on average
+to infer the random event's outcome. For a coin, all we need is a single
+question (therefore one bit) to know what the outcome was.
 
 For our second example, we go back to the mRNA steady-state distribution we
 derived in Eq. $\ref{eq:mRNA_steady}$. We found that for our simple one-state
-DNA promoter, the steady-state distribution resulted Poisson with mean $\langle
-m \rangle = r_m / \gamma_m$. [@Fig:ch1_fig10](B) shows the entropy of this
-Poisson distribution as a function of the mean mRNA. WE se a quick initial
+DNA promoter, the steady-state distribution resulted in Poisson with a mean
+$\langle m \rangle = r_m / \gamma_m$. [@Fig:ch1_fig10](B) shows the entropy of
+this Poisson distribution as a function of the mean mRNA. We see a quick initial
 increase in this entropy up to $\langle m \rangle \approx 20$, after which there
 is a much less steep increment. Imagine we sample a random cell from one of
 these Poisson distributions. Using the interpretation of bits again as the
 number of *yes/no* questions, what [@Fig:ch1_fig10](B) tells us is that if the
 promoter produces $\approx 10$ mRNA on average, it will take on average 3.5 of
 these questions to infer the number of mRNA for random cell. For an average of
-$\approx 20$ mRNA it would take four questions, and for an average of $\approx
-60$ mRNA five questions. These questions would be of the form "*is it greater
-than the average?*" or "*is it less than or equal to 1/3 of the average?*" and
+$\approx 20$ mRNA, it would take four questions, and for an average of $\approx
+60$ mRNA, five questions. These questions would be of the form "*is it greater
+than the average?*" or "*is it less than or equal to 1/3 of the average?*," and
 so on.
 
 ![**Shannon entropy in action.** (A) The entropy of a coin as a function of the
@@ -555,7 +556,7 @@ forms are the same is too suggestive to dismiss a potential connection between
 these concepts immediately. It was until much later that E. T. Jaynes formalized
 ways to link both ideas [@Jaynes1957]. Nevertheless, Jaynes himself strongly
 discourages people from trying to map one concept to the other explicitly. In
-his book "*Probability Theory: The Logic of Science*" Jaynes warns the reader
+his book "*Probability Theory: The Logic of Science*," Jaynes warns the reader
 about failing to distinguish information entropy, which is a property of the
 mathematical object we call a probability distribution, and the *experimental
 entropy* of thermodynamics, which is instead a property of the state of the
@@ -563,7 +564,7 @@ system as defined by experimentally measurable quantities such as volume,
 temperature, pressure, magnetization, etc. Jaynes goes on to say: "*they should
 never have been called by the same name; the experimental entropy makes no
 reference to any probability distribution, and the information entropy makes no
-reference o thermodynamics*" [@Jaynes2003].
+reference to thermodynamics*" [@Jaynes2003].
 
 When Jaynes makes such strong remarks about the disconnection between both
 entropy concepts, he strictly refers to the classical thermodynamic definition.
@@ -745,12 +746,12 @@ $H$, we now give it a random variable $m$. This notation is understood as: the
 entropy is calculated over the distribution of possible values that $m$ can
 take. If $m$ can take values $\{m_1, m_2, \ldots, m_n\}$, the probability of
 obtaining $m = m_k$ is given by the function $P(m=m_k)$, which for brevity we
-can write simply as $P(m_k)$. What Eq. $\ref{eq:shannon_x}$ is saying is: Take
+can write simply as $P(m_k)$. What Eq. $\ref{eq:shannon_x}$ is saying is: take
 the random variable $m$ and all the possible values it can have; compute the
 Shannon entropy by summing over the probability of all those values. In this
 way, $H(m)$ is a shorthand for writing $H[P(m)]$.
 
-With this notation in hand, let's think about two correlated random variables
+With this notation in hand, let us think about two correlated random variables
 $m$ and $p$. These could be the number of mRNAs and proteins in the cells, as
 depicted in [@Fig:ch1_fig11](A). The *joint entropy* $H(m, p)$ measures the
 uncertainty we have about the outcome of a pair of variables rather than a
@@ -780,7 +781,7 @@ used to generate this figure can be found on the thesis [GitHub
 repository](https://github.com/mrazomej/phd).](ch1_fig11){#fig:ch1_fig11
 short-caption="Shannon's entropy for more than one random variable"}
  
-### Thinking Conditionally, a Condition for Thinking.
+### Thinking Conditionally, a Condition for Thinking
 
 In Joe Blitztein's excellent *Introduction to probability* [@Blitzstein2019], he
 clarifies how conditional probability is one of the most powerful concepts in
@@ -797,9 +798,9 @@ between random variables, our guess for the variable's value that we did not
 observe would improve over a completely random choice. In our example, if we get
 to observe that $m$ is a small (or large) number, we would suspect that $p$ is
 also a small (or large) number, as shown in [@Fig:ch1_fig11](B). This means that
-our uncertainty on the value of $p$ changed--it was reduced--upon observing the
-value of $m$. The new uncertainty, i.e., the entropy of $p$ having learned the
-value of $m$, averaged over all possible values of $m$, is computed as
+our uncertainty on the value of $p$ changed---it was reduced---upon observing
+the value of $m$. The new uncertainty, i.e., the entropy of $p$ having learned
+the value of $m$, averaged over all possible values of $m$, is computed as
 $$
 H(p \mid m) = - \sum_m \sum_p P(m) P(p \mid m) \log P(p \mid m),
 \label{eq:conditional_entropy}
@@ -808,7 +809,7 @@ where $P(p \mid m)$ is read as "probability of $p$ given that we observe $m$."
 Finally, with all these concepts in hand, we can discuss the idea of information
 in the Shannon sense.
 
-### One person's entropy is another person's information.
+### One Person's Entropy is Another Person's Information
 
 So far, our discussion has focused on the concept of entropy. We first derived
 the Shannon entropy from three basic principles that a metric of uncertainty
