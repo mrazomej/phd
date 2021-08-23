@@ -1,4 +1,4 @@
-### Computing the moments of the mRNA and protein distributions 
+### Computing the Moments of the mRNA and Protein Distributions 
 
 Finding analytical solutions to chemical master equations is often fraught with
 difficulty. An alternative approach is to approximate the distribution. One such
@@ -29,7 +29,7 @@ $$
 \label{eq:ch3_eq08}
 $$
 Summing over all possible values for $m$ and $p$ in Eq. $\ref{eq:ch3_eq06}$
-results in an ODE for any moment of the distribution of the form (See Chapter 5
+results in an ODE for any moment of the distribution of the form (see Chapter 5
 for full derivation) 
 $$
 \begin{split}
@@ -46,7 +46,7 @@ $$
 Given that all transitions in our stochastic model are first-order reactions,
 Eq. $\ref{eq:ch3_eq09}$ has no moment-closure problem [@Voliotis2014a]. This
 means that the dynamical equation for a given moment only depends on lower
-moments (See Chapter 5 for full proof). This feature of our model implies, for
+moments (see Chapter 5 for full proof). This feature of our model implies, for
 example, that the second moment of the protein distribution $\langle p^2
 \rangle$ depends only on the first two moments of the mRNA distribution $\langle
 m \rangle$ and $\langle m^2 \rangle$, the first protein moment $\langle p
@@ -59,7 +59,7 @@ $$
 \ldots, \mathbf{\langle m^x p^y \rangle} \right]^T.
 \label{eq:ch3_eq10}
 $$
-Explicitly for the three-state promoter model depicted in [@Fig:ch3_fig02](A)
+Explicitly for the three-state promoter model depicted in [@Fig:ch3_fig02](A),
 this vector takes the form
 $$
 \boldsymbol{\mu}^{\mathbf{(x, y)}} = 
