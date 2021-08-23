@@ -76,7 +76,7 @@ e^{-\beta \Delta\varepsilon_{RA}} \right)^{-2}.
 }
 \label{eq:ch4_eq26}
 $$
-From Eqs. $\ref{eq:ch4_eq25}$ and $\ref{eq:ch4_eq26}$ we find that both $\Delta
+From Eqs. $\ref{eq:ch4_eq25}$ and $\ref{eq:ch4_eq26}$, we find that both $\Delta
 \text{fold-change}_{K_A}$ and $\Delta \text{fold-change}_{K_I}$ increase in
 magnitude with $R$ and decrease in magnitude with $\Delta\varepsilon_{RA}$.
 Accordingly, we expect that the O3 strains (with the least negative
