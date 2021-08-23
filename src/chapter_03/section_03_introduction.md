@@ -40,9 +40,9 @@ of as a generalized correlation coefficient that quantifies the degree to which
 the uncertainty about a random event decreases given the knowledge of the
 average outcome of another random event [@Kinney2010].
 
-It is natural to conceive of scenarios in which living organisms can better
+It is natural to conceive of scenarios in which living organisms that better
 resolve signals might have an evolutionary benefit, making it more likely that
-their offspring will have a fitness advantage [@Taylor2007]. In recent years
+their offspring will have a fitness advantage [@Taylor2007]. In recent years,
 there has been a growing interest in understanding the theoretical limits on
 cellular information processing [@Bialek2005; @Gregor2007], and in quantifying
 how close evolution has pushed cellular signaling pathways to these theoretical
@@ -93,7 +93,7 @@ of transcription factor copy numbers and binding sites. Having these
 input-output distributions allow us to compute the mutual information $I$
 between inputs and outputs for any arbitrary input distribution $P(c)$. We opt
 to compute the channel capacity, i.e., the maximum information that can be
-processed by this gene regulatory architecture, defined as [Eq:ch3_eq01]
+processed by this gene regulatory architecture, defined as [@Eq:ch3_eq01]
 maximized over all possible input distributions $P(c)$. By doing so we examine
 the physical limits of what cells can do in terms of information processing by
 harboring these genetic circuits. Nevertheless, given the generality of the
@@ -112,22 +112,6 @@ parameter-free predictions quantitatively track the experimental data up to a
 systematic deviation. The lack of numerical agreement between our model and the
 experimental data poses new challenges towards having a foundational,
 first-principles understanding of the physics of cellular decision-making.
-
-<!-- The reminder of the paper is organized as follows. In we define the minimal
-theoretical model and parameter inference for a simple repression genetic
-circuit. discusses how all parameters for the minimal model are determined from
-published datasets that explore different aspects of the simple repression
-motif. computes the moments of the mRNA and protein distributions from this
-minimal model. In we explore the consequences of variability in gene copy number
-during the cell cycle. In this section we compare experimental and theoretical
-quantities related to the moments of the distribution, specifically the
-predictions for the fold-change in gene expression (mean expression relative to
-an unregulated promoter) and the gene expression noise (standard deviation over
-mean). follows with reconstruction of the full mRNA and protein distribution
-from the moments using the maximum entropy principle. Finally uses the
-distributions from to compute the maximum amount of information that the genetic
-circuit can process. Here we again contrast our zero-parameter fit predictions
-with experimental inferences of the channel capacity. -->
 
 ![**Cellular signaling systems sense the environment with different degrees of
 precision**. (A) Schematic representation of a cell as a noisy communication
