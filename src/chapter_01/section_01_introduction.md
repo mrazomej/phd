@@ -10,8 +10,8 @@ transition from a qualitative and descriptive study of the phenomena of life to
 a quantitative and predictive science in the spirit of the physical sciences.
 Since the publication of the book, there has been an enormous amount of progress
 on our understanding of living systems from a first-principles perspective,
-nevertheless, 75 years later and Schrödinger questions are still as relevant and
-as vibrant as ever before [@Phillips2021]. 
+nevertheless, 75 years later Schrödinger questions are still as relevant and as
+vibrant as ever before [@Phillips2021]. 
 
 One of the defining features of living organisms at all scales is their capacity
 of gathering information from the environment, encode an internal representation
@@ -28,13 +28,13 @@ In this context, information does not take the generic concept of possessing
 practical knowledge about something. In this thesis, we use a precise
 mathematical definition of information [@Adami2016]. This formal definition
 makes information a metric worth quantifying and predicting in various
-biological context as theoretical studies suggest that natural selection might
-act on the ability of an organism to process information [@Taylor2007]. Working
-out the physical details of how it is that organisms sense the environment; this
-is, gather information about the state of the environment, encode such
-information in some shape or form within their physical boundaries, and take
-action based on this information is at the core of the state-of-the-art research
-in biophysics [@Bialek2012].
+biological contexts as theoretical studies suggest that natural selection might
+act on the ability of an organism to process information [@Taylor2007]. Thus,
+working out the physical details of how it is that organisms sense the
+environment---this is, gather information about the state of the environment,
+encode such information in some shape or form within their physical boundaries,
+and take action based on this information---is at the core of the
+state-of-the-art research in biophysics [@Bialek2012].
 
 The present thesis is an effort towards this vision of understanding biological
 systems as information processing machines. Our object of study will be gene
@@ -42,11 +42,11 @@ regulation in bacteria. This particular system has been the subject of study for
 microbiologists and molecular biologists for decades, and we have come to learn
 a lot about the microscopic mechanistic details of how bacteria turn on and off
 their transcriptional machinery [@Browning2004]. In particular, we will focus on
-what we think of as the "hydrogen atom" of gene regulation--the so-called
+what we think of as the "hydrogen atom" of gene regulation---the so-called
 simple-repression motif (more on that in the next section). In physics, calling
 something the hydrogen atom of $X$ means that for the area of study $X$, this
 "something" represents a system simple enough to be amenable to analytical
-models that standard mathematical methods can solve but rich enough to capture
+models that standard mathematical methods can solve, but rich enough to capture
 the general features of the phenomena. This simple genetic circuit will allow us
 to write tractable mathematical models to guide our experimental efforts with
 the ultimate goal of testing our understanding of such systems when predicting
