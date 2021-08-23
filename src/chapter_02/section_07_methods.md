@@ -159,7 +159,7 @@ concentration $c$) and one dependent variable (experimental fold-change). $P(D
 \mid K_A, K_I)$ is the likelihood of having observed the data given the
 parameter values for the dissociation constants, $P(K_A, K_I)$ contains all the
 prior information on these parameters, and $P(D)$ serves as a normalization
-constant, which we can ignore in our parameter estimation. assumes a
+constant, which we can ignore in our parameter estimation. Our model assumes a
 deterministic relationship between the parameters and the data, so to construct
 a probabilistic relationship as required by Eq. $\ref{eq:bayes_theorem}$, we
 assume that the experimental fold-change for the $i^\text{th}$ datum given the
@@ -172,11 +172,11 @@ _{\exp}^{(i)} = \left( 1 + \frac{\left(1 + \frac{c^{(i)}}{K_A}\right)^2}{\left(
 \varepsilon_{RA}^{(i)}}\right)^{-1} + \epsilon^{(i)},
 \label{eq:fold_change_exp}
 $$
-where $\epsilon^{(i)}$ represents the departure
-from the deterministic theoretical prediction for the $i^\text{th}$ data point.
-If we assume that these $\epsilon^{(i)}$ errors are normally distributed with
-mean zero and standard deviation $\sigma$, the likelihood of the data given the
-parameters is of the form 
+where $\epsilon^{(i)}$ represents the departure from the deterministic
+theoretical prediction for the $i^\text{th}$ data point. If we assume that these
+$\epsilon^{(i)}$ errors are normally distributed with mean zero and standard
+deviation $\sigma$, the likelihood of the data given the parameters $P(D \mid
+K_A, K_I, \sigma)$ is of the form 
 $$
 {\scriptstyle
 P(D \vert K_A, K_I, \sigma) =
@@ -202,7 +202,7 @@ Both mathematically and numerically, it is convenient to define $\tilde{k}_A =
 and fit for these parameters on a log scale. Dissociation constants are scale
 invariant, so that a change from $10\,\mu\text{M}$ to $1\,\mu\text{M}$ leads to
 an equivalent increase in affinity as a change from $1\,\mu\text{M}$ to
-$0.1\,\mu\text{M}$. With these definitions we assume for the prior
+$0.1\,\mu\text{M}$. With these definitions, we assume for the prior
 $P(\tilde{k}_A, \tilde{k}_I, \sigma)$ that all three parameters are independent.
 In addition, we assume a uniform distribution for $\tilde{k}_A$ and
 $\tilde{k}_I$ and a Jeffreys prior [@Sivia2006] for the scale parameter
