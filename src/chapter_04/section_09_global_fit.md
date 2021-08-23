@@ -73,9 +73,9 @@ fold-change and $\text{fc}(\cdot\cdot\cdot)$ is the theoretical prediction. Note
 that the standard deviation $\sigma$ of this distribution is not known and hence
 needs to be included as a parameter to be fit.
 
-The second term in $\ref{eq:ch4_eq30}$ represents the prior information of the
-parameter values. We assume that all parameters are independent of each other
-so that 
+The second term in Eq. $\ref{eq:ch4_eq30}$ represents the prior information of
+the parameter values. We assume that all parameters are independent of each
+other so that 
 $$
 P(\tilde{k}_A, \tilde{k}_I, \mathbf{R},
 \mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma) =
@@ -151,7 +151,7 @@ repressor-DNA binding energies differed by a few standard deviations from the
 reported values, the differences were always less than $1~k_BT$, representing a
 small change in the biological scales we are considering. The biggest
 discrepancy between our fit values and the previous measurements arose for the
-synthetic Oid operator, which we discuss in more detail [Sec.
+synthetic Oid operator, which we discuss in more detail in [Sec.
 4.9](#sec:ch4_sec10).
 
 [@Fig:ch4_fig20] shows the same key properties as in [@Fig:ch2_fig06], but uses
@@ -205,10 +205,9 @@ effective Hill coefficient are inferred by individually fitting all
 parameters--$K_A,\, K_I,\, R,\, \Delta\varepsilon_{RA}$--to each
 operator-repressor pairing in [@Fig:ch2_fig04](A)-(C) separately to Eq.
 $\ref{eq:fold_change_full}$ to smoothly interpolate between the data points.
-Note that where error bars are not visible indicates that the error bars are
-smaller than the point itself.](ch4_fig20){#fig:ch4_fig20 short-caption="Key
-properties of induction profiles as predicted with a global fit using all
-available data"}
+Note that the error bars are smaller than some of the
+points.](ch4_fig20){#fig:ch4_fig20 short-caption="Key properties of induction
+profiles as predicted with a global fit using all available data"}
 
 |                              | **Reported Values [@Garcia2011c]** | **Global Fit**                      |
 | ---------------------------- | ---------------------------------- | ----------------------------------- |

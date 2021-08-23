@@ -9,7 +9,7 @@ $\Delta\varepsilon_{AI}$ parameter.
 Specifically, during the first round, a reviewer did not like the idea that the
 value of $N_{NS} = 4.6 \times 10^6$ assumed that the entirety of the genome was
 available for non-specific binding of the repressor. We will consider how
-reasonable this is at the end of the section. However, As we will show first,
+reasonable this is at the end of the section. However, as we will show first,
 the specific value of $N_{NS}$ is analogous to the zero potential energy or the
 reference concentration state. Thus, it is only the free energy differences that
 matter at the end of the day. For the second round of reviews, the same reviewer
@@ -58,8 +58,8 @@ where $N_{NS}'$ is the changed value of the non-specific background and
 $\Delta\varepsilon_{RA}'$ is a different value for the repressor binding energy
 that compensates for the difference in the non-specific background.
 
-Let $N_{NS}' \equiv \alpha N_{NS}$, since the value of $\Delta E$ has to be
-preserved it should be true that
+Let $N_{NS}' \equiv \alpha N_{NS}$. Since the value of $\Delta E$ has to be
+preserved, it should be true that
 $$
 \Delta E= \Delta\varepsilon_{RA}' - 
 k_BT \ln \left( \frac{R}{\alpha N_{NS}} \right)
@@ -117,10 +117,10 @@ $$
 If we were only to use Eq. $\ref{eq:ch4_eq49}$, the statement brought up by the
 anonymous reviewer would be true since changes in $\Delta\varepsilon_{AI}$ could
 be compensated by changes in $\Delta\varepsilon_{RA}$ or $N_{NS}$. But as
-specified in [Sec. 4.2](#sec:ch4_sec03) this is not the case for cells with
+specified in [Sec. 4.2](#sec:ch4_sec03), this is not the case for cells with
 multiple promoters.
 
-The case of multiple promoters can be handled using the Canonical ensemble as in
+The case of multiple promoters can be handled using the Canonical ensemble as is
 or using the Grand Canonical ensemble as detailed in [@Weinert2014]. Our point
 is more clearly seen in the case of the Canonical ensemble. Under this
 formalism, the fold-change equation is given by [@Brewster2014]
@@ -148,7 +148,7 @@ N \sum_{m=0}^{\min (N,R)} \frac{R!}{(R - m)!}
 $$
 to highlight that it is a combination of these two parameters that matter,
 rather than their individual values. For the case of the
-$\Delta\varepsilon_{AI}$ parameter this is not the case. Every term containing
+$\Delta\varepsilon_{AI}$ parameter, this is not the case. Every term containing
 $R$ on Eq. $\ref{eq:ch4_eq51}$ is effectively multiplied by Eq.
 $\ref{eq:p_active}$. Since these terms are included inside the factorials, it is
 not true that a simple compensation by the other parameters allows us to define
@@ -163,7 +163,7 @@ availability of the DNA for repressor or RNAP to bind. Here we consider data
 from a recent census of protein abundance across the *E. coli* genome. In that
 work, Schmidt *et al.* [@Schmidt2015] measured the protein copy number across
 more than half the coding genes (greater than 95% by total protein mass). During
-exponential growth in M9 minimal media with 0.5 % glucose, they find that about
+exponential growth in M9 minimal media with 0.5 % glucose, they found that about
 6 % of the protein mass, or 311,000 monomer copies per cell, are proteins such
 as transcription factors that will be bound to the DNA (about two-thirds of
 these are nucleoid-associated proteins such as HNS and HU).

@@ -22,7 +22,7 @@ We follow the approach taken in the main text and use Eq.
 $\ref{eq:fold_change_full}$ to infer values for $K_A$ and $K_I$ by fitting to
 each combination of binding energy $\Delta \varepsilon_{RA}$ and repressor copy
 number $R$. We then use these fitted parameters to predict the induction curves
-of all other strains. In [@Fig:ch4_fig23] we plot these fold-change predictions
+of all other strains. In [@Fig:ch4_fig23], we plot these fold-change predictions
 along with experimental data for each of our strains that contain an O1
 operator. To make sense of this plot, consider the first row as an example. In
 the first row, $K_A$ and $K_I$ were estimated using data from the strain

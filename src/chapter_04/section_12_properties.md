@@ -8,8 +8,8 @@ the $[EC_{50}]$ for simple repression.
 As stated in Chapter 2, the dynamic range is defined as the difference between
 the maximum and minimum system response, or equivalently, as the difference
 between the saturation and leakiness of the system. Using Eqs.
-$\ref{eq:leakiness}$, $\ref{eq:saturation}$ and $\ref{eq:dynamic_range_def}$ the dynamic
-range is given by
+$\ref{eq:leakiness}$, $\ref{eq:saturation}$, and $\ref{eq:dynamic_range_def}$,
+the dynamic range is given by
 $$
 {\scriptstyle
 \text{dynamic range} = 
@@ -58,10 +58,10 @@ $\Delta\varepsilon_{RA}$ or $R$, and will only cause a shift in the location of
 the peak but not its magnitude.
 
 ![**Dependence of leakiness, saturation, and dynamic range on the operator
-binding energy and repressor copy number.** Increasing repressor copy number or
-decreasing the repressor-operator binding energy suppresses gene expression and
-decreases the leakiness and saturation. The dynamic range retains its shape but
-shifts right as the repressor copy number increases. The peak in the dynamic
+binding energy and repressor copy number.** Increasing the repressor copy number
+or decreasing the repressor-operator binding energy suppresses gene expression
+and decreases the leakiness and saturation. The dynamic range retains its shape
+but shifts right as the repressor copy number increases. The peak in the dynamic
 range can be understood by considering the two extremes for $\Delta
 \varepsilon_{RA}$: for small repressor-operator binding energies, the leakiness
 is small, but the saturation increases with $\Delta \varepsilon_{RA}$; for large
@@ -75,7 +75,7 @@ short-caption="Dependence of leakiness, saturation, and dynamic range on the
 operator binding energy and repressor copy number."}
 
 We now consider the two remaining properties, the $[EC_{50}]$ and effective Hill
-coefficient, which determine the horizontal properties of a system - that is,
+coefficient, which determine the horizontal properties of a system---that is,
 they determine the range of inducer concentration in which the system's response
 goes from its minimum to maximum values. The $[EC_{50}]$ denotes the inducer
 concentration required to generate fold-change halfway between its minimum and
@@ -98,7 +98,7 @@ e^{-\beta \Delta\varepsilon_{RA}} \right) +
 $$
 Using this expression, we can then find the effective Hill coefficient $h$,
 which equals twice the log-log slope of the normalized fold-change evaluated at
-$c = [EC_{50}]$ (see Eq. $\ref{eq:effective_Hill}$). In [@Fig:ch2_fig06](D)-(E)
+$c = [EC_{50}]$ (see Eq. $\ref{eq:effective_Hill}$). In [@Fig:ch2_fig06](D)-(E),
 we show how these two properties vary with repressor copy number, and in
 [@Fig:ch4_fig27] we demonstrate how they depend on the repressor-operator
 binding energy. Both the $[EC_{50}]$ and $h$ vary significantly with repressor

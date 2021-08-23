@@ -10,7 +10,7 @@ associated with this YFP construct was expected to be near the sensitivity limit
 for our flow cytometer due to the especially strong binding energy of Oid
 ($\Delta \varepsilon_{RA}=-17.0 ~k_BT$) [@Garcia2011b]. Accordingly,
 fluorescence data for Oid were obtained using microscopy, which is more
-sensitive than flow cytometry. [Sec 4.6](#sec:ch4_sec06) gives a detailed
+sensitive than flow cytometry. [Sec. 4.6](#sec:ch4_sec06) gives a detailed
 explanation of how microscopy measurements were used to obtain induction curves.
 
 We follow the approach of the main text and make fold-change predictions based
@@ -24,9 +24,9 @@ the observed data. Interestingly, we find that the majority of the parameters
 remain essentially unchanged, but our estimate for the Oid binding energy
 $\Delta \varepsilon_{RA}$ is shifted to $-17.7~k_BT$ instead of the value
 $-17.0~k_BT$ found by @Garcia2011c. In [@Fig:ch4_fig21](B), we again plot the
-Oid fold-change data but theoretical predictions using the new estimate for
-the Oid binding energy from our global fit and finding substantially better
-agreement.
+Oid fold-change data with theoretical predictions using the new estimate for the
+Oid binding energy from our global fit. This parameter modification gives
+substantially better agreement between theory and data.
 
 ![**Predictions of fold-change for strains with an Oid binding sequence versus
 experimental measurements with different repressor copy numbers.** Experimental
