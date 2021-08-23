@@ -84,20 +84,21 @@ that the most common vowel is *e*, exactly as in English writ-large. This
 distribution $P(x)$ is therefore not maximally random. In other words, if we
 were to put all letters in the paragraph in a hat and pick one letter at random,
 we could bet more money on the outcome being a letter *e* and make money over
-time given this knowledge of the structure of the distribution. A maximally
-random distribution would be if all letters appeared equally frequent in the
-paragraph, such that betting on any letter coming out of the hat would give us
-equal chances of guessing right. If instead of looking at the distribution of
-individual letters, we look at pairs of letters, the distribution $P(x, y)$ over
-the paragraph is shown in [@Fig:ch1_fig08](C). Here we can see that, just as the
-letters were not completely random, the pairs of letters are also not random.
-For example, if we take the first letter of the pair to be *t*, we see that it
-is more commonly followed by the letter *h*. This implies that knowing that the
-first letter of the pair was *t* reduced our uncertainty of what character could
-come next. We would then say that knowing the first letter gave us *information*
-about the possible outcomes of the second letter. In the next section, we will
-follow Shannon's original derivation to define both entropy and information
-mathematically.
+time given this knowledge of the structure of the distribution. 
+
+A maximally random distribution would be if all letters appeared equally
+frequent in the paragraph, such that betting on any letter coming out of the hat
+would give us equal chances of guessing right. If instead of looking at the
+distribution of individual letters, we look at pairs of letters, the
+distribution $P(x, y)$ over the paragraph is shown in [@Fig:ch1_fig08](C). Here
+we can see that, just as the letters were not completely random, the pairs of
+letters are also not random. For example, if we take the first letter of the
+pair to be *t*, we see that it is more commonly followed by the letter *h*. This
+implies that knowing that the first letter of the pair was *t* reduced our
+uncertainty of what character could come next. We would then say that knowing
+the first letter gave us *information* about the possible outcomes of the second
+letter. In the next section, we will follow Shannon's original derivation to
+define both entropy and information mathematically.
 
 ![**The statistical structure of the English language.** (A) Last paragraph of
 *On the Origin of Species* by Charles Darwin. This serves as a rather nice
