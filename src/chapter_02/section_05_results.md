@@ -18,14 +18,14 @@ system to consider expression from multiple-copy plasmids as well as the
 presence of competing repressor binding sites.
 
 The present study extends this body of work by introducing three additional
-biophysical parameters--$\Delta\varepsilon_{AI}$, $K_A$, and $K_I$--which
+biophysical parameters---$\Delta\varepsilon_{AI}$, $K_A$, and $K_I$---which
 capture the allosteric nature of the transcription factor and complement the
 results shown by [@Garcia2011c] and [@Brewster2014]. Although the current work
 focuses on systems with a single site of repression, in [Sec.
 2.5](#sec:ch2_sec05), we utilize data from [@Brewster2014], in which multiple
 sites of repression are explored to characterize the allosteric free energy
 difference $\Delta\varepsilon_{AI}$ between the repressor's active and inactive
-states. As explained in that Section, this additional data set is critical
+states. As explained in that section, this additional data set is critical
 because multiple degenerate sets of parameters can characterize an induction
 curve equally well, with the $\Delta\varepsilon_{AI}$ parameter compensated by
 the inducer dissociation constants $K_A$ and $K_I$ (see Chapter 4). After fixing
@@ -115,8 +115,8 @@ width of the credible regions are explored in Chapter 4.
 
 We stress that the entire suite of predictions is based upon a single strain's
 induction profile. Our ability to make such a broad range of predictions stems
-from the fact that our parameters of interest--such as the repressor copy number
-and DNA binding energy--appear as distinct physical parameters within our model.
+from the fact that our parameters of interest---such as the repressor copy number
+and DNA binding energy---appear as distinct physical parameters within our model.
 While the single data set in [@Fig:ch2_fig04](D) could also be fit using a Hill
 function, such an analysis would be unable to predict any of the other curves in
 the figure (see Chapter 4). Phenomenological expressions such as the Hill
@@ -203,7 +203,7 @@ short-caption="Comparison of predictions against measured and inferred data"}
 
 ### Predicting the Phenotypic Traits of the Induction Response
 
-A subset of the properties shown in [@Fig:ch2_fig01](i.e., the leakiness,
+A subset of the properties shown in [@Fig:ch2_fig01] (i.e., the leakiness,
 saturation, dynamic range, $[EC_{50}]$, and effective Hill coefficient) are of
 significant interest to synthetic biology. For example, synthetic biology is
 often focused on generating large responses (i.e., a large dynamic range) or
@@ -216,10 +216,10 @@ enables us to quantify how each trait depends upon a single set of physical
 parameters as shown by [@Fig:ch2_fig04](F-J).
 
 We define these five phenotypic traits using expressions derived from the model,
-Eq. $\ref{eq:fold_change_full}$. These results build upon extensive work by
-@Martins2011, who computed many such properties for ligand-receptor binding
-within the MWC model. We begin by analyzing the leakiness, which is the minimum
-fold-change observed in the absence of ligand, given by
+Eq. $\ref{eq:fold_change_full}$. These results build upon extensive work in
+[@Martins2011], where many such properties were computed for ligand-receptor
+binding within the MWC model. We begin by analyzing the leakiness, which is the
+minimum fold-change observed in the absence of ligand, given by
 $$
 \begin{split}
 \text{leakiness} &= \text{fold-change}(c=0) \\
