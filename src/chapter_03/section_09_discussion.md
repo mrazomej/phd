@@ -18,7 +18,7 @@ modeling of input-output functions of genetic circuits to build a minimal model
 of the simple repression motif [@Phillips2019]. By combining a series of studies
 on this circuit spanning diverse experimental methods for measuring gene
 expression under a myriad of different conditions, for the first time, we
-possess complete *a priori* parametric knowledge -- allowing us to generate
+possess complete *a priori* parametric knowledge---allowing us to generate
 parameter-free predictions for processes related to information processing. Some
 of the model parameters for our kinetic formulation of the input-output function
 are informed by inferences made from equilibrium models. We use the fact that if
@@ -106,7 +106,7 @@ the weakest repressor binding site (See [@Fig:ch3_fig03](B)). Furthermore, the
 minimal model in (A), despite being widely used, is an oversimplification of the
 physical picture of how the transcriptional machinery works. The coarse-graining
 of all the kinetic steps involved in transcription initiation into two effective
-promoter states--active and inactive--ignores potential kinetic regulatory
+promoter states---active and inactive---ignores potential kinetic regulatory
 mechanisms of intermediate states [@Scholes2017]. Moreover, it has been argued
 that even though the mRNA count distribution does not follow a Poisson
 distribution, this effect could be caused by unknown factors, not at the level
