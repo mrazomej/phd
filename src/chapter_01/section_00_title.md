@@ -1,1 +1,1 @@
-# From Bio to Bit: How do cells sense the world around them?
+# From Bio to Bit: How do Cells Sense the World Around Them?
