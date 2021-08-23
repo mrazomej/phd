@@ -1,4 +1,4 @@
-### Accounting for cell-cycle dependent variability in gene dosage
+### Accounting for Cell Cycle Dependent Variability in Gene Dosage
 
 As cells progress through the cell cycle, the genome has to be replicated to
 guarantee that each daughter cell receives a copy of the genetic material. As
@@ -19,10 +19,10 @@ the cell cycle. We reason that the only difference between the single-copy state
 and the two-copy state of the promoter is a doubling of the mRNA production rate
 $r_m$. In particular, the promoter activation and inactivation rates
 $k^{(p)}_{\text{on}}$ and $k^{(p)}_{\text{off}}$ and the mRNA production rate
-$r_m$ inferred in assume that cells spend a fraction $f$ of the cell cycle with
-one copy of the promoter (mRNA production rate $r_m$) and a fraction $(1-f)$ of
-the cell cycle with two copies of the promoter (mRNA production rate $2 r_m$).
-This inference was performed considering that at each cell state, the mRNA level
+$r_m$ assume that cells spend a fraction $f$ of the cell cycle with one copy of
+the promoter (mRNA production rate $r_m$) and a fraction $(1-f)$ of the cell
+cycle with two copies of the promoter (mRNA production rate $2 r_m$). This
+inference was performed considering that at each cell state, the mRNA level
 immediately reaches the steady-state value for the corresponding mRNA production
 rate. This assumption is justified since the timescale to reach this
 steady-state depends only on the degradation rate $\gamma _m$, which for the
@@ -45,12 +45,13 @@ level (lower panel) for the case of the unregulated promoter. Given that we
 inferred the promoter rate parameters considering that mRNA reaches steady-state
 in each stage, we see that the numerical integration of the equations is
 consistent with the assumption of having the mRNA reach a stable value in each
-stage (See (B) upper panel). On the other hand, the mean protein level does not
+stage (see (B) upper panel). On the other hand, the mean protein level does not
 reach a steady-state at either of the cellular stages. Nevertheless, it is
 notable that after several cell cycles, the trajectory from cycle to cycle
-follows a repetitive pattern (See (B) lower panel). Previously we have
-experimentally observed this repetitive pattern by tracking the expression level
-over time with video microscopy, as observed in Fig. 18 of [@Phillips2019].
+follows a repetitive pattern (see [@Fig:ch3_fig03](B) lower panel). Previously,
+we have experimentally observed this repetitive pattern by tracking the
+expression level over time with video microscopy, as observed in Fig. 18 of
+[@Phillips2019].
 
 To test the effects of including this gene copy number variability in our model,
 we now compare the model's predictions with experimental data. As detailed in
@@ -66,7 +67,8 @@ over the cell cycle. In other words, as depicted in (B), quantities such as the
 mean protein copy number change over time, i.e., $\langle p \rangle \equiv
 \langle p(t) \rangle$. This means that computing the mean of a population of
 unsynchronized cells is equivalent to averaging this time-dependent mean protein
-copy number over the span of the cell cycle. Mathematically this is expressed as
+copy number over the span of the cell cycle. Mathematically, this is expressed
+as
 $$
 \langle p \rangle_c = \int_{t_o}^{t_d} \langle p(t) \rangle P(t) dt,
 \label{eq:ch3_eq13}
@@ -77,10 +79,10 @@ represents the average protein copy number over a cell cycle, $t_o$ represents
 the start of the cell cycle, $t_d$ represents the time of cell division, and
 $P(t)$ represents the probability of any cell being at time $t \in [t_o, t_d]$
 of their cell cycle. We do not consider cells uniformly distributed along the
-cell cycle since it is known that cells age is exponentially distributed, having
-more younger than older cells at any point in time [@Powell1956] (See for
-further details). All computations hereafter are therefore done by applying an
-average like that in for the span of a cell cycle. We remind the reader that
+cell cycle since it is known that cell age is exponentially distributed, having
+more younger than older cells at any point in time [@Powell1956] (see Chapter 5
+for further details). All computations hereafter are therefore done by applying
+an average like that in for the span of a cell cycle. We remind the reader that
 these time averages are done under a fixed environmental state. It is the
 trajectory of cells over cell cycles under a constant environment that we need
 to account for. It is through this averaging over the span of a cell cycle that
@@ -103,7 +105,7 @@ with non-zero repressor copy number count $R$ over the entire cell cycle, and
 $\langle p(R = 0) \rangle_c$ represents the equivalent for a strain with no
 repressors present. The experimental points were determined from the YFP
 fluorescent intensities of cells with varying repressor copy numbers and a
-$\Delta lacI$ strain with no repressor gene present (See Methods for further
+$\Delta lacI$ strain with no repressor gene present (see Methods for further
 details). The fold-change in gene expression has previously served as a metric
 to test the validity of equilibrium-based models [@Phillips2015a]. We note that
 the curves shown in the upper panel of (C) are consistent with the predictions
@@ -121,14 +123,14 @@ in the molecular components of the central dogma machinery [@Jones2014a], or
 noise generated by irreversible non-equilibrium reactions not explicitly taken
 into account in our minimal model [@Grah2020]. The large errors for the highly
 repressed strains (lower left panel in (C)) result from having a small number in
-the denominator - mean fluorescence level - when computing the noise. Although
+the denominator---mean fluorescence level---when computing the noise. Although
 the model is still highly informative about the physical nature of how cells
 regulate their gene expression, the lack of exact numerical agreement between
 theory and data opens an opportunity to gain new insights into the biophysical
-origin of cell-to-cell variability. In we explore empirical ways to account for
-this systematic deviation. We direct the reader to [Sec. 5.4](#sec:ch5_sec05)
-where equivalent predictions are made, ignoring the changes in gene dosage due
-to genome replication.
+origin of cell-to-cell variability. In Chapter 5, we explore empirical ways to
+account for this systematic deviation. We direct the reader to [Sec.
+5.4](#sec:ch5_sec05) where equivalent predictions are made, ignoring the changes
+in gene dosage due to genome replication.
 
 ![**Accounting for gene copy number variability during the cell cycle.** (A)
 Schematic of a replicating bacterial genome. As cells progress through the cell
