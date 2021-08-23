@@ -21,14 +21,14 @@ An outline of our microscopy workflow can be seen in [@Fig:ch4_fig11].
 Cells were grown identically to those used for measurement via flow cytometry
 (see Methods). Briefly, cells were grown overnight (between 10 and 13 hours) to
 saturation in rich media broth (LB) with $100\,\mu\text{g} \cdot \text{mL}^{-1}$
-spectinomycin in a deep-well 96 well plate at $37^\circ \text{C}$. These
+spectinomycin in a deep-well 96-well plate at $37^\circ \text{C}$. These
 cultures were then diluted 1000-fold into $500\,\mu\text{L}$ of M9 minimal
 medium supplemented with 0.5% glucose and the appropriate concentration of the
 inducer IPTG. Strains were allowed to grow at $37^\circ \text{C}$ with vigorous
-aeration for approximately 8 hours. Before mounting for microscopy, the cultures
-were diluted 10-fold into M9 glucose minimal medium without IPTG. Each construct
-was measured using the same range of inducer concentration values as was
-performed in the flow cytometry measurements (between $100\,\text{nM}$ and
+aeration for approximately 8 hours. The cultures were diluted 10-fold into M9
+glucose minimal medium without IPTG before mounting for microscopy. Each
+construct was measured using the same range of inducer concentration values as
+was performed in the flow cytometry measurements (between $100\,\text{nM}$ and
 $5\,\text{mM}$ IPTG). Each condition was measured in triplicate in microscopy,
 whereas approximately ten measurements were made using flow cytometry.
 
@@ -57,10 +57,10 @@ Once solid, the agarose substrates were cut into approximately
 $10\,\text{mm}\times 10\,\text{mm}$ squares. An aliquot of one to two
 microliters of the diluted cell suspension was then added to each pad. For each
 concentration of inducer, a sample of the autofluorescence control, the $\Delta
-lacI$ constitutive expression control and the experimental strain were prepared,
-yielding a total of thirty-six agarose mounts per experiment. These samples were
-then mounted onto two glass-bottom dishes (Ted Pella Wilco Dish, Cat. No.
-14027-20) and sealed with parafilm.
+lacI$ constitutive expression control, and the experimental strain were
+prepared, yielding a total of thirty-six agarose mounts per experiment. These
+samples were then mounted onto two glass-bottom dishes (Ted Pella Wilco Dish,
+Cat. No. 14027-20) and sealed with parafilm.
 
 All imaging was performed on a Nikon Ti-Eclipse inverted fluorescent microscope
 outfitted with a custom-built laser illumination system operated by the
@@ -135,7 +135,7 @@ $$
 \label{eq:ch4_eq21}
 $$
 yielding a value of approximately 0.8. Any objects with an eccentricity below
-These values were not considered to be single cells. After imposing both an area
+these values were not considered to be single cells. After imposing both an area
 ([@Fig:ch4_fig13](A)) and eccentricity filter ([@Fig:ch4_fig13](B)), the
 remaining objects were considered cells of interest ([@Fig:ch4_fig13](C)), and
 the mean fluorescence intensity of each cell was extracted.

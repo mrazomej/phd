@@ -148,8 +148,8 @@ fold-change in gene expression for equivalent simple-repression constructs has
 been determined using three independent methods: flow cytometry (this work),
 colorimetric miller assays [@Garcia2011c], and video microscopy [@Brewster2014].
 All three methods give consistent results, although flow cytometry measurements
-lose accuracy for fold-change less than $10^{-2}$. note that the repressor-DNA
-binding energies $\delta\varepsilon_{ra}$ used for the theoretical predictions
+lose accuracy for fold-change less than $10^{-2}$. Note that the repressor-DNA
+binding energies $\Delta\varepsilon_{ra}$ used for the theoretical predictions
 were determined in [@Garcia2011c].](ch4_fig10){#fig:ch4_fig10
 short-caption="Comparison of experimental methods to determine the
 fold-change."}
