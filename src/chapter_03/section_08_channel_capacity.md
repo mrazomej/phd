@@ -1,4 +1,4 @@
-### Theoretical prediction of the channel capacity 
+### Theoretical Prediction of the Channel Capacity 
 
 We now turn our focus to the channel capacity, a metric by which we can quantify
 the degree to which cells can measure the environmental state (in this context,
@@ -24,25 +24,25 @@ compared to the dynamic range, approximate analytical equations have been
 derived [@Tkacik2008a]. But given the high cell-to-cell variability that our
 model predicts, the so-called small noise approximation conditions are not
 satisfied. We, therefore, appeal to a numerical solution known as the
-Blahut-Arimoto algorithm [@Blahut1972] (See for further details). (A) shows
-zero-parameter fit predictions of the channel capacity as a function of the
-number of repressors for different repressor-DNA affinities (solid lines). These
-predictions are contrasted with experimental determinations of the channel
-capacity as inferred from single-cell fluorescence intensity distributions taken
-over 12 different inducer concentrations. Briefly, we can approximate the
-input-output distribution $P(p \mid c)$ from single-cell fluorescence
-measurements. Once these conditional distributions are fixed, the task of
-finding the input distribution at channel capacity becomes a computational
-optimization routine that can be undertaken using conjugate gradient or similar
-algorithms. For the particular case of the channel capacity on a system with a
-discrete number of inputs and outputs, the Blahut-Arimoto algorithm is built to
-guarantee the convergence towards the optimal input distribution (See [Sec.
-5.7](#sec:ch5_sec07) for further details). [@Fig:ch3_fig05](B) shows example
-input-output functions for different values of the channel capacity. This
-illustrates that having access to no information (zero channel capacity) is a
-consequence of having overlapping input-output functions (lower panel). On the
-other hand, the more separated the input-output distributions are (upper panel)
-the higher the channel capacity can be.
+Blahut-Arimoto algorithm [@Blahut1972] (see [Sec. 5.7](#sec:ch5_sec07) for
+further details). [@Fig:ch3_fig05](A) shows zero-parameter fit predictions of
+the channel capacity as a function of the number of repressors for different
+repressor-DNA affinities (solid lines). These predictions are contrasted with
+experimental determinations of the channel capacity as inferred from single-cell
+fluorescence intensity distributions taken over 12 different inducer
+concentrations. Briefly, we can approximate the input-output distribution $P(p
+\mid c)$ from single-cell fluorescence measurements. Once these conditional
+distributions are fixed, the task of finding the input distribution at channel
+capacity becomes a computational optimization routine that can be undertaken
+using conjugate gradient or similar algorithms. For the particular case of the
+channel capacity on a system with a discrete number of inputs and outputs, the
+Blahut-Arimoto algorithm is built to guarantee the convergence towards the
+optimal input distribution (see [Sec. 5.7](#sec:ch5_sec07) for further details).
+[@Fig:ch3_fig05](B) shows example input-output functions for different values of
+the channel capacity. This illustrates that having access to no information
+(zero channel capacity) is a consequence of having overlapping input-output
+functions (lower panel). On the other hand, the more separated the input-output
+distributions are (upper panel) the higher the channel capacity can be.
 
 All theoretical predictions in [@Fig:ch3_fig05](A) are systematically above the
 experimental data. Although our theoretical predictions in [@Fig:ch3_fig05](A)
@@ -58,10 +58,10 @@ channel capacity and the height of the maximum expression are highly dependent
 on the repressor-DNA affinity. For strong binding sites (blue curve in
 [@Fig:ch3_fig05](A)), there is a rapid increment in the channel capacity, but
 the maximum value reached is smaller compared to a weaker binding site (orange
-curve in (A)). In [Sec 5.8](#sec:ch5_sec09), we show using the small noise
-approximation [@Tkacik2008; @Tkacik2008a] that if the systematic deviation of
-our predictions on the cell-to-cell variability was explained with a
-multiplicative constant, i.e., all noise predictions could be corrected by
+curve in [@Fig:ch3_fig05](A)). In [Sec 5.8](#sec:ch5_sec09), we show using the
+small noise approximation [@Tkacik2008; @Tkacik2008a] that if the systematic
+deviation of our predictions on the cell-to-cell variability was explained with
+a multiplicative constant, i.e., all noise predictions could be corrected by
 multiplying them by a single constant, we would expect the channel capacity to
 be off by a constant additive factor. This factor of $\approx 0.43$ bits can
 recover the agreement between the model and the experimental data.
@@ -72,7 +72,7 @@ varying number of repressors and repressor-DNA affinities. All inferences were
 performed using 12 IPTG concentrations as detailed in the Methods. Curves
 represent zero-parameter fit predictions made with the maximum entropy
 distributions as shown in [@Fig:ch3_fig04]. Points represent inferences made
-from single-cell fluorescence distributions (See for further details).
+from single-cell fluorescence distributions (see Chapter 5 for further details).
 Theoretical curves were smoothed using a Gaussian kernel to remove numerical
 precision errors. (B) Example input-output functions in opposite limits of
 channel capacity. The lower panel illustrates that zero channel capacity
