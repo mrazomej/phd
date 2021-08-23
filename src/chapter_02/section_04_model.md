@@ -99,10 +99,10 @@ $$
 \right)^{-1},
 \label{eq:fold_change_approx}
 $$
-where in the last step we have introduced the fraction $p_A(c)$ of repressors in
-the active state given a concentration $c$ of inducer, such that $R_A(c)=p_A(c)
-R$. Since inducer binding shifts the repressors from the active to the inactive
-state, $p_A(c)$ grows smaller as $c$ increases [@Marzen2013].
+where in the last step, we have introduced the fraction $p_A(c)$ of repressors
+in the active state given a concentration $c$ of inducer, such that
+$R_A(c)=p_A(c) R$. Since inducer binding shifts the repressors from the active
+to the inactive state, $p_A(c)$ grows smaller as $c$ increases [@Marzen2013].
 
 We use the MWC model to compute the probability $p_A(c)$ that a
 repressor with $n$ inducer binding sites will be active. The value of
