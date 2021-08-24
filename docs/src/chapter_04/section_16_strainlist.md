@@ -62,5 +62,5 @@ promoter.
 | Oid, $R = 1220$ | HG105::galK   <>25Oid+11-yfp, ybcN   <>3*1RBS1-lacI     |
 | Oid, $R = 1740$ | HG105::galK   <>25Oid+11-yfp, ybcN   <>3*1-lacI (RBS1L) |
 Table: \textbf{\textit{E. coli} strains used in this work.} Each strain contains
-a unique operator-yfp construct for measurement of fluorescence and $R$ refers
+a unique operator-yfp construct for measurement of fluorescence, and $R$ refers
 to the dimer copy number as measured by [@Garcia2011c]. {#tbl:ch4_tbl04}

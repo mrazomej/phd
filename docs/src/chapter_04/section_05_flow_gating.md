@@ -66,7 +66,7 @@ cytometer. (B) The experimentally measured fold-change values for the two sets
 of plate arrangements show that samples measured in the forward arrangement
 appear to be indistinguishable from those measured in reverse
 order.](ch4_fig08){#fig:ch4_fig08 short-caption="Plate arrangements for flow
-cytometry."}
+cytometry"}
 
 ### Unsupervised Gating 
 
@@ -119,7 +119,7 @@ indicate arbitrary gating contours ranging from 100\% ($\alpha = 1.0$) to 5\%
 ($\alpha = 0.05$). All measurements for this work were made computing the mean
 fluorescence from the 40$^\text{th}$ percentile ($\alpha = 0.4$), shown as
 orange points.](ch4_fig09){#fig:ch4_fig09 short-caption="Representative
-unsupervised gating contours."}
+unsupervised gating contours"}
 
 ### Comparison of Flow Cytometry with Other Methods 
 
@@ -148,8 +148,8 @@ fold-change in gene expression for equivalent simple-repression constructs has
 been determined using three independent methods: flow cytometry (this work),
 colorimetric miller assays [@Garcia2011c], and video microscopy [@Brewster2014].
 All three methods give consistent results, although flow cytometry measurements
-lose accuracy for fold-change less than $10^{-2}$. note that the repressor-DNA
-binding energies $\delta\varepsilon_{ra}$ used for the theoretical predictions
+lose accuracy for fold-change less than $10^{-2}$. Note that the repressor-DNA
+binding energies $\Delta\varepsilon_{ra}$ used for the theoretical predictions
 were determined in [@Garcia2011c].](ch4_fig10){#fig:ch4_fig10
 short-caption="Comparison of experimental methods to determine the
-fold-change."}
+fold-change"}

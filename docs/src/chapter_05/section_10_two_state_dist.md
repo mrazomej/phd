@@ -1,4 +1,4 @@
-## Derivation of the steady-state mRNA distribution
+## Derivation of the Steady-State mRNA Distribution
 
 In this section, we will derive the two-state promoter mRNA distribution we
 quote in [Sec. 5.2](#sec:ch5_sec03). For this method, we will make use of the
@@ -21,10 +21,10 @@ We begin by defining the reaction scheme that defines the one-state promoter.
 simple cartoon (part (A)) and as the Markov chain that defines the state space
 of the system (part (B)).
 
-![**One-state Poisson promoter.** (A) Schematic of the kinetics of the one
-state-promoter. mRNA is produced and degrade stochastically with a rate $r_m$
-and $\gamma_m$, respectively. (B) Representation of the Markov chain for the
-state space that the promoter can be. The distribution $P(m, t)$ represents the
+![**One-state Poisson promoter.** (A) Schematic of the kinetics of the one-state
+promoter. mRNA is produced and degrade stochastically with a rate $r_m$ and
+$\gamma_m$, respectively. (B) Representation of the Markov chain for the state
+space that the promoter can be. The distribution $P(m, t)$ represents the
 probability of having a certain discrete number of mRNA $m$ at time $t$. The
 transition between states depends on the previously mentioned
 rates.](ch5_fig35){#fig:ch5_fig35 short-caption="One-state Poisson promoter"}
@@ -49,12 +49,12 @@ $$
 G(z, t) \equiv \sum_{m=0}^\infty z^m P(m, t),
 \label{eq:gen_fn_def}
 $$
-where $z$ is a "dummy" variable that we don't care about. The reason this is
+where $z$ is a "dummy" variable that we do not care about. The reason this is
 useful is that if we find the closed-form solution for this generating function,
 and we are able to split the factor $z^m$ from its coefficient $P(m, t)$, then
 we will have to find the solution for the distribution. Furthermore, the
 generating function allows us to compute the moments of the distribution. For
-example, for the zeroth moment $\langle m^0 \rangle$ we know that
+example, for the zeroth moment $\langle m^0 \rangle$, we know that
 $$
 \langle m^0 \rangle = \sum_{m=0}^\infty m^0 P(m, t) = 1,
 $$
@@ -96,8 +96,8 @@ $$
 r_m P(m-1, t)
 - r_m P(m, t) \right. \\
 &+ \left. \gamma_m (m+1) P(m+1, t)
-- \gamma_m m P(m, t).
-\right]
+- \gamma_m m P(m, t)
+\right].
 \end{split}
 $$
 Distributing the sum, we find
@@ -137,17 +137,17 @@ $$
 \end{aligned}
 $$
 where for the third step, we reindexed the sum to include $k=0$ since it does
-not contribute to the total sum. Finally, for the term involving $P(m-1, t)$.
-For this we define $k = m-1$. This allows us to rewrite the term as
+not contribute to the total sum. Finally, for the term involving $P(m-1, t)$, we
+define $k = m-1$. This allows us to rewrite the term as
 $$
 \begin{aligned}
 \sum_{m=0}^{\infty} z^{m} P(m-1, t) &=\sum_{k=-1}^{\infty} z^{k+1} P(k, t), \\
 &=\sum_{k=0}^{\infty} z^{k+1} P(k, t), \\
 &=z \sum_{k=0}^{\infty} z^{k} P(k, t), \\
-&=z G(z, t)
+&=z G(z, t).
 \end{aligned}
 $$
-For the second step we reindexed the sum from $-1$ to $0$ since $P(-1, t) = 0$.
+For the second step, we reindexed the sum from $-1$ to $0$ since $P(-1, t) = 0$.
 
 All of these clever reindexing allows us to rewrite Eq.
 $\ref{eq:one_state_master_sum}$ as
@@ -157,14 +157,14 @@ r z G(z, t)-r G(z, t)
 + \gamma \frac{\partial G(z, t)}{\partial z}
 - \gamma z \frac{\partial G(z, t)}{\partial z}.
 $$
-Factorizing terms we have
+Factorizing terms, we have
 $$
 \frac{\partial G(z, t)}{\partial t} 
 =-r G(z, t)(1-z)
 +\gamma \frac{\partial G(z, t)}{\partial z}(1-z).
 $$
 Let us appreciate how beautiful this is: we took an infinite-dimensional system
-of ordinary differential equations--the master equation--and turn it into a
+of ordinary differential equations---the master equation---and turned it into a
 single partial differential equation (PDE). All we have to do now is solve this
 PDE, and then transform the solution into a power series to extract the
 distribution.
@@ -214,7 +214,7 @@ $$
 
 Having shown the generating function's power, let us now turn our attention to
 the relevant equation we are after: the two-state mRNA distribution. This model
-assumes that the promoter can exist in two discrete states (See
+assumes that the promoter can exist in two discrete states (see
 [@Fig:ch5_fig36](A)): a transcriptionally active state $A$ from which
 transcription can take place at a constant rate $r_m$, and an inactive state $I$
 where no transcription takes place. The mRNA is stochastically degraded with a
@@ -243,7 +243,7 @@ $$
 for the inactive state.
 
 ![**Two-state Poisson promoter.** (A) Schematic of the kinetics of the two-state
-promoter. The promoter is imagined to exist in two-state--a transcriptionally
+promoter. The promoter is imagined to exist in two states---a transcriptionally
 active state $A$ and an inactive state $I$. The transition between these states
 is governed by the rates $k^{(p)}_{\text{on}}$ and $k^{(p)}_{\text{off}}$ mRNA
 is produced and degrade stochastically with a rate $r_m$ and $\gamma_m$,
@@ -274,7 +274,7 @@ G(z, t) = G_A(z, t) + G_I(z, t).
 $$
 
 As with the one-state promoter case, let us transform our master equations by
-multiplying both sides by $z^m$ and sum over all $m$. For the active state $A$
+multiplying both sides by $z^m$ and sum over all $m$. For the active state $A$,
 we have
 $$
 \begin{aligned}
@@ -285,8 +285,8 @@ $$
 &\left. + r_m P_{A}(m-1, t) - r_m P_{A}(m, t)\right].
 \end{aligned}
 $$
-After distributing the sum, we can use the tricks from the previous, allowing
-us to write this as a partial differential equation of the form
+After distributing the sum, we can use the tricks from the previous section,
+allowing us to write this as a partial differential equation of the form
 $$
 \begin{aligned}
 \frac{\partial G_{A}(z, t)}{\partial t} &=
@@ -323,7 +323,7 @@ $$
 &-\gamma_m v \frac{\partial G_{A}(v, t)}{\partial v} + r_m v G_{A}(v, t) \\
 \end{aligned}
 $$
-for the actives state, and
+for the inactive state, and
 $$
 \begin{aligned}
 \frac{\partial G I(v, t)}{\partial t}=& k^{(p)}_{\text{off}} G_{A}(v, t)
@@ -359,8 +359,8 @@ $$
 Our objective is not to write Eqs. $\ref{eq:steady_act}$ and
 $\ref{eq:steady_inact}$ as a function of only one of the generating functions,
 i.e., we want two independent differential equations. These equations are both
-function of $G_A(v)$ and $G_I(v)$, but Eq. $\ref{eq:gen_fn_rel}$ tells us how to
-relate both generating functions via the first derivative. This suggests that
+functions of $G_A(v)$ and $G_I(v)$, but Eq. $\ref{eq:gen_fn_rel}$ tells us how
+to relate both generating functions via the first derivative. This suggests that
 taking another derivative of Eqs. $\ref{eq:steady_act}$ and
 $\ref{eq:steady_inact}$ with respect to $z$ could be useful. Let us go ahead and
 compute these derivatives. For the active state, we find
@@ -370,9 +370,9 @@ $$
 + \gamma_{m} v \frac{d^{2} G_{A}(v)}{d v^{2}} =
 -k^{(p)}_{\text{off}} \frac{d G_{A}(v)}{d v}
 + k^{(p)}_{\text{on}} \frac{d \sigma I(v)}{d v}
-+ r_m G_{A}(v, t) + r_m v \frac{d G_{A}(v)}{d v}
++ r_m G_{A}(v, t) + r_m v \frac{d G_{A}(v)}{d v}.
 $$
-Upon simplification, we can write this Eq. as
+Upon simplification, we can write this equation as
 $$
 \gamma_m v \frac{d^2 G_A}{d v^{2}}
 + \left(\gamma_m +k^{(p)}_{\text{off}}
@@ -381,12 +381,12 @@ $$
 -r_m G_{A}(v)=0.
 \label{eq:gen_fn_2nd_act}
 $$
-From Eq. $\ref{eq:gen_fn_rel}$ we have that
+From Eq. $\ref{eq:gen_fn_rel}$, we have that
 $$
 \frac{G_I}{dv} = \frac{r_m}{\gamma_m} G_A(v) 
 - \frac{d G_A}{dv}.
 $$
-Substituting this into $\ref{eq:gen_fn_2nd_act}$ results in
+Substituting this into Eq. $\ref{eq:gen_fn_2nd_act}$ results in
 $$
 \gamma_m v \frac{d^{2} G_A}{d v^{2}}
 + \left(\gamma_m + k^{(p)}_{\text{off}} 
@@ -402,7 +402,7 @@ $$
 - k^{(p)}_{\text{off}} \frac{d G_A}{d v} = 0.
 \label{eq:gen_fn_2nd_inact}
 $$
-Again from $\ref{eq:gen_fn_rel}$ we have that
+Again from Eq. $\ref{eq:gen_fn_rel}$, we have that
 $$
 \frac{d G_A}{dv} = \frac{r_m}{\gamma_m} G_A - \frac{d G_I}{dv}.
 $$
@@ -415,7 +415,7 @@ $$
 \label{eq:gen_fn_2nd_inact_2}
 $$
 So far, we have not removed the dependence on $G_A(v)$. But we notice that from
-Eq. $\ref{eq:steady_inact}$ we have that
+Eq. $\ref{eq:steady_inact}$, we have that
 $$
 G_A(v) = \frac{\gamma_m v}{k^{(p)}_{\text{off}}} \frac{d G_I}{d v}
 + \frac{k^{(p)}_{\text{on}}}{k^{(p)}_{\text{off}}} G_I.
@@ -428,7 +428,7 @@ $$
 \label{eq:gen_2nd_inact_final}
 $$
 
-To obtain a single partial differential equation we add Eqs.
+To obtain a single partial differential equation, we add Eqs.
 $\ref{eq:gen_2nd_act_final}$ and $\ref{eq:gen_2nd_inact_final}$, obtaining
 $$
 \gamma_m v \frac{d^{2} G}{d v^{2}}
@@ -437,7 +437,7 @@ $$
 - \frac{r_m k^{(p)}_{\text{on}}}{\gamma_m} G(v)
 - r_m G_A(v) = 0,
 $$
-where we substituted $G_A(v) + G_I(v) = G(v)$. To remove the last $G_A(v)$ we
+where we substituted $G_A(v) + G_I(v) = G(v)$. To remove the last $G_A(v)$, we
 utilize again Eq. $\ref{eq:gen_fn_rel}$, obtaining
 $$
 \gamma_m v \frac{d^2 G}{dv^2} 
@@ -450,13 +450,13 @@ $$
 #### Solving the partial differential equation
 
 Eq. $\ref{eq:gen_2nd}$ looks almost like the so-called Kummer's equation also
-known as the confluent hypergeometric differential equation--a second order
+known as the confluent hypergeometric differential equation---a second order
 differential equation of the form
 $$
 z \frac{d^2w}{dz^2} + (b - z) \frac{dw}{dz} - aw = 0.
 \label{eq:kummer}
 $$
-The solution fo the Kummer equation can be expressed as the sum of two 
+The solution for the Kummer equation can be expressed as the sum of two 
 functions:
 1. The confluent hypergeometric function of the first kind,
 2. The Tricomi function.
@@ -480,7 +480,7 @@ $$
 a^{(n)} = a (a + 1) (a + 2) \cdots (a + n - 1).
 $$
 
-To write Eq. $\ref{eq:gen_2nd}$ in the form of Eq. $\ref{eq:kummer}$ we can
+To write Eq. $\ref{eq:gen_2nd}$ in the form of Eq. $\ref{eq:kummer}$, we can
 define $s \equiv r_m v / \gamma_m$. The chain rule tells us that
 $$
 ds = \frac{r_m}{\gamma_m} dv \Rightarrow 
@@ -541,7 +541,7 @@ G(s) &= A {}_1F_1
 $$
 We can write down this solution in terms of the original variable of the 
 generating function. We have that $s = r_m/\gamma_m v$, and $v = z - 1$. With
-this we then write
+this, we then write
 $$
 \begin{aligned}
 G(z) = &A {}_1F_1 
@@ -564,7 +564,7 @@ G(z) = &A {}_1F_1
 \label{eq:gen_sol}
 $$
 
-#### Finding the coefficients for the solution
+#### Finding the Coefficients for the Solution
 
 We can now use the normalization condition for the generating function; this is,
 $$
@@ -580,10 +580,10 @@ G(1) = A {}_1F_1
 \right).
 \label{eq:gen_sol_1}
 $$
-Let's look at the hypergeometric function evaluated of the form ${}_1F_1(a, b ,
+Let us look at the hypergeometric function evaluated of the form ${}_1F_1(a, b ,
 0)$. This takes the form
 $$
-{}_1 F_{1}(a, b, 0)=\sum_{m=0}^{\infty} \frac{a^{(m)} 0^{n}}{b^{(m)} m!} 
+{}_1 F_{1}(a, b, 0)=\sum_{m=0}^{\infty} \frac{a^{(m)} 0^{n}}{b^{(m)} m!}.
 $$
 All of the terms but one ($n = 0$) are zero. The first term involving $0^0$ is
 undefined. Taking the limit as $z \rightarrow 0$ from the positive side, we find
@@ -635,27 +635,27 @@ $$
     &=a \cdot(a+1)^{(m-1)} .
 \end{aligned}
 $$
-Therefore we can rewrite Eq. $\ref{eq:confluent_1}$ as
+Therefore, we can rewrite Eq. $\ref{eq:confluent_1}$ as
 $$
 \begin{aligned}
 \sum_{m=0}^{\infty} \frac{a^{(m)}}{b^{(m)}} \frac{z^{m}}{(m-1) !} &=
 \sum_{m=0}^{\infty} \frac{a \cdot(a+1)^{(m-1)}}{b \cdot(b+1)^{(m-1)}} 
-\frac{z \cdot z^{(m-1)}}{(m-1) !} \\
+\frac{z \cdot z^{(m-1)}}{(m-1) !}, \\
 &=\frac{a z}{b} 
-\sum_{m=0}^{\infty} \frac{(a+1)^{(m-1)}}{(b+1)^{(m-1)}} \frac{z^{m-1}}{(m-1) !}
+\sum_{m=0}^{\infty} \frac{(a+1)^{(m-1)}}{(b+1)^{(m-1)}} \frac{z^{m-1}}{(m-1) !}.
 \end{aligned}
 $$
-If we define $m' = m - 1$ we have
+If we define $m' = m - 1$, we have
 $$
 \frac{a z}{b} \sum_{m=0}^{\infty} \frac{(a+1)^{(m-1)}}{(b+1)^{(m-1)}} 
 \frac{z^{m-1}}{(m-1) !} = 
 \frac{a z}{b} \sum_{m'=-1}^{\infty}
 \frac{(a+1)^{m'}}{(b+1)^{m'}} 
-\frac{z^{m'}}{m'!}
+\frac{z^{m'}}{m'!}.
 $$
 The term on the left is almost of the form of the confluent hypergeometric
 function again. The only difference is that the sum starts at $m' = -1$. This
-first term of the sum would then involve a term of the form $1 / (-1)!$. But
+first term of the sum would then involve a term of the form $1 / (-1)!$ But
 what does this even mean? To find this out, we can generalize the factorial
 function using the Gamma function such that
 $$
@@ -678,14 +678,14 @@ $$
 $$
 
 After this small but necessary detour, we can come back to computing the first
-moment of our distribution from the generating function. to evaluate Eq.
-$\ref{eq:first_mom_gen}$ on Eq. $\ref{eq:gen_sol}$ we first compute the 
-derivative of the generating function. This can be easily evaluated using
-the relationship we derived for derivatives of ${}_1F_1$. The only thing to be
-aware of is that of the chain rule. In particular for our third entry of the
-third entry of the function we have $r_m / \gamma_m (z - 1)$ rather than simply
-$z$ as we had in Eq. $\ref{eq:gen_deriv}$. This means that by the chain rule we
-have that if we define $u = r_m / \gamma_m (z - 1)$, we have
+moment of our distribution from the generating function. To evaluate Eq.
+$\ref{eq:first_mom_gen}$ on Eq. $\ref{eq:gen_sol}$, we first compute the
+derivative of the generating function. This can be easily evaluated using the
+relationship we derived for derivatives of ${}_1F_1$. The only thing to be aware
+of is that of the chain rule. In particular for the third entry of the function,
+we have $r_m / \gamma_m (z - 1)$ rather than simply $z$ as we had in Eq.
+$\ref{eq:gen_deriv}$. This means that by the chain rule, we have that if we
+define $u = r_m / \gamma_m (z - 1)$, we have
 $$
 du = \frac{r_m}{\gamma_m} dz \Rightarrow
 \frac{dG}{dz} = 
@@ -737,7 +737,7 @@ $$
 \end{aligned}
 $$
 This rather convoluted result is enormously simplified upon evaluating the
-derivative at $z = 1$ (See Eq. $\ref{eq:first_mom_gen}$). This results in
+derivative at $z = 1$ (see Eq. $\ref{eq:first_mom_gen}$). This results in
 $$
 \left. \frac{dG}{dz} \right\vert_{z = 1} = 
 \frac{k^{(p)}_{\text{on}}}{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}
@@ -797,7 +797,7 @@ G(z) = \sum_{m=0}^\infty
     \left[\frac{r_m}{\gamma_m} (z-1) \right]^m
 }{
     m!
-}
+}.
 $$
 Let us now split apart the term $(z-1)$, obtaining
 $$
@@ -831,8 +831,8 @@ G(z) = \sum_{m=0}^\infty
     m!
 }
 \left[ 
-    \sum_{n=0}^m {m \choose n} z^n (-1)^{m -  n}.
-\right]
+    \sum_{n=0}^m {m \choose n} z^n (-1)^{m -  n}
+\right].
 $$
 We can take out the sum over the index $n$ to the front, obtaining
 $$
@@ -942,8 +942,8 @@ P(m) =
 \label{eq:prob_ss_1}
 $$
 
-We can simplify Eq. $\ref{eq:prob_ss_1}$ further. First we split the term 
-$(-1)^{n-m} = (-1)^{-m} (-1)^{n}$. Furthermore we absorbed the $(-1)^{n}$ term
+We can simplify Eq. $\ref{eq:prob_ss_1}$ further. First, we split the term 
+$(-1)^{n-m} = (-1)^{-m} (-1)^{n}$. Furthermore, we absorb the $(-1)^{n}$ term
 on the $(r_m / \gamma_m)^n$ term. We also cancel the obvious $n!/n!$ term, 
 obtaining
 $$
@@ -1045,9 +1045,9 @@ P(m) =
     }{u!}
 \right].
 $$
-We recognize the term in the square brackets to be the necessary components for
-a confluent hypergeometric function. We can therefore write the mRNA
-steady-state distribution as
+We recognize the term in the square brackets to be the necessary component for a
+confluent hypergeometric function. We can therefore write the mRNA steady-state
+distribution as
 $$
 P(m) = 
 \frac{1}{m!}

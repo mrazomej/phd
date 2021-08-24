@@ -1,6 +1,6 @@
 
 The opportunity to reflect on having had the experience to do a Ph.D. at an
-institution of Caltech's caliber brought me with it a deep reflection of how
+institution of Caltech's caliber brought with it a deep reflection of how
 unlikely my twenties were. Ten years ago, when my adventure into science began,
 I was just a naive kid with a romantic view of what being a scientist meant and
 with no real hands-on experience to back up any of such idealized views. On
@@ -12,7 +12,7 @@ and dedicate my life to understanding the natural world were almost shattered
 beyond repair. During this absolute low point of my life, a series of fortunate
 events got me here. This journey over the last decade has only been possible
 because I have had the immense fortune of being surrounded by incredible people.
-I want to take this chance to recall the story of how I got into Caltech,
+I want to take this opportunity to recall the story of how I got into Caltech,
 hopefully thanking every person that has helped me along the way to reach this
 moment.
 
@@ -22,9 +22,9 @@ unfavorable situation where almost every professor at my college thought of me
 as "a stubborn and hard-headed guy, too ambitious for his good." Multiple
 attempts to bring my spirit down were starting to be successful, as I seriously
 considered dropping out of college to try my luck with something else. This is
-where the first big name on this story appeared. Adrian Jinich, back then a
+where the first big name in this story appeared. Adrian Jinich, back then a
 staff scientist at a nearby research center and a soon-to-be graduate student at
-Harvard, came to my middle-of-nowhere school with a simple idea: He was going to
+Harvard, came to my middle-of-nowhere school with a simple idea: he was going to
 inspire the next generation of Mexican scientists by working with students on a
 hands-on project during the weekends. Those Saturday meetings with Adrian were
 going to change my life in unexpected ways. 
@@ -68,8 +68,8 @@ interacting with people with my cultural background that spoke my language to be
 in an incredibly diverse and stimulating environment that encouraged bold ideas.
 At that time, I met two people that became mentors and friends. James Boedicker,
 a postdoc in the lab at the time, now a tenured faculty member at USC, went
-beyond what he needed to when he taught me how to do experiments. He taught me
-how to use a micropipette, grow bacteria, and organize experimental work. But
+beyond what he needed to do when he taught me how to do experiments. He taught
+me how to use a micropipette, grow bacteria, and organize experimental work. But
 his mentoring and advice went beyond lab work. He and his wife Amy invited me
 for lunch or dinner on several occasions since they knew I was on an extremely
 tight budget. James became my second mentor and my primary guide when it came
@@ -87,17 +87,16 @@ once a week during our group meeting to have the chance to hang out with other
 physical biologists. Rob decided to recruit Justin and me as honorary TAs for
 his famous Bi1x class. Every Sunday for the next few months, I helped Justin
 develop a new module for the class involving fluorescent microscopy on fly
-embryos. These interactions turned into a friendship. Ever since Justin and his
-wife Ramit have treated me and my family and me unbelievably nicely. After Rob,
-Justin has been the scientist that has influenced my thinking the most. His
-classes, sharp mind, computational skills, unbelievably ethical behavior, and
-his will to share his knowledge set me on the right track from the beginning of
-my Ph.D., when Justin started a position as a teaching faculty for the Biology
-division. 
+embryos. These interactions turned into a friendship. Ever since, Justin and his
+wife Ramit have treated me and my family unbelievably nicely. After Rob, Justin
+has been the scientist that has influenced my thinking the most. His classes,
+sharp mind, computational skills, unbelievably ethical behavior, and his will to
+share his knowledge set me on the right track from the beginning of my Ph.D.,
+when Justin started a position as a teaching faculty for the Biology division. 
 
 As the reader can infer from the context of these acknowledgments, a year at
-Caltech was not enough. As soon as I could, I came back to to Caltech  to begin
-my Ph.D. working again with Rob. My twenties came and went by faster than I
+Caltech was not enough. As soon as I could, I came back to Caltech to begin my
+Ph.D. working again with Rob. My twenties came and went by faster than I
 thought. Nevertheless, I had the immense fortune to share the lab with three of
 my great friends and co-authors for many of those years. Nathan Belliveau, Muir
 Morrison, and Griffin Chure became my lab family. They helped me think through
@@ -118,7 +117,7 @@ Brewster, now a professor at U. Mass., taught me several lab tricks that I still
 use up to this day. Heun Jin Lee, the microscopy master, was an incredible
 resource and mentor that allowed my research to run smoothly. Without his work
 and input, it would have been incredibly hard for my projects to take off. I am
-also thankful to members of the Phillips lab who shared projects, ideas,
+also thankful to members of the Phillips lab with whom I shared projects, ideas,
 lunches, and visits to Red Door cafe over the years. People like Suzy Beeler,
 Stephanie Barnes, Soichi Hirokawa, Niko McCarty, Tom Roeschinger, and Scott
 Saunders made my Caltech experience much better.
@@ -126,7 +125,7 @@ Saunders made my Caltech experience much better.
 I am enormously thankful to Dianne Newman. I met Dianne for the first time when
 I was a visiting undergrad at Caltech. I vividly remember having finished giving
 my MicroMorning talk when Dianne approached me. She congratulated me and told me
-that I should come back to Caltech since she thought I had what it takes to be
+that I should come back to Caltech since she thought I had what it took to be
 part of this institution. When I came back to Caltech as a Ph.D. student, I
 worked in her lab for ten weeks as part of a rotation where I learned about a
 completely different way to tackling biological problems from what I was used
@@ -147,7 +146,7 @@ Of course, not everything in my life for the last few years has been strictly
 about my Ph.D. project and my work at the lab. I owe a significant component of
 the enormous happiness I experienced since coming to Caltech to my friends
 outside of work. In particular, I want to give a shout-out to my best friends
-Stephanie Threatt, and Porfirio Quintero. Stephanie and I share a love for
+Stephanie Threatt and Porfirio Quintero. Stephanie and I share a love for
 hip-hop and good food. We went to concerts, amusement parks, and restaurants,
 and she has always been there when I needed emotional support. Porfirio and I
 not only share a nationality, but we shared an apartment for five years. Living
@@ -163,16 +162,16 @@ stuff make Andres a delightful person to call your friend. More recently, my
 friend David Larios joined my inner circle and became a really close friend.
 David and I share a love for learning, talking about science, and, more
 recently, doing outreach via a podcast where we share ideas from different books
-that we read. We also share an openness to share feelings between friends,
-constantly looking after each other. The list of friends goes on and on and it
-would take forever to thank them all. But I would like to give a special mention
-to my good friends Ellen Yan, Scott Saunders, Enrique Amaya, Alejandro Granados,
-Jorge Castillo, Emmanuel Flores, Teddy, Adam Gomez, Paola. My friends became my
-family outside of my home, so I never felt alone during this journey.
+that we read. We also share an openness to be vulnerable with each other. The
+list of friends goes on and on and it would take forever to thank them all. But
+I would like to give a special mention to my good friends Ellen Yan, Scott
+Saunders, Enrique Amaya, Alejandro Granados, Jorge Castillo, Emmanuel Flores,
+Teddy, Adam Gomez, Paola. My friends became my family outside of my home, so I
+never felt alone during this journey.
 
 And how could I feel alone when so many people that I love were always there for
 me? Even when I felt like I was feeling homesick (or actually sick or injured),
-the Osegueda family was there for me. Kathy, Carlos, Patricio, Nico, and Matias,
+the Osegueda family was there for me. Kathy, Carlos, Patricio, Nico, and Matias
 adopted me as an extra nephew/cousin, reminding me that family doesn't
 necessarily need a direct genetic relationship. I treasure every lunch and every
 dinner as some of the happiest and most delightful times during all these years.
@@ -197,7 +196,7 @@ words to express my feelings, but I will try to do my best. Working and sharing
 so many moments with you has been by far the most significant honor of my entire
 life. To me, it is clear that the only reason I am writing a Ph.D. thesis for
 arguably the best research institute in the world is because of you. When I sent
-that innocent email, I never imagined the quality of person that would await at
+that innocent email, I never imagined the incredible person that would await at
 the receiving end. Not only you took time out of your insanely busy schedule to
 talk with a stranger with no credentials whatsoever, but you allowed me to prove
 myself capable of pursuing my scientific dreams. Even when I almost stopped
@@ -219,13 +218,14 @@ hard as I can every single day.
 Although I have technically been your employee for the last decade, our
 relationship has been much deeper than that. Sometimes I have to pinch myself to
 make sure that this is not a dream. I am actually hanging out with my hero, and
-he is actually welcoming me to his family. Everything you have done for me, and
-now for Daniela, means the world to me. Welcoming us to the most sacred family
-celebration over thanksgiving has been a privilege I never expected to live. I
-cannot thank you, Amy, Molly, Casey, and the rest of your beautiful family, for
-making us feel part of the festivity and the extended family. I have even shared
-some incredibly stimulating and inspiring conversations with Bob Phillips, who
-literally reshaped my life priorities with his wisdom and kindness.
+he is actually welcoming me in to his family. Everything you have done for me,
+and now for Daniela, means the world to me. Welcoming us to the most sacred
+family celebration over Thanksgiving has been a privilege I never expected to
+live. I cannot thank you, Amy, Molly, Casey, and the rest of your beautiful
+family, for making us feel part of the festivity and of the extended family. I
+have even shared some incredibly stimulating and inspiring conversations with
+Bob Phillips, who literally reshaped my life priorities with his wisdom and
+kindness.
 
 I know that you despise honors, prizes, and people praising you. But I would not
 do justice to my feelings if I could not express my deep love and admiration for

@@ -1,15 +1,15 @@
 ## Inferring Allosteric Parameters from Previous Data {#sec:ch4_sec03}
 
-The fold-change profile described by features three unknown parameters $K_A$,
-$K_I$, and $\Delta\varepsilon_{AI}$. In this section, we explore different
-conceptual approaches to determining these parameters. We first discuss how the
-induction titration profile of the simple repression constructs used in this
-paper are not sufficient to determine all three MWC parameters simultaneously,
-since multiple degenerate sets of parameters can produce the same fold-change
-response. We then utilize an additional data set from @Brewster2014 to determine
-the parameter $\Delta\varepsilon_{AI} = 4.5~k_BT$, after which the remaining
-parameters $K_A$ and $K_I$ can be extracted from any induction profile with no
-further degeneracy.
+The fold-change profile described by Eq. 2.5 features three unknown parameters
+$K_A$, $K_I$, and $\Delta\varepsilon_{AI}$. In this section, we explore
+different conceptual approaches to determining these parameters. We first
+discuss how the induction titration profile of the simple repression constructs
+used in this paper are not sufficient to determine all three MWC parameters
+simultaneously, since multiple degenerate sets of parameters can produce the
+same fold-change response. We then utilize an additional data set from
+@Brewster2014 to determine the parameter $\Delta\varepsilon_{AI} = 4.5~k_BT$,
+after which the remaining parameters $K_A$ and $K_I$ can be extracted from any
+induction profile with no further degeneracy.
 
 ### Degenerate Parameter Values {#sec:ch4_sec03.1}
 
@@ -25,7 +25,7 @@ simultaneously, as we will see later.
 In [@Fig:ch4_fig01](A), we fit the $R=260$ data by fixing
 $\Delta\varepsilon_{AI}$ to the value shown on the $x$-axis and determine the
 parameters $K_A$ and $K_I$ given this constraint. We use the fold-change
-function but with $\beta \Delta\varepsilon_{RA}$ modified to the form $\beta
+function, but with $\beta \Delta\varepsilon_{RA}$ modified to the form $\beta
 \Delta\tilde{\varepsilon}_{RA}$ in Eq. 2.5 to account for the underlying
 assumptions used when fitting previous data (see [Section 3.2](#sec:ch4_sec03.2)
 for a full explanation of why this modification is needed).
@@ -41,7 +41,7 @@ degeneracy. For example, NMR measurements could be used to directly measure the
 fraction $(1 + e^{-\beta \Delta\varepsilon_{AI}})^{-1}$ of active repressors in
 the absence of IPTG [@Gardino2003; @Boulton2016].
 
-![**Multiple sets of parameters yield identical fold-change responses**. (A) The
+![**Multiple sets of parameters yield identical fold-change responses.** (A) The
 data for the O2 strain ($\Delta\varepsilon_{RA} = -13.9~k_BT$) with $R=260$ in
 Fig. 2.4(D) was fit using Eq. $\ref{eq:ch4_eq05}$ with $n=2$.
 $\Delta\varepsilon_{AI}$ is forced to take on the value shown on the $x$-axis,
@@ -58,7 +58,7 @@ not sufficient to determine the three MWC parameters ($K_A$, $K_I$, and
 $\Delta\varepsilon_{AI}$), since degenerate sets of parameters yield nearly
 identical fold-change responses. To circumvent this degeneracy, we now turn to
 some previous data from the *lac* system to determine the value of
-$\Delta\varepsilon_{AI}$ in for the induction of the Lac repressor.
+$\Delta\varepsilon_{AI}$ in Eq. 2.5 for the induction of the Lac repressor.
 Specifically, we consider two previous sets of work from (1) @Garcia2011c and
 (2) @Brewster2014, both of which measured fold-change with the same simple
 repression system in the absence of inducer ($c=0$) but at various repressor
@@ -69,8 +69,8 @@ DNA binding energy $\Delta\varepsilon_{RA}$ and the allosteric energy difference
 $\Delta\varepsilon_{AI}$ between the Lac repressor's active and inactive states.
 We refer to this convoluted energy value as $\Delta \tilde{\varepsilon}_{RA}$.
 We first disentangle the relationship between these parameters in Garcia and
-Phillips and then use this relationship to extract the value of
-$\Delta\varepsilon_{AI}$ from the Brewster et al. dataset.
+Phillips, and then use this relationship to extract the value of
+$\Delta\varepsilon_{AI}$ from the Brewster *et al.* dataset.
 
 Garcia and Phillips determined the total repressor copy numbers $R$ of different
 strains using quantitative Western blots. Then they measured the fold-change at
@@ -113,8 +113,8 @@ Note that if $e^{-\beta \Delta \varepsilon_{AI}} \ll 1$, then nearly all of the
 repressors are active in the absence of inducer so that
 $\Delta\tilde{\varepsilon}_{RA} \approx \Delta\varepsilon_{RA}$. In simple
 repression systems where we definitively know the value of $\Delta
-\varepsilon_{RA}$ and $R$, we can use $\ref{eq:ch4_eq02}$ to determine the value
-of $\Delta \varepsilon_{AI}$ by comparing with experimentally determined
+\varepsilon_{RA}$ and $R$, we can use Eq. $\ref{eq:ch4_eq02}$ to determine the
+value of $\Delta \varepsilon_{AI}$ by comparing with experimentally determined
 fold-change values. However, the binding energy values that we use from
 @Garcia2011c are effective parameters $\Delta\tilde{\varepsilon}_{RA}$. In this
 case, we are faced with an undetermined system in which we have more variables
@@ -172,7 +172,7 @@ where $N_{NS}$ is the number of non-specific sites in the cell (recall that we
 use $N_{NS} = 4.6 \times 10^6$ for *E. coli*).
 
 Substituting Eq. $\ref{eq:ch4_eq07}$ and $\ref{eq:ch4_eq08}$ in Eq.
-$\ref{eq:ch4_eq06}$ into the modified yields the form
+$\ref{eq:ch4_eq06}$ into the modified $R_A$ yields the form
 $$
 p_A(0) R_{\text{tot}} = 
 \frac{1}{1 + e^{-\beta \Delta \varepsilon_{AI}}}
@@ -202,7 +202,7 @@ essentially every repressors will be in the active state in this regime. Thus,
 if the $\Delta\varepsilon_{AI}$ is in this regime, we can only bound it from
 below.
 
-![**Fold-change of multiple identical genes.**. (A) In the presence of $N=10$
+![**Fold-change of multiple identical genes.** (A) In the presence of $N=10$
 identical promoters, the fold-change Eq. $\ref{eq:ch4_eq06}$ depends strongly on
 the allosteric energy difference $\Delta\varepsilon_{AI}$ between the Lac
 repressor's active and inactive states. The vertical dotted lines represent the
@@ -210,7 +210,7 @@ number of repressors at which $R_A = N$ for each value of $\Delta
 \varepsilon_{AI}$. (B) Using fold-change measurements from [@Brewster2014] for
 the operators and gene copy numbers shown, we can determine the most likely
 value $\Delta\varepsilon_{AI} = 4.5~k_BT$ for LacI.](ch4_fig02){#fig:ch4_fig02
-short-caption="Fold-change of multiple identical genes."}
+short-caption="Fold-change of multiple identical genes"}
 
 We now analyze experimental induction data for different strains with known
 plasmid copy numbers to determine $\Delta\varepsilon_{AI}$. [@Fig:ch4_fig05](B)

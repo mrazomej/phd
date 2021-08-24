@@ -1,9 +1,9 @@
-## Computational determination of the channel capacity
+## Computational Determination of the Channel Capacity {#sec:ch5_sec08}
 
 (Note: The Python code used for the calculations presented in this section can
 be found in the [following
 link](https://www.rpgroup.caltech.edu//chann_cap/software/blahut_algorithm_channel_capacity.html)
-as an annotated Jupyter notebook)
+as an annotated Jupyter notebook.)
 
 This section details the computation of the channel capacity of the simple
 genetic circuit shown in [@Fig:ch3_fig05]. The channel capacity is defined as
@@ -20,14 +20,14 @@ condition is not satisfied given the spread of the inferred protein
 distributions shown in [@Fig:ch3_fig04].
 
 Fortunately, a numerical algorithm can approximate $\hat{P}(c)$ for discrete
-distributions. In 1972 Richard Blahut and Suguru Arimoto independently came up
-with an algorithm mathematically shown to converge to $\hat{P}(c)$
-[@Blahut1972]. To compute both the theoretical and the experimental channel
-capacity shown in [@Fig:ch3_fig05], we implemented Blahut's algorithm. In the
-following section, we detail the definitions needed for the algorithm. Then we
-describe how to compute the experimental channel capacity when the distribution
-bins are not clear given the arbitrary intrinsic nature of microscopy
-fluorescence measurements.
+distributions. In 1972, Blahut and Arimoto independently came up with an
+algorithm mathematically shown to converge to $\hat{P}(c)$ [@Blahut1972]. To
+compute both the theoretical and the experimental channel capacity shown in
+[@Fig:ch3_fig05], we implemented Blahut's algorithm. In the following section,
+we detail the definitions needed for the algorithm. Then we describe how to
+compute the experimental channel capacity when the distribution bins are not
+clear given the arbitrary intrinsic nature of microscopy fluorescence
+measurements.
 
 ### Blahut's algorithm
 
@@ -51,14 +51,14 @@ $$
 Q^{(i, j)} = P(p = p_i \mid c = c_j).
 $$
 
-For the case of the theoretical predictions of the channel capacity (Solid lines
+For the case of the theoretical predictions of the channel capacity (solid lines
 in [@Fig:ch3_fig05]), the entries of the matrix $\mathbf{Q}$ are given by the
 inferred maximum entropy distributions as shown in [@Fig:ch3_fig04]. In the next
 section, we will discuss how to define this matrix for the single-cell
 fluorescence measurements. Having defined these matrices, we proceed to
 implement the algorithm shown in Figure 1 of [@Blahut1972].
 
-### Channel capacity from arbitrary units of fluorescence
+### Channel Capacity from Arbitrary Units of Fluorescence
 
 A difficulty when computing the channel capacity between inputs and outputs from
 experimental data is that ideally, we would like to compute
@@ -72,9 +72,9 @@ C(f(g); c) \equiv \sup_{P(c)} I(f(g); c),
 $$
 where $f(g)$ is a function of gene expression that has to do with our mapping
 from the YFP copy number to some arbitrary fluorescent value as computed from
-the images were taken with the microscope. The data processing inequality, as
-derived by Shannon himself, tells us that for a Markov chain of the form $c
-\rightarrow g \rightarrow f(g)$ it must be true that [@Shannon1948]
+the images taken with the microscope. The data processing inequality, as derived
+by Shannon himself, tells us that for a Markov chain of the form $c \rightarrow
+g \rightarrow f(g)$, it must be true that [@Shannon1948]
 $$
 I(g; c) \geq I(f(g); c),
 $$
@@ -97,7 +97,7 @@ computed from experimental data, $I_\infty$ is the quantity we would like to
 estimate, being the unbiased mutual information when having access to an
 infinity number of experimental samples and the coefficients $a_i$ depend on
 the underlying distribution of the signal and the response. This is an empirical
-choice to be tested. Intuitively this choice satisfies the limit that as the
+choice to be tested. Intuitively, this choice satisfies the limit that as the
 number of samples from the distribution grows, the empirical estimate of the
 mutual information $I_{\text{biased}}$ should get closer to the actual value
 $I_\infty$.
@@ -110,7 +110,7 @@ I_{\text{biased}} \approx I_\infty + \frac{a_1}{N} + \mathcal{O}(N^{-2}).
 $$
 This means that if this particular arbitrary choice of functional form is a good
 approximation, when computing the mutual information for varying numbers of
-samples--by taking subsamples of the experimental data--we expect to find a
+samples---by taking subsamples of the experimental data---we expect to find a
 linear relationship as a function of the inverse of these number of data points.
 From this linear relationship, the intercept is a bias-corrected estimate of the
 mutual information. Therefore, we can bootstrap the data by taking different
@@ -119,7 +119,7 @@ estimate the biased channel capacity. We can then fit a line and extrapolate
 when $1/N = 0$, which corresponds to our unbiased estimate of the channel
 capacity.
 
-Let's go through each of the steps to illustrate the method. [@Fig:ch5_fig24]
+Let us go through each of the steps to illustrate the method. [@Fig:ch5_fig24]
 show a typical data set for a strain with an O2 binding site
 ($\Delta\varepsilon_r = -13.9 \; k_BT$) and $R = 260$ repressors per cell. Each
 of the distributions in arbitrary units is binned into a specified number of
@@ -133,8 +133,8 @@ different curves show the single-cell fluorescence distributions under the 12
 different IPTG concentrations used throughout this work. The triangles in (A)
 show the mean of each of the distributions. The Python code
 [(`ch5_fig24.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS24.py)
-used to generate this figure can be found on the original paper [GitHub
-repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig24){#fig:ch5_fig24
+used to generate this figure can be found on the original paper's [GitHub
+repository](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig24){#fig:ch5_fig24
 short-caption="Single-cell fluorescence distributions for different inducer
 concentrations"}
 
@@ -155,8 +155,8 @@ subsampling 200 times 50% of each distribution shown in [@Fig:ch5_fig24],
 binning it into 100 bins, and feeding the resulting $\mathbf{Q}$ matrix to the
 Blahut-Arimoto algorithm. The Python code
 [(`ch5_fig25.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS25.py)
-used to generate this figure can be found on the original paper [GitHub
-repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig25){#fig:ch5_fig25
+used to generate this figure can be found on the original paper's [GitHub
+repository](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig25){#fig:ch5_fig25
 short-caption="Channel capacity bootstrap for experimental data"}
 
 Eq. $\ref{eq:mutual_biased}$ tells us that if we subsample each of the
@@ -164,23 +164,23 @@ distributions from [@Fig:ch5_fig24] at different fractions and plot them as a
 function of the inverse sample size, we will find a linear relationship if the
 expansion of the mutual information is valid. To test this idea, we repeated the
 bootstrap estimate of [@Fig:ch5_fig25] sampling 10%, 20%, and so on until taking
-100% of the data. We repeated this for different number of bins since *a priori*
-for arbitrary units of fluorescence, we do not have a way to select the optimal
-number of bins. [@Fig:ch5_fig26] shows the result of these estimates. We can see
-that the linear relationship proposed in Eq. $\ref{eq:mutual_biased}$ holds for
-all number of bins selected. We also note that the value of the linear
+100% of the data. We repeated this for different numbers of bins since *a
+priori* for arbitrary units of fluorescence, we do not have a way to select the
+optimal number of bins. [@Fig:ch5_fig26] shows the result of these estimates. We
+can see that the linear relationship proposed in Eq. $\ref{eq:mutual_biased}$
+holds for all number of bins selected. We also note that the value of the linear
 regression intercept varies depending on the number of bins.
 
 ![**Inverse sample size vs. channel capacity.** As indicated in Eq.
-$\ref{eq:mutual_biased}$ if the channel capacity obtained for different
+$\ref{eq:mutual_biased}$, if the channel capacity obtained for different
 subsample sizes of the data are plotted against the inverse sample size, there
-must exist a linear relationship between these variables. Here we perform 15
-bootstrap samples of the data from [@Fig:ch5_fig24], bin these samples using a
-different number of bins, and perform a linear regression (solid lines) between
-the bootstrap channel capacity estimates and the inverse sample size. The
-Python code
+must exist a linear relationship between these variables. Here, we perform 15
+bootstrap samples of the data from [@Fig:ch5_fig24], then we bin these samples
+using a different number of bins, and finally perform a linear regression (solid
+lines) between the bootstrap channel capacity estimates and the inverse sample
+size. The Python code
 [(`ch5_fig26.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS26.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig26){#fig:ch5_fig26
 short-caption="Inverse sample size vs. channel capacity"}
 
@@ -218,26 +218,26 @@ best unbiased estimate of the channel capacity from this experimental dataset.
 capacity estimates we obtained from linear regressions as in [@Fig:ch5_fig26].
 The blue curve shows the estimates obtained from the data shown in
 [@Fig:ch5_fig24]. The orange curve is generated from estimates where the same
-data is shuffled, losing the relationship between fluorescence distributions
-and inducer concentration. The Python code
+data is shuffled, losing the relationship between fluorescence distributions and
+inducer concentration. The Python code
 [(`ch5_fig27.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS27.py)
-used to generate this figure can be found on the original paper [GitHub
-repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig27){#fig:ch5_fig27
+used to generate this figure can be found on the original paper's [GitHub
+repository](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig27){#fig:ch5_fig27
 short-caption="Channel capacity as a function of the number of bins"}
 
-### Assumptions involved in the computation of the channel capacity
+### Assumptions Involved in the Computation of the Channel Capacity
 
 An interesting suggestion by Professor Gasper Tkacik was to dissect the
 different physical assumptions that went into the construction of the
 input-output function $P(p \mid c)$, and their relevance when comparing the
-theoretical channel capacities with the experimental inferences. In what follows
-we describe the relevance of four important aspects that all affect the
+theoretical channel capacities with the experimental inferences. In what
+follows, we describe the relevance of four important aspects that all affect the
 predictions of the information processing capacity.
 
-#### (i) Cell cycle variability.
+#### (i) Cell Cycle Variability.
 
 We think that the inclusion of the gene copy number variability during the cell
-cycle and non-Poissoninan protein degradation is crucial to our estimation of
+cycle and non-Poissonian protein degradation is crucial to our estimation of
 the input-output functions and channel capacity. This variability in gene copy
 number is an additional source of noise that systematically decreases the
 system's ability to resolve different inputs. The absence of the effects that
@@ -256,15 +256,15 @@ while the multi-promoter model accounts for gene copy number variability during
 the cell cycle and has protein degradation as an effect due to dilution as cells
 grow and divide. The Python code
 [(`ch5_fig28.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS28.py)
-used to generate this figure can be found on the original paper [GitHub
-repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig28){#fig:ch5_fig28
+used to generate this figure can be found on the original paper's [GitHub
+repository](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig28){#fig:ch5_fig28
 short-caption="Comparison of channel capacity predictions for single- and
 multi-promoter models"}
 
-#### (ii) Non-Gaussian noise distributions.
+#### (ii) Non-Gaussian Noise Distributions.
 
-For the construction of the probability distributions used in the main text
-([@Fig:ch3_fig04]) we utilized the first six moments of the protein
+For the construction of the probability distributions used in Chapter 3
+([@Fig:ch3_fig04]), we utilized the first six moments of the protein
 distribution. The maximum entropy formalism tells us that the more constraints
 we include in the inference, the closer the maximum entropy distribution will be
 to the real distribution. But *a priori* there is no way of knowing how many
@@ -283,7 +283,7 @@ first $i$ moments, $i \in \{2, 3, 4, 5, 6\}$. Since the Kullback-Leibler
 divergence $D_{KL}(P || Q)$ can be interpreted as the amount of information lost
 by assuming the incorrect distribution $Q$ when the correct distribution is $P$,
 we used this metric as a way of how much information we would have lost by using
-fewer constraints compared to the six moments used in the main text.
+fewer constraints compared to the six moments used in Chapter 3.
 
 [@Fig:ch5_fig29] shows this comparison for different operators and repressor
 copy numbers. We can see from here that using fewer moments as constraints gives
@@ -299,23 +299,23 @@ constraints.** The Kullback-Leibler divergence was computed between the maximum
 entropy distribution constructed using the first six moments of the distribution
 and a variable number of moments. The Python code
 [(`ch5_fig29.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS29.py)
-used to generate this figure can be found on the original paper [GitHub
-repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig29){#fig:ch5_fig29
+used to generate this figure can be found on the original paper's [GitHub
+repository](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig29){#fig:ch5_fig29
 short-caption="Measuring the loss of information by using a different number of
 constraints"}
 
-#### (iii) Multi-state promoter.
+#### (iii) Multi-State Promoter.
 
 This particular point is something that we are still exploring from a
-theoretical perspective. We have shown that to capture the single-molecule mRNA
-FISH data, a single-state promoter wouldn't suffice. This model predicts a
+theoretical perspective. We have shown that, to capture the single-molecule mRNA
+FISH data, a single-state promoter would not suffice. This model predicts a
 Poisson distribution as the steady-state, and the data shows super Poissonian
 noise. Given the bursty nature of gene expression, we opt to use a two-state
 promoter to reflect effective transcriptionally "active" and "inactive" states.
 We are currently exploring alternative formulations of this model to turn it
 into a single state with a geometrically distributed burst size.
 
-#### (iv) Optimal vs Log-flat Distributions.
+#### (iv) Optimal vs Log-Flat Distributions.
 
 The relevance of having to use the Blahut-Arimoto algorithm to predict the
 maximum mutual information between input and outputs was to understand the

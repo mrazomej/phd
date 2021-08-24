@@ -18,8 +18,8 @@ the *ybcN* locus of the chromosome. Final strain construction was achieved by
 performing repeated P1 transduction [@Thomason2007] of the different operator
 and *lacI* constructs to generate each combination used in this work.
 Integration was confirmed by PCR amplification of the replaced chromosomal
-region and by sequencing. Primers and final strain genotypes are listed in
-Chapter 4.
+region and by sequencing. Primers and final strain genotypes are listed in [Sec.
+4.15](#sec:ch4_sec16).
 
 It is important to note that the rest of the *lac* operon (*lacZYA*) was never
 expressed. The LacY protein is a transmembrane protein that actively transports
@@ -83,12 +83,11 @@ described in this work.
 Unless explicitly mentioned, all fold-change measurements were collected on a
 Miltenyi Biotec MACSquant Analyzer 10 Flow Cytometer graciously provided by the
 Pamela Björkman lab at Caltech. Detailed information regarding the voltage
-settings of the photo-multiplier detectors can be found in Appendix Table
-[\[table_instrument_param\]](#table_instrument_param){reference-type="ref"
-reference="table_instrument_param"}. Prior to each day's experiments, the
-analyzer was calibrated using MACSQuant Calibration Beads (Cat. No. 130-093-607)
-such that day-to-day experiments would be comparable. All YFP fluorescence
-measurements were collected via $488\,\text{nm}$ laser excitation coupled with a
+settings of the photo-multiplier detectors can be found in [Sec.
+4.4](#sec:ch4_sec05). Prior to each day's experiments, the analyzer was
+calibrated using MACSQuant Calibration Beads (Cat. No. 130-093-607) such that
+day-to-day experiments would be comparable. All YFP fluorescence measurements
+were collected via $488\,\text{nm}$ laser excitation coupled with a
 525/$50\,\text{nm}$ emission filter. Unless otherwise specified, all
 measurements were taken over two to three hours using automated sampling from a
 96-well plate kept at approximately $4^\circ \, \hbox{-} \, 10^\circ$C on a MACS
@@ -159,7 +158,7 @@ concentration $c$) and one dependent variable (experimental fold-change). $P(D
 \mid K_A, K_I)$ is the likelihood of having observed the data given the
 parameter values for the dissociation constants, $P(K_A, K_I)$ contains all the
 prior information on these parameters, and $P(D)$ serves as a normalization
-constant, which we can ignore in our parameter estimation. assumes a
+constant, which we can ignore in our parameter estimation. Our model assumes a
 deterministic relationship between the parameters and the data, so to construct
 a probabilistic relationship as required by Eq. $\ref{eq:bayes_theorem}$, we
 assume that the experimental fold-change for the $i^\text{th}$ datum given the
@@ -172,11 +171,11 @@ _{\exp}^{(i)} = \left( 1 + \frac{\left(1 + \frac{c^{(i)}}{K_A}\right)^2}{\left(
 \varepsilon_{RA}^{(i)}}\right)^{-1} + \epsilon^{(i)},
 \label{eq:fold_change_exp}
 $$
-where $\epsilon^{(i)}$ represents the departure
-from the deterministic theoretical prediction for the $i^\text{th}$ data point.
-If we assume that these $\epsilon^{(i)}$ errors are normally distributed with
-mean zero and standard deviation $\sigma$, the likelihood of the data given the
-parameters is of the form 
+where $\epsilon^{(i)}$ represents the departure from the deterministic
+theoretical prediction for the $i^\text{th}$ data point. If we assume that these
+$\epsilon^{(i)}$ errors are normally distributed with mean zero and standard
+deviation $\sigma$, the likelihood of the data given the parameters $P(D \mid
+K_A, K_I, \sigma)$ is of the form 
 $$
 {\scriptstyle
 P(D \vert K_A, K_I, \sigma) =
@@ -202,7 +201,7 @@ Both mathematically and numerically, it is convenient to define $\tilde{k}_A =
 and fit for these parameters on a log scale. Dissociation constants are scale
 invariant, so that a change from $10\,\mu\text{M}$ to $1\,\mu\text{M}$ leads to
 an equivalent increase in affinity as a change from $1\,\mu\text{M}$ to
-$0.1\,\mu\text{M}$. With these definitions we assume for the prior
+$0.1\,\mu\text{M}$. With these definitions, we assume for the prior
 $P(\tilde{k}_A, \tilde{k}_I, \sigma)$ that all three parameters are independent.
 In addition, we assume a uniform distribution for $\tilde{k}_A$ and
 $\tilde{k}_I$ and a Jeffreys prior [@Sivia2006] for the scale parameter

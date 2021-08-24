@@ -1,13 +1,13 @@
 ## Global Fit of All Parameters {#sec:ch4_sec09}
 
-In the main text, we used the repressor copy numbers $R$ and repressor-DNA
-binding energies $\Delta\varepsilon_{RA}$ as reported by @Garcia2011c. However,
-any error in these previous measurements of $R$ and $\Delta\varepsilon_{RA}$
-will necessarily propagate into our own fold-change predictions. This section
-takes an alternative approach to fitting the system's physical parameters to
-that used in the main text. First, rather than fitting only a single strain, we
-fit the entire data set in [@Fig:ch2_fig05] along with microscopy data for the
-synthetic operator Oid (see [Sec. 4.9](#sec:ch4_sec10)). In addition, we also
+In Chapter 2, we used the repressor copy numbers $R$ and repressor-DNA binding
+energies $\Delta\varepsilon_{RA}$ as reported by @Garcia2011c. However, any
+error in these previous measurements of $R$ and $\Delta\varepsilon_{RA}$ will
+necessarily propagate into our own fold-change predictions. This section takes
+an alternative approach to fitting the system's physical parameters to that used
+in Chapter 2. First, rather than fitting only a single strain, we fit the entire
+data set in [@Fig:ch2_fig05] along with microscopy data for the synthetic
+operator Oid (see [Sec. 4.9](#sec:ch4_sec10)). In addition, we also
 simultaneously fit the parameters $R$ and $\Delta\varepsilon_{RA}$ using the
 prior information given by the previous measurements. By using the entire data
 set and fitting all of the parameters, we obtain the best possible
@@ -21,7 +21,7 @@ estimation of the dissociation constants $K_A$ and $K_I$, the six different
 repressor copy numbers $R$ corresponding to the six *lacI* ribosomal binding
 sites used in our work, and the four different binding energies $\Delta
 \varepsilon_{RA}$ characterizing the four distinct operators used to make the
-experimental strains. As in the main text, we fit the logarithms $\tilde{k}_A =
+experimental strains. As in Chapter 2, we fit the logarithms $\tilde{k}_A =
 -\log \frac{K_A}{1\,\text{M}}$ and $\tilde{k}_I = -\log \frac{K_I}{1\,\text{M}}$
 of the dissociation constants, which grants better numerical stability.
 
@@ -73,9 +73,9 @@ fold-change and $\text{fc}(\cdot\cdot\cdot)$ is the theoretical prediction. Note
 that the standard deviation $\sigma$ of this distribution is not known and hence
 needs to be included as a parameter to be fit.
 
-The second term in $\ref{eq:ch4_eq30}$ represents the prior information of the
-parameter values. We assume that all parameters are independent of each other
-so that 
+The second term in Eq. $\ref{eq:ch4_eq30}$ represents the prior information of
+the parameter values. We assume that all parameters are independent of each
+other so that 
 $$
 P(\tilde{k}_A, \tilde{k}_I, \mathbf{R},
 \mathbf{\Delta\boldsymbol{\varepsilon}_{\textbf{RA}}}, \sigma) =
@@ -151,7 +151,7 @@ repressor-DNA binding energies differed by a few standard deviations from the
 reported values, the differences were always less than $1~k_BT$, representing a
 small change in the biological scales we are considering. The biggest
 discrepancy between our fit values and the previous measurements arose for the
-synthetic Oid operator, which we discuss in more detail [Sec.
+synthetic Oid operator, which we discuss in more detail in [Sec.
 4.9](#sec:ch4_sec10).
 
 [@Fig:ch4_fig20] shows the same key properties as in [@Fig:ch2_fig06], but uses
@@ -205,10 +205,9 @@ effective Hill coefficient are inferred by individually fitting all
 parameters--$K_A,\, K_I,\, R,\, \Delta\varepsilon_{RA}$--to each
 operator-repressor pairing in [@Fig:ch2_fig04](A)-(C) separately to Eq.
 $\ref{eq:fold_change_full}$ to smoothly interpolate between the data points.
-Note that where error bars are not visible indicates that the error bars are
-smaller than the point itself.](ch4_fig20){#fig:ch4_fig20 short-caption="Key
-properties of induction profiles as predicted with a global fit using all
-available data"}
+Note that the error bars are smaller than some of the
+points.](ch4_fig20){#fig:ch4_fig20 short-caption="Key properties of induction
+profiles as predicted with a global fit using all available data"}
 
 |                              | **Reported Values [@Garcia2011c]** | **Global Fit**                      |
 | ---------------------------- | ---------------------------------- | ----------------------------------- |

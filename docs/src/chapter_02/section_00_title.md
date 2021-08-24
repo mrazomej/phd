@@ -1,1 +1,1 @@
-# Tuning transcriptional regulation through signaling: A predictive theory of allosteric induction
+# Tuning Transcriptional Regulation Through Signaling: A Predictive Theory of Allosteric Induction

@@ -11,7 +11,7 @@ the response of all eighteen strains, although we argue that such a description
 provides no insight into the allosteric nature of the protein and how mutations
 to the repressor would affect induction. We conclude the section by discussing
 the differences between such a model and the statistical mechanical model used
-in the main text.
+in Chapter 2.
 
 ### Fitting Induction Curves using a Hill Function Approach
 
@@ -23,7 +23,7 @@ coefficient) has led to its widespread use in many domains of biology
 physically unrealistic model and the extracted Hill coefficient is often
 difficult to contextualize in the physics of a system [@Weiss1997]. In the
 present work, we note that a Hill function, even if it is only used because of
-its simplicity presents no mechanism to understand how a regulatory system's
+its simplicity, presents no mechanism to understand how a regulatory system's
 behavior will change if physical parameters such as repressor copy number or
 operator binding energy are varied. In addition, the Hill equation provides no
 foundation to explore how mutating the repressor (e.g., at its inducer-binding
@@ -38,8 +38,8 @@ $$
 \frac{\left( \frac{c}{K} \right)^n}{1 + \left( \frac{c}{K} \right)^n},
 \label{eq:ch4_eq27}
 $$
-where, as in the main text, the leakiness represents the minimum fold-change,
-the dynamic range represents the difference between the maximum and minimum
+where, as in Chapter 2, the leakiness represents the minimum fold-change, the
+dynamic range represents the difference between the maximum and minimum
 fold-change, $K$ is the repressor-inducer dissociation constant, and $n$ denotes
 the Hill coefficient that characterizes the sharpness of the curve ($n > 1$
 signifies positive cooperativity, $n = 1$ denotes no cooperativity, and $n < 1$
@@ -91,7 +91,7 @@ Motivated by the inability in the previous section to characterize all eighteen
 strains using the Hill function with a single set of parameters, here we combine
 the Hill approach with a thermodynamic model of simple repression to garner
 predictive power. More specifically, we will use the thermodynamic model in
-[@Fig:ch2_fig02](A) but substitute the statistical model in [@Fig:ch2_fig02](B)
+[@Fig:ch2_fig02](A), but substitute the statistical model in [@Fig:ch2_fig02](B)
 with the phenomenological Hill function (Eq. $\ref{eq:ch4_eq27}$).
 
 Following Eqs. $\ref{eq:p_bound_definition}$, $\ref{eq:fold_change_definition}$,
@@ -116,9 +116,9 @@ the known constants $R$, $N_{NS}$, and $\Delta\varepsilon_{RA}$ describes how
 the induction profile changes with repressor copy number and repressor-operator
 binding energy.
 
-As in the main text, we can fit the four Hill parameters -- the vertical shift
-and stretch parameters $p_A^{\text{max}}$ and $p_A^{\text{range}}$, the Hill
-coefficient $n$, and the inducer-repressor dissociation constant $K_D$--for a
+As in Chapter 2, we can fit the four Hill parameters---the vertical shift and
+stretch parameters $p_A^{\text{max}}$ and $p_A^{\text{range}}$, the Hill
+coefficient $n$, and the inducer-repressor dissociation constant $K_D$---for a
 single induction curve and then use the fully characterized Eq.
 $\ref{eq:ch4_eq27}$ to describe the response of each of the eighteen strains.
 [@Fig:ch4_fig18] shows this process carried out by fitting the O2 $R=260$ strain

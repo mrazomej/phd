@@ -1,1 +1,1 @@
-# First-principles prediction of the information processing capacity of a simple genetic circuit
+# Supporting Information for First-principles Prediction of the Information Processing Capacity of a Simple Genetic Circuit

@@ -1,6 +1,6 @@
 ## Results
 
-### Minimal model of transcriptional regulation {#sec_model}
+### Minimal Model of Transcriptional Regulation {#sec_model}
 
 As a tractable circuit for which we have control over the parameters both
 theoretically and experimentally, we chose the so-called simple repression
@@ -29,7 +29,7 @@ and the necessary set of parameters needed to compute the full distribution of
 mRNA and its protein gene product. Specifically, we assume a three-state model
 where the promoter can be found in a 1) transcriptionally active state ($A$
 state), 2) a transcriptionally inactive state without the repressor bound ($I$
-state) and 3) a transcriptionally inactive state with the repressor bound ($R$
+state), and 3) a transcriptionally inactive state with the repressor bound ($R$
 state). We do not assume that the transition between the active state $A$ and
 the inactive state $I$ occurs due to RNAP binding to the promoter as the
 transcription initiation kinetics involve several more steps than simple binding
@@ -38,9 +38,9 @@ transcription initiation kinetics involve several more steps than simple binding
 bursty nature of gene expression in *E. coli* [@Golding2005]. These three states
 generate a system of coupled differential equations for each of the three state
 distributions $P_A(m, p; t)$, $P_I(m, p; t)$ and $P_R(m, p; t)$, where $m$ and
-$p$ are the mRNA and protein count per cell, respectively and $t$ is time. Given
-the rates depicted in [@Fig:ch3_fig02](A), we define the system of ODEs for a
-specific $m$ and $p$. For the transcriptionally active state, we have
+$p$ are the mRNA and protein count per cell, respectively, and $t$ is time.
+Given the rates depicted in [@Fig:ch3_fig02](A), we define the system of ODEs
+for a specific $m$ and $p$. For the transcriptionally active state, we have
 $$
 \begin{split}
     \frac{d P_A(m, p)}{dt} &=
@@ -105,8 +105,8 @@ where $^T$ is the transpose. By defining the matrices $\mathbf{K}$ to contain
 the promoter state transitions, $\mathbf{R}_m$ and $\mathbf{\Gamma} _m$ to
 contain the mRNA production and degradation terms, respectively, and
 $\mathbf{R}_p$ and $\mathbf{\Gamma}_p$ to contain the protein production and
-degradation terms, respectively, the system of ODEs can then be written as (See
-for the full definition of these matrices)
+degradation terms, respectively, the system of ODEs can then be written as (see
+[Sec. 5.2](#sec:ch5_sec03) for the full definition of these matrices)
 $$
 \begin{split}
     \frac{d \mathbf{P}(m, p)}{dt} &= 
@@ -122,7 +122,7 @@ $$
 Having defined the gene expression dynamics, we now proceed to determine all
 rate parameters in Eq. $\ref{eq:ch3_eq06}$.
 
-### Inferring parameters from published data sets {#sec_param}
+### Inferring Parameters from Published Data Sets {#sec_param}
 
 A decade of research in our group has characterized the simple repression motif
 with an ever-expanding array of predictions and corresponding experiments to
@@ -138,7 +138,7 @@ non-equilibrium systems [@Buchler2003]. We have also used a similar kinetic
 model to that depicted in [@Fig:ch3_fig02](A) to study the noise in mRNA copy
 number [@Jones2014a]. Although these studies focus on the same experimental
 system described by different theoretical frameworks, in earlier work in our
-laboratory an attempt to unite parametric knowledge across studies based on
+laboratory, an attempt to unite parametric knowledge across studies based on
 equilibrium and non-equilibrium models has not been performed previously. As a
 test case of the depth of our theoretical understanding of this simple
 transcriptional regulation system, we combine all of the studies mentioned above
@@ -147,18 +147,18 @@ to inform the parameter values of the model presented in [@Fig:ch3_fig02](A).
 to measure gene expression along with the parameters that can be inferred from
 them.
 
-Chapter 5 expands on the details of how the inference was performed for each of
-the parameters. Briefly, the promoter activation and inactivation rates
-$k^{(p)}_{\text{on}}$ and $k^{(p)}_{\text{off}}$, as well as the transcription
-rate $r_m$ were obtained in units of the mRNA degradation rate $\gamma _m$ by
-fitting a two-state promoter model (no state $R$ from [@Fig:ch3_fig02](A))
-[@Peccoud1995] to mRNA FISH data of an unregulated promoter (no repressor
-present in the cell) [@Jones2014a]. The repressor on rate is assumed to be of
-the form $k^{(r)}_{\text{on}} = k_o [R]$ where $k_o$ is a diffusion-limited on
-rate and $[R]$ is the concentration of active repressor in the cell
-[@Jones2014a]. This concentration of active repressor is at the same time
-determined by the repressor copy number in the cell and the fraction of these
-repressors that are in the active state, i.e., able to bind DNA. Existing
+[Sec. 5.2](#sec:ch5_sec03) expands on the details of how the inference was
+performed for each of the parameters. Briefly, the promoter activation and
+inactivation rates $k^{(p)}_{\text{on}}$ and $k^{(p)}_{\text{off}}$, as well as
+the transcription rate $r_m$ were obtained in units of the mRNA degradation rate
+$\gamma _m$ by fitting a two-state promoter model (no state $R$ from
+[@Fig:ch3_fig02](A)) [@Peccoud1995] to mRNA FISH data of an unregulated promoter
+(no repressor present in the cell) [@Jones2014a]. The repressor on rate is
+assumed to be of the form $k^{(r)}_{\text{on}} = k_o [R]$ where $k_o$ is a
+diffusion-limited on rate and $[R]$ is the concentration of active repressor in
+the cell [@Jones2014a]. This concentration of active repressor is at the same
+time determined by the repressor copy number in the cell and the fraction of
+these repressors that are in the active state, i.e., able to bind DNA. Existing
 estimates of the transition rates between conformations of allosteric molecules
 set them at the microsecond scale [@Cui2008]. By considering this to be
 representative for our repressor of interest, the separation of time-scales
@@ -186,12 +186,12 @@ transition to the transcriptionally active state. All parameters highlighted
 with colored boxes were determined from published datasets based on the same
 genetic circuit. Parameters in dashed boxes were taken directly from values
 reported in the literature or adjusted to satisfy known biological restrictions.
-(B) Data sets used to infer the parameter values. From left to right Garcia &
+(B) Data sets used to infer the parameter values. From left to right, Garcia &
 Phillips [@Garcia2011c] is used to determine $k^{(r)}_{\text{off}}$ and
-$k^{(r)}_{\text{on}}$, Brewster et al. [@Brewster2014] is used to determine
-$\Delta\varepsilon_{AI}$ and $k^{(r)}_{\text{on}}$, Razo-Mejia et al.
-[@Razo-Mejia2018] is used to determine $K_A$, $K_I$, and $k^{(r)}_{\text{on}}$
-and Jones et al. [@Jones2014a] is used to determine $r_m$,
+$k^{(r)}_{\text{on}}$, Brewster *et al.* [@Brewster2014] is used to determine
+$\Delta\varepsilon_{AI}$ and $k^{(r)}_{\text{on}}$, Razo-Mejia *et al.*
+[@Razo-Mejia2018] is used to determine $K_A$, $K_I$, and $k^{(r)}_{\text{on}}$,
+and Jones *et al.* [@Jones2014a] is used to determine $r_m$,
 $k^{(p)}_{\text{on}}$, and $k^{(p)}_{\text{off}}$.](ch3_fig02){#fig:ch3_fig02
 short-caption="Minimal kinetic model of transcriptional regulation for a simple
 repression architecture"}

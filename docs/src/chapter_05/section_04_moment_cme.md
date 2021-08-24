@@ -1,16 +1,16 @@
-## Computing moments from the master equation {#sec:ch5_sec04}
+## Computing Moments from the Master Equation {#sec:ch5_sec04}
 
 This section will compute the moment equations for the distribution $P(m, p)$.
 Without loss of generality, here, we will focus on the three-state regulated
 promoter. The computation of the two-state promoter's moments follows the same
 procedure, changing only the matrices' definition in the master equation.
 
-### Computing moments of a distribution
+### Computing Moments of a Distribution
 
 (Note: The Python code used for the calculations presented in this section can
 be found in the [following
 link](https://www.rpgroup.caltech.edu//chann_cap/software/moment_dynamics_system.html)
-as an annotated Jupyter notebook)
+as an annotated Jupyter notebook.)
 
 To compute any moment of our chemical master equation, let us define a
 vector
@@ -75,8 +75,8 @@ $$
   \label{eq:master_sum}
 $$
 
-Let's look at each term on the right-hand side individually. For the terms in
-Eq. $\ref{eq:master_sum}$ involving $\mathbf{P}(m, p)$ we can again use Eq.
+Let us look at each term on the right-hand side individually. For the terms in
+Eq. $\ref{eq:master_sum}$ involving $\mathbf{P}(m, p)$, we can again use Eq.
 $\ref{eq:mom_def}$ to rewrite them in a more compact form. This means that we
 can rewrite the state transition term as 
 $$
@@ -93,8 +93,8 @@ $$
 \mathbf{\Gamma}_m \sum_m \sum_p (m) m^x p^y \mathbf{P}(m, p) = 
 \mathbf{\Gamma}_m \mathbf{\left\langle{m^{(x + 1)} p^y}\right\rangle}.
 $$
-For the protein production and degradation terms involving $\mathbf{P}(m, p)$ we
-have 
+For the protein production and degradation terms involving $\mathbf{P}(m, p)$,
+we have 
 $$
 \mathbf{R}_p \sum_m \sum_p (m) m^x p^y \mathbf{P}(m, p) = 
 \mathbf{R}_p \mathbf{\left\langle{m^{(x + 1)} p^y}\right\rangle},
@@ -107,16 +107,16 @@ $$
 respectively.
 
 For the terms of the sum in Eq. $\ref{eq:master_sum}$ involving $\mathbf{P}(m
-\pm 1, p)$ or $\mathbf{P}(m, p \pm 1)$ we can reindex the sum to work around
-this mismatch. To be more specific, let's again look at each term case by case.
+\pm 1, p)$ or $\mathbf{P}(m, p \pm 1)$, we can reindex the sum to work around
+this mismatch. To be more specific, let us again look at each term case by case.
 For the mRNA production term involving $\mathbf{P}(m-1, p)$ we define $m' \equiv
 m - 1$. Using this, we write
 $$
 \mathbf{R}_m \sum_m \sum_p m^x p^y \mathbf{P}(m-1, p) =
 \mathbf{R}_m \sum_{m' = -1}^\infty \sum_p (m' + 1)^x p^y \mathbf{P}(m', p).
 $$
-Since having negative numbers of mRNA or protein doesn't make physical sense, we
-have that $\mathbf{P}(-1, p) = 0$. Therefore we can rewrite the sum starting
+Since having negative numbers of mRNA or protein does not make physical sense,
+we have that $\mathbf{P}(-1, p) = 0$. Therefore we can rewrite the sum starting
 from 0 rather than from -1, obtaining
 $$
 \mathbf{R}_m \sum_{m' = -1}^\infty \sum_p (m' + 1)^x p^y \mathbf{P}(m', p) =
@@ -127,7 +127,7 @@ Recall that our distribution $\mathbf{P}(m, p)$ takes $m$ and $p$ as numerical
 inputs and returns a probability associated with such a molecule count.
 Nevertheless, $m$ and $p$ themselves are dimensionless quantities that serve as
 indices of how many molecules are in the cell. The distribution is the same
-whether the variable is called $m$ or $m'$; for a specific number, let's say $m
+whether the variable is called $m$ or $m'$; for a specific number, let us say $m
 = 5$, or $m' = 5$, $\mathbf{P}(5, p)$ will return the same result. This means
 that the variable name is arbitrary, and the right-hand side of Eq.
 $\ref{eq:reindex}$ can be written as
@@ -137,7 +137,7 @@ $$
 $$
 since the left-hand side corresponds to the definition of a moment.
 
-For the mRNA degradation term involving $\mathbf{P}(m + 1, p)$ we follow a
+For the mRNA degradation term involving $\mathbf{P}(m + 1, p)$, we follow a
 similar procedure in which we define $m' = m + 1$ to obtain
 $$
 \mathbf{\Gamma}_m \sum_m \sum_p (m + 1) m^x p^y \mathbf{P}(m + 1, p) =
@@ -214,10 +214,10 @@ $$
   \label{eq:mom_ode}
 $$
 
-### Moment closure of the simple-repression distribution
+### Moment Closure of the Simple-Repression Distribution
 
 A very interesting and useful feature of Eq. $\ref{eq:mom_ode}$ is that for a
-given value of $x$ and $y$ the moment $\mathbf{\left\langle m^x p^y
+given value of $x$ and $y$, the moment $\mathbf{\left\langle m^x p^y
 \right\rangle}$ is only a function of lower moments. Specifically
 $\mathbf{\left\langle m^x p^y \right\rangle}$ is a function of moments
 $\mathbf{\left\langle{m^{x'} p^{y'}}\right\rangle}$ that satisfy two conditions:
@@ -230,7 +230,7 @@ $$
     \label{eq:mom_conditions}
 $$
 
-To prove this we rewrite Eq. $\ref{eq:mom_ode}$ as 
+To prove this, we rewrite Eq. $\ref{eq:mom_ode}$ as 
 $$
 \begin{split}
     \frac{d\mathbf{\left\langle m^x p^y \right\rangle}}{dt} &=
@@ -283,15 +283,15 @@ Eq. $\ref{eq:second_mom_mRNA}$ satisfies both of our conditions. Since we set
 $y$ to be zero, none of the terms depend on any moment that involves the protein
 number. Therefore $y' \leq y$ is satisfied. Also, the highest moment in Eq.
 $\ref{eq:second_mom_mRNA}$ also satisfies $x' + y' \leq x + y$ since the second
-moment of mRNA doesn't depend on any moment higher than
+moment of mRNA does not depend on any moment higher than
 $\mathbf{\left\langle{m^2}\right\rangle}$. To demonstrate that this is true for
 any $x$ and $y$, we now rewrite Eq. $\ref{eq:mom_ode_factorized}$, making use of
 the binomial expansion
 $$
 (z \pm 1)^n = \sum_{k=0}^n {n \choose k} (\pm 1)^{k} z^{n-k}.
 $$
-Just as before, let's look at each term individually. For the mRNA production
-term we have 
+Just as before, let us look at each term individually. For the mRNA production
+term, we have 
 $$
 \mathbf{R}_m 
 \mathbf{\left\langle{p^y \left[ (m + 1)^x -m^x \right]}\right\rangle} =
@@ -308,9 +308,9 @@ $$
 \mathbf{\left\langle{p^y 
 \left[ \sum_{k=1}^x {x \choose k} m^{x-k} \right]}\right\rangle}.
 $$
-Once the sum is expanded we can see that the highest moment in this sum is given
-by $\mathbf{\left\langle{m^{(x-1)} p^y}\right\rangle}$ which satisfies both of
-the conditions on Eq. $\ref{eq:mom_conditions}$.
+Once the sum is expanded, we can see that the highest moment in this sum is
+given by $\mathbf{\left\langle{m^{(x-1)} p^y}\right\rangle}$ which satisfies
+both of the conditions on Eq. $\ref{eq:mom_conditions}$.
 
 For the mRNA degradation term, we similarly have
 $$
@@ -320,7 +320,7 @@ $$
 \mathbf{\left\langle{m p^y 
 \left[ \sum_{k=0}^x {x \choose k}(-1)^k m^{x-k} - m^x \right]}\right\rangle}.
 $$
-Simplifying terms we obtain
+Simplifying terms, we obtain
 $$
 \mathbf{\Gamma}_m 
 \mathbf{\left\langle{m p^y \left[ \sum_{k=0}^x {x \choose k}(-1)^k m^{x-k} -
@@ -370,19 +370,19 @@ the joint mRNA and protein distribution can be computed from knowledge of lower
 moments. This allows us to cleanly integrate the distribution moment dynamics
 as cells progress through the cell cycle.
 
-### Computing single promoter steady-state moments
+### Computing Single Promoter Steady-State Moments
 
 (Note: The Python code used for the calculations presented in this section can
 be found in the [following
 link](https://www.rpgroup.caltech.edu//chann_cap/software/chemical_master_steady_state_moments_general.html)
-as an annotated Jupyter notebook)
+as an annotated Jupyter notebook.)
 
 One of the main factors contributing to cell-to-cell variability in gene
 expression is the change in gene copy number during the cell cycle as cells
 replicate their genome before cell division. Our minimal model accounts for this
 variability by considering the time trajectory of the distribution moments given
 by Eq. $\ref{eq:mom_ode_factorized}$. These predictions will be contrasted with
-the predictions from a kinetic model that doesn't account for gene copy numbers
+the predictions from a kinetic model that does not account for gene copy numbers
 changes during the cell cycle in [Sec. 4.4](#sec:ch5_sec05).
 
 Suppose we do not account for the change in gene copy number during the cell

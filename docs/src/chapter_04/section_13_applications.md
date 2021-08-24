@@ -17,10 +17,10 @@ impedes the binding of RNAP to the DNA. A corepressor molecule binds to the
 repressor and shifts its allosteric equilibrium towards the active state in
 which it binds more tightly to the DNA, thereby decreasing gene expression (in
 contrast, an inducer shifts the allosteric equilibrium towards the inactive
-state where the repressor binds more weakly to the DNA). As in the main text, we
-can enumerate the states and statistical weights of the promoter and the
-allosteric states of the repressor. We note that these states and weights
-exactly match [@Fig:ch2_fig02] and yield the same fold-change equation as Eq.
+state where the repressor binds more weakly to the DNA). As in Chapter 2, we can
+enumerate the states and statistical weights of the promoter and the allosteric
+states of the repressor. We note that these states and weights exactly match
+[@Fig:ch2_fig02] and yield the same fold-change equation as Eq.
 $\ref{eq:fold_change_full}$, 
 $$
 \text{fold-change} \approx 
@@ -36,8 +36,8 @@ the relative sizes of the dissociation constants $K_A$ and $K_I$ between the
 inducer and repressor in the active and inactive states, respectively. The
 corepressor is defined by $K_A < K_I$ since the corepressor favors binding to
 the repressor's active state; an inducer must satisfy $K_I < K_A$, as was found
-in the main text from the induction data (see [@Fig:ch2_fig04]). Much as was
-performed in the main text, we can make some predictions about the response of a
+in Chapter 2 from the induction data (see [@Fig:ch2_fig04]). Much as was
+performed in Chapter 2, we can make some predictions about the response of a
 corepressor. In [@Fig:ch4_fig28](A), we show how varying the repressor copy
 number $R$ and the repressor-DNA binding energy $\Delta\varepsilon_{RA}$
 influence the response. We draw the reader's attention to the decrease in
@@ -90,11 +90,11 @@ these cases might be viewed as separate biological phenomena, they can all be
 described by the same underlying formalism mathematically.
 
 ![**Representative fold-change predictions for allosteric corepression and
-activation.** (A) Contrary to the case of induction described in the main text,
-the addition of a corepressor decreases fold-change in gene expression. The left
-and right panels demonstrate how varying the values of the repressor copy number
-$R$ and repressor-DNA binding energy $\Delta\varepsilon_{RA}$, respectively,
-change the predicted response profiles. (B) In the case of inducible activation,
+activation.** (A) Contrary to the case of induction described in Chapter 2, the
+addition of a corepressor decreases fold-change in gene expression. The left and
+right panels demonstrate how varying the values of the repressor copy number $R$
+and repressor-DNA binding energy $\Delta\varepsilon_{RA}$, respectively, change
+the predicted response profiles. (B) In the case of inducible activation,
 binding of an effector molecule to an activator transcription factor increases
 the fold-change in gene expression. Note that for activation, the fold-change is
 greater than 1. The left and center panels show how changing the activator copy

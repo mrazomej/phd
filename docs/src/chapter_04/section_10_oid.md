@@ -1,7 +1,7 @@
 ## Applicability of Theory to the Oid Operator Sequence {#sec:ch4_sec10}
 
-In addition to the native operator sequences (O1, O2, and O3) considered in the
-main text, we were also interested in testing our model predictions against the
+In addition to the native operator sequences (O1, O2, and O3) considered in
+Chapter 2, we were also interested in testing our model predictions against the
 synthetic Oid operator. In contrast to the other operators, Oid is one base pair
 shorter in length ($20\,\text{bp}$), is fully symmetric, and is known to provide
 stronger repression than the native operator sequences considered so far. While
@@ -10,23 +10,23 @@ associated with this YFP construct was expected to be near the sensitivity limit
 for our flow cytometer due to the especially strong binding energy of Oid
 ($\Delta \varepsilon_{RA}=-17.0 ~k_BT$) [@Garcia2011b]. Accordingly,
 fluorescence data for Oid were obtained using microscopy, which is more
-sensitive than flow cytometry. [Sec 4.6](#sec:ch4_sec06) gives a detailed
+sensitive than flow cytometry. [Sec. 4.6](#sec:ch4_sec06) gives a detailed
 explanation of how microscopy measurements were used to obtain induction curves.
 
-We follow the approach of the main text and make fold-change predictions based
-on the parameter estimates from our strain with $R=260$ and an O2 operator.
-These predictions are shown in [@Fig:ch4_fig21](A), where we also plot data
-taken in triplicate for strains containing $R=$ 22, 60, and 124, obtained by
-single-cell microscopy. We find that the data are systematically below the
-theoretical predictions. We also considered our global fitting approach (see
-[Sec. 4.8](#sec:ch4_sec09)) to see whether we might find better agreement with
-the observed data. Interestingly, we find that the majority of the parameters
-remain essentially unchanged, but our estimate for the Oid binding energy
-$\Delta \varepsilon_{RA}$ is shifted to $-17.7~k_BT$ instead of the value
-$-17.0~k_BT$ found by @Garcia2011c. In [@Fig:ch4_fig21](B), we again plot the
-Oid fold-change data but theoretical predictions using the new estimate for
-the Oid binding energy from our global fit and finding substantially better
-agreement.
+We follow the approach of Chapter 2 and make fold-change predictions based on
+the parameter estimates from our strain with $R=260$ and an O2 operator. These
+predictions are shown in [@Fig:ch4_fig21](A), where we also plot data taken in
+triplicate for strains containing $R=$ 22, 60, and 124, obtained by single-cell
+microscopy. We find that the data are systematically below the theoretical
+predictions. We also considered our global fitting approach (see [Sec.
+4.8](#sec:ch4_sec09)) to see whether we might find better agreement with the
+observed data. Interestingly, we find that the majority of the parameters remain
+essentially unchanged, but our estimate for the Oid binding energy $\Delta
+\varepsilon_{RA}$ is shifted to $-17.7~k_BT$ instead of the value $-17.0~k_BT$
+found by @Garcia2011c. In [@Fig:ch4_fig21](B), we again plot the Oid fold-change
+data with theoretical predictions using the new estimate for the Oid binding
+energy from our global fit. This parameter modification gives substantially
+better agreement between theory and data.
 
 ![**Predictions of fold-change for strains with an Oid binding sequence versus
 experimental measurements with different repressor copy numbers.** Experimental

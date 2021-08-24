@@ -1,19 +1,18 @@
-## Maximum entropy approximation of distributions {#sec:ch5_sec06}
+## Maximum Entropy Approximation of Distributions {#sec:ch5_sec06}
 
 (Note: The Python code used for the calculations presented in this section can
 be found in the [following
 link](https://www.rpgroup.caltech.edu//chann_cap/software/MaxEnt_approx_joint.html)
-as an annotated Jupyter notebook)
+as an annotated Jupyter notebook.)
 
 On the one hand, chemical master equations like the one here represent a hard
-mathematical challenge. As presented in Peccoud and Ycart derived a closed-form
-solution for the two-state promoter at the mRNA level [@Peccoud1995]. In an
-impressive display of mathematical skills, Shahrezaei and Swain were able to
-derive an approximate solution for the one- (not considered in this work) and
-two-state promoter master equation at the protein level [@Shahrezaei2008].
-Nevertheless, both of these solutions do not give instantaneous insights about
-the distributions as they involve complicated terms such as confluent
-hypergeometric functions.
+mathematical challenge. Peccoud and Ycart derived a closed-form solution for the
+two-state promoter at the mRNA level [@Peccoud1995]. In an impressive display of
+mathematical skills, Shahrezaei and Swain were able to derive an approximate
+solution for the one- (not considered in this work) and two-state promoter
+master equation at the protein level [@Shahrezaei2008]. Nevertheless, both of
+these solutions do not give instantaneous insights about the distributions as
+they involve complicated terms such as confluent hypergeometric functions.
 
 On the other hand, there has been a great deal of work to generate methods that
 can approximate the solution of these discrete state Markovian models [@Ale2013;
@@ -24,18 +23,18 @@ approximate the full joint distribution of mRNA and protein [@Smadbeck2013].
 This section will explain the principles behind this method and show the
 implementation for our particular case study.
 
-### The MaxEnt principle
+### The MaxEnt Principle
 
 The principle of maximum entropy (MaxEnt), first proposed by E. T. Jaynes in
-1957, tackles the question of given limited information what is the least biased
-inference one can make about a particular probability distribution
+1957, tackles the question of, given limited information, what is the least
+biased inference one can make about a particular probability distribution
 [@Jaynes1957]. In particular, Jaynes used this principle to show the
 correspondence between statistical mechanics and information theory,
 demonstrating, for example, that the Boltzmann distribution is the probability
 distribution that maximizes Shannon's entropy subject to a constraint that the
 average energy of the system is fixed.
 
-To illustrate the principle let us focus on a univariate distribution $P_X(x)$.
+To illustrate the principle, let us focus on a univariate distribution $P_X(x)$.
 The $n^{\text{th}}$ moment of the distribution for a discrete set of possible
 values of $x$ is given by
 $$
@@ -46,7 +45,7 @@ $$
 Now assume that we have knowledge of the first $m$ moments
 $\mathbf{\left\langle{x}\right\rangle}_m = (\left\langle{x}\right\rangle,
 \left\langle{x^2}\right\rangle, \ldots, \left\langle{x^m}\right\rangle )$. The
-question is then how can we use this information to build an estimator $P_H(x
+question is then how we can  use this information to build an estimator $P_H(x
 \mid \mathbf{\left\langle{x}\right\rangle}_m)$ of the distribution such that
 $$
 \lim_{m \rightarrow \infty} 
@@ -135,15 +134,15 @@ possess. Panel (B), by contrast, shows the MaxEnt distribution that satisfies
 this constraint. Since this distribution maximizes Shannon's entropy, it is
 guaranteed to be the least biased distribution given the available information.
 
-![**Maximum entropy distribution of six-face die.** (A)biased distribution
+![**Maximum entropy distribution of six-face die.** (A) Biased distribution
 consistent with the constraint $\left\langle{x}\right\rangle = 4.5$. (B) MaxEnt
 distribution also consistent with the constraint. The Python code
 [(`ch5_fig15.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS15.py)
-used to generate this figure can be found on the original paper [GitHub
-repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig15){#fig:ch5_fig15
+used to generate this figure can be found on the original paper's [GitHub
+repository](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig15){#fig:ch5_fig15
 short-caption="Maximum entropy distribution of six-face die"}
 
-#### The mRNA and protein joint distribution
+#### The mRNA and Protein Joint Distribution
 
 The MaxEnt principle can easily be extended to multivariate distributions. For
 our particular case, we are interested in the mRNA and protein joint
@@ -169,7 +168,7 @@ $$
 Note that the sum in the exponent is taken over all available $(x, y)$ pairs
 that define the moment constraints for the distribution.
 
-### The Bretthorst rescaling algorithm
+### The Bretthorst Rescaling Algorithm
 
 The Lagrange multipliers' determination suffers from a numerical underflow and
 overflow problem due to the difference in magnitude between the constraints.
@@ -180,11 +179,11 @@ algorithms that can be used to find these Lagrange multipliers, these different
 scales become problematic.
 
 To get around this problem, we implemented a variation to the algorithm due to
-G. Larry Bretthorst, E.T. Jaynes' last student. With a straightforward argument,
+G. Larry Bretthorst---Jaynes' last student. With a straightforward argument,
 we can show that linearly rescaling the constraints, the Lagrange multipliers,
 and the "rules" for computing each of the moments, i.e., each of the individual
 products that go into the moment calculation should converge to the same MaxEnt
-distribution. To see this, let's consider a univariate distribution $P_X(x)$
+distribution. To see this, let us consider a univariate distribution $P_X(x)$
 that we are trying to reconstruct given the first two moments
 $\left\langle{x}\right\rangle$, and $\left\langle{x^2}\right\rangle$. The MaxEnt
 distribution can be written as
@@ -216,7 +215,7 @@ and the variables to make the constraints orthogonal, making the computation
 much more effective. We now explain the algorithm's implementation for our joint
 distribution of interest $P(m, p)$.
 
-#### Algorithm implementation
+#### Algorithm Implementation
 
 Let the $M \times N$ matrix $\mathbf{A}$ contain all the factors used to compute
 the moments that serve as constraints, where each entry is of the form 
@@ -225,13 +224,13 @@ A_{ij} = m_i^{x_j} \cdot p_i^{y_j}.
 \label{eq:maxent_rules}
 $$
 In other words, recall that to obtain any moment $\left\langle m^x p^y
-\right\rangle$ we compute
+\right\rangle$, we compute
 $$
 \left\langle m^x p^y \right\rangle = \sum_m \sum_p m^x p^y P(m, x).
 $$
 If we have $M$ possible $(m, p)$ pairs in our truncated sample space (because we
-can't include the sample space up to infinity) $\{(m, p)_1, (m, p)_2, \ldots (m,
-p)_N \}$, and we have $N$ exponent pairs $(x, y)$ corresponding to the $N$
+ca not include the sample space up to infinity) $\{(m, p)_1, (m, p)_2, \ldots
+(m, p)_N \}$, and we have $N$ exponent pairs $(x, y)$ corresponding to the $N$
 moments used to constraint the maximum entropy distribution $\{(x, y)_1, (x,
 y)_2, \ldots, (x, y)_N \}$, then matrix $\mathbf{A}$ contains all the possible
 $M$ by $N$ terms of the form described in Eq. $\ref{eq:maxent_rules}$. Let also
@@ -266,7 +265,7 @@ inference problem. Bretthorst proposes an empirical rescaling that satisfies
 $$
 G_j^2 = \sum_i A_{ij}^2,
 $$
-or in terms of our particular problem
+or, in terms of our particular problem,
 $$
 G_j^2 = \sum_m \sum_p \left( m^{x_j} p^{y_j} \right)^2.
 $$
@@ -280,7 +279,7 @@ v_j' = \left\langle{m^{x_j} p^{y_j}}\right\rangle' =
 \frac{\left\langle{m^{x_j} p^{y_j}}\right\rangle}{G_j}.
 $$
 The Lagrange multipliers must compensate for this rescaling since the
-probability must add up to the same value at the end of the day. Therefore we
+probability must add up to the same value at the end of the day. Therefore, we
 rescale the $\lambda_j$ terms as 
 $$
 \lambda_j' = \lambda_j G_j,
@@ -317,13 +316,13 @@ $\delta_{jk}$ is the Kronecker delta function. This means that, as desired, the
 constraints are orthogonal to each other, improving the algorithm convergence
 speed.
 
-### Predicting distributions for simple repression constructs
+### Predicting Distributions for Simple Repression Constructs
 
 Having explained the theoretical background and the practical difficulties, and
 a workaround strategy proposed by Bretthorst, we implemented the inference using
 the moments obtained from averaging over the variability along the cell cycle
-(See [Sec. 5.4](#sec:ch5_sec05)). [@Fig:ch5_fig16] and [@Fig:ch5_fig17] present
-these inferences for both mRNA and protein levels respectively for different
+(see [Sec. 5.4](#sec:ch5_sec05)). [@Fig:ch5_fig16] and [@Fig:ch5_fig17] present
+these inferences for both mRNA and protein levels, respectively, for different
 values of the repressor-DNA binding energy and repressor copy numbers per cell.
 From these plots, we can easily appreciate that even though the mean of each
 distribution changes as the induction level changes, there is a lot of overlap
@@ -338,7 +337,7 @@ bottom, the mean repressor copy number per cell increases. The curves on each
 plot represent different IPTG concentrations. Each distribution was fitted using
 the first three moments of the mRNA distribution. The Python code
 [(`ch5_fig16.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS16.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig16){#fig:ch5_fig16
 short-caption="Maximum entropy mRNA distributions for simple repression
 constructs"}
@@ -351,21 +350,21 @@ bottom, the mean repressor copy number per cell increases. The curves on each
 plot represent different IPTG concentrations. Each distribution was fitted using
 the first six moments of the protein distribution. The Python code
 [(`ch5_fig17.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS17.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig17){#fig:ch5_fig17
 short-caption="Maximum entropy protein distributions for simple repression
 constructs"}
 
-### Comparison with experimental data
+### Comparison with Experimental Data
 
 Now that we have reconstructed an approximation of the probability distribution
-$P(m, p)$ we can compare this with our experimental measurements. But just as
+$P(m, p)$, we can compare this with our experimental measurements. But just as
 detailed in the single-cell microscopy, measurements are given in arbitrary
-units of fluorescence. Therefore we cannot directly compare our predicted
+units of fluorescence. Therefore, we cannot directly compare our predicted
 protein distributions with these values. To get around this issue, we use the
 fact that the fold-change in gene expression that we defined as the ratio of the
 gene expression level in the presence of the repressor and the expression level
-of a knockout strain is a non-dimensional quantity. Therefore we normalize all
+of a knockout strain is a non-dimensional quantity. Therefore, we normalize all
 of our single-cell measurements by the mean fluorescence value of the $\Delta
 lacI$ strain with the proper background fluorescence subtracted as explained in
 the noise measurements. In the case of the theoretical predictions of the
@@ -377,7 +376,7 @@ the three $\Delta lacI$ strains. As in [@Fig:ch5_fig12], we do not expect
 differences between the operators, but we explicitly plot them separately to
 ensure that this is the case. We can see right away that as we would expect,
 given the model's limitations to predict the noise and skewness of the
-distribution accurately, the model doesn't accurately predict the data. Our
+distribution accurately, the model does not accurately predict the data. Our
 model predicts a narrower distribution compared to what we measured with
 single-cell microscopy.
 
@@ -389,8 +388,8 @@ distributions as reconstructed by the maximum entropy principle. The theoretical
 distributions were fitted using the first six moments of the protein
 distribution. The Python code
 [(`ch5_fig18.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS18.py)
-used to generate this figure can be found on the original paper [GitHub
-repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig18){#fig:ch5_fig18
+used to generate this figure can be found on the original paper's [GitHub
+repository](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig18){#fig:ch5_fig18
 short-caption="Experiment vs. theory comparison for $\Delta lacI$ strain"}
 
 The same narrower prediction applies to the regulated promoters.
@@ -409,6 +408,6 @@ represent the theoretical distributions as reconstructed by the maximum entropy
 principle. The theoretical distributions were fitted using the first six moments
 of the protein distribution. The Python code
 [(`ch5_fig19.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS19.py)
-used to generate this figure can be found on the original paper [GitHub
-repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig19){#fig:ch5_fig19
+used to generate this figure can be found on the original paper's [GitHub
+repository](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig19){#fig:ch5_fig19
 short-caption="Experiment vs. theory comparison for regulated promoters"}
