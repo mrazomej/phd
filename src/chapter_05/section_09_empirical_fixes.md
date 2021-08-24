@@ -5,13 +5,12 @@ be found in the [following
 link](https://www.rpgroup.caltech.edu/chann_cap/src/theory/html/empirical_constants.html)
 as an annotated Jupyter notebook.)
 
-In [@Fig:ch3_fig03](C) in the main text, we show that our minimal model has a
-systematic deviation on the gene expression noise predictions compared to the
-experimental data. This systematics will need to be addressed on an improved
-version of the minimal model presented in this work. To guide the insights into
-the origins of this systematic deviation in this appendix, we will explore the
-model's empirical modifications to improve the agreement between theory and
-experiment.
+In [@Fig:ch3_fig03](C), we show that our minimal model has a systematic
+deviation on the gene expression noise predictions compared to the experimental
+data. This systematics will need to be addressed on an improved version of the
+minimal model presented in this work. To guide the insights into the origins of
+this systematic deviation in this appendix, we will explore the model's
+empirical modifications to improve the agreement between theory and experiment.
 
 ### Multiplicative Factor for the Noise 
 
@@ -44,7 +43,7 @@ the corresponding strain and IPTG concentration with $\geq 300$ cells. The
 points correspond to the median, and the error bars correspond to the 95%
 confidence interval as determined by 10,000 bootstrap samples. The Python code
 [(`ch5_fig30.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS30.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig30){#fig:ch5_fig30
 short-caption="Multiplicative factor in improving theoretical vs. experimental
 comparison of noise in gene expression"}
@@ -104,7 +103,7 @@ date measurement of the corresponding strain and IPTG concentration with $\geq
 to the 95% confidence interval as determined by 10,000 bootstrap samples. The
 Python code
 [(`ch5_fig32.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS32.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig32){#fig:ch5_fig32
 short-caption="Additive factor in improving theoretical vs. experimental
 comparison of noise in gene expression"}

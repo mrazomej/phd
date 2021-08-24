@@ -7,7 +7,7 @@ maximum entropy principle, first proposed by Jaynes in 1957 [@Jaynes1957],
 approximates the entire distribution by maximizing the Shannon entropy subject
 to constraints given by the values of the moments of the distribution
 [@Jaynes1957]. This procedure leads to a probability distribution of the form
-(see Chapter 5 for full derivation)
+(see [Sec. 5.6](#sec:ch5_sec07) for full derivation)
 $$
 P(m, p) = \frac{1}{\mathcal{Z}} \exp
 \left( - \sum_{(x,y)} \lambda_{(x,y)} m^x p^y \right), 
@@ -22,13 +22,14 @@ The computational challenge then becomes an optimization routine in which the
 values for the Lagrange multipliers $\lambda_{(x,y)}$ that are consistent with
 the constraints set by the moment values $\langle m^x p^y \rangle$ need to be
 found. This is computationally more efficient than sampling directly from the
-master equation with a stochastic algorithm (see Chapter 5 for further
-comparison between maximum entropy estimates and the Gillespie algorithm). In
-Chapter 5 we derive our implementation of a robust algorithm to find the values
-of the Lagrange multipliers. [@Fig:ch3_fig04](A) shows an example of predicted
-protein distributions reconstructed using the first six moments of the protein
-distribution for a suite of different biophysical parameters and environmental
-inducer concentrations. From the predicted distributions at different inducer
+master equation with a stochastic algorithm (see [Sec. 5.6](#sec:ch5_sec07) for
+further comparison between maximum entropy estimates and the Gillespie
+algorithm). In [Sec. 5.6](#sec:ch5_sec07) we derive our implementation of a
+robust algorithm to find the values of the Lagrange multipliers.
+[@Fig:ch3_fig04](A) shows an example of predicted protein distributions
+reconstructed using the first six moments of the protein distribution for a
+suite of different biophysical parameters and environmental inducer
+concentrations. From the predicted distributions at different inducer
 concentrations we can see that as repressor-DNA binding affinity (columns in
 [@Fig:ch3_fig04](A)) and repressor copy number (rows in [@Fig:ch3_fig04](A)) are
 varied, the responses to different signals, i.e., inducer concentrations,
@@ -69,7 +70,7 @@ measurements in arbitrary units. The Python code used to generate part (A)
 [(`ch3_fig04A.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/fig04A.py)
 and part (B)
 [(`ch3_fig04B.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/fig04B.py)
-of this figure can be found on the original paper [GitHub
+of this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch3_fig04){#fig:ch3_fig04
 short-caption="Maximum entropy protein distributions for varying physical
-parameters."}
+parameters"}

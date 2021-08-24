@@ -29,8 +29,8 @@ $$
 \label{eq:ch3_eq08}
 $$
 Summing over all possible values for $m$ and $p$ in Eq. $\ref{eq:ch3_eq06}$
-results in an ODE for any moment of the distribution of the form (see Chapter 5
-for full derivation) 
+results in an ODE for any moment of the distribution of the form (see [Sec.
+5.3](#sec:ch5_sec04) for full derivation) 
 $$
 \begin{split}
     \frac{d \mathbf{\langle m^x p^y \rangle }}{dt} &=
@@ -46,13 +46,14 @@ $$
 Given that all transitions in our stochastic model are first-order reactions,
 Eq. $\ref{eq:ch3_eq09}$ has no moment-closure problem [@Voliotis2014a]. This
 means that the dynamical equation for a given moment only depends on lower
-moments (see Chapter 5 for full proof). This feature of our model implies, for
-example, that the second moment of the protein distribution $\langle p^2
-\rangle$ depends only on the first two moments of the mRNA distribution $\langle
-m \rangle$ and $\langle m^2 \rangle$, the first protein moment $\langle p
-\rangle$, and the cross-correlation term $\langle mp \rangle$. We can therefore
-define $\boldsymbol{\mu}^{\mathbf{(x, y)}}$ to be a vector containing all
-moments up to $\mathbf{\langle m^x p^y\rangle}$ for all promoter states, 
+moments (see [Sec. 5.3](#sec:ch5_sec04) for full proof). This feature of our
+model implies, for example, that the second moment of the protein distribution
+$\langle p^2 \rangle$ depends only on the first two moments of the mRNA
+distribution $\langle m \rangle$ and $\langle m^2 \rangle$, the first protein
+moment $\langle p \rangle$, and the cross-correlation term $\langle mp \rangle$.
+We can therefore define $\boldsymbol{\mu}^{\mathbf{(x, y)}}$ to be a vector
+containing all moments up to $\mathbf{\langle m^x p^y\rangle}$ for all promoter
+states, 
 $$
 \boldsymbol{\mu}^{\mathbf{(x, y)}} = \left[ \mathbf{\langle m^0 p^0 \rangle},
 \mathbf{\langle m^1 p^0 \rangle},

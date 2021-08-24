@@ -31,22 +31,22 @@ that the overall expression is relatively constant across two decades of
 OD$_{600nm}$.
 
 ![**Time course measurement of single-cell fluorescence by flow cytometry---data
-set 1**. Flow cytometry measurements were performed at different time points
+set 1.** Flow cytometry measurements were performed at different time points
 following a 1000-fold dilution of an overnight culture. Cell strains were grown
 in M9 minimal media supplemented with 0.5% w/v glucose and IPTG
 $c=50\,\mu\text{M}$. OD$_{600nm}$ measurements are shown for the three strains.
 (B) The fold-change is calculated for each measurement shown in Panel (A). Note
 that each measurement represents a different culture grown in a 96-deep-well
 plate.](ch4_fig30){#fig:ch4_fig30 short-caption="Time course measurement of
-single-cell fluorescence by flow cytometry - data set 1"}
+single-cell fluorescence by flow cytometry---data set 1"}
 
 ![**Time course measurement of single-cell fluorescence versus
-OD$_{600nm}$---data set 1**. Fluorescence measurements used to calculate
+OD$_{600nm}$---data set 1.** Fluorescence measurements used to calculate
 fold-change from [@Fig:ch4_fig30](B) are plotted against their OD$_{600nm}$.
 Error bars represent standard deviation from the triplicate culture measurements
 from growth in a 96-deep-well plate.](ch4_fig31){#fig:ch4_fig31
 short-caption="Time course measurement of single cell fluorescence versus
-OD$_{600nm}$ - data set 1"}
+OD$_{600nm}$---data set 1"}
 
 In a separate set of replicates, we observed more consistent fold-change
 measurements over these later time points. [@Fig:ch4_fig32](A) shows the average
@@ -60,7 +60,7 @@ sets of experiments, it will be essential to perform more experiments before
 drawing any definite opinions about the above results.
 
 ![**Time course measurement of single-cell fluorescence by flow cytometry - data
-set 2**. Flow cytometry measurements were performed at different time points
+set 2.** Flow cytometry measurements were performed at different time points
 following a 1000-fold dilution of an overnight culture. Cell strains were grown
 in M9 minimal media supplemented with 0.5% w/v glucose and IPTG
 $c=50\,\mu\text{M}$. Mean fluorescence values are shown for strain O2
@@ -68,4 +68,4 @@ $\Delta\varepsilon_{RA} = -13.9~k_BT$ with $R=260$, O2 $\Delta lacI$, and an
 autofluorescence strain. Data points represent measurements from separate
 $500\,\mu\text{L}$ cell cultures. The fold change is calculated for each
 measurement shown in Panel .](ch4_fig32){#fig:ch4_fig32 short-caption="Time
-course measurement of single-cell fluorescence by flow cytometry - data set 2"}
+course measurement of single-cell fluorescence by flow cytometry---data set 2"}

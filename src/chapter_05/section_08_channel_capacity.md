@@ -1,4 +1,4 @@
-## Computational Determination of the Channel Capacity
+## Computational Determination of the Channel Capacity {#sec:ch5_sec08}
 
 (Note: The Python code used for the calculations presented in this section can
 be found in the [following
@@ -180,7 +180,7 @@ using a different number of bins, and finally perform a linear regression (solid
 lines) between the bootstrap channel capacity estimates and the inverse sample
 size. The Python code
 [(`ch5_fig26.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS26.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig26){#fig:ch5_fig26
 short-caption="Inverse sample size vs. channel capacity"}
 
@@ -263,7 +263,7 @@ multi-promoter models"}
 
 #### (ii) Non-Gaussian Noise Distributions.
 
-For the construction of the probability distributions used in the main text
+For the construction of the probability distributions used in Chapter 3
 ([@Fig:ch3_fig04]), we utilized the first six moments of the protein
 distribution. The maximum entropy formalism tells us that the more constraints
 we include in the inference, the closer the maximum entropy distribution will be
@@ -283,7 +283,7 @@ first $i$ moments, $i \in \{2, 3, 4, 5, 6\}$. Since the Kullback-Leibler
 divergence $D_{KL}(P || Q)$ can be interpreted as the amount of information lost
 by assuming the incorrect distribution $Q$ when the correct distribution is $P$,
 we used this metric as a way of how much information we would have lost by using
-fewer constraints compared to the six moments used in the main text.
+fewer constraints compared to the six moments used in Chapter 3.
 
 [@Fig:ch5_fig29] shows this comparison for different operators and repressor
 copy numbers. We can see from here that using fewer moments as constraints gives

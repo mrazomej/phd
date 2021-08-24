@@ -1,4 +1,4 @@
-## Derivation of the cell age distribution {#sec:ch5_sec11}
+## Derivation of the Cell Age Distribution {#sec:ch5_sec11}
 
 E. O. Powell first derived in 1956 the cell age distribution for a cell
 population growing steadily in the exponential phase [@Powell1956]. This

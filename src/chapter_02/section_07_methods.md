@@ -18,8 +18,8 @@ the *ybcN* locus of the chromosome. Final strain construction was achieved by
 performing repeated P1 transduction [@Thomason2007] of the different operator
 and *lacI* constructs to generate each combination used in this work.
 Integration was confirmed by PCR amplification of the replaced chromosomal
-region and by sequencing. Primers and final strain genotypes are listed in
-Chapter 4.
+region and by sequencing. Primers and final strain genotypes are listed in [Sec.
+4.15](#sec:ch4_sec16).
 
 It is important to note that the rest of the *lac* operon (*lacZYA*) was never
 expressed. The LacY protein is a transmembrane protein that actively transports
@@ -83,12 +83,11 @@ described in this work.
 Unless explicitly mentioned, all fold-change measurements were collected on a
 Miltenyi Biotec MACSquant Analyzer 10 Flow Cytometer graciously provided by the
 Pamela Björkman lab at Caltech. Detailed information regarding the voltage
-settings of the photo-multiplier detectors can be found in Appendix Table
-[\[table_instrument_param\]](#table_instrument_param){reference-type="ref"
-reference="table_instrument_param"}. Prior to each day's experiments, the
-analyzer was calibrated using MACSQuant Calibration Beads (Cat. No. 130-093-607)
-such that day-to-day experiments would be comparable. All YFP fluorescence
-measurements were collected via $488\,\text{nm}$ laser excitation coupled with a
+settings of the photo-multiplier detectors can be found in [Sec.
+4.4](#sec:ch4_sec05). Prior to each day's experiments, the analyzer was
+calibrated using MACSQuant Calibration Beads (Cat. No. 130-093-607) such that
+day-to-day experiments would be comparable. All YFP fluorescence measurements
+were collected via $488\,\text{nm}$ laser excitation coupled with a
 525/$50\,\text{nm}$ emission filter. Unless otherwise specified, all
 measurements were taken over two to three hours using automated sampling from a
 96-well plate kept at approximately $4^\circ \, \hbox{-} \, 10^\circ$C on a MACS

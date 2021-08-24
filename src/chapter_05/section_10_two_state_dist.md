@@ -1,4 +1,4 @@
-## Derivation of the steady-state mRNA distribution
+## Derivation of the Steady-State mRNA Distribution
 
 In this section, we will derive the two-state promoter mRNA distribution we
 quote in [Sec. 5.2](#sec:ch5_sec03). For this method, we will make use of the
@@ -214,7 +214,7 @@ $$
 
 Having shown the generating function's power, let us now turn our attention to
 the relevant equation we are after: the two-state mRNA distribution. This model
-assumes that the promoter can exist in two discrete states (See
+assumes that the promoter can exist in two discrete states (see
 [@Fig:ch5_fig36](A)): a transcriptionally active state $A$ from which
 transcription can take place at a constant rate $r_m$, and an inactive state $I$
 where no transcription takes place. The mRNA is stochastically degraded with a
@@ -737,7 +737,7 @@ $$
 \end{aligned}
 $$
 This rather convoluted result is enormously simplified upon evaluating the
-derivative at $z = 1$ (See Eq. $\ref{eq:first_mom_gen}$). This results in
+derivative at $z = 1$ (see Eq. $\ref{eq:first_mom_gen}$). This results in
 $$
 \left. \frac{dG}{dz} \right\vert_{z = 1} = 
 \frac{k^{(p)}_{\text{on}}}{k^{(p)}_{\text{on}} + k^{(p)}_{\text{off}}}

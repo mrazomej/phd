@@ -53,7 +53,7 @@ concentration $c$ can bind to the repressor with dissociation constants $K_A$ in
 the active state and $K_I$ in the inactive state. The eight states for a dimer
 with $n=2$ inducer binding sites are shown along with the sums of the active and
 inactive states.](ch2_fig02){#fig:ch2_fig02 short-caption="States and weights
-for the simple repression motif."}
+for the simple repression motif"}
 
 Thermodynamic models of transcription [@Ackers1982; @Buchler2003; @Vilar2003;
 @Bintu2005; @Bintu2005a; @Kuhlman2007; @Daber2011a; @Garcia2011c; @Brewster2014;
@@ -165,10 +165,10 @@ or *in vivo* conditions involving poorly characterized transcription factor copy
 numbers and gene copy numbers. These differences relative to our experimental
 conditions and fitting techniques led us to believe that it was important to
 perform our own analysis of these parameters. After inferring these three MWC
-parameters (see Chapter 4 for details regarding the inference of $\Delta
-\varepsilon_{AI}$, which was fitted separately from $K_A$ and $K_I$), we were
-able to predict the input/output response of the system under a broad range of
-experimental conditions. For example, this framework can predict the response of
-the system at different repressor copy numbers $R$, repressor-operator
-affinities $\Delta\varepsilon_{RA}$, inducer concentrations $c$, and gene copy
-numbers (see Chapter 4).
+parameters (see [Sec. 4.2](#sec:ch4_sec03) for details regarding the inference
+of $\Delta \varepsilon_{AI}$, which was fitted separately from $K_A$ and $K_I$),
+we were able to predict the input/output response of the system under a broad
+range of experimental conditions. For example, this framework can predict the
+response of the system at different repressor copy numbers $R$,
+repressor-operator affinities $\Delta\varepsilon_{RA}$, inducer concentrations
+$c$, and gene copy numbers.

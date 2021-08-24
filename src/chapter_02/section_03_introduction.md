@@ -110,4 +110,4 @@ and demonstrate that with these parameters, we can predict *a priori* the
 behavior of the system for any repressor copy number, DNA binding energy, gene
 copy number, and inducer concentration.](ch2_fig01){#fig:ch2_fig01
 short-caption="Transcriptional regulatory architectures involving an allosteric
-repressor."}
+repressor"}

@@ -34,13 +34,13 @@ whereas approximately ten measurements were made using flow cytometry.
 
 ### Imaging Procedure
 
-![**Experimental workflow for single-cell microscopy**. For comparison with the
+![**Experimental workflow for single-cell microscopy.** For comparison with the
 flow cytometry results, the cells were grown in an identical manner to those
-described in the main text. Once cells had reached mid to late exponential
-growth, the cultures were diluted and placed on agarose substrates and imaged
-under 100$\times$ magnification. Regions of interest representing cellular mass
-were segmented, and average single-cell intensities were computed. The means of
-the distributions were used to compute the fold-change in gene
+described in Chapter 2. Once cells had reached mid to late exponential growth,
+the cultures were diluted and placed on agarose substrates and imaged under
+100$\times$ magnification. Regions of interest representing cellular mass were
+segmented, and average single-cell intensities were computed. The means of the
+distributions were used to compute the fold-change in gene
 expression.](ch4_fig11){#fig:ch4_fig11 short-caption="Experimental workflow for
 single-cell microscopy"}
 
@@ -84,7 +84,7 @@ on the CaltechDATA online repository under DOI: 10.22002/D1.229.
 illumination profile of the $512\,\text{nm}$ excitation beam on a homogeneously
 fluorescent slide is shown in the left panel. This is corrected for using Eq.
 $\ref{eq:ch4_eq20}$ and is shown in the right panel.](ch4_fig12){#fig:ch4_fig12
-short-caption="Correction for uneven illumination."}
+short-caption="Correction for uneven illumination"}
 
 The excitation laser has a two-dimensional gaussian profile. To minimize
 non-uniform illumination of a single field of view, the excitation beam was
@@ -167,8 +167,8 @@ expressing LacI repressors, $\langle I_\text{auto}\rangle$ is the mean intensity
 of cells expressing only the mCherry volume marker, and $\langle I_{R =
 0}\rangle$ is the mean fluorescence intensity of cells in the absence of LacI.
 These fold-change values were very similar to those obtained through flow
-cytometry and were well described using the thermodynamic parameters used in the
-main text. With these experimentally measured fold-change values, the best-fit
+cytometry and were well described using the thermodynamic parameters used in
+Chapter 2. With these experimentally measured fold-change values, the best-fit
 parameter values of the model were inferred and compared to those obtained from
 flow cytometry.
 

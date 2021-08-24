@@ -337,7 +337,7 @@ bottom, the mean repressor copy number per cell increases. The curves on each
 plot represent different IPTG concentrations. Each distribution was fitted using
 the first three moments of the mRNA distribution. The Python code
 [(`ch5_fig16.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS16.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig16){#fig:ch5_fig16
 short-caption="Maximum entropy mRNA distributions for simple repression
 constructs"}
@@ -350,7 +350,7 @@ bottom, the mean repressor copy number per cell increases. The curves on each
 plot represent different IPTG concentrations. Each distribution was fitted using
 the first six moments of the protein distribution. The Python code
 [(`ch5_fig17.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS17.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig17){#fig:ch5_fig17
 short-caption="Maximum entropy protein distributions for simple repression
 constructs"}

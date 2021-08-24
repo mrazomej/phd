@@ -106,7 +106,7 @@ the promoter state transitions, $\mathbf{R}_m$ and $\mathbf{\Gamma} _m$ to
 contain the mRNA production and degradation terms, respectively, and
 $\mathbf{R}_p$ and $\mathbf{\Gamma}_p$ to contain the protein production and
 degradation terms, respectively, the system of ODEs can then be written as (see
-Chapter 5 for the full definition of these matrices)
+[Sec. 5.2](#sec:ch5_sec03) for the full definition of these matrices)
 $$
 \begin{split}
     \frac{d \mathbf{P}(m, p)}{dt} &= 
@@ -147,18 +147,18 @@ to inform the parameter values of the model presented in [@Fig:ch3_fig02](A).
 to measure gene expression along with the parameters that can be inferred from
 them.
 
-Chapter 5 expands on the details of how the inference was performed for each of
-the parameters. Briefly, the promoter activation and inactivation rates
-$k^{(p)}_{\text{on}}$ and $k^{(p)}_{\text{off}}$, as well as the transcription
-rate $r_m$ were obtained in units of the mRNA degradation rate $\gamma _m$ by
-fitting a two-state promoter model (no state $R$ from [@Fig:ch3_fig02](A))
-[@Peccoud1995] to mRNA FISH data of an unregulated promoter (no repressor
-present in the cell) [@Jones2014a]. The repressor on rate is assumed to be of
-the form $k^{(r)}_{\text{on}} = k_o [R]$ where $k_o$ is a diffusion-limited on
-rate and $[R]$ is the concentration of active repressor in the cell
-[@Jones2014a]. This concentration of active repressor is at the same time
-determined by the repressor copy number in the cell and the fraction of these
-repressors that are in the active state, i.e., able to bind DNA. Existing
+[Sec. 5.2](#sec:ch5_sec03) expands on the details of how the inference was
+performed for each of the parameters. Briefly, the promoter activation and
+inactivation rates $k^{(p)}_{\text{on}}$ and $k^{(p)}_{\text{off}}$, as well as
+the transcription rate $r_m$ were obtained in units of the mRNA degradation rate
+$\gamma _m$ by fitting a two-state promoter model (no state $R$ from
+[@Fig:ch3_fig02](A)) [@Peccoud1995] to mRNA FISH data of an unregulated promoter
+(no repressor present in the cell) [@Jones2014a]. The repressor on rate is
+assumed to be of the form $k^{(r)}_{\text{on}} = k_o [R]$ where $k_o$ is a
+diffusion-limited on rate and $[R]$ is the concentration of active repressor in
+the cell [@Jones2014a]. This concentration of active repressor is at the same
+time determined by the repressor copy number in the cell and the fraction of
+these repressors that are in the active state, i.e., able to bind DNA. Existing
 estimates of the transition rates between conformations of allosteric molecules
 set them at the microsecond scale [@Cui2008]. By considering this to be
 representative for our repressor of interest, the separation of time-scales

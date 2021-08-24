@@ -1,7 +1,7 @@
 ## Properties of Induction Titration Curves {#sec:ch4_sec12}
 
 In this section, we expand on the phenotypic properties of the induction
-response that were explored in the main text (see [@Fig:ch2_fig01]). We begin by
+response that were explored in Chapter 2 (see [@Fig:ch2_fig01]). We begin by
 expanding on our discussion of dynamic range and then show the analytic form of
 the $[EC_{50}]$ for simple repression.
 
@@ -72,7 +72,7 @@ Circles, diamonds, and squares represent $\Delta \varepsilon_{RA}$ values for
 the O1, O2, and O3 operators, respectively, demonstrating the expected values of
 the properties using those strains.](ch4_fig26){#fig:ch4_fig26
 short-caption="Dependence of leakiness, saturation, and dynamic range on the
-operator binding energy and repressor copy number."}
+operator binding energy and repressor copy number"}
 
 We now consider the two remaining properties, the $[EC_{50}]$ and effective Hill
 coefficient, which determine the horizontal properties of a system---that is,
@@ -119,5 +119,5 @@ possible Hill coefficient is roughly 1.75 for all repressor-operator binding
 energies. Circles, diamonds, and squares represent $\Delta \varepsilon_{RA}$
 values for the O1, O2, and O3 operators,
 respectively.](ch4_fig27){#fig:ch4_fig27
-short-caption="**$\boldsymbol{[EC_{50}]}$ and effective Hill coefficient depend
-strongly on repressor copy number and operator binding energy."}
+short-caption="$\boldsymbol{[EC_{50}]}$ and effective Hill coefficient depend
+strongly on repressor copy number and operator binding energy"}

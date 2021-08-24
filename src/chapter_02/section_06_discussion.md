@@ -57,15 +57,15 @@ these seventeen strains using flow cytometry and found that our predictions
 consistently and accurately captured the primary features for each induction
 data set, as shown in [@Fig:ch2_fig05]. Importantly, we find that fitting $K_A$
 and $K_I$ to data from any other strain would have resulted in nearly identical
-predictions (see Chapter 4 for further details). This suggests that a few
-carefully chosen measurements can lead to a deep quantitative understanding of
-how simple regulatory systems work without requiring an extensive sampling of
-strains that span the parameter space. Moreover, the fact that we could
-consistently achieve reliable predictions after fitting only two free parameters
-stand in contrast to the common practice of fitting several free parameters
-simultaneously, which can nearly guarantee an acceptable fit provided that the
-model roughly resembles the system response, regardless of whether the details
-of the model are tied to any underlying molecular mechanism.
+predictions (see [Sec. 4.10](#sec:ch4_sec11) for further details). This suggests
+that a few carefully chosen measurements can lead to a deep quantitative
+understanding of how simple regulatory systems work without requiring an
+extensive sampling of strains that span the parameter space. Moreover, the fact
+that we could consistently achieve reliable predictions after fitting only two
+free parameters stand in contrast to the common practice of fitting several free
+parameters simultaneously, which can nearly guarantee an acceptable fit provided
+that the model roughly resembles the system response, regardless of whether the
+details of the model are tied to any underlying molecular mechanism.
 
 Beyond observing changes in fold-change as a function of effector concentration,
 our application of the MWC model allows us to predict the values of explicitly
@@ -75,15 +75,15 @@ to accurately predict the leakiness, saturation, and dynamic range for each of
 the strains. For both the O1 and O2 data sets, our model also accurately
 predicts the effective Hill coefficient and $[EC_{50}]$, though these
 predictions for O3 are noticeably less accurate. While performing a global fit
-for all model parameters marginally improves the prediction for O3 (see Chapter
-4), we are still unable to predict the effective Hill coefficient or accurately
-the $[EC_{50}]$. We further tried including additional states (such as allowing
-the inactive repressor to bind to the operator), relaxing the weak promoter
-approximation, accounting for changes in gene and repressor copy number
-throughout the cell cycle [@Jones2014a], and refitting the original binding
-energies from @Garcia2011b, but we were still unable to account for the O3 data.
-It remains an open question as to how the discrepancy between the theory and
-measurements for O3 can be reconciled.
+for all model parameters marginally improves the prediction for O3 (see [Sec.
+4.8](#sec:ch4_sec09)), we are still unable to predict the effective Hill
+coefficient or accurately the $[EC_{50}]$. We further tried including additional
+states (such as allowing the inactive repressor to bind to the operator),
+relaxing the weak promoter approximation, accounting for changes in gene and
+repressor copy number throughout the cell cycle [@Jones2014a], and refitting the
+original binding energies from @Garcia2011b, but we were still unable to account
+for the O3 data. It remains an open question as to how the discrepancy between
+the theory and measurements for O3 can be reconciled.
 
 The dynamic range, which is of considerable interest when designing or
 characterizing a genetic circuit is revealed to have an interesting property:
@@ -126,19 +126,19 @@ generally to different biological instances of allosteric regulation. For
 example, we can use this model to study more complex systems, such as when
 transcription factors interact with multiple operators [@Bintu2005]. We can
 further explore different regulatory configurations such as corepression,
-activation, and coactivation, each of which are found in *E. coli* (see Chapter
-4). This work can also serve as a springboard to characterize not just the mean
-but the full gene expression distribution and thus quantify the impact of noise
-on the system [@eldar2010]. Another extension of this approach would be to
-theoretically predict and experimentally verify whether the repressor-inducer
-dissociation constants $K_A$ and $K_I$ or the energy difference $\Delta
-\varepsilon_{AI}$ between the allosteric states can be tuned by making single
-amino acid substitutions in the transcription factor [@Daber2011a;
-@Phillips2015a]. Finally, we expect that the rigorous quantitative description
-of the allosteric phenomenon provided here will make it possible to construct
-biophysical models of fitness for allosteric proteins similar to those already
-invoked to explore the fitness effects of transcription factor binding site
-strengths and protein stability [@Gerland2002; @Berg2004; @Zeldovich2008].
+activation, and coactivation, each of which are found in *E. coli* (see [Sec.
+4.12](#sec:ch4_sec13)). This work can also serve as a springboard to
+characterize not just the mean but the full gene expression distribution and
+thus quantify the impact of noise on the system [@eldar2010]. Another extension
+of this approach would be to theoretically predict and experimentally verify
+whether the repressor-inducer dissociation constants $K_A$ and $K_I$ or the
+energy difference $\Delta \varepsilon_{AI}$ between the allosteric states can be
+tuned by making single amino acid substitutions in the transcription factor
+[@Daber2011a; @Phillips2015a]. Finally, we expect that the rigorous quantitative
+description of the allosteric phenomenon provided here will make it possible to
+construct biophysical models of fitness for allosteric proteins similar to those
+already invoked to explore the fitness effects of transcription factor binding
+site strengths and protein stability [@Gerland2002; @Berg2004; @Zeldovich2008].
 
 To conclude, we find that our application of the MWC model provides an accurate,
 predictive framework for understanding simple repression by allosteric

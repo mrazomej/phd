@@ -6,7 +6,7 @@ p; t)$. To obtain this distribution, we use the chemical master equation
 formalism. Specifically, we assume a three-state model, where the promoter can
 be found 1) in a transcriptionally active state ($A$ state), 2) in a
 transcriptionally inactive state without the repressor bound ($I$ state), and 3)
-with the repressor bound ($R$ state). (See [@Fig:ch3_fig02](A)). These three
+with the repressor bound ($R$ state). (see [@Fig:ch3_fig02](A)). These three
 states generate a system of coupled differential equations for each of the three
 state distributions $P_A(m, p)$, $P_I(m, p)$, and $P_R(m, p)$. Given the rates
 shown in [@Fig:ch3_fig02](A), let us define the system of ODEs. For the
@@ -213,9 +213,9 @@ a mean copy number of $\langle m \rangle \approx 18$ mRNA/cell.
 unregulated *lacUV5* promoter as inferred from single-molecule mRNA FISH. The
 Python code
 [(`ch5_fig01.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS01.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch5_fig01){#fig:ch5_fig01
-short-caption="lacUV5* mRNA per cell distribution"}
+short-caption="*lacUV5* mRNA per cell distribution"}
 
 Having these data in hand, we now turn to Bayesian parameter inference. Writing
 Bayes' theorem, we have
@@ -336,9 +336,9 @@ respective distributions, where the superscripts and subscripts represent the
 upper and lower bounds of the 95$^\text{th}$ percentile of the parameter value
 distributions. The Python code
 [(`ch5_fig02.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS02.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch5_fig02){#fig:ch5_fig02
-short-caption="MCMC posterior distribution."}
+short-caption="MCMC posterior distribution"}
 
 The inferred values $k^{(p)}_{\text{on}} = 4.3^{+1}_{-0.3}$,
 $k^{(p)}_{\text{off}} = 18.8^{+120}_{-10}$ and $r_m = 103.8^{+423}_{-37}$ are
@@ -363,7 +363,7 @@ $\ref{eq:two_state_mRNA}$ along with the parameters inferred for the rates. Blue
 bars are the same data as [@Fig:ch5_fig01] obtained from [@Jones2014a]. The
 Python code
 [(`ch5_fig03.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS03.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch5_fig03){#fig:ch5_fig03
 short-caption="Experimental vs. theoretical distribution of mRNA per cell using
 parameters from Bayesian inference"}
@@ -431,7 +431,7 @@ position in the cell cycle, cells can be sorted into two groups---small cells
 vertical black line delimits the threshold that divides both groups as weighted
 by Eq. $\ref{eq:cell_cycle_dist}$. The Python code
 [(`ch5_fig04.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS04.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch5_fig04){#fig:ch5_fig04
 short-caption="Separation of cells based on cell size"}
 
@@ -471,9 +471,9 @@ cumulative distribution function of the small and large cells as determined in
 [@Fig:ch5_fig04]. The triangles above histograms in (A) indicate the mean mRNA
 copy number for each group. The Python code
 [(`ch5_fig05.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS05.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch5_fig05){#fig:ch5_fig05
-short-caption="mRNA distribution for small and large cells."}
+short-caption="mRNA distribution for small and large cells"}
 
 We modify Eq. $\ref{eq:bayes_sample}$ to account for the two separate groups of
 cells. Let $N_s$ be the number of cells in the small size group and $N_l$ the
@@ -568,7 +568,7 @@ of the parameter value distributions. The sampling was bounded to values $<$
 1000 for numerical stability when computing the confluent hypergeometric
 function. The Python code
 [(`ch5_fig06.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS06.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch5_fig06){#fig:ch5_fig06
 short-caption="MCMC posterior distribution for a multi-promoter model"}
 
@@ -593,7 +593,7 @@ large cells (dark blue) with the corresponding theoretical predictions with
 transcription rate $r_m$ (light blue line) and transcription rate $2 r_m$ (dark
 blue line). The Python code
 [(`ch5_fig07.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS07.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch5_fig07){#fig:ch5_fig07
 short-caption="Experimental vs. theoretical distribution of mRNA per cell using
 parameters for multi-promoter model"}

@@ -73,7 +73,7 @@ of the physical limit of how precise of an inference cells can make about what
 the state of the environment is. Our model, despite the systematic deviations,
 makes non-trivial predictions such as the existence of an optimal repressor copy
 number for a given repressor-DNA binding energy, predicting the channel capacity
-up to an additive constant (See [@Fig:ch3_fig05]). The origin of this optimal
+up to an additive constant (see [@Fig:ch3_fig05]). The origin of this optimal
 combination of repressor copy number and binding energy differs from previous
 publications in which an extra term associated with the cost of producing
 protein was included in the model [@Tkacik2011]. This optimal parameter
@@ -93,7 +93,7 @@ different signals.
 
 We consider it important to highlight the limitations of the work presented
 here. The previously discussed systematic deviation for the noise and skewness
-of the predicted distributions (See [Sec. 5.8](#sec:ch5_sec09)), and therefore
+of the predicted distributions (see [Sec. 5.8](#sec:ch5_sec09)), and therefore
 of the predicted distributions and channel capacity, remains an unresolved
 question. Our current best hypothesis for the origin of this unaccounted noise
 pertains to cell-to-cell variability in the central dogma machinery. More
@@ -102,7 +102,7 @@ copy numbers, changes in ribosome numbers, and even the variability in the
 repressor copy number. This possibility deserves to be addressed in further
 iterations of our minimal model. Also, as first reported in [@Razo-Mejia2018],
 our model fails to capture the steepness of the fold-change induction curve for
-the weakest repressor binding site (See [@Fig:ch3_fig03](B)). Furthermore, the
+the weakest repressor binding site (see [@Fig:ch3_fig03](B)). Furthermore, the
 minimal model in (A), despite being widely used, is an oversimplification of the
 physical picture of how the transcriptional machinery works. The coarse-graining
 of all the kinetic steps involved in transcription initiation into two effective

@@ -334,7 +334,7 @@ production was determined in the first place under this assumption. We note that
 there is no apparent delay before reaching the steady-state of the mean mRNA
 count after the cell divides. This is because the mean mRNA count for the two
 promoter copies state is precisely twice the expected mRNA count for the single
-promoter state (See [Sec. 5.1](#sec:ch5_sec03)). Therefore, once the mean mRNA
+promoter state (see [Sec. 5.1](#sec:ch5_sec03)). Therefore, once the mean mRNA
 count is halved after the cell division, it is already at the steady-state value
 for the single promoter case. On the other hand, given that the degradation rate
 determines the relaxation time to steady-state, the mean protein count does not
@@ -344,7 +344,7 @@ has a repetitive trajectory over cell cycles. We have observed this
 experimentally by tracking cells as they grow under the microscope. Comparing
 cells at the beginning of the cell cycle with the daughter cells that appear
 after cell division showed that, on average, all cells have the same amount of
-protein at the start of the cell cycle (See Fig. 18 of [@Phillips2019]),
+protein at the start of the cell cycle (see Fig. 18 of [@Phillips2019]),
 suggesting that this dynamical steady state takes place *in vivo*.
 
 ![**First and second moment dynamics over the cell cycle.** Mean $\pm$ standard
@@ -356,7 +356,7 @@ that cells spend with two copies of the promoter. For a 100 min doubling time at
 the *galK* locus, cells spend 60% of the time with one copy of the promoter and
 the rest with two copies. The Python code
 [(`ch5_fig08.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS08.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch5_fig08){#fig:ch5_fig08
 short-caption="First and second moment dynamics over the cell cycle"}
 
@@ -506,7 +506,7 @@ kinetic model is computed by numerically integrating the moment equations over
 several cell cycles, and then averaging over the extent of the cell cycle as
 defined in Eq. $\ref{seq_moment_avg}$ . The Python code
 [(`ch5_fig09.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS09.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap)](ch5_fig09){#fig:ch5_fig09
 short-caption="Comparison of the equilibrium and kinetic repressor titration
 predictions"}
@@ -549,7 +549,7 @@ distribution for the single-promoter model is detailed in [Sec.
 [@Fig:ch5_fig09] and [@Fig:ch5_fig10] both suggest that, since the dynamic
 multi-promoter model can reproduce the results of the equilibrium model at the
 first-moment level, it must then also be able to reproduce the results of the
-single-promoter model at this level (see [Sec. 4.2](#sec:ch5_sec03)). The
+single-promoter model at this level (see [Sec. 5.2](#sec:ch5_sec03)). The
 interesting comparison comes with higher moments. A useful metric to consider
 for gene expression variability is the noise in gene expression
 [@Shahrezaei2008]. This quantity, defined as the standard deviation divided by

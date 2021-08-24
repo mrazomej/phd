@@ -41,7 +41,7 @@ degeneracy. For example, NMR measurements could be used to directly measure the
 fraction $(1 + e^{-\beta \Delta\varepsilon_{AI}})^{-1}$ of active repressors in
 the absence of IPTG [@Gardino2003; @Boulton2016].
 
-![**Multiple sets of parameters yield identical fold-change responses**. (A) The
+![**Multiple sets of parameters yield identical fold-change responses.** (A) The
 data for the O2 strain ($\Delta\varepsilon_{RA} = -13.9~k_BT$) with $R=260$ in
 Fig. 2.4(D) was fit using Eq. $\ref{eq:ch4_eq05}$ with $n=2$.
 $\Delta\varepsilon_{AI}$ is forced to take on the value shown on the $x$-axis,
@@ -210,7 +210,7 @@ number of repressors at which $R_A = N$ for each value of $\Delta
 \varepsilon_{AI}$. (B) Using fold-change measurements from [@Brewster2014] for
 the operators and gene copy numbers shown, we can determine the most likely
 value $\Delta\varepsilon_{AI} = 4.5~k_BT$ for LacI.](ch4_fig02){#fig:ch4_fig02
-short-caption="Fold-change of multiple identical genes."}
+short-caption="Fold-change of multiple identical genes"}
 
 We now analyze experimental induction data for different strains with known
 plasmid copy numbers to determine $\Delta\varepsilon_{AI}$. [@Fig:ch4_fig05](B)

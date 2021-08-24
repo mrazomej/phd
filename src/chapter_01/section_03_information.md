@@ -117,7 +117,7 @@ short-caption="The statistical structure of the English language"}
 
 So far, our discussion about what entropy and information mean has been vague
 and not rigorous. To derive a formula to quantify these concepts, we need to get
-more mathematical. Let us assume that an information source (See
+more mathematical. Let us assume that an information source (see
 [@Fig:ch1_fig07](A)) produces elements of a message following a distribution
 $\mathbf{p} = \{p_1, p_2, \ldots, p_n \}$, where each $p_i$ is the probability
 of the $i^{\text{th}}$ element. These elements could be letters, words,

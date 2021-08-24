@@ -11,7 +11,7 @@ the response of all eighteen strains, although we argue that such a description
 provides no insight into the allosteric nature of the protein and how mutations
 to the repressor would affect induction. We conclude the section by discussing
 the differences between such a model and the statistical mechanical model used
-in the main text.
+in Chapter 2.
 
 ### Fitting Induction Curves using a Hill Function Approach
 
@@ -38,8 +38,8 @@ $$
 \frac{\left( \frac{c}{K} \right)^n}{1 + \left( \frac{c}{K} \right)^n},
 \label{eq:ch4_eq27}
 $$
-where, as in the main text, the leakiness represents the minimum fold-change,
-the dynamic range represents the difference between the maximum and minimum
+where, as in Chapter 2, the leakiness represents the minimum fold-change, the
+dynamic range represents the difference between the maximum and minimum
 fold-change, $K$ is the repressor-inducer dissociation constant, and $n$ denotes
 the Hill coefficient that characterizes the sharpness of the curve ($n > 1$
 signifies positive cooperativity, $n = 1$ denotes no cooperativity, and $n < 1$
@@ -116,8 +116,8 @@ the known constants $R$, $N_{NS}$, and $\Delta\varepsilon_{RA}$ describes how
 the induction profile changes with repressor copy number and repressor-operator
 binding energy.
 
-As in the main text, we can fit the four Hill parameters---the vertical shift
-and stretch parameters $p_A^{\text{max}}$ and $p_A^{\text{range}}$, the Hill
+As in Chapter 2, we can fit the four Hill parameters---the vertical shift and
+stretch parameters $p_A^{\text{max}}$ and $p_A^{\text{range}}$, the Hill
 coefficient $n$, and the inducer-repressor dissociation constant $K_D$---for a
 single induction curve and then use the fully characterized Eq.
 $\ref{eq:ch4_eq27}$ to describe the response of each of the eighteen strains.

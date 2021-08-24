@@ -20,12 +20,12 @@ This section discusses a simple repression construct that we generalize in two
 ways from the scenario discussed in the text. First, we will allow the repressor
 to bind to $N_S$ identical specific promoters whose fold-change we are
 interested in measuring. Each promoter contains a single repressor binding site
-($N_S = 1$ in the main text). Second, we consider $N_C$ identical competitor
-sites which do not regulate the promoter of interest, but whose binding energies
-are substantially stronger than non-specific binding ($N_C = 0$ in the main
-text). As in the main text, we assume that the rest of the genome contains
-$N_{NS}$ non-specific binding sites for the repressor. We can write the
-fold-change in the grand canonical ensemble as 
+($N_S = 1$ in Chapter 2). Second, we consider $N_C$ identical competitor sites
+which do not regulate the promoter of interest, but whose binding energies are
+substantially stronger than non-specific binding ($N_C = 0$ in Chapter 2). As in
+Chapter 2, we assume that the rest of the genome contains $N_{NS}$ non-specific
+binding sites for the repressor. We can write the fold-change in the grand
+canonical ensemble as 
 $$
 \text{fold-change} = \frac{1}{1 + \lambda_r e^{-\beta \Delta \varepsilon_{RA}}},
 \label{eq:ch4_eq10}
@@ -100,8 +100,8 @@ were introduced.
 
 ### Variable Repressor Copy Number ($\boldsymbol{R}$) with Multiple Specific Binding Sites ($\boldsymbol{N_S > 1}$) {#sec:ch4_sec04.2}
 
-In the main text, we consider the induction profiles of strains with varying $R$
-but a single, specific binding site $N_S = 1$ (see [@Fig:ch2_fig05]). Here we
+In Chapter 2, we consider the induction profiles of strains with varying $R$ but
+a single, specific binding site $N_S = 1$ (see [@Fig:ch2_fig05]). Here we
 predict the induction profiles for similar strains in which $R$ is varied, but
 $N_S > 1$, as shown in [@Fig:ch4_fig03]. The top row shows induction profiles in
 which $N_S = 10$ and the bottom row shows profiles in which $N_S = 100$,

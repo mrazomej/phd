@@ -114,7 +114,7 @@ experimental data poses new challenges towards having a foundational,
 first-principles understanding of the physics of cellular decision-making.
 
 ![**Cellular signaling systems sense the environment with different degrees of
-precision**. (A) Schematic representation of a cell as a noisy communication
+precision.** (A) Schematic representation of a cell as a noisy communication
 channel. From an environmental input (inducer molecule concentration) to a
 phenotypic output (protein expression level), cellular signaling systems can be
 modeled as noisy communication channels. (B) We treat cellular response to an

@@ -75,7 +75,7 @@ cell cycle with two copies (light yellow). When trajectories reach a new cell
 cycle, the molecule counts undergo binomial partitioning to simulate the cell
 division. The Python code
 [(`ch5_fig22.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS22.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig22){#fig:ch5_fig22
 short-caption="Stochastic trajectories of mRNA and protein counts"}
 

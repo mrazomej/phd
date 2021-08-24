@@ -28,10 +28,10 @@ difference $\Delta\varepsilon_{AI}$ between the repressor's active and inactive
 states. As explained in that section, this additional data set is critical
 because multiple degenerate sets of parameters can characterize an induction
 curve equally well, with the $\Delta\varepsilon_{AI}$ parameter compensated by
-the inducer dissociation constants $K_A$ and $K_I$ (see Chapter 4). After fixing
-$\Delta\varepsilon_{AI}$ as described in the [Sec. 2.5](#sec:ch2_sec05), we can
-use data from single-site simple repression systems to determine the values of
-$K_A$ and $K_I$.
+the inducer dissociation constants $K_A$ and $K_I$ (see [Sec.
+4.2](#sec:ch4_sec03)). After fixing $\Delta\varepsilon_{AI}$ as described in the
+[Sec. 2.5](#sec:ch2_sec05), we can use data from single-site simple repression
+systems to determine the values of $K_A$ and $K_I$.
 
 We determine the values of $K_A$ and $K_I$ by fitting to a single induction
 profile using Bayesian inferential methods [@Sivia2006]. We then use Eq.
@@ -70,10 +70,10 @@ the inducer IPTG ranging between 0 and $5\,\text{mM}$. We measure YFP
 fluorescence using flow cytometry and automatically gate the data to include
 only single-cell measurements (see [Sec. 2.5](#sec:ch2_sec05)). To validate the
 use of flow cytometry, we also measured the fold-change of a subset of strains
-using the established method of single-cell microscopy (see Chapter 4). We found
-that the fold-change measurements obtained from microscopy were
-indistinguishable from that of flow-cytometry and yielded values for the inducer
-binding constants $K_A$ and $K_I$ that were within error.
+using the established method of single-cell microscopy (see [Sec.
+4.5](#sec:ch4_sec06)). We found that the fold-change measurements obtained from
+microscopy were indistinguishable from that of flow-cytometry and yielded values
+for the inducer binding constants $K_A$ and $K_I$ that were within error.
 
 ![**An experimental pipeline for high-throughput fold-change measurements.**
 Cells are grown to an exponential steady-state, and their fluorescence is
@@ -93,36 +93,36 @@ The three parameters that we tune experimentally are shown in
 [@Fig:ch2_fig04](A), leaving the three allosteric parameters ($\Delta
 \varepsilon_{AI}$, $K_A$, and $K_I$) to be determined by fitting. We used
 previous LacI fold-change data [@Brewster2014] to infer that
-$\Delta\varepsilon_{AI} = 4.5~k_BT$ (see Chapter 4). Rather than fitting $K_A$
-and $K_I$ to our entire data set of eighteen unique constructs, we performed
-Bayesian parameter estimation on data from a single strain with $R=260$ and an
-O2 operator ($\Delta\varepsilon_{RA}=-13.9~k_BT$ [@Garcia2011c]) shown in
-[@Fig:ch2_fig04](D) (white circles). Using Markov Chain Monte Carlo, we
-determine the most likely parameter values to be $K_A=139^{+29}_{-22} \times
-10^{-6} \, \text{M}$ and $K_I=0.53^{+0.04}_{-0.04} \times 10^{-6}\, \text{M}$,
-which are the modes of their respective distributions, where the superscripts
-and subscripts represent the upper and lower bounds of the $95^\text{th}$
-percentile of the parameter value distributions (see [@Fig:ch2_fig04](B)).
-Unfortunately, we cannot make a meaningful value-for-value comparison of our
-parameters to those of earlier studies [@Daber2009; @Daber2011a] because of
-uncertainties in gene copy number and transcription factor copy numbers in
-these studies (see Chapter 4). We then predicted the fold-change for the
-remaining seventeen strains with no further fitting (see
+$\Delta\varepsilon_{AI} = 4.5~k_BT$ (see [Sec. 4.2](#sec:ch4_sec03)). Rather
+than fitting $K_A$ and $K_I$ to our entire data set of eighteen unique
+constructs, we performed Bayesian parameter estimation on data from a single
+strain with $R=260$ and an O2 operator ($\Delta\varepsilon_{RA}=-13.9~k_BT$
+[@Garcia2011c]) shown in [@Fig:ch2_fig04](D) (white circles). Using Markov Chain
+Monte Carlo, we determine the most likely parameter values to be
+$K_A=139^{+29}_{-22} \times 10^{-6} \, \text{M}$ and $K_I=0.53^{+0.04}_{-0.04}
+\times 10^{-6}\, \text{M}$, which are the modes of their respective
+distributions, where the superscripts and subscripts represent the upper and
+lower bounds of the $95^\text{th}$ percentile of the parameter value
+distributions (see [@Fig:ch2_fig04](B)). Unfortunately, we cannot make a
+meaningful value-for-value comparison of our parameters to those of earlier
+studies [@Daber2009; @Daber2011a] because of uncertainties in gene copy number
+and transcription factor copy numbers in these studies. We then predicted the
+fold-change for the remaining seventeen strains with no further fitting (see
 [@Fig:ch2_fig04](C)-(E)) together with the specific phenotypic properties
 described in and discussed in detail below (see [@Fig:ch2_fig04](F)-(J)). The
-shaded regions denote the 95% credible regions. Factors determining the
-width of the credible regions are explored in Chapter 4.
+shaded regions denote the 95% credible regions. Factors determining the width of
+the credible regions are explored in [Sec. 4.6](#sec:ch4_sec07).
 
 We stress that the entire suite of predictions is based upon a single strain's
 induction profile. Our ability to make such a broad range of predictions stems
-from the fact that our parameters of interest---such as the repressor copy number
-and DNA binding energy---appear as distinct physical parameters within our model.
-While the single data set in [@Fig:ch2_fig04](D) could also be fit using a Hill
-function, such an analysis would be unable to predict any of the other curves in
-the figure (see Chapter 4). Phenomenological expressions such as the Hill
-function can describe data but lack predictive power and are thus unable to
-build our intuition, help us design *de novo* input-output functions, or guide
-future experiments [@Kuhlman2007; @Murphy2007].
+from the fact that our parameters of interest---such as the repressor copy
+number and DNA binding energy---appear as distinct physical parameters within
+our model. While the single data set in [@Fig:ch2_fig04](D) could also be fit
+using a Hill function, such an analysis would be unable to predict any of the
+other curves in the figure (see [Sec. 4.7](#sec:ch4_sec08)). Phenomenological
+expressions such as the Hill function can describe data but lack predictive
+power and are thus unable to build our intuition, help us design *de novo*
+input-output functions, or guide future experiments [@Kuhlman2007; @Murphy2007].
 
 ![**Predicting induction profiles for different biological control parameters.**
 (A) Schematic representation of experimentally accessible variables. Repressor
@@ -140,7 +140,7 @@ induction profiles in (C) using parameter values known *a priori*. The shaded
 regions denote the 95% credible region. Region between 0 and $10^{-2}\, \mu$M is
 scaled linearly with log scaling elsewhere. The Python code
 [(`ch2_fig04.py`)](https://github.com/RPGroup-PBoC/mwc_induction/blob/master/code/figures/fig4.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/mwc_induction)](ch2_fig04){#fig:ch2_fig04
 short-caption="Predicting induction profiles for different biological control
 parameters"}
@@ -158,28 +158,30 @@ imprecise previous determinations of their $\Delta\varepsilon_{RA}$ and $R$
 values. By performing a global fit where we infer all parameters, including the
 repressor copy number $R$ and the binding energy $\Delta\varepsilon_{RA}$, we
 found a better agreement for these strains. However, a discrepancy in the
-steepness of the response for all O3 strains remains (see Chapter 4). We
-considered a number of hypotheses to explain these discrepancies, such as
-including other states (e.g. non-negligible binding of the inactive repressor),
-relaxing the weak promoter approximation, and accounting for variations in gene
-and repressor copy number throughout the cell cycle, but none explained the
-observed discrepancies. As an additional test of our model, we considered
-strains using the synthetic Oid operator, which exhibits an especially strong
-binding energy of $\Delta\varepsilon_{RA}=-17~k_B T$ [@Garcia2011c]. The global
-fit agrees well with the Oid microscopy data, though it asserts a stronger Oid
-binding energy of $\Delta\varepsilon_{RA}=-17.7~k_B T$ (see Chapter 4).
+steepness of the response for all O3 strains remains (see [Sec.
+4.8](#sec:ch4_sec09)). We considered a number of hypotheses to explain these
+discrepancies, such as including other states (e.g. non-negligible binding of
+the inactive repressor), relaxing the weak promoter approximation, and
+accounting for variations in gene and repressor copy number throughout the cell
+cycle, but none explained the observed discrepancies. As an additional test of
+our model, we considered strains using the synthetic Oid operator, which
+exhibits an especially strong binding energy of $\Delta\varepsilon_{RA}=-17~k_B
+T$ [@Garcia2011c]. The global fit agrees well with the Oid microscopy data,
+though it asserts a stronger Oid binding energy of
+$\Delta\varepsilon_{RA}=-17.7~k_B T$ (see [Sec. 4.8](#sec:ch4_sec09)).
 
 To ensure that the agreement between our predictions and data is not an accident
 of the strain we used to perform our fitting, we also inferred $K_A$ and $K_I$
-from each of the other strains. As shown in Chapter 4 and [@Fig:ch2_fig05](D),
-the inferred values of $K_A$ and $K_I$ depend minimally upon which strain is
-chosen, indicating these parameter values are highly robust. We also performed a
-global fit using the data from all eighteen strains in which we fitted for the
-inducer dissociation constants $K_A$ and $K_I$, the repressor copy number $R$,
-and the repressor DNA binding energy $\Delta\varepsilon_{RA}$ (see Chapter 4).
-The resulting parameter values were nearly identical to those fitted from any
-single strain. We continue using parameters fitted from the strain with $R=260$
-repressors and an O2 operator for the remainder of the text.
+from each of the other strains. As shown in [Sec. 4.10](#sec:ch4_sec11) and
+[@Fig:ch2_fig05](D), the inferred values of $K_A$ and $K_I$ depend minimally
+upon which strain is chosen, indicating these parameter values are highly
+robust. We also performed a global fit using the data from all eighteen strains
+in which we fitted for the inducer dissociation constants $K_A$ and $K_I$, the
+repressor copy number $R$, and the repressor DNA binding energy
+$\Delta\varepsilon_{RA}$ (see [Sec. 4.8](#sec:ch4_sec09)). The resulting
+parameter values were nearly identical to those fitted from any single strain.
+We continue using parameters fitted from the strain with $R=260$ repressors and
+an O2 operator for the remainder of the text.
 
 ![**Comparison of predictions against measured and inferred data.** (A-C) Flow
 cytometry measurements of fold-change over a range of IPTG concentrations for
@@ -197,7 +199,7 @@ regardless of which strain was chosen. The points show the mode, and the error
 bars denote the $95\%$ credible region of the parameter value distribution.
 Error bars not visible are smaller than the size of the marker. The Python code
 [(`ch2_fig05.py`)](https://github.com/RPGroup-PBoC/mwc_induction/blob/master/code/figures/fig5.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/mwc_induction)](ch2_fig05){#fig:ch2_fig05
 short-caption="Comparison of predictions against measured and inferred data"}
 
@@ -251,10 +253,10 @@ $$
 \label{eq:dynamic_range_def}
 $$
 These three properties are shown in [@Fig:ch2_fig04](F-H). We discuss these
-properties in greater detail in Chapter 4. [@Fig:ch2_fig06](A-C) shows that the
-measurements of these three properties, derived from the fold-change data in the
-absence of IPTG and the presence of saturating IPTG closely match the
-predictions for all three operators.
+properties in greater detail in [Sec. 4.11](#sec:ch4_sec12).
+[@Fig:ch2_fig06](A-C) shows that the measurements of these three properties,
+derived from the fold-change data in the absence of IPTG and the presence of
+saturating IPTG closely match the predictions for all three operators.
 
 ![**Predictions and experimental measurements of key properties of induction
 profiles.** Data for the leakiness, saturation, and dynamic range are obtained
@@ -271,7 +273,7 @@ parameter found by propagating the credible region of our estimates of $K_A$ and
 $K_I$ into Eq. $\ref{eq:ec50}$ and Eq. $\ref{eq:effective_Hill}$. The Python
 code
 [(`ch2_fig06.py`)](https://github.com/RPGroup-PBoC/mwc_induction/blob/master/code/figures/fig6_props.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/mwc_induction)](ch2_fig06){#fig:ch2_fig06
 short-caption="Predictions and experimental measurements of key properties of
 induction profiles"}
@@ -294,8 +296,9 @@ h = \left( 2 \frac{d}{d \log c} \left[ \log \left( \frac{ \text{fold-change}(c)
 \label{eq:effective_Hill}
 $$
 [@Fig:ch2_fig04](I),(J) shows how the $[EC_{50}]$ and effective Hill coefficient
-depend on the repressor copy number. Chapter 4 discusses the analytic forms of
-these two properties and their dependence on the repressor-DNA binding energy.
+depend on the repressor copy number. [Sec. 4.11](#sec:ch4_sec12) discusses the
+analytic forms of these two properties and their dependence on the repressor-DNA
+binding energy.
 
 [@Fig:ch2_fig06](D) and [@Fig:ch2_fig06](E) shows the estimated values of the
 $[EC_{50}]$ and the effective Hill coefficient overlaid on the theoretical
@@ -305,15 +308,16 @@ $[EC_{50}]$ and effective Hill coefficient using Eq. $\ref{eq:ec50}$ and Eq.
 $\ref{eq:effective_Hill}$, respectively. We find that the predictions made with
 the single strain fit closely match those made for each of the strains with O1
 and O2 operators, but the predictions for the O3 operator are markedly off.
-Chapter 4 shows that the large, asymmetric error bars for the O3 $R=22$ strain
-arise from its nearly flat response, where the lack of dynamic range makes it
-impossible to determine the value of the inducer dissociation constants $K_A$
-and $K_I$, as can be seen in the uncertainty of both the $[EC_{50}]$ and
-effective Hill coefficient. Discrepancies between theory and data for O3 are
-improved but not fully resolved by performing a global fit or fitting the MWC
-model individually to each curve (see Chapter 4). It remains an open question on
-how to account for discrepancies in O3, particularly regarding the significant
-mismatch between the predicted and fitted effective Hill coefficients.
+[Sec. 4.10](#sec:ch4_sec11) shows that the large, asymmetric error bars for the
+O3 $R=22$ strain arise from its nearly flat response, where the lack of dynamic
+range makes it impossible to determine the value of the inducer dissociation
+constants $K_A$ and $K_I$, as can be seen in the uncertainty of both the
+$[EC_{50}]$ and effective Hill coefficient. Discrepancies between theory and
+data for O3 are improved but not fully resolved by performing a global fit or
+fitting the MWC model individually to each curve (see [Sec.
+4.8](#sec:ch4_sec09)). It remains an open question on how to account for
+discrepancies in O3, particularly regarding the significant mismatch between the
+predicted and fitted effective Hill coefficients.
 
 ### Data Collapse of Induction Profiles
 
@@ -385,7 +389,7 @@ $K_I=0.53 \times 10^{-6}\, \text{M}$, and the strain-specific $R$ and
 $\Delta\varepsilon_{RA}$. All data points represent the mean, and error bars are
 the standard error of the mean for eight or more replicates. The Python code
 [(`ch2_fig07.py`)](https://github.com/RPGroup-PBoC/mwc_induction/blob/master/code/figures/fig7_collapse.py)
-used to generate this figure can be found on the original paper [GitHub
+used to generate this figure can be found on the original paper's [GitHub
 repository.](https://github.com/RPGroup-PBoC/mwc_induction)](ch2_fig07){#fig:ch2_fig07
 short-caption="Fold-change data from a broad collection of different strains
 collapse onto a single master curve"}
