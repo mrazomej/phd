@@ -1,9 +1,9 @@
-## Empirical fits to noise predictions {#sec:ch5_sec09}
+## Empirical Fits to Noise Predictions {#sec:ch5_sec09}
 
 (Note: The Python code used for the calculations presented in this section can
 be found in the [following
 link](https://www.rpgroup.caltech.edu/chann_cap/src/theory/html/empirical_constants.html)
-as an annotated Jupyter notebook)
+as an annotated Jupyter notebook.)
 
 In [@Fig:ch3_fig03](C) in the main text, we show that our minimal model has a
 systematic deviation on the gene expression noise predictions compared to the
@@ -13,25 +13,25 @@ the origins of this systematic deviation in this appendix, we will explore the
 model's empirical modifications to improve the agreement between theory and
 experiment.
 
-### Multiplicative factor for the noise 
+### Multiplicative Factor for the Noise 
 
 The first option we will explore is to modify our noise predictions by a
-constant multiplicative factor. This means that we assume the relationship
+constant multiplicative factor. This means that we assume that the relationship
 between our minimal model predictions and the data for noise in gene expression
 are of the form
 $$
 \text{noise}_{\text{exp}} = \alpha \cdot \text{noise}_{\text{theory}},
 $$
 where $\alpha$ is a dimensionless constant to be fit from the data. The data,
-especially in [@Fig:ch5_fig12], suggests that our predictions are within a factor
-of $\approx$ two from the experimental data. To further check that intuition, we
-performed a weighted linear regression between the experimental and theoretical
-noise measurements. The weight for each datum was proportional to the bootstrap
-errors in the noise estimate; this to have poorly determined noises weigh less
-during the regression. This regression with no intercept shows that a factor of
-two systematically improves the theoretical vs. experimental predictions.
-[@Fig:ch5_fig30] shows the improved agreement when the noise's theoretical
-predictions are multiplied by $\approx 1.5$.
+especially in [@Fig:ch5_fig12], suggests that our predictions are within a
+factor of $\approx$ two from the experimental data. To further check that
+intuition, we performed a weighted linear regression between the experimental
+and theoretical noise measurements. The weight for each datum was proportional
+to the bootstrap errors in the noise estimate (this to have poorly determined
+noises weigh less during the linear regression). This regression with no
+intercept shows that a factor of two systematically improves the theoretical vs.
+experimental predictions. [@Fig:ch5_fig30] shows the improved agreement when the
+noise's theoretical predictions are multiplied by $\approx 1.5$.
 
 ![**Multiplicative factor in improving theoretical vs. experimental comparison
 of noise in gene expression.** Theoretical vs. experimental noise both in linear
@@ -70,12 +70,12 @@ the error bars correspond to the 95% confidence interval as determined by 10,000
 bootstrap samples. White-filled dots are plot at a different scale for better
 visualization. The Python code
 [(`ch5_fig31.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS31.py)
-used to generate this figure can be found on the original paper [GitHub
-repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig31){#fig:ch5_fig31
+used to generate this figure can be found on the original paper's [GitHub
+repository](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig31){#fig:ch5_fig31
 short-caption="Protein noise of the regulated promoter with multiplicative
 factor"}
 
-### Additive factor for the noise 
+### Additive Factor for the Noise 
 
 As an alternative way to empirically improve our model's predictions, we will
 now test the idea of an additive constant. What this means is that our minimal
@@ -130,11 +130,11 @@ the error bars correspond to the 95% confidence interval as determined by 10,000
 bootstrap samples. White-filled dots are plot at a different scale for better
 visualization. The Python code
 [(`ch5_fig33.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS33.py)
-used to generate this figure can be found on the original paper [GitHub
-repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig33){#fig:ch5_fig33
+used to generate this figure can be found on the original paper's [GitHub
+repository](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig33){#fig:ch5_fig33
 short-caption="Protein noise of the regulated promoter with an additive factor"}
 
-### Correction factor for channel capacity with a multiplicative factor
+### Correction Factor for Channel Capacity with a Multiplicative Factor
 
 A constant multiplicative factor can reduce the discrepancy between the model
 predictions and the data concerning the noise (standard deviation/mean) in
@@ -178,7 +178,7 @@ $$
 I = \log_2 \left( \frac{\mathcal{Z}}{\sqrt{2 \pi e}} \right).
 $$
 
-From the theory-experiment comparison in, we know that the standard deviation
+From the theory-experiment comparison we know that the standard deviation
 predicted by our model is systematically off by a factor of two compared to the
 experimental data, i.e.,
 $$
@@ -220,6 +220,6 @@ show the resulting predictions with a constant shift of -0.43 bits. Points
 represent single biological replicas of the inferred channel capacity. The
 Python code
 [(`ch5_fig34.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS34.py)
-used to generate this figure can be found on the original paper [GitHub
-repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig34){#fig:ch5_fig34
+used to generate this figure can be found on the original paper's [GitHub
+repository](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig34){#fig:ch5_fig34
 short-caption="Additive correction factor for channel capacity"}

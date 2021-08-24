@@ -35,7 +35,7 @@ Empirically it has been observed that a generalized Gamma distribution fits well
 to experimental data on cell division time, but we will worry about this
 specific point later on.
 
-From the definition of $F(\tau)$ we can see that if a cell reaches an age $a$,
+From the definition of $F(\tau)$, we can see that if a cell reaches an age $a$,
 the probability of surviving to an age $a + t$ without dividing is given by
 $$
 P(\text{age} = (a + t) \mid \text{age} = a) = F(a + t \mid a) =
@@ -44,7 +44,7 @@ P(\text{age} = (a + t) \mid \text{age} = a) = F(a + t \mid a) =
 $$
 This result comes simply from the definition of conditional probability. Since
 $F(a)$ is the probability of surviving $a$ or more minutes without dividing, by
-the definition of conditional probability we have that
+the definition of conditional probability, we have that
 $$
 F(a + t \mid a) = \frac{F(a, a + t)}{F(a)},
 $$
@@ -56,11 +56,11 @@ $$
 F(a, a + t) = F(a + t).
 $$
 This explains Eq. $\ref{eq:p_age_cond}$. From this equation, we can find that
-out of the $N P(a)da$ cells with age $a$ only a fraction
+out of the $N P(a)da$ cells with age $a$, only a fraction
 $$
 \left[ NP(a)da \right] F(a + t \mid a) = NP(a) \frac{F(a + t)}{F(a)} da
 $$
-will survive without dividing until time $a + t$. During that time interval $t$
+will survive without dividing until time $a + t$. During that time interval $t$,
 the culture has passed from $N$ cells to $N e^{\mu t}$ cells, given the
 assumption that they are growing exponentially. The survivors $NP(a)F(a + t \mid
 a)da$ then represent a fraction of the total number of cells
@@ -70,9 +70,9 @@ $$
   P(a)\frac{F(a + t)}{F(a)}da \frac{1}{e^{\mu t}},
 $$
 and their ages lie in the range $[a+t, a+t+da]$. Since we assume that the
-culture is in a steady-state then it follows that the fraction of cells that
+culture is in a steady-state, then it follows that the fraction of cells that
 transitioned from age $a$ to age $a + t$ must be $P(a + t)da$. Therefore we have
-a difference equation - the discrete analogous of a differential equation - of
+a difference equation---the discrete analogous of a differential equation---of
 the form
 $$
 P(a + t) da = P(a) \frac{F(a + t)}{F(a)}e^{-\mu t} da.
@@ -80,7 +80,7 @@ $$
 What this equation shows is a relationship that connects the probability of
 having a lifetime of $a + t$ with a probability of having a shorter lifetime
 $a$ and the growth of the population. If we take $t$ to be very small,
-specifically if we assume $t \ll \mu^{-1}$ we can Taylor expand around $a$ the
+specifically if we assume $t \ll \mu^{-1}$, we can Taylor expand around $a$ the
 following terms:
 $$
 F(a + t) \approx F(a) + \frac{dF}{da} t,
@@ -113,9 +113,9 @@ $$
 $$
 where $C$ is the integration constant. Exponentiating both sides gives 
 $$
-P(a) = C' F(a)e^{-\mu a}.
+P(a) = C' F(a)e^{-\mu a},
 $$
-Where $C' \equiv e^C$. To obtain the unknown constant value, we recall that
+where $C' \equiv e^C$. To obtain the unknown constant value, we recall that
 $F(0) = 1$ since the probability of having a life equal to or longer than zero
 must add up to one. Therefore we have that $P(0) = C'$. This gives then 
 $$
@@ -135,7 +135,7 @@ $$
 \frac{N(t + \Delta t) - N(t)}{\Delta t} = \mu N(t).
 $$
 If the time $\Delta t$ is the time interval it takes to go from $N$ to $2N$
-cells we have 
+cells, we have 
 $$
 \frac{2N - N}{\Delta t} = \mu N.
 $$
@@ -160,8 +160,8 @@ $$
 F(a + da) \approx F(a) - f(a)da.
 $$
 What this means is that from the original fraction of cells $F(a)$ with age $a$
-or greater a fraction $f(a)da / F(a)$ will not reach age $(a + da)$ because they
-will divide. So, out of the $NP(a)$ cells that reached exactly age $a$, the
+or greater, a fraction $f(a)da / F(a)$ will not reach age $(a + da)$ because
+they will divide. So, out of the $NP(a)$ cells that reached exactly age $a$, the
 number of doubling events on a time interval $da$ is given by
 $$
 {\text{\# doublings of cells of age } a {\text{ on interval } da}} =
@@ -210,13 +210,13 @@ $$
 P(0) \left[ \frac{e^{-\mu t}}{-\mu} F(a) \right]^\infty_0
  - P(0) \int_0^\infty \frac{e^{-\mu a}}{-\mu} (-f(a)) da = 1.
 $$
-On the first term on the left hand side we have that as $a \rightarrow \infty$,
-both terms $e^{-\mu a}$ and $F(a)$ go to zero. We also have that $e^{\mu 0} = 1$
-and $F(0) = 1$. This results in
+On the first term on the left hand side, we have that, as $a \rightarrow
+\infty$, both terms $e^{-\mu a}$ and $F(a)$ go to zero. We also have that
+$e^{\mu 0} = 1$ and $F(0) = 1$. This results in
 $$
 \frac{P(0)}{\mu} - P(0) \int_0^\infty \frac{e^{-\mu a}}{\mu} f(a) da = 1.
 $$
-The second term on the left-hand side is equal to since
+The second term on the left-hand side is equal to $1$ since
 $$
 \mu = \int_0^\infty P(0) e^{-\mu a} f(a)da \Rightarrow
   1 = \int_0^\infty P(0) \frac{e^{-\mu a}}{\mu} f(a)da.
@@ -230,7 +230,7 @@ With this result in hand, we can rewrite it as
 $$
 P(a) = 2\mu e^{-\mu a} \int_a^\infty f(\xi) d\xi.
 $$
-Also, we can rewrite the result for the growth rate $\mu$ on as
+Also, we can rewrite the result for the growth rate $\mu$ as
 $$
 \mu = 2 \mu \int_0^\infty e^{-\mu a} f(a) da \Rightarrow
   2 \int_0^\infty e^{-\mu a} f(a) da = 1.

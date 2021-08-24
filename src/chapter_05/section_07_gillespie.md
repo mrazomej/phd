@@ -1,9 +1,9 @@
-## Gillespie simulation of the master equation 
+## Gillespie Simulation of the Master Equation 
 
 (Note: The Python code used for the calculations presented in this section can
 be found in the [following
 link](https://www.rpgroup.caltech.edu//chann_cap/software/gillespie_simulation.html)
-as an annotated Jupyter notebook)
+as an annotated Jupyter notebook.)
 
 So far, we have generated a way to compute an approximated form of the joint
 distribution of protein and mRNA $P(m, p)$ as a function of the moments of the
@@ -17,7 +17,7 @@ algorithm. Our implementation, as detailed in the corresponding Jupyter
 notebook, makes use of just-in-time compilation as implemented with the Python
 package [numba](http://numba.pydata.org).
 
-### mRNA distribution with Gillespie simulations
+### mRNA Distribution with Gillespie Simulations
 
 To confirm that the Gillespie simulation's implementation was correct, we
 perform the simulation at the mRNA level, for which the closed-form solution of
@@ -34,14 +34,14 @@ copy of the promoter (light brown) and the rest of the cell cycle with two
 copies (light yellow). When trajectories reach a new cell cycle, the mRNA counts
 undergo binomial partitioning to simulate the cell division. The Python code
 [(`ch5_fig20.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS20.py)
-used to generate this figure can be found on the original paper [GitHub
-repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig20){#fig:ch5_fig20
+used to generate this figure can be found on the original paper's [GitHub
+repository](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig20){#fig:ch5_fig20
 short-caption="Stochastic trajectories of mRNA counts"}
 
 To check the implementation of our stochastic algorithm, we generated several of
 these stochastic trajectories to reconstruct the mRNA steady-state distribution.
 These reconstructed distributions for a single- and double-copy of the promoter
-can be compared with Eq. $\ref{eq:two_state_mRNA}$--the steady-state
+can be compared with Eq. $\ref{eq:two_state_mRNA}$---the steady-state
 distribution for the two-state promoter. [@Fig:ch5_fig21] shows the excellent
 agreement between the stochastic simulation and the analytical result,
 confirming that our implementation of the Gillespie simulation is correct.
@@ -53,11 +53,11 @@ regions represent the corresponding distribution obtained using 2500 stochastic
 mRNA trajectories and taking the last cell cycle to approximate the
 distribution. The Python code
 [(`ch5_fig21.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS21.py)
-used to generate this figure can be found on the original paper [GitHub
-repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig21){#fig:ch5_fig21
+used to generate this figure can be found on the original paper's [GitHub
+repository](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig21){#fig:ch5_fig21
 short-caption="Comparison of analytical and simulated mRNA distribution"}
 
-### Protein distribution with Gillespie simulations
+### Protein Distribution with Gillespie Simulations
 
 Having confirmed that our implementation of the Gillespie algorithm that
 includes the binomial partitioning of molecules reproduces analytical results,
@@ -101,6 +101,6 @@ the maximum entropy approach (orange curve). The upper panel shows the
 probability mass function. The lower panel compares the cumulative distribution
 functions. The Python code
 [(`ch5_fig23.py`)](https://github.com/RPGroup-PBoC/chann_cap/blob/master/src/figs/figS23.py)
-used to generate this figure can be found on the original paper [GitHub
-repository.](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig23){#fig:ch5_fig23
+used to generate this figure can be found on the original paper's [GitHub
+repository](https://github.com/RPGroup-PBoC/chann_cap).](ch5_fig23){#fig:ch5_fig23
 short-caption="Comparison of protein distributions"}
