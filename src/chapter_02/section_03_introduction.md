@@ -73,7 +73,7 @@ regulatory situations including simple repression on the chromosome, cases in
 which decoy binding sites for repressor are put on plasmids, cases in which
 multiple genes compete for the same regulatory machinery, cases involving
 multiple binding sites for repressor leading to DNA looping, and induction by
-signaling [@Garcia2011c; @Garcia2011b; @Brewster2012; @Boedicker2013a;
+signaling [@Garcia2011c; @Garcia2011b; @Brewster2012; @Boedicker2013;
 @Boedicker2013b; @Brewster2014]. Thus, rather than viewing the behavior of each
 circuit as giving rise to its unique input-output response, the MWC model
 provides a means to characterize these seemingly diverse behaviors using a
